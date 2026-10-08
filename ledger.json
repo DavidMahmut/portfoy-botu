@@ -1,0 +1,492 @@
+{
+ "config": {
+  "startCapital": 300,
+  "startDate": "2026-10-08",
+  "currency": "USD",
+  "strategyName": "Kurallara dayalı momentum botu",
+  "strategySummary": "En güçlü fiyat momentumuna sahip 4 hisse/ETF'te yoğunlaşan, kayıpları bekleyen zarar-kes emirleriyle sınırlayan, tamamen kurallarla çalışan bot. Yapay zekâ veya ücretli servis kullanmaz. İlk gün (8 Ekim) alımlarını Claude yaptı; 9 Ekim'den itibaren kararları bot veriyor.",
+  "schedule": "Piyasa açıkken her 15 dakikada bir (GitHub Actions). Günlük sıralama ve alımlar 10:00'dan (New York) sonraki ilk çalışmada.",
+  "execution": "Yahoo Finance 5 dakikalık verileri (yfinance). Kesirli hisse (4 ondalık), komisyon yok, alımda +%0,05 / satımda −%0,05 kayma.",
+  "benchmark": {
+   "ticker": "SPY",
+   "startPrice": 772.79,
+   "startAt": "2026-10-08T14:45:00-04:00",
+   "shares": 0.388204
+  },
+  "rules": [
+   "Evren: ~95 likit ABD hissesi ve kaldıraçsız ETF (liste universe.py dosyasında). Opsiyon, açığa satış ve kredili işlem yok.",
+   "Momentum puanı = 0,2 × 1 aylık + 0,5 × 3 aylık + 0,3 × 6 aylık getiri. Uygunluk: fiyat en az 5 $, fiyat 50 günlük ortalamanın üstünde, 3 aylık getiri pozitif.",
+   "Günlük karar (10:00'dan sonraki ilk çalışma): Hedef, en yüksek puanlı 4 varlık; her yeni pozisyon toplam değerin ~%23,75'i. Elde tutulan bir varlık ilk 10'un dışına düşerse veya uygunluğu bozulursa satılır.",
+   "Piyasa rejimi: SPY 200 günlük ortalamasının üstündeyse en fazla %95, altındaysa en fazla %50 yatırım.",
+   "Bekleyen zarar-kes emri: Seviye, ortalama maliyet × 0,92 ile girişten sonraki en yüksek fiyat × 0,88'in büyüğüdür. Her çalışmada son çalışmadan bu yana oluşan 5 dakikalık mumlar sırayla kontrol edilir; bir mumun en düşüğü seviyeye değerse o seviyeden, mum seviyenin altında açıldıysa açılış fiyatından satılmış sayılır.",
+   "Kâr alma: Fiyat ortalama maliyetin %20 üstüne çıkınca pozisyonun yarısı bir kez satılır; kalanı izleyen zarar-kes ile taşınır.",
+   "Tek hisse şoku: Bir pozisyon gün içinde %7 veya daha fazla düşer ve 50 günlük ortalamanın altına inerse hemen satılır.",
+   "Çöküş freni: SPY önceki kapanışa göre %3 düşerse nakit en az %50'ye, %5 düşerse en az %80'e çıkarılır (önce en çok düşenler satılır); o gün yeni alım yapılmaz. SPY %1,5'ten fazla düşerse durum 'Dikkat' olur.",
+   "Veri 35 dakikadan eskiyse o varlıkta işlem yapılmaz. Her işlem fiyatı, saati, kaynağı ve tetikleyen kuralla kaydedilir."
+  ]
+ },
+ "portfolio": {
+  "asOf": "2026-10-08T15:10:00-04:00",
+  "benchmarkPrice": 772.81,
+  "benchmarkValue": 300.01,
+  "cash": 45.04,
+  "positions": [
+   {
+    "avgCost": 193.2266,
+    "costBasis": 89.99,
+    "highSinceEntry": 193.3,
+    "kind": "ETF",
+    "lastPrice": 193.3,
+    "lastPriceAt": "2026-10-08T15:03:00-04:00",
+    "marketValue": 90.02,
+    "name": "SPDR S&P Oil & Gas Exploration & Production ETF",
+    "openedAt": "2026-10-08",
+    "priceSource": {
+     "title": "StockAnalysis: XOP",
+     "url": "https://stockanalysis.com/etf/xop/"
+    },
+    "shares": 0.4657,
+    "stopPrice": 177.77,
+    "thesis": "Petrol 100 $ üstünde kaldıkça E&P şirketlerinin kârları artar. Tez bozulur: Brent 90 $ altına düşerse veya İran gerginliği kalıcı olarak yatışırsa.",
+    "ticker": "XOP",
+    "unrealized": 0.03,
+    "unrealizedPct": 0.03,
+    "openedTs": "2026-10-08T14:55:00-04:00",
+    "tookProfit": false
+   },
+   {
+    "avgCost": 197.1185,
+    "costBasis": 89.98,
+    "highSinceEntry": 197.13,
+    "kind": "Hisse",
+    "lastPrice": 197.13,
+    "lastPriceAt": "2026-10-08T14:56:00-04:00",
+    "marketValue": 89.99,
+    "name": "Palantir Technologies",
+    "openedAt": "2026-10-08",
+    "priceSource": {
+     "title": "StockAnalysis: PLTR",
+     "url": "https://stockanalysis.com/stocks/pltr/"
+    },
+    "shares": 0.4565,
+    "stopPrice": 181.35,
+    "thesis": "Analist yükseltmesi ve göreli güç yeni zirveleri taşıyabilir. Tez bozulur: 181 $ altı (−%8) veya yapay zekâ harcamalarına dair olumsuz haber akışı yazılım tarafına sıçrarsa.",
+    "ticker": "PLTR",
+    "unrealized": 0.01,
+    "unrealizedPct": 0.01,
+    "openedTs": "2026-10-08T14:55:00-04:00",
+    "tookProfit": false
+   },
+   {
+    "avgCost": 230.2351,
+    "costBasis": 74.99,
+    "highSinceEntry": 230.38,
+    "kind": "Hisse",
+    "lastPrice": 230.38,
+    "lastPriceAt": "2026-10-08T15:09:00-04:00",
+    "marketValue": 75.03,
+    "name": "NVIDIA",
+    "openedAt": "2026-10-08",
+    "priceSource": {
+     "title": "StockAnalysis: NVDA",
+     "url": "https://stockanalysis.com/stocks/nvda/"
+    },
+    "shares": 0.3257,
+    "stopPrice": 211.82,
+    "thesis": "Yükselen trend içinde haber kaynaklı düşüş alımı. Tez bozulur: 211,8 $ (−%8) altı veya yapay zekâ altyapı harcamalarında somut kesinti haberleri.",
+    "ticker": "NVDA",
+    "unrealized": 0.04,
+    "unrealizedPct": 0.05,
+    "openedTs": "2026-10-08T14:55:00-04:00",
+    "tookProfit": false
+   }
+  ],
+  "positionsValue": 255.04,
+  "realizedPL": 0,
+  "totalPL": 0.08,
+  "totalPLPct": 0.03,
+  "totalValue": 300.08
+ },
+ "meta": {
+  "lastDailyDate": "2026-10-08",
+  "brakeDate": null,
+  "lastRunAt": "2026-10-08T15:10:00-04:00",
+  "lastError": null,
+  "engine": "momentum-bot v1"
+ },
+ "trades": [
+  {
+   "id": "t-20261008-01",
+   "ts": "2026-10-08T14:55:00-04:00",
+   "date": "2026-10-08",
+   "action": "BUY",
+   "ticker": "XOP",
+   "name": "SPDR S&P Oil & Gas Exploration & Production ETF",
+   "shares": 0.4657,
+   "quotePrice": 193.13,
+   "quoteAt": "2026-10-08T13:58:00-04:00",
+   "slippagePct": 0.05,
+   "execPrice": 193.2266,
+   "value": 89.99,
+   "priceSource": {
+    "title": "StockAnalysis: XOP",
+    "url": "https://stockanalysis.com/etf/xop/"
+   },
+   "reason": "Petrol (Brent) İran gerginliği ve Meksika Körfezi'ndeki fırtına nedeniyle 100 $'ın üzerinde; enerji 3 aylık en güçlü sektör (+%14,6) ve bugün +%2,7. XOP, petrol arama-üretim şirketlerinden oluştuğu için petrole XLE'den daha duyarlı (yüksek beta), 52 haftalık zirvesine (200,89 $) yakın. Agresif profile uygun bir momentum pozisyonu.",
+   "sources": [
+    {
+     "title": "Yahoo Finance canlı blog: 8 Ekim borsa",
+     "url": "https://finance.yahoo.com/markets/live/stock-market-today-thursday-october-8-dow-sp-500-nasdaq-080537884.html"
+    },
+    {
+     "title": "Finviz sektör performansı",
+     "url": "https://finviz.com/groups.ashx?g=sector&v=140&o=-perf4w"
+    },
+    {
+     "title": "StockAnalysis: XLE",
+     "url": "https://stockanalysis.com/etf/xle/"
+    }
+   ],
+   "runId": "2026-10-08",
+   "by": "claude"
+  },
+  {
+   "id": "t-20261008-02",
+   "ts": "2026-10-08T14:55:00-04:00",
+   "date": "2026-10-08",
+   "action": "BUY",
+   "ticker": "PLTR",
+   "name": "Palantir Technologies",
+   "shares": 0.4565,
+   "quotePrice": 197.02,
+   "quoteAt": "2026-10-08T14:48:00-04:00",
+   "slippagePct": 0.05,
+   "execPrice": 197.1185,
+   "value": 89.98,
+   "priceSource": {
+    "title": "StockAnalysis: PLTR",
+    "url": "https://stockanalysis.com/stocks/pltr/"
+   },
+   "reason": "Goldman Sachs bugün 'Al'a yükseltti, hedef fiyat 230 $. Nasdaq −%1,3 düşerken PLTR +%1,5 yükseldi: çip satışına rağmen güçlü göreli güç. Rekor seviyesine (207,52 $) yalnızca ~%5 uzaklıkta; momentum ve yeni katalizör bir arada.",
+   "sources": [
+    {
+     "title": "Yahoo Finance canlı blog: 8 Ekim borsa",
+     "url": "https://finance.yahoo.com/markets/live/stock-market-today-thursday-october-8-dow-sp-500-nasdaq-080537884.html"
+    },
+    {
+     "title": "StockAnalysis: QQQ",
+     "url": "https://stockanalysis.com/etf/qqq/"
+    }
+   ],
+   "runId": "2026-10-08",
+   "by": "claude"
+  },
+  {
+   "id": "t-20261008-03",
+   "ts": "2026-10-08T14:55:00-04:00",
+   "date": "2026-10-08",
+   "action": "BUY",
+   "ticker": "NVDA",
+   "name": "NVIDIA",
+   "shares": 0.3257,
+   "quotePrice": 230.12,
+   "quoteAt": "2026-10-08T14:49:00-04:00",
+   "slippagePct": 0.05,
+   "execPrice": 230.2351,
+   "value": 74.99,
+   "priceSource": {
+    "title": "StockAnalysis: NVDA",
+    "url": "https://stockanalysis.com/stocks/nvda/"
+   },
+   "reason": "FT'nin OpenAI gelirinin beklentiden 20 milyar $ düşük olduğu haberiyle −%3,1 geri çekildi. Teknoloji 6 ayda +%33 ile en güçlü sektör; 61 analistin ortalama hedefi 328,72 $ (+%43). SpaceX'in Nvidia çipleri için 40 milyar $ borç görüşmesi talebin sürdüğünü gösteriyor. Trend içindeki düşüşü alıyorum, ama haber riski yüksek olduğu için pozisyon diğerlerinden küçük.",
+   "sources": [
+    {
+     "title": "Yahoo Finance canlı blog: 8 Ekim borsa",
+     "url": "https://finance.yahoo.com/markets/live/stock-market-today-thursday-october-8-dow-sp-500-nasdaq-080537884.html"
+    },
+    {
+     "title": "Finviz sektör performansı",
+     "url": "https://finviz.com/groups.ashx?g=sector&v=140&o=-perf4w"
+    }
+   ],
+   "runId": "2026-10-08",
+   "by": "claude"
+  }
+ ],
+ "snapshots": [
+  {
+   "date": "2026-10-08",
+   "at": "2026-10-08T15:10:00-04:00",
+   "totalValue": 300.08,
+   "cash": 45.04,
+   "positionsValue": 255.04,
+   "plPct": 0.03,
+   "benchmarkPrice": 772.81,
+   "benchmarkValue": 300.01,
+   "holdings": [
+    {
+     "ticker": "XOP",
+     "value": 90.02
+    },
+    {
+     "ticker": "PLTR",
+     "value": 89.99
+    },
+    {
+     "ticker": "NVDA",
+     "value": 75.03
+    }
+   ]
+  }
+ ],
+ "checks": {
+  "2026-10-08": [
+   {
+    "at": "2026-10-08T14:55:00-04:00",
+    "kind": "daily",
+    "status": "normal",
+    "spyPrice": 772.79,
+    "spyChangePct": -0.57,
+    "totalValue": 299.87,
+    "benchmarkValue": 300.0,
+    "positions": [],
+    "actions": [
+     "Başlangıç alımları: XOP, PLTR, NVDA"
+    ],
+    "note": "Günlük ana karar"
+   },
+   {
+    "at": "2026-10-08T15:10:00-04:00",
+    "kind": "guard",
+    "status": "normal",
+    "spyPrice": 772.81,
+    "spyChangePct": -0.57,
+    "totalValue": 300.08,
+    "benchmarkValue": 300.01,
+    "positions": [
+     {
+      "ticker": "XOP",
+      "price": 193.3,
+      "dayChangePct": 2.69,
+      "stopPrice": 177.77,
+      "distancePct": 8.74
+     },
+     {
+      "ticker": "PLTR",
+      "price": 197.13,
+      "dayChangePct": 1.55,
+      "stopPrice": 181.35,
+      "distancePct": 8.7
+     },
+     {
+      "ticker": "NVDA",
+      "price": 230.38,
+      "dayChangePct": -2.99,
+      "stopPrice": 211.82,
+      "distancePct": 8.76
+     }
+    ],
+    "actions": [],
+    "note": "Normal: tüm pozisyonlar zarar-kes seviyelerinden ~%8,7 uzakta, SPY −%0,57; işlem gerekmedi.",
+    "sources": [
+     {
+      "title": "StockAnalysis: SPY",
+      "url": "https://stockanalysis.com/etf/spy/"
+     },
+     {
+      "title": "StockAnalysis: XOP",
+      "url": "https://stockanalysis.com/etf/xop/"
+     },
+     {
+      "title": "StockAnalysis: PLTR",
+      "url": "https://stockanalysis.com/stocks/pltr/"
+     },
+     {
+      "title": "StockAnalysis: NVDA",
+      "url": "https://stockanalysis.com/stocks/nvda/"
+     }
+    ]
+   }
+  ]
+ },
+ "runs": [
+  {
+   "date": "2026-10-08",
+   "at": "2026-10-08T14:55:00-04:00",
+   "headline": "Başlangıç: 300 $ enerji, Palantir ve Nvidia'ya dağıtıldı; %15 nakit",
+   "marketSummary": "Piyasa günü düşüşle geçiriyor. Brent petrol, İran'a yeni saldırı ihtimali ve Meksika Körfezi'ndeki fırtına nedeniyle 104 $'ı aştı, ardından Trump'ın 'seçimlerden önce İran'a saldırı yok' açıklamasıyla 103 $ civarına geriledi. Petrol enflasyon kaygısını canlandırdı: 10 yıllık tahvil faizi %5,29 ile on yılların zirvesine yakın ve Fed tutanakları Aralık'ta faiz artışı ihtimalini açık bırakıyor. Nasdaq, FT'nin OpenAI gelirinin beklentiden 20 milyar $ düşük olduğu haberiyle çip hisselerinde satış görünce önde düşüyor. Öte yandan S&P 500 şirketlerinin 3. çeyrek kâr büyümesi beklentisi %29,5 ve haftalık işsizlik başvuruları 197 bine geriledi. Sektörlerde enerji bugün ve 3 ayda en güçlülerden; teknoloji 6 ayda +%33 ile lider ama bugün −%2.",
+   "indicators": [
+    {
+     "label": "S&P 500",
+     "value": "7.754,67",
+     "change": "−%0,60"
+    },
+    {
+     "label": "Nasdaq Bileşik",
+     "value": "27.171,21",
+     "change": "−%1,33"
+    },
+    {
+     "label": "Dow Jones",
+     "value": "51.134,10",
+     "change": "−%0,09"
+    },
+    {
+     "label": "Russell 2000",
+     "value": "2.791,36",
+     "change": "−%0,07"
+    },
+    {
+     "label": "Brent petrol",
+     "value": "~103 $",
+     "change": "+%3,9 (gün içi)"
+    },
+    {
+     "label": "ABD 10 yıllık faiz",
+     "value": "%5,29",
+     "change": "On yılların zirvesine yakın"
+    },
+    {
+     "label": "SPY (kıyas)",
+     "value": "772,79 $",
+     "change": "−%0,57"
+    },
+    {
+     "label": "Enerji sektörü",
+     "value": "3 ay +%14,6",
+     "change": "+%2,67 bugün"
+    },
+    {
+     "label": "Teknoloji sektörü",
+     "value": "6 ay +%32,9",
+     "change": "−%2,04 bugün"
+    }
+   ],
+   "decisions": [
+    "XOP AL ≈90 $ (%30): Petrol 100 $ üstünde, enerji en güçlü 3 aylık sektör; XOP 52 haftalık zirvesine yakın ve petrole yüksek duyarlı.",
+    "PLTR AL ≈90 $ (%30): Goldman Sachs 'Al' yükseltmesi (hedef 230 $); Nasdaq düşerken yükseliyor, rekora ~%5 mesafede.",
+    "NVDA AL ≈75 $ (%25): OpenAI haberiyle gelen −%3'lük düşüşü trend içinde alım fırsatı olarak değerlendirdim; analist hedefi +%43. Risk yüksek, pozisyon küçük.",
+    "Nakit ≈45 $ (%15) bekletiliyor: Faizler çok yüksek ve yapay zekâ satışı derinleşebilir; ucuzlayan liderleri almak için yedek."
+   ],
+   "rejected": [
+    "VST ve CEG (yapay zekâ–enerji teması): Bugün −%5–6 düştüler; sert yükselişten sonra AI talebine dair olumsuz haberle zayıfladılar. İzlemede.",
+    "GLD (altın): 52 haftalık zirveden ~%26 aşağıda, Fed'in faiz artırma ihtimali baskı yapıyor; momentum yok.",
+    "ITA (savunma): 1 yılda −%4, zayıf momentum; savaş haberlerine rağmen fiyata yansımamış.",
+    "XLE: Enerjiye XOP üzerinden girdim; XLE daha düşük betalı, agresif hedefe XOP daha uygun.",
+    "Günün en çok yükselenleri (JZ, FLYE, AIXI vb.): 5 $ altı ve çok küçük şirketler — kural 1 gereği elendi."
+   ],
+   "watchlist": [
+    {
+     "ticker": "VST",
+     "note": "156,75 $ — nükleer kredi haberi olumlu; düşüş durulursa giriş adayı."
+    },
+    {
+     "ticker": "CEG",
+     "note": "283,62 $ — Google nükleer anlaşması; AI satışı biterse aday."
+    },
+    {
+     "ticker": "CIEN",
+     "note": "Optik ağ, ekimde +%17 momentum; geri çekilme bekleniyor."
+    },
+    {
+     "ticker": "MU",
+     "note": "Bugün çip satışında düştü; trend devam ederse aday."
+    }
+   ],
+   "sources": [
+    {
+     "title": "Yahoo Finance canlı blog: 8 Ekim borsa",
+     "url": "https://finance.yahoo.com/markets/live/stock-market-today-thursday-october-8-dow-sp-500-nasdaq-080537884.html",
+     "publisher": "Yahoo Finance",
+     "usedFor": "Piyasa özeti: endeksler, petrol, tahvil faizleri, OpenAI haberi, PLTR yükseltmesi, işsizlik başvuruları"
+    },
+    {
+     "title": "Finviz sektör performansı",
+     "url": "https://finviz.com/groups.ashx?g=sector&v=140&o=-perf4w",
+     "publisher": "Finviz",
+     "usedFor": "Sektör momentumu (bugün/1 hafta/1 ay/3 ay/6 ay/YB)"
+    },
+    {
+     "title": "StockAnalysis: XOP",
+     "url": "https://stockanalysis.com/etf/xop/",
+     "publisher": "StockAnalysis",
+     "usedFor": "XOP alış fiyatı 193,13 $ (13:58 ET), 52 haftalık aralık"
+    },
+    {
+     "title": "StockAnalysis: PLTR",
+     "url": "https://stockanalysis.com/stocks/pltr/",
+     "publisher": "StockAnalysis",
+     "usedFor": "PLTR alış fiyatı 197,02 $ (14:48 ET), Goldman yükseltmesi, analist hedefi"
+    },
+    {
+     "title": "StockAnalysis: NVDA",
+     "url": "https://stockanalysis.com/stocks/nvda/",
+     "publisher": "StockAnalysis",
+     "usedFor": "NVDA alış fiyatı 230,12 $ (14:49 ET), haberler, analist hedefi"
+    },
+    {
+     "title": "StockAnalysis: SPY",
+     "url": "https://stockanalysis.com/etf/spy/",
+     "publisher": "StockAnalysis",
+     "usedFor": "Kıyas fiyatı SPY 772,79 $ (14:45 ET)"
+    },
+    {
+     "title": "StockAnalysis: QQQ",
+     "url": "https://stockanalysis.com/etf/qqq/",
+     "publisher": "StockAnalysis",
+     "usedFor": "Nasdaq 100 durumu (−%1,47)"
+    },
+    {
+     "title": "StockAnalysis: XLE",
+     "url": "https://stockanalysis.com/etf/xle/",
+     "publisher": "StockAnalysis",
+     "usedFor": "Enerji ETF karşılaştırması (XLE vs XOP)"
+    },
+    {
+     "title": "StockAnalysis: VST",
+     "url": "https://stockanalysis.com/stocks/vst/",
+     "publisher": "StockAnalysis",
+     "usedFor": "Elenen aday: Vistra fiyat ve haberleri"
+    },
+    {
+     "title": "StockAnalysis: CEG",
+     "url": "https://stockanalysis.com/stocks/ceg/",
+     "publisher": "StockAnalysis",
+     "usedFor": "Elenen aday: Constellation fiyat ve haberleri"
+    },
+    {
+     "title": "StockAnalysis: GLD",
+     "url": "https://stockanalysis.com/etf/gld/",
+     "publisher": "StockAnalysis",
+     "usedFor": "Elenen aday: altın ve Fed haberleri"
+    },
+    {
+     "title": "StockAnalysis: ITA",
+     "url": "https://stockanalysis.com/etf/ita/",
+     "publisher": "StockAnalysis",
+     "usedFor": "Elenen aday: savunma ETF'i"
+    },
+    {
+     "title": "StockTitan: Ekim 2026 aylık momentum",
+     "url": "https://www.stocktitan.net/rankings/stock-gains-monthly/2026/october",
+     "publisher": "StockTitan",
+     "usedFor": "Ekim ayı momentum taraması (büyük şirketler)"
+    },
+    {
+     "title": "StockAnalysis: günün en çok yükselenleri",
+     "url": "https://stockanalysis.com/markets/gainers/",
+     "publisher": "StockAnalysis",
+     "usedFor": "Günün yükselenleri taraması (çoğu penny stock, elendi)"
+    },
+    {
+     "title": "StockAnalysis: en aktif hisseler",
+     "url": "https://stockanalysis.com/markets/active/",
+     "publisher": "StockAnalysis",
+     "usedFor": "En aktif hisseler taraması"
+    }
+   ],
+   "nextSteps": "Yarın 10:15'te: petrol ve faizlerdeki yön, yapay zekâ satışının devam edip etmediği kontrol edilecek. NVDA zarar-kes 211,82 $, PLTR 181,35 $, XOP 177,77 $. AI satışı durulursa nakit VST/CEG veya NVDA eklemesinde kullanılabilir.",
+   "by": "claude"
+  }
+ ]
+}
