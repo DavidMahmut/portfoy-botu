@@ -26,91 +26,94 @@
   ]
  },
  "portfolio": {
-  "asOf": "2026-10-08T15:10:00-04:00",
-  "benchmarkPrice": 772.81,
-  "benchmarkValue": 300.01,
+  "asOf": "2026-10-08T16:10:15-04:00",
+  "benchmarkPrice": 773.88,
+  "benchmarkValue": 300.42,
   "cash": 45.04,
   "positions": [
    {
     "avgCost": 193.2266,
     "costBasis": 89.99,
-    "highSinceEntry": 193.3,
+    "highSinceEntry": 193.82,
     "kind": "ETF",
-    "lastPrice": 193.3,
-    "lastPriceAt": "2026-10-08T15:03:00-04:00",
-    "marketValue": 90.02,
+    "lastPrice": 193.41,
+    "lastPriceAt": "2026-10-08T15:55:00-04:00",
+    "marketValue": 90.07,
     "name": "SPDR S&P Oil & Gas Exploration & Production ETF",
     "openedAt": "2026-10-08",
     "priceSource": {
-     "title": "StockAnalysis: XOP",
-     "url": "https://stockanalysis.com/etf/xop/"
+     "title": "Yahoo Finance 5 dk mum (15:55 ET)",
+     "url": "https://finance.yahoo.com/quote/XOP/"
     },
     "shares": 0.4657,
     "stopPrice": 177.77,
     "thesis": "Petrol 100 $ üstünde kaldıkça E&P şirketlerinin kârları artar. Tez bozulur: Brent 90 $ altına düşerse veya İran gerginliği kalıcı olarak yatışırsa.",
     "ticker": "XOP",
-    "unrealized": 0.03,
-    "unrealizedPct": 0.03,
+    "unrealized": 0.08,
+    "unrealizedPct": 0.09,
     "openedTs": "2026-10-08T14:55:00-04:00",
-    "tookProfit": false
+    "tookProfit": false,
+    "lastBarTs": "2026-10-08T15:55:00-04:00"
    },
    {
     "avgCost": 197.1185,
     "costBasis": 89.98,
-    "highSinceEntry": 197.13,
+    "highSinceEntry": 199.1,
     "kind": "Hisse",
-    "lastPrice": 197.13,
-    "lastPriceAt": "2026-10-08T14:56:00-04:00",
-    "marketValue": 89.99,
+    "lastPrice": 198.72,
+    "lastPriceAt": "2026-10-08T15:55:00-04:00",
+    "marketValue": 90.72,
     "name": "Palantir Technologies",
     "openedAt": "2026-10-08",
     "priceSource": {
-     "title": "StockAnalysis: PLTR",
-     "url": "https://stockanalysis.com/stocks/pltr/"
+     "title": "Yahoo Finance 5 dk mum (15:55 ET)",
+     "url": "https://finance.yahoo.com/quote/PLTR/"
     },
     "shares": 0.4565,
     "stopPrice": 181.35,
     "thesis": "Analist yükseltmesi ve göreli güç yeni zirveleri taşıyabilir. Tez bozulur: 181 $ altı (−%8) veya yapay zekâ harcamalarına dair olumsuz haber akışı yazılım tarafına sıçrarsa.",
     "ticker": "PLTR",
-    "unrealized": 0.01,
-    "unrealizedPct": 0.01,
+    "unrealized": 0.74,
+    "unrealizedPct": 0.82,
     "openedTs": "2026-10-08T14:55:00-04:00",
-    "tookProfit": false
+    "tookProfit": false,
+    "lastBarTs": "2026-10-08T15:55:00-04:00"
    },
    {
     "avgCost": 230.2351,
     "costBasis": 74.99,
-    "highSinceEntry": 230.38,
+    "highSinceEntry": 231.01,
     "kind": "Hisse",
-    "lastPrice": 230.38,
-    "lastPriceAt": "2026-10-08T15:09:00-04:00",
-    "marketValue": 75.03,
+    "lastPrice": 230.57,
+    "lastPriceAt": "2026-10-08T15:55:00-04:00",
+    "marketValue": 75.1,
     "name": "NVIDIA",
     "openedAt": "2026-10-08",
     "priceSource": {
-     "title": "StockAnalysis: NVDA",
-     "url": "https://stockanalysis.com/stocks/nvda/"
+     "title": "Yahoo Finance 5 dk mum (15:55 ET)",
+     "url": "https://finance.yahoo.com/quote/NVDA/"
     },
     "shares": 0.3257,
     "stopPrice": 211.82,
     "thesis": "Yükselen trend içinde haber kaynaklı düşüş alımı. Tez bozulur: 211,8 $ (−%8) altı veya yapay zekâ altyapı harcamalarında somut kesinti haberleri.",
     "ticker": "NVDA",
-    "unrealized": 0.04,
-    "unrealizedPct": 0.05,
+    "unrealized": 0.11,
+    "unrealizedPct": 0.15,
     "openedTs": "2026-10-08T14:55:00-04:00",
-    "tookProfit": false
+    "tookProfit": false,
+    "lastBarTs": "2026-10-08T15:55:00-04:00"
    }
   ],
-  "positionsValue": 255.04,
+  "positionsValue": 255.89,
   "realizedPL": 0,
-  "totalPL": 0.08,
-  "totalPLPct": 0.03,
-  "totalValue": 300.08
+  "totalPL": 0.93,
+  "totalPLPct": 0.31,
+  "totalValue": 300.93
  },
  "meta": {
   "lastDailyDate": "2026-10-08",
   "brakeDate": null,
-  "lastRunAt": "2026-10-08T15:10:00-04:00",
+  "lastRunAt": "2026-10-08T16:10:15-04:00",
   "lastError": null,
   "engine": "momentum-bot v1"
  },
@@ -216,25 +219,25 @@
  "snapshots": [
   {
    "date": "2026-10-08",
-   "at": "2026-10-08T15:10:00-04:00",
-   "totalValue": 300.08,
+   "at": "2026-10-08T16:10:15-04:00",
+   "totalValue": 300.93,
    "cash": 45.04,
-   "positionsValue": 255.04,
-   "plPct": 0.03,
-   "benchmarkPrice": 772.81,
-   "benchmarkValue": 300.01,
+   "positionsValue": 255.89,
+   "plPct": 0.31,
+   "benchmarkPrice": 773.88,
+   "benchmarkValue": 300.42,
    "holdings": [
     {
      "ticker": "XOP",
-     "value": 90.02
+     "value": 90.07
     },
     {
      "ticker": "PLTR",
-     "value": 89.99
+     "value": 90.72
     },
     {
      "ticker": "NVDA",
-     "value": 75.03
+     "value": 75.1
     }
    ]
   }
@@ -306,6 +309,40 @@
       "url": "https://stockanalysis.com/stocks/nvda/"
      }
     ]
+   },
+   {
+    "at": "2026-10-08T16:10:15-04:00",
+    "kind": "guard",
+    "status": "normal",
+    "spyPrice": 773.88,
+    "spyChangePct": -0.43,
+    "totalValue": 300.93,
+    "benchmarkValue": 300.42,
+    "positions": [
+     {
+      "ticker": "XOP",
+      "price": 193.41,
+      "dayChangePct": 2.75,
+      "stopPrice": 177.77,
+      "distancePct": 8.8
+     },
+     {
+      "ticker": "PLTR",
+      "price": 198.72,
+      "dayChangePct": 2.37,
+      "stopPrice": 181.35,
+      "distancePct": 9.58
+     },
+     {
+      "ticker": "NVDA",
+      "price": 230.57,
+      "dayChangePct": -2.91,
+      "stopPrice": 211.82,
+      "distancePct": 8.85
+     }
+    ],
+    "actions": [],
+    "note": "Normal: pozisyonlar zarar-kese %8,8–%9,6 uzakta, SPY −%0,43; işlem gerekmedi."
    }
   ]
  },
