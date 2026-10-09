@@ -3,9 +3,9 @@ name: Portföy botu
 on:
   schedule:
     # UTC. Each trigger starts a loop that runs the bot every 5 minutes until the US market
-    # closes. GitHub can delay or drop scheduled triggers, so several are spread over the
-    # day as backups; while a loop is running, a new trigger just waits in the queue.
-    - cron: "7,37 13-20 * * 1-5"
+    # closes. GitHub can delay or drop scheduled triggers, so there is one every 15 minutes
+    # as a backup; a trigger that finds a loop already running exits within seconds.
+    - cron: "2,17,32,47 13-20 * * 1-5"
   workflow_dispatch:
     inputs:
       force:
@@ -15,34 +15,41 @@ on:
 
 permissions:
   contents: write
-
-concurrency:
-  group: trader
-  cancel-in-progress: false
+  actions: read
 
 jobs:
   trade:
     runs-on: ubuntu-latest
     timeout-minutes: 360
     steps:
-      - name: Piyasa saati mi?
+      - name: Piyasa açık mı, döngü zaten çalışıyor mu?
         id: hours
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
         run: |
           now=$(TZ=America/New_York date +%u%H%M)
           dow=${now:0:1}; hm=$((10#${now:1:4}))
-          if [ "$dow" -le 5 ] && [ "$hm" -ge 925 ] && [ "$hm" -le 1600 ]; then echo "open=1" >> "$GITHUB_OUTPUT"; else echo "open=0" >> "$GITHUB_OUTPUT"; fi
+          open=0
+          if [ "$dow" -le 5 ] && [ "$hm" -ge 925 ] && [ "$hm" -le 1600 ]; then open=1; fi
+          older=$(gh run list --workflow bot.yml --status in_progress --json databaseId \
+                    --jq "map(select(.databaseId < ${GITHUB_RUN_ID})) | length" 2>/dev/null || echo 0)
+          busy=0
+          if [ "${older:-0}" != "0" ]; then busy=1; open=0; echo "Bir döngü zaten çalışıyor; bu tetikleme çıkıyor."; fi
+          echo "open=$open" >> "$GITHUB_OUTPUT"
+          echo "busy=$busy" >> "$GITHUB_OUTPUT"
       - uses: actions/checkout@v4
-        if: steps.hours.outputs.open == '1' || inputs.force
+        if: steps.hours.outputs.open == '1' || (inputs.force && steps.hours.outputs.busy == '0')
       - uses: actions/setup-python@v5
-        if: steps.hours.outputs.open == '1' || inputs.force
+        if: steps.hours.outputs.open == '1' || (inputs.force && steps.hours.outputs.busy == '0')
         with:
           python-version: "3.12"
           cache: pip
       - name: Bağımlılıkları kur
-        if: steps.hours.outputs.open == '1' || inputs.force
+        if: steps.hours.outputs.open == '1' || (inputs.force && steps.hours.outputs.busy == '0')
         run: pip install -r requirements.txt
       - name: Botu çalıştır (kapanışa kadar 5 dakikada bir)
-        if: steps.hours.outputs.open == '1' || inputs.force
+        if: steps.hours.outputs.open == '1' || (inputs.force && steps.hours.outputs.busy == '0')
         env:
           BOT_FORCE: ${{ inputs.force && '1' || '0' }}
         run: |
