@@ -1,6 +1,6 @@
 """Rule-based paper-trading bot for the 300 $ portfolio.
 
-Runs every 15 minutes during US market hours (GitHub Actions). Each run:
+Runs every 5 minutes during US market hours (a GitHub Actions job loops until the close). Each run:
   1. marks the portfolio to market with Yahoo Finance 5-minute bars,
   2. replays the bars since the last run against each position's standing stop order,
   3. applies take-profit, single-stock shock and market crash-brake rules,
@@ -40,7 +40,9 @@ CASH_BRAKE1, CASH_BRAKE2 = 0.50, 0.80
 MIN_TRADE = 10.0
 STALE_MIN = 35          # minutes; older quotes are not traded on
 DAILY_AFTER = dtime(10, 0)
-CHECK_DAYS_KEPT = 10
+CHECK_DAYS_KEPT = 5
+SCHEDULE_TEXT = ("Piyasa açıkken 5 dakikada bir (GitHub Actions döngüsü). Günlük sıralama ve alımlar "
+                 "10:00'dan (New York) sonraki ilk çalışmada.")
 
 HOLIDAYS = {
     "2026-01-01", "2026-01-19", "2026-02-16", "2026-04-03", "2026-05-25", "2026-06-19", "2026-07-03",
@@ -97,6 +99,7 @@ class Engine:
         self.P = ledger["portfolio"]
         self.C = ledger["config"]
         self.M = ledger.setdefault("meta", {})
+        self.C["schedule"] = SCHEDULE_TEXT
         self.actions = []
         self.notes = []
         self.status = "normal"
@@ -474,7 +477,7 @@ class Engine:
             "indicators": [{"label": i["label"], "value": i["value"], "change": i["change"]} for i in inds],
             "decisions": decisions, "rejected": rejected, "watchlist": watch, "sources": uniq,
             "ranking": ranking[:15],
-            "nextSteps": "Zarar-kes emirleri, kâr alma ve çöküş freni piyasa açıkken her 15 dakikada bir kontrol "
+            "nextSteps": "Zarar-kes emirleri, kâr alma ve çöküş freni piyasa açıkken 5 dakikada bir kontrol "
                          "ediliyor. Bir sonraki sıralama yarın 10:00'dan sonraki ilk çalışmada.",
         })
 
@@ -568,6 +571,8 @@ def main():
         ledger.setdefault("meta", {})["lastError"] = f"{iso(now)}: {type(e).__name__}: {e}"
         ledger["meta"]["lastRunAt"] = iso(now)
     save_ledger(ledger)
+    if eng.new_trades:
+        Path(".traded").write_text("1")
     print(f"{now:%H:%M} ET | durum={eng.status} | toplam={ledger['portfolio']['totalValue']} | işlemler={eng.actions}")
     return 0
 

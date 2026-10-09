@@ -209,7 +209,7 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
     <div>
       <p class="eyebrow">Sanal yatırım deneyi · kurallara dayalı bot</p>
       <h1>300 $ Portföy Defteri</h1>
-      <p class="sub" id="sub">300 $ sanal sermaye. Bot, piyasa açıkken her 15 dakikada bir Yahoo Finance verileriyle portföyü değerlendirir, zarar-kes emirlerini uygular ve her gün momentum sıralamasına göre alım-satım yapar. Her işlemin gerekçesi ve verinin kaynağı aşağıda.</p>
+      <p class="sub" id="sub">300 $ sanal sermaye. Bot, piyasa açıkken 5 dakikada bir Yahoo Finance verileriyle portföyü değerlendirir, zarar-kes emirlerini uygular ve her gün momentum sıralamasına göre alım-satım yapar. Her işlemin gerekçesi ve verinin kaynağı aşağıda.</p>
     </div>
     <div class="status">
       <span class="pill" id="statusPill">Veriler yükleniyor</span>
@@ -252,7 +252,7 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
         <h3>Risk kontrolü</h3>
         <span class="pill" id="riskPill">Bekleniyor</span>
       </div>
-      <p class="small muted" id="riskMeta">Piyasa açıkken her 15 dakikada bir fiyatlar kontrol edilir; zarar-kes emirleri ve çöküş freni uygulanır.</p>
+      <p class="small muted" id="riskMeta">Piyasa açıkken 5 dakikada bir fiyatlar kontrol edilir; zarar-kes emirleri ve çöküş freni uygulanır.</p>
       <div class="risk-grid">
         <div>
           <h4 class="mini">Zarar-kes seviyesine uzaklık</h4>
@@ -302,7 +302,7 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
   </section>
 
   <footer>
-    Bu bir simülasyondur: gerçek para ya da aracı kurum yok, yatırım tavsiyesi değildir. Kararları yapay zekâ değil, sabit kurallarla çalışan bir program verir (ilk günün alımlarını Claude yaptı). Fiyatlar Yahoo Finance'in 5 dakikalık verileridir (yfinance kütüphanesi ile); birkaç dakika gecikmeli olabilir. Bot GitHub Actions üzerinde ücretsiz çalışır; GitHub'ın zamanlaması yoğunlukta birkaç dakika kayabilir. Sayfa her dakika yeni veriyi kontrol eder. Zarar-kes seviyeleri bekleyen emir gibi işler: iki kontrol arasında fiyat bu seviyeye değerse, 5 dakikalık mumlardan tespit edilip o seviyeden satılmış sayılır.
+    Bu bir simülasyondur: gerçek para ya da aracı kurum yok, yatırım tavsiyesi değildir. Kararları yapay zekâ değil, sabit kurallarla çalışan bir program verir (ilk günün alımlarını Claude yaptı). Fiyatlar Yahoo Finance'in 5 dakikalık verileridir (yfinance kütüphanesi ile); birkaç dakika gecikmeli olabilir. Bot GitHub Actions üzerinde ücretsiz çalışır: piyasa açılınca başlayan bir döngü kapanışa kadar 5 dakikada bir kontrol yapar; sayfa yaklaşık 10 dakikada bir güncellenir (işlem olursa hemen). Sayfa her dakika yeni veriyi kontrol eder. Zarar-kes seviyeleri bekleyen emir gibi işler: iki kontrol arasında fiyat bu seviyeye değerse, 5 dakikalık mumlardan tespit edilip o seviyeden satılmış sayılır.
   </footer>
 </div>
 
@@ -350,7 +350,7 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
     var c=S.config||{}, p=S.portfolio;
     var start = isNum(c.startCapital)?c.startCapital:300;
     if(c.startDate) $("since").textContent="Başlangıç: "+dLong(c.startDate)+" · "+usd(start);
-    $("nextRun").textContent="Her 15 dakikada bir (piyasa açıkken)";
+    $("nextRun").textContent="5 dakikada bir (piyasa açıkken)";
     if(!p){ return; }
     var total=p.totalValue, pl=total-start, plp=pl/start*100;
     $("total").textContent=usd(total);
@@ -369,7 +369,7 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
     $("asOf").textContent= at ? "Botun son çalışması: "+fmtDate.format(at)+", "+fmtTime.format(at)+" ET" : "Son güncelleme —";
     var pill=$("statusPill");
     if(at){ var mins=(Date.now()-at.getTime())/6e4;
-      if(marketOpenNow()){ if(mins<=45){ pill.className="pill"; pill.textContent="Bot çalışıyor"; } else { pill.className="pill warn"; pill.textContent=Math.round(mins)+" dakikadır çalışmadı"; } }
+      if(marketOpenNow()){ if(mins<=25){ pill.className="pill"; pill.textContent="Bot çalışıyor"; } else { pill.className="pill warn"; pill.textContent=Math.round(mins)+" dakikadır çalışmadı"; } }
       else { pill.className="pill"; pill.textContent="Piyasa kapalı"; } }
     var eb=$("errBar"); if(m.lastError){ eb.hidden=false; eb.textContent="Son çalışmada hata: "+m.lastError; } else { eb.hidden=true; }
   }
@@ -381,13 +381,13 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
   function nextCheckText(){
     var p=nyParts(new Date()), mins=p.h*60+p.m, wk=["Mon","Tue","Wed","Thu","Fri"].indexOf(p.wd)>=0;
     if(wk && mins<570) return "Sonraki: bugün ~09:30 ET";
-    if(wk && mins<960){ var n=Math.floor(mins/15)*15+15; return "Sonraki: ~"+pad(Math.floor(n/60))+":"+pad(n%60)+" ET"; }
+    if(wk && mins<960){ var n=Math.floor(mins/5)*5+5; return "Sonraki: ~"+pad(Math.floor(n/60))+":"+pad(n%60)+" ET"; }
     return "Sonraki: "+((p.wd==="Fri"||p.wd==="Sat")?"pazartesi":"yarın")+" ~09:30 ET";
   }
   function renderRisk(){
     var c=S.checks, pill=$("riskPill"), meta=$("riskMeta"), sl=$("stopList"), cl=$("checkList");
     var nextTxt=nextCheckText();
-    if(!c||!c.entries||!c.entries.length){ meta.textContent="Piyasa açıkken her 15 dakikada bir kontrol edilir. "+nextTxt; return; }
+    if(!c||!c.entries||!c.entries.length){ meta.textContent="Piyasa açıkken 5 dakikada bir kontrol edilir. "+nextTxt; return; }
     var es=c.entries.slice().sort(function(a,b){return (a.at||"")<(b.at||"")?-1:1;}); var last=es[es.length-1];
     var st=last.status||"normal";
     pill.className="pill "+(st==="alarm"?"alarm":st==="uyari"?"uyari":"ok");

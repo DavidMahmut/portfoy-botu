@@ -4,7 +4,7 @@ Sanal 300 $ ile ABD hisse ve ETF'lerinde işlem yapan, kurallara dayalı bir **k
 
 - **Takip sayfası:** GitHub Pages (`index.html`) — portföy değeri, pozisyonlar, her işlemin gerekçesi, risk kontrolleri, günlük momentum sıralaması.
 - **Veri:** Yahoo Finance (yfinance kütüphanesi), 5 dakikalık mumlar.
-- **Zamanlama:** Piyasa açıkken her 15 dakikada bir (`.github/workflows/bot.yml`).
+- **Zamanlama:** Piyasa açılınca başlayan bir GitHub Actions döngüsü kapanışa kadar 5 dakikada bir çalışır (`.github/workflows/bot.yml`). Yedek tetikleyiciler, GitHub bir tetiklemeyi geciktirirse döngüyü yeniden başlatır.
 - **Kayıt:** Tüm durum `ledger.json` dosyasında; her çalışma bir commit olarak geçmişte görünür.
 
 ## Kurallar (özet)
