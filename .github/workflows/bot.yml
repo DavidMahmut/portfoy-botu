@@ -2,12 +2,14 @@ name: Portföy botu
 
 on:
   schedule:
-    # UTC; covers 09:30–16:00 New York in both summer (EDT) and winter (EST) time.
-    - cron: "*/15 13-21 * * 1-5"
+    # UTC. Each trigger starts a loop that runs the bot every 5 minutes until the US market
+    # closes. GitHub can delay or drop scheduled triggers, so several are spread over the
+    # day as backups; while a loop is running, a new trigger just waits in the queue.
+    - cron: "7,37 13-20 * * 1-5"
   workflow_dispatch:
     inputs:
       force:
-        description: "Piyasa kapalıyken de çalıştır (deneme)"
+        description: "Piyasa kapalıyken de bir kez çalıştır (deneme)"
         type: boolean
         default: false
 
@@ -21,14 +23,14 @@ concurrency:
 jobs:
   trade:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 360
     steps:
       - name: Piyasa saati mi?
         id: hours
         run: |
           now=$(TZ=America/New_York date +%u%H%M)
           dow=${now:0:1}; hm=$((10#${now:1:4}))
-          if [ "$dow" -le 5 ] && [ "$hm" -ge 930 ] && [ "$hm" -le 1610 ]; then echo "open=1" >> "$GITHUB_OUTPUT"; else echo "open=0" >> "$GITHUB_OUTPUT"; fi
+          if [ "$dow" -le 5 ] && [ "$hm" -ge 925 ] && [ "$hm" -le 1600 ]; then echo "open=1" >> "$GITHUB_OUTPUT"; else echo "open=0" >> "$GITHUB_OUTPUT"; fi
       - uses: actions/checkout@v4
         if: steps.hours.outputs.open == '1' || inputs.force
       - uses: actions/setup-python@v5
@@ -39,18 +41,32 @@ jobs:
       - name: Bağımlılıkları kur
         if: steps.hours.outputs.open == '1' || inputs.force
         run: pip install -r requirements.txt
-      - name: Botu çalıştır
+      - name: Botu çalıştır (kapanışa kadar 5 dakikada bir)
         if: steps.hours.outputs.open == '1' || inputs.force
         env:
           BOT_FORCE: ${{ inputs.force && '1' || '0' }}
-        run: python trader.py
-      - name: Sonuçları kaydet
-        if: steps.hours.outputs.open == '1' || inputs.force
         run: |
           git config user.name "portfoy-bot"
           git config user.email "portfoy-bot@users.noreply.github.com"
-          git add ledger.json
-          if git diff --cached --quiet; then echo "Değişiklik yok"; exit 0; fi
-          git commit -m "Bot: $(TZ=America/New_York date '+%Y-%m-%d %H:%M') ET"
-          git pull --rebase
-          git push
+          save() {
+            git add ledger.json
+            if git diff --cached --quiet; then return 0; fi
+            git commit -q -m "Bot: $(TZ=America/New_York date '+%Y-%m-%d %H:%M') ET"
+            for i in 1 2 3; do
+              if git pull -q --rebase && git push -q; then return 0; fi
+              sleep 10
+            done
+            echo "::warning::Sonuçlar gönderilemedi"
+          }
+          deadline=$((SECONDS + 345 * 60))
+          last_save=$SECONDS
+          while true; do
+            python trader.py || echo "::warning::trader.py hata verdi"
+            if [ -f .traded ] || [ $((SECONDS - last_save)) -ge 590 ]; then
+              save; last_save=$SECONDS; rm -f .traded
+            fi
+            if [ "$BOT_FORCE" = "1" ]; then save; break; fi
+            hm=$((10#$(TZ=America/New_York date +%H%M)))
+            if [ "$hm" -ge 1610 ] || [ "$SECONDS" -ge "$deadline" ]; then save; break; fi
+            sleep 300
+          done
