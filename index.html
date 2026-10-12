@@ -239,6 +239,15 @@ details.run.cancelled{opacity:.6}
 .kstats dd small{display:block;font-size:12px;font-weight:400;color:var(--muted);font-family:var(--f-body)}
 .month-table{min-width:420px}
 @media (max-width:820px){.crit{grid-template-columns:repeat(2,minmax(0,1fr))}.kstats{grid-template-columns:repeat(2,minmax(0,1fr))}.kstats div{border-left:1px solid var(--line);border-top:1px solid var(--line)}.kstats div:nth-child(2n+1){border-left:none}.kstats div:nth-child(-n+2){border-top:none}}
+.ext-head{display:flex;flex-wrap:wrap;gap:6px 18px;align-items:baseline;margin:10px 0 12px}
+.ext-head .tot{font-family:var(--f-mono);font-variant-numeric:tabular-nums;font-size:18px;font-weight:600}
+.ext-head .mk{font-family:var(--f-mono);font-size:13px;color:var(--muted)}
+.ext-table{min-width:640px}
+.ext-table td.l{text-align:left;font-family:var(--f-body)}
+.ext-table th:nth-child(2){text-align:left}
+.ext-head .tot span{white-space:nowrap}
+.ext-table .mob{display:none}
+@media (max-width:520px){.ext-table{min-width:0}.ext-table th:nth-child(2),.ext-table td:nth-child(2),.ext-table th:nth-child(3),.ext-table td:nth-child(3){display:none}.ext-table th,.ext-table td{padding:8px 8px}.ext-table th{white-space:normal}.ext-table .mob{display:block}}
 footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);padding-top:14px;max-width:90ch}
 
 @media (max-width:820px){
@@ -324,6 +333,16 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
           <ol class="checks" id="checkList"><li class="muted small">Henüz kontrol yok.</li></ol>
         </div>
       </div>
+    </div>
+    <div class="panel" id="extPanel" hidden>
+      <div class="sec-head">
+        <h3>Seans dışı izleme</h3>
+        <span class="pill" id="extPill">—</span>
+      </div>
+      <p class="small muted" id="extMeta" style="margin:6px 0 0"></p>
+      <div class="ext-head" id="extHead"></div>
+      <div class="tbl-wrap"><table class="ext-table"><thead><tr><th scope="col">Sembol</th><th scope="col">Yön</th><th scope="col">Normal seans kapanışı</th><th scope="col">Seans dışı fiyat</th><th scope="col">Değişim</th><th scope="col">Portföye etkisi</th></tr></thead><tbody id="extRows"></tbody></table></div>
+      <p class="note" id="extNote"></p>
     </div>
     <div class="twocol">
       <div class="panel">
@@ -412,7 +431,7 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
 (function(){
   "use strict";
   var TZ = "America/New_York";
-  var S = {config:null, portfolio:null, meta:{}, trades:[], snapshots:[], runs:[], checks:null, compliance:[], tax:{}, score:null, err:null};
+  var S = {config:null, portfolio:null, meta:{}, trades:[], snapshots:[], runs:[], checks:null, compliance:[], tax:{}, score:null, ext:null, err:null};
   var fmtUSD = new Intl.NumberFormat("tr-TR",{style:"currency",currency:"USD",minimumFractionDigits:2,maximumFractionDigits:2});
   var fmtNum = function(n,d){return new Intl.NumberFormat("tr-TR",{minimumFractionDigits:d,maximumFractionDigits:d}).format(n);};
   var fmtDate = new Intl.DateTimeFormat("tr-TR",{day:"numeric",month:"long",year:"numeric",timeZone:TZ});
@@ -870,8 +889,34 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
     });
   }
 
+  /* ---------- extended hours (watch only) ---------- */
+  function renderExt(){
+    var x=S.ext, panel=$("extPanel");
+    if(!x||!x.items){ panel.hidden=true; return; }
+    panel.hidden=false;
+    var at=parseD(x.asOf), mins=at?(Date.now()-at.getTime())/6e4:1e9, live=mins<=45;
+    var pill=$("extPill"); pill.className="pill "+(live?"":"warn");
+    pill.textContent= live ? "Güncel · "+(x.session==="pre"?"piyasa öncesi":"piyasa sonrası") : "Son veri "+dShort(x.asOf)+" "+tm(x.asOf);
+    $("extMeta").textContent=(x.sessionLabel||"")+" · son kontrol "+dShort(x.asOf)+" "+tm(x.asOf)+" · 30 dakikada bir";
+    var h=$("extHead"); clear(h);
+    h.appendChild(el("span",{class:"tot "+cls(x.totalImpact)}, "Tahmini etki: ", el("span",{text:sgnUsd(x.totalImpact)}), isNum(x.totalImpactPct)? el("span",{text:"  ("+pct(x.totalImpactPct)+")"}) : null));
+    (x.market||[]).forEach(function(m){ h.appendChild(el("span",{class:"mk"}, m.label+" ", el("span",{class:cls(m.changePct),text:pct(m.changePct)}))); });
+    var tb=$("extRows"); clear(tb);
+    (x.items||[]).forEach(function(r){
+      var sh=r.side==="short";
+      tb.appendChild(el("tr",null,
+        el("td",{class:"l"}, el("b",{text:r.ticker}), el("span",{class:"sub mob",text:(sh?"short":"long")+((r.lev||1)>1?" · "+r.lev+"x":"")})),
+        el("td",{class:"l"}, el("span",{class:"side "+(sh?"short":"long"),text:sh?"SHORT":"LONG"}), (r.lev||1)>1? el("span",{class:"side lev",text:r.lev+"x"}):null),
+        el("td",null, isNum(r.refClose)? fmtNum(r.refClose,2)+"\u00a0$":"—", el("span",{class:"sub",text:r.refAt?dShort(r.refAt):""})),
+        el("td",null, isNum(r.price)? fmtNum(r.price,2)+"\u00a0$":"İşlem yok", el("span",{class:"sub",text:r.at?tm(r.at):""})),
+        el("td",{class:cls(r.changePct)}, isNum(r.changePct)? pct(r.changePct):"—"),
+        el("td",{class:cls(r.impact)}, isNum(r.impact)? sgnUsd(r.impact):"—", r.beyondStop? el("span",{class:"sub down",text:"zarar-kes seviyesinin ötesinde"}):null)));
+    });
+    $("extNote").textContent=(x.note||"")+" Etki, short pozisyonlarda fiyat yükselişini zarar olarak gösterir.";
+  }
+
   function renderAll(){
-    try{ renderSummary(); renderRisk(); renderScore(); renderAlloc(); renderPositions(); renderTrades(); renderRuns(); renderLaw(); renderRules(); renderChart(); }
+    try{ renderSummary(); renderRisk(); renderExt(); renderScore(); renderAlloc(); renderPositions(); renderTrades(); renderRuns(); renderLaw(); renderRules(); renderChart(); }
     catch(e){ console.error(e); }
   }
   var rt=null; function schedule(){ if(rt) return; rt=setTimeout(function(){rt=null; renderAll();},30); }
@@ -891,7 +936,13 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
       renderAll();
     }).catch(function(e){ console.error(e); fail("Veri yüklenemedi"); });
   }
-  load(); setInterval(load, 60000);
+  var extSig="";
+  function loadExt(){
+    fetch("extended.json?t="+Date.now(),{cache:"no-store"}).then(function(r){ if(!r.ok) throw new Error(r.status); return r.json(); })
+    .then(function(x){ var sg=x&&x.asOf||""; S.ext=x; if(sg!==extSig){ extSig=sg; try{ renderExt(); }catch(e){ console.error(e); } } else { renderExt(); } })
+    .catch(function(){ S.ext=null; try{ renderExt(); }catch(e){} });
+  }
+  load(); loadExt(); setInterval(load, 60000); setInterval(loadExt, 60000);
 })();
 </script>
 </body>

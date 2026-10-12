@@ -80,3 +80,9 @@ def dividends(tickers):
         except Exception as e:  # dividends are best effort
             print("dividends failed:", t, e)
     return out
+
+
+def extended(tickers):
+    """5-minute bars of the last few days including pre-market (04:00-09:30) and after-hours (16:00-20:00)."""
+    tickers = sorted(set(tickers))
+    return _split(_download(tickers, period="5d", interval="5m", prepost=True), tickers, False)

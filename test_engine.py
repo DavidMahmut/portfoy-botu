@@ -353,6 +353,27 @@ def test_scorecard():
                                                  "daysTotal")}, sc["trades"], sc["monthly"])
 
 
+def test_extended_watch():
+    import watch as W
+    L, _, paths = first_daily(BUFFER)
+    day = "2026-10-12"
+    def bars(ref, ext):
+        idx = [pd.Timestamp(f"{day} {m // 60:02d}:{m % 60:02d}", tz=NY) for m in range(570, 1081, 5)]
+        return pd.DataFrame([[ref if m < 960 else ext] * 4 for m in range(570, 1081, 5)], index=idx,
+                            columns=["Open", "High", "Low", "Close"])
+    b = {p["ticker"]: bars(p["lastPrice"], p["lastPrice"] * 1.05) for p in L["portfolio"]["positions"]}
+    now = datetime.fromisoformat(f"{day}T18:00:00").replace(tzinfo=NY)
+    assert W.session_of(now, T.HOLIDAYS) == "post"
+    assert W.session_of(datetime.fromisoformat("2026-10-13T12:00:00").replace(tzinfo=NY), T.HOLIDAYS) is None
+    out = W.build(L, b, now, "post")
+    longs = sum(r["impact"] for r in out["items"] if r["side"] == "long")
+    shorts = sum(r["impact"] for r in out["items"] if r["side"] == "short")
+    assert longs > 0 > shorts and all(abs(r["changePct"] - 5) < 0.01 for r in out["items"])
+    assert any(r["beyondStop"] for r in out["items"] if r["side"] == "short") or all(
+        r["price"] < r["stopPrice"] for r in out["items"] if r["side"] == "short")
+    print("extended watch OK: impact", out["totalImpact"], "long", round(longs, 2), "short", round(shorts, 2))
+
+
 def test_fees_and_commission():
     assert T.sale_fees(100, 0.5) == 0.02
     assert T.sale_fees(1_000_000, 10_000) == round(20.6 + 1.95, 2)
