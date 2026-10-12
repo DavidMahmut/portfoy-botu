@@ -108,7 +108,7 @@ CONFIG_TEXT = {
     "strategyName": "Long/short momentum botu (gerçek kurallara uygun kredili hesap)",
     "strategySummary": (
         "En güçlü momentuma sahip hisselerde long, en zayıf ve düşüş trendindeki hisselerde short pozisyon alır. "
-        "ABD'de 2.000 $'lık bir kredili hesapta gerçekte yapılabilecek işlemlerle sınırlıdır: Reg T başlangıç teminatı, "
+        "ABD'de küçük bir kredili hesapta gerçekte yapılabilecek işlemlerle sınırlıdır: Reg T başlangıç teminatı, "
         "FINRA 4210 bakım teminatı ve 2.000 $ asgari özsermaye, SEC Rule 201, gerçek aracı kurum ücretleri. Güçlü "
         "yükselişte 3x endeks ETF'i, düşüş piyasasında −3x ters ETF kullanır. Aracı kurum modeli: Interactive Brokers "
         "(IBKR Pro, Tiered). İlk gün (8 Ekim) alımlarını Claude yaptı; 12 Ekim'de sermaye önce 2.000 $'a, ardından FINRA'nın "
@@ -670,7 +670,8 @@ class Engine:
             self.P["benchmarkPrice"] = round(spy["price"], 2)
             self.P["benchmarkValue"] = round(self.C["benchmark"]["shares"] * spy["price"], 2)
             self.P["benchmarkTwrPct"] = round((spy["price"] / self.C["benchmark"]["startPrice"] - 1) * 100, 2)
-        assert abs(self.P["cash"] + sum(p["marketValue"] for p in self.P["positions"]) - equity) <= 0.011
+        # positions' market values are rounded to the cent one by one, so allow half a cent per position
+        assert abs(self.P["cash"] + sum(p["marketValue"] for p in self.P["positions"]) - equity) <= 0.011 + 0.005 * len(self.P["positions"])
 
     # ---------------- quotes
     def load_quotes(self, tickers):
