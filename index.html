@@ -369,7 +369,11 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
     $("asOf").textContent= at ? "Botun son çalışması: "+fmtDate.format(at)+", "+fmtTime.format(at)+" ET" : "Son güncelleme —";
     var pill=$("statusPill");
     if(at){ var mins=(Date.now()-at.getTime())/6e4;
-      if(marketOpenNow()){ if(mins<=25){ pill.className="pill"; pill.textContent="Bot çalışıyor"; } else { pill.className="pill warn"; pill.textContent=Math.round(mins)+" dakikadır çalışmadı"; } }
+      var np=nyParts(new Date()), sinceOpen=np.h*60+np.m-570;
+      if(marketOpenNow()){
+        if(mins<=25){ pill.className="pill"; pill.textContent="Bot çalışıyor"; }
+        else if(sinceOpen<=20){ pill.className="pill"; pill.textContent="Bot açılışta başlıyor"; }
+        else { pill.className="pill warn"; pill.textContent=(mins<120? Math.round(mins)+" dakikadır" : Math.round(mins/60)+" saattir")+" güncellenmedi"; } }
       else { pill.className="pill"; pill.textContent="Piyasa kapalı"; } }
     var eb=$("errBar"); if(m.lastError){ eb.hidden=false; eb.textContent="Son çalışmada hata: "+m.lastError; } else { eb.hidden=true; }
   }
