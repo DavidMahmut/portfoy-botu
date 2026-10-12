@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>300 $ Portföy Defteri</title>
+<title>2.000 $ Portföy Defteri</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,500..800&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
@@ -14,6 +14,7 @@
   --accent:#0F5C8C; --accent-soft:#E3EEF5;
   --gain:#17784A; --gain-soft:#E2F2EA; --loss:#B23A30; --loss-soft:#F8E5E2; --warn:#9A6200; --warn-soft:#FBF0DA;
   --s1:#0F5C8C; --s2:#C27C0E; --s3:#6A4FB3; --s4:#1F8A7A; --s5:#B0466B; --s6:#56708A; --cash:#AEB9C2;
+  --sh1:#B23A30; --sh2:#D2693C; --sh3:#8E2F55; --sh4:#C9534A;
   --f-display:"Archivo","Arial Narrow",system-ui,sans-serif;
   --f-body:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
   --f-mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
@@ -23,6 +24,7 @@
   --accent:#5BA9DB; --accent-soft:#16303F;
   --gain:#4CC38A; --gain-soft:#13301F; --loss:#F07A70; --loss-soft:#3A1A17; --warn:#E8B04A; --warn-soft:#382A10;
   --s1:#5BA9DB; --s2:#E0A23F; --s3:#9C86E0; --s4:#46BFAE; --s5:#E07AA0; --s6:#8FA6BC; --cash:#4A5864;
+  --sh1:#F07A70; --sh2:#F0A06B; --sh3:#D77BA8; --sh4:#E8928A;
   color-scheme:dark;
 }}
 :root[data-theme="dark"]{
@@ -30,6 +32,7 @@
   --accent:#5BA9DB; --accent-soft:#16303F;
   --gain:#4CC38A; --gain-soft:#13301F; --loss:#F07A70; --loss-soft:#3A1A17; --warn:#E8B04A; --warn-soft:#382A10;
   --s1:#5BA9DB; --s2:#E0A23F; --s3:#9C86E0; --s4:#46BFAE; --s5:#E07AA0; --s6:#8FA6BC; --cash:#4A5864;
+  --sh1:#F07A70; --sh2:#F0A06B; --sh3:#D77BA8; --sh4:#E8928A;
   color-scheme:dark;
 }
 *,*::before,*::after{box-sizing:border-box}
@@ -176,6 +179,14 @@ h4.mini{margin:0 0 8px;font-size:12px;text-transform:uppercase;letter-spacing:.0
 .checks .v{font-family:var(--f-mono);font-variant-numeric:tabular-nums;text-align:right}
 @media (max-width:640px){.risk-grid{grid-template-columns:minmax(0,1fr)}}
 
+.chip.short{background:transparent;color:var(--loss);box-shadow:inset 0 0 0 1.5px var(--loss)}
+.chip.cover{background:transparent;color:var(--gain);box-shadow:inset 0 0 0 1.5px var(--gain)}
+.chip.dep{background:var(--accent-soft);color:var(--accent)}
+.side{display:inline-block;font-family:var(--f-mono);font-size:11px;font-weight:600;padding:1px 7px;border-radius:4px}
+.side.long{background:var(--gain-soft);color:var(--gain)}
+.side.short{background:var(--loss-soft);color:var(--loss)}
+.side.lev{background:var(--warn-soft);color:var(--warn);margin-left:4px}
+.exp-cap{display:flex;justify-content:space-between;gap:8px;font-family:var(--f-mono);font-size:12px;color:var(--muted);margin-top:6px}
 .errbar{padding:10px 14px;border-radius:8px;background:var(--loss-soft);color:var(--loss);font-size:13px}
 .rule{font-family:var(--f-mono);font-size:11px;padding:2px 8px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
 .rank-table{min-width:620px}
@@ -208,8 +219,8 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
   <header class="mast">
     <div>
       <p class="eyebrow">Sanal yatırım deneyi · kurallara dayalı bot</p>
-      <h1>300 $ Portföy Defteri</h1>
-      <p class="sub" id="sub">300 $ sanal sermaye. Bot, piyasa açıkken 5 dakikada bir Yahoo Finance verileriyle portföyü değerlendirir, zarar-kes emirlerini uygular ve her gün momentum sıralamasına göre alım-satım yapar. Her işlemin gerekçesi ve verinin kaynağı aşağıda.</p>
+      <h1>2.000 $ Portföy Defteri</h1>
+      <p class="sub" id="sub">Sanal kredili hesap: güçlü hisselerde long, zayıf hisselerde short, piyasa rejimine göre 3x'e kadar kaldıraç. Bot piyasa açıkken 5 dakikada bir Yahoo Finance verileriyle zarar-kes emirlerini, frenleri ve teminatı kontrol eder; her gün momentum sıralamasına göre pozisyonları yeniler. Her işlemin gerekçesi, maliyeti ve verinin kaynağı aşağıda.</p>
     </div>
     <div class="status">
       <span class="pill" id="statusPill">Veriler yükleniyor</span>
@@ -230,18 +241,19 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
     <h2 id="h-ozet" class="eyebrow" style="font-family:var(--f-mono);font-size:12px;font-weight:400">Hesap özeti</h2>
     <div class="summary">
       <div class="panel bigval">
-        <div class="label">Toplam portföy değeri</div>
+        <div class="label">Net değer (özsermaye)</div>
         <div class="num big" id="total">—</div>
         <div class="delta flat" id="pl">—</div>
-        <div class="since" id="since">Başlangıç sermayesi —</div>
+        <div class="since" id="since">Yatırılan sermaye —</div>
+        <div class="since" id="since2"></div>
       </div>
       <div class="panel" style="padding:4px">
         <dl class="kpis">
-          <div><dt>Nakit</dt><dd id="k-cash">—</dd></div>
-          <div><dt>Hisse/ETF'lerde</dt><dd id="k-inv">—</dd></div>
-          <div><dt>Açık pozisyon</dt><dd id="k-npos">—</dd></div>
-          <div><dt>Gerçekleşen kâr/zarar</dt><dd id="k-real">—</dd></div>
-          <div><dt>Aynı 300 $ SPY'da olsaydı</dt><dd id="k-bench">—</dd></div>
+          <div><dt id="k-cash-l">Nakit</dt><dd id="k-cash">—</dd></div>
+          <div><dt id="k-inv-l">Kaldıraç</dt><dd id="k-inv">—</dd></div>
+          <div><dt id="k-npos-l">Teminat tamponu</dt><dd id="k-npos">—</dd></div>
+          <div><dt id="k-real-l">Toplam işlem maliyeti</dt><dd id="k-real">—</dd></div>
+          <div><dt>Aynı para SPY'da olsaydı</dt><dd id="k-bench">—</dd></div>
           <div><dt>Endekse göre fark</dt><dd id="k-alpha">—</dd></div>
         </dl>
       </div>
@@ -274,8 +286,9 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
         <p class="chart-note" id="chartNote"></p>
       </div>
       <div class="panel">
-        <h3>Para nerede?</h3>
+        <h3>Maruziyet</h3>
         <div class="alloc-bar" id="allocBar" aria-hidden="true"></div>
+        <div class="exp-cap" id="expCap"></div>
         <ul class="alloc-list" id="allocList"><li class="muted">Veriler yükleniyor…</li></ul>
       </div>
     </div>
@@ -302,7 +315,7 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
   </section>
 
   <footer>
-    Bu bir simülasyondur: gerçek para ya da aracı kurum yok, yatırım tavsiyesi değildir. Kararları yapay zekâ değil, sabit kurallarla çalışan bir program verir (ilk günün alımlarını Claude yaptı). Fiyatlar Yahoo Finance'in 5 dakikalık verileridir (yfinance kütüphanesi ile); birkaç dakika gecikmeli olabilir. Bot GitHub Actions üzerinde ücretsiz çalışır: piyasa açılınca başlayan bir döngü kapanışa kadar 5 dakikada bir kontrol yapar; sayfa yaklaşık 10 dakikada bir güncellenir (işlem olursa hemen). Sayfa her dakika yeni veriyi kontrol eder. Zarar-kes seviyeleri bekleyen emir gibi işler: iki kontrol arasında fiyat bu seviyeye değerse, 5 dakikalık mumlardan tespit edilip o seviyeden satılmış sayılır.
+    Bu bir simülasyondur: gerçek para ya da aracı kurum yok, yatırım tavsiyesi değildir. Kararları yapay zekâ değil, sabit kurallarla çalışan bir program verir (ilk günün alımlarını Claude yaptı). Kredili hesap, açığa satış ve 3x kaldıraç simüle edilir; gerçekte 2.000 $'lık hesapta gece taşınan kaldıraç genellikle 2x ile sınırlıdır. Fiyatlar Yahoo Finance'in 5 dakikalık verileridir (yfinance); birkaç dakika gecikmeli olabilir. Kayma, SEC/FINRA ücretleri, kredi faizi ve açığa satış ödünç ücreti net değerden düşülür. Bot GitHub Actions üzerinde ücretsiz çalışır; piyasa açılınca başlayan döngü kapanışa kadar 5 dakikada bir kontrol yapar. Zarar-kes seviyeleri bekleyen emir gibi işler: iki kontrol arasında fiyat bu seviyeye değerse, 5 dakikalık mumlardan tespit edilip o seviyeden kapatılmış sayılır.
   </footer>
 </div>
 
@@ -346,22 +359,31 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
   var SERIES=["--s1","--s2","--s3","--s4","--s5","--s6"];
 
   /* ---------- summary ---------- */
+  function setKpi(id,label,value,small,cl){
+    $(id+"-l").textContent=label; var dd=$(id); clear(dd); dd.className=cl||"";
+    dd.appendChild(document.createTextNode(value)); if(small) dd.appendChild(el("small",{text:small}));
+  }
   function renderSummary(){
     var c=S.config||{}, p=S.portfolio;
-    var start = isNum(c.startCapital)?c.startCapital:300;
-    if(c.startDate) $("since").textContent="Başlangıç: "+dLong(c.startDate)+" · "+usd(start);
+    var start=isNum(c.startCapital)?c.startCapital:300;
+    var dep=p&&isNum(p.netDeposits)? p.netDeposits : start;
+    $("since").textContent="Yatırılan sermaye: "+usd(dep)+(c.startDate?" ("+dShort(c.startDate)+" "+usd(start)+(c.deposits||[]).map(function(d){return " + "+dShort(d.date)+" "+usd(d.amount);}).join("")+")":"");
     $("nextRun").textContent="5 dakikada bir (piyasa açıkken)";
     if(!p){ return; }
-    var total=p.totalValue, pl=total-start, plp=pl/start*100;
+    var total=p.totalValue, pl=isNum(p.totalPL)?p.totalPL:total-dep, twr=isNum(p.twrPct)?p.twrPct:pl/dep*100;
     $("total").textContent=usd(total);
-    var d=$("pl"); d.className="delta "+cls(pl); d.textContent=sgnUsd(pl)+"  "+pct(plp)+"  toplam";
-    $("k-cash").textContent=usd(p.cash);
-    $("k-inv").textContent=usd(p.positionsValue);
-    var n=(p.positions||[]).length; $("k-npos").textContent=String(n);
-    var rp=$("k-real"); rp.textContent=sgnUsd(p.realizedPL||0); rp.className=cls(p.realizedPL||0);
+    var d=$("pl"); d.className="delta "+cls(pl); d.textContent=sgnUsd(pl)+"  "+pct(twr)+"  toplam";
+    $("since2").textContent="Gerçekleşen kâr/zarar: "+sgnUsd(p.realizedPL||0)+" · Getiri yüzdesi zaman ağırlıklıdır (para eklemeleri getiri sayılmaz).";
+    var reg=(S.meta&&S.meta.regime)||{};
+    if(p.cash<0) setKpi("k-cash","Kredi borcu",usd(-p.cash),"Faiz yıllık %10","down");
+    else setKpi("k-cash","Nakit",usd(p.cash),null,null);
+    setKpi("k-inv","Kaldıraç",isNum(p.leverage)?fmtNum(p.leverage,2)+"x":"—","Sınır "+(isNum(reg.maxLev)?fmtNum(reg.maxLev,1)+"x":"—")+(reg.label?" · "+reg.label:""),null);
+    setKpi("k-npos","Teminat tamponu",isNum(p.marginBuffer)?usd(p.marginBuffer):"—","Gereken teminat "+(isNum(p.maintenanceReq)?usd(p.maintenanceReq):"—"),(isNum(p.marginBuffer)&&p.marginBuffer<0.1*total)?"down":null);
+    var co=p.costs||{}, ct=(co.slippage||0)+(co.fees||0)+(co.interest||0)+(co.borrow||0);
+    setKpi("k-real","Toplam işlem maliyeti",usd(ct),"Kayma "+usd(co.slippage||0)+" · ücret "+usd(co.fees||0)+" · faiz "+usd(co.interest||0)+" · ödünç "+usd(co.borrow||0),null);
     var bv=p.benchmarkValue, bk=$("k-bench");
     clear(bk); bk.appendChild(document.createTextNode(usd(bv)));
-    if(isNum(p.benchmarkPrice)) bk.appendChild(el("small",{text:"SPY "+fmtNum(p.benchmarkPrice,2)+" $"}));
+    if(isNum(p.benchmarkPrice)) bk.appendChild(el("small",{text:"SPY "+fmtNum(p.benchmarkPrice,2)+" $"+(isNum(p.benchmarkTwrPct)?" · "+pct(p.benchmarkTwrPct):"")}));
     var al=$("k-alpha"); var diff=isNum(bv)?total-bv:null; clear(al);
     al.appendChild(document.createTextNode(sgnUsd(diff))); al.className=cls(diff);
     if(isNum(diff)) al.appendChild(el("small",{text: diff>=0?"Endeksin önünde":"Endeksin gerisinde"}));
@@ -396,17 +418,18 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
     var st=last.status||"normal";
     pill.className="pill "+(st==="alarm"?"alarm":st==="uyari"?"uyari":"ok");
     pill.textContent= st==="alarm"?"Alarm":st==="uyari"?"Dikkat":"Normal";
-    meta.textContent="Son kontrol: "+dShort(last.at)+" "+tm(last.at)+" · SPY bugün "+pct(last.spyChangePct)+" · "+nextTxt;
+    meta.textContent="Son kontrol: "+dShort(last.at)+" "+tm(last.at)+" · SPY bugün "+pct(last.spyChangePct)+(isNum(last.leverage)?" · kaldıraç "+fmtNum(last.leverage,2)+"x":"")+(isNum(last.marginBuffer)?" · teminat tamponu "+usd(last.marginBuffer):"")+" · "+nextTxt;
     clear(sl);
     var ps=last.positions||[];
     if(!ps.length) sl.appendChild(el("li",{class:"muted small",text:"Açık pozisyon yok."}));
     ps.forEach(function(x){
       var dist=x.distancePct, w=Math.max(2,Math.min(100,dist/15*100));
       var col= dist<3?"var(--loss)":dist<6?"var(--warn)":"var(--gain)";
-      sl.appendChild(el("li",null, el("span",{class:"tk",text:x.ticker}),
+      var sh=x.side==="short";
+      sl.appendChild(el("li",null, el("span",{class:"tk",text:x.ticker,title:sh?"Short":"Long"}),
         el("span",{class:"meter",title:"Zarar-kes seviyesine uzaklık"}, el("span",{style:"width:"+w.toFixed(1)+"%;background:"+col})),
         el("span",{class:"d",text:"%"+fmtNum(dist,1)}),
-        el("span",{class:"lbl",text:fmtNum(x.price,2)+" $ → zarar-kes "+fmtNum(x.stopPrice,2)+" $ · bugün "+pct(x.dayChangePct)})));
+        el("span",{class:"lbl",text:(sh?"SHORT · ":"LONG · ")+fmtNum(x.price,2)+" $ → zarar-kes "+fmtNum(x.stopPrice,2)+" $"+(sh?" (yukarıda)":"")+" · bugün "+pct(x.dayChangePct)})));
     });
     clear(cl); $("checkHead").textContent=dLong(c.date)+" kontrolleri ("+es.length+")";
     es.slice().reverse().forEach(function(e){
@@ -485,50 +508,65 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
     }
     svg.addEventListener("mousemove",show); svg.addEventListener("touchstart",function(e){if(e.touches[0]) show(e.touches[0]);},{passive:true});
     svg.addEventListener("mouseleave",function(){tip.hidden=true; guide.style.opacity="0";});
-    $("chartNote").textContent = pts.length<4 ? "Grafik her işlem günü bir nokta ekler; kesikli çizgi aynı 300 $'ın S&P 500 (SPY) fonunda bekleseydi ne olacağını gösterir." : "Kesikli çizgi: aynı 300 $ başlangıçta SPY'a yatırılsaydı.";
+    var cd=(S.config&&S.config.deposits)||[];
+    $("chartNote").textContent = "Grafik her işlem günü bir nokta ekler. Kesikli çizgi: aynı para, yatırıldığı gün S&P 500 (SPY) fonuna konsaydı."+(cd.length? " "+cd.map(function(d){return dShort(d.date)+" "+usd(d.amount);}).join(", ")+" sermaye eklendi; iki çizgi de bu yüzden sıçrar.":"");
   }
 
   /* ---------- allocation ---------- */
+  var SH=["--sh1","--sh2","--sh3","--sh4"];
+  function expOf(x){ return isNum(x.exposure)? x.exposure : Math.abs(x.marketValue||0)*(x.lev||1); }
+  function dirOf(x){ return (x.side==="short" || /ters/.test(x.kind||""))? -1 : 1; }
   function renderAlloc(){
-    var p=S.portfolio; var bar=$("allocBar"), list=$("allocList"); clear(bar); clear(list);
+    var p=S.portfolio; var bar=$("allocBar"), list=$("allocList"), cap=$("expCap"); clear(bar); clear(list); clear(cap);
     if(!p){ list.appendChild(el("li",{class:"muted",text:"Henüz pozisyon yok."})); return; }
-    var items=(p.positions||[]).slice().sort(function(a,b){return b.marketValue-a.marketValue;}).map(function(x,i){return {name:x.ticker, desc:x.name, v:x.marketValue, color:"var("+SERIES[i%SERIES.length]+")"};});
-    items.push({name:"Nakit", desc:"Yatırılmayı bekleyen", v:p.cash, color:"var(--cash)"});
-    var tot=p.totalValue||items.reduce(function(a,b){return a+b.v;},0);
-    items.forEach(function(it){
-      var w=Math.max(0,it.v/tot*100);
-      bar.appendChild(el("span",{style:"width:"+w.toFixed(3)+"%;background:"+it.color,title:it.name}));
-      list.appendChild(el("li",null, el("span",{class:"dot",style:"background:"+it.color}),
-        el("span",{class:"nm"}, el("b",{text:it.name}), el("span",{class:"muted small",text:"  "+(it.desc||"")})),
-        el("span",{class:"v",text:usd(it.v)}), el("span",{class:"p",text:"%"+fmtNum(w,1)})));
+    var eq=p.totalValue||1, reg=(S.meta&&S.meta.regime)||{}, maxLev=isNum(reg.maxLev)?reg.maxLev:3;
+    var pos=(p.positions||[]).slice().sort(function(a,b){ return (dirOf(b)-dirOf(a)) || (expOf(b)-expOf(a)); });
+    var gross=pos.reduce(function(a,x){return a+expOf(x);},0);
+    var scale=Math.max(gross, maxLev*eq);
+    var li=0, si=0;
+    pos.forEach(function(x){
+      var dn=dirOf(x), color= dn>0 ? "var("+SERIES[(li++)%SERIES.length]+")" : "var("+SH[(si++)%SH.length]+")";
+      var e=expOf(x);
+      bar.appendChild(el("span",{style:"width:"+(e/scale*100).toFixed(3)+"%;background:"+color,title:x.ticker}));
+      list.appendChild(el("li",null, el("span",{class:"dot",style:"background:"+color}),
+        el("span",{class:"nm"}, el("span",{class:"side "+(x.side==="short"?"short":"long"),text:x.side==="short"?"SHORT":"LONG"}), " ", el("b",{text:x.ticker}),
+          (x.lev||1)>1? el("span",{class:"side lev",text:(dn<0?"−":"")+x.lev+"x"}):null),
+        el("span",{class:"v",text:usd(e)}), el("span",{class:"p",text:fmtNum(e/eq,2)+"x"})));
     });
+    var cashLbl=p.cash<0?"Kredi borcu":"Nakit";
+    list.appendChild(el("li",null, el("span",{class:"dot",style:"background:var(--cash)"}), el("span",{class:"nm"}, el("b",{text:cashLbl})),
+      el("span",{class:"v "+(p.cash<0?"down":""),text:usd(Math.abs(p.cash))}), el("span",{class:"p",text:""})));
+    var lx=pos.filter(function(x){return dirOf(x)>0;}).reduce(function(a,x){return a+expOf(x);},0);
+    var sx=gross-lx;
+    cap.appendChild(el("span",{text:"Long "+usd(lx)+" · Short "+usd(sx)}));
+    cap.appendChild(el("span",{text:"Toplam "+fmtNum(gross/eq,2)+"x / sınır "+fmtNum(maxLev,1)+"x"}));
   }
 
   /* ---------- positions ---------- */
   function renderPositions(){
     var p=S.portfolio, wrap=$("posWrap"); clear(wrap);
     if(!p){ wrap.appendChild(el("div",{class:"empty",text:"Henüz portföy verisi yok. İlk günlük çalıştırmadan sonra burada görünecek."})); return; }
-    var pos=(p.positions||[]).slice().sort(function(a,b){return b.marketValue-a.marketValue;});
+    var pos=(p.positions||[]).slice().sort(function(a,b){ return (dirOf(b)-dirOf(a)) || (expOf(b)-expOf(a)); });
     $("posAsOf").textContent = p.asOf ? "Fiyatlar: "+dShort(p.asOf)+" "+tm(p.asOf) : "";
     if(!pos.length){ wrap.appendChild(el("div",{class:"empty",text:"Şu an tüm para nakitte. Açık pozisyon yok."})); return; }
     var tb=el("tbody");
     pos.forEach(function(x){
-      var w=x.marketValue/p.totalValue*100;
+      var sh=x.side==="short";
       tb.appendChild(el("tr",null,
         el("td",null, el("span",{class:"tk",text:x.ticker}), el("span",{class:"tk-name",text:(x.name||"")+(x.kind?" · "+x.kind:"")})),
+        el("td",null, el("span",{class:"side "+(sh?"short":"long"),text:sh?"SHORT":"LONG"}), (x.lev||1)>1? el("span",{class:"side lev",text:(dirOf(x)<0?"−":"")+x.lev+"x"}):null),
         el("td",null, fmtNum(x.shares,4)),
         el("td",null, fmtNum(x.avgCost,2)+" $"),
         el("td",null, fmtNum(x.lastPrice,2)+" $", el("span",{class:"sub",text:tm(x.lastPriceAt)})),
-        el("td",null, usd(x.marketValue)),
+        el("td",null, usd(expOf(x)), el("span",{class:"sub",text:fmtNum(expOf(x)/p.totalValue,2)+"x net değer"})),
         el("td",{class:cls(x.unrealized)}, sgnUsd(x.unrealized), el("span",{class:"sub "+cls(x.unrealized),text:pct(x.unrealizedPct)})),
-        el("td",null, "%"+fmtNum(w,1)),
         el("td",null, isNum(x.stopPrice)? fmtNum(x.stopPrice,2)+" $":"—", el("span",{class:"sub",text: x.openedAt?"Giriş "+dShort(x.openedAt):""}))
       ));
       if(x.thesis) tb.appendChild(el("tr",{class:"thesis"}, el("td",{colspan:"8"}, el("b",{text:"Tez: "}), x.thesis)));
     });
     var th=function(t){return el("th",{scope:"col",text:t});};
     wrap.appendChild(el("div",{class:"tbl-wrap"}, el("table",null,
-      el("thead",null, el("tr",null, th("Sembol"),th("Adet"),th("Ort. maliyet"),th("Son fiyat"),th("Değer"),th("Kâr/zarar"),th("Ağırlık"),th("Zarar-kes"))), tb)));
+      el("thead",null, el("tr",null, th("Sembol"),th("Yön"),th("Adet"),th("Ort. maliyet"),th("Son fiyat"),th("Maruziyet"),th("Kâr/zarar"),th("Zarar-kes"))), tb)));
   }
 
   /* ---------- trades ---------- */
@@ -543,21 +581,22 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
       var d=parseD(k);
       wrap.appendChild(el("div",{class:"day-label",text:(d?fmtDate.format(d)+", "+fmtWeekday.format(d):k)+" · "+groups[k].length+" işlem"}));
       groups[k].forEach(function(x){
-        var buy=x.action==="BUY";
+        var A={BUY:["ALIŞ","buy"],SELL:["SATIŞ","sell"],SHORT:["AÇIĞA SATIŞ","short"],COVER:["SHORT KAPATMA","cover"],DEPOSIT:["PARA YATIRMA","dep"]}[x.action]||[x.action,"buy"];
+        var dep=x.action==="DEPOSIT";
         var line=el("div",{class:"line1"},
-          el("span",{class:"tk",text:x.ticker}),
-          el("span",{class:"calc",text:fmtNum(x.shares,4)+" adet × "+fmtNum(x.execPrice,2)+" $ = "+usd(x.value)}),
+          el("span",{class:"tk",text:dep?"Sermaye":x.ticker}),
+          el("span",{class:"calc",text: dep? "+"+usd(x.value)+" eklendi" : fmtNum(x.shares,4)+" adet × "+fmtNum(x.execPrice,2)+" $ = "+usd(x.value)}),
           x.rule? el("span",{class:"rule",text:x.rule}) : null,
           el("span",{class:"rule",text: x.by==="claude"?"Claude":"Bot"}),
           isNum(x.realizedPL)? el("span",{class:"calc "+cls(x.realizedPL),text:"Gerçekleşen: "+sgnUsd(x.realizedPL)}) : null);
-        var meta=el("div",{class:"meta"},
+        var meta=el("div",{class:"meta"}, dep? "İşlem saati "+tm(x.ts) :
           "İşlem saati "+tm(x.ts)+" · Kotasyon "+fmtNum(x.quotePrice,2)+" $ ("+(x.priceSource&&x.priceSource.title?x.priceSource.title:"kaynak")+", "+tm(x.quoteAt)+")"+
-          (isNum(x.slippagePct)?" · kayma %"+fmtNum(x.slippagePct,2):""));
+          (isNum(x.slippagePct)?" · kayma %"+fmtNum(x.slippagePct,2):"")+(x.fees>0?" · SEC/FINRA ücreti "+usd(x.fees):""));
         var chips=el("div",{class:"src-chips"});
         if(x.priceSource) chips.appendChild(safeLink(x.priceSource));
         (x.sources||[]).forEach(function(s){chips.appendChild(safeLink(s));});
         wrap.appendChild(el("article",{class:"trade"},
-          el("span",{class:"chip "+(buy?"buy":"sell"),text:buy?"ALIŞ":"SATIŞ"}),
+          el("span",{class:"chip "+A[1],text:A[0]}),
           line, meta, x.reason? el("p",{class:"why",text:x.reason}):null, chips));
       });
     });
@@ -587,7 +626,7 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
           el("div",{class:"tbl-wrap"}, el("table",{class:"src-table"}, el("thead",null, el("tr",null, el("th",{text:"Kaynak"}),el("th",{text:"Yayıncı"}),el("th",{text:"Ne için kullanıldı"}))), tb))));
       }
       if(x.ranking&&x.ranking.length){
-        var held={}; (S.portfolio&&S.portfolio.positions||[]).forEach(function(p){held[p.ticker]=1;});
+        var held={}; (S.portfolio&&S.portfolio.positions||[]).forEach(function(p){ if(p.side!=="short") held[p.ticker]=1;});
         var rb=el("tbody");
         x.ranking.forEach(function(r){
           rb.appendChild(el("tr",{class:held[r.ticker]?"held":null},
@@ -598,9 +637,25 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
             el("td",{class:"l small",text: r.eligible? "Uygun" : r.why})));
         });
         var th2=function(t){return el("th",{text:t});};
-        body.appendChild(el("div",null, el("h4",{text:"Momentum sıralaması (ilk 15)"}),
+        body.appendChild(el("div",null, el("h4",{text:"Long adayları: momentum sıralaması (ilk 15)"}),
           el("p",{class:"small muted",text:"Puan = 0,2×1 ay + 0,5×3 ay + 0,3×6 ay getiri. Mavi satırlar şu an portföyde."}),
           el("div",{class:"tbl-wrap"}, el("table",{class:"rank-table"}, el("thead",null, el("tr",null, th2("Sıra"),th2("Sembol"),th2("Fiyat $"),th2("1 ay"),th2("3 ay"),th2("6 ay"),th2("Puan"),th2("Durum"))), rb))));
+      }
+      if(x.shortRanking&&x.shortRanking.length){
+        var sheld={}; (S.portfolio&&S.portfolio.positions||[]).forEach(function(p){ if(p.side==="short") sheld[p.ticker]=1;});
+        var sb=el("tbody");
+        x.shortRanking.forEach(function(r){
+          sb.appendChild(el("tr",{class:sheld[r.ticker]?"held":null},
+            el("td",{text:String(r.srank)}),
+            el("td",{class:"l"}, el("b",{text:r.ticker}), el("span",{class:"muted small",text:"  "+(r.name||"")})),
+            el("td",{text:fmtNum(r.price,2)}), el("td",{class:cls(r.r21),text:pct(r.r21)}), el("td",{class:cls(r.r63),text:pct(r.r63)}),
+            el("td",{class:cls(r.r126),text:pct(r.r126)}), el("td",{text:fmtNum(r.score,1)}),
+            el("td",{class:"l small",text:"50 g. ort. "+fmtNum(r.sma50,2)+" $"})));
+        });
+        var th3=function(t){return el("th",{text:t});};
+        body.appendChild(el("div",null, el("h4",{text:"Short adayları (en zayıf 10)"}),
+          el("p",{class:"small muted",text:"Fiyatı 10 $ üstü, 50 günlük ortalamanın altında, 1 ve 3 aylık getirisi negatif hisseler; puanı en düşük olan en zayıftır. Mavi satırlar şu an short."}),
+          el("div",{class:"tbl-wrap"}, el("table",{class:"rank-table"}, el("thead",null, el("tr",null, th3("Sıra"),th3("Sembol"),th3("Fiyat $"),th3("1 ay"),th3("3 ay"),th3("6 ay"),th3("Puan"),th3("Not"))), sb))));
       }
       if(x.nextSteps) body.appendChild(el("div",null, el("h4",{text:"Sonraki adım"}), el("p",{text:x.nextSteps})));
       var sum=el("summary",null, el("h3",{text:dLong(x.date)+(x.at?" · "+tm(x.at):"")}), x.headline? el("span",{class:"muted",text:x.headline}):null);
@@ -614,7 +669,7 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
     var c=S.config, w=$("rulesWrap"); clear(w);
     if(!c){ w.appendChild(el("span",{class:"muted",text:"Kurallar henüz yüklenmedi."})); return; }
     var dl=el("dl");
-    [["Strateji",c.strategyName],["Özet",c.strategySummary],["Başlangıç",c.startDate? dLong(c.startDate)+" · "+usd(c.startCapital):null],["Takvim",c.schedule],["Yürütme",c.execution],["Kıyas",c.benchmark? c.benchmark.ticker+" · başlangıç fiyatı "+fmtNum(c.benchmark.startPrice,2)+" $":null]]
+    [["Strateji",c.strategyName],["Özet",c.strategySummary],["Başlangıç",c.startDate? dLong(c.startDate)+" · "+usd(c.startCapital)+(c.deposits||[]).map(function(d){return " · "+dLong(d.date)+" +"+usd(d.amount);}).join(""):null],["Kaldıraç sınırı",isNum(c.maxLeverage)? fmtNum(c.maxLeverage,1)+"x (rejime göre 1,5x–3x)":null],["Takvim",c.schedule],["Yürütme",c.execution],["Kıyas",c.benchmark? c.benchmark.ticker+" · başlangıç fiyatı "+fmtNum(c.benchmark.startPrice,2)+" $":null]]
       .forEach(function(r){ if(r[1]){ dl.appendChild(el("dt",{text:r[0]})); dl.appendChild(el("dd",{text:r[1]})); } });
     w.appendChild(dl);
     if(c.rules&&c.rules.length){ var ol=el("ol"); c.rules.forEach(function(r){ol.appendChild(el("li",{text:r}));}); w.appendChild(el("h3",{text:"Kurallar",style:"margin:6px 0 10px"})); w.appendChild(ol); }

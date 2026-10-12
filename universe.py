@@ -42,6 +42,27 @@ ETFS = {"QQQ", "SMH", "XLE", "XOP", "XLF", "XLV", "XLI", "XLU", "XLK", "XLY", "X
 
 UNIVERSE = sorted(NAMES.keys())
 
+# Leveraged and inverse ETFs (not ranked; used as index sleeves by market regime).
+# ticker -> (underlying ETF, leverage factor; negative = inverse)
+LEVERAGED = {
+    "TQQQ": ("QQQ", 3), "UPRO": ("SPY", 3), "SOXL": ("SMH", 3),
+    "SQQQ": ("QQQ", -3), "SPXU": ("SPY", -3), "SOXS": ("SMH", -3),
+}
+NAMES.update({
+    "TQQQ": "ProShares UltraPro QQQ (3x Nasdaq 100)", "UPRO": "ProShares UltraPro S&P 500 (3x)",
+    "SOXL": "Direxion Daily Semiconductor Bull 3x", "SQQQ": "ProShares UltraPro Short QQQ (−3x Nasdaq 100)",
+    "SPXU": "ProShares UltraPro Short S&P 500 (−3x)", "SOXS": "Direxion Daily Semiconductor Bear 3x (−3x)",
+    "SPY": "SPDR S&P 500 ETF", "DIA": "SPDR Dow Jones ETF",
+})
+ETFS |= set(LEVERAGED)
+BULL_ETF = {u: t for t, (u, f) in LEVERAGED.items() if f > 0}   # QQQ -> TQQQ
+BEAR_ETF = {u: t for t, (u, f) in LEVERAGED.items() if f < 0}   # QQQ -> SQQQ
+
+
+def lev_of(t):
+    """Absolute leverage factor of an instrument (1 for ordinary stocks/ETFs)."""
+    return abs(LEVERAGED[t][1]) if t in LEVERAGED else 1
+
 # Market indicators shown in the daily report (not traded)
 INDICATORS = [
     ("SPY", "S&P 500 (SPY)"), ("QQQ", "Nasdaq 100 (QQQ)"), ("DIA", "Dow Jones (DIA)"), ("IWM", "Russell 2000 (IWM)"),
@@ -55,6 +76,9 @@ def name_of(t):
 
 
 def kind_of(t):
+    if t in LEVERAGED:
+        f = LEVERAGED[t][1]
+        return ("3x ETF" if f > 0 else "−3x ters ETF")
     return "ETF" if t in ETFS else "Hisse"
 
 
