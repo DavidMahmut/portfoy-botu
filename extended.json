@@ -1,0 +1,153 @@
+{
+ "asOf": "2026-10-12T17:09:15-04:00",
+ "session": "post",
+ "sessionLabel": "Piyasa sonrası (16:00–20:00 ET)",
+ "equity": 3008.08,
+ "totalImpact": -3.12,
+ "totalImpactPct": -0.1,
+ "items": [
+  {
+   "ticker": "PLTR",
+   "name": "Palantir Technologies",
+   "side": "long",
+   "lev": 1,
+   "shares": 3.7788,
+   "stopPrice": 187.39,
+   "refClose": 209.0073,
+   "refAt": "2026-10-12T15:55:00-04:00",
+   "price": 208.68,
+   "at": "2026-10-12T17:05:00-04:00",
+   "changePct": -0.16,
+   "impact": -1.24,
+   "beyondStop": false
+  },
+  {
+   "ticker": "DELL",
+   "name": "Dell Technologies",
+   "side": "long",
+   "lev": 1,
+   "shares": 1.3649,
+   "stopPrice": 528.62,
+   "refClose": 576.47,
+   "refAt": "2026-10-12T15:55:00-04:00",
+   "price": 576.79,
+   "at": "2026-10-12T17:08:28-04:00",
+   "changePct": 0.06,
+   "impact": 0.44,
+   "beyondStop": false
+  },
+  {
+   "ticker": "CRWD",
+   "name": "CrowdStrike",
+   "side": "long",
+   "lev": 1,
+   "shares": 2.9796,
+   "stopPrice": 248.31,
+   "refClose": 263.02,
+   "refAt": "2026-10-12T15:55:00-04:00",
+   "price": 263.1,
+   "at": "2026-10-12T17:05:00-04:00",
+   "changePct": 0.03,
+   "impact": 0.24,
+   "beyondStop": false
+  },
+  {
+   "ticker": "SNOW",
+   "name": "Snowflake",
+   "side": "long",
+   "lev": 1,
+   "shares": 2.1874,
+   "stopPrice": 329.78,
+   "refClose": 360.35,
+   "refAt": "2026-10-12T15:55:00-04:00",
+   "price": 360.01,
+   "at": "2026-10-12T16:25:00-04:00",
+   "changePct": -0.09,
+   "impact": -0.74,
+   "beyondStop": false
+  },
+  {
+   "ticker": "APP",
+   "name": "AppLovin",
+   "side": "short",
+   "lev": 1,
+   "shares": 1.7497,
+   "stopPrice": 293.21,
+   "refClose": 270.84,
+   "refAt": "2026-10-12T15:55:00-04:00",
+   "price": 271.14,
+   "at": "2026-10-12T17:00:00-04:00",
+   "changePct": 0.11,
+   "impact": -0.52,
+   "beyondStop": false
+  },
+  {
+   "ticker": "NRG",
+   "name": "NRG Energy",
+   "side": "short",
+   "lev": 1,
+   "shares": 4.5073,
+   "stopPrice": 113.83,
+   "refClose": 106.35,
+   "refAt": "2026-10-12T15:55:00-04:00",
+   "price": 106.37,
+   "at": "2026-10-12T16:30:00-04:00",
+   "changePct": 0.02,
+   "impact": -0.09,
+   "beyondStop": false
+  },
+  {
+   "ticker": "VRT",
+   "name": "Vertiv",
+   "side": "short",
+   "lev": 1,
+   "shares": 1.9789,
+   "stopPrice": 259.25,
+   "refClose": 239.41,
+   "refAt": "2026-10-12T15:55:00-04:00",
+   "price": 239.57,
+   "at": "2026-10-12T16:55:00-04:00",
+   "changePct": 0.07,
+   "impact": -0.32,
+   "beyondStop": false
+  },
+  {
+   "ticker": "SOXL",
+   "name": "Direxion Daily Semiconductor Bull 3x",
+   "side": "long",
+   "lev": 3,
+   "shares": 5.9149,
+   "stopPrice": 109.23,
+   "refClose": 128.35,
+   "refAt": "2026-10-12T15:55:00-04:00",
+   "price": 128.2,
+   "at": "2026-10-12T17:05:00-04:00",
+   "changePct": -0.12,
+   "impact": -0.89,
+   "beyondStop": false
+  }
+ ],
+ "market": [
+  {
+   "ticker": "SPY",
+   "label": "S&P 500 (SPY)",
+   "refClose": 778.07,
+   "price": 778.04,
+   "at": "2026-10-12T17:05:00-04:00",
+   "changePct": -0.0
+  },
+  {
+   "ticker": "QQQ",
+   "label": "Nasdaq 100 (QQQ)",
+   "refClose": 746.02,
+   "price": 745.86,
+   "at": "2026-10-12T17:09:12-04:00",
+   "changePct": -0.02
+  }
+ ],
+ "note": "Yalnızca izleme: bot bu saatlerde işlem yapmaz, zarar-kes emirleri normal seansta işler. Seans dışında işlem hacmi düşüktür, fiyatlar sert oynayabilir ve ertesi açılış farklı olabilir.",
+ "source": {
+  "title": "Yahoo Finance 5 dakikalık seans dışı mumlar (yfinance, prepost)",
+  "url": "https://github.com/ranaroussi/yfinance"
+ }
+}
