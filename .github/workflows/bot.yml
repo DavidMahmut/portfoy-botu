@@ -57,23 +57,28 @@ jobs:
           git config user.email "portfoy-bot@users.noreply.github.com"
           save() {
             git add ledger.json
-            if git diff --cached --quiet; then return 0; fi
+            if git diff --cached --quiet; then return 1; fi
             git commit -q -m "Bot: $(TZ=America/New_York date '+%Y-%m-%d %H:%M') ET"
             for i in 1 2 3; do
               if git pull -q --rebase && git push -q; then return 0; fi
               sleep 10
             done
             echo "::warning::Sonuçlar gönderilemedi"
+            return 1
           }
           deadline=$((SECONDS + 345 * 60))
           last_save=$SECONDS
+          saved_once=0
           while true; do
             python trader.py || echo "::warning::trader.py hata verdi"
-            if [ -f .traded ] || [ $((SECONDS - last_save)) -ge 590 ]; then
-              save; last_save=$SECONDS; rm -f .traded
+            # save at once on the first market run (so the page shows the bot is up),
+            # then every ~10 minutes, and immediately after any trade
+            if [ -f .traded ] || [ "$saved_once" = 0 ] || [ $((SECONDS - last_save)) -ge 590 ]; then
+              if save; then saved_once=1; last_save=$SECONDS; fi
+              rm -f .traded
             fi
-            if [ "$BOT_FORCE" = "1" ]; then save; break; fi
+            if [ "$BOT_FORCE" = "1" ]; then save || true; break; fi
             hm=$((10#$(TZ=America/New_York date +%H%M)))
-            if [ "$hm" -ge 1610 ] || [ "$SECONDS" -ge "$deadline" ]; then save; break; fi
+            if [ "$hm" -ge 1610 ] || [ "$SECONDS" -ge "$deadline" ]; then save || true; break; fi
             sleep 300
           done
