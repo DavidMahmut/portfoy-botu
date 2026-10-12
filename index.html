@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>2.000 $ Portföy Defteri</title>
+<title>3.000 $ Portföy Defteri</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,500..800&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
@@ -195,6 +195,31 @@ h4.mini{margin:0 0 8px;font-size:12px;text-transform:uppercase;letter-spacing:.0
 .rank-table tr.held td{background:var(--accent-soft)}
 .rank-table .no{color:var(--muted)}
 .empty{padding:22px;border:1px dashed var(--line);border-radius:8px;color:var(--muted);text-align:center;background:var(--panel)}
+.trade.cancelled{opacity:.62;border-style:dashed}
+.trade.cancelled .calc{text-decoration:line-through}
+.chip.cx{background:var(--bg);color:var(--muted);box-shadow:inset 0 0 0 1.5px var(--line)}
+.cancel-note{grid-column:2;font-size:13px;color:var(--loss);margin:0}
+.tag{display:inline-block;font-family:var(--f-mono);font-size:11px;font-weight:600;padding:1px 7px;border-radius:4px;background:var(--warn-soft);color:var(--warn)}
+details.run.cancelled{opacity:.6}
+.law-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px}
+.facts{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:7px 16px;margin:10px 0 0;font-size:14px}
+.facts dt{color:var(--muted)}
+.facts dd{margin:0;font-family:var(--f-mono);font-variant-numeric:tabular-nums;text-align:right;font-weight:600;overflow-wrap:anywhere}
+.facts dd.ok{color:var(--gain)} .facts dd.no{color:var(--loss)}
+.gauge{height:10px;border-radius:5px;background:var(--bg);overflow:hidden;margin-top:12px;position:relative}
+.gauge span{position:absolute;inset:0 auto 0 0;background:var(--accent);border-radius:5px}
+.gauge-lbl{display:flex;flex-wrap:wrap;gap:4px 12px;justify-content:space-between;font-family:var(--f-mono);font-size:12px;color:var(--muted);margin-top:4px}
+.note{font-size:13px;color:var(--muted);margin:12px 0 0;max-width:70ch}
+.clog{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.clog li{display:grid;grid-template-columns:96px minmax(0,1fr);gap:4px 14px;padding:12px 0;border-top:1px solid var(--line)}
+.clog li:first-child{border-top:none;padding-top:4px}
+.clog .when{font-family:var(--f-mono);font-size:12px;color:var(--muted)}
+.clog .ttl{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:baseline;font-weight:600}
+.clog p{grid-column:2;margin:0;font-size:14px;max-width:80ch}
+.clog .src{grid-column:2;font-size:12px}
+.lawsrc{margin:8px 0 0;padding-left:20px;display:flex;flex-direction:column;gap:6px;font-size:14px}
+@media (max-width:820px){.law-grid{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:520px){.clog li{grid-template-columns:minmax(0,1fr)}.clog p,.clog .src{grid-column:1}.trade .cancel-note{grid-column:1}}
 footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);padding-top:14px;max-width:90ch}
 
 @media (max-width:820px){
@@ -219,8 +244,8 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
   <header class="mast">
     <div>
       <p class="eyebrow">Sanal yatırım deneyi · kurallara dayalı bot</p>
-      <h1>2.000 $ Portföy Defteri</h1>
-      <p class="sub" id="sub">Sanal kredili hesap: güçlü hisselerde long, zayıf hisselerde short, piyasa rejimine göre 3x'e kadar kaldıraç. Bot piyasa açıkken 5 dakikada bir Yahoo Finance verileriyle zarar-kes emirlerini, frenleri ve teminatı kontrol eder; her gün momentum sıralamasına göre pozisyonları yeniler. Her işlemin gerekçesi, maliyeti ve verinin kaynağı aşağıda.</p>
+      <h1 id="h1">3.000 $ Portföy Defteri</h1>
+      <p class="sub" id="sub">Sanal bir ABD kredili hesabı (Interactive Brokers modeli): güçlü hisselerde long, zayıf hisselerde short. Yalnızca gerçekte yapılabilecek işlemler: Reg T teminatı, FINRA 2.000 $ asgari özsermaye ve bakım teminatı, SEC açığa satış kuralı, gerçek komisyon ve faiz. Bot piyasa açıkken 5 dakikada bir Yahoo Finance verileriyle kontrol eder; her işlemin gerekçesi, maliyeti, kaynağı ve hangi kuralın devreye girdiği aşağıda.</p>
     </div>
     <div class="status">
       <span class="pill" id="statusPill">Veriler yükleniyor</span>
@@ -234,6 +259,7 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
     <a href="#pozisyonlar">Pozisyonlar</a>
     <a href="#islemler">İşlemler</a>
     <a href="#gunluk">Günlük rapor</a>
+    <a href="#mevzuat">Mevzuat ve vergi</a>
     <a href="#kurallar">Strateji ve kurallar</a>
   </nav>
 
@@ -251,10 +277,13 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
         <dl class="kpis">
           <div><dt id="k-cash-l">Nakit</dt><dd id="k-cash">—</dd></div>
           <div><dt id="k-inv-l">Kaldıraç</dt><dd id="k-inv">—</dd></div>
-          <div><dt id="k-npos-l">Teminat tamponu</dt><dd id="k-npos">—</dd></div>
           <div><dt id="k-real-l">Toplam işlem maliyeti</dt><dd id="k-real">—</dd></div>
+          <div><dt id="k-bp-l">Alım gücü (Reg T)</dt><dd id="k-bp">—</dd></div>
+          <div><dt id="k-npos-l">Bakım teminatı tamponu</dt><dd id="k-npos">—</dd></div>
+          <div><dt id="k-elig-l">Kredi ve short yetkisi</dt><dd id="k-elig">—</dd></div>
           <div><dt>Aynı para SPY'da olsaydı</dt><dd id="k-bench">—</dd></div>
           <div><dt>Endekse göre fark</dt><dd id="k-alpha">—</dd></div>
+          <div><dt id="k-tax-l">Vergi görünümü</dt><dd id="k-tax">—</dd></div>
         </dl>
       </div>
     </div>
@@ -309,13 +338,40 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
     <div id="runWrap" class="day-group"><div class="empty">Günlük raporlar yükleniyor…</div></div>
   </section>
 
+  <section id="mevzuat" aria-labelledby="h-mev">
+    <div class="sec-head"><h2 id="h-mev">Mevzuat ve vergi</h2><span class="small muted">Gerçek bir hesapta hangi kural neyi sınırlardı</span></div>
+    <div class="law-grid">
+      <div class="panel">
+        <h3>Hesap durumu (Reg T ve FINRA 4210)</h3>
+        <dl class="facts" id="regtFacts"><dt>Veriler yükleniyor…</dt><dd></dd></dl>
+        <div class="gauge" aria-hidden="true"><span id="regtGauge" style="width:0"></span></div>
+        <div class="gauge-lbl"><span id="regtGaugeL">Başlangıç teminatı / özsermaye</span><span id="regtGaugeR">—</span></div>
+        <p class="note" id="regtNote">Başlangıç teminatı yeni emir verirken, bakım teminatı her an aranır. Başlangıç teminatı özsermayeyi aşacaksa aracı kurum emri reddeder; özsermaye bakım teminatının altına inerse pozisyon kapatır.</p>
+      </div>
+      <div class="panel">
+        <h3 id="taxHead">Vergi görünümü</h3>
+        <dl class="facts" id="taxFacts"><dt>Veriler yükleniyor…</dt><dd></dd></dl>
+        <p class="note">Öğrenme amaçlı, basitleştirilmiş ABD görünümü; vergi tavsiyesi değildir. Bir yıl veya daha kısa tutulan pozisyonların kazancı kısa vadelidir ve normal gelir gibi vergilenir; short pozisyonların kazancı da kısa vadeli sayılır. Net sermaye zararının yılda en fazla 3.000 $'ı diğer gelirden düşülebilir, fazlası sonraki yıllara devreder. Aracı kurum bunları yıl sonunda Form 1099-B ve 1099-DIV ile bildirir.</p>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="sec-head"><h3>Mevzuat günlüğü</h3><span class="small muted" id="clogCount"></span></div>
+      <p class="small muted" style="margin:4px 0 10px">Botun kararını bir kuralın sınırladığı, şekillendirdiği ya da bir yasal sonucun (wash sale, temettü, teminat çağrısı) doğduğu her an.</p>
+      <ol class="clog" id="clog"><li class="muted small">Henüz kayıt yok.</li></ol>
+    </div>
+    <div class="panel">
+      <h3>Yasal kaynaklar</h3>
+      <ul class="lawsrc" id="lawSrc"><li class="muted">Yükleniyor…</li></ul>
+    </div>
+  </section>
+
   <section id="kurallar" aria-labelledby="h-kur" class="rules">
     <h2 id="h-kur">Strateji ve kurallar</h2>
     <div class="panel" id="rulesWrap"><span class="muted">Kurallar yükleniyor…</span></div>
   </section>
 
   <footer>
-    Bu bir simülasyondur: gerçek para ya da aracı kurum yok, yatırım tavsiyesi değildir. Kararları yapay zekâ değil, sabit kurallarla çalışan bir program verir (ilk günün alımlarını Claude yaptı). Kredili hesap, açığa satış ve 3x kaldıraç simüle edilir; gerçekte 2.000 $'lık hesapta gece taşınan kaldıraç genellikle 2x ile sınırlıdır. Fiyatlar Yahoo Finance'in 5 dakikalık verileridir (yfinance); birkaç dakika gecikmeli olabilir. Kayma, SEC/FINRA ücretleri, kredi faizi ve açığa satış ödünç ücreti net değerden düşülür. Bot GitHub Actions üzerinde ücretsiz çalışır; piyasa açılınca başlayan döngü kapanışa kadar 5 dakikada bir kontrol yapar. Zarar-kes seviyeleri bekleyen emir gibi işler: iki kontrol arasında fiyat bu seviyeye değerse, 5 dakikalık mumlardan tespit edilip o seviyeden kapatılmış sayılır.
+    Bu bir simülasyondur: gerçek para ya da aracı kurum yok, yatırım veya vergi tavsiyesi değildir. Kararları yapay zekâ değil, sabit kurallarla çalışan bir program verir (ilk günün alımlarını Claude yaptı). Hesap, Interactive Brokers'ta (IBKR Pro, Tiered) açılmış bir ABD kredili hesabı gibi modellenir: Reg T başlangıç teminatı, FINRA 4210 bakım teminatı ve 2.000 $ asgari özsermaye, SEC Rule 201, IBKR komisyonu, SEC/FINRA satış ücretleri, kredi faizi ve ödünç ücreti uygulanır. Basitleştirmeler: ödünç bulma (locate) her zaman başarılı sayılır, temettüler hak kesim gününde nakde geçer, emirler 5 dakikalık mum fiyatından %0,05 kaymayla gerçekleşir. Fiyatlar Yahoo Finance'in 5 dakikalık verileridir (yfinance); birkaç dakika gecikmeli olabilir. Bot GitHub Actions üzerinde ücretsiz çalışır; piyasa açılınca başlayan döngü kapanışa kadar 5 dakikada bir kontrol yapar. Zarar-kes seviyeleri bekleyen emir gibi işler: iki kontrol arasında fiyat bu seviyeye değerse, 5 dakikalık mumlardan tespit edilip o seviyeden kapatılmış sayılır.
   </footer>
 </div>
 
@@ -323,7 +379,7 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
 (function(){
   "use strict";
   var TZ = "America/New_York";
-  var S = {config:null, portfolio:null, meta:{}, trades:[], snapshots:[], runs:[], checks:null, err:null};
+  var S = {config:null, portfolio:null, meta:{}, trades:[], snapshots:[], runs:[], checks:null, compliance:[], tax:{}, err:null};
   var fmtUSD = new Intl.NumberFormat("tr-TR",{style:"currency",currency:"USD",minimumFractionDigits:2,maximumFractionDigits:2});
   var fmtNum = function(n,d){return new Intl.NumberFormat("tr-TR",{minimumFractionDigits:d,maximumFractionDigits:d}).format(n);};
   var fmtDate = new Intl.DateTimeFormat("tr-TR",{day:"numeric",month:"long",year:"numeric",timeZone:TZ});
@@ -370,17 +426,25 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
     $("since").textContent="Yatırılan sermaye: "+usd(dep)+(c.startDate?" ("+dShort(c.startDate)+" "+usd(start)+(c.deposits||[]).map(function(d){return " + "+dShort(d.date)+" "+usd(d.amount);}).join("")+")":"");
     $("nextRun").textContent="5 dakikada bir (piyasa açıkken)";
     if(!p){ return; }
+    if(isNum(dep)){ var ttl=fmtNum(dep,0)+" $ Portföy Defteri"; $("h1").textContent=ttl; document.title=ttl; }
     var total=p.totalValue, pl=isNum(p.totalPL)?p.totalPL:total-dep, twr=isNum(p.twrPct)?p.twrPct:pl/dep*100;
     $("total").textContent=usd(total);
     var d=$("pl"); d.className="delta "+cls(pl); d.textContent=sgnUsd(pl)+"  "+pct(twr)+"  toplam";
     $("since2").textContent="Gerçekleşen kâr/zarar: "+sgnUsd(p.realizedPL||0)+" · Getiri yüzdesi zaman ağırlıklıdır (para eklemeleri getiri sayılmaz).";
-    var reg=(S.meta&&S.meta.regime)||{};
-    if(p.cash<0) setKpi("k-cash","Kredi borcu",usd(-p.cash),"Faiz yıllık %10","down");
-    else setKpi("k-cash","Nakit",usd(p.cash),null,null);
-    setKpi("k-inv","Kaldıraç",isNum(p.leverage)?fmtNum(p.leverage,2)+"x":"—","Sınır "+(isNum(reg.maxLev)?fmtNum(reg.maxLev,1)+"x":"—")+(reg.label?" · "+reg.label:""),null);
-    setKpi("k-npos","Teminat tamponu",isNum(p.marginBuffer)?usd(p.marginBuffer):"—","Gereken teminat "+(isNum(p.maintenanceReq)?usd(p.maintenanceReq):"—"),(isNum(p.marginBuffer)&&p.marginBuffer<0.1*total)?"down":null);
-    var co=p.costs||{}, ct=(co.slippage||0)+(co.fees||0)+(co.interest||0)+(co.borrow||0);
-    setKpi("k-real","Toplam işlem maliyeti",usd(ct),"Kayma "+usd(co.slippage||0)+" · ücret "+usd(co.fees||0)+" · faiz "+usd(co.interest||0)+" · ödünç "+usd(co.borrow||0),null);
+    var reg=(S.meta&&S.meta.regime)||{}, bm=c.brokerModel||{};
+    var rate=isNum(bm.marginRate)?" · faiz yıllık %"+fmtNum(bm.marginRate*100,2):"";
+    if(p.cash<0) setKpi("k-cash","Kredi borcu",usd(-p.cash),"Aracı kurumdan borç"+rate,"down");
+    else setKpi("k-cash","Nakit",usd(p.cash),"Short satış gelirleri dahil",null);
+    setKpi("k-inv","Ekonomik kaldıraç",isNum(p.leverage)?fmtNum(p.leverage,2)+"x":"—","Üst sınır "+(isNum(c.maxLeverage)?fmtNum(c.maxLeverage,0)+"x":"3x")+(reg.label?" · "+reg.label:""),null);
+    var co=p.costs||{}, ct=(co.slippage||0)+(co.commission||0)+(co.fees||0)+(co.interest||0)+(co.borrow||0)+(co.dividendsPaid||0);
+    setKpi("k-real","Toplam işlem maliyeti",usd(ct),"Komisyon "+usd(co.commission||0)+" · SEC/FINRA "+usd(co.fees||0)+" · kayma "+usd(co.slippage||0)+" · faiz "+usd(co.interest||0)+" · ödünç "+usd(co.borrow||0),null);
+    setKpi("k-bp","Alım gücü (Reg T)",isNum(p.buyingPower)?usd(p.buyingPower):"—",isNum(p.regTInitialReq)?"Başlangıç teminatı "+usd(p.regTInitialReq)+" / özsermaye "+usd(total):null,null);
+    setKpi("k-npos","Bakım teminatı tamponu",isNum(p.marginBuffer)?usd(p.marginBuffer):"—","Gereken bakım teminatı "+(isNum(p.maintenanceReq)?usd(p.maintenanceReq):"—"),(isNum(p.marginBuffer)&&p.marginBuffer<0.1*total)?"down":null);
+    if(typeof p.marginEligible==="boolean") setKpi("k-elig","Kredi ve short yetkisi",p.marginEligible?"Var":"Yok",p.marginEligible?"Özsermaye 2.000 $ asgarinin üstünde":"Özsermaye 2.000 $'ın altında (FINRA 4210): yeni short ve kredi yok",p.marginEligible?"up":"down");
+    else setKpi("k-elig","Kredi ve short yetkisi","—",null,null);
+    var yr=String(new Date().getFullYear()), tx=(S.tax||{})[yr]||{};
+    var stg=(tx.shortTermRealized||0)+(tx.longTermRealized||0);
+    setKpi("k-tax","Vergi görünümü "+yr,sgnUsd(stg),"Gerçekleşen kazanç/zarar"+(tx.washDisallowed?" · wash sale "+usd(tx.washDisallowed):""),cls(stg));
     var bv=p.benchmarkValue, bk=$("k-bench");
     clear(bk); bk.appendChild(document.createTextNode(usd(bv)));
     if(isNum(p.benchmarkPrice)) bk.appendChild(el("small",{text:"SPY "+fmtNum(p.benchmarkPrice,2)+" $"+(isNum(p.benchmarkTwrPct)?" · "+pct(p.benchmarkTwrPct):"")}));
@@ -519,7 +583,7 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
   function renderAlloc(){
     var p=S.portfolio; var bar=$("allocBar"), list=$("allocList"), cap=$("expCap"); clear(bar); clear(list); clear(cap);
     if(!p){ list.appendChild(el("li",{class:"muted",text:"Henüz pozisyon yok."})); return; }
-    var eq=p.totalValue||1, reg=(S.meta&&S.meta.regime)||{}, maxLev=isNum(reg.maxLev)?reg.maxLev:3;
+    var eq=p.totalValue||1, maxLev=(S.config&&isNum(S.config.maxLeverage))?S.config.maxLeverage:3;
     var pos=(p.positions||[]).slice().sort(function(a,b){ return (dirOf(b)-dirOf(a)) || (expOf(b)-expOf(a)); });
     var gross=pos.reduce(function(a,x){return a+expOf(x);},0);
     var scale=Math.max(gross, maxLev*eq);
@@ -558,11 +622,12 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
         el("td",null, fmtNum(x.shares,4)),
         el("td",null, fmtNum(x.avgCost,2)+" $"),
         el("td",null, fmtNum(x.lastPrice,2)+" $", el("span",{class:"sub",text:tm(x.lastPriceAt)})),
-        el("td",null, usd(expOf(x)), el("span",{class:"sub",text:fmtNum(expOf(x)/p.totalValue,2)+"x net değer"})),
+        el("td",null, usd(expOf(x)), el("span",{class:"sub",text:fmtNum(expOf(x)/p.totalValue,2)+"x net değer"+(isNum(x.maintReq)?" · teminat "+usd(x.maintReq):"")})),
         el("td",{class:cls(x.unrealized)}, sgnUsd(x.unrealized), el("span",{class:"sub "+cls(x.unrealized),text:pct(x.unrealizedPct)})),
         el("td",null, isNum(x.stopPrice)? fmtNum(x.stopPrice,2)+" $":"—", el("span",{class:"sub",text: x.openedAt?"Giriş "+dShort(x.openedAt):""}))
       ));
-      if(x.thesis) tb.appendChild(el("tr",{class:"thesis"}, el("td",{colspan:"8"}, el("b",{text:"Tez: "}), x.thesis)));
+      if(x.thesis) tb.appendChild(el("tr",{class:"thesis"}, el("td",{colspan:"8"}, el("b",{text:"Tez: "}), x.thesis,
+        isNum(x.taxBasisAdj)&&x.taxBasisAdj>0? el("span",null," ",el("span",{class:"tag",text:"wash sale: vergi maliyetine +"+usd(x.taxBasisAdj)})):null)));
     });
     var th=function(t){return el("th",{scope:"col",text:t});};
     wrap.appendChild(el("div",{class:"tbl-wrap"}, el("table",null,
@@ -573,7 +638,8 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
   function renderTrades(){
     var wrap=$("tradeWrap"); clear(wrap);
     var t=S.trades.slice().sort(function(a,b){return (a.ts||"")<(b.ts||"")?1:-1;});
-    $("tradeCount").textContent = t.length? t.length+" işlem" : "";
+    var nc=t.filter(function(x){return x.cancelled;}).length;
+    $("tradeCount").textContent = t.length? (t.length-nc)+" işlem"+(nc?" · "+nc+" iptal edildi":"") : "";
     if(!t.length){ wrap.appendChild(el("div",{class:"empty",text:"Henüz işlem yok."})); return; }
     var groups={}; var order=[];
     t.forEach(function(x){ var k=x.date||(x.ts||"").slice(0,10); if(!groups[k]){groups[k]=[];order.push(k);} groups[k].push(x); });
@@ -582,22 +648,25 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
       wrap.appendChild(el("div",{class:"day-label",text:(d?fmtDate.format(d)+", "+fmtWeekday.format(d):k)+" · "+groups[k].length+" işlem"}));
       groups[k].forEach(function(x){
         var A={BUY:["ALIŞ","buy"],SELL:["SATIŞ","sell"],SHORT:["AÇIĞA SATIŞ","short"],COVER:["SHORT KAPATMA","cover"],DEPOSIT:["PARA YATIRMA","dep"]}[x.action]||[x.action,"buy"];
-        var dep=x.action==="DEPOSIT";
+        var dep=x.action==="DEPOSIT", cx=!!x.cancelled;
         var line=el("div",{class:"line1"},
           el("span",{class:"tk",text:dep?"Sermaye":x.ticker}),
           el("span",{class:"calc",text: dep? "+"+usd(x.value)+" eklendi" : fmtNum(x.shares,4)+" adet × "+fmtNum(x.execPrice,2)+" $ = "+usd(x.value)}),
           x.rule? el("span",{class:"rule",text:x.rule}) : null,
           el("span",{class:"rule",text: x.by==="claude"?"Claude":"Bot"}),
-          isNum(x.realizedPL)? el("span",{class:"calc "+cls(x.realizedPL),text:"Gerçekleşen: "+sgnUsd(x.realizedPL)}) : null);
+          isNum(x.realizedPL)? el("span",{class:"calc "+cls(x.realizedPL),text:"Gerçekleşen: "+sgnUsd(x.realizedPL)}) : null,
+          x.washSale? el("span",{class:"tag",title:"Zarar 30 gün içinde aynı hissenin yeniden alınması nedeniyle bu yıl düşülemez",text:"wash sale: "+usd(x.washSale.disallowed)+" düşülemez"}) : null);
         var meta=el("div",{class:"meta"}, dep? "İşlem saati "+tm(x.ts) :
           "İşlem saati "+tm(x.ts)+" · Kotasyon "+fmtNum(x.quotePrice,2)+" $ ("+(x.priceSource&&x.priceSource.title?x.priceSource.title:"kaynak")+", "+tm(x.quoteAt)+")"+
-          (isNum(x.slippagePct)?" · kayma %"+fmtNum(x.slippagePct,2):"")+(x.fees>0?" · SEC/FINRA ücreti "+usd(x.fees):""));
+          (isNum(x.slippagePct)?" · kayma %"+fmtNum(x.slippagePct,2):"")+(isNum(x.commission)?" · komisyon "+usd(x.commission)+(x.commissionBackfilled?" (geriye dönük)":""):"")+(x.fees>0?" · SEC/FINRA ücreti "+usd(x.fees):"")+
+          (isNum(x.holdingDays)?" · elde tutma "+x.holdingDays+" gün ("+(x.taxTerm||"")+")":"")+(x.locate?" · ödünç: "+x.locate:""));
         var chips=el("div",{class:"src-chips"});
         if(x.priceSource) chips.appendChild(safeLink(x.priceSource));
         (x.sources||[]).forEach(function(s){chips.appendChild(safeLink(s));});
-        wrap.appendChild(el("article",{class:"trade"},
-          el("span",{class:"chip "+A[1],text:A[0]}),
-          line, meta, x.reason? el("p",{class:"why",text:x.reason}):null, chips));
+        wrap.appendChild(el("article",{class:"trade"+(cx?" cancelled":"")},
+          el("span",{class:"chip "+(cx?"cx":A[1]),text:cx?"İPTAL · "+A[0]:A[0]}),
+          line, meta, cx&&x.cancelReason? el("p",{class:"cancel-note",text:x.cancelReason}):null,
+          x.reason? el("p",{class:"why",text:x.reason}):null, chips));
       });
     });
   }
@@ -659,7 +728,7 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
       }
       if(x.nextSteps) body.appendChild(el("div",null, el("h4",{text:"Sonraki adım"}), el("p",{text:x.nextSteps})));
       var sum=el("summary",null, el("h3",{text:dLong(x.date)+(x.at?" · "+tm(x.at):"")}), x.headline? el("span",{class:"muted",text:x.headline}):null);
-      var det=el("details",{class:"run"}, sum, body); if(i===0) det.open=true;
+      var det=el("details",{class:"run"+(x.cancelled?" cancelled":"")}, sum, body); if(i===0) det.open=true;
       wrap.appendChild(det);
     });
   }
@@ -669,14 +738,68 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
     var c=S.config, w=$("rulesWrap"); clear(w);
     if(!c){ w.appendChild(el("span",{class:"muted",text:"Kurallar henüz yüklenmedi."})); return; }
     var dl=el("dl");
-    [["Strateji",c.strategyName],["Özet",c.strategySummary],["Başlangıç",c.startDate? dLong(c.startDate)+" · "+usd(c.startCapital)+(c.deposits||[]).map(function(d){return " · "+dLong(d.date)+" +"+usd(d.amount);}).join(""):null],["Kaldıraç sınırı",isNum(c.maxLeverage)? fmtNum(c.maxLeverage,1)+"x (rejime göre 1,5x–3x)":null],["Takvim",c.schedule],["Yürütme",c.execution],["Kıyas",c.benchmark? c.benchmark.ticker+" · başlangıç fiyatı "+fmtNum(c.benchmark.startPrice,2)+" $":null]]
+    [["Strateji",c.strategyName],["Özet",c.strategySummary],["Başlangıç",c.startDate? dLong(c.startDate)+" · "+usd(c.startCapital)+(c.deposits||[]).map(function(d){return " · "+dLong(d.date)+" +"+usd(d.amount);}).join(""):null],["Aracı kurum modeli",c.broker],["Kaldıraç sınırı",isNum(c.maxLeverage)? fmtNum(c.maxLeverage,0)+"x ekonomik maruziyet; pratikte Reg T başlangıç teminatı belirler":null],["Takvim",c.schedule],["Yürütme",c.execution],["Kıyas",c.benchmark? c.benchmark.ticker+" · başlangıç fiyatı "+fmtNum(c.benchmark.startPrice,2)+" $":null]]
       .forEach(function(r){ if(r[1]){ dl.appendChild(el("dt",{text:r[0]})); dl.appendChild(el("dd",{text:r[1]})); } });
     w.appendChild(dl);
     if(c.rules&&c.rules.length){ var ol=el("ol"); c.rules.forEach(function(r){ol.appendChild(el("li",{text:r}));}); w.appendChild(el("h3",{text:"Kurallar",style:"margin:6px 0 10px"})); w.appendChild(ol); }
   }
 
+  /* ---------- law & tax ---------- */
+  function facts(id, rows){
+    var dl=$(id); clear(dl);
+    rows.forEach(function(r){ if(r==null) return; dl.appendChild(el("dt",{text:r[0]})); dl.appendChild(el("dd",{class:r[2]||null,text:r[1]})); });
+  }
+  function renderLaw(){
+    var p=S.portfolio, c=S.config||{}, bm=c.brokerModel||{};
+    if(p){
+      var eq=p.totalValue, init=p.regTInitialReq, min=isNum(bm.minMarginEquity)?bm.minMarginEquity:2000;
+      facts("regtFacts",[
+        ["Aracı kurum modeli", bm.name||c.broker||"—"],
+        ["Özsermaye (net değer)", usd(eq)],
+        ["FINRA asgari özsermaye ("+usd(min)+")", typeof p.marginEligible==="boolean"? (p.marginEligible?"Karşılanıyor":"Karşılanmıyor") : "—", typeof p.marginEligible==="boolean"? (p.marginEligible?"ok":"no"):null],
+        ["Reg T başlangıç teminatı", usd(init)],
+        ["Reg T fazlası (özsermaye − başlangıç)", sgnUsd(p.regTExcess), isNum(p.regTExcess)&&p.regTExcess<0?"no":null],
+        ["Alım gücü", usd(p.buyingPower)],
+        ["Bakım teminatı (FINRA 4210)", usd(p.maintenanceReq)],
+        ["Bakım teminatı tamponu", usd(p.marginBuffer), isNum(p.marginBuffer)&&p.marginBuffer<0?"no":null],
+        ["Kredi faizi / ödünç ücreti", (isNum(bm.marginRate)?"%"+fmtNum(bm.marginRate*100,2):"—")+" / "+(isNum(bm.borrowRate)?"%"+fmtNum(bm.borrowRate*100,2):"—")+" yıllık"],
+        ["Komisyon", bm.commission||"—"]
+      ]);
+      var r=isNum(init)&&isNum(eq)&&eq>0? init/eq : null;
+      $("regtGauge").style.width=(r==null?0:Math.min(100,r*100)).toFixed(1)+"%";
+      $("regtGauge").style.background= r!=null&&r>1?"var(--loss)":r!=null&&r>0.9?"var(--warn)":"var(--accent)";
+      $("regtGaugeR").textContent= r==null?"—":"%"+fmtNum(r*100,0)+" kullanıldı";
+    }
+    var years=Object.keys(S.tax||{}).sort(), yr=years.length?years[years.length-1]:String(new Date().getFullYear()), tx=(S.tax||{})[yr]||{};
+    $("taxHead").textContent="Vergi görünümü "+yr;
+    facts("taxFacts",[
+      ["Kısa vadeli gerçekleşen kazanç/zarar", sgnUsd(tx.shortTermRealized||0), cls(tx.shortTermRealized||0)==="down"?"no":null],
+      ["Uzun vadeli gerçekleşen (1 yıldan uzun)", sgnUsd(tx.longTermRealized||0)],
+      ["Wash sale nedeniyle bu yıl düşülemeyen zarar", usd(tx.washDisallowed||0)],
+      ["Alınan temettü (1099-DIV)", usd(tx.dividendsReceived||0)],
+      ["Short'ta ödenen temettü (payment in lieu)", usd(tx.dividendsPaidShort||0)],
+      ["Kredi faizi (Form 4952, yatırım faizi gideri)", usd(tx.marginInterest||0)],
+      ["Komisyon ve SEC/FINRA ücretleri", usd(tx.commissions||0)]
+    ]);
+    var lg=$("clog"), cl=(S.compliance||[]).map(function(x,i){return [x,i];}).sort(function(a,b){
+      var ka=a[0].at||"", kb=b[0].at||""; return ka===kb? b[1]-a[1] : (ka<kb?1:-1); }).map(function(x){return x[0];});
+    clear(lg); $("clogCount").textContent= cl.length? cl.length+" kayıt" : "";
+    if(!cl.length) lg.appendChild(el("li",{class:"muted small",text:"Henüz kayıt yok."}));
+    cl.slice(0,60).forEach(function(x){
+      lg.appendChild(el("li",null,
+        el("span",{class:"when",text:dShort(x.at||x.date)+" "+tm(x.at).replace(" ET","")}),
+        el("div",{class:"ttl"}, el("span",{class:"rule",text:x.rule||"kural"}), el("span",{text:x.title||""})),
+        x.text? el("p",{text:x.text}):null,
+        x.source? el("span",{class:"src"}, safeLink(x.source)):null));
+    });
+    var ls=$("lawSrc"); clear(ls);
+    var srcs=c.legalSources||[];
+    if(!srcs.length) ls.appendChild(el("li",{class:"muted",text:"Henüz kaynak yok."}));
+    srcs.forEach(function(s){ ls.appendChild(el("li",null, safeLink(s))); });
+  }
+
   function renderAll(){
-    try{ renderSummary(); renderRisk(); renderAlloc(); renderPositions(); renderTrades(); renderRuns(); renderRules(); renderChart(); }
+    try{ renderSummary(); renderRisk(); renderAlloc(); renderPositions(); renderTrades(); renderRuns(); renderLaw(); renderRules(); renderChart(); }
     catch(e){ console.error(e); }
   }
   var rt=null; function schedule(){ if(rt) return; rt=setTimeout(function(){rt=null; renderAll();},30); }
@@ -688,9 +811,9 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
   function load(){
     fetch("ledger.json?t="+Date.now(),{cache:"no-store"}).then(function(r){ if(!r.ok) throw new Error(r.status); return r.json(); })
     .then(function(L){
-      var sig=(L.meta&&L.meta.lastRunAt||"")+"|"+(L.trades||[]).length; if(sig===lastSig) { renderRisk(); return; } lastSig=sig;
+      var sig=(L.meta&&L.meta.lastRunAt||"")+"|"+(L.trades||[]).length+"|"+(L.compliance||[]).length; if(sig===lastSig) { renderRisk(); return; } lastSig=sig;
       S.config=L.config||null; S.portfolio=L.portfolio||null; S.meta=L.meta||{};
-      S.trades=L.trades||[]; S.snapshots=L.snapshots||[]; S.runs=L.runs||[];
+      S.trades=L.trades||[]; S.snapshots=L.snapshots||[]; S.runs=L.runs||[]; S.compliance=L.compliance||[]; S.tax=L.tax||{};
       var days=Object.keys(L.checks||{}).sort(); var d=days[days.length-1];
       S.checks= d? {date:d, entries:L.checks[d]} : null;
       renderAll();

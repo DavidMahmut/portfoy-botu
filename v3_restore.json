@@ -1,0 +1,112 @@
+{
+ "note": "12 Ekim 2026 13:01 öncesi (v2 öncesi) pozisyonlar; v3 geçişinde v2 işlemleri iptal edilip bu duruma dönülür.",
+ "v2Start": "2026-10-12T13:00:00-04:00",
+ "cash": 15.22,
+ "realizedPL": 0.52,
+ "positions": [
+  {
+   "avgCost": 197.1185,
+   "costBasis": 89.98,
+   "kind": "Hisse",
+   "lastPrice": 206.6,
+   "lastPriceAt": "2026-10-12T12:55:00-04:00",
+   "marketValue": 94.31,
+   "name": "Palantir Technologies",
+   "openedAt": "2026-10-08",
+   "priceSource": {
+    "title": "Yahoo Finance 5 dk mum (12:55 ET)",
+    "url": "https://finance.yahoo.com/quote/PLTR/"
+   },
+   "shares": 0.4565,
+   "stopPrice": 187.39,
+   "thesis": "Analist yükseltmesi ve göreli güç yeni zirveleri taşıyabilir. Tez bozulur: 181 $ altı (−%8) veya yapay zekâ harcamalarına dair olumsuz haber akışı yazılım tarafına sıçrarsa.",
+   "ticker": "PLTR",
+   "unrealized": 4.33,
+   "unrealizedPct": 4.81,
+   "openedTs": "2026-10-08T14:55:00-04:00",
+   "tookProfit": false,
+   "lastBarTs": "2026-10-12T12:55:00-04:00",
+   "side": "long",
+   "lev": 1,
+   "extremeSinceEntry": 212.9399
+  },
+  {
+   "ticker": "DELL",
+   "name": "Dell Technologies",
+   "kind": "Hisse",
+   "shares": 0.1256,
+   "avgCost": 574.5921,
+   "costBasis": 72.17,
+   "lastPrice": 570.605,
+   "lastPriceAt": "2026-10-12T12:55:00-04:00",
+   "priceSource": {
+    "title": "Yahoo Finance 5 dk mum (12:55 ET)",
+    "url": "https://finance.yahoo.com/quote/DELL/"
+   },
+   "marketValue": 71.67,
+   "unrealized": -0.5,
+   "unrealizedPct": -0.69,
+   "openedAt": "2026-10-09",
+   "openedTs": "2026-10-09T11:35:00-04:00",
+   "stopPrice": 528.62,
+   "tookProfit": false,
+   "thesis": "Momentum lideri: sıralamada 1. (puan 86,81). Getiriler: 1 ay +%13,36, 3 ay +%34,46, 6 ay +%223,01; fiyat 50 günlük ortalamanın (505,42 $) üstünde. Hedef ağırlık ~%23,8. Tez bozulur: fiyat zarar-kese inerse ya da sıralamada ilk 10'dan çıkarsa.",
+   "lastBarTs": "2026-10-12T12:55:00-04:00",
+   "side": "long",
+   "lev": 1,
+   "extremeSinceEntry": 589.79
+  },
+  {
+   "ticker": "CRWD",
+   "name": "CrowdStrike",
+   "kind": "Hisse",
+   "shares": 0.2674,
+   "avgCost": 269.8999,
+   "costBasis": 72.17,
+   "lastPrice": 263.1,
+   "lastPriceAt": "2026-10-12T12:55:00-04:00",
+   "priceSource": {
+    "title": "Yahoo Finance 5 dk mum (12:55 ET)",
+    "url": "https://finance.yahoo.com/quote/CRWD/"
+   },
+   "marketValue": 70.35,
+   "unrealized": -1.82,
+   "unrealizedPct": -2.52,
+   "openedAt": "2026-10-09",
+   "openedTs": "2026-10-09T11:35:00-04:00",
+   "stopPrice": 248.31,
+   "tookProfit": false,
+   "thesis": "Momentum lideri: sıralamada 2. (puan 83,00). Getiriler: 1 ay +%29,15, 3 ay +%43,54, 6 ay +%184,67; fiyat 50 günlük ortalamanın (228,60 $) üstünde. Hedef ağırlık ~%23,8. Tez bozulur: fiyat zarar-kese inerse ya da sıralamada ilk 10'dan çıkarsa.",
+   "lastBarTs": "2026-10-12T12:55:00-04:00",
+   "side": "long",
+   "lev": 1,
+   "extremeSinceEntry": 276.24
+  },
+  {
+   "ticker": "SNOW",
+   "name": "Snowflake",
+   "kind": "Hisse",
+   "shares": 0.1422,
+   "avgCost": 358.4591,
+   "costBasis": 50.97,
+   "lastPrice": 358.495,
+   "lastPriceAt": "2026-10-12T12:55:00-04:00",
+   "priceSource": {
+    "title": "Yahoo Finance 5 dk mum (12:55 ET)",
+    "url": "https://finance.yahoo.com/quote/SNOW/"
+   },
+   "marketValue": 50.98,
+   "unrealized": 0.01,
+   "unrealizedPct": 0.02,
+   "openedAt": "2026-10-09",
+   "openedTs": "2026-10-09T11:35:00-04:00",
+   "stopPrice": 329.78,
+   "tookProfit": false,
+   "thesis": "Momentum lideri: sıralamada 3. (puan 77,16). Getiriler: 1 ay +%8,66, 3 ay +%33,36, 6 ay +%195,83; fiyat 50 günlük ortalamanın (330,04 $) üstünde. Hedef ağırlık ~%23,8. Tez bozulur: fiyat zarar-kese inerse ya da sıralamada ilk 10'dan çıkarsa.",
+   "lastBarTs": "2026-10-12T12:55:00-04:00",
+   "side": "long",
+   "lev": 1,
+   "extremeSinceEntry": 370.21
+  }
+ ]
+}

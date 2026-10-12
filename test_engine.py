@@ -1,4 +1,7 @@
-"""Scenario tests for the long/short engine with synthetic market data (no network).
+"""Scenario tests for the Reg T long/short engine (v3) with synthetic market data (no network).
+
+BASE is the live ledger as it was under v2 (12 Oct 2026, 13:12 ET). The first run migrates it: the v2 trades of
+13:01 are cancelled, the positions held before them are restored and the compliant v3 daily decision runs.
 
 Run: python test_engine.py
 """
@@ -18,9 +21,12 @@ import trader as T  # noqa: E402
 import universe as U  # noqa: E402
 
 NY = ZoneInfo("America/New_York")
-BASE = json.loads((ROOT / "ledger.json").read_text())
+BASE = json.loads((ROOT / "test_fixture_ledger.json").read_text())   # live ledger under v2, 12 Oct 13:12 ET
 DEPOSITS = json.loads((ROOT / "deposits.json").read_text())
-DAY = "2026-10-12"
+RESTORE = json.loads((ROOT / "v3_restore.json").read_text())
+DAY, NXT = "2026-10-12", "2026-10-13"
+V2_DEPOSITS = [d for d in DEPOSITS if d["id"] == "2026-10-12-1700"]   # capital at the v2 cut-over: 2.000 $
+BUFFER = DEPOSITS                                                     # deposits.json: 3.000 $
 
 
 def ledger():
@@ -28,8 +34,8 @@ def ledger():
 
 
 class FakeData:
-    def __init__(self, day, paths, bars):
-        self.day, self.paths, self.bars = day, paths, bars
+    def __init__(self, day, paths, bars, divs=None):
+        self.day, self.paths, self.bars, self.divs = day, paths, bars, divs or {}
 
     def _daily(self, closes, today_close=None):
         days = pd.bdate_range(end=pd.Timestamp(self.day) - pd.Timedelta(days=1), periods=len(closes), tz=NY)
@@ -53,6 +59,14 @@ class FakeData:
                 idx = [pd.Timestamp(f"{self.day} {b[0]}", tz=NY) for b in self.bars[t]]
                 out[t] = pd.DataFrame([b[1:] for b in self.bars[t]], index=idx, columns=["Open", "High", "Low", "Close"])
         return out
+
+    def dividends(self, tickers):
+        return {t: s for t, s in self.divs.items() if t in tickers}
+
+
+def nbars(hhmm):
+    h, m = map(int, hhmm.split(":"))
+    return (h * 60 + m - 570) // 5 + 1
 
 
 def flat_bars(price, start="09:30", n=12, step=0.0):
@@ -107,158 +121,231 @@ def bars_for(paths, overrides, n=12):
 
 def check_books(L):
     P = L["portfolio"]
-    assert P["cash"] + P["longValue"] - P["shortValue"] - P["totalValue"] < 0.02
+    assert abs(P["cash"] + P["longValue"] - P["shortValue"] - P["totalValue"]) < 0.02
     for p in P["positions"]:
         assert p["shares"] > 0, p
     cash = L["config"]["startCapital"]
     for t in L["trades"]:
-        a = t["action"]
-        if a == "BUY" or a == "COVER":
-            cash -= t["value"]
+        if t.get("cancelled"):
+            continue
+        a, comm, fees = t["action"], T.num(t.get("commission")), T.num(t.get("fees"))
+        if a in ("BUY", "COVER"):
+            cash -= t["value"] + comm
         elif a in ("SELL", "SHORT"):
-            cash += t["value"] - t.get("fees", 0)
+            cash += t["value"] - fees - comm
         elif a == "DEPOSIT":
             cash += t["value"]
     c = P.get("costs", {})
-    cash -= c.get("interest", 0) + c.get("borrow", 0)
+    cash -= c.get("interest", 0) + c.get("borrow", 0) + c.get("dividendsPaid", 0) - c.get("dividendsReceived", 0)
     assert abs(cash - P["cash"]) <= 0.05, (round(cash, 2), P["cash"])
+    # realized P/L in the portfolio equals the sum over live closing trades
+    rp = sum(T.num(t.get("realizedPL")) for t in L["trades"] if not t.get("cancelled") and t["action"] in ("SELL", "COVER"))
+    assert abs(rp - P["realizedPL"]) <= 0.05, (rp, P["realizedPL"])
 
 
-def run(L, hhmm, data, day=DAY, deposits=DEPOSITS):
+def run(L, hhmm, data, day=DAY, deposits=V2_DEPOSITS):
     now = datetime.fromisoformat(f"{day}T{hhmm}:00").replace(tzinfo=NY)
-    eng = T.Engine(L, data, now, deposits)
+    eng = T.Engine(L, data, now, deposits, RESTORE)
     eng.run()
     check_books(L)
     return eng
 
 
-def first_daily():
-    paths = base_paths()
+def regt_ok(P, tol=1.0):
+    """After the daily rebalance the Reg T initial requirement must not exceed equity."""
+    return P["regTInitialReq"] <= P["totalValue"] + tol
+
+
+def first_daily(deposits=V2_DEPOSITS, bear=False, hhmm="13:35", mutate=None):
+    paths = base_paths(bear)
     L = ledger()
-    eng = run(L, "10:15", FakeData(DAY, paths, bars_for(paths, {})))
+    if mutate:
+        mutate(L)
+    eng = run(L, hhmm, FakeData(DAY, paths, bars_for(paths, {}, n=nbars(hhmm))), deposits=deposits)
     return L, eng, paths
 
 
-def test_migration_deposit_daily_bull():
+# ---------------------------------------------------------------- tests
+def test_rollback_and_first_v3_daily():
+    v2_trades = [t for t in BASE["trades"] if t["ts"] >= RESTORE["v2Start"] and t["action"] in ("BUY", "SELL", "SHORT", "COVER")]
     L, eng, _ = first_daily()
     P, M = L["portfolio"], L["meta"]
     assert M["engine"] == T.ENGINE and M["lastDailyDate"] == DAY
-    assert P["netDeposits"] == 2000 and "2026-10-12-1700" in M["appliedDeposits"]
-    assert any(t["action"] == "DEPOSIT" for t in L["trades"])
-    assert M["regime"]["name"] == "bull", M["regime"]
-    sides = {(p["ticker"], p["side"]) for p in P["positions"]}
-    shorts = [p for p in P["positions"] if p["side"] == "short"]
-    bull = [p for p in P["positions"] if p["ticker"] in U.LEVERAGED]
-    assert shorts and bull, sides
-    assert P["leverage"] <= 3.0 + 1e-6, P["leverage"]
+    cancelled = [t for t in L["trades"] if t.get("cancelled")]
+    assert len(cancelled) == len(v2_trades) == 8, (len(cancelled), len(v2_trades))
+    assert all(t.get("cancelReason") for t in cancelled)
+    assert sum(t["action"] == "DEPOSIT" for t in L["trades"]) == 1
+    assert all(r.get("cancelled") for r in L["runs"] if r["at"] >= RESTORE["v2Start"] and r["by"] == "bot"
+               and r is not L["runs"][-1])
+    old = [t for t in L["trades"] if t["ts"] < RESTORE["v2Start"] and t["action"] in ("BUY", "SELL")]
+    assert old and all(t.get("commissionBackfilled") and t["commission"] > 0 for t in old)
+    rules = [c["rule"] for c in L["compliance"]]
+    assert "geçiş" in rules and "Reg T" in rules and "aracı kurum ücreti" in rules, rules
+    assert regt_ok(P), (P["regTInitialReq"], P["totalValue"])
+    assert P["leverage"] <= 3.0 + 1e-6
     assert P["totalValue"] > P["maintenanceReq"]
-    # second run same day does not redo the daily decision or the deposit
-    n_tr, n_runs = len(L["trades"]), len(L["runs"])
-    run(L, "10:30", FakeData(DAY, base_paths(), bars_for(base_paths(), {}, n=14)))
-    assert len(L["runs"]) == n_runs and sum(t["action"] == "DEPOSIT" for t in L["trades"]) == 1
-    print("bull daily OK:", L["runs"][-1]["headline"], "| lev", P["leverage"], "| equity", P["totalValue"],
-          "| req", P["maintenanceReq"], "| positions", sorted(sides))
+    if not P["marginEligible"]:
+        assert P["cash"] >= -0.01, P["cash"]
+    print("rollback + v3 daily OK:", L["runs"][-1]["headline"], "| equity", P["totalValue"], "| eligible",
+          P["marginEligible"], "| init req", P["regTInitialReq"], "| cash", P["cash"],
+          "|", sorted((p["ticker"], p["side"], round(abs(p["marketValue"]))) for p in P["positions"]))
+    # same day again: no re-migration, no second daily decision
+    n_tr, n_runs, n_c = len(L["trades"]), len(L["runs"]), len(L["compliance"])
+    paths = base_paths()
+    run(L, "13:40", FakeData(DAY, paths, bars_for(paths, {}, n=nbars("13:40"))))
+    assert len(L["runs"]) == n_runs and len(L["trades"]) == n_tr and len(L["compliance"]) == n_c
+
+
+def test_regt_with_buffer():
+    L, eng, _ = first_daily(BUFFER)
+    P = L["portfolio"]
+    assert P["marginEligible"] and P["netDeposits"] == 3000
+    shorts = [p for p in P["positions"] if p["side"] == "short"]
+    lev = [p for p in P["positions"] if p["ticker"] in U.LEVERAGED]
+    assert shorts and lev, [p["ticker"] for p in P["positions"]]
+    assert regt_ok(P), (P["regTInitialReq"], P["totalValue"])
+    assert P["regTInitialReq"] >= 0.80 * P["totalValue"], "budget should be mostly used"
+    assert all(t.get("commission", 0) >= 0.35 or t["value"] * 0.01 <= 0.35 for t in eng.new_trades
+               if t["action"] in ("BUY", "SELL", "SHORT", "COVER"))
+    assert all(t.get("locate") for t in eng.new_trades if t["action"] == "SHORT")
+    assert any(c["rule"] == "para yatırma" for c in L["compliance"])
+    assert P["totalValue"] - T.MIN_MARGIN_EQUITY > 900, P["totalValue"]
+    print("Reg T with 3.000 $ OK: lev", P["leverage"], "| equity", P["totalValue"], "| init req", P["regTInitialReq"],
+          "| buying power", P["buyingPower"], "|", sorted((p["ticker"], p["side"]) for p in P["positions"]))
+
+
+def test_below_2000_cash_only():
+    def poorer(L):
+        L["config"]["startCapital"] = 250      # 50 $ less cash after the rollback -> equity ~1.950 $
+    L, eng, _ = first_daily(mutate=poorer)
+    P = L["portfolio"]
+    assert not P["marginEligible"], P["totalValue"]
+    assert not [p for p in P["positions"] if p["side"] == "short"]
+    assert P["cash"] >= -0.01, P["cash"]
+    assert any(c["rule"] == "FINRA 4210(b)(4)" for c in L["compliance"])
+    print("below 2.000 $ OK: equity", P["totalValue"], "cash", P["cash"], "| no shorts, no margin loan")
+
+
+def test_ssr_blocks_short():
+    paths = base_paths()
+    ov = {}
+    for t in ("NKE", "INTC", "BA", "UNH"):
+        prev = paths[t][-1]
+        bars = flat_bars(prev * 0.95, n=nbars("13:35"))
+        o, h, l, c = bars[3][1:]
+        bars[3] = (bars[3][0], o, h, prev * 0.88, c)
+        ov[t] = bars
+    L = ledger()
+    eng = run(L, "13:35", FakeData(DAY, paths, bars_for(paths, ov, n=nbars("13:35"))), deposits=BUFFER)
+    held = {p["ticker"] for p in L["portfolio"]["positions"] if p["side"] == "short"}
+    assert not held & {"NKE", "INTC", "BA", "UNH"}, held
+    ssr = [c for c in L["compliance"] if c["rule"] == "SEC Rule 201"]
+    assert ssr, [c["rule"] for c in L["compliance"]]
+    print("SSR OK:", [c["title"] for c in ssr], "| shorts instead:", sorted(held))
+
+
+def test_wash_sale():
+    L, eng, paths = first_daily(BUFFER)
+    p = next(p for p in L["portfolio"]["positions"] if p["side"] == "long" and p["ticker"] not in U.LEVERAGED)
+    t = p["ticker"]
+    now = datetime.fromisoformat(f"{NXT}T10:30:00").replace(tzinfo=NY)
+    e = T.Engine(L, FakeData(NXT, paths, {}), now, BUFFER, RESTORE)
+    ts = pd.Timestamp(now)
+    e.close(p, p["shares"], p["avgCost"] * 0.9, ts, "test: zararla satış", "test")
+    loss_tr = L["trades"][-1]
+    assert loss_tr["realizedPL"] < 0
+    e.open_long(t, 100, p["avgCost"] * 0.9, ts, "test: yeniden alım", "test")
+    assert loss_tr.get("washSale") and loss_tr["washSale"]["disallowed"] == round(-loss_tr["realizedPL"], 2)
+    assert L["tax"]["2026"]["washDisallowed"] >= -loss_tr["realizedPL"] - 0.01
+    assert e._pos(t, "long")["taxBasisAdj"] > 0
+    assert loss_tr["holdingDays"] >= 0 and loss_tr["taxTerm"] == "kısa vade"
+    assert any(c["rule"] == "wash sale" for c in L["compliance"])
+    print("wash sale OK:", t, loss_tr["washSale"], "| tax", L["tax"]["2026"])
 
 
 def test_short_stop_and_gap():
-    L, eng, paths = first_daily()
+    L, eng, paths = first_daily(BUFFER)
     shorts = [p for p in L["portfolio"]["positions"] if p["side"] == "short"][:2]
-    assert len(shorts) == 2
+    assert len(shorts) == 2, [p["ticker"] for p in L["portfolio"]["positions"]]
     a, b = shorts
-    L["meta"]["lastDailyDate"] = DAY
-    nxt = "2026-10-13"
-    pa, pb = a["lastPrice"], b["lastPrice"]
+    pa = a["lastPrice"]
     ov = {a["ticker"]: flat_bars(pa, n=3) + [("09:45", pa * 1.01, a["stopPrice"] + 0.5, pa, pa * 1.05)],
           b["ticker"]: [("09:30", b["stopPrice"] * 1.03, b["stopPrice"] * 1.04, b["stopPrice"] * 1.02, b["stopPrice"] * 1.03)]}
-    paths2 = copy.deepcopy(paths)
-    eng = run(L, "09:55", FakeData(nxt, paths2, bars_for(paths2, ov, n=5)), day=nxt)
+    eng = run(L, "09:55", FakeData(NXT, paths, bars_for(paths, ov, n=6)), day=NXT, deposits=BUFFER)
     cov = {t["ticker"]: t for t in eng.new_trades if t["action"] == "COVER"}
     assert abs(cov[a["ticker"]]["quotePrice"] - a["stopPrice"]) < 1e-6, cov
     assert abs(cov[b["ticker"]]["quotePrice"] - round(b["stopPrice"] * 1.03, 4)) < 0.01, cov
-    assert L["portfolio"]["costs"]["interest"] >= 0 and L["portfolio"]["costs"]["borrow"] > 0
-    print("short stop + gap OK; accrued interest", L["portfolio"]["costs"]["interest"], "borrow",
-          L["portfolio"]["costs"]["borrow"])
-
-
-def test_short_trailing():
-    L, eng, paths = first_daily()
-    s = [p for p in L["portfolio"]["positions"] if p["side"] == "short"][0]
-    L["meta"]["lastDailyDate"] = DAY
-    nxt = "2026-10-13"
-    p0 = s["lastPrice"]
-    low = p0 * 0.80
-    ov = {s["ticker"]: [("09:30", p0, p0, low, low * 1.01), ("09:35", low * 1.01, low * 1.05, low, low * 1.04),
-                        ("09:40", low * 1.04, low * 1.13, low * 1.03, low * 1.12)]}
-    eng = run(L, "09:50", FakeData(nxt, paths, bars_for(paths, ov, n=5)), day=nxt)
-    acts = [(t["action"], t["rule"], t["quotePrice"]) for t in eng.new_trades if t["ticker"] == s["ticker"]]
-    assert ("COVER", "kâr alma") in [(x[0], x[1]) for x in acts] or ("COVER", "zarar-kes") in [(x[0], x[1]) for x in acts], acts
-    print("short trailing/take-profit OK:", acts)
+    assert cov[a["ticker"]]["commission"] > 0 and cov[a["ticker"]]["holdingDays"] == 1
+    assert L["portfolio"]["costs"]["borrow"] > 0
+    print("short stop + gap OK; interest", L["portfolio"]["costs"]["interest"], "borrow", L["portfolio"]["costs"]["borrow"],
+          "| tax", L["tax"]["2026"])
 
 
 def test_squeeze_and_crash_brakes():
-    L, eng, paths = first_daily()
-    L["meta"]["lastDailyDate"] = DAY
-    nxt = "2026-10-13"
-    spy_up = flat_bars(paths["SPY"][-1] * 1.035, n=5)
-    run(L, "09:55", FakeData(nxt, paths, bars_for(paths, {"SPY": spy_up}, n=5)), day=nxt)
+    L, eng, paths = first_daily(BUFFER)
+    spy_up = flat_bars(paths["SPY"][-1] * 1.035, n=6)
+    run(L, "09:55", FakeData(NXT, paths, bars_for(paths, {"SPY": spy_up}, n=6)), day=NXT, deposits=BUFFER)
     P = L["portfolio"]
     short_exp = sum(p["exposure"] for p in P["positions"] if T.direction(p) < 0)
     assert short_exp <= 0.5 * P["totalValue"] * 1.01, (short_exp, P["totalValue"])
-    assert L["meta"]["squeezeDate"] == nxt
-    L2, _, paths2 = first_daily()
-    L2["meta"]["lastDailyDate"] = DAY
-    spy_dn = flat_bars(paths2["SPY"][-1] * 0.955, n=5)
-    run(L2, "09:55", FakeData(nxt, paths2, bars_for(paths2, {"SPY": spy_dn}, n=5)), day=nxt)
+    L2, _, paths2 = first_daily(BUFFER)
+    spy_dn = flat_bars(paths2["SPY"][-1] * 0.955, n=6)
+    run(L2, "09:55", FakeData(NXT, paths2, bars_for(paths2, {"SPY": spy_dn}, n=6)), day=NXT, deposits=BUFFER)
     P2 = L2["portfolio"]
     long_exp = sum(p["exposure"] for p in P2["positions"] if T.direction(p) > 0)
     assert long_exp <= 1.0 * P2["totalValue"] * 1.01, (long_exp, P2["totalValue"])
-    print("squeeze brake OK (short exp", round(short_exp), "/", P["totalValue"], ") | crash brake OK (long exp",
-          round(long_exp), "/", P2["totalValue"], ")")
+    print("squeeze brake OK | crash brake OK")
 
 
-def test_margin_call():
-    L, eng, paths = first_daily()
-    L["meta"]["lastDailyDate"] = DAY
-    nxt = "2026-10-13"
-    # regime limit cut to 1.5x while the book is at ~2.85x -> leverage breach -> forced reduction
-    L["meta"]["regime"]["maxLev"] = 1.5
-    eng = run(L, "09:55", FakeData(nxt, paths, bars_for(paths, {}, n=5)), day=nxt)
+def test_maintenance_call():
+    L, _, paths = first_daily(BUFFER)
+    L["portfolio"]["cash"] -= 1400
+    L["config"]["startCapital"] -= 1400   # keep the cash reconciliation consistent
+    eng = run(L, "09:55", FakeData(NXT, paths, bars_for(paths, {}, n=6)), day=NXT, deposits=BUFFER)
     P = L["portfolio"]
-    rules = {t["rule"] for t in eng.new_trades}
-    assert "teminat çağrısı" in rules, rules
-    assert P["leverage"] <= 2.0 + 1e-6, P["leverage"]
-    # equity below maintenance: wipe most of the cash
-    L2, _, paths2 = first_daily()
-    L2["meta"]["lastDailyDate"] = DAY
-    L2["portfolio"]["cash"] -= 1400
-    L2["config"]["startCapital"] -= 1400   # keep the cash reconciliation consistent
-    eng2 = run(L2, "09:55", FakeData(nxt, paths2, bars_for(paths2, {}, n=5)), day=nxt)
-    P2 = L2["portfolio"]
-    assert "teminat çağrısı" in {t["rule"] for t in eng2.new_trades}
-    assert P2["totalValue"] >= P2["maintenanceReq"], (P2["totalValue"], P2["maintenanceReq"])
-    print("margin call OK: lev", P["leverage"], "| equity", P2["totalValue"], "req", P2["maintenanceReq"])
+    assert "teminat çağrısı" in {t["rule"] for t in eng.new_trades}
+    assert P["totalValue"] >= P["maintenanceReq"], (P["totalValue"], P["maintenanceReq"])
+    assert any(c["rule"] == "FINRA 4210" for c in L["compliance"])
+    print("maintenance call OK: equity", P["totalValue"], "req", P["maintenanceReq"])
 
 
 def test_bear_regime():
-    paths = base_paths(bear=True)
-    L = ledger()
-    run(L, "10:15", FakeData(DAY, paths, bars_for(paths, {})))
+    L, _, _ = first_daily(BUFFER, bear=True)
     P, M = L["portfolio"], L["meta"]
     assert M["regime"]["name"] == "bear", M["regime"]
     inv = [p for p in P["positions"] if p["ticker"] in U.LEVERAGED]
     assert inv and all(U.LEVERAGED[p["ticker"]][1] < 0 for p in inv), [p["ticker"] for p in inv]
     short_exp = sum(p["exposure"] for p in P["positions"] if T.direction(p) < 0)
     long_exp = sum(p["exposure"] for p in P["positions"] if T.direction(p) > 0)
-    assert P["leverage"] <= 1.5 + 1e-6 and short_exp > long_exp, (P["leverage"], short_exp, long_exp)
-    print("bear regime OK: lev", P["leverage"], "short exp", round(short_exp), "long exp", round(long_exp),
-          [p["ticker"] + ":" + p["side"] for p in P["positions"]])
+    assert short_exp > long_exp and regt_ok(P), (short_exp, long_exp)
+    print("bear regime OK: lev", P["leverage"], [p["ticker"] + ":" + p["side"] for p in P["positions"]])
 
 
-def test_fees():
+def test_dividend():
+    L, eng, paths = first_daily(BUFFER)
+    longs = [p for p in L["portfolio"]["positions"] if p["side"] == "long"]
+    shorts = [p for p in L["portfolio"]["positions"] if p["side"] == "short"]
+    divs = {longs[0]["ticker"]: pd.Series([1.0], index=[pd.Timestamp(NXT, tz=NY)]),
+            shorts[0]["ticker"]: pd.Series([0.5], index=[pd.Timestamp(NXT, tz=NY)])}
+    run(L, "10:15", FakeData(NXT, paths, bars_for(paths, {}, n=nbars("10:15")), divs), day=NXT, deposits=BUFFER)
+    tax = L["tax"]["2026"]
+    assert tax.get("dividendsReceived", 0) > 0 and tax.get("dividendsPaidShort", 0) > 0, tax
+    print("dividends OK:", tax)
+
+
+def test_fees_and_commission():
     assert T.sale_fees(100, 0.5) == 0.02
     assert T.sale_fees(1_000_000, 10_000) == round(20.6 + 1.95, 2)
     assert T.sale_fees(10, 100_000) == round(0.01 + 9.79, 2)
-    print("fees OK")
+    assert T.commission(1, 100) == 0.35          # minimum
+    assert T.commission(0.5, 20) == 0.2           # capped at 1 % of value
+    assert T.commission(200, 1000) == 0.7         # 0.0035 $/share
+    assert T.init_rate("TQQQ", "long") == 0.75 and T.init_rate("AAPL", "long") == 0.5
+    assert T.init_rate("AAPL", "short") == 0.5    # 150 % incl. the sale proceeds
+    assert T.maint_req("AAPL", "short", 10, 20) == 60.0   # 30 % of 200 < 10 x 5 $? no: max(60, 50)
+    assert T.maint_req("AAPL", "short", 10, 12) == 50.0   # 5 $/share minimum
+    assert T.maint_req("SOXL", "long", 10, 100) == 750.0
+    print("fees, commission and margin rates OK")
 
 
 if __name__ == "__main__":

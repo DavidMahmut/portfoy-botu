@@ -62,3 +62,21 @@ def intraday(tickers):
     """Today's 5-minute bars (regular session only)."""
     tickers = sorted(set(tickers))
     return _split(_download(tickers, period="1d", interval="5m", prepost=False), tickers, False)
+
+
+def dividends(tickers):
+    """Dividend history per ticker (ex-date indexed Series); empty dict on failure."""
+    import yfinance as yf
+
+    out = {}
+    for t in sorted(set(tickers)):
+        try:
+            s = yf.Ticker(t).dividends
+            if s is not None and len(s):
+                idx = pd.DatetimeIndex(s.index)
+                if idx.tz is None:
+                    idx = idx.tz_localize(NY)
+                out[t] = pd.Series(s.values, index=idx.tz_convert(NY))
+        except Exception as e:  # dividends are best effort
+            print("dividends failed:", t, e)
+    return out
