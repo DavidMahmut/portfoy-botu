@@ -24,6 +24,10 @@ Sanal bir **ABD kredili hesabında long/short işlem yapan**, kurallara dayalı 
 
 12 Ekim 13:01'deki v2 işlemleri (3x'e yakın kaldıraç) Reg T alım gücünü aştığı için gerçek bir hesapta reddedilirdi; v3'e geçişte iptal edildi, pozisyonlar o anın öncesine döndürüldü (`v3_restore.json`) ve ilk işlemlere IBKR komisyonu geriye dönük eklendi.
 
+## 3 aylık karne (12 Ekim 2026 – 12 Ocak 2027)
+
+Gerçek paraya geçmeden önce bot üç ay sanal çalışır. Sayfadaki karne her çalışmada güncellenir (`ledger.json` → `scorecard`): zaman ağırlıklı getiri ve SPY farkı, en büyük düşüş, kazanan işlem oranı, kâr faktörü, aylık getiriler ve botun kaç işlem gününde çalıştığı. Şartlar: SPY'ı masraflar düşüldükten sonra geçmek, en büyük düşüşün %20'den az olması, teminat çağrısı olmaması ve botun işlem günlerinin en az %95'inde çalışması.
+
 ## Strateji (özet)
 
 1. **Rejim (her gün):** Güçlü yükseliş → Reg T alım gücünün %55'i long hisse, %20'si 3x endeks ETF'i (TQQQ/UPRO/SOXL), %25'i short. Kararsız → %60 long, %40 short. Düşüş → %30 long, %25 −3x ters ETF (SQQQ/SPXU/SOXS), %45 short. VIX ≥ 35 → alım gücünün %60'ı.

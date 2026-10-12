@@ -220,6 +220,25 @@ details.run.cancelled{opacity:.6}
 .lawsrc{margin:8px 0 0;padding-left:20px;display:flex;flex-direction:column;gap:6px;font-size:14px}
 @media (max-width:820px){.law-grid{grid-template-columns:minmax(0,1fr)}}
 @media (max-width:520px){.clog li{grid-template-columns:minmax(0,1fr)}.clog p,.clog .src{grid-column:1}.trade .cancel-note{grid-column:1}}
+.kprog-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px}
+.kprog-top b{font-family:var(--f-mono);font-size:14px}
+.pill.ok{background:var(--gain-soft);color:var(--gain)}
+.crit{list-style:none;margin:16px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.crit li{border:1px solid var(--line);border-radius:8px;padding:12px 14px;display:flex;flex-direction:column;gap:6px}
+.crit .lbl{font-size:13px;color:var(--muted);font-weight:600}
+.crit .val{font-family:var(--f-mono);font-variant-numeric:tabular-nums;font-size:20px;font-weight:600}
+.crit .st{align-self:flex-start;font-family:var(--f-mono);font-size:12px;font-weight:600;padding:2px 9px;border-radius:5px}
+.crit .st.ok{background:var(--gain-soft);color:var(--gain)}
+.crit .st.no{background:var(--loss-soft);color:var(--loss)}
+.kstats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin:16px 0 0;border:1px solid var(--line);border-radius:8px}
+.kstats div{padding:12px 14px;border-left:1px solid var(--line)}
+.kstats div:nth-child(4n+1){border-left:none}
+.kstats div:nth-child(n+5){border-top:1px solid var(--line)}
+.kstats dt{font-size:12px;color:var(--muted);font-weight:600}
+.kstats dd{margin:4px 0 0;font-family:var(--f-mono);font-variant-numeric:tabular-nums;font-size:17px;font-weight:600}
+.kstats dd small{display:block;font-size:12px;font-weight:400;color:var(--muted);font-family:var(--f-body)}
+.month-table{min-width:420px}
+@media (max-width:820px){.crit{grid-template-columns:repeat(2,minmax(0,1fr))}.kstats{grid-template-columns:repeat(2,minmax(0,1fr))}.kstats div{border-left:1px solid var(--line);border-top:1px solid var(--line)}.kstats div:nth-child(2n+1){border-left:none}.kstats div:nth-child(-n+2){border-top:none}}
 footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);padding-top:14px;max-width:90ch}
 
 @media (max-width:820px){
@@ -256,6 +275,7 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
 
   <nav class="tabs" aria-label="Bölümler">
     <a href="#ozet">Özet</a>
+    <a href="#karne">Karne</a>
     <a href="#pozisyonlar">Pozisyonlar</a>
     <a href="#islemler">İşlemler</a>
     <a href="#gunluk">Günlük rapor</a>
@@ -323,6 +343,19 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
     </div>
   </section>
 
+  <section id="karne" aria-labelledby="h-karne">
+    <div class="sec-head"><h2 id="h-karne">3 aylık karne</h2><span class="small muted" id="kRange">12 Ekim 2026 – 12 Ocak 2027</span></div>
+    <div class="panel">
+      <div class="kprog-top"><b id="kDay">Değerlendirme başlıyor</b><span class="pill" id="kVerdict">—</span></div>
+      <div class="gauge" aria-hidden="true"><span id="kGauge" style="width:0"></span></div>
+      <p class="note" id="kNote">Gerçek paraya geçmeden önce botun bu dört şartı değerlendirme sonunda sağlaması bekleniyor. Getiriler zaman ağırlıklıdır: para eklemeleri kazanç sayılmaz. İlk haftalarda sonuçlar şanstan çok etkilenir.</p>
+      <ul class="crit" id="kCrit"><li class="muted small">Karne ilk çalışmadan sonra dolacak.</li></ul>
+      <dl class="kstats" id="kStats"></dl>
+      <h4 class="mini" style="margin-top:18px">Aylık getiri (masraflar düşülmüş)</h4>
+      <div class="tbl-wrap"><table class="month-table"><thead><tr><th scope="col">Ay</th><th scope="col">Portföy</th><th scope="col">SPY</th><th scope="col">Fark</th></tr></thead><tbody id="kMonths"><tr><td colspan="4" class="muted">Henüz veri yok.</td></tr></tbody></table></div>
+    </div>
+  </section>
+
   <section id="pozisyonlar" aria-labelledby="h-poz">
     <div class="sec-head"><h2 id="h-poz">Açık pozisyonlar</h2><span class="small muted" id="posAsOf"></span></div>
     <div id="posWrap"><div class="empty">Pozisyonlar yükleniyor…</div></div>
@@ -379,7 +412,7 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
 (function(){
   "use strict";
   var TZ = "America/New_York";
-  var S = {config:null, portfolio:null, meta:{}, trades:[], snapshots:[], runs:[], checks:null, compliance:[], tax:{}, err:null};
+  var S = {config:null, portfolio:null, meta:{}, trades:[], snapshots:[], runs:[], checks:null, compliance:[], tax:{}, score:null, err:null};
   var fmtUSD = new Intl.NumberFormat("tr-TR",{style:"currency",currency:"USD",minimumFractionDigits:2,maximumFractionDigits:2});
   var fmtNum = function(n,d){return new Intl.NumberFormat("tr-TR",{minimumFractionDigits:d,maximumFractionDigits:d}).format(n);};
   var fmtDate = new Intl.DateTimeFormat("tr-TR",{day:"numeric",month:"long",year:"numeric",timeZone:TZ});
@@ -798,8 +831,47 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
     srcs.forEach(function(s){ ls.appendChild(el("li",null, safeLink(s))); });
   }
 
+  /* ---------- scorecard ---------- */
+  var fmtMonth = new Intl.DateTimeFormat("tr-TR",{month:"long",year:"numeric",timeZone:"UTC"});
+  function renderScore(){
+    var sc=S.score; if(!sc) return;
+    $("kRange").textContent=dLong(sc.start)+" – "+dLong(sc.end);
+    var el_=sc.daysElapsed||0, tot=sc.daysTotal||1;
+    $("kDay").textContent= sc.finished ? "Değerlendirme tamamlandı ("+tot+" işlem günü)" : "İşlem günü "+el_+" / "+tot;
+    $("kGauge").style.width=Math.min(100,el_/tot*100).toFixed(1)+"%";
+    var cr=sc.criteria||[], okN=cr.filter(function(c){return c.ok;}).length, v=$("kVerdict");
+    v.className="pill "+(okN===cr.length?"ok":"warn");
+    v.textContent=(sc.finished?"Sonuç: ":"Şu an ")+okN+"/"+cr.length+" şart tutuyor";
+    var ul=$("kCrit"); clear(ul);
+    cr.forEach(function(c){
+      var val= c.key==="dd"&&sc.maxDrawdownAt? pct(c.value)+"  ("+dShort(sc.maxDrawdownAt)+")" : c.unit==="pct"? pct(c.value) : c.unit==="pctPlain"? "%"+fmtNum(c.value||0,1) : String(c.value);
+      var st= c.ok ? (sc.finished?"✓ Geçti":"✓ Tutuyor") : (sc.finished?"✗ Kaldı":"✗ Tutmuyor");
+      ul.appendChild(el("li",null, el("span",{class:"lbl",text:c.label}), el("span",{class:"val "+(c.unit==="pct"?cls(c.value):""),text:val}),
+        el("span",{class:"st "+(c.ok?"ok":"no"),text:st})));
+    });
+    var t=sc.trades||{}, dl=$("kStats"); clear(dl);
+    function stat(label,value,small,cl){ dl.appendChild(el("div",null, el("dt",{text:label}), el("dd",{class:cl||null}, value, small? el("small",{text:small}):null))); }
+    stat("Portföy getirisi", pct(sc.returnPct), "SPY: "+pct(sc.spyReturnPct), cls(sc.returnPct));
+    stat("Gerçekleşen kâr/zarar", sgnUsd(t.realizedPL||0), "Değerlendirmede kapanan işlemlerden", cls(t.realizedPL||0));
+    stat("Şu anki düşüş", pct(sc.drawdownNowPct), "Zirveden uzaklık", sc.drawdownNowPct<0?"down":null);
+    stat("Kapanan işlem", String(t.closed||0), isNum(t.winRatePct)? "Kazanan oranı %"+fmtNum(t.winRatePct,1) : "Henüz kapanan işlem yok", null);
+    stat("Ortalama kazanç / kayıp", (isNum(t.avgWin)?usd(t.avgWin):"—")+" / "+(isNum(t.avgLoss)?usd(t.avgLoss):"—"), "İşlem başına", null);
+    stat("Kâr faktörü", isNum(t.profitFactor)? fmtNum(t.profitFactor,2) : "—", "Toplam kazanç ÷ toplam kayıp", null);
+    var cc=sc.compliance||{}, cn=Object.keys(cc).reduce(function(a,k){return a+cc[k];},0);
+    stat("Kurala takılma", String(cn), cn? Object.keys(cc).map(function(k){return k+" "+cc[k];}).join(" · ") : "Mevzuat günlüğünde kayıt yok", null);
+    stat("Hata / çalışma günü", String(sc.errors||0)+" / "+((sc.uptime&&sc.uptime.ran)||0), "Hatalı çalışma · çalıştığı gün", null);
+    var tb=$("kMonths"); clear(tb);
+    var ms=sc.monthly||[];
+    if(!ms.length) tb.appendChild(el("tr",null, el("td",{colspan:"4",class:"muted",text:"Henüz veri yok."})));
+    ms.forEach(function(m){
+      var d=new Date(m.month+"-15T00:00:00Z");
+      tb.appendChild(el("tr",null, el("td",{text:fmtMonth.format(d)}), el("td",{class:cls(m.returnPct),text:pct(m.returnPct)}),
+        el("td",{class:cls(m.spyPct),text:pct(m.spyPct)}), el("td",{class:cls(m.excessPct),text:pct(m.excessPct)})));
+    });
+  }
+
   function renderAll(){
-    try{ renderSummary(); renderRisk(); renderAlloc(); renderPositions(); renderTrades(); renderRuns(); renderLaw(); renderRules(); renderChart(); }
+    try{ renderSummary(); renderRisk(); renderScore(); renderAlloc(); renderPositions(); renderTrades(); renderRuns(); renderLaw(); renderRules(); renderChart(); }
     catch(e){ console.error(e); }
   }
   var rt=null; function schedule(){ if(rt) return; rt=setTimeout(function(){rt=null; renderAll();},30); }
@@ -813,7 +885,7 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
     .then(function(L){
       var sig=(L.meta&&L.meta.lastRunAt||"")+"|"+(L.trades||[]).length+"|"+(L.compliance||[]).length; if(sig===lastSig) { renderRisk(); return; } lastSig=sig;
       S.config=L.config||null; S.portfolio=L.portfolio||null; S.meta=L.meta||{};
-      S.trades=L.trades||[]; S.snapshots=L.snapshots||[]; S.runs=L.runs||[]; S.compliance=L.compliance||[]; S.tax=L.tax||{};
+      S.trades=L.trades||[]; S.snapshots=L.snapshots||[]; S.runs=L.runs||[]; S.compliance=L.compliance||[]; S.tax=L.tax||{}; S.score=L.scorecard||null;
       var days=Object.keys(L.checks||{}).sort(); var d=days[days.length-1];
       S.checks= d? {date:d, entries:L.checks[d]} : null;
       renderAll();

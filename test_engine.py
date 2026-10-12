@@ -333,6 +333,26 @@ def test_dividend():
     print("dividends OK:", tax)
 
 
+def test_scorecard():
+    L, eng, paths = first_daily(BUFFER, hhmm="14:10")
+    sc = L["scorecard"]
+    assert sc["daysElapsed"] == 1 and sc["uptime"]["pct"] == 100.0, sc["uptime"]
+    assert abs(sc["returnPct"]) < 1 and sc["maxDrawdownPct"] <= 0
+    assert [c["key"] for c in sc["criteria"]] == ["spy", "dd", "margin", "uptime"]
+    # next day: every long falls 6 % -> drawdown is recorded, SPY flat -> behind the index
+    ov = {p["ticker"]: flat_bars(p["lastPrice"] * 0.94, n=nbars("10:15")) for p in L["portfolio"]["positions"]
+          if T.direction(p) > 0}
+    run(L, "10:15", FakeData(NXT, paths, bars_for(paths, ov, n=nbars("10:15"))), day=NXT, deposits=BUFFER)
+    sc = L["scorecard"]
+    assert sc["daysElapsed"] == 2 and sc["uptime"]["ran"] == 2
+    assert sc["maxDrawdownPct"] < -3, sc["maxDrawdownPct"]
+    assert sc["excessPct"] < 0 and not sc["criteria"][0]["ok"]
+    assert sc["monthly"] and sc["monthly"][0]["month"] == "2026-10"
+    assert sc["daysTotal"] == len(T.trading_days(T.EVAL_START, T.EVAL_END))
+    print("scorecard OK:", {k: sc[k] for k in ("returnPct", "spyReturnPct", "excessPct", "maxDrawdownPct", "daysElapsed",
+                                                 "daysTotal")}, sc["trades"], sc["monthly"])
+
+
 def test_fees_and_commission():
     assert T.sale_fees(100, 0.5) == 0.02
     assert T.sale_fees(1_000_000, 10_000) == round(20.6 + 1.95, 2)

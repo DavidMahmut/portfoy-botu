@@ -76,6 +76,11 @@ CHECK_DAYS_KEPT = 5
 COMPLIANCE_KEPT = 400
 WASH_DAYS = 30
 
+# ---- 3-month evaluation before any real money (12 Oct 2026 - 12 Jan 2027)
+EVAL_START, EVAL_START_TS, EVAL_END = "2026-10-12", "2026-10-12T14:07:00-04:00", "2027-01-12"
+EVAL_MAX_DD, EVAL_UPTIME = -20.0, 95.0          # criteria: drawdown not worse than -20 %, bot ran on >= 95 % of days
+SETUP_RULES = {"geçiş", "aracı kurum ücreti", "para yatırma"}
+
 HOLIDAYS = {
     "2026-01-01", "2026-01-19", "2026-02-16", "2026-04-03", "2026-05-25", "2026-06-19", "2026-07-03",
     "2026-09-07", "2026-11-26", "2026-12-25",
@@ -234,6 +239,16 @@ def market_open(now):
     if now.weekday() >= 5 or d in HOLIDAYS:
         return False
     return dtime(9, 30) <= now.time() <= dtime(16, 10)
+
+
+def trading_days(d0, d1):
+    """Market days from d0 to d1 inclusive (ISO strings)."""
+    out, d, end = [], date.fromisoformat(d0), date.fromisoformat(d1)
+    while d <= end:
+        if d.weekday() < 5 and d.isoformat() not in HOLIDAYS:
+            out.append(d.isoformat())
+        d = date.fromordinal(d.toordinal() + 1)
+    return out
 
 
 def direction(p):
@@ -1261,6 +1276,7 @@ class Engine:
                 self.notes.append("Bakım teminatı tamponu net değerin %10'unun altında")
         self.log_check(kind)
         self.snapshot()
+        self.scorecard()
 
     @staticmethod
     def _dist(p):
@@ -1297,6 +1313,94 @@ class Engine:
         for d in sorted(checks)[:-CHECK_DAYS_KEPT]:
             del checks[d]
         self.M["lastRunAt"] = iso(self.now)
+
+    def scorecard(self):
+        """Running 3-month evaluation (time-weighted, so deposits do not count as gains)."""
+        if self.today < EVAL_START:
+            return
+        E = self.M.setdefault("evaluation", {})
+        units = self.M.get("units") or self.C["startCapital"]
+        nav = self.P["totalValue"] / units
+        spy = self.quotes.get("SPY")
+        spy_px = spy["price"] if spy else self.P.get("benchmarkPrice")
+        if "navStart" not in E:
+            seen = [e for d in sorted(self.L.get("checks", {})) for e in self.L["checks"][d]
+                    if e.get("at", "") >= EVAL_START_TS and e.get("totalValue")]
+            first = seen[0] if seen else {"at": iso(self.now), "totalValue": self.P["totalValue"], "spyPrice": spy_px}
+            E.update(startAt=first["at"], navStart=first["totalValue"] / units, spyStart=first["spyPrice"] or spy_px,
+                     peak=first["totalValue"] / units, maxDD=0.0, maxDDAt=first["at"], errors=E.get("errors", 0),
+                     runDays=sorted({e["at"][:10] for e in seen}))
+            for e in seen:
+                self._track_dd(E, e["totalValue"] / units, e["at"])
+        self._track_dd(E, nav, iso(self.now))
+        if self.today not in E["runDays"]:
+            E["runDays"].append(self.today)
+        ret = (nav / E["navStart"] - 1) * 100
+        spy_ret = (spy_px / E["spyStart"] - 1) * 100 if spy_px and E.get("spyStart") else None
+        closes = [t for t in self.L["trades"] if not t.get("cancelled") and t.get("action") in ("SELL", "COVER")
+                  and t.get("ts", "") >= E["startAt"]]
+        wins = [num(t.get("realizedPL")) for t in closes if num(t.get("realizedPL")) > 0]
+        losses = [num(t.get("realizedPL")) for t in closes if num(t.get("realizedPL")) <= 0]
+        margin_calls = sum(1 for t in self.L["trades"] if t.get("rule") == "teminat çağrısı" and t.get("ts", "") >= E["startAt"]
+                           and not t.get("cancelled"))
+        comp = {}
+        for c in self.L.get("compliance", []):
+            if c.get("at", "") > E["startAt"] and c.get("rule") not in SETUP_RULES:
+                comp[c["rule"]] = comp.get(c["rule"], 0) + 1
+        # monthly returns from the daily snapshots (last snapshot of each month)
+        months, prev_nav, prev_spy = [], E["navStart"], E["spyStart"]
+        snaps = [s for s in self.L["snapshots"] if s["date"] >= EVAL_START and s.get("twrPct") is not None]
+        by_month = {}
+        for sn in snaps:
+            by_month[sn["date"][:7]] = sn
+        for m in sorted(by_month):
+            sn = by_month[m]
+            m_nav = 1 + sn["twrPct"] / 100
+            m_spy = sn.get("benchmarkPrice")
+            row = {"month": m, "returnPct": round((m_nav / prev_nav - 1) * 100, 2)}
+            if m_spy and prev_spy:
+                row["spyPct"] = round((m_spy / prev_spy - 1) * 100, 2)
+                row["excessPct"] = round(row["returnPct"] - row["spyPct"], 2)
+            months.append(row)
+            prev_nav, prev_spy = m_nav, m_spy or prev_spy
+        today_counts = self.now.time() >= dtime(9, 35)
+        due = [d for d in trading_days(EVAL_START, min(self.today, EVAL_END)) if d < self.today or today_counts]
+        run_days = [d for d in E["runDays"] if d in due]
+        all_days = trading_days(EVAL_START, EVAL_END)
+        uptime = round(len(run_days) / len(due) * 100, 1) if due else 100.0
+        excess = round(ret - spy_ret, 2) if spy_ret is not None else None
+        dd_now = round((nav / E["peak"] - 1) * 100, 2) + 0.0
+        self.L["scorecard"] = {
+            "start": EVAL_START, "startAt": E["startAt"], "end": EVAL_END, "asOf": iso(self.now),
+            "daysElapsed": len(due), "daysTotal": len(all_days), "finished": self.today >= EVAL_END,
+            "returnPct": round(ret, 2), "spyReturnPct": round(spy_ret, 2) if spy_ret is not None else None,
+            "excessPct": excess, "maxDrawdownPct": E["maxDD"], "maxDrawdownAt": E["maxDDAt"], "drawdownNowPct": dd_now,
+            "trades": {"closed": len(closes), "wins": len(wins),
+                       "winRatePct": round(len(wins) / len(closes) * 100, 1) if closes else None,
+                       "avgWin": round(sum(wins) / len(wins), 2) if wins else None,
+                       "avgLoss": round(sum(losses) / len(losses), 2) if losses else None,
+                       "profitFactor": round(sum(wins) / -sum(losses), 2) if losses and sum(losses) < 0 else None,
+                       "realizedPL": round(sum(wins) + sum(losses), 2)},
+            "monthly": months, "uptime": {"due": len(due), "ran": len(run_days), "pct": uptime},
+            "errors": E.get("errors", 0), "marginCalls": margin_calls, "compliance": comp,
+            "criteria": [
+                {"key": "spy", "label": "SPY'ı geçmek (masraflar düşülmüş)", "ok": excess is not None and excess > 0,
+                 "value": excess, "unit": "pct"},
+                {"key": "dd", "label": f"En büyük düşüş %{trn(-EVAL_MAX_DD, 0)}'den az", "ok": E["maxDD"] > EVAL_MAX_DD,
+                 "value": E["maxDD"], "unit": "pct"},
+                {"key": "margin", "label": "Teminat çağrısı yok", "ok": margin_calls == 0, "value": margin_calls, "unit": "count"},
+                {"key": "uptime", "label": f"Bot işlem günlerinin en az %{trn(EVAL_UPTIME, 0)}'inde çalıştı",
+                 "ok": uptime >= EVAL_UPTIME, "value": uptime, "unit": "pctPlain"},
+            ],
+        }
+
+    @staticmethod
+    def _track_dd(E, nav, at):
+        if nav > E["peak"]:
+            E["peak"] = nav
+        dd = round((nav / E["peak"] - 1) * 100, 2)
+        if dd < E["maxDD"]:
+            E["maxDD"], E["maxDDAt"] = dd, at
 
     def snapshot(self):
         snaps = [s for s in self.L["snapshots"] if s["date"] != self.today]
@@ -1339,6 +1443,8 @@ def main():
         traceback.print_exc()
         ledger = load_json(LEDGER)  # discard partial changes
         ledger.setdefault("meta", {})["lastError"] = f"{iso(now)}: {type(e).__name__}: {e}"
+        if "evaluation" in ledger["meta"]:
+            ledger["meta"]["evaluation"]["errors"] = ledger["meta"]["evaluation"].get("errors", 0) + 1
         ledger["meta"]["lastRunAt"] = iso(now)
     save_ledger(ledger)
     if traded:
