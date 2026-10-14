@@ -101,38 +101,38 @@
   }
  },
  "portfolio": {
-  "asOf": "2026-10-14T11:52:03-04:00",
-  "benchmarkPrice": 770.65,
-  "benchmarkValue": 2975.14,
+  "asOf": "2026-10-14T12:02:09-04:00",
+  "benchmarkPrice": 770.66,
+  "benchmarkValue": 2975.18,
   "cash": 1220.47,
   "positions": [
    {
     "avgCost": 206.1964,
     "costBasis": 779.17,
     "kind": "Hisse",
-    "lastPrice": 204.15,
-    "lastPriceAt": "2026-10-14T11:50:00-04:00",
-    "marketValue": 771.44,
+    "lastPrice": 204.21,
+    "lastPriceAt": "2026-10-14T12:00:00-04:00",
+    "marketValue": 771.67,
     "name": "Palantir Technologies",
     "openedAt": "2026-10-08",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (11:50 ET)",
+     "title": "Yahoo Finance 5 dk mum (12:00 ET)",
      "url": "https://finance.yahoo.com/quote/PLTR/"
     },
     "shares": 3.7788,
     "stopPrice": 187.39,
     "thesis": "Analist yükseltmesi ve göreli güç yeni zirveleri taşıyabilir. Tez bozulur: 181 $ altı (−%8) veya yapay zekâ harcamalarına dair olumsuz haber akışı yazılım tarafına sıçrarsa.",
     "ticker": "PLTR",
-    "unrealized": -7.73,
-    "unrealizedPct": -0.99,
+    "unrealized": -7.5,
+    "unrealizedPct": -0.96,
     "openedTs": "2026-10-08T14:55:00-04:00",
     "tookProfit": false,
-    "lastBarTs": "2026-10-14T11:50:00-04:00",
+    "lastBarTs": "2026-10-14T12:00:00-04:00",
     "side": "long",
     "lev": 1,
     "extremeSinceEntry": 212.9399,
-    "exposure": 771.44,
-    "maintReq": 192.86,
+    "exposure": 771.67,
+    "maintReq": 192.92,
     "lastAddDate": "2026-10-12"
    },
    {
@@ -142,26 +142,26 @@
     "shares": 2.9796,
     "avgCost": 263.6939,
     "costBasis": 785.7,
-    "lastPrice": 252.59,
-    "lastPriceAt": "2026-10-14T11:50:00-04:00",
+    "lastPrice": 252.86,
+    "lastPriceAt": "2026-10-14T12:00:00-04:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (11:50 ET)",
+     "title": "Yahoo Finance 5 dk mum (12:00 ET)",
      "url": "https://finance.yahoo.com/quote/CRWD/"
     },
-    "marketValue": 752.62,
-    "unrealized": -33.08,
-    "unrealizedPct": -4.21,
+    "marketValue": 753.42,
+    "unrealized": -32.28,
+    "unrealizedPct": -4.11,
     "openedAt": "2026-10-09",
     "openedTs": "2026-10-09T11:35:00-04:00",
     "stopPrice": 248.31,
     "tookProfit": false,
     "thesis": "Momentum lideri: sıralamada 2. (puan 83,00). Getiriler: 1 ay +%29,15, 3 ay +%43,54, 6 ay +%184,67; fiyat 50 günlük ortalamanın (228,60 $) üstünde. Hedef ağırlık ~%23,8. Tez bozulur: fiyat zarar-kese inerse ya da sıralamada ilk 10'dan çıkarsa.",
-    "lastBarTs": "2026-10-14T11:50:00-04:00",
+    "lastBarTs": "2026-10-14T12:00:00-04:00",
     "side": "long",
     "lev": 1,
     "extremeSinceEntry": 276.24,
-    "exposure": 752.62,
-    "maintReq": 188.15,
+    "exposure": 753.42,
+    "maintReq": 188.36,
     "lastAddDate": "2026-10-12"
    },
    {
@@ -171,26 +171,26 @@
     "shares": 2.1874,
     "avgCost": 358.3563,
     "costBasis": 783.87,
-    "lastPrice": 341.605,
-    "lastPriceAt": "2026-10-14T11:50:00-04:00",
+    "lastPrice": 341.5043,
+    "lastPriceAt": "2026-10-14T12:00:00-04:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (11:50 ET)",
+     "title": "Yahoo Finance 5 dk mum (12:00 ET)",
      "url": "https://finance.yahoo.com/quote/SNOW/"
     },
-    "marketValue": 747.23,
-    "unrealized": -36.64,
-    "unrealizedPct": -4.67,
+    "marketValue": 747.01,
+    "unrealized": -36.86,
+    "unrealizedPct": -4.7,
     "openedAt": "2026-10-09",
     "openedTs": "2026-10-09T11:35:00-04:00",
     "stopPrice": 329.78,
     "tookProfit": false,
     "thesis": "Momentum lideri: sıralamada 3. (puan 77,16). Getiriler: 1 ay +%8,66, 3 ay +%33,36, 6 ay +%195,83; fiyat 50 günlük ortalamanın (330,04 $) üstünde. Hedef ağırlık ~%23,8. Tez bozulur: fiyat zarar-kese inerse ya da sıralamada ilk 10'dan çıkarsa.",
-    "lastBarTs": "2026-10-14T11:50:00-04:00",
+    "lastBarTs": "2026-10-14T12:00:00-04:00",
     "side": "long",
     "lev": 1,
     "extremeSinceEntry": 370.21,
-    "exposure": 747.23,
-    "maintReq": 186.81,
+    "exposure": 747.01,
+    "maintReq": 186.75,
     "lastAddDate": "2026-10-12"
    },
    {
@@ -202,16 +202,16 @@
     "shares": 1.7497,
     "avgCost": 271.4942,
     "costBasis": 475.03,
-    "lastPrice": 265.44,
-    "lastPriceAt": "2026-10-14T11:50:00-04:00",
+    "lastPrice": 266.53,
+    "lastPriceAt": "2026-10-14T12:00:00-04:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (11:50 ET)",
+     "title": "Yahoo Finance 5 dk mum (12:00 ET)",
      "url": "https://finance.yahoo.com/quote/APP/"
     },
-    "marketValue": -464.44,
-    "exposure": 464.44,
-    "unrealized": 10.59,
-    "unrealizedPct": 2.23,
+    "marketValue": -466.35,
+    "exposure": 466.35,
+    "unrealized": 8.68,
+    "unrealizedPct": 1.83,
     "openedAt": "2026-10-12",
     "openedTs": "2026-10-12T14:05:00-04:00",
     "lastAddDate": "2026-10-12",
@@ -219,8 +219,8 @@
     "extremeSinceEntry": 263.85,
     "tookProfit": false,
     "thesis": "Düşüş trendi: en zayıflar listesinde 1. (puan −33,46). Getiriler: 1 ay −%16,15, 3 ay −%39,50, 6 ay −%34,93; fiyat 50 günlük ortalamanın (315,69 $) altında. Tez bozulur: fiyat zarar-kes seviyesine çıkarsa veya düşüş trendi biterse.",
-    "maintReq": 139.33,
-    "lastBarTs": "2026-10-14T11:50:00-04:00"
+    "maintReq": 139.9,
+    "lastBarTs": "2026-10-14T12:00:00-04:00"
    },
    {
     "ticker": "NRG",
@@ -231,16 +231,16 @@
     "shares": 4.5073,
     "avgCost": 105.3973,
     "costBasis": 475.06,
-    "lastPrice": 101.0,
-    "lastPriceAt": "2026-10-14T11:50:00-04:00",
+    "lastPrice": 101.05,
+    "lastPriceAt": "2026-10-14T12:00:00-04:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (11:50 ET)",
+     "title": "Yahoo Finance 5 dk mum (12:00 ET)",
      "url": "https://finance.yahoo.com/quote/NRG/"
     },
-    "marketValue": -455.24,
-    "exposure": 455.24,
-    "unrealized": 19.82,
-    "unrealizedPct": 4.17,
+    "marketValue": -455.46,
+    "exposure": 455.46,
+    "unrealized": 19.6,
+    "unrealizedPct": 4.13,
     "openedAt": "2026-10-12",
     "openedTs": "2026-10-12T14:05:00-04:00",
     "lastAddDate": "2026-10-12",
@@ -248,8 +248,8 @@
     "extremeSinceEntry": 100.465,
     "tookProfit": false,
     "thesis": "Düşüş trendi: en zayıflar listesinde 2. (puan −24,72). Getiriler: 1 ay −%7,06, 3 ay −%23,79, 6 ay −%38,06; fiyat 50 günlük ortalamanın (110,84 $) altında. Tez bozulur: fiyat zarar-kes seviyesine çıkarsa veya düşüş trendi biterse.",
-    "maintReq": 136.57,
-    "lastBarTs": "2026-10-14T11:50:00-04:00"
+    "maintReq": 136.64,
+    "lastBarTs": "2026-10-14T12:00:00-04:00"
    },
    {
     "ticker": "VRT",
@@ -260,16 +260,16 @@
     "shares": 1.9789,
     "avgCost": 240.0499,
     "costBasis": 475.03,
-    "lastPrice": 225.03,
-    "lastPriceAt": "2026-10-14T11:50:00-04:00",
+    "lastPrice": 224.795,
+    "lastPriceAt": "2026-10-14T12:00:00-04:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (11:50 ET)",
+     "title": "Yahoo Finance 5 dk mum (12:00 ET)",
      "url": "https://finance.yahoo.com/quote/VRT/"
     },
-    "marketValue": -445.31,
-    "exposure": 445.31,
-    "unrealized": 29.72,
-    "unrealizedPct": 6.26,
+    "marketValue": -444.85,
+    "exposure": 444.85,
+    "unrealized": 30.18,
+    "unrealizedPct": 6.35,
     "openedAt": "2026-10-12",
     "openedTs": "2026-10-12T14:05:00-04:00",
     "lastAddDate": "2026-10-12",
@@ -277,8 +277,8 @@
     "extremeSinceEntry": 224.14,
     "tookProfit": false,
     "thesis": "Düşüş trendi: en zayıflar listesinde 3. (puan −17,76). Getiriler: 1 ay −%6,60, 3 ay −%20,91, 6 ay −%19,96; fiyat 50 günlük ortalamanın (259,57 $) altında. Tez bozulur: fiyat zarar-kes seviyesine çıkarsa veya düşüş trendi biterse.",
-    "maintReq": 133.59,
-    "lastBarTs": "2026-10-14T11:50:00-04:00"
+    "maintReq": 133.45,
+    "lastBarTs": "2026-10-14T12:00:00-04:00"
    },
    {
     "ticker": "SOXL",
@@ -289,16 +289,16 @@
     "shares": 5.9149,
     "avgCost": 128.5042,
     "costBasis": 760.09,
-    "lastPrice": 114.15,
-    "lastPriceAt": "2026-10-14T11:50:00-04:00",
+    "lastPrice": 113.6614,
+    "lastPriceAt": "2026-10-14T12:00:00-04:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (11:50 ET)",
+     "title": "Yahoo Finance 5 dk mum (12:00 ET)",
      "url": "https://finance.yahoo.com/quote/SOXL/"
     },
-    "marketValue": 675.19,
-    "exposure": 2025.56,
-    "unrealized": -84.9,
-    "unrealizedPct": -11.17,
+    "marketValue": 672.3,
+    "exposure": 2016.89,
+    "unrealized": -87.79,
+    "unrealizedPct": -11.55,
     "openedAt": "2026-10-12",
     "openedTs": "2026-10-12T14:05:00-04:00",
     "lastAddDate": "2026-10-12",
@@ -306,15 +306,15 @@
     "extremeSinceEntry": 129.445,
     "tookProfit": false,
     "thesis": "Rejim dilimi: Güçlü yükseliş. SMH momentum puanı 10,05; 3x ETF ile 760,09 $ karşılığı 2.280,28 $ ekonomik maruziyet. FINRA kaldıraçlı ETF kuralı gereği teminatı %75. Zarar-kes maliyetin %15 altı, izleyen %20.",
-    "maintReq": 506.39,
-    "lastBarTs": "2026-10-14T11:50:00-04:00"
+    "maintReq": 504.22,
+    "lastBarTs": "2026-10-14T12:00:00-04:00"
    }
   ],
-  "positionsValue": 1581.48,
+  "positionsValue": 1577.74,
   "realizedPL": -90.46,
-  "totalPL": -198.05,
-  "totalPLPct": -6.6,
-  "totalValue": 2801.95,
+  "totalPL": -201.79,
+  "totalPLPct": -6.73,
+  "totalValue": 2798.21,
   "costs": {
    "slippage": 3.921,
    "commission": 6.65,
@@ -325,24 +325,24 @@
    "dividendsReceived": 0.0
   },
   "netDeposits": 3000.0,
-  "longValue": 2946.47,
-  "shortValue": 1364.99,
-  "grossExposure": 5661.83,
-  "netExposure": 2931.85,
+  "longValue": 2944.39,
+  "shortValue": 1366.66,
+  "grossExposure": 5655.64,
+  "netExposure": 2922.33,
   "leverage": 2.021,
-  "maintenanceReq": 1483.7,
-  "marginBuffer": 1318.25,
-  "twrPct": -5.92,
+  "maintenanceReq": 1482.24,
+  "marginBuffer": 1315.97,
+  "twrPct": -6.04,
   "benchmarkTwrPct": -0.28,
-  "regTInitialReq": 2324.53,
-  "regTExcess": 477.42,
-  "buyingPower": 954.85,
+  "regTInitialReq": 2323.6,
+  "regTExcess": 474.61,
+  "buyingPower": 949.22,
   "marginEligible": true
  },
  "meta": {
   "lastDailyDate": "2026-10-14",
   "brakeDate": null,
-  "lastRunAt": "2026-10-14T11:52:03-04:00",
+  "lastRunAt": "2026-10-14T12:02:09-04:00",
   "lastError": null,
   "engine": "reg-t-bot v3",
   "units": 2978.240478,
@@ -365,8 +365,8 @@
    "navStart": 1.0056239656010746,
    "spyStart": 777.53,
    "peak": 1.0100191781759806,
-   "maxDD": -6.85,
-   "maxDDAt": "2026-10-14T11:52:03-04:00",
+   "maxDD": -6.98,
+   "maxDDAt": "2026-10-14T12:02:09-04:00",
    "errors": 0,
    "runDays": [
     "2026-10-12",
@@ -1557,51 +1557,51 @@
   },
   {
    "date": "2026-10-14",
-   "at": "2026-10-14T11:52:03-04:00",
-   "totalValue": 2801.95,
+   "at": "2026-10-14T12:02:09-04:00",
+   "totalValue": 2798.21,
    "cash": 1220.47,
-   "positionsValue": 1581.48,
-   "plPct": -6.6,
-   "twrPct": -5.92,
+   "positionsValue": 1577.74,
+   "plPct": -6.73,
+   "twrPct": -6.04,
    "netDeposits": 3000.0,
    "leverage": 2.021,
-   "benchmarkPrice": 770.65,
-   "benchmarkValue": 2975.14,
+   "benchmarkPrice": 770.66,
+   "benchmarkValue": 2975.18,
    "holdings": [
     {
      "ticker": "PLTR",
      "side": "long",
-     "value": 771.44
+     "value": 771.67
     },
     {
      "ticker": "CRWD",
      "side": "long",
-     "value": 752.62
+     "value": 753.42
     },
     {
      "ticker": "SNOW",
      "side": "long",
-     "value": 747.23
+     "value": 747.01
     },
     {
      "ticker": "APP",
      "side": "short",
-     "value": -464.44
+     "value": -466.35
     },
     {
      "ticker": "NRG",
      "side": "short",
-     "value": -455.24
+     "value": -455.46
     },
     {
      "ticker": "VRT",
      "side": "short",
-     "value": -445.31
+     "value": -444.85
     },
     {
      "ticker": "SOXL",
      "side": "long",
-     "value": 675.19
+     "value": 672.3
     }
    ]
   }
@@ -16803,6 +16803,148 @@
     ],
     "actions": [],
     "note": "CRWD zarar-kes seviyesine %3'ten yakın"
+   },
+   {
+    "at": "2026-10-14T11:57:07-04:00",
+    "kind": "guard",
+    "status": "uyari",
+    "spyPrice": 770.63,
+    "spyChangePct": -0.95,
+    "totalValue": 2803.44,
+    "benchmarkValue": 2975.06,
+    "leverage": 2.019,
+    "marginBuffer": 1320.5,
+    "positions": [
+     {
+      "ticker": "PLTR",
+      "side": "long",
+      "price": 204.285,
+      "dayChangePct": -2.1,
+      "stopPrice": 187.39,
+      "distancePct": 9.02
+     },
+     {
+      "ticker": "CRWD",
+      "side": "long",
+      "price": 253.2275,
+      "dayChangePct": -3.06,
+      "stopPrice": 248.31,
+      "distancePct": 1.98
+     },
+     {
+      "ticker": "SNOW",
+      "side": "long",
+      "price": 341.42,
+      "dayChangePct": -4.57,
+      "stopPrice": 329.78,
+      "distancePct": 3.53
+     },
+     {
+      "ticker": "APP",
+      "side": "short",
+      "price": 265.46,
+      "dayChangePct": -2.5,
+      "stopPrice": 293.21,
+      "distancePct": 10.45
+     },
+     {
+      "ticker": "NRG",
+      "side": "short",
+      "price": 100.955,
+      "dayChangePct": -5.81,
+      "stopPrice": 112.52,
+      "distancePct": 11.46
+     },
+     {
+      "ticker": "VRT",
+      "side": "short",
+      "price": 224.69,
+      "dayChangePct": -5.31,
+      "stopPrice": 251.04,
+      "distancePct": 11.73
+     },
+     {
+      "ticker": "SOXL",
+      "side": "long",
+      "price": 113.92,
+      "dayChangePct": -10.7,
+      "stopPrice": 109.23,
+      "distancePct": 4.29
+     }
+    ],
+    "actions": [],
+    "note": "CRWD zarar-kes seviyesine %3'ten yakın"
+   },
+   {
+    "at": "2026-10-14T12:02:09-04:00",
+    "kind": "guard",
+    "status": "uyari",
+    "spyPrice": 770.66,
+    "spyChangePct": -0.94,
+    "totalValue": 2798.21,
+    "benchmarkValue": 2975.18,
+    "leverage": 2.021,
+    "marginBuffer": 1315.97,
+    "positions": [
+     {
+      "ticker": "PLTR",
+      "side": "long",
+      "price": 204.21,
+      "dayChangePct": -2.14,
+      "stopPrice": 187.39,
+      "distancePct": 8.98
+     },
+     {
+      "ticker": "CRWD",
+      "side": "long",
+      "price": 252.86,
+      "dayChangePct": -3.2,
+      "stopPrice": 248.31,
+      "distancePct": 1.83
+     },
+     {
+      "ticker": "SNOW",
+      "side": "long",
+      "price": 341.5043,
+      "dayChangePct": -4.54,
+      "stopPrice": 329.78,
+      "distancePct": 3.56
+     },
+     {
+      "ticker": "APP",
+      "side": "short",
+      "price": 266.53,
+      "dayChangePct": -2.11,
+      "stopPrice": 293.21,
+      "distancePct": 10.01
+     },
+     {
+      "ticker": "NRG",
+      "side": "short",
+      "price": 101.05,
+      "dayChangePct": -5.72,
+      "stopPrice": 112.52,
+      "distancePct": 11.35
+     },
+     {
+      "ticker": "VRT",
+      "side": "short",
+      "price": 224.795,
+      "dayChangePct": -5.27,
+      "stopPrice": 251.04,
+      "distancePct": 11.68
+     },
+     {
+      "ticker": "SOXL",
+      "side": "long",
+      "price": 113.6614,
+      "dayChangePct": -10.9,
+      "stopPrice": 109.23,
+      "distancePct": 4.06
+     }
+    ],
+    "actions": [],
+    "note": "CRWD zarar-kes seviyesine %3'ten yakın"
    }
   ]
  },
@@ -19870,16 +20012,16 @@
   "start": "2026-10-12",
   "startAt": "2026-10-12T14:07:31-04:00",
   "end": "2027-01-12",
-  "asOf": "2026-10-14T11:52:03-04:00",
+  "asOf": "2026-10-14T12:02:09-04:00",
   "daysElapsed": 3,
   "daysTotal": 64,
   "finished": false,
-  "returnPct": -6.45,
+  "returnPct": -6.57,
   "spyReturnPct": -0.88,
-  "excessPct": -5.56,
-  "maxDrawdownPct": -6.85,
-  "maxDrawdownAt": "2026-10-14T11:52:03-04:00",
-  "drawdownNowPct": -6.85,
+  "excessPct": -5.69,
+  "maxDrawdownPct": -6.98,
+  "maxDrawdownAt": "2026-10-14T12:02:09-04:00",
+  "drawdownNowPct": -6.98,
   "trades": {
    "closed": 2,
    "wins": 0,
@@ -19892,9 +20034,9 @@
   "monthly": [
    {
     "month": "2026-10",
-    "returnPct": -6.45,
+    "returnPct": -6.57,
     "spyPct": -0.88,
-    "excessPct": -5.57
+    "excessPct": -5.69
    }
   ],
   "uptime": {
@@ -19912,14 +20054,14 @@
     "key": "spy",
     "label": "SPY'ı geçmek (masraflar düşülmüş)",
     "ok": false,
-    "value": -5.56,
+    "value": -5.69,
     "unit": "pct"
    },
    {
     "key": "dd",
     "label": "En büyük düşüş %20'den az",
     "ok": true,
-    "value": -6.85,
+    "value": -6.98,
     "unit": "pct"
    },
    {
