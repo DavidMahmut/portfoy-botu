@@ -1,0 +1,546 @@
+{
+ "asOf": "2026-10-15T16:33:20Z",
+ "start": "2018-01-02",
+ "end": "2026-10-15",
+ "capital": 3000.0,
+ "universe": 96,
+ "results": {
+  "v0": {
+   "cagrPct": -5.15,
+   "volPct": 54.93,
+   "sharpe": 0.18,
+   "maxDrawdownPct": -63.9,
+   "endValue": 1885.9,
+   "worstDayPct": -14.36,
+   "worstMonthPct": -38.04,
+   "costs": 2474.97,
+   "trades": 2208,
+   "winRatePct": 43.3,
+   "avgWinPct": 10.57,
+   "avgLossPct": -5.35,
+   "profitFactor": 1.04,
+   "stopsPct": 38.7,
+   "avgDays": 9.4,
+   "yearly": {
+    "2018": -25.3,
+    "2019": -11.5,
+    "2020": 48.7,
+    "2021": -34.9,
+    "2022": -20.0,
+    "2023": 11.4,
+    "2024": 59.3,
+    "2025": -25.8,
+    "2026": -6.8
+   },
+   "periods": {
+    "2018 Q4": -22.9,
+    "2020 Covid": -21.2,
+    "2022": -21.4,
+    "2025 Şubat-Nisan": -30.1,
+    "Son 3 ay": -24.5,
+    "Ekim 2026": -15.3
+   },
+   "label": "Mevcut kurallar (v3)"
+  },
+  "v1": {
+   "cagrPct": -5.33,
+   "volPct": 47.07,
+   "sharpe": 0.12,
+   "maxDrawdownPct": -79.0,
+   "endValue": 1854.61,
+   "worstDayPct": -15.39,
+   "worstMonthPct": -32.22,
+   "costs": 2268.2,
+   "trades": 2109,
+   "winRatePct": 41.3,
+   "avgWinPct": 9.85,
+   "avgLossPct": -4.72,
+   "profitFactor": 1.04,
+   "stopsPct": 32.9,
+   "avgDays": 9.6,
+   "yearly": {
+    "2018": -11.8,
+    "2019": -2.1,
+    "2020": 16.8,
+    "2021": -31.9,
+    "2022": -41.9,
+    "2023": -16.2,
+    "2024": 35.7,
+    "2025": 4.8,
+    "2026": 30.0
+   },
+   "periods": {
+    "2018 Q4": -5.9,
+    "2020 Covid": -12.1,
+    "2022": -42.6,
+    "2025 Şubat-Nisan": -27.8,
+    "Son 3 ay": -13.1,
+    "Ekim 2026": -11.6
+   },
+   "label": "+ zarar-kes sonrası 10 gün bekleme"
+  },
+  "v2": {
+   "cagrPct": -13.29,
+   "volPct": 31.4,
+   "sharpe": -0.3,
+   "maxDrawdownPct": -81.31,
+   "endValue": 857.86,
+   "worstDayPct": -11.01,
+   "worstMonthPct": -26.91,
+   "costs": 2053.66,
+   "trades": 2205,
+   "winRatePct": 44.5,
+   "avgWinPct": 9.27,
+   "avgLossPct": -4.98,
+   "profitFactor": 1.0,
+   "stopsPct": 33.3,
+   "avgDays": 9.0,
+   "yearly": {
+    "2018": -17.0,
+    "2019": -4.3,
+    "2020": -6.3,
+    "2021": -28.4,
+    "2022": -32.7,
+    "2023": -7.6,
+    "2024": 1.1,
+    "2025": -25.4,
+    "2026": 14.4
+   },
+   "periods": {
+    "2018 Q4": -10.7,
+    "2020 Covid": -15.3,
+    "2022": -32.8,
+    "2025 Şubat-Nisan": -23.4,
+    "Son 3 ay": -10.7,
+    "Ekim 2026": -8.2
+   },
+   "label": "+ oynaklığa göre zarar-kes (ATR) ve pozisyon boyutu"
+  },
+  "v3": {
+   "cagrPct": -14.6,
+   "volPct": 30.65,
+   "sharpe": -0.36,
+   "maxDrawdownPct": -81.71,
+   "endValue": 750.75,
+   "worstDayPct": -9.73,
+   "worstMonthPct": -25.33,
+   "costs": 2171.59,
+   "trades": 2304,
+   "winRatePct": 44.6,
+   "avgWinPct": 8.73,
+   "avgLossPct": -4.83,
+   "profitFactor": 1.0,
+   "stopsPct": 31.3,
+   "avgDays": 8.5,
+   "yearly": {
+    "2018": -16.6,
+    "2019": 4.0,
+    "2020": -7.5,
+    "2021": -25.5,
+    "2022": -40.0,
+    "2023": -11.1,
+    "2024": 3.1,
+    "2025": -25.8,
+    "2026": 2.7
+   },
+   "periods": {
+    "2018 Q4": -11.0,
+    "2020 Covid": -15.1,
+    "2022": -40.5,
+    "2025 Şubat-Nisan": -23.8,
+    "Son 3 ay": -12.9,
+    "Ekim 2026": -7.4
+   },
+   "label": "+ sektör başına en fazla 2 long"
+  },
+  "v4": {
+   "cagrPct": 0.83,
+   "volPct": 31.88,
+   "sharpe": 0.19,
+   "maxDrawdownPct": -54.7,
+   "endValue": 3225.37,
+   "worstDayPct": -9.85,
+   "worstMonthPct": -20.78,
+   "costs": 2300.2,
+   "trades": 2000,
+   "winRatePct": 43.0,
+   "avgWinPct": 8.72,
+   "avgLossPct": -4.46,
+   "profitFactor": 1.12,
+   "stopsPct": 32.7,
+   "avgDays": 9.3,
+   "yearly": {
+    "2018": -12.0,
+    "2019": 4.1,
+    "2020": 6.8,
+    "2021": -22.1,
+    "2022": -13.8,
+    "2023": 8.2,
+    "2024": 41.1,
+    "2025": -8.4,
+    "2026": 17.1
+   },
+   "periods": {
+    "2018 Q4": -2.7,
+    "2020 Covid": -2.9,
+    "2022": -14.5,
+    "2025 Şubat-Nisan": -27.7,
+    "Son 3 ay": -21.1,
+    "Ekim 2026": -6.9
+   },
+   "label": "+ 3x ETF yok"
+  },
+  "v5": {
+   "cagrPct": -25.67,
+   "volPct": 29.99,
+   "sharpe": -0.84,
+   "maxDrawdownPct": -93.12,
+   "endValue": 221.77,
+   "worstDayPct": -8.05,
+   "worstMonthPct": -19.71,
+   "costs": 3365.63,
+   "trades": 3134,
+   "winRatePct": 48.5,
+   "avgWinPct": 4.15,
+   "avgLossPct": -3.26,
+   "profitFactor": 1.05,
+   "stopsPct": 16.1,
+   "avgDays": 5.2,
+   "yearly": {
+    "2018": -28.2,
+    "2019": -1.9,
+    "2020": -3.7,
+    "2021": -24.5,
+    "2022": -31.8,
+    "2023": -13.2,
+    "2024": 15.9,
+    "2025": -49.5,
+    "2026": -58.3
+   },
+   "periods": {
+    "2018 Q4": -10.8,
+    "2020 Covid": 2.9,
+    "2022": -33.1,
+    "2025 Şubat-Nisan": -25.9,
+    "Son 3 ay": -39.6,
+    "Ekim 2026": -12.1
+   },
+   "label": "+ yalnızca geri çekilmede alım"
+  },
+  "mr": {
+   "cagrPct": 3.45,
+   "volPct": 20.98,
+   "sharpe": 0.27,
+   "maxDrawdownPct": -40.66,
+   "endValue": 4040.63,
+   "worstDayPct": -12.21,
+   "worstMonthPct": -17.81,
+   "costs": 2632.35,
+   "trades": 1973,
+   "winRatePct": 64.8,
+   "avgWinPct": 2.57,
+   "avgLossPct": -3.71,
+   "profitFactor": 1.24,
+   "stopsPct": 9.8,
+   "avgDays": 3.5,
+   "yearly": {
+    "2018": -27.2,
+    "2019": 8.9,
+    "2020": 18.7,
+    "2021": 11.2,
+    "2022": -7.2,
+    "2023": 26.2,
+    "2024": -0.8,
+    "2025": 15.5,
+    "2026": -4.1
+   },
+   "periods": {
+    "2018 Q4": -17.5,
+    "2020 Covid": -24.4,
+    "2022": -7.3,
+    "2025 Şubat-Nisan": -19.5,
+    "Son 3 ay": 4.6,
+    "Ekim 2026": -8.2
+   },
+   "label": "Düşüşte alım (yükseliş trendinde aşırı satım)"
+  },
+  "spy": {
+   "cagrPct": 14.35,
+   "volPct": 18.97,
+   "sharpe": 0.8,
+   "maxDrawdownPct": -33.72,
+   "endValue": 9740.94,
+   "worstDayPct": -10.94,
+   "worstMonthPct": -12.49,
+   "costs": 0.0,
+   "yearly": {
+    "2018": -5.8,
+    "2019": 31.2,
+    "2020": 18.3,
+    "2021": 28.7,
+    "2022": -18.2,
+    "2023": 26.2,
+    "2024": 24.9,
+    "2025": 17.7,
+    "2026": 13.7
+   },
+   "periods": {
+    "2018 Q4": -13.8,
+    "2020 Covid": -33.7,
+    "2022": -18.6,
+    "2025 Şubat-Nisan": -18.8,
+    "Son 3 ay": 2.1,
+    "Ekim 2026": 0.7
+   },
+   "label": "SPY al-tut"
+  },
+  "mix30": {
+   "cagrPct": 2.99,
+   "volPct": 23.93,
+   "sharpe": 0.24,
+   "maxDrawdownPct": -38.27,
+   "endValue": 3886.71,
+   "worstDayPct": -7.01,
+   "worstMonthPct": -14.09,
+   "costs": 0.0,
+   "yearly": {
+    "2018": -16.2,
+    "2019": 6.2,
+    "2020": 12.4,
+    "2021": -12.5,
+    "2022": -9.7,
+    "2023": 14.3,
+    "2024": 28.6,
+    "2025": -0.4,
+    "2026": 12.1
+   },
+   "periods": {
+    "2018 Q4": -7.1,
+    "2020 Covid": -9.1,
+    "2022": -10.3,
+    "2025 Şubat-Nisan": -25.0,
+    "Son 3 ay": -13.8,
+    "Ekim 2026": -7.3
+   },
+   "label": "Karma: %70 v4 + %30 düşüşte alım"
+  },
+  "mix50": {
+   "cagrPct": 3.79,
+   "volPct": 20.14,
+   "sharpe": 0.29,
+   "maxDrawdownPct": -31.96,
+   "endValue": 4159.33,
+   "worstDayPct": -6.94,
+   "worstMonthPct": -11.41,
+   "costs": 0.0,
+   "yearly": {
+    "2018": -19.2,
+    "2019": 7.3,
+    "2020": 15.2,
+    "2021": -5.8,
+    "2022": -8.0,
+    "2023": 18.1,
+    "2024": 20.1,
+    "2025": 4.5,
+    "2026": 8.0
+   },
+   "periods": {
+    "2018 Q4": -10.0,
+    "2020 Covid": -13.3,
+    "2022": -8.5,
+    "2025 Şubat-Nisan": -23.3,
+    "Son 3 ay": -8.8,
+    "Ekim 2026": -7.5
+   },
+   "label": "Karma: %50 v4 + %50 düşüşte alım"
+  }
+ },
+ "oversoldNow": [
+  {
+   "ticker": "SMH",
+   "close": 549.99,
+   "rsi2": 0.2,
+   "r5Pct": -9.4,
+   "r126Pct": 20.9,
+   "aboveSma200Pct": 7.8
+  },
+  {
+   "ticker": "ARM",
+   "close": 236.6,
+   "rsi2": 0.6,
+   "r5Pct": -14.1,
+   "r126Pct": 45.8,
+   "aboveSma200Pct": 6.2
+  },
+  {
+   "ticker": "SMCI",
+   "close": 33.94,
+   "rsi2": 0.7,
+   "r5Pct": -20.6,
+   "r126Pct": 19.5,
+   "aboveSma200Pct": 4.6
+  },
+  {
+   "ticker": "TSM",
+   "close": 417.31,
+   "rsi2": 1.2,
+   "r5Pct": -8.9,
+   "r126Pct": 15.4,
+   "aboveSma200Pct": 6.2
+  },
+  {
+   "ticker": "ASML",
+   "close": 1637.43,
+   "rsi2": 1.3,
+   "r5Pct": -7.5,
+   "r126Pct": 16.5,
+   "aboveSma200Pct": 4.2
+  },
+  {
+   "ticker": "DELL",
+   "close": 464.98,
+   "rsi2": 1.3,
+   "r5Pct": -19.1,
+   "r126Pct": 142.0,
+   "aboveSma200Pct": 49.1
+  },
+  {
+   "ticker": "XLK",
+   "close": 187.41,
+   "rsi2": 1.3,
+   "r5Pct": -5.2,
+   "r126Pct": 23.6,
+   "aboveSma200Pct": 12.2
+  },
+  {
+   "ticker": "MU",
+   "close": 906.67,
+   "rsi2": 1.6,
+   "r5Pct": -12.5,
+   "r126Pct": 98.4,
+   "aboveSma200Pct": 26.9
+  },
+  {
+   "ticker": "QQQ",
+   "close": 722.45,
+   "rsi2": 1.9,
+   "r5Pct": -3.4,
+   "r126Pct": 13.0,
+   "aboveSma200Pct": 7.3
+  },
+  {
+   "ticker": "ANET",
+   "close": 182.82,
+   "rsi2": 2.2,
+   "r5Pct": -13.3,
+   "r126Pct": 13.5,
+   "aboveSma200Pct": 12.6
+  },
+  {
+   "ticker": "MRVL",
+   "close": 234.61,
+   "rsi2": 3.6,
+   "r5Pct": -14.6,
+   "r126Pct": 76.0,
+   "aboveSma200Pct": 34.0
+  },
+  {
+   "ticker": "NET",
+   "close": 309.35,
+   "rsi2": 4.1,
+   "r5Pct": -9.5,
+   "r126Pct": 56.7,
+   "aboveSma200Pct": 28.0
+  },
+  {
+   "ticker": "INTC",
+   "close": 93.66,
+   "rsi2": 4.7,
+   "r5Pct": -12.5,
+   "r126Pct": 36.7,
+   "aboveSma200Pct": 11.1
+  },
+  {
+   "ticker": "CRWD",
+   "close": 242.91,
+   "rsi2": 5.3,
+   "r5Pct": -7.6,
+   "r126Pct": 132.3,
+   "aboveSma200Pct": 51.8
+  },
+  {
+   "ticker": "NVDA",
+   "close": 216.02,
+   "rsi2": 5.7,
+   "r5Pct": -6.3,
+   "r126Pct": 9.2,
+   "aboveSma200Pct": 6.7
+  },
+  {
+   "ticker": "ARKK",
+   "close": 84.07,
+   "rsi2": 5.9,
+   "r5Pct": -4.0,
+   "r126Pct": 8.7,
+   "aboveSma200Pct": 7.6
+  },
+  {
+   "ticker": "AMD",
+   "close": 546.05,
+   "rsi2": 6.2,
+   "r5Pct": -12.0,
+   "r126Pct": 96.2,
+   "aboveSma200Pct": 39.1
+  },
+  {
+   "ticker": "PANW",
+   "close": 369.5,
+   "rsi2": 6.4,
+   "r5Pct": -7.3,
+   "r126Pct": 121.3,
+   "aboveSma200Pct": 42.2
+  },
+  {
+   "ticker": "DDOG",
+   "close": 262.89,
+   "rsi2": 7.9,
+   "r5Pct": -4.0,
+   "r126Pct": 112.9,
+   "aboveSma200Pct": 37.6
+  },
+  {
+   "ticker": "SNOW",
+   "close": 328.0,
+   "rsi2": 8.7,
+   "r5Pct": -4.5,
+   "r126Pct": 128.5,
+   "aboveSma200Pct": 40.5
+  },
+  {
+   "ticker": "HOOD",
+   "close": 100.9,
+   "rsi2": 8.8,
+   "r5Pct": -5.7,
+   "r126Pct": 16.2,
+   "aboveSma200Pct": 7.5
+  },
+  {
+   "ticker": "AMZN",
+   "close": 252.64,
+   "rsi2": 12.3,
+   "r5Pct": -0.6,
+   "r126Pct": 1.2,
+   "aboveSma200Pct": 4.1
+  },
+  {
+   "ticker": "PLTR",
+   "close": 198.9,
+   "rsi2": 12.3,
+   "r5Pct": 0.1,
+   "r126Pct": 39.3,
+   "aboveSma200Pct": 30.3
+  }
+ ],
+ "corrV4MR": 0.12,
+ "notes": "Günlük mumlar, kapanışta karar, ertesi açılışta işlem; zarar-kes gün içi en düşük/en yüksekle kontrol edilir. Evren bugünkü hisse listesidir (geçmişte batan şirketler yok), bu yüzden sonuçlar iyimserdir."
+}
