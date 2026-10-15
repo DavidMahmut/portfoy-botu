@@ -1,10 +1,11 @@
-name: Seans dışı izleme
+name: Seans dışı izleme ve haberler
 
 on:
   schedule:
-    # UTC, every 30 minutes around the pre-market (04:00-09:30 ET) and after-hours (16:00-20:00 ET)
-    # windows in both summer and winter time; the first step exits at once outside those windows.
-    - cron: "7,37 0,1,8-14,20-23 * * 1-6"
+    # UTC, every 30 minutes; covers 04:00-20:05 New York time in both summer and winter time.
+    # The first step decides what to do: after-hours/pre-market prices only outside the regular session,
+    # headlines all day. Outside those hours it exits within seconds.
+    - cron: "7,37 0,1,8-23 * * 1-6"
   workflow_dispatch:
     inputs:
       force:
@@ -22,37 +23,46 @@ concurrency:
 jobs:
   watch:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     steps:
-      - name: Seans dışı saat mi?
+      - name: Hangi işler çalışacak?
         id: s
         run: |
           now=$(TZ=America/New_York date +%u%H%M)
           dow=${now:0:1}; hm=$((10#${now:1:4}))
-          ok=0
-          if [ "$dow" -le 5 ] && (( (hm >= 400 && hm < 930) || (hm >= 1600 && hm <= 2005) )); then ok=1; fi
-          echo "ok=$ok" >> "$GITHUB_OUTPUT"
+          ext=0; news=0
+          if [ "$dow" -le 5 ] && (( (hm >= 400 && hm < 930) || (hm >= 1600 && hm <= 2005) )); then ext=1; fi
+          if [ "$dow" -le 5 ] && (( hm >= 400 && hm <= 2005 )); then news=1; fi
+          echo "ext=$ext" >> "$GITHUB_OUTPUT"
+          echo "news=$news" >> "$GITHUB_OUTPUT"
       - uses: actions/checkout@v4
-        if: steps.s.outputs.ok == '1' || inputs.force
+        if: steps.s.outputs.news == '1' || inputs.force
       - uses: actions/setup-python@v5
-        if: steps.s.outputs.ok == '1' || inputs.force
+        if: steps.s.outputs.news == '1' || inputs.force
         with:
           python-version: "3.12"
           cache: pip
       - name: Bağımlılıkları kur
-        if: steps.s.outputs.ok == '1' || inputs.force
+        if: steps.s.outputs.news == '1' || inputs.force
         run: pip install -r requirements.txt
-      - name: Seans dışı fiyatları al
-        if: steps.s.outputs.ok == '1' || inputs.force
+      - name: Seans dışı fiyatlar
+        if: steps.s.outputs.ext == '1' || inputs.force
+        continue-on-error: true
         env:
           BOT_FORCE: ${{ inputs.force && '1' || '0' }}
+        run: python watch.py
+      - name: Haberler
+        if: steps.s.outputs.news == '1' || inputs.force
+        continue-on-error: true
+        run: python news.py
+      - name: Kaydet
+        if: steps.s.outputs.news == '1' || inputs.force
         run: |
-          python watch.py
           git config user.name "portfoy-bot"
           git config user.email "portfoy-bot@users.noreply.github.com"
-          git add extended.json 2>/dev/null || exit 0
+          git add extended.json news.json 2>/dev/null || true
           if git diff --cached --quiet; then exit 0; fi
-          git commit -q -m "İzleme: $(TZ=America/New_York date '+%Y-%m-%d %H:%M') ET"
+          git commit -q -m "İzleme ve haberler: $(TZ=America/New_York date '+%Y-%m-%d %H:%M') ET"
           for i in 1 2 3; do
             if git pull -q --rebase && git push -q; then exit 0; fi
             sleep 10
