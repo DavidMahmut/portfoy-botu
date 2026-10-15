@@ -265,6 +265,9 @@ details.run.cancelled{opacity:.6}
 .nlist .sm{font-size:13px;color:var(--muted);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .ntag{font-family:var(--f-mono);font-size:11px;padding:0 6px;border-radius:4px;background:var(--accent-soft);color:var(--accent)}
 .brief h3{margin-bottom:4px}
+.brief .nlist{padding-left:0}
+.dg-cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin:16px 0 12px}
+@media (max-width:820px){.dg-cols{grid-template-columns:minmax(0,1fr)}}
 .brief ul{margin:10px 0 0;padding-left:20px;display:flex;flex-direction:column;gap:10px;max-width:84ch}
 .brief li b{font-weight:600}
 .brief .src{font-size:12px;margin-left:4px}
@@ -399,16 +402,25 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
     </div>
   </section>
 
-  <section id="haberler" aria-labelledby="h-hab">
-    <div class="sec-head"><h2 id="h-hab">Haberler</h2><span class="small muted" id="newsAsOf">Portföydeki ve izlenen hisseler, piyasa ve ekonomi</span></div>
+  <section id="haberler" aria-labelledby="h-hab" lang="en">
+    <div class="sec-head"><h2 id="h-hab">News</h2><span class="small muted" id="newsAsOf">Holdings, watchlist, markets and the economy</span></div>
+    <div class="panel brief" id="digestPanel" hidden>
+      <div class="sec-head"><h3 id="digestTitle">Daily brief</h3><span class="small muted" id="digestMeta"></span></div>
+      <ul id="digestList"></ul>
+      <div class="dg-cols">
+        <div><h4 class="mini">Economy and policy headlines</h4><ul class="nlist" id="digestHeads"></ul></div>
+        <div><h4 class="mini">Biggest movers among our holdings</h4><ul class="nlist" id="digestMovers"></ul></div>
+      </div>
+      <p class="small muted" id="digestNote" style="margin:0"></p>
+    </div>
     <div class="panel brief" id="briefPanel" hidden>
-      <div class="sec-head"><h3 id="briefTitle">Günün özeti</h3><span class="small muted" id="briefDate"></span></div>
+      <div class="sec-head"><h3 id="briefTitle">Claude's note</h3><span class="small muted" id="briefDate"></span></div>
       <p class="small muted" id="briefLead" style="margin:0"></p>
       <ul id="briefList"></ul>
     </div>
-    <div class="news-grid" id="newsGrid"><div class="empty">Haberler yükleniyor…</div></div>
+    <div class="news-grid" id="newsGrid"><div class="empty">Loading news…</div></div>
     <div class="ncard" id="marketCard" hidden>
-      <div class="ncard-h"><b>Piyasa ve ekonomi</b><span class="nm">S&amp;P 500, Nasdaq, faizler, petrol</span></div>
+      <div class="ncard-h"><b>Markets and the economy</b><span class="nm">S&amp;P 500, Nasdaq, rates, oil</span></div>
       <ul class="nlist" id="marketList"></ul>
     </div>
     <p class="small muted" id="newsNote" style="margin:0"></p>
@@ -932,43 +944,65 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
     });
   }
 
-  /* ---------- news ---------- */
+  /* ---------- news (English) ---------- */
+  var fmtEn=new Intl.DateTimeFormat("en-US",{month:"short",day:"numeric",hour:"numeric",minute:"2-digit",timeZone:TZ});
+  var fmtEnDay=new Intl.DateTimeFormat("en-US",{month:"long",day:"numeric",year:"numeric",timeZone:TZ});
+  function pctEn(x){ return isNum(x)? (x>0?"+":x<0?"−":"")+Math.abs(x).toFixed(2)+"%" : "—"; }
+  function whenEn(s){ var d=parseD(s); return d? fmtEn.format(d)+" ET" : ""; }
   function ago(s){ var d=parseD(s); if(!d) return ""; var m=(Date.now()-d.getTime())/6e4;
-    if(m<60) return Math.max(1,Math.round(m))+" dk önce"; if(m<1440) return Math.round(m/60)+" sa önce"; return Math.round(m/1440)+" gün önce"; }
-  var ROLE={long:["LONG","long"],short:["SHORT","short"],"watch-long":["LONG ADAYI","watch"],"watch-short":["SHORT ADAYI","watch"]};
+    if(m<60) return Math.max(1,Math.round(m))+" min ago"; if(m<1440) return Math.round(m/60)+" h ago"; return Math.round(m/1440)+" d ago"; }
+  var ROLE={long:["LONG","long"],short:["SHORT","short"],"watch-long":["WATCH","watch"],"watch-short":["WATCH (short)","watch"]};
+  function safeA(url, text, cls_){ var ok=/^https:\/\//i.test(url||""); return ok? el("a",{class:cls_||"t",href:url,target:"_blank",rel:"noopener noreferrer",text:text}) : el("span",{class:cls_||"t",text:text}); }
   function newsItems(list, items){
     clear(list);
-    if(!items||!items.length){ list.appendChild(el("li",{class:"muted small",text:"Son 3 günde haber yok."})); return; }
+    if(!items||!items.length){ list.appendChild(el("li",{class:"muted small",text:"No news in the last 3 days."})); return; }
     items.forEach(function(n){
-      var safe=/^https:\/\//i.test(n.url||"")?n.url:null;
-      list.appendChild(el("li",null,
-        safe? el("a",{class:"t",href:safe,target:"_blank",rel:"noopener noreferrer",text:n.title}) : el("span",{class:"t",text:n.title}),
+      list.appendChild(el("li",null, safeA(n.url, n.title),
         el("span",{class:"m"}, (n.publisher||"")+(n.at?" · "+ago(n.at):""), (n.tags||[]).map(function(t){return el("span",{class:"ntag",text:t});})),
         n.summary? el("span",{class:"sm",text:n.summary}) : null));
     });
   }
+  function nyDate(d){ var p={}; new Intl.DateTimeFormat("en-CA",{timeZone:TZ,year:"numeric",month:"2-digit",day:"2-digit"}).formatToParts(d).forEach(function(x){p[x.type]=x.value;}); return p.year+"-"+p.month+"-"+p.day; }
   function renderNews(){
-    var b=S.brief, bp=$("briefPanel");
-    if(b&&b.items&&b.items.length){
-      bp.hidden=false; $("briefTitle").textContent=b.title||"Günün özeti";
-      $("briefDate").textContent=(b.date?dLong(b.date):"")+(b.by?" · "+b.by:"");
+    var x=S.news, g=$("newsGrid"), dp=$("digestPanel"), dg=x&&x.digest;
+    if(dg&&dg.bullets){
+      dp.hidden=false; $("digestTitle").textContent=dg.title||"Daily brief";
+      $("digestMeta").textContent="Automatic · updated "+whenEn(dg.generatedAt);
+      var ul=$("digestList"); clear(ul);
+      dg.bullets.forEach(function(b){ ul.appendChild(el("li",null, el("b",{text:b.head+": "}), b.text)); });
+      var hl=$("digestHeads"); clear(hl);
+      (dg.headlines||[]).forEach(function(n){ hl.appendChild(el("li",null, safeA(n.url,n.title), el("span",{class:"m"}, (n.publisher||"")+(n.at?" · "+ago(n.at):"")), n.summary? el("span",{class:"sm",text:n.summary}):null)); });
+      if(!(dg.headlines||[]).length) hl.appendChild(el("li",{class:"muted small",text:"No economy or policy headlines yet today."}));
+      var mv=$("digestMovers"); clear(mv);
+      (dg.movers||[]).forEach(function(m){ mv.appendChild(el("li",null,
+        el("span",null, el("b",{text:m.ticker+" "}), el("span",{class:cls(m.changePct),text:pctEn(m.changePct)})),
+        m.title? safeA(m.url,m.title) : el("span",{class:"muted small",text:"No recent headline."}),
+        m.publisher? el("span",{class:"m",text:m.publisher}) : null)); });
+      if(!(dg.movers||[]).length) mv.appendChild(el("li",{class:"muted small",text:"No price moves yet today."}));
+      $("digestNote").textContent=dg.note||"";
+    } else dp.hidden=true;
+    var b=S.brief, bp=$("briefPanel"), fresh=false;
+    if(b&&b.date){ var d0=new Date(b.date+"T12:00:00Z"), today=nyDate(new Date()); fresh=(new Date(today+"T12:00:00Z")-d0)/864e5<=1; }
+    if(b&&fresh&&b.items&&b.items.length){
+      bp.hidden=false; $("briefTitle").textContent=b.title||"Claude's note";
+      $("briefDate").textContent=(b.date?fmtEnDay.format(new Date(b.date+"T16:00:00Z")):"")+(b.by?" · "+b.by:"");
       $("briefLead").textContent=b.lead||"";
-      var ul=$("briefList"); clear(ul);
+      var bl=$("briefList"); clear(bl);
       b.items.forEach(function(it){
-        ul.appendChild(el("li",null, it.head? el("b",{text:it.head+": "}):null, it.text||"",
+        bl.appendChild(el("li",null, it.head? el("b",{text:it.head+": "}):null, it.text||"",
           (it.sources&&it.sources.length)? el("span",{class:"src"}, it.sources.map(function(s){return safeLink(s);})) : null));
       });
     } else bp.hidden=true;
-    var x=S.news, g=$("newsGrid"); clear(g);
-    if(!x||!x.sections){ g.appendChild(el("div",{class:"empty",text:"Haber akışı ilk çalışmadan sonra burada görünecek."})); $("marketCard").hidden=true; return; }
-    $("newsAsOf").textContent="Son güncelleme "+dShort(x.asOf)+" "+tm(x.asOf)+" · günde birkaç kez";
+    clear(g);
+    if(!x||!x.sections){ g.appendChild(el("div",{class:"empty",text:"The news feed appears here after its first run."})); $("marketCard").hidden=true; return; }
+    $("newsAsOf").textContent="Updated "+whenEn(x.asOf)+" · every 30 minutes, 4 am – 8 pm ET";
     x.sections.forEach(function(sct){
       var r=ROLE[sct.role]||[sct.role,"watch"], list=el("ul",{class:"nlist"});
       newsItems(list, sct.items);
       g.appendChild(el("article",{class:"ncard"},
         el("div",{class:"ncard-h"}, el("span",{class:"tk",text:sct.ticker}), el("span",{class:"role "+r[1],text:r[0]}),
           el("span",{class:"nm",text:sct.name&&sct.name!==sct.ticker?sct.name:""}),
-          isNum(sct.dayChangePct)? el("span",{class:"chg "+cls(sct.dayChangePct),text:"bugün "+pct(sct.dayChangePct)}):null),
+          isNum(sct.dayChangePct)? el("span",{class:"chg "+cls(sct.dayChangePct),text:"today "+pctEn(sct.dayChangePct)}):null),
         list));
     });
     var mc=$("marketCard"); mc.hidden=!(x.market&&x.market.length); newsItems($("marketList"), x.market||[]);

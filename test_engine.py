@@ -280,9 +280,26 @@ def test_news_parsing():
     N.fetch_yf = lambda t: [n for n in (N.normalize(x) for x in [new_fmt, old_fmt]) if n]
     seen = set()
     r = N.collect("DELL", now, 4, seen)
-    assert [x["publisher"] for x in r] == ["Bloomberg", "Reuters"] and "Analist" in r[1]["tags"] and "Fed ve faiz" in r[0]["tags"]
+    assert [x["publisher"] for x in r] == ["Bloomberg", "Reuters"] and "Analysts" in r[1]["tags"] and "Fed & rates" in r[0]["tags"]
     assert N.collect("SPY", now, 4, seen) == []
-    print("news parsing OK")
+    # automatic daily brief
+    L, _, paths = first_daily()
+    snap = {"SPY": ("S&P 500", 770.0, 774.0), "QQQ": ("Nasdaq 100", 715.0, 726.0), "DIA": ("Dow", 517.0, 515.5),
+            "IWM": ("Russell 2000", 272.0, 271.5), "^VIX": ("VIX", 21.3, 17.4), "^TNX": ("10-yr Treasury yield", 5.18, 5.06),
+            "CL=F": ("WTI crude", 95.1, 94.4), "GC=F": ("Gold", 4200.0, 4176.0)}
+    secs = [{"ticker": p["ticker"], "role": "long", "dayChangePct": 1.5 - i, "items": [
+        {"title": f"{p['ticker']} headline", "url": "https://example.com/" + p["ticker"], "publisher": "Reuters",
+         "at": "2026-10-15T11:00-04:00", "summary": "", "tags": ["AI & chips"]}]} for i, p in enumerate(L["portfolio"]["positions"])]
+    market = [{"title": "Fed's Williams sees another hike", "url": "https://example.com/m", "publisher": "Bloomberg",
+               "at": "2026-10-15T09:00-04:00", "summary": "Rates may rise again. More text.", "tags": ["Fed & rates"]}]
+    dg = N.build_digest(L, secs, market, snap, 724.2, [{"ticker": "MU", "date": "2026-10-28"}],
+                        datetime(2026, 10, 15, 17, 0, tzinfo=timezone.utc))
+    heads = [b["head"] for b in dg["bullets"]]
+    assert heads[:3] == ["Markets (latest session)", "Trend filter", "Our portfolio"], heads
+    assert "Tech lagged" in dg["bullets"][0]["text"] and "elevated" in dg["bullets"][0]["text"] and "jumped" in dg["bullets"][0]["text"]
+    assert "above its 200-day" in dg["bullets"][1]["text"] and "Upcoming earnings (next 3 weeks)" in heads
+    assert dg["headlines"][0]["summary"] == "Rates may rise again." and len(dg["movers"]) == 3
+    print("news parsing + daily brief OK:", dg["title"], "|", dg["bullets"][0]["text"][:120])
 
 
 def test_fees_and_commission():
