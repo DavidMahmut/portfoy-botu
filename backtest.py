@@ -70,7 +70,7 @@ def indicators(data):
         ind[t] = pd.DataFrame({
             "O": s["Open"], "H": h, "L": l, "C": c, "sma5": c.rolling(5).mean(), "sma50": c.rolling(50).mean(),
             "sma200": c.rolling(200).mean(), "atr": tr.rolling(20).mean(), "rsi2": rsi(c, 2), "rsi3": rsi(c, 3),
-            "r5": c / c.shift(5) - 1, "r21": r21, "r63": r63, "r126": r126,
+            "r5": c / c.shift(5) - 1, "r21": r21, "r63": r63, "r126": r126, "mom121": c.shift(21) / c.shift(252) - 1,
             "score": 100 * (0.2 * r21 + 0.5 * r63 + 0.3 * r126)})
     return ind
 
@@ -124,7 +124,9 @@ class Sim:
             p["entry"] = (p["entry"] * p["sh"] + price * sh) / tot
             p["sh"] = tot
             return
-        if self.cfg.get("atr_stops"):
+        if self.cfg.get("no_stops"):
+            stop = 0.0 if side == "long" else float("inf")
+        elif self.cfg.get("atr_stops"):
             k = self.cfg.get("atr_k", 2.5)
             stop = price - k * atr if side == "long" else price + k * atr
         else:
@@ -160,7 +162,7 @@ class Sim:
                 self.open_pos(o["t"], o["side"], o["mv"], d, o_px, i)
         self.orders = []
         # 2) stop orders during the day
-        for t in list(self.pos):
+        for t in ([] if self.cfg.get("no_stops") else list(self.pos)):
             p = self.pos[t]
             o, h, l = self.px(t, d, "O"), self.px(t, d, "H"), self.px(t, d, "L")
             if o is None:
@@ -170,7 +172,7 @@ class Sim:
             elif p["side"] == "short" and h >= p["stop"]:
                 self.close_pos(t, 1.0, max(o, p["stop"]), d, i, "stop")
         # 3) trailing stops and take-profit at the close
-        for t in list(self.pos):
+        for t in ([] if self.cfg.get("no_stops") else list(self.pos)):
             p = self.pos[t]
             c, h, l, atr = self.px(t, d), self.px(t, d, "H"), self.px(t, d, "L"), self.px(t, d, "atr")
             if c is None:
@@ -202,6 +204,11 @@ class Sim:
         # 5) decisions for tomorrow
         if self.cfg.get("meanrev"):
             self.decide_meanrev(i, d, eq)
+        elif self.cfg.get("index"):
+            self.decide_index(i, d, eq)
+        elif self.cfg.get("basket"):
+            if i + 1 >= len(self.dates) or self.dates[i + 1].month != d.month or i == 1:
+                self.decide_basket(i, d, eq)
         else:
             self.decide_momentum(i, d, eq)
         return True
@@ -235,6 +242,57 @@ class Sim:
         cands.sort()
         for _, t in cands[:slots]:
             self.orders.append({"kind": "open", "t": t, "side": "long", "mv": eq * cfg.get("weight", 0.2)})
+
+    def trend_up(self, d):
+        spy = self.ind["SPY"].loc[d]
+        return spy["C"] > spy["sma200"]
+
+    def decide_index(self, i, d, eq):
+        """Hold an index ETF while SPY is above its 200-day average, cash otherwise."""
+        t, lev = self.cfg.get("etf", "SPY"), self.cfg.get("lev", 1.0)
+        up = self.trend_up(d) if self.cfg.get("trend_filter", True) else True
+        have = self.pos[t]["sh"] * self.px(t, d) if t in self.pos else 0.0
+        want = eq * lev if up else 0.0
+        if have and not up:
+            self.orders.append({"kind": "close", "t": t, "why": "trend"})
+        elif up and have < 0.9 * want:
+            self.orders.append({"kind": "open", "t": t, "side": "long", "mv": want - have})
+
+    def decide_basket(self, i, d, eq):
+        """Monthly: equal-weight the top-N momentum names (12-1 month), only while the market trend is up."""
+        cfg = self.cfg
+        n, lev = cfg.get("n", 10), cfg.get("lev", 1.0)
+        up = self.trend_up(d) if cfg.get("trend_filter", True) else True
+        expo = lev if up else cfg.get("down_expo", 0.0)
+        key = cfg.get("rank_by", "mom121")
+        rows = []
+        for t in U.UNIVERSE:
+            if t in U.ETFS and not cfg.get("etfs", False):
+                continue
+            r = self.ind.get(t)
+            if r is None or d not in r.index:
+                continue
+            x = r.loc[d]
+            if pd.isna(x[key]) or pd.isna(x["sma200"]) or x["C"] < 5:
+                continue
+            if x[key] > 0 and x["C"] > x["sma200"]:
+                rows.append((x[key], t))
+        rows.sort(reverse=True)
+        rank = {t: j + 1 for j, (_, t) in enumerate(rows)}
+        keep = [t for t in self.pos if rank.get(t, 999) <= cfg.get("keep_rank", 2 * n)] if expo > 0 else []
+        for t in list(self.pos):
+            if t not in keep:
+                self.orders.append({"kind": "close", "t": t, "why": "rebalance"})
+        chosen = keep + [t for _, t in rows if t not in keep][:max(0, n - len(keep))]
+        if not chosen or expo <= 0:
+            return
+        each = eq * expo / len(chosen)
+        for t in chosen:
+            have = self.pos[t]["sh"] * self.px(t, d) if t in self.pos else 0.0
+            if have > 1.25 * each:
+                self.orders.append({"kind": "close", "t": t, "frac": 1 - each / have, "why": "trim"})
+            elif have < 0.8 * each:
+                self.orders.append({"kind": "open", "t": t, "side": "long", "mv": each - have})
 
     def decide_momentum(self, i, d, eq):
         cfg = self.cfg
@@ -378,6 +436,17 @@ def metrics(curve, trades, costs, spy=None):
     return out, s
 
 
+VARIANTS2 = [
+    ("idx_spy", "SPY, yalnızca 200 günlük ortalamanın üstündeyken", {"index": True, "etf": "SPY", "no_stops": True}),
+    ("idx_qqq", "QQQ, SPY 200 günlük ortalamanın üstündeyken", {"index": True, "etf": "QQQ", "no_stops": True}),
+    ("idx_qqq15", "QQQ 1,5x kredili, aynı trend filtresiyle", {"index": True, "etf": "QQQ", "lev": 1.5, "no_stops": True}),
+    ("bk10", "Aylık momentum sepeti: en güçlü 10 hisse, trend filtresi", {"basket": True, "n": 10, "no_stops": True}),
+    ("bk10_nf", "Aylık momentum sepeti: en güçlü 10 hisse, filtresiz", {"basket": True, "n": 10, "no_stops": True,
+                                                                        "trend_filter": False}),
+    ("bk10_l13", "Aylık momentum sepeti, 1,3x kredili, trend filtresi", {"basket": True, "n": 10, "lev": 1.3, "no_stops": True}),
+    ("bk15", "Aylık momentum sepeti: en güçlü 15 hisse, trend filtresi", {"basket": True, "n": 15, "no_stops": True}),
+]
+
 VARIANTS = [
     ("v0", "Mevcut kurallar (v3)", {}),
     ("v1", "+ zarar-kes sonrası 10 gün bekleme", {"cooldown": 10}),
@@ -396,7 +465,7 @@ def main(data=None):
     ind = indicators(data)
     dates = [d for d in ind["SPY"].index if d >= pd.Timestamp(START)]
     res, curves = {}, {}
-    for key, label, cfg in VARIANTS:
+    for key, label, cfg in VARIANTS + VARIANTS2:
         sim = Sim(ind, dates, cfg)
         for i in range(1, len(dates)):
             if not sim.step(i):
@@ -412,6 +481,16 @@ def main(data=None):
     m["label"] = "SPY al-tut"
     res["spy"] = m
     curves["spy"] = s
+    blends = [("mix_bk_mr", "Karma: %70 aylık sepet + %30 düşüşte alım", {"bk10": 0.7, "mr": 0.3}),
+              ("mix_core", "Karma: %50 QQQ trend + %50 aylık sepet", {"idx_qqq": 0.5, "bk10": 0.5}),
+              ("mix_core3", "Karma: %40 QQQ trend + %40 aylık sepet + %20 düşüşte alım",
+               {"idx_qqq": 0.4, "bk10": 0.4, "mr": 0.2})]
+    for key, label, wts in blends:
+        r = sum(w * curves[k].pct_change() for k, w in wts.items())
+        c = (1 + r.fillna(0)).cumprod() * CAPITAL
+        m, _ = metrics(list(zip(c.index, c.values)), [], 0.0)
+        m["label"] = label
+        res[key] = m
     for w in (0.3, 0.5):
         best = "v4"
         r = (1 - w) * curves[best].pct_change() + w * curves["mr"].pct_change()
