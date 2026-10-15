@@ -125,7 +125,8 @@ class Sim:
             p["sh"] = tot
             return
         if self.cfg.get("no_stops"):
-            stop = 0.0 if side == "long" else float("inf")
+            stop = price * (1 - self.cfg["disaster"]) if self.cfg.get("disaster") and side == "long" else \
+                (0.0 if side == "long" else float("inf"))
         elif self.cfg.get("atr_stops"):
             k = self.cfg.get("atr_k", 2.5)
             stop = price - k * atr if side == "long" else price + k * atr
@@ -162,7 +163,7 @@ class Sim:
                 self.open_pos(o["t"], o["side"], o["mv"], d, o_px, i)
         self.orders = []
         # 2) stop orders during the day
-        for t in ([] if self.cfg.get("no_stops") else list(self.pos)):
+        for t in ([] if self.cfg.get("no_stops") and not self.cfg.get("disaster") else list(self.pos)):
             p = self.pos[t]
             o, h, l = self.px(t, d, "O"), self.px(t, d, "H"), self.px(t, d, "L")
             if o is None:
@@ -283,7 +284,19 @@ class Sim:
         for t in list(self.pos):
             if t not in keep:
                 self.orders.append({"kind": "close", "t": t, "why": "rebalance"})
-        chosen = keep + [t for _, t in rows if t not in keep][:max(0, n - len(keep))]
+        cap = cfg.get("group_cap")
+        groups = {}
+        for t in keep:
+            groups[GROUP.get(t, "other")] = groups.get(GROUP.get(t, "other"), 0) + 1
+        chosen = list(keep)
+        for _, t in rows:
+            if len(chosen) >= n:
+                break
+            g = GROUP.get(t, "other")
+            if t in chosen or (cap and groups.get(g, 0) >= cap) or self.cooled(t, "long", i):
+                continue
+            chosen.append(t)
+            groups[g] = groups.get(g, 0) + 1
         if not chosen or expo <= 0:
             return
         each = eq * expo / len(chosen)
@@ -447,6 +460,12 @@ VARIANTS2 = [
     ("bk15", "Aylık momentum sepeti: en güçlü 15 hisse, trend filtresi", {"basket": True, "n": 15, "no_stops": True}),
 ]
 
+VARIANTS3 = [
+    ("bk10_g3", "Aylık sepet, sektör başına en fazla 3 hisse", {"basket": True, "n": 10, "no_stops": True, "group_cap": 3}),
+    ("bk10_g3_ds", "Aylık sepet, sektör sınırı + %25 felaket zarar-kesi", {"basket": True, "n": 10, "no_stops": True,
+                                                                           "group_cap": 3, "disaster": 0.25, "cooldown": 21}),
+]
+
 VARIANTS = [
     ("v0", "Mevcut kurallar (v3)", {}),
     ("v1", "+ zarar-kes sonrası 10 gün bekleme", {"cooldown": 10}),
@@ -465,7 +484,7 @@ def main(data=None):
     ind = indicators(data)
     dates = [d for d in ind["SPY"].index if d >= pd.Timestamp(START)]
     res, curves = {}, {}
-    for key, label, cfg in VARIANTS + VARIANTS2:
+    for key, label, cfg in VARIANTS + VARIANTS2 + VARIANTS3:
         sim = Sim(ind, dates, cfg)
         for i in range(1, len(dates)):
             if not sim.step(i):
@@ -484,7 +503,10 @@ def main(data=None):
     blends = [("mix_bk_mr", "Karma: %70 aylık sepet + %30 düşüşte alım", {"bk10": 0.7, "mr": 0.3}),
               ("mix_core", "Karma: %50 QQQ trend + %50 aylık sepet", {"idx_qqq": 0.5, "bk10": 0.5}),
               ("mix_core3", "Karma: %40 QQQ trend + %40 aylık sepet + %20 düşüşte alım",
-               {"idx_qqq": 0.4, "bk10": 0.4, "mr": 0.2})]
+               {"idx_qqq": 0.4, "bk10": 0.4, "mr": 0.2}),
+              ("mix_v4", "ÖNERİ: %50 QQQ trend + %50 sektör sınırlı sepet", {"idx_qqq": 0.5, "bk10_g3": 0.5}),
+              ("mix_v4ds", "ÖNERİ + felaket zarar-kesi", {"idx_qqq": 0.5, "bk10_g3_ds": 0.5}),
+              ("mix_v4spy", "%50 SPY trend + %50 sektör sınırlı sepet", {"idx_spy": 0.5, "bk10_g3": 0.5})]
     for key, label, wts in blends:
         r = sum(w * curves[k].pct_change() for k, w in wts.items())
         c = (1 + r.fillna(0)).cumprod() * CAPITAL
