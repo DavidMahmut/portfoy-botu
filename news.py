@@ -16,7 +16,7 @@ from zoneinfo import ZoneInfo
 NY = ZoneInfo("America/New_York")
 ROOT = Path(__file__).resolve().parent
 OUT = ROOT / "news.json"
-MAX_AGE_H, PER_TICKER, MARKET_N = 72, 4, 10
+MAX_AGE_H, PER_TICKER, MARKET_N = 72, 4, 12
 MARKET = ["SPY", "QQQ", "^GSPC", "^TNX", "CL=F"]
 TAGS = [
     ("Fed ve faiz", r"\bfed\b|federal reserve|powell|rate (hike|cut)|interest rate|inflation|\bcpi\b|\bpce\b|treasury|yield"),
@@ -141,7 +141,8 @@ def main():
     market = []
     for t in MARKET:
         market += collect(t, now, MARKET_N, seen)
-    market.sort(key=lambda n: n["at"] or "", reverse=True)
+    # economy and policy headlines first (they carry a theme tag), then the rest, newest first within each
+    market.sort(key=lambda n: (bool(n["tags"]), n["at"] or ""), reverse=True)
     out = {"asOf": now.astimezone(NY).isoformat(timespec="seconds"), "sections": sections, "market": market[:MARKET_N],
            "source": {"title": "Yahoo Finance haber akışı (yfinance / RSS)", "url": "https://finance.yahoo.com/news/"},
            "note": "Başlıklar haber kaynaklarının kendi diliyle (İngilizce) ve özetleriyle gösterilir; etiketler otomatik "
