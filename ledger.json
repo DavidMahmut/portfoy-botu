@@ -101,38 +101,38 @@
   }
  },
  "portfolio": {
-  "asOf": "2026-10-15T09:40:37-04:00",
-  "benchmarkPrice": 767.06,
-  "benchmarkValue": 2961.28,
+  "asOf": "2026-10-15T09:50:41-04:00",
+  "benchmarkPrice": 766.33,
+  "benchmarkValue": 2958.46,
   "cash": 3302.78,
   "positions": [
    {
     "avgCost": 206.1964,
     "costBasis": 779.17,
     "kind": "Hisse",
-    "lastPrice": 198.4698,
-    "lastPriceAt": "2026-10-15T09:40:00-04:00",
-    "marketValue": 749.98,
+    "lastPrice": 196.04,
+    "lastPriceAt": "2026-10-15T09:50:00-04:00",
+    "marketValue": 740.8,
     "name": "Palantir Technologies",
     "openedAt": "2026-10-08",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (09:40 ET)",
+     "title": "Yahoo Finance 5 dk mum (09:50 ET)",
      "url": "https://finance.yahoo.com/quote/PLTR/"
     },
     "shares": 3.7788,
     "stopPrice": 187.39,
     "thesis": "Analist yükseltmesi ve göreli güç yeni zirveleri taşıyabilir. Tez bozulur: 181 $ altı (−%8) veya yapay zekâ harcamalarına dair olumsuz haber akışı yazılım tarafına sıçrarsa.",
     "ticker": "PLTR",
-    "unrealized": -29.19,
-    "unrealizedPct": -3.75,
+    "unrealized": -38.37,
+    "unrealizedPct": -4.92,
     "openedTs": "2026-10-08T14:55:00-04:00",
     "tookProfit": false,
-    "lastBarTs": "2026-10-15T09:40:00-04:00",
+    "lastBarTs": "2026-10-15T09:50:00-04:00",
     "side": "long",
     "lev": 1,
     "extremeSinceEntry": 212.9399,
-    "exposure": 749.98,
-    "maintReq": 187.49,
+    "exposure": 740.8,
+    "maintReq": 185.2,
     "lastAddDate": "2026-10-12"
    },
    {
@@ -144,16 +144,16 @@
     "shares": 1.7497,
     "avgCost": 271.4942,
     "costBasis": 475.03,
-    "lastPrice": 270.96,
-    "lastPriceAt": "2026-10-15T09:40:00-04:00",
+    "lastPrice": 272.415,
+    "lastPriceAt": "2026-10-15T09:50:00-04:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (09:40 ET)",
+     "title": "Yahoo Finance 5 dk mum (09:50 ET)",
      "url": "https://finance.yahoo.com/quote/APP/"
     },
-    "marketValue": -474.1,
-    "exposure": 474.1,
-    "unrealized": 0.93,
-    "unrealizedPct": 0.2,
+    "marketValue": -476.64,
+    "exposure": 476.64,
+    "unrealized": -1.61,
+    "unrealizedPct": -0.34,
     "openedAt": "2026-10-12",
     "openedTs": "2026-10-12T14:05:00-04:00",
     "lastAddDate": "2026-10-12",
@@ -161,8 +161,8 @@
     "extremeSinceEntry": 261.0,
     "tookProfit": false,
     "thesis": "Düşüş trendi: en zayıflar listesinde 1. (puan −33,46). Getiriler: 1 ay −%16,15, 3 ay −%39,50, 6 ay −%34,93; fiyat 50 günlük ortalamanın (315,69 $) altında. Tez bozulur: fiyat zarar-kes seviyesine çıkarsa veya düşüş trendi biterse.",
-    "maintReq": 142.23,
-    "lastBarTs": "2026-10-15T09:40:00-04:00"
+    "maintReq": 142.99,
+    "lastBarTs": "2026-10-15T09:50:00-04:00"
    },
    {
     "ticker": "NRG",
@@ -173,16 +173,16 @@
     "shares": 4.5073,
     "avgCost": 105.3973,
     "costBasis": 475.06,
-    "lastPrice": 99.015,
-    "lastPriceAt": "2026-10-15T09:40:00-04:00",
+    "lastPrice": 98.315,
+    "lastPriceAt": "2026-10-15T09:50:00-04:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (09:40 ET)",
+     "title": "Yahoo Finance 5 dk mum (09:50 ET)",
      "url": "https://finance.yahoo.com/quote/NRG/"
     },
-    "marketValue": -446.29,
-    "exposure": 446.29,
-    "unrealized": 28.77,
-    "unrealizedPct": 6.06,
+    "marketValue": -443.14,
+    "exposure": 443.14,
+    "unrealized": 31.92,
+    "unrealizedPct": 6.72,
     "openedAt": "2026-10-12",
     "openedTs": "2026-10-12T14:05:00-04:00",
     "lastAddDate": "2026-10-12",
@@ -190,8 +190,8 @@
     "extremeSinceEntry": 97.745,
     "tookProfit": false,
     "thesis": "Düşüş trendi: en zayıflar listesinde 2. (puan −24,72). Getiriler: 1 ay −%7,06, 3 ay −%23,79, 6 ay −%38,06; fiyat 50 günlük ortalamanın (110,84 $) altında. Tez bozulur: fiyat zarar-kes seviyesine çıkarsa veya düşüş trendi biterse.",
-    "maintReq": 133.89,
-    "lastBarTs": "2026-10-15T09:40:00-04:00"
+    "maintReq": 132.94,
+    "lastBarTs": "2026-10-15T09:50:00-04:00"
    },
    {
     "ticker": "VRT",
@@ -202,16 +202,16 @@
     "shares": 1.9789,
     "avgCost": 240.0499,
     "costBasis": 475.03,
-    "lastPrice": 208.76,
-    "lastPriceAt": "2026-10-15T09:40:00-04:00",
+    "lastPrice": 207.1,
+    "lastPriceAt": "2026-10-15T09:50:00-04:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (09:40 ET)",
+     "title": "Yahoo Finance 5 dk mum (09:50 ET)",
      "url": "https://finance.yahoo.com/quote/VRT/"
     },
-    "marketValue": -413.12,
-    "exposure": 413.12,
-    "unrealized": 61.91,
-    "unrealizedPct": 13.03,
+    "marketValue": -409.83,
+    "exposure": 409.83,
+    "unrealized": 65.2,
+    "unrealizedPct": 13.73,
     "openedAt": "2026-10-12",
     "openedTs": "2026-10-12T14:05:00-04:00",
     "lastAddDate": "2026-10-12",
@@ -219,15 +219,15 @@
     "extremeSinceEntry": 206.11,
     "tookProfit": false,
     "thesis": "Düşüş trendi: en zayıflar listesinde 3. (puan −17,76). Getiriler: 1 ay −%6,60, 3 ay −%20,91, 6 ay −%19,96; fiyat 50 günlük ortalamanın (259,57 $) altında. Tez bozulur: fiyat zarar-kes seviyesine çıkarsa veya düşüş trendi biterse.",
-    "maintReq": 123.93,
-    "lastBarTs": "2026-10-15T09:40:00-04:00"
+    "maintReq": 122.95,
+    "lastBarTs": "2026-10-15T09:50:00-04:00"
    }
   ],
-  "positionsValue": -583.53,
+  "positionsValue": -588.81,
   "realizedPL": -337.79,
-  "totalPL": -280.75,
-  "totalPLPct": -9.36,
-  "totalValue": 2719.25,
+  "totalPL": -286.03,
+  "totalPLPct": -9.53,
+  "totalValue": 2713.97,
   "costs": {
    "slippage": 4.9634,
    "commission": 7.7,
@@ -238,24 +238,24 @@
    "dividendsReceived": 0.0
   },
   "netDeposits": 3000.0,
-  "longValue": 749.98,
-  "shortValue": 1333.5,
-  "grossExposure": 2083.48,
-  "netExposure": -583.53,
-  "leverage": 0.766,
-  "maintenanceReq": 587.54,
-  "marginBuffer": 2131.71,
-  "twrPct": -8.7,
-  "benchmarkTwrPct": -0.74,
-  "regTInitialReq": 1041.74,
-  "regTExcess": 1677.51,
-  "buyingPower": 3355.02,
+  "longValue": 740.8,
+  "shortValue": 1329.61,
+  "grossExposure": 2070.41,
+  "netExposure": -588.81,
+  "leverage": 0.763,
+  "maintenanceReq": 584.08,
+  "marginBuffer": 2129.89,
+  "twrPct": -8.87,
+  "benchmarkTwrPct": -0.84,
+  "regTInitialReq": 1035.2,
+  "regTExcess": 1678.77,
+  "buyingPower": 3357.53,
   "marginEligible": true
  },
  "meta": {
   "lastDailyDate": "2026-10-14",
   "brakeDate": null,
-  "lastRunAt": "2026-10-15T09:40:37-04:00",
+  "lastRunAt": "2026-10-15T09:50:41-04:00",
   "lastError": null,
   "engine": "reg-t-bot v3",
   "units": 2978.240478,
@@ -278,8 +278,8 @@
    "navStart": 1.0056239656010746,
    "spyStart": 777.53,
    "peak": 1.0100191781759806,
-   "maxDD": -9.6,
-   "maxDDAt": "2026-10-15T09:35:36-04:00",
+   "maxDD": -9.78,
+   "maxDDAt": "2026-10-15T09:50:41-04:00",
    "errors": 0,
    "runDays": [
     "2026-10-12",
@@ -1628,36 +1628,36 @@
   },
   {
    "date": "2026-10-15",
-   "at": "2026-10-15T09:40:37-04:00",
-   "totalValue": 2719.25,
+   "at": "2026-10-15T09:50:41-04:00",
+   "totalValue": 2713.97,
    "cash": 3302.78,
-   "positionsValue": -583.53,
-   "plPct": -9.36,
-   "twrPct": -8.7,
+   "positionsValue": -588.81,
+   "plPct": -9.53,
+   "twrPct": -8.87,
    "netDeposits": 3000.0,
-   "leverage": 0.766,
-   "benchmarkPrice": 767.06,
-   "benchmarkValue": 2961.28,
+   "leverage": 0.763,
+   "benchmarkPrice": 766.33,
+   "benchmarkValue": 2958.46,
    "holdings": [
     {
      "ticker": "PLTR",
      "side": "long",
-     "value": 749.98
+     "value": 740.8
     },
     {
      "ticker": "APP",
      "side": "short",
-     "value": -474.1
+     "value": -476.64
     },
     {
      "ticker": "NRG",
      "side": "short",
-     "value": -446.29
+     "value": -443.14
     },
     {
      "ticker": "VRT",
      "side": "short",
-     "value": -413.12
+     "value": -409.83
     }
    ]
   }
@@ -20279,6 +20279,100 @@
     ],
     "actions": [],
     "note": "Normal: pozisyonlar zarar-kese %5,9–%10,6 uzakta, kaldıraç 0,77x, SPY −%0,33; işlem gerekmedi."
+   },
+   {
+    "at": "2026-10-15T09:45:40-04:00",
+    "kind": "guard",
+    "status": "normal",
+    "spyPrice": 766.85,
+    "spyChangePct": -0.36,
+    "totalValue": 2726.88,
+    "benchmarkValue": 2960.47,
+    "leverage": 0.761,
+    "marginBuffer": 2142.12,
+    "positions": [
+     {
+      "ticker": "PLTR",
+      "side": "long",
+      "price": 198.23,
+      "dayChangePct": -1.36,
+      "stopPrice": 187.39,
+      "distancePct": 5.78
+     },
+     {
+      "ticker": "APP",
+      "side": "short",
+      "price": 268.25,
+      "dayChangePct": 2.31,
+      "stopPrice": 292.32,
+      "distancePct": 8.97
+     },
+     {
+      "ticker": "NRG",
+      "side": "short",
+      "price": 98.39,
+      "dayChangePct": -2.44,
+      "stopPrice": 109.47,
+      "distancePct": 11.26
+     },
+     {
+      "ticker": "VRT",
+      "side": "short",
+      "price": 208.27,
+      "dayChangePct": -6.53,
+      "stopPrice": 230.84,
+      "distancePct": 10.84
+     }
+    ],
+    "actions": [],
+    "note": "Normal: pozisyonlar zarar-kese %5,8–%11,3 uzakta, kaldıraç 0,76x, SPY −%0,36; işlem gerekmedi."
+   },
+   {
+    "at": "2026-10-15T09:50:41-04:00",
+    "kind": "guard",
+    "status": "normal",
+    "spyPrice": 766.33,
+    "spyChangePct": -0.42,
+    "totalValue": 2713.97,
+    "benchmarkValue": 2958.46,
+    "leverage": 0.763,
+    "marginBuffer": 2129.89,
+    "positions": [
+     {
+      "ticker": "PLTR",
+      "side": "long",
+      "price": 196.04,
+      "dayChangePct": -2.45,
+      "stopPrice": 187.39,
+      "distancePct": 4.62
+     },
+     {
+      "ticker": "APP",
+      "side": "short",
+      "price": 272.415,
+      "dayChangePct": 3.9,
+      "stopPrice": 292.32,
+      "distancePct": 7.31
+     },
+     {
+      "ticker": "NRG",
+      "side": "short",
+      "price": 98.315,
+      "dayChangePct": -2.51,
+      "stopPrice": 109.47,
+      "distancePct": 11.35
+     },
+     {
+      "ticker": "VRT",
+      "side": "short",
+      "price": 207.1,
+      "dayChangePct": -7.06,
+      "stopPrice": 230.84,
+      "distancePct": 11.46
+     }
+    ],
+    "actions": [],
+    "note": "Normal: pozisyonlar zarar-kese %4,6–%11,5 uzakta, kaldıraç 0,76x, SPY −%0,42; işlem gerekmedi."
    }
   ]
  },
@@ -23346,16 +23440,16 @@
   "start": "2026-10-12",
   "startAt": "2026-10-12T14:07:31-04:00",
   "end": "2027-01-12",
-  "asOf": "2026-10-15T09:40:37-04:00",
+  "asOf": "2026-10-15T09:50:41-04:00",
   "daysElapsed": 4,
   "daysTotal": 64,
   "finished": false,
-  "returnPct": -9.21,
-  "spyReturnPct": -1.35,
-  "excessPct": -7.86,
-  "maxDrawdownPct": -9.6,
-  "maxDrawdownAt": "2026-10-15T09:35:36-04:00",
-  "drawdownNowPct": -9.6,
+  "returnPct": -9.38,
+  "spyReturnPct": -1.44,
+  "excessPct": -7.94,
+  "maxDrawdownPct": -9.78,
+  "maxDrawdownAt": "2026-10-15T09:50:41-04:00",
+  "drawdownNowPct": -9.78,
   "trades": {
    "closed": 5,
    "wins": 0,
@@ -23368,9 +23462,9 @@
   "monthly": [
    {
     "month": "2026-10",
-    "returnPct": -9.21,
-    "spyPct": -1.35,
-    "excessPct": -7.86
+    "returnPct": -9.38,
+    "spyPct": -1.44,
+    "excessPct": -7.94
    }
   ],
   "uptime": {
@@ -23388,14 +23482,14 @@
     "key": "spy",
     "label": "SPY'ı geçmek (masraflar düşülmüş)",
     "ok": false,
-    "value": -7.86,
+    "value": -7.94,
     "unit": "pct"
    },
    {
     "key": "dd",
     "label": "En büyük düşüş %20'den az",
     "ok": true,
-    "value": -9.6,
+    "value": -9.78,
     "unit": "pct"
    },
    {
