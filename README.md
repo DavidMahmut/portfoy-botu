@@ -24,7 +24,7 @@ Sanal bir **ABD kredili hesabında long/short işlem yapan**, kurallara dayalı 
 
 12 Ekim 13:01'deki v2 işlemleri (3x'e yakın kaldıraç) Reg T alım gücünü aştığı için gerçek bir hesapta reddedilirdi; v3'e geçişte iptal edildi, pozisyonlar o anın öncesine döndürüldü (`v3_restore.json`) ve ilk işlemlere IBKR komisyonu geriye dönük eklendi.
 
-## 3 aylık karne (12 Ekim 2026 – 12 Ocak 2027)
+## 3 aylık karne (v4: 15 Ekim 2026 – 15 Ocak 2027)
 
 Gerçek paraya geçmeden önce bot üç ay sanal çalışır. Sayfadaki karne her çalışmada güncellenir (`ledger.json` → `scorecard`): zaman ağırlıklı getiri ve SPY farkı, en büyük düşüş, kazanan işlem oranı, kâr faktörü, aylık getiriler ve botun kaç işlem gününde çalıştığı. Şartlar: SPY'ı masraflar düşüldükten sonra geçmek, en büyük düşüşün %20'den az olması, teminat çağrısı olmaması ve botun işlem günlerinin en az %95'inde çalışması.
 
@@ -32,16 +32,19 @@ Gerçek paraya geçmeden önce bot üç ay sanal çalışır. Sayfadaki karne he
 
 `watch.py` (`.github/workflows/watch.yml`) piyasa öncesi (04:00–09:30 ET) ve sonrası (16:00–20:00 ET) 30 dakikada bir açık pozisyonların seans dışı fiyatını Yahoo Finance'ten alır ve `extended.json`'a yazar; sayfada "Seans dışı izleme" panelinde gösterilir. Yalnızca izlemedir: bot bu saatlerde işlem yapmaz.
 
-## Strateji (özet)
+## Strateji (v4, 15 Ekim 2026'dan itibaren)
 
-1. **Rejim (her gün):** Güçlü yükseliş → Reg T alım gücünün %55'i long hisse, %20'si 3x endeks ETF'i (TQQQ/UPRO/SOXL), %25'i short. Kararsız → %60 long, %40 short. Düşüş → %30 long, %25 −3x ters ETF (SQQQ/SPXU/SOXS), %45 short. VIX ≥ 35 → alım gücünün %60'ı.
-2. **Long:** Momentum puanı (0,2 × 1 ay + 0,5 × 3 ay + 0,3 × 6 ay) en yüksek 4 uygun hisse/ETF; ilk 10'dan düşen satılır.
-3. **Short:** 10 $ üstü, 50 günlük ortalamanın altında, 1 ve 3 aylık getirisi negatif hisselerden en zayıf 3'ü; en zayıf 10'dan çıkan kapatılır.
-4. **Zarar-kes (bekleyen emir):** Long maliyet × 0,92 / en yüksek × 0,88 (3x ETF: × 0,85 / × 0,80); short maliyet × 1,08 / en düşük × 1,12.
-5. **Kâr alma:** ±%20'de yarısı. **Şok:** ters yönde %7 ve 50 günlük ortalamayı kırarsa kapatılır.
-6. **Frenler:** SPY −%3 → long maruziyet ≤ 1x (−%5'te 0,5x); SPY +%3 → short maruziyet ≤ 0,5x.
+1. **Trend filtresi:** SPY dünkü kapanışı 200 günlük ortalamasının üstündeyse yatırımda kalınır, altına inerse her şey satılıp nakde geçilir.
+2. **Çekirdek (%50):** QQQ (Nasdaq 100).
+3. **Momentum sepeti (%50):** 12-1 ay getirisi en yüksek, 200 günlük ortalamasının üstündeki 10 hisse, eşit ağırlık, sektör başına en fazla 3. Ayın ilk işlem günü yenilenir; ilk 20'de kalan tutulur.
+4. **Felaket zarar-kesi:** maliyetin %25 altı; sonra 30 gün o hisse alınmaz.
+5. **Kaldıraç, açığa satış ve 3x ETF yok.**
 
-> Basitleştirmeler: ödünç bulma (locate) her zaman başarılı sayılır, temettüler hak kesim gününde nakde geçer, emirler 5 dakikalık mum fiyatından %0,05 kaymayla gerçekleşir.
+**Neden değişti:** v3 (kaldıraçlı long/short, dar zarar-kes, günlük işlem) 12–15 Ekim'de SPY'ın yaklaşık %9 gerisinde kaldı. `backtest.py` ile 2018–2026 günlük verilerle yapılan geriye dönük testte (`backtest_results.json`, `.github/workflows/backtest.yml`) v3 yıllık yaklaşık %−4 getirdi ve %61 düştü; v4 yıllık yaklaşık %19 getirdi, en kötü düşüşü %28 oldu (SPY al-tut: %14 ve %34). Uyarı: hisse listesi bugünün başarılı şirketlerinden oluştuğu için test sonuçları iyimserdir.
+
+## Haberler
+
+`news.py` portföydeki ve izlenen hisseler ile piyasa için Yahoo Finance başlıklarını toplar, konuya göre etiketler (Fed ve faiz, politika, bilanço, analist, enerji, yapay zekâ) ve `news.json`'a yazar; `watch.yml` ile 04:00–20:00 ET arasında 30 dakikada bir çalışır. `brief.json` elle yazılan Türkçe günlük özettir.
 
 ## Kullanım
 

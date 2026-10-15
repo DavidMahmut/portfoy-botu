@@ -84,3 +84,31 @@ def kind_of(t):
 
 def quote_url(t):
     return "https://finance.yahoo.com/quote/" + t.replace("^", "%5E").replace("=", "%3D") + "/"
+
+
+# Sector groups for the basket's diversification limit (at most GROUP_CAP names per group)
+GROUP_LABELS = {
+    "semis": "Yarı iletken", "software": "Yazılım", "ai_hw": "Yapay zekâ donanımı", "internet": "Büyük teknoloji",
+    "power": "Elektrik üretimi", "fin": "Finans", "health": "Sağlık", "energy": "Petrol ve gaz",
+    "industrial": "Sanayi ve savunma", "consumer": "Tüketim", "broad": "ETF", "other": "Diğer",
+}
+GROUP = {}
+for _g, _ts in {
+    "semis": "NVDA AMD MU INTC QCOM TSM ASML ARM AVGO MRVL LRCX AMAT KLAC SMH",
+    "software": "MSFT ORCL CRM ADBE PLTR NOW CRWD PANW SNOW SHOP DDOG NET APP",
+    "ai_hw": "ANET CIEN SMCI VRT DELL",
+    "internet": "AAPL AMZN GOOGL META NFLX UBER TSLA",
+    "power": "VST CEG NRG GEV XLU URA",
+    "fin": "JPM GS MS V MA COIN HOOD SOFI BX XLF KRE IBIT",
+    "health": "LLY NVO UNH ISRG VRTX XLV",
+    "energy": "XOM CVX OXY COP SLB EOG XLE XOP",
+    "industrial": "CAT GE RTX LMT NOC BA DE XLI ITA COPX",
+    "consumer": "COST WMT HD MCD NKE SBUX XLY XLP",
+    "broad": "QQQ XLK IWM ARKK GLD SLV GDX",
+}.items():
+    for _t in _ts.split():
+        GROUP[_t] = _g
+
+
+def group_of(t):
+    return GROUP.get(t, "other")

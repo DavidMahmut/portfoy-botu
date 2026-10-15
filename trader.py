@@ -19,7 +19,7 @@ import math
 import os
 import sys
 import traceback
-from datetime import date, datetime, time as dtime
+from datetime import date, datetime, time as dtime, timedelta
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
@@ -32,7 +32,7 @@ ROOT = Path(__file__).resolve().parent
 LEDGER = ROOT / "ledger.json"
 DEPOSITS = ROOT / "deposits.json"
 RESTORE = ROOT / "v3_restore.json"
-ENGINE = "reg-t-bot v3"
+ENGINE = "trend-momentum v4"
 
 # ---- broker model: IBKR Pro (Tiered), US stocks/ETFs
 SLIP = 0.0005                            # 0.05 % slippage on every fill
@@ -76,7 +76,13 @@ CHECK_DAYS_KEPT = 5
 COMPLIANCE_KEPT = 400
 WASH_DAYS = 30
 
-# ---- 3-month evaluation before any real money (12 Oct 2026 - 12 Jan 2027)
+# ---- strategy v4 (from 15 Oct 2026): market-trend filter + QQQ core + monthly momentum basket, no leverage
+CORE_ETF, CORE_SHARE, BASKET_SHARE = "QQQ", 0.50, 0.50
+BASKET_N, BASKET_KEEP, GROUP_CAP = 10, 20, 3
+DISASTER, COOLDOWN_DAYS = 0.25, 30
+INVEST_USE = 0.98                         # keep ~2 % cash for costs; never borrow
+
+# ---- 3-month evaluation before any real money (v3 ledgers: 12 Oct 2026 - 12 Jan 2027; v4 sets its own dates)
 EVAL_START, EVAL_START_TS, EVAL_END = "2026-10-12", "2026-10-12T14:07:00-04:00", "2027-01-12"
 EVAL_MAX_DD, EVAL_UPTIME = -20.0, 95.0          # criteria: drawdown not worse than -20 %, bot ran on >= 95 % of days
 SETUP_RULES = {"geçiş", "aracı kurum ücreti", "para yatırma"}
@@ -110,58 +116,42 @@ LEGAL = {
 SCHEDULE_TEXT = ("Piyasa açıkken 5 dakikada bir (GitHub Actions döngüsü). Günlük rejim, sıralama ve "
                  "alım-satımlar 10:00'dan (New York) sonraki ilk çalışmada.")
 CONFIG_TEXT = {
-    "strategyName": "Long/short momentum botu (gerçek kurallara uygun kredili hesap)",
+    "strategyName": "Trend filtresi + QQQ çekirdek + aylık momentum sepeti (v4, kaldıraçsız)",
     "strategySummary": (
-        "En güçlü momentuma sahip hisselerde long, en zayıf ve düşüş trendindeki hisselerde short pozisyon alır. "
-        "ABD'de küçük bir kredili hesapta gerçekte yapılabilecek işlemlerle sınırlıdır: Reg T başlangıç teminatı, "
-        "FINRA 4210 bakım teminatı ve 2.000 $ asgari özsermaye, SEC Rule 201, gerçek aracı kurum ücretleri. Güçlü "
-        "yükselişte 3x endeks ETF'i, düşüş piyasasında −3x ters ETF kullanır. Aracı kurum modeli: Interactive Brokers "
-        "(IBKR Pro, Tiered). İlk gün (8 Ekim) alımlarını Claude yaptı; 12 Ekim'de sermaye önce 2.000 $'a, ardından FINRA'nın "
-        "2.000 $ asgarisinin üstünde güvenli bir tampon kalsın diye 3.000 $'a çıkarıldı."),
+        "15 Ekim 2026'dan itibaren: paranın yarısı Nasdaq 100 fonu QQQ'da, yarısı son 12 ayın en güçlü 10 hissesinden oluşan "
+        "bir sepette. Sepet ayda bir yenilenir; tek bir sektörden en fazla 3 hisse alınır. S&P 500 (SPY) 200 günlük "
+        "ortalamasının altına inerse her şey satılıp nakde geçilir. Short, 3x ETF ve kredi kullanılmaz. Önceki long/short "
+        "strateji (v3) 2018–2026 geriye dönük testte yıllık yaklaşık %−4 getirip %61'lik düşüş yaşadığı için bırakıldı; v4'ün "
+        "aynı testteki sonucu yıllık yaklaşık %19, en kötü düşüş %28 (SPY: %14 ve %34). Hesap ve ücret "
+        "modeli: Interactive Brokers (IBKR Pro, Tiered) kredili hesap, ABD kuralları."),
     "execution": (
-        "Yahoo Finance 5 dakikalık verileri (yfinance). Kesirli hisse (IBKR kredili hesapta kesirli açığa satışa da izin "
-        "veriyor). Her emirde IBKR Pro Tiered komisyonu: hisse başına 0,0035 $, en az 0,35 $, en fazla işlem tutarının %1'i. "
-        "Satışlarda (açığa satış dahil) SEC ücreti (milyon $'da 20,60 $) ve FINRA TAF (hisse başına 0,000195 $, en az "
-        "0,01 $). %0,05 fiyat kayması. Kredi faizi yıllık %5,38 (IBKR, 100 bin $ altı), açığa satış ödünç ücreti yıllık "
-        "%0,5 (kolay ödünç alınan büyük hisseler varsayımı). Temettüler long'da alınır, short'ta ödenir."),
+        "Yahoo Finance verileri (yfinance): kararlar bir önceki günün kapanış fiyatlarıyla, işlemler 5 dakikalık güncel "
+        "fiyatla. Kesirli hisse. Her emirde IBKR Pro Tiered komisyonu: hisse başına 0,0035 $, en az 0,35 $, en fazla işlem "
+        "tutarının %1'i. Satışlarda SEC ücreti (milyon $'da 20,60 $) ve FINRA TAF. %0,05 fiyat kayması. Kredi "
+        "kullanılmadığı için faiz ödenmez. Temettüler hesaba geçer."),
     "broker": "Interactive Brokers, IBKR Pro (Tiered) kredili hesap modeli",
     "rules": [
-        "Hesap: Reg T kredili hesap. FINRA 4210(b)(4) gereği her açığa satış ve kredili alım için en az 2.000 $ özsermaye "
-        "gerekir. Özsermaye 2.000 $'ın altına inerse yeni short açılmaz ve long'lar yalnızca nakitle alınır; mevcut "
-        "pozisyonlar için ek para istenmez.",
-        "Başlangıç teminatı (Reg T): long hisselerde değerin %50'si, short'ta %150'si (satış geliri + %50). 3x ETF'lerde "
-        "FINRA'nın kaldıraçlı ETF kuralı gereği %75. Yeni bir emir ancak sonrasında başlangıç teminatı özsermayeyi "
-        "aşmıyorsa verilir; aşacaksa aracı kurum emri reddeder ve bu mevzuat günlüğüne yazılır.",
-        "Bakım teminatı (FINRA 4210): long %25, short değerin %30'u ama hisse başına en az 5 $, 3x ETF long %75. "
-        "Özsermaye bunun altına inerse aracı kurum (IBKR) gerçek zamanlı olarak pozisyon kapatır; bot da en çok zararda "
-        "olandan başlayarak kapatır.",
-        "Gün içi işlem: Eski 'pattern day trader' kuralı (25.000 $ asgari, 5 günde en fazla 3 gün içi işlem) SEC'in 14 Nisan "
-        "2026 onayıyla 4 Haziran 2026'dan itibaren kaldırıldı; yerine gün içi teminat yeterliliği geldi. Bot gün içi "
-        "işlem saymaz ama her an bakım teminatını kontrol eder.",
-        "Açığa satış: SEC Rule 201 gereği hisse önceki kapanışa göre %10 düştüğünde o gün ve ertesi gün en iyi alış "
-        "fiyatının altında açığa satış yapılamaz; bot bu durumda yeni short açmaz. Ödünç (locate) için yalnızca büyük, "
-        "likit ve 10 $ üstü hisseler seçilir (kolay ödünç varsayımı).",
-        "Piyasa rejimi (her gün): Güçlü yükseliş (SPY 50 ve 200 günlük ortalamasının üstünde, VIX < 25) → Reg T alım "
-        "gücünün %55'i long hisse, %20'si 3x endeks ETF'i (TQQQ/UPRO/SOXL), %25'i short. Kararsız → %60 long, %40 short. "
-        "Düşüş (SPY 200 günlük ortalamanın altında) → %30 long, %25 −3x ters ETF (SQQQ/SPXU/SOXS), %45 short. VIX ≥ 35 "
-        "ise alım gücünün yalnızca %60'ı kullanılır. Ekonomik kaldıraç (3x ETF'ler 3 katıyla) hiçbir zaman 3x'i geçmez.",
-        "Momentum puanı = 0,2 × 1 aylık + 0,5 × 3 aylık + 0,3 × 6 aylık getiri. Long: fiyatı 50 günlük ortalamanın "
-        "üstünde ve 3 aylık getirisi pozitif olanlardan en yüksek puanlı 4 hisse/ETF; ilk 10'dan düşen satılır. Short: "
-        "fiyatı 10 $ üstü, 50 günlük ortalamanın altında, 1 ve 3 aylık getirisi negatif hisselerden en zayıf 3'ü; en zayıf "
-        "10'dan çıkan kapatılır.",
-        "Hedef büyüklükten %40 küçük kalan pozisyon tamamlanır, %50 büyüyen pozisyon hedefe indirilir.",
-        "Bekleyen zarar-kes emri: long'da maliyet × 0,92 ile en yüksek fiyat × 0,88'in büyüğü (3x ETF'lerde × 0,85 ve "
-        "× 0,80); short'ta maliyet × 1,08 ile en düşük fiyat × 1,12'nin küçüğü. 5 dakikalık mumlarla sırayla kontrol edilir; "
-        "fiyat seviyeyi aşarak açılırsa açılış fiyatından kapatılır.",
-        "Kâr alma ±%20'de yarısı; tek hisse şoku (ters yönde %7 ve 50 günlük ortalamanın kırılması) → kapat. Çöküş freni: "
-        "SPY −%3 → long maruziyet ≤ 1x (−%5'te 0,5x), o gün yeni long yok. Sıkışma freni: SPY +%3 → short maruziyet "
-        "≤ 0,5x, o gün yeni short yok.",
-        "Vergi (öğrenme amaçlı, basitleştirilmiş): 1 yıl veya daha kısa tutulan pozisyonların kazancı kısa vadeli sayılır "
-        "ve normal gelir gibi vergilenir. Zararla kapatılan bir pozisyon 30 gün içinde yeniden açılırsa (wash sale) o zarar "
-        "o yıl düşülemez, yeni pozisyonun maliyetine eklenir. Net sermaye zararının yıllık en fazla 3.000 $'ı gelirden "
-        "düşülebilir. Kredi faizi yatırım faizi gideri olarak (Form 4952) düşülebilir. Bunlar vergi tavsiyesi değildir.",
-        "Veri 35 dakikadan eskiyse o varlıkta işlem yapılmaz. Her işlem fiyatı, saati, kaynağı, komisyonu, ücretleri, "
-        "elde tutma süresi ve tetikleyen kuralla kaydedilir.",
+        "Piyasa trendi (her gün 10:00'dan sonra): SPY'ın dünkü kapanışı 200 günlük ortalamasının üstündeyse yatırımda kalınır. "
+        "Altına inerse ertesi kontrolde tüm pozisyonlar satılır ve nakitte beklenir; tekrar üstüne çıkınca yeniden alınır. "
+        "Geriye dönük testte bu kural 2020 ve 2022 düşüşlerinin önemli bir kısmından korudu.",
+        "Çekirdek (paranın %50'si): QQQ (Nasdaq 100). Tek tek hisselerin gürültüsünden bağımsız, geniş teknoloji ağırlıklı "
+        "piyasa getirisi.",
+        "Momentum sepeti (paranın %50'si, 10 hisse, eşit ağırlık): 12-1 ay getirisi (son ay hariç 12 aylık getiri) en yüksek, "
+        "fiyatı 200 günlük ortalamasının üstünde olan hisseler. Aynı sektörden en fazla 3 hisse.",
+        "Ayda bir dengeleme (ayın ilk işlem günü): sıralamada ilk 20'de kalan hisse tutulur, düşen satılır, boşalan yer en "
+        "güçlü adayla doldurulur; hedefinden %25 büyüyen pozisyon kırpılır, %20 küçülen tamamlanır. Ay içinde gürültüye göre "
+        "alım satım yapılmaz.",
+        "Felaket zarar-kesi: her hisse alış maliyetinin %25 altına inerse satılır (5 dakikalık mumlarla kontrol edilir); "
+        "sonra 30 gün o hisse alınmaz. Dar zarar-kesler (−%8) geriye dönük testte normal dalgalanmada sattırıp yeniden "
+        "aldırdığı için kaldırıldı.",
+        "Kaldıraç ve açığa satış yok: hesap kredili (Reg T) olsa da yalnızca mevcut nakit kullanılır, bu yüzden kredi faizi, "
+        "teminat çağrısı ve açığa satış kuralları devreye girmez. FINRA'nın 2.000 $ asgari özsermaye kuralı ve bakım "
+        "teminatı yine de her çalışmada kontrol edilir.",
+        "Vergi (öğrenme amaçlı, basitleştirilmiş): 1 yıl veya daha kısa tutulan pozisyonların kazancı kısa vadelidir ve normal "
+        "gelir gibi vergilenir. Zararla satılan hisse 30 gün içinde yeniden alınırsa (wash sale) zarar o yıl düşülemez. Net "
+        "sermaye zararının yılda en fazla 3.000 $'ı gelirden düşülebilir. Vergi tavsiyesi değildir.",
+        "Veri 35 dakikadan eskiyse o varlıkta işlem yapılmaz. Her işlem fiyatı, saati, kaynağı, komisyonu, ücretleri ve "
+        "tetikleyen kuralla kaydedilir.",
     ],
 }
 
@@ -276,7 +266,7 @@ class Engine:
         self.migrate()
         self.C["schedule"] = SCHEDULE_TEXT
         self.C.update(CONFIG_TEXT)
-        self.C["maxLeverage"] = GROSS_ECON_CAP
+        self.C["maxLeverage"] = 1.0
         self.C["legalSources"] = list(LEGAL.values())
         self.C["brokerModel"] = {
             "name": "Interactive Brokers — IBKR Pro (Tiered)", "commission": "0,0035 $/hisse, en az 0,35 $, en fazla %1",
@@ -294,6 +284,9 @@ class Engine:
     def migrate(self):
         eng = self.M.get("engine")
         if eng == ENGINE:
+            return
+        if eng == "reg-t-bot v3":
+            self._to_v4()
             return
         if eng != "long-short-bot v2":       # v1 ledgers: same field upgrades v2 did
             for p in self.P["positions"]:
@@ -319,6 +312,36 @@ class Engine:
                     "Bot, ABD'de 2.000 $'lık bir kredili hesapta gerçekte yapılabilecek işlemlerle sınırlandı: Reg T başlangıç "
                     "teminatı, FINRA 4210 bakım teminatı ve 2.000 $ asgari özsermaye, SEC Rule 201, IBKR Pro komisyonları ve "
                     "gerçek kredi faizi. Aracı kurum modeli: Interactive Brokers.", "regt")
+
+    def _to_v4(self):
+        """Switch from the v3 long/short engine to the v4 trend + momentum engine (positions are rebalanced today)."""
+        sc = self.L.get("scorecard")
+        if sc:
+            self.L.setdefault("evalHistory", []).append({
+                "strategy": "v3: kaldıraçlı long/short momentum", "start": sc.get("start"), "end": self.today,
+                "returnPct": sc.get("returnPct"), "spyReturnPct": sc.get("spyReturnPct"), "excessPct": sc.get("excessPct"),
+                "maxDrawdownPct": sc.get("maxDrawdownPct"), "trades": sc.get("trades"), "daysElapsed": sc.get("daysElapsed")})
+        d0 = date.fromisoformat(self.today)
+        m = d0.month + 3
+        end = date(d0.year + (m - 1) // 12, (m - 1) % 12 + 1, min(d0.day, 28))
+        self.M["evaluation"] = {"start": self.today, "end": end.isoformat(), "startTs": iso(self.now),
+                                "strategy": "v4"}
+        self.L.pop("scorecard", None)
+        for p in self.P["positions"]:
+            if p["side"] == "long" and p.get("lev", 1) == 1:
+                p["stopMode"] = "disaster"
+                p["stopPrice"] = round(p["avgCost"] * (1 - DISASTER), 2)
+        self.M.update(lastRebalance=None, trendUp=None, lastDailyDate=None, engine=ENGINE)
+        self.M.setdefault("cooldown", {})
+        self.comply("strateji", "Strateji değişti: trend filtresi + QQQ + aylık momentum sepeti",
+                    "v3 (kaldıraçlı long/short, dar zarar-kes, günlük işlem) 12–15 Ekim'de SPY'ın %8,6 gerisinde kaldı. 2018–2026 "
+                    "geriye dönük testte de yıllık yaklaşık %−4 getirdi, en kötü düşüşü %−61 oldu ve 8,8 yılda yaklaşık 2.500 $ "
+                    "işlem maliyeti yarattı; aynı dönemde SPY yıllık %14,4 getirdi. Yerine kaldıraçsız v4 geldi (aynı testte "
+                    "yıllık yaklaşık %19, en kötü düşüş %−28): SPY 200 günlük ortalamanın "
+                    "üstündeyken paranın yarısı QQQ'da, yarısı aylık yenilenen 10 hisselik momentum sepetinde (sektör başına en "
+                    "fazla 3). Short ve 3x ETF pozisyonları bugün kapatılıyor. Değerlendirme karnesi bugünden itibaren 3 ay için "
+                    "yeniden başladı.", None)
+        self.notes.append("v4 stratejisine geçildi")
 
     def _rollback_v2(self):
         """Cancel the v2 trades of 12 Oct 2026 13:01 (a real broker would have rejected them for exceeding
@@ -462,8 +485,9 @@ class Engine:
 
     def _new_position(self, t, side, shares, ex, value, quote, quote_at, reason):
         lev = U.lev_of(t)
-        stop = round(ex * (STOP_LONG[lev][0] if side == "long" else STOP_SHORT[0]), 2)
-        return {
+        disaster = side == "long" and lev == 1
+        stop = round(ex * (1 - DISASTER) if disaster else ex * (STOP_LONG[lev][0] if side == "long" else STOP_SHORT[0]), 2)
+        return {"stopMode": "disaster" if disaster else "trailing",
             "ticker": t, "name": U.name_of(t), "kind": U.kind_of(t), "side": side, "lev": lev,
             "shares": shares, "avgCost": ex, "costBasis": value, "lastPrice": quote, "lastPriceAt": iso(quote_at),
             "priceSource": {"title": "Yahoo Finance", "url": U.quote_url(t)},
@@ -817,8 +841,9 @@ class Engine:
             if p.get("lastBarTs"):
                 b = b[b.index >= pd.Timestamp(p["lastBarTs"])]
             ext, stop, hit = p["extremeSinceEntry"], p["stopPrice"], None
+            fixed = p.get("stopMode") == "disaster"
             if p["side"] == "long":
-                trail = STOP_LONG[p.get("lev", 1)][1]
+                trail = 0.0 if fixed else STOP_LONG[p.get("lev", 1)][1]
                 for ts, row in b.iterrows():
                     eff = round(max(stop, ext * trail), 2)
                     if row["Low"] <= eff:
@@ -840,17 +865,22 @@ class Engine:
             if hit:
                 ts, eff, extreme, fill = hit
                 word = "indi" if p["side"] == "long" else "çıktı"
-                reason = (f"Bekleyen zarar-kes emri tetiklendi: {hm(ts)} ET mumunda fiyat {trn(extreme)} $'a {word}, "
-                          f"zarar-kes seviyesi {trn(eff)} $. "
+                reason = (("Felaket zarar-kesi (maliyetin %25 altı) tetiklendi: " if fixed else "Bekleyen zarar-kes emri tetiklendi: ")
+                          + f"{hm(ts)} ET mumunda fiyat {trn(extreme)} $'a {word}, zarar-kes seviyesi {trn(eff)} $. "
                           + (f"Mum seviyenin ötesinde açıldığı için açılış fiyatından ({trn(fill)} $) kapatıldı."
                              if fill != eff else f"Emir {trn(fill)} $'dan gerçekleşti."))
-                self.close(p, p["shares"], fill, ts, reason, "zarar-kes")
+                self.close(p, p["shares"], fill, ts, reason + (f" {COOLDOWN_DAYS} gün yeniden alınmayacak." if fixed else ""),
+                           "felaket zarar-kesi" if fixed else "zarar-kes")
+                if fixed:
+                    self.M.setdefault("cooldown", {})[p["ticker"]] = self.today
                 self.status = "alarm"
                 continue
             p["extremeSinceEntry"] = round(ext, 4)
             p["stopPrice"] = stop
             if len(b):
                 p["lastBarTs"] = iso(b.index[-1])
+            if fixed:
+                continue
             price, avg = q["price"], p["avgCost"]
             gain = (price / avg - 1) if p["side"] == "long" else (1 - price / avg)
             if not p.get("tookProfit") and gain >= TAKE_PROFIT:
@@ -873,7 +903,8 @@ class Engine:
                                f"Tek hisse şoku: gün içinde {trpct(chg)} yükseldi ve 50 günlük ortalamanın "
                                f"({trn(q['sma50'])} $) üstüne çıktı; short zarar-kes beklenmeden kapatıldı.", "tek hisse şoku")
                     self.status = "alarm"
-        self.brakes()
+        if any(p["side"] == "short" or p.get("lev", 1) > 1 for p in self.P["positions"]):
+            self.brakes()
 
     def _reduce(self, sign, cap, reason, rule, key):
         """Close positions of one direction (worst first) until that direction's exposure <= cap."""
@@ -1023,224 +1054,201 @@ class Engine:
             out.append({"label": label, "value": val, "change": chg, "ticker": t})
         return out
 
-    def daily(self):
-        held = [p["ticker"] for p in self.P["positions"]]
-        hist = self.data.daily(U.UNIVERSE + list(U.LEVERAGED) + held + [t for t, _ in U.INDICATORS], period="1y")
-        ranking, shorts = self.rank(hist)
-        inds = self.indicators(hist)
-        reg = self.regime(hist)
-        self.M["regime"] = {k: v for k, v in reg.items() if k != "text"}
-        by_t = {r["ticker"]: r for r in ranking}
-        short_by_t = {r["ticker"]: r for r in shorts}
-        decisions, rejected, watch = [reg["text"]], [], []
-        min2000_logged = False
-        sources = [YF_SOURCE] + [src(t) for t, _ in U.INDICATORS]
-        self.dividends()
+    def trend(self, done):
+        """Market trend from completed daily bars: SPY's last close vs its 200-day average."""
+        spy = done.get("SPY")
+        c = list(spy["Close"]) if spy is not None else []
+        if len(c) < 200:
+            return {"up": True, "text": "SPY geçmişi yetersiz; trend yukarı varsayıldı.", "spy": None, "sma200": None}
+        sma200 = sum(c[-200:]) / 200
+        up = c[-1] > sma200
+        gap = (c[-1] / sma200 - 1) * 100
+        text = (f"Piyasa trendi {'yukarı' if up else 'AŞAĞI'}: SPY dünkü kapanış {trn(c[-1])} $, 200 günlük ortalama "
+                f"{trn(sma200)} $ ({trpct(gap)}). "
+                + ("Yatırımda kalınıyor: paranın yarısı QQQ, yarısı momentum sepeti." if up else
+                   "Kural gereği tüm pozisyonlar satılıp nakitte bekleniyor; SPY ortalamanın üstüne dönünce yeniden alınacak."))
+        return {"up": up, "text": text, "spy": c[-1], "sma200": sma200, "gapPct": gap}
 
+    def momentum_table(self, done):
+        cool = self.M.get("cooldown", {})
+        d0 = date.fromisoformat(self.today)
+        rows = []
+        for t in U.UNIVERSE:
+            if t in U.ETFS:
+                continue
+            h = done.get(t)
+            if h is None or len(h) < 253:
+                continue
+            c = list(h["Close"])
+            price = c[-1]
+            mom = c[-22] / c[-253] - 1
+            sma200 = sum(c[-200:]) / 200
+            why = []
+            if price < 5:
+                why.append("fiyat 5 $ altında")
+            if price <= sma200:
+                why.append("200 günlük ortalamanın altında")
+            if mom <= 0:
+                why.append("12-1 ay getirisi negatif")
+            if t in cool and (d0 - date.fromisoformat(cool[t])).days <= COOLDOWN_DAYS:
+                why.append(f"{cool[t]} felaket zarar-kesi sonrası bekleme")
+            rows.append({"ticker": t, "name": U.name_of(t), "price": round(price, 2), "mom": round(mom * 100, 2),
+                         "score": round(mom * 100, 2), "r21": round((price / c[-22] - 1) * 100, 2),
+                         "r63": round((price / c[-64] - 1) * 100, 2), "r126": round((price / c[-127] - 1) * 100, 2),
+                         "sma200": round(sma200, 2), "group": U.group_of(t),
+                         "groupLabel": U.GROUP_LABELS.get(U.group_of(t), ""), "eligible": not why, "why": ", ".join(why)})
+        rows.sort(key=lambda r: r["mom"], reverse=True)
+        n = 0
+        for r in rows:
+            if r["eligible"]:
+                n += 1
+                r["rank"] = n
+        return rows
+
+    def rebalance(self, trend, rows, decisions, rejected, sources):
         self.revalue()
-        eq = self.P["totalValue"]
-        eligible = eq >= MIN_MARGIN_EQUITY
-        budget = BUDGET_USE * eq * reg["budget"]
-        idx_rows = []
-        for t in ("QQQ", "SPY", "SMH"):
-            if t in by_t:
-                idx_rows.append(by_t[t])
-            elif hist.get(t) is not None and len(hist[t]) >= 130:
-                c = list(hist[t]["Close"])
-                idx_rows.append({"ticker": t, "score": 0.2 * (c[-1] / c[-22] - 1) * 100 + 0.5 * (c[-1] / c[-64] - 1) * 100
-                                 + 0.3 * (c[-1] / c[-127] - 1) * 100})
-        bull_etf = bear_etf = None
-        if reg["bullEtf"] and idx_rows:
-            bull_etf = U.BULL_ETF.get(max(idx_rows, key=lambda r: r["score"])["ticker"])
-        if reg["bearEtf"] and idx_rows:
-            bear_etf = U.BEAR_ETF.get(min(idx_rows, key=lambda r: r["score"])["ticker"])
-        if not eligible:
-            self.comply("FINRA 4210(b)(4)", "2.000 $ altı: kredi ve short yok",
-                        f"Özsermaye {usd(eq)}; 2.000 $'ın altında olduğu için yeni açığa satış ve kredili alım yapılamaz. "
-                        "Long'lar yalnızca mevcut nakitle alınır, mevcut pozisyonlar tutulabilir.", "min2000")
-            decisions.append("Özsermaye 2.000 $'ın altında: yeni short ve kredili alım yok (FINRA 4210).")
-        # market value targets = sleeve's share of the initial-margin budget / initial margin rate
-        # (below 2.000 $ the account works like a cash account: rate 100 %, no shorts; the short sleeve stays in cash)
-        def rate(t):
-            return init_rate(t, "long") if eligible else 1.0
-        long_t = budget * reg["longStocks"] / (REGT_INIT if eligible else 1.0) / N_LONG
-        short_t = budget * reg["shorts"] / REGT_INIT / N_SHORT if eligible else 0.0
-        bull_t = budget * reg["bullEtf"] / rate(bull_etf) if bull_etf else 0.0
-        bear_t = budget * reg["bearEtf"] / rate(bear_etf) if bear_etf else 0.0
-
-        # 1) exits
+        if not trend["up"]:
+            for p in list(self.P["positions"]):
+                q = self.quotes.get(p["ticker"])
+                if not q or q["stale"]:
+                    rejected.append(f"{p['ticker']}: güncel fiyat yok, satış sonraki çalışmaya kaldı.")
+                    continue
+                self.close(p, p["shares"], q["price"], q["at"],
+                           "Trend filtresi: SPY 200 günlük ortalamasının altına indi; kural gereği nakde geçiliyor.", "trend filtresi")
+                sources.append(src(p["ticker"]))
+            decisions.append("Tüm pozisyonlar satıldı; para nakitte bekliyor.")
+            return
+        by_t = {r["ticker"]: r for r in rows}
+        keep = []
         for p in list(self.P["positions"]):
             t = p["ticker"]
-            q = self.quotes.get(t)
-            if t in U.LEVERAGED:
-                if t in (bull_etf, bear_etf):
-                    decisions.append(f"{t} tut: rejim dilimi ({U.kind_of(t)}).")
-                    continue
-                why = "piyasa rejimi değişti, bu endeks dilimi artık hedefte değil"
-            elif p["side"] == "long":
-                r = by_t.get(t)
-                if r and r["eligible"] and r.get("rank", 99) <= KEEP_RANK_LONG:
-                    decisions.append(f"{t} long tut: momentum sıralamasında {r['rank']}. (puan {trn(r['score'])}), "
-                                     f"zarar-kes {trn(p['stopPrice'])} $.")
-                    continue
-                why = (r["why"] if r and not r["eligible"] else
-                       f"sıralamada {r['rank']}. sıraya düştü (ilk {KEEP_RANK_LONG} dışında)" if r else "momentum verisi yok")
-            else:
-                r = short_by_t.get(t)
-                if r and r["srank"] <= KEEP_RANK_SHORT:
-                    decisions.append(f"{t} short tut: en zayıflar listesinde {r['srank']}. (puan {trn(r['score'])}), "
-                                     f"zarar-kes {trn(p['stopPrice'])} $.")
-                    continue
-                why = ("düşüş trendi bozuldu (50 günlük ortalamanın üstüne çıktı veya getiriler pozitife döndü)" if not r
-                       else f"en zayıflar listesinde {r['srank']}. sıraya çıktı")
-            if not q or q["stale"]:
-                decisions.append(f"{t} kapatılmalıydı ama güncel fiyat yok; sonraki çalışmaya bırakıldı.")
+            if t == CORE_ETF and p["side"] == "long":
                 continue
-            self.close(p, p["shares"], q["price"], q["at"], f"Günlük karar: {why}.", "momentum")
+            q = self.quotes.get(t)
+            r = by_t.get(t)
+            if p["side"] == "long" and t not in U.LEVERAGED and r and r.get("rank", 99) <= BASKET_KEEP:
+                keep.append(t)
+                decisions.append(f"{t} tut: momentum sırası {r['rank']} (12-1 ay getirisi {trpct(r['mom'])}).")
+                continue
+            why = ("v4'te açığa satış yapılmıyor" if p["side"] == "short" else
+                   "v4'te 3x ETF kullanılmıyor" if t in U.LEVERAGED else
+                   r["why"] if r and not r["eligible"] else
+                   f"momentum sırası {r['rank']}, ilk {BASKET_KEEP} dışında" if r else "momentum verisi yok")
+            if not q or q["stale"]:
+                rejected.append(f"{t}: kapatılmalıydı ama güncel fiyat yok, sonraki çalışmaya kaldı.")
+                continue
+            self.close(p, p["shares"], q["price"], q["at"], f"Aylık dengeleme: {why}.", "dengeleme")
             decisions.append(f"{t} {'SAT' if p['side'] == 'long' else 'KAPAT'}: {why}.")
             sources.append(src(t))
-
-        # 2) targets (market value)
-        targets = {}
-        for p in self.P["positions"]:
-            t = p["ticker"]
-            targets[(t, p["side"])] = (bull_t if t == bull_etf else bear_t if t == bear_etf
-                                       else long_t if p["side"] == "long" else short_t)
-        n_long = sum(1 for p in self.P["positions"] if p["side"] == "long" and p["ticker"] not in U.LEVERAGED)
-        n_short = sum(1 for p in self.P["positions"] if p["side"] == "short")
-        held_now = {p["ticker"] for p in self.P["positions"]}
-        long_c = [r for r in ranking if r["eligible"] and r["ticker"] not in held_now][:max(0, N_LONG - n_long)]
-        short_c = [r for r in shorts if r["ticker"] not in held_now][:max(0, N_SHORT - n_short)] if eligible else []
-        for r in long_c:
-            targets[(r["ticker"], "long")] = long_t
-        for r in short_c:
-            targets[(r["ticker"], "short")] = short_t
-        if bull_etf and bull_etf not in held_now:
-            targets[(bull_etf, "long")] = bull_t
-        if bear_etf and bear_etf not in held_now:
-            targets[(bear_etf, "long")] = bear_t
+        groups = {}
+        for t in keep:
+            g = U.group_of(t)
+            groups[g] = groups.get(g, 0) + 1
+        chosen = list(keep)
+        for r in rows:
+            if len(chosen) >= BASKET_N:
+                break
+            if not r["eligible"] or r["ticker"] in chosen:
+                continue
+            if groups.get(r["group"], 0) >= GROUP_CAP:
+                rejected.append(f"{r['ticker']}: sıra {r['rank']} ama {r['groupLabel']} sektöründen zaten {GROUP_CAP} hisse var.")
+                continue
+            chosen.append(r["ticker"])
+            groups[r["group"]] = groups.get(r["group"], 0) + 1
+        self.revalue()
+        eq = self.P["totalValue"]
+        each = eq * INVEST_USE * BASKET_SHARE / BASKET_N
+        targets = [(CORE_ETF, eq * INVEST_USE * CORE_SHARE)] + [(t, each) for t in chosen]
         self.quotes_for([t for t, _ in targets])
-        no_long = self.M.get("brakeDate") == self.today
-        no_short = self.M.get("squeezeDate") == self.today
-        if no_long:
-            decisions.append("Bugün çöküş freni devrede: yeni long açılmadı.")
-        if no_short:
-            decisions.append("Bugün sıkışma freni devrede: yeni short açılmadı.")
-
-        # 3) trims first (they free buying power), then top-ups and new positions
-        for (t, side), tgt in targets.items():
-            p = self._pos(t, side)
-            q = self.quotes.get(t)
-            if p and q and not q["stale"] and abs(p["marketValue"]) > tgt * 1.5:
-                cut = (abs(p["marketValue"]) - tgt) / q["price"]
-                self.close(p, cut, q["price"], q["at"],
-                           f"Yeniden dengeleme: pozisyon hedef büyüklüğün ({usd(tgt)}) %50'den fazla üstüne çıktı; hedefe "
-                           "indirildi.", "dengeleme")
-        reason_long = lambda r: (f"Momentum lideri: sıralamada {r['rank']}. (puan {trn(r['score'])}). Getiriler: 1 ay "
-                                 f"{trpct(r['r21'])}, 3 ay {trpct(r['r63'])}, 6 ay {trpct(r['r126'])}; fiyat 50 günlük "
-                                 f"ortalamanın ({trn(r['sma50'])} $) üstünde. Tez bozulur: zarar-kes veya ilk "
-                                 f"{KEEP_RANK_LONG}'dan çıkış.")
-        reason_short = lambda r: (f"Düşüş trendi: en zayıflar listesinde {r['srank']}. (puan {trn(r['score'])}). Getiriler: 1 ay "
-                                  f"{trpct(r['r21'])}, 3 ay {trpct(r['r63'])}, 6 ay {trpct(r['r126'])}; fiyat 50 günlük "
-                                  f"ortalamanın ({trn(r['sma50'])} $) altında. Tez bozulur: fiyat zarar-kes seviyesine "
-                                  "çıkarsa veya düşüş trendi biterse.")
-        for (t, side), tgt in targets.items():
-            q = self.quotes.get(t)
-            p = self._pos(t, side)
-            if tgt <= 0:
+        for t, tgt in targets:                                   # trims first: they free cash
+            p, q = self._pos(t, "long"), self.quotes.get(t)
+            if p and q and not q["stale"] and p["marketValue"] > tgt * 1.25:
+                self.close(p, (p["marketValue"] - tgt) / q["price"], q["price"], q["at"],
+                           f"Aylık dengeleme: pozisyon hedefin ({usd(tgt)}) %25'ten fazla üstünde; hedefe indirildi.", "dengeleme")
+        for t, tgt in targets:
+            p, q = self._pos(t, "long"), self.quotes.get(t)
+            have = p["marketValue"] if p else 0.0
+            if have >= tgt * 0.8:
                 continue
             if not q or q["stale"]:
-                rejected.append(f"{t}: güncel 5 dakikalık fiyat alınamadı, işlem ertelendi.")
+                rejected.append(f"{t}: güncel 5 dakikalık fiyat yok, alım sonraki dengelemeye kaldı.")
                 continue
-            dirn = -1 if side == "short" or U.LEVERAGED.get(t, (None, 1))[1] < 0 else 1
-            if (dirn == 1 and no_long) or (dirn == -1 and no_short):
-                continue
-            have = abs(p["marketValue"]) if p else 0.0
-            if p and have >= tgt * 0.6:
-                continue
-            if side == "short" and q.get("ssr"):
-                rejected.append(f"{t}: SEC Rule 201 (açığa satış devre kesicisi) aktif; bugün short açılamaz.")
-                self.comply("SEC Rule 201", f"{t}: açığa satış kısıtı",
-                            f"{t} önceki kapanışa göre %10 veya daha fazla düştüğü için (bugün ya da dün) en iyi alış fiyatının "
-                            "altında açığa satış yasak; bot bugün bu hisseyi short'lamadı.", "ssr")
-                continue
-            want = tgt - have
-            mv, limit = self._allowed_mv(t, side, want)
-            if limit == "min2000":
-                rejected.append(f"{t}: özsermaye 2.000 $'ın altında ({usd(self.P['totalValue'])}), açığa satış yapılamaz "
-                                "(FINRA 4210).")
-                if not min2000_logged:
-                    min2000_logged = True
-                    self.comply("FINRA 4210(b)(4)", "Açığa satış engellendi: özsermaye 2.000 $ altında",
-                                f"Özsermaye {usd(self.P['totalValue'])}. FINRA kuralına göre açığa satış ve kredili alım için "
-                                "hesapta en az 2.000 $ özsermaye olmalı; aracı kurum bu emirleri kabul etmez.", "min2000")
-                continue
-            if limit:
-                rate_txt = f"%{trn(init_rate(t, side) * 100, 0)}"
-                limit_txt = {
-                    "regt": f"Reg T başlangıç teminatı ({rate_txt}) özsermayeyi aşardı",
-                    "cash": "özsermaye 2.000 $'ın altında olduğu için kredi kullanılamıyor ve nakit yetmiyor",
-                    "econ": "ekonomik kaldıraç 3x'i aşardı",
-                }[limit]
-                if mv >= MIN_TRADE:
-                    self.comply("Reg T" if limit == "regt" else "FINRA 4210(b)(4)" if limit == "cash" else "risk",
-                                f"{t}: emir küçültüldü", f"İstenen {usd(want)} yerine {usd(mv)}; daha büyüğü için {limit_txt}. "
-                                "Aracı kurum daha büyük emri reddederdi.", "regt" if limit != "cash" else "min2000")
+            room = max(0.0, self.P["cash"]) / (1 + SLIP) - COMM_MIN * 2
+            mv = min(tgt - have, room)
             if mv < MIN_TRADE:
-                rejected.append(f"{t}: emir verilemedi, {limit_txt if limit else 'tutar çok küçük'}.")
+                rejected.append(f"{t}: nakit kalmadı (kredi kullanılmıyor).")
                 continue
-            r = by_t.get(t) if side == "long" else short_by_t.get(t)
-            if t in U.LEVERAGED:
-                und = U.LEVERAGED[t][0]
-                ur = next((x for x in idx_rows if x["ticker"] == und), None)
-                why = (f"Rejim dilimi: {reg['label']}. {und} momentum puanı {trn(ur['score']) if ur else '—'}; "
-                       f"{U.kind_of(t)} ile {usd(mv)} karşılığı {usd(mv * U.lev_of(t))} ekonomik maruziyet. FINRA kaldıraçlı "
-                       "ETF kuralı gereği teminatı %75. Zarar-kes maliyetin %15 altı, izleyen %20.")
+            if t == CORE_ETF:
+                why = ("Çekirdek pozisyon: Nasdaq 100 fonu QQQ, paranın %50'si. Piyasa trendi yukarıyken tutulur; tek "
+                       "hisselerin dalgalanmasından bağımsız geniş piyasa getirisi sağlar.")
             else:
-                why = (reason_long(r) if side == "long" else reason_short(r)) if r else "Hedef büyüklüğe tamamlama."
+                r = by_t[t]
+                why = (f"Momentum sepeti: 12-1 ay getirisi {trpct(r['mom'])} ile uygun hisseler arasında {r['rank']}. sırada; "
+                       f"fiyat 200 günlük ortalamanın ({trn(r['sma200'])} $) üstünde; sektör: {r['groupLabel']}. Ay sonuna kadar "
+                       f"tutulur; yalnızca maliyetin %25 altına inerse satılır.")
             if p:
                 why = f"Hedef büyüklüğe tamamlama ({usd(have)} → {usd(tgt)}). " + why
-            fn = self.open_long if side == "long" else self.open_short
-            if fn(t, mv, q["price"], q["at"], why, "momentum" if t not in U.LEVERAGED else "rejim"):
-                verb = ("LONG" if side == "long" else "SHORT") + (" artırıldı" if p else "")
-                decisions.append(f"{t} {verb}: {'+' if p else ''}{usd(mv)}"
-                                 + (f" (×{U.lev_of(t)} = {usd(mv * U.lev_of(t))} ekonomik maruziyet)" if t in U.LEVERAGED else "")
-                                 + (" — hedef büyüklüğe tamamlama." if p else "."))
+            if self.open_long(t, mv, q["price"], q["at"], why, "çekirdek" if t == CORE_ETF else "momentum sepeti"):
+                decisions.append(f"{t} AL: {usd(mv)}" + (" (tamamlama)" if p else "") + ".")
                 sources.append(src(t))
 
-        for r in [x for x in ranking if x["eligible"] and not self._pos(x["ticker"])][:4]:
-            watch.append({"ticker": r["ticker"], "note": f"Long adayı: sıra {r['rank']}, puan {trn(r['score'])}."})
-        for r in [x for x in shorts if not self._pos(x["ticker"])][:3]:
-            watch.append({"ticker": r["ticker"], "note": f"Short adayı: zayıflık sırası {r['srank']}, puan {trn(r['score'])}."})
-
+    def daily(self):
+        held = [p["ticker"] for p in self.P["positions"]]
+        hist = self.data.daily(U.UNIVERSE + [CORE_ETF] + held + [t for t, _ in U.INDICATORS], period="2y")
+        today = self.now.date()
+        done = {t: h[h.index.date < today] for t, h in hist.items() if h is not None and len(h)}
+        inds = self.indicators(hist)
+        self.dividends()
+        trend = self.trend(done)
+        rows = self.momentum_table(done)
+        month = self.today[:7]
+        flip = self.M.get("trendUp") is not None and self.M.get("trendUp") != trend["up"]
+        due = self.M.get("lastRebalance") != month or flip
+        decisions, rejected, watch = [trend["text"]], [], []
+        sources = [YF_SOURCE] + [src(t) for t, _ in U.INDICATORS]
+        self.M["regime"] = {"name": "up" if trend["up"] else "down",
+                            "label": "Trend yukarı" if trend["up"] else "Trend aşağı (nakit)", "budget": 1.0}
+        if due:
+            if flip:
+                decisions.append("Trend yön değiştirdiği için ay beklenmeden dengeleme yapıldı.")
+            self.rebalance(trend, rows, decisions, rejected, sources)
+            self.M["lastRebalance"] = month
+        else:
+            nxt = [d for d in trading_days(self.today, (date.fromisoformat(self.today) + timedelta(days=40)).isoformat())
+                   if d[:7] != month]
+            decisions.append(f"Ay içi kontrol: trend ve felaket zarar-kesleri izlendi, işlem gerekmedi. Sonraki aylık dengeleme "
+                             f"{nxt[0] if nxt else 'gelecek ay'}.")
+        self.M["trendUp"] = trend["up"]
+        held_now = {p["ticker"] for p in self.P["positions"]}
+        for r in [x for x in rows if x["eligible"] and x["ticker"] not in held_now][:5]:
+            watch.append({"ticker": r["ticker"], "note": f"Sepet adayı: sıra {r['rank']}, 12-1 ay {trpct(r['mom'])}, {r['groupLabel']}."})
         self.revalue()
         self.M["lastDailyDate"] = self.today
         P = self.P
         parts = [f"{i['label']} {i['change']}" for i in inds if i["ticker"] in ("SPY", "QQQ", "IWM")]
         others = [f"{i['label']} {i['value']} ({i['change']})" for i in inds if i["ticker"] in ("^VIX", "CL=F", "^TNX")]
-        summary = (" · ".join(parts) + ". " + "; ".join(others) + ". " + reg["text"] +
-                   f" Sonuç: net değer {usd(P['totalValue'])}, ekonomik kaldıraç {trn(P['leverage'] or 0, 2)}x, Reg T başlangıç "
-                   f"teminatı {usd(P['regTInitialReq'])}, bakım teminatı {usd(P['maintenanceReq'])}, kalan alım gücü "
-                   f"{usd(P['buyingPower'])}.")
+        summary = (" · ".join(parts) + ". " + "; ".join(others) + ". " + trend["text"] +
+                   f" Sonuç: net değer {usd(P['totalValue'])}, nakit {usd(P['cash'])}, kaldıraç {trn(P['leverage'] or 0, 2)}x.")
         n_open = sum(1 for t in self.new_trades if t["action"] in ("BUY", "SHORT"))
         n_close = sum(1 for t in self.new_trades if t["action"] in ("SELL", "COVER"))
-        tail = f"{reg['label']}, kaldıraç {trn(P['leverage'] or 0, 2)}x"
-        headline = (f"{n_open} alım/açığa satış, {n_close} kapanış · {tail}" if (n_open or n_close) else f"İşlem yok · {tail}")
+        tail = f"{self.M['regime']['label']}, kaldıraç {trn(P['leverage'] or 0, 2)}x"
+        headline = (f"{n_open} alım, {n_close} satış · {tail}" if (n_open or n_close) else f"İşlem yok · {tail}")
         uniq, seen = [], set()
-        for s in sources:
-            if s["url"] not in seen:
-                seen.add(s["url"])
-                uniq.append({**s, "publisher": "Yahoo Finance" if "yahoo" in s["url"] else "GitHub",
-                             "usedFor": "Fiyat ve geçmiş veriler" if "yahoo" in s["url"] else "Veri kütüphanesi"})
+        for s_ in sources:
+            if s_["url"] not in seen:
+                seen.add(s_["url"])
+                uniq.append({**s_, "publisher": "Yahoo Finance" if "yahoo" in s_["url"] else "GitHub",
+                             "usedFor": "Fiyat ve geçmiş veriler" if "yahoo" in s_["url"] else "Veri kütüphanesi"})
         self.L["runs"].append({
             "date": self.today, "at": iso(self.now), "by": "bot", "headline": headline, "marketSummary": summary,
-            "regime": self.M["regime"],
+            "regime": self.M["regime"], "rebalanced": due,
             "indicators": [{"label": i["label"], "value": i["value"], "change": i["change"]} for i in inds],
             "decisions": decisions, "rejected": rejected, "watchlist": watch, "sources": uniq,
-            "ranking": [{k: v for k, v in r.items() if k != "shortOk"} for r in ranking[:15]],
-            "shortRanking": [{k: v for k, v in r.items() if k not in ("shortOk", "rank")} for r in shorts[:10]],
-            "nextSteps": "Zarar-kes emirleri, kâr alma, frenler ve bakım teminatı piyasa açıkken 5 dakikada bir kontrol "
-                         "ediliyor. Bir sonraki rejim ve sıralama kararı yarın 10:00'dan sonraki ilk çalışmada.",
+            "ranking": rows[:20], "shortRanking": [],
+            "rankingNote": ("Puan = 12-1 ay getirisi (son ay hariç 12 aylık getiri, %). Uygun: fiyat 200 günlük ortalamanın "
+                            "üstünde ve puan pozitif. Sepet ilk 10'dan (sektör başına en fazla 3) oluşur, ilk 20'de kalan tutulur."),
+            "nextSteps": "Felaket zarar-kesleri piyasa açıkken 5 dakikada bir, trend filtresi her gün 10:00'dan sonra kontrol "
+                         "ediliyor. Sepet ayın ilk işlem gününde yenilenir.",
         })
 
     # ---------------- run
@@ -1316,16 +1324,17 @@ class Engine:
 
     def scorecard(self):
         """Running 3-month evaluation (time-weighted, so deposits do not count as gains)."""
-        if self.today < EVAL_START:
-            return
         E = self.M.setdefault("evaluation", {})
+        ev_start, ev_end, ev_ts = E.get("start", EVAL_START), E.get("end", EVAL_END), E.get("startTs", EVAL_START_TS)
+        if self.today < ev_start:
+            return
         units = self.M.get("units") or self.C["startCapital"]
         nav = self.P["totalValue"] / units
         spy = self.quotes.get("SPY")
         spy_px = spy["price"] if spy else self.P.get("benchmarkPrice")
         if "navStart" not in E:
             seen = [e for d in sorted(self.L.get("checks", {})) for e in self.L["checks"][d]
-                    if e.get("at", "") >= EVAL_START_TS and e.get("totalValue")]
+                    if e.get("at", "") >= ev_ts and e.get("totalValue")]
             first = seen[0] if seen else {"at": iso(self.now), "totalValue": self.P["totalValue"], "spyPrice": spy_px}
             E.update(startAt=first["at"], navStart=first["totalValue"] / units, spyStart=first["spyPrice"] or spy_px,
                      peak=first["totalValue"] / units, maxDD=0.0, maxDDAt=first["at"], errors=E.get("errors", 0),
@@ -1338,7 +1347,7 @@ class Engine:
         ret = (nav / E["navStart"] - 1) * 100
         spy_ret = (spy_px / E["spyStart"] - 1) * 100 if spy_px and E.get("spyStart") else None
         closes = [t for t in self.L["trades"] if not t.get("cancelled") and t.get("action") in ("SELL", "COVER")
-                  and t.get("ts", "") >= E["startAt"]]
+                  and t.get("ts", "") > E["startAt"]]     # the switch-over trades themselves are not counted
         wins = [num(t.get("realizedPL")) for t in closes if num(t.get("realizedPL")) > 0]
         losses = [num(t.get("realizedPL")) for t in closes if num(t.get("realizedPL")) <= 0]
         margin_calls = sum(1 for t in self.L["trades"] if t.get("rule") == "teminat çağrısı" and t.get("ts", "") >= E["startAt"]
@@ -1349,7 +1358,7 @@ class Engine:
                 comp[c["rule"]] = comp.get(c["rule"], 0) + 1
         # monthly returns from the daily snapshots (last snapshot of each month)
         months, prev_nav, prev_spy = [], E["navStart"], E["spyStart"]
-        snaps = [s for s in self.L["snapshots"] if s["date"] >= EVAL_START and s.get("twrPct") is not None]
+        snaps = [s for s in self.L["snapshots"] if s["date"] >= ev_start and s.get("twrPct") is not None]
         by_month = {}
         for sn in snaps:
             by_month[sn["date"][:7]] = sn
@@ -1364,15 +1373,16 @@ class Engine:
             months.append(row)
             prev_nav, prev_spy = m_nav, m_spy or prev_spy
         today_counts = self.now.time() >= dtime(9, 35)
-        due = [d for d in trading_days(EVAL_START, min(self.today, EVAL_END)) if d < self.today or today_counts]
+        due = [d for d in trading_days(ev_start, min(self.today, ev_end)) if d < self.today or today_counts]
         run_days = [d for d in E["runDays"] if d in due]
-        all_days = trading_days(EVAL_START, EVAL_END)
+        all_days = trading_days(ev_start, ev_end)
         uptime = round(len(run_days) / len(due) * 100, 1) if due else 100.0
         excess = round(ret - spy_ret, 2) if spy_ret is not None else None
         dd_now = round((nav / E["peak"] - 1) * 100, 2) + 0.0
         self.L["scorecard"] = {
-            "start": EVAL_START, "startAt": E["startAt"], "end": EVAL_END, "asOf": iso(self.now),
-            "daysElapsed": len(due), "daysTotal": len(all_days), "finished": self.today >= EVAL_END,
+            "start": ev_start, "startAt": E["startAt"], "end": ev_end, "asOf": iso(self.now),
+            "strategy": E.get("strategy", "v3"), "history": self.L.get("evalHistory", []),
+            "daysElapsed": len(due), "daysTotal": len(all_days), "finished": self.today >= ev_end,
             "returnPct": round(ret, 2), "spyReturnPct": round(spy_ret, 2) if spy_ret is not None else None,
             "excessPct": excess, "maxDrawdownPct": E["maxDD"], "maxDrawdownAt": E["maxDDAt"], "drawdownNowPct": dd_now,
             "trades": {"closed": len(closes), "wins": len(wins),
