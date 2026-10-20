@@ -1,10 +1,10 @@
 {
- "asOf": "2026-10-19T16:41:14-04:00",
- "session": "post",
- "sessionLabel": "Piyasa sonrası (16:00–20:00 ET)",
+ "asOf": "2026-10-20T09:28:35-04:00",
+ "session": "pre",
+ "sessionLabel": "Piyasa öncesi (04:00–09:30 ET)",
  "equity": 2671.03,
- "totalImpact": 1.6,
- "totalImpactPct": 0.06,
+ "totalImpact": -12.84,
+ "totalImpactPct": -0.48,
  "items": [
   {
    "ticker": "CRWD",
@@ -15,10 +15,10 @@
    "stopPrice": 181.97,
    "refClose": 228.16,
    "refAt": "2026-10-19T15:55:00-04:00",
-   "price": 228.1,
-   "at": "2026-10-19T16:38:55-04:00",
-   "changePct": -0.03,
-   "impact": -0.03,
+   "price": 226.166,
+   "at": "2026-10-20T09:25:00-04:00",
+   "changePct": -0.87,
+   "impact": -1.08,
    "beyondStop": false
   },
   {
@@ -28,12 +28,12 @@
    "lev": 1,
    "shares": 0.5043,
    "stopPrice": 197.47,
-   "refClose": 260.21,
+   "refClose": 260.19,
    "refAt": "2026-10-19T15:55:00-04:00",
-   "price": 260.36,
-   "at": "2026-10-19T16:38:55-04:00",
-   "changePct": 0.06,
-   "impact": 0.08,
+   "price": 259.98,
+   "at": "2026-10-20T08:40:00-04:00",
+   "changePct": -0.08,
+   "impact": -0.11,
    "beyondStop": false
   },
   {
@@ -45,10 +45,10 @@
    "stopPrice": 542.72,
    "refClose": 718.32,
    "refAt": "2026-10-19T15:55:00-04:00",
-   "price": 718.85,
-   "at": "2026-10-19T16:40:00-04:00",
-   "changePct": 0.07,
-   "impact": 0.97,
+   "price": 715.49,
+   "at": "2026-10-20T09:25:00-04:00",
+   "changePct": -0.39,
+   "impact": -5.19,
    "beyondStop": false
   },
   {
@@ -60,10 +60,10 @@
    "stopPrice": 682.09,
    "refClose": 905.35,
    "refAt": "2026-10-19T15:55:00-04:00",
-   "price": 905.2084,
-   "at": "2026-10-19T16:40:00-04:00",
-   "changePct": -0.02,
-   "impact": -0.02,
+   "price": 886.345,
+   "at": "2026-10-20T09:25:00-04:00",
+   "changePct": -2.1,
+   "impact": -2.77,
    "beyondStop": false
   },
   {
@@ -75,10 +75,10 @@
    "stopPrice": 348.15,
    "refClose": 455.23,
    "refAt": "2026-10-19T15:55:00-04:00",
-   "price": 455.44,
-   "at": "2026-10-19T16:35:00-04:00",
-   "changePct": 0.05,
-   "impact": 0.06,
+   "price": 443.33,
+   "at": "2026-10-20T09:25:02-04:00",
+   "changePct": -2.61,
+   "impact": -3.4,
    "beyondStop": false
   },
   {
@@ -90,10 +90,10 @@
    "stopPrice": 70.45,
    "refClose": 91.97,
    "refAt": "2026-10-19T15:55:00-04:00",
-   "price": 92.1429,
-   "at": "2026-10-19T16:40:00-04:00",
-   "changePct": 0.19,
-   "impact": 0.24,
+   "price": 90.85,
+   "at": "2026-10-20T09:25:00-04:00",
+   "changePct": -1.22,
+   "impact": -1.58,
    "beyondStop": false
   },
   {
@@ -105,10 +105,10 @@
    "stopPrice": 176.5,
    "refClose": 237.03,
    "refAt": "2026-10-19T15:55:00-04:00",
-   "price": 237.62,
-   "at": "2026-10-19T16:35:00-04:00",
-   "changePct": 0.25,
-   "impact": 0.33,
+   "price": 232.5,
+   "at": "2026-10-20T09:28:00-04:00",
+   "changePct": -1.91,
+   "impact": -2.56,
    "beyondStop": false
   },
   {
@@ -120,10 +120,10 @@
    "stopPrice": 278.52,
    "refClose": 347.12,
    "refAt": "2026-10-19T15:55:00-04:00",
-   "price": 347.1,
-   "at": "2026-10-19T16:05:00-04:00",
-   "changePct": -0.01,
-   "impact": -0.01,
+   "price": 349.3,
+   "at": "2026-10-20T09:27:50-04:00",
+   "changePct": 0.63,
+   "impact": 0.78,
    "beyondStop": false
   },
   {
@@ -135,10 +135,10 @@
    "stopPrice": 106.59,
    "refClose": 145.25,
    "refAt": "2026-10-19T15:55:00-04:00",
-   "price": 145.24,
-   "at": "2026-10-19T16:10:00-04:00",
-   "changePct": -0.01,
-   "impact": -0.01,
+   "price": 147.2,
+   "at": "2026-10-20T09:27:58-04:00",
+   "changePct": 1.34,
+   "impact": 1.82,
    "beyondStop": false
   },
   {
@@ -151,7 +151,7 @@
    "refClose": 627.02,
    "refAt": "2026-10-19T15:55:00-04:00",
    "price": 627.0,
-   "at": "2026-10-19T16:05:00-04:00",
+   "at": "2026-10-20T07:45:00-04:00",
    "changePct": -0.0,
    "impact": -0.0,
    "beyondStop": false
@@ -165,10 +165,10 @@
    "stopPrice": 131.04,
    "refClose": 178.29,
    "refAt": "2026-10-19T15:55:00-04:00",
-   "price": 178.28,
-   "at": "2026-10-19T16:40:35-04:00",
-   "changePct": -0.01,
-   "impact": -0.01,
+   "price": 179.9452,
+   "at": "2026-10-20T09:23:22-04:00",
+   "changePct": 0.93,
+   "impact": 1.26,
    "beyondStop": false
   }
  ],
@@ -177,17 +177,17 @@
    "ticker": "SPY",
    "label": "S&P 500 (SPY)",
    "refClose": 766.54,
-   "price": 767.06,
-   "at": "2026-10-19T16:35:00-04:00",
-   "changePct": 0.07
+   "price": 765.75,
+   "at": "2026-10-20T09:25:00-04:00",
+   "changePct": -0.1
   },
   {
    "ticker": "QQQ",
    "label": "Nasdaq 100 (QQQ)",
    "refClose": 718.32,
-   "price": 718.85,
-   "at": "2026-10-19T16:40:00-04:00",
-   "changePct": 0.07
+   "price": 715.49,
+   "at": "2026-10-20T09:25:00-04:00",
+   "changePct": -0.39
   }
  ],
  "note": "Yalnızca izleme: bot bu saatlerde işlem yapmaz, zarar-kes emirleri normal seansta işler. Seans dışında işlem hacmi düşüktür, fiyatlar sert oynayabilir ve ertesi açılış farklı olabilir.",
