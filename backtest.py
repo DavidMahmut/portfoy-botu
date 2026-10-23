@@ -557,6 +557,8 @@ VARIANTS5 = [
                                                                           "dir_rule": "fast"}),
     ("vt_s25", "SPY trend yönünde (UPRO/SPXU), oynaklık hedefi %25", {"voltarget": True, "tv": 0.25, "no_stops": True,
                                                                    "base": "SPY", "lev_etf": "UPRO", "inv_etf": "SPXU"}),
+    ("vt_q25_ms1", "QQQ, SPY trend yönünde, oynaklık hedefi %25, long en fazla 3x, short en fazla 1x",
+     {"voltarget": True, "tv": 0.25, "no_stops": True, "max_short": 1.0}),
     ("vt_q25_own", "QQQ kendi trend yönünde (QQQ 200 günlük), oynaklık hedefi %25, en fazla 3x, iki yönlü",
      {"voltarget": True, "tv": 0.25, "no_stops": True, "dir_src": "own"}),
     ("vt_q30_own", "Aynısı, oynaklık hedefi %30", {"voltarget": True, "tv": 0.30, "no_stops": True, "dir_src": "own"}),
@@ -620,7 +622,9 @@ def main(data=None):
               ("mix5e", "v5e: %50 iki yönlü QQQ (kendi trendi, %25) + %50 sepet (long)", {"vt_q25_own": 0.5, "bk10_g3_ds": 0.5}),
               ("mix5f", "v5f: %70 iki yönlü QQQ (kendi trendi, %25) + %30 sepet (long)", {"vt_q25_own": 0.7, "bk10_g3_ds": 0.3}),
               ("mix5g", "v5g: %50 iki yönlü QQQ (kendi trendi, %25) + %50 iki yönlü sepet", {"vt_q25_own": 0.5, "bk_dir": 0.5}),
-              ("mix5h", "v5h: %60 iki yönlü QQQ (kendi trendi, %30) + %40 sepet (long)", {"vt_q30_own": 0.6, "bk10_g3_ds": 0.4})]
+              ("mix5h", "v5h: %60 iki yönlü QQQ (kendi trendi, %30) + %40 sepet (long)", {"vt_q30_own": 0.6, "bk10_g3_ds": 0.4}),
+              ("mix5i", "v5i: %50 iki yönlü QQQ (short en fazla 1x) + %50 sepet (long)", {"vt_q25_ms1": 0.5, "bk10_g3_ds": 0.5}),
+              ("mix5j", "Karşılaştırma: %50 yalnızca long, oynaklık hedefli QQQ + %50 sepet", {"vt_q25_lo": 0.5, "bk10_g3_ds": 0.5})]
     for key, label, wts in blends:
         if not all(k in curves for k in wts):
             continue
