@@ -6,6 +6,7 @@ against each day's low/high, current universe only (survivorship bias: today's w
 """
 import json
 import math
+import os
 import sys
 from datetime import datetime
 from pathlib import Path
@@ -71,6 +72,7 @@ def indicators(data):
             "O": s["Open"], "H": h, "L": l, "C": c, "sma5": c.rolling(5).mean(), "sma50": c.rolling(50).mean(),
             "sma200": c.rolling(200).mean(), "atr": tr.rolling(20).mean(), "rsi2": rsi(c, 2), "rsi3": rsi(c, 3),
             "r5": c / c.shift(5) - 1, "r21": r21, "r63": r63, "r126": r126, "mom121": c.shift(21) / c.shift(252) - 1,
+            "rv20": c.pct_change().rolling(20).std() * math.sqrt(252),
             "score": 100 * (0.2 * r21 + 0.5 * r63 + 0.3 * r126)})
     return ind
 
@@ -83,7 +85,7 @@ class Sim:
     def __init__(self, ind, dates, cfg):
         self.ind, self.dates, self.cfg = ind, dates, cfg
         self.cash, self.pos, self.orders = CAPITAL, {}, []
-        self.curve, self.trades, self.cool, self.costs = [], [], {}, 0.0
+        self.curve, self.trades, self.cool, self.costs, self.expo = [], [], {}, 0.0, []
 
     # ---- helpers
     def px(self, t, d, f="C"):
@@ -125,7 +127,8 @@ class Sim:
             p["sh"] = tot
             return
         if self.cfg.get("no_stops"):
-            stop = price * (1 - self.cfg["disaster"]) if self.cfg.get("disaster") and side == "long" else \
+            dz = self.cfg.get("disaster")
+            stop = (price * (1 - dz) if side == "long" else price * (1 + dz)) if dz else \
                 (0.0 if side == "long" else float("inf"))
         elif self.cfg.get("atr_stops"):
             k = self.cfg.get("atr_k", 2.5)
@@ -202,11 +205,15 @@ class Sim:
         self.curve.append((d, eq))
         if eq <= 0:
             return False
+        gross = sum(p["sh"] * (self.px(t, d) or p["last"]) * p["lev"] for t, p in self.pos.items())
+        self.expo.append(gross / eq)
         # 5) decisions for tomorrow
         if self.cfg.get("meanrev"):
             self.decide_meanrev(i, d, eq)
         elif self.cfg.get("index"):
             self.decide_index(i, d, eq)
+        elif self.cfg.get("voltarget"):
+            self.decide_vt(i, d, eq)
         elif self.cfg.get("basket"):
             if i + 1 >= len(self.dates) or self.dates[i + 1].month != d.month or i == 1:
                 self.decide_basket(i, d, eq)
@@ -259,6 +266,46 @@ class Sim:
         elif up and have < 0.9 * want:
             self.orders.append({"kind": "open", "t": t, "side": "long", "mv": want - have})
 
+    def direction(self, d):
+        """+1 market up-trend, -1 confirmed down-trend (SPY below its 200-day and 50-day below 200-day), 0 otherwise."""
+        src = self.cfg.get("base", "QQQ") if self.cfg.get("dir_src") == "own" else "SPY"
+        spy = self.ind[src].loc[d]
+        if spy["C"] > spy["sma200"]:
+            return 1
+        if self.cfg.get("dir_rule") == "fast":
+            return -1
+        return -1 if spy["sma50"] < spy["sma200"] else 0
+
+    def decide_vt(self, i, d, eq):
+        """Index sleeve with volatility-targeted leverage (0-3x) in the trend's direction, built from cash-funded ETFs:
+        long = base ETF + its 3x version, short = the -3x inverse ETF."""
+        cfg = self.cfg
+        base, lev_etf, inv_etf = cfg.get("base", "QQQ"), cfg.get("lev_etf", "TQQQ"), cfg.get("inv_etf", "SQQQ")
+        rv = self.px(base, d, "rv20") or 0.2
+        dirn = self.direction(d)
+        if dirn < 0 and not cfg.get("short", True):
+            dirn = 0
+        mag = min(cfg.get("max_e", 3.0), cfg.get("tv", 0.25) / max(rv, 0.05))
+        if dirn < 0:
+            mag = min(mag, cfg.get("max_short", 3.0))
+        target = dirn * mag
+        mv = {t: self.pos[t]["sh"] * (self.px(t, d) or self.pos[t]["last"]) if t in self.pos else 0.0 for t in (base, lev_etf, inv_etf)}
+        now = (mv[base] + 3 * mv[lev_etf] - 3 * mv[inv_etf]) / eq
+        if abs(target - now) < cfg.get("band", 0.3) and (target == 0) == (now == 0):
+            return
+        if target >= 0:
+            a = max(0.0, (target - 1) / 2)
+            want = {base: (min(target, 1.0) - a) * eq if target <= 1 else (1 - a) * eq, lev_etf: a * eq, inv_etf: 0.0}
+        else:
+            want = {base: 0.0, lev_etf: 0.0, inv_etf: min(1.0, -target / 3) * eq}
+        for t, w in want.items():
+            have = mv[t]
+            if have > w + 1 and t in self.pos:
+                self.orders.append({"kind": "close", "t": t, "frac": 1.0 if w <= 1 else 1 - w / have, "why": "vt"})
+        for t, w in want.items():
+            if w > mv[t] + 10:
+                self.orders.append({"kind": "open", "t": t, "side": "long", "mv": w - mv[t]})
+
     def decide_basket(self, i, d, eq):
         """Monthly: equal-weight the top-N momentum names (12-1 month), only while the market trend is up."""
         cfg = self.cfg
@@ -280,7 +327,10 @@ class Sim:
                 rows.append((x[key], t))
         rows.sort(reverse=True)
         rank = {t: j + 1 for j, (_, t) in enumerate(rows)}
-        keep = [t for t in self.pos if rank.get(t, 999) <= cfg.get("keep_rank", 2 * n)] if expo > 0 else []
+        if cfg.get("short_down") and not up:
+            self.short_basket(i, d, eq, key)
+            return
+        keep = [t for t in self.pos if self.pos[t]["side"] == "long" and rank.get(t, 999) <= cfg.get("keep_rank", 2 * n)] if expo > 0 else []
         for t in list(self.pos):
             if t not in keep:
                 self.orders.append({"kind": "close", "t": t, "why": "rebalance"})
@@ -306,6 +356,36 @@ class Sim:
                 self.orders.append({"kind": "close", "t": t, "frac": 1 - each / have, "why": "trim"})
             elif have < 0.8 * each:
                 self.orders.append({"kind": "open", "t": t, "side": "long", "mv": each - have})
+
+    def short_basket(self, i, d, eq, key):
+        cfg = self.cfg
+        n = cfg.get("n_short", cfg.get("n", 10))
+        rows = []
+        for t in U.UNIVERSE:
+            if t in U.ETFS:
+                continue
+            r = self.ind.get(t)
+            if r is None or d not in r.index:
+                continue
+            x = r.loc[d]
+            if pd.isna(x[key]) or pd.isna(x["sma200"]) or x["C"] < 10:
+                continue
+            if x[key] < 0 and x["C"] < x["sma200"] and not self.cooled(t, "short", i):
+                rows.append((x[key], t))
+        rows.sort()
+        srank = {t: j + 1 for j, (_, t) in enumerate(rows)}
+        keep = [t for t in self.pos if self.pos[t]["side"] == "short" and srank.get(t, 999) <= 2 * n]
+        for t in list(self.pos):
+            if t not in keep:
+                self.orders.append({"kind": "close", "t": t, "why": "flip"})
+        chosen = keep + [t for _, t in rows if t not in keep][:max(0, n - len(keep))]
+        if not chosen:
+            return
+        each = eq * cfg.get("short_expo", 1.0) / len(chosen)
+        for t in chosen:
+            have = self.pos[t]["sh"] * self.px(t, d) if t in self.pos else 0.0
+            if have < 0.8 * each:
+                self.orders.append({"kind": "open", "t": t, "side": "short", "mv": each - have})
 
     def decide_momentum(self, i, d, eq):
         cfg = self.cfg
@@ -415,7 +495,7 @@ def bull_t_or(t, bull_etf, bear_etf, budget, be, bre, long_t, short_t, side):
     return long_t if side == "long" else short_t
 
 
-def metrics(curve, trades, costs, spy=None):
+def metrics(curve, trades, costs, spy=None, expo=None):
     s = pd.Series({d: v for d, v in curve})
     r = s.pct_change().dropna()
     yrs = (s.index[-1] - s.index[0]).days / 365.25
@@ -427,6 +507,8 @@ def metrics(curve, trades, costs, spy=None):
            "maxDrawdownPct": round(dd * 100, 2), "endValue": round(float(s.iloc[-1]), 2),
            "worstDayPct": round(r.min() * 100, 2), "worstMonthPct": round(((1 + r).resample("ME").prod() - 1).min() * 100, 2),
            "costs": round(costs, 2)}
+    if expo:
+        out.update(avgExposure=round(float(np.mean(expo)), 2), maxExposure=round(float(np.max(expo)), 2))
     if trades:
         w = [t for t in trades if t["pl"] > 0]
         lo = [t for t in trades if t["pl"] <= 0]
@@ -466,6 +548,25 @@ VARIANTS3 = [
                                                                            "group_cap": 3, "disaster": 0.25, "cooldown": 21}),
 ]
 
+VARIANTS5 = [
+    ("vt_q25", "QQQ trend yönünde, oynaklık hedefi %25, en fazla 3x, düşüşte −3x ters ETF",
+     {"voltarget": True, "tv": 0.25, "no_stops": True}),
+    ("vt_q25_lo", "Aynısı, yalnızca long (düşüşte nakit)", {"voltarget": True, "tv": 0.25, "no_stops": True, "short": False}),
+    ("vt_q35", "QQQ, oynaklık hedefi %35, en fazla 3x, iki yönlü", {"voltarget": True, "tv": 0.35, "no_stops": True}),
+    ("vt_q25f", "QQQ %25, hızlı yön kuralı (SPY 200 günün altı = short)", {"voltarget": True, "tv": 0.25, "no_stops": True,
+                                                                          "dir_rule": "fast"}),
+    ("vt_s25", "SPY trend yönünde (UPRO/SPXU), oynaklık hedefi %25", {"voltarget": True, "tv": 0.25, "no_stops": True,
+                                                                   "base": "SPY", "lev_etf": "UPRO", "inv_etf": "SPXU"}),
+    ("vt_q25_own", "QQQ kendi trend yönünde (QQQ 200 günlük), oynaklık hedefi %25, en fazla 3x, iki yönlü",
+     {"voltarget": True, "tv": 0.25, "no_stops": True, "dir_src": "own"}),
+    ("vt_q30_own", "Aynısı, oynaklık hedefi %30", {"voltarget": True, "tv": 0.30, "no_stops": True, "dir_src": "own"}),
+    ("bk_dir", "Aylık sepet: yükselişte en güçlü 10 long, düşüşte en zayıf 10 short", {
+        "basket": True, "n": 10, "no_stops": True, "group_cap": 3, "short_down": True, "short_expo": 1.0,
+        "disaster": 0.25, "cooldown": 21}),
+    ("bk_dir15", "Aynısı 1,5x kaldıraçla", {"basket": True, "n": 10, "no_stops": True, "group_cap": 3, "lev": 1.5,
+                                           "short_down": True, "short_expo": 1.5, "disaster": 0.25, "cooldown": 21}),
+]
+
 VARIANTS = [
     ("v0", "Mevcut kurallar (v3)", {}),
     ("v1", "+ zarar-kes sonrası 10 gün bekleme", {"cooldown": 10}),
@@ -484,12 +585,17 @@ def main(data=None):
     ind = indicators(data)
     dates = [d for d in ind["SPY"].index if d >= pd.Timestamp(START)]
     res, curves = {}, {}
-    for key, label, cfg in VARIANTS + VARIANTS2 + VARIANTS3:
+    only = os.environ.get("BT_ONLY")
+    todo = VARIANTS + VARIANTS2 + VARIANTS3 + VARIANTS5
+    if only:
+        keys = set(only.split(","))
+        todo = [v for v in todo if v[0] in keys]
+    for key, label, cfg in todo:
         sim = Sim(ind, dates, cfg)
         for i in range(1, len(dates)):
             if not sim.step(i):
                 break
-        m, s = metrics(sim.curve, sim.trades, sim.costs)
+        m, s = metrics(sim.curve, sim.trades, sim.costs, expo=sim.expo)
         m["label"] = label
         res[key] = m
         curves[key] = s
@@ -506,14 +612,24 @@ def main(data=None):
                {"idx_qqq": 0.4, "bk10": 0.4, "mr": 0.2}),
               ("mix_v4", "ÖNERİ: %50 QQQ trend + %50 sektör sınırlı sepet", {"idx_qqq": 0.5, "bk10_g3": 0.5}),
               ("mix_v4ds", "ÖNERİ + felaket zarar-kesi", {"idx_qqq": 0.5, "bk10_g3_ds": 0.5}),
-              ("mix_v4spy", "%50 SPY trend + %50 sektör sınırlı sepet", {"idx_spy": 0.5, "bk10_g3": 0.5})]
+              ("mix_v4spy", "%50 SPY trend + %50 sektör sınırlı sepet", {"idx_spy": 0.5, "bk10_g3": 0.5}),
+              ("mix5a", "v5a: %50 kaldıraçlı iki yönlü QQQ (%25) + %50 sepet (long)", {"vt_q25": 0.5, "bk10_g3_ds": 0.5}),
+              ("mix5b", "v5b: %50 kaldıraçlı iki yönlü QQQ (%25) + %50 iki yönlü sepet", {"vt_q25": 0.5, "bk_dir": 0.5}),
+              ("mix5c", "v5c: %50 kaldıraçlı iki yönlü QQQ (%35) + %50 iki yönlü sepet 1,5x", {"vt_q35": 0.5, "bk_dir15": 0.5}),
+              ("mix5d", "v5d: %60 kaldıraçlı iki yönlü QQQ (%25) + %40 sepet (long)", {"vt_q25": 0.6, "bk10_g3_ds": 0.4}),
+              ("mix5e", "v5e: %50 iki yönlü QQQ (kendi trendi, %25) + %50 sepet (long)", {"vt_q25_own": 0.5, "bk10_g3_ds": 0.5}),
+              ("mix5f", "v5f: %70 iki yönlü QQQ (kendi trendi, %25) + %30 sepet (long)", {"vt_q25_own": 0.7, "bk10_g3_ds": 0.3}),
+              ("mix5g", "v5g: %50 iki yönlü QQQ (kendi trendi, %25) + %50 iki yönlü sepet", {"vt_q25_own": 0.5, "bk_dir": 0.5}),
+              ("mix5h", "v5h: %60 iki yönlü QQQ (kendi trendi, %30) + %40 sepet (long)", {"vt_q30_own": 0.6, "bk10_g3_ds": 0.4})]
     for key, label, wts in blends:
+        if not all(k in curves for k in wts):
+            continue
         r = sum(w * curves[k].pct_change() for k, w in wts.items())
         c = (1 + r.fillna(0)).cumprod() * CAPITAL
         m, _ = metrics(list(zip(c.index, c.values)), [], 0.0)
         m["label"] = label
         res[key] = m
-    for w in (0.3, 0.5):
+    for w in (0.3, 0.5) if "v4" in curves and "mr" in curves else ():
         best = "v4"
         r = (1 - w) * curves[best].pct_change() + w * curves["mr"].pct_change()
         c = (1 + r.fillna(0)).cumprod() * CAPITAL
@@ -534,7 +650,7 @@ def main(data=None):
     oversold.sort(key=lambda z: z["rsi2"])
     corr = None
     try:
-        rr = pd.concat({k: curves[k].pct_change() for k in ("v4", "mr")}, axis=1).dropna()
+        rr = pd.concat({k: curves[k].pct_change() for k in ("vt_q25", "bk10_g3_ds")}, axis=1).dropna()
         corr = round(float(rr.corr().iloc[0, 1]), 2)
     except Exception:
         pass
