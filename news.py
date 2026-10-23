@@ -181,6 +181,17 @@ def upcoming_earnings(tickers, today, days=21):
     return sorted(out, key=lambda x: x["date"])
 
 
+def index_note(ledger):
+    ix = (ledger.get("meta") or {}).get("index")
+    if not ix:
+        return ""
+    word = {1: "long", -1: "short", 0: "in cash (direction not confirmed)"}.get(ix.get("dir"), "")
+    tgt = ix.get("target") or 0
+    return (f" Index sleeve (last daily decision {ix.get('date', '')}): {word}"
+            + (f", target {tgt:+.2f}x Nasdaq 100 exposure (25% / {ix.get('vol', 0):.1f}% 20-day volatility, capped at 3x)."
+               if ix.get("dir") else "."))
+
+
 def build_digest(ledger, sections, market, snap, sma200, earnings, now):
     ny = now.astimezone(NY)
     today = ny.date().isoformat()
@@ -219,8 +230,9 @@ def build_digest(ledger, sections, market, snap, sma200, earnings, now):
             gap = (spy / sma200 - 1) * 100
             bullets.append({"head": "Trend filter", "text": (
                 f"The S&P 500 (SPY ${spy:.2f}) is {abs(gap):.1f}% {'above' if gap >= 0 else 'below'} its 200-day average "
-                f"(${sma200:.2f}). " + ("Rule: the bot stays invested." if gap >= 0 else
-                                         "Rule: the bot moves to cash until SPY is back above the average."))})
+                f"(${sma200:.2f}). " + ("Basket rule: the momentum basket stays invested." if gap >= 0 else
+                                         "Basket rule: the momentum basket waits in cash until SPY is back above the average.")
+                + index_note(ledger))})
     P = ledger["portfolio"]
     prev = [x for x in ledger.get("snapshots", []) if x["date"] < today]
     day_txt = ""

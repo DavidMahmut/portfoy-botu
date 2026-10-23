@@ -298,7 +298,7 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
     <div>
       <p class="eyebrow">Sanal yatırım deneyi · kurallara dayalı bot</p>
       <h1 id="h1">3.000 $ Portföy Defteri</h1>
-      <p class="sub" id="sub">Sanal bir ABD kredili hesabı (Interactive Brokers modeli): güçlü hisselerde long, zayıf hisselerde short. Yalnızca gerçekte yapılabilecek işlemler: Reg T teminatı, FINRA 2.000 $ asgari özsermaye ve bakım teminatı, SEC açığa satış kuralı, gerçek komisyon ve faiz. Bot piyasa açıkken 5 dakikada bir Yahoo Finance verileriyle kontrol eder; her işlemin gerekçesi, maliyeti, kaynağı ve hangi kuralın devreye girdiği aşağıda.</p>
+      <p class="sub" id="sub">Sanal bir ABD kredili hesabı (Interactive Brokers modeli): piyasa trendinin yönünde iki yönlü (yükselişte long, düşüşte short), oynaklığa göre ayarlanan en fazla 3x kaldıraçla. Yalnızca gerçekte yapılabilecek işlemler: Reg T teminatı, FINRA 2.000 $ asgari özsermaye ve bakım teminatı, SEC açığa satış kuralı, gerçek komisyon ve faiz. Bot piyasa açıkken 5 dakikada bir Yahoo Finance verileriyle kontrol eder; her işlemin gerekçesi, maliyeti, kaynağı ve hangi kuralın devreye girdiği aşağıda.</p>
     </div>
     <div class="status">
       <span class="pill" id="statusPill">Veriler yükleniyor</span>
@@ -590,13 +590,13 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
     var ps=last.positions||[];
     if(!ps.length) sl.appendChild(el("li",{class:"muted small",text:"Açık pozisyon yok."}));
     ps.forEach(function(x){
-      var dist=x.distancePct, w=Math.max(2,Math.min(100,dist/15*100));
-      var col= dist<3?"var(--loss)":dist<6?"var(--warn)":"var(--gain)";
+      var dist=x.distancePct, has=isNum(dist), w=has?Math.max(2,Math.min(100,dist/30*100)):0;
+      var col= !has?"var(--muted)":dist<3?"var(--loss)":dist<6?"var(--warn)":"var(--gain)";
       var sh=x.side==="short";
       sl.appendChild(el("li",null, el("span",{class:"tk",text:x.ticker,title:sh?"Short":"Long"}),
-        el("span",{class:"meter",title:"Zarar-kes seviyesine uzaklık"}, el("span",{style:"width:"+w.toFixed(1)+"%;background:"+col})),
-        el("span",{class:"d",text:"%"+fmtNum(dist,1)}),
-        el("span",{class:"lbl",text:(sh?"SHORT · ":"LONG · ")+fmtNum(x.price,2)+" $ → zarar-kes "+fmtNum(x.stopPrice,2)+" $"+(sh?" (yukarıda)":"")+" · bugün "+pct(x.dayChangePct)})));
+        el("span",{class:"meter",title:has?"Zarar-kes seviyesine uzaklık":"Endeks kolu: fiyat zarar-kesi yok"}, el("span",{style:"width:"+w.toFixed(1)+"%;background:"+col})),
+        el("span",{class:"d",text:has?"%"+fmtNum(dist,1):"—"}),
+        el("span",{class:"lbl",text:(sh?"SHORT · ":"LONG · ")+fmtNum(x.price,2)+" $"+(has?" → zarar-kes "+fmtNum(x.stopPrice,2)+" $"+(sh?" (yukarıda)":""):" · endeks kolu, büyüklük oynaklığa göre")+" · bugün "+pct(x.dayChangePct)})));
     });
     clear(cl); $("checkHead").textContent=dLong(c.date)+" kontrolleri ("+es.length+")";
     es.slice().reverse().forEach(function(e){
@@ -822,11 +822,11 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
             el("td",{class:"l"}, el("b",{text:r.ticker}), el("span",{class:"muted small",text:"  "+(r.name||"")})),
             el("td",{text:fmtNum(r.price,2)}), el("td",{class:cls(r.r21),text:pct(r.r21)}), el("td",{class:cls(r.r63),text:pct(r.r63)}),
             el("td",{class:cls(r.r126),text:pct(r.r126)}), el("td",{text:fmtNum(r.score,1)}),
-            el("td",{class:"l small",text:"50 g. ort. "+fmtNum(r.sma50,2)+" $"})));
+            el("td",{class:"l small",text:isNum(r.sma200)?"200 g. ort. "+fmtNum(r.sma200,2)+" $ · 12-1 ay "+pct(r.mom):"50 g. ort. "+fmtNum(r.sma50,2)+" $"})));
         });
         var th3=function(t){return el("th",{text:t});};
         body.appendChild(el("div",null, el("h4",{text:"Short adayları (en zayıf 10)"}),
-          el("p",{class:"small muted",text:"Fiyatı 10 $ üstü, 50 günlük ortalamanın altında, 1 ve 3 aylık getirisi negatif hisseler; puanı en düşük olan en zayıftır. Mavi satırlar şu an short."}),
+          el("p",{class:"small muted",text:x.index?"Fiyatı 10 $ üstü, 200 günlük ortalamanın altında ve 12-1 ay getirisi negatif hisseler; puanı en düşük olan en zayıftır. v5'te bu liste izleme içindir: düşüş trendinde short tarafı endeks kolundaki −3x fon SQQQ ile alınır. Mavi satırlar şu an short.":"Fiyatı 10 $ üstü, 50 günlük ortalamanın altında, 1 ve 3 aylık getirisi negatif hisseler; puanı en düşük olan en zayıftır. Mavi satırlar şu an short."}),
           el("div",{class:"tbl-wrap"}, el("table",{class:"rank-table"}, el("thead",null, el("tr",null, th3("Sıra"),th3("Sembol"),th3("Fiyat $"),th3("1 ay"),th3("3 ay"),th3("6 ay"),th3("Puan"),th3("Not"))), sb))));
       }
       if(x.nextSteps) body.appendChild(el("div",null, el("h4",{text:"Sonraki adım"}), el("p",{text:x.nextSteps})));
@@ -910,8 +910,8 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
     $("kDay").textContent= sc.finished ? "Değerlendirme tamamlandı ("+tot+" işlem günü)" : "İşlem günü "+el_+" / "+tot;
     $("kGauge").style.width=Math.min(100,el_/tot*100).toFixed(1)+"%";
     var hs=sc.history||[], kh=$("kHist");
-    if(hs.length){ var h0=hs[hs.length-1]; kh.hidden=false;
-      kh.textContent="Önceki strateji ("+(h0.strategy||"")+", "+dShort(h0.start)+" – "+dShort(h0.end)+"): portföy "+pct(h0.returnPct)+", SPY "+pct(h0.spyReturnPct)+", en büyük düşüş "+pct(h0.maxDrawdownPct)+". Bu sonuç ve geriye dönük test üzerine strateji değiştirildi; karne yeni strateji için baştan başladı."; }
+    if(hs.length){ kh.hidden=false;
+      kh.textContent=(hs.length>1?"Önceki stratejiler: ":"Önceki strateji: ")+hs.map(function(h0){return (h0.strategy||"")+" ("+dShort(h0.start)+" – "+dShort(h0.end)+"): portföy "+pct(h0.returnPct)+", SPY "+pct(h0.spyReturnPct)+", en büyük düşüş "+pct(h0.maxDrawdownPct);}).join("; ")+". Her değişiklikte karne yeni strateji için baştan başladı."; }
     else kh.hidden=true;
     var cr=sc.criteria||[], okN=cr.filter(function(c){return c.ok;}).length, v=$("kVerdict");
     v.className="pill "+(okN===cr.length?"ok":"warn");
