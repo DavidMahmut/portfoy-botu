@@ -38,7 +38,7 @@ def nasdaq_symbols():
             continue
         if SKIP_NAME.search(name) or not re.fullmatch(r"[A-Z]{1,5}", sym):
             continue
-        out[sym] = re.sub(r"\s*-\s*(Class [A-Z] )?(Common Stock|Ordinary Shares|American Depositary Shares).*$", "", name).strip()
+        out[sym] = name.split(" - ")[0].strip()
     return out
 
 
@@ -76,6 +76,23 @@ def headline(t):
         return None
 
 
+def _p(x):
+    return ("−" if x < 0 else "+") + f"%{abs(x):.1f}".replace(".", ",")
+
+
+def study_text(st):
+    """Turkish one-liner from movers_study.json's summary."""
+    try:
+        u, d = st["up5d"], st["down5d"]
+        return (f"%20+ yükselen hisseler sonraki 5 günde ortalama {_p(u['rawMeanPct'])} (medyan {_p(u['rawMedianPct'])}), "
+                f"%20+ düşenler ortalama {_p(d['rawMeanPct'])} (medyan {_p(d['rawMedianPct'])}) hareket etti. Yani sert "
+                f"yükselenler çoğunlukla geri verdi, sert düşenler ise çoğunlukla düşmeye devam etti: düşüşten hemen sonra "
+                f"almak 5 günde ortalama {_p(d['tradeMeanPct'])} getirdi (kazanma oranı %{d['winRatePct']:.0f}). "
+                "Batan şirketler veride olmadığı için gerçek sonuç daha da kötüdür.")
+    except Exception:
+        return st.get("text", "")
+
+
 def main():
     now = datetime.now(NY)
     try:
@@ -92,7 +109,7 @@ def main():
         if prev <= 0 or last <= 0:
             continue
         dv = float((c.iloc[:-1] * v.iloc[:-1]).tail(20).mean())     # average dollar volume before today
-        if prev < MIN_PRICE or not math.isfinite(dv) or dv < MIN_DOLLAR_VOL:
+        if prev < MIN_PRICE or last < 1 or not math.isfinite(dv) or dv < MIN_DOLLAR_VOL:
             continue
         w = float(c.iloc[-6]) if len(c) >= 6 else float(c.iloc[0])
         rows.append({"ticker": t, "name": names.get(t, t), "price": round(last, 2), "prevClose": round(prev, 2),
@@ -117,7 +134,8 @@ def main():
            "universeSize": len(names), "screened": len(rows), "minPrice": MIN_PRICE, "minDollarVolM": MIN_DOLLAR_VOL / 1e6,
            "dailyLosers": by("d1Pct", False), "dailyGainers": by("d1Pct", True),
            "weeklyLosers": by("w1Pct", False), "weeklyGainers": by("w1Pct", True), "alerts": alerts,
-           "alerted": {today: sorted(sent | {r["ticker"] for r in alerts})}, "study": study,
+           "alerted": {today: sorted(sent | {r["ticker"] for r in alerts})},
+           "study": {**study, "text": study_text(study)} if study else None,
            "notes": "Nasdaq'ta işlem gören hisse senetleri (ETF, varant, imtiyazlı hisse hariç); fiyatı 3 $'ın, son 20 günlük "
                     "ortalama işlem hacmi 2 milyon $'ın altındakiler elendi. Günlük değişim önceki kapanışa göre (seans "
                     "açıkken anlık fiyatla), haftalık değişim 5 işlem günü öncesine göre. Yalnızca izleme; bot bu listeyle "
@@ -136,7 +154,7 @@ def main():
         body = [title, "", f"@{OWNER} {now:%d.%m.%Y %H:%M} ET itibarıyla günlük %20 veya daha fazla hareket eden Nasdaq hisseleri:", ""]
         body += [line(r) for r in new]
         if study:
-            body += ["", "Geçmişte ne oldu (2019–2026 testi, aynı filtrelerle): " + study.get("text", "")]
+            body += ["", "Geçmişte ne oldu (2019–2026 testi, aynı filtrelerle): " + study_text(study)]
         body += ["", "Bu bir bildirimdir, alım-satım önerisi değildir. Tüm liste: https://davidmahmut.github.io/portfoy-botu/#hareketliler"]
         md.write_text("\n".join(body) + "\n", encoding="utf-8")
     elif md.exists():

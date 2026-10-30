@@ -311,6 +311,17 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
   .wrap > .mast,.wrap > .tabs{grid-column:1 / -1}
   .wrap > .dip-side{grid-column:2;grid-row:3 / span 12;align-self:start;position:sticky;top:16px;max-height:calc(100vh - 32px);overflow:auto}
 }
+/* Nasdaq movers */
+.mv-tabs{display:flex;flex-wrap:wrap;gap:6px}
+.mv-tabs button{font:inherit;font-size:13px;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--panel);color:var(--ink);cursor:pointer}
+.mv-tabs button[aria-pressed="true"]{background:var(--ink);color:var(--panel);border-color:var(--ink)}
+.mv-table{min-width:0}
+.mv-table td{white-space:nowrap}
+.mv-table td.l{text-align:left;font-family:var(--f-body)}
+.mv-table td.l a{font-weight:700;font-family:var(--f-mono)}
+.mv-table .nm{display:block;font-size:12px;color:var(--muted);max-width:28ch;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mv-alert{border-left:3px solid var(--warn);padding:8px 12px;background:var(--warn-soft);border-radius:6px;font-size:14px}
+@media (max-width:520px){.mv-table th:nth-child(2),.mv-table td:nth-child(2),.mv-table th:nth-child(5),.mv-table td:nth-child(5){display:none}.mv-table th,.mv-table td{padding:8px 6px}.mv-table{font-size:13px}.mv-table .nm{max-width:16ch}}
 @media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
 </style>
 
@@ -334,6 +345,7 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
     <a href="#ozet">Özet</a>
     <a href="#nasdaq">Nasdaq düşüş takibi</a>
     <a href="#haber-kolu">Haber şoku</a>
+    <a href="#hareketliler">Hareketliler</a>
     <a href="#karne">Karne</a>
     <a href="#haberler">Haberler</a>
     <a href="#pozisyonlar">Pozisyonlar</a>
@@ -442,6 +454,21 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
       <div><h3 style="font-size:15px;margin:0 0 8px">Açık haber işlemleri</h3><div id="evOpen" class="small muted">—</div></div>
       <div><h3 style="font-size:15px;margin:0 0 8px">Bugünün taraması</h3><div id="evScan" class="small muted">—</div></div>
       <p class="small muted" id="evTest" style="margin:0;max-width:90ch"></p>
+    </div>
+  </section>
+
+  <section id="hareketliler" aria-labelledby="h-mv">
+    <div class="sec-head"><h2 id="h-mv">Nasdaq hareketliler</h2><span class="small muted" id="mvAsOf">—</span></div>
+    <div class="panel" style="display:flex;flex-direction:column;gap:12px">
+      <div id="mvAlerts"></div>
+      <div class="mv-tabs" role="group" aria-label="Liste">
+        <button type="button" data-k="dailyLosers" aria-pressed="true">Günün en çok düşenleri</button>
+        <button type="button" data-k="dailyGainers" aria-pressed="false">Günün en çok yükselenleri</button>
+        <button type="button" data-k="weeklyLosers" aria-pressed="false">Haftanın en çok düşenleri</button>
+        <button type="button" data-k="weeklyGainers" aria-pressed="false">Haftanın en çok yükselenleri</button>
+      </div>
+      <div class="tbl-wrap"><table class="mv-table"><thead><tr><th>Hisse</th><th>Fiyat $</th><th>Gün</th><th>Hafta</th><th>Hacim (milyon $/gün)</th></tr></thead><tbody id="mvBody"><tr><td colspan="5" class="muted">Veriler yükleniyor…</td></tr></tbody></table></div>
+      <p class="small muted" id="mvNote" style="margin:0;max-width:90ch"></p>
     </div>
   </section>
 
@@ -786,6 +813,30 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
         +"'inde piyasada); v5 endeks kolu "+pct(c.cagrPct)+" / "+pct(c.maxDrawdownPct)+". Ayrıntı: dip_results.json.";
     } else st.textContent="";
   }
+  var mvKey="dailyLosers";
+  function renderMovers(){
+    var X=S.movers;
+    if(!X){ $("mvBody").innerHTML='<tr><td colspan="5" class="muted">Liste henüz oluşmadı; piyasa açıkken saatte bir güncellenir.</td></tr>'; return; }
+    $("mvAsOf").textContent=dShort(X.asOf)+" "+tm(X.asOf)+" · "+(X.screened||0)+" hisse";
+    var al=$("mvAlerts"); clear(al);
+    if((X.alerts||[]).length){
+      var box=el("div",{class:"mv-alert"}, el("b",{text:"Bugün %20 veya daha fazla hareket eden "+X.alerts.length+" hisse: "}));
+      X.alerts.slice(0,12).forEach(function(r,i){ box.appendChild(el("span",{text:(i?", ":"")})); box.appendChild(el("a",{href:"https://robinhood.com/stocks/"+r.ticker,target:"_blank",rel:"noopener",text:r.ticker+" "+pct(r.d1Pct)})); });
+      box.appendChild(el("div",{class:"small",text:"Her yeni %20 hareketinde GitHub bir bildirim (issue) açar; GitHub uygulaması ya da e-postayla haber gelir."}));
+      al.appendChild(box);
+    }
+    var b=$("mvBody"); clear(b);
+    (X[mvKey]||[]).forEach(function(r){
+      b.appendChild(el("tr",null,
+        el("td",{class:"l"}, el("a",{href:"https://robinhood.com/stocks/"+r.ticker,target:"_blank",rel:"noopener",text:r.ticker}), el("span",{class:"nm",text:r.name})),
+        el("td",{text:fmtNum(r.price,2)}), el("td",{class:cls(r.d1Pct),text:pct(r.d1Pct)}), el("td",{class:cls(r.w1Pct),text:pct(r.w1Pct)}),
+        el("td",{text:fmtNum(r.dollarVolM,1)})));
+    });
+    var st=X.study&&X.study.text;
+    $("mvNote").textContent=(X.notes||"")+" Sembole tıklayınca Robinhood sayfası açılır."+(st? " Geçmiş: "+st : "")+" Bu liste alım-satım önerisi değildir.";
+    Array.prototype.forEach.call(document.querySelectorAll(".mv-tabs button"),function(btn){ btn.setAttribute("aria-pressed", btn.getAttribute("data-k")===mvKey?"true":"false"); });
+  }
+  Array.prototype.forEach.call(document.querySelectorAll(".mv-tabs button"),function(btn){ btn.addEventListener("click",function(){ mvKey=btn.getAttribute("data-k"); try{ renderMovers(); }catch(e){ console.error(e); } }); });
   function renderEvents(){
     var M=S.meta||{}, scan=M.eventScan||null, P=S.portfolio||{}, c=S.config||{};
     $("evRule").textContent="Kural: bir hisse haberle önceki kapanışa göre en az %8 boşlukla açılır ve ilk saatte (09:30–10:30 ET) piyasa bu tepkinin tersine dönerse o yöne girilir: sert düşüp toparlanana long, sert yükselip sönene short. 2 işlem günü tutulur; zarar-kes ilk saatin öbür ucunun hemen ötesinde, büyüklük zarar-keste kaybın kolun yaklaşık %1'i olacağı şekilde. Haberin yönünde devam edenlere girilmez. %10'dan fazla düşmüş hisseye SEC Rule 201 yüzünden short açılmaz. Paranın yarısı bu kolda.";
@@ -1206,7 +1257,11 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
     fetch("event_results.json?t="+Date.now(),{cache:"no-store"}).then(function(r){ if(!r.ok) throw 0; return r.json(); })
       .then(function(x){ S.evTest=x; }, function(){ S.evTest=null; }).then(function(){ try{ renderEvents(); }catch(e){ console.error(e); } });
   }
-  load(); loadExt(); loadNews(); loadDip(); loadEv(); setInterval(load, 60000); setInterval(loadExt, 60000); setInterval(loadNews, 300000);
+  function loadMovers(){
+    fetch("movers.json?t="+Date.now(),{cache:"no-store"}).then(function(r){ if(!r.ok) throw 0; return r.json(); })
+      .then(function(x){ S.movers=x; }, function(){ S.movers=null; }).then(function(){ try{ renderMovers(); }catch(e){ console.error(e); } });
+  }
+  load(); loadExt(); loadNews(); loadDip(); loadEv(); loadMovers(); setInterval(load, 60000); setInterval(loadMovers, 300000); setInterval(loadExt, 60000); setInterval(loadNews, 300000);
 })();
 </script>
 </body>

@@ -54,6 +54,12 @@ Sayfanın kenarındaki panel, Nasdaq 100 fonu QQQ'nun tüm zamanların zirvesind
 - **v4 (15–23 Ekim 2026):** SPY trend filtresi, %50 QQQ + %50 momentum sepeti, kaldıraçsız. 15–23 Ekim: %−1,0 (SPY %−1,1).
 - **v3 (12–15 Ekim 2026):** kaldıraçlı (2,3x) long/short, dar zarar-kes, günlük işlem. %−9,5 (SPY %−1,1). Geriye dönük testte yıllık yaklaşık %−4, en kötü düşüş %−61.
 
+## Nasdaq hareketliler ve %20 bildirimi
+
+`movers.py` (`.github/workflows/movers.yml`) piyasa açıkken saatte bir ve kapanıştan sonra Nasdaq'ta işlem gören yaklaşık 3.400 hisseyi tarar (fiyatı 3 $, günlük işlem hacmi 2 milyon $ altındakiler elenir). Sayfadaki "Nasdaq hareketliler" bölümünde günün ve haftanın en çok düşen ve yükselen 25 hissesi listelenir; semboller Robinhood sayfasına bağlıdır. Bir hisse gün içinde %20 veya daha fazla hareket ederse GitHub'da bir bildirim (issue) açılır ve depo sahibine e-posta / uygulama bildirimi gider. Yalnızca izlemedir, bot bu listeyle işlem yapmaz.
+
+`movers_study.py` (sonuç `movers_study.json`) 2019–2026 arasındaki 15.813 %20'lik günü inceledi: sert yükselenler sonraki 5 günde ortalama %3 geri verdi (medyan %−6), sert düşenler ise ortalama %3 daha düştü (medyan %−6). Sert düşüşten hemen sonra almak 5 günde ortalama %−3,5 getirdi, işlemlerin yalnızca %37'si kârlıydı; batan şirketler veride olmadığı için gerçek sonuç daha kötüdür.
+
 ## Haberler
 
 `news.py` portföydeki ve izlenen hisseler ile piyasa için Yahoo Finance başlıklarını toplar, konuya göre etiketler (Fed ve faiz, politika, bilanço, analist, enerji, yapay zekâ) ve `news.json`'a yazar; `watch.yml` ile 04:00–20:00 ET arasında 30 dakikada bir çalışır. `brief.json` elle yazılan Türkçe günlük özettir.
