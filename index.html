@@ -288,6 +288,29 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
   .trade{grid-template-columns:minmax(0,1fr)}
   .trade .meta,.trade .why,.src-chips{grid-column:1}
 }
+/* Nasdaq drawdown watch: sticky side column on wide screens, a card after the summary on narrow ones */
+.dip-side{display:flex;flex-direction:column;gap:14px}
+.dip-side > *{flex-shrink:0}
+.dip-side h2.dip-big{font-family:var(--f-mono);font-stretch:100%;font-size:34px;font-weight:600;letter-spacing:0;line-height:1}
+.dip-gauge{position:relative;height:40px;margin:4px 0 0}
+.dip-gauge .track{position:absolute;left:0;right:0;top:9px;height:8px;border-radius:4px;background:linear-gradient(90deg,var(--gain-soft) 0 25%,var(--warn-soft) 25% 50%,var(--loss-soft) 50% 100%)}
+.dip-gauge .tick{position:absolute;top:4px;width:1px;height:18px;background:var(--muted)}
+.dip-gauge .lab{position:absolute;top:22px;font-family:var(--f-mono);font-size:11px;color:var(--muted);transform:translateX(-50%)}
+.dip-gauge .mark{position:absolute;top:5px;width:4px;height:16px;border-radius:2px;background:var(--ink);transform:translateX(-50%)}
+.dip-facts{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 10px;margin:0;font-size:13px}
+.dip-facts dt{color:var(--muted)}
+.dip-facts dd{margin:0;text-align:right;font-family:var(--f-mono)}
+.dip-ev{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;font-size:13px}
+.dip-ev li{border-top:1px solid var(--line);padding-top:8px}
+.dip-ev b{font-family:var(--f-mono)}
+.dip-side .pill.ok{background:var(--gain-soft);color:var(--gain)}
+.dip-side .pill.mid{background:var(--warn-soft);color:var(--warn)}
+@media (min-width:1260px){
+  .wrap{max-width:1460px;display:grid;grid-template-columns:minmax(0,1fr) 300px;column-gap:28px;row-gap:28px}
+  .wrap > *{grid-column:1;min-width:0}
+  .wrap > .mast,.wrap > .tabs{grid-column:1 / -1}
+  .wrap > .dip-side{grid-column:2;grid-row:3 / span 12;align-self:start;position:sticky;top:16px;max-height:calc(100vh - 32px);overflow:auto}
+}
 @media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
 </style>
 
@@ -309,6 +332,7 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
 
   <nav class="tabs" aria-label="Bölümler">
     <a href="#ozet">Özet</a>
+    <a href="#nasdaq">Nasdaq düşüş takibi</a>
     <a href="#karne">Karne</a>
     <a href="#haberler">Haberler</a>
     <a href="#pozisyonlar">Pozisyonlar</a>
@@ -387,6 +411,28 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
       </div>
     </div>
   </section>
+
+  <aside class="dip-side panel" id="nasdaq" aria-labelledby="h-dip">
+    <div>
+      <p class="eyebrow">Nasdaq düşüş takibi</p>
+      <h2 class="dip-big" id="h-dip">—</h2>
+      <p class="small muted" id="dipSub" style="margin:6px 0 0">Nasdaq 100 fonu QQQ'nun zirvesinden uzaklığı</p>
+    </div>
+    <div class="dip-gauge" id="dipGauge" aria-hidden="true">
+      <span class="track"></span>
+      <span class="tick" style="left:25%"></span><span class="tick" style="left:50%"></span>
+      <span class="lab" style="left:0;transform:none">0</span><span class="lab" style="left:25%">−%10</span><span class="lab" style="left:50%">−%20</span><span class="lab" style="right:0;left:auto;transform:none">−%40</span>
+      <span class="mark" id="dipMark" style="left:0"></span>
+    </div>
+    <div><span class="pill" id="dipPill">Veri bekleniyor</span></div>
+    <dl class="dip-facts" id="dipFacts"></dl>
+    <p class="small" id="dipRule" style="margin:0"></p>
+    <div>
+      <h3 style="font-size:15px;margin:0 0 8px">Geçmişteki %20+ düşüşler</h3>
+      <ul class="dip-ev" id="dipEvents"><li class="muted">Test sonucu bekleniyor…</li></ul>
+    </div>
+    <p class="small muted" id="dipStudy" style="margin:0"></p>
+  </aside>
 
   <section id="karne" aria-labelledby="h-karne">
     <div class="sec-head"><h2 id="h-karne">3 aylık karne</h2><span class="small muted" id="kRange">12 Ekim 2026 – 12 Ocak 2027</span></div>
@@ -482,7 +528,7 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
 (function(){
   "use strict";
   var TZ = "America/New_York";
-  var S = {config:null, portfolio:null, meta:{}, trades:[], snapshots:[], runs:[], checks:null, compliance:[], tax:{}, score:null, ext:null, news:null, brief:null, err:null};
+  var S = {config:null, portfolio:null, meta:{}, trades:[], snapshots:[], runs:[], checks:null, compliance:[], tax:{}, score:null, ext:null, news:null, brief:null, dip:null, err:null};
   var fmtUSD = new Intl.NumberFormat("tr-TR",{style:"currency",currency:"USD",minimumFractionDigits:2,maximumFractionDigits:2});
   var fmtNum = function(n,d){return new Intl.NumberFormat("tr-TR",{minimumFractionDigits:d,maximumFractionDigits:d}).format(n);};
   var fmtDate = new Intl.DateTimeFormat("tr-TR",{day:"numeric",month:"long",year:"numeric",timeZone:TZ});
@@ -683,6 +729,50 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
   var SH=["--sh1","--sh2","--sh3","--sh4"];
   function expOf(x){ return isNum(x.exposure)? x.exposure : Math.abs(x.marketValue||0)*(x.lev||1); }
   function dirOf(x){ return (x.side==="short" || /ters/.test(x.kind||""))? -1 : 1; }
+  function renderDip(){
+    var W=(S.meta&&S.meta.nasdaq)||null, D=S.dip, now=D&&D.now||null;
+    var useW=W&&isNum(W.ddPct);
+    var dd=useW? W.ddPct : (now&&isNum(now.drawdownPct)? now.drawdownPct : null);
+    var price=useW? W.price : (now? now.qqq : null), ath=useW? W.ath : (now? now.ath : null);
+    var athDate=useW? W.athDate : (now? now.athDate : null);
+    $("h-dip").textContent=isNum(dd)? pct(dd) : "—";
+    var m=$("dipMark");
+    if(isNum(dd)){ m.hidden=false; m.style.left=Math.min(100,Math.max(0,-dd/40*100)).toFixed(1)+"%"; } else m.hidden=true;
+    var pill=$("dipPill");
+    if(!isNum(dd)){ pill.className="pill"; pill.textContent="Veri bekleniyor"; }
+    else if(dd<=-20){ pill.className="pill warn"; pill.textContent="Ayı piyasası: %20 eşiği aşıldı"; }
+    else if(dd<=-10){ pill.className="pill mid"; pill.textContent="Düzeltme: %10–20 arası düşüş"; }
+    else { pill.className="pill ok"; pill.textContent="Normal: zirveye %10'dan yakın"; }
+    var f=$("dipFacts"); clear(f);
+    function row(a,b){ f.appendChild(el("dt",{text:a})); f.appendChild(el("dd",{text:b})); }
+    if(isNum(price)) row("QQQ şimdi", fmtNum(price,2)+" $");
+    if(isNum(ath)){
+      row("Zirve"+(athDate?" ("+dShort(athDate)+")":""), fmtNum(ath,2)+" $");
+      row("−%10 seviyesi", fmtNum(ath*0.9,2)+" $");
+      row("−%20 seviyesi", fmtNum(ath*0.8,2)+" $");
+      if(isNum(price)&&price>ath*0.8) row("%20 eşiğine", "%"+fmtNum((1-ath*0.8/price)*100,1)+" daha düşüş");
+    }
+    if(useW&&W.at) row("Güncellendi", dShort(W.at)+" "+tm(W.at));
+    $("dipRule").textContent=(S.config&&S.config.dipRule)||"Yalnızca izleme: bu panel botun kararlarını değiştirmez.";
+    var ul=$("dipEvents"); clear(ul);
+    var ev=(D&&D.episodes)||[];
+    if(!ev.length) ul.appendChild(el("li",{class:"muted",text:D?"Kayıt yok.":"Test sonucu bekleniyor…"}));
+    function dur(days){ return days<365? Math.max(1,Math.round(days/30.4))+" ay" : fmtNum(days/365.25,1)+" yıl"; }
+    ev.slice().reverse().forEach(function(e){
+      var y1=(e.peak||"").slice(0,4), y2=e.open? "sürüyor" : (e.recovered||"").slice(0,4);
+      ul.appendChild(el("li",null,
+        el("div",null, el("b",{text:y1===y2? y1 : y1+"–"+y2}), el("span",{text:" · en dip "+pct(e.troughPct)+" ("+dShort(e.trough)+")"})),
+        el("div",{class:"muted",text:"%20 düşüşte alan, dibe kadar: 1x "+pct(e.afterTriggerWorstPct)+", 3x "+pct(e.afterTriggerWorst3xPct)
+          +(e.open? "" : " · zirveye dönüş "+dur(e.daysTriggerToRecovery))})));
+    });
+    var st=$("dipStudy"), R=D&&D.results;
+    if(R&&R.qqq&&R.dip20&&R.v5){
+      var w="1999-2026", a=R.qqq[w], b=R.dip20[w], c=R.v5[w];
+      st.textContent="1999–2026 testi (yıllık getiri / en kötü düşüş): QQQ al-tut "+pct(a.cagrPct)+" / "+pct(a.maxDrawdownPct)
+        +"; yalnızca %20 düşüşte alıp zirvede satan "+pct(b.cagrPct)+" / "+pct(b.maxDrawdownPct)+" (zamanın %"+fmtNum(b.inMarketPct,0)
+        +"'inde piyasada); v5 endeks kolu "+pct(c.cagrPct)+" / "+pct(c.maxDrawdownPct)+". Ayrıntı: dip_results.json.";
+    } else st.textContent="";
+  }
   function renderAlloc(){
     var p=S.portfolio; var bar=$("allocBar"), list=$("allocList"), cap=$("expCap"); clear(bar); clear(list); clear(cap);
     if(!p){ list.appendChild(el("li",{class:"muted",text:"Henüz pozisyon yok."})); return; }
@@ -1036,6 +1126,7 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
   }
 
   function renderAll(){
+    try{ renderDip(); }catch(e){ console.error(e); }
     try{ renderSummary(); renderRisk(); renderExt(); renderScore(); renderNews(); renderAlloc(); renderPositions(); renderTrades(); renderRuns(); renderLaw(); renderRules(); renderChart(); }
     catch(e){ console.error(e); }
   }
@@ -1069,7 +1160,11 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
       .then(function(b){ S.brief=b; }, function(){ S.brief=null; })
       .then(function(){ try{ renderNews(); }catch(e){ console.error(e); } });
   }
-  load(); loadExt(); loadNews(); setInterval(load, 60000); setInterval(loadExt, 60000); setInterval(loadNews, 300000);
+  function loadDip(){
+    fetch("dip_results.json?t="+Date.now(),{cache:"no-store"}).then(function(r){ if(!r.ok) throw 0; return r.json(); })
+      .then(function(x){ S.dip=x; }, function(){ S.dip=null; }).then(function(){ try{ renderDip(); }catch(e){ console.error(e); } });
+  }
+  load(); loadExt(); loadNews(); loadDip(); setInterval(load, 60000); setInterval(loadExt, 60000); setInterval(loadNews, 300000);
 })();
 </script>
 </body>

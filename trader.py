@@ -91,6 +91,14 @@ BASKET_N, BASKET_KEEP, GROUP_CAP = 10, 20, 3
 DISASTER, COOLDOWN_DAYS = 0.25, 30        # single-stock stop 25 % against cost, then 30 days out
 INVEST_USE = 0.98                         # keep ~2 % cash for costs; never borrow
 CORE_ETF = INDEX_ETF
+DIP_LEVELS = (-0.10, -0.20)               # Nasdaq 100 watch: correction / bear-market thresholds from the all-time high
+DIP_NO_SHORT = True                       # after a 20 % fall from the high (until a new high) the index sleeve never shorts
+DIP_RULE_TEXT = (
+    "Kural: Nasdaq 100 (QQQ) zirvesinden %20 veya daha fazla düşmüşse endeks kolu short açmaz; yön aşağı olsa bile yeni "
+    "zirveye kadar nakitte bekler. O noktada short geç kalmıştır ve ayı piyasalarının sert tepki yükselişlerine yakalanır. "
+    "1999–2026 testinde bu kural endeks kolunun yıllık getirisini %14,7'den %15,4'e çıkardı, en kötü düşüşünü %−46'dan "
+    "%−43'e indirdi; 2018–2026'da %17,0'dan %20,2'ye çıkardı. Düşüşte kaldıraçla almak ise 2000 çöküşünde hesabı sıfırlardı, "
+    "bu yüzden kullanılmıyor.")
 
 # ---- 3-month evaluation before any real money (v3 ledgers: 12 Oct 2026 - 12 Jan 2027; v4 sets its own dates)
 EVAL_START, EVAL_START_TS, EVAL_END = "2026-10-12", "2026-10-12T14:07:00-04:00", "2027-01-12"
@@ -151,6 +159,9 @@ CONFIG_TEXT = {
         "Endeks kolu (paranın %50'si): hedef maruziyet = %25 ÷ QQQ'nun son 20 gündeki yıllık oynaklığı, en fazla 3x. "
         "Oynaklık %12 iken 2x, %25 iken 1x, %40 iken 0,6x. Long'da QQQ ile 3x fon TQQQ karıştırılır, short'ta −3x ters fon "
         "SQQQ alınır. Hedefle mevcut maruziyet arasındaki fark 0,3x'ten küçükse işlem yapılmaz (gereksiz komisyon olmasın).",
+        "Nasdaq düşüş kuralı: Nasdaq 100 (QQQ) zirvesinden %20 veya daha fazla düşmüşse endeks kolu short açmaz, yeni zirveye "
+        "kadar nakitte bekler (yön yukarıysa long kuralı aynen çalışır). Sayfanın kenarındaki panel zirveden uzaklığı canlı "
+        "gösterir.",
         "Momentum sepeti (paranın %50'si, 10 hisse, eşit ağırlık): SPY 200 günlük ortalamasının üstündeyken 12-1 ay getirisi "
         "en yüksek ve fiyatı 200 günlük ortalamasının üstünde olan hisseler; aynı sektörden en fazla 3. Ayın ilk işlem günü "
         "yenilenir; ilk 20'de kalan tutulur, düşen satılır. SPY ortalamanın altına inerse sepet satılıp nakde geçilir.",
@@ -283,6 +294,7 @@ class Engine:
         self.C["schedule"] = SCHEDULE_TEXT
         self.C.update(CONFIG_TEXT)
         self.C["maxLeverage"] = MAX_EXPO
+        self.C["dipRule"] = DIP_RULE_TEXT
         self.C["legalSources"] = list(LEGAL.values())
         self.C["brokerModel"] = {
             "name": "Interactive Brokers — IBKR Pro (Tiered)", "commission": "0,0035 $/hisse, en az 0,35 $, en fazla %1",
@@ -1127,6 +1139,46 @@ class Engine:
                 f"{trn(sma200)} $ ({trpct(gap)}). " + tail)
         return {"up": up, "text": text, "spy": c[-1], "sma200": sma200, "gapPct": gap}
 
+    def nasdaq_watch(self):
+        """Daily: the Nasdaq 100 fund's (QQQ) all-time closing high from its full history."""
+        h = self.data.daily([INDEX_ETF], period="max").get(INDEX_ETF)
+        if h is None or len(h) < 2:
+            return
+        done = h[h.index.date < self.now.date()]["Close"]
+        if done.empty:
+            return
+        W = self.M.setdefault("nasdaq", {})
+        W.update(ath=round(float(done.max()), 2), athDate=done.idxmax().date().isoformat(), athChecked=self.today)
+        if self.quotes.get(INDEX_ETF):
+            self.nasdaq_update()
+        else:
+            self.nasdaq_update(float(done.iloc[-1]), done.index[-1])
+
+    def nasdaq_update(self, price=None, at=None):
+        """Every run: distance of QQQ from its all-time high, the alert level and whether a 20 % fall is active."""
+        W = self.M.get("nasdaq")
+        q = self.quotes.get(INDEX_ETF)
+        if not W or not W.get("ath"):
+            return
+        if price is None:
+            if not q:
+                return
+            price, at = q["price"], q["at"]
+        if price > W["ath"]:
+            W.update(ath=round(price, 2), athDate=self.today)
+        dd = price / W["ath"] - 1
+        level = "bear" if dd <= DIP_LEVELS[1] else "correction" if dd <= DIP_LEVELS[0] else "normal"
+        if level == "bear" and not W.get("active"):
+            W.update(active=True, since=self.today)
+            self.comply("Nasdaq izleme", "Nasdaq 100 zirvesinden %20 düştü",
+                        f"QQQ {trn(price)} $, {W['athDate']} tarihli zirve {trn(W['ath'])} $ ({trpct(dd * 100)}). Bu, "
+                        "piyasada ayı piyasası eşiği sayılır.", None)
+        elif W.get("active") and dd >= 0:
+            W.update(active=False, endedAt=self.today)
+        W.update(price=round(price, 2), at=iso(at), ddPct=round(dd * 100, 2), level=level,
+                 triggerPrice=round(W["ath"] * (1 + DIP_LEVELS[1]), 2),
+                 correctionPrice=round(W["ath"] * (1 + DIP_LEVELS[0]), 2))
+
     def index_signal(self, done):
         """Direction and volatility-targeted size of the index sleeve, from completed daily bars."""
         h, s_ = done.get(INDEX_ETF), done.get(DIR_SRC)
@@ -1137,26 +1189,35 @@ class Engine:
         sc = [float(x) for x in s_["Close"]]
         last, sma50, sma200 = sc[-1], sum(sc[-50:]) / 50, sum(sc[-200:]) / 200
         dirn = 1 if last > sma200 else (-1 if sma50 < sma200 else 0)
+        W = self.M.get("nasdaq") or {}
+        blocked = DIP_NO_SHORT and dirn < 0 and bool(W.get("active"))
+        if blocked:
+            dirn = 0
         raw = VOL_TARGET / max(rv, VOL_FLOOR)
         cap = MAX_EXPO if dirn >= 0 else min(MAX_EXPO, MAX_SHORT_EXPO)
         mag = min(cap, raw)
         target = round(dirn * mag, 2)
-        word = {1: "YUKARI", -1: "AŞAĞI", 0: "KARARSIZ"}[dirn]
-        low = {1: "yukarı", -1: "aşağı", 0: "kararsız"}[dirn]
+        word = "AŞAĞI, SHORT YOK" if blocked else {1: "YUKARI", -1: "AŞAĞI", 0: "KARARSIZ"}[dirn]
+        low = "aşağı (short yok)" if blocked else {1: "yukarı", -1: "aşağı", 0: "kararsız"}[dirn]
         why = (f"{DIR_SRC} dünkü kapanış {trn(last)} $, 200 günlük ortalama {trn(sma200)} $ "
                f"({trpct((last / sma200 - 1) * 100)}), 50 günlük ortalama {trn(sma50)} $")
         den = max(rv, VOL_FLOOR)
         size = (f"{INDEX_ETF}'nun 20 günlük oynaklığı yıllık %{trn(rv * 100, 1)}; büyüklük %{trn(VOL_TARGET * 100, 0)} ÷ %{trn(den * 100, 1)}"
                 + (" (oynaklık alt sınırı)" if rv < VOL_FLOOR else "") + f" = {trn(raw, 2)}x"
                 + (f", {trn(cap, 0)}x {'short ' if dirn < 0 else ''}sınırına indirildi" if raw > cap else ""))
-        if dirn:
+        if blocked:
+            tail = (f"Yön aşağı, ama Nasdaq 100 zirvesinden {trpct(W.get('ddPct', 0))} aşağıda ({W.get('since', '')} tarihinden beri "
+                    "%20'nin üstünde düşüş): bu noktada short geç kalmış olur ve sert tepki yükselişlerine yakalanır. Kural gereği "
+                    "endeks kolu yeni zirveye kadar short açmaz, nakitte bekler.")
+        elif dirn:
             tail = f"{size}. Hedef maruziyet {'+' if target > 0 else '−'}{trn(abs(target), 2)}x."
         else:
             tail = ("Fiyat 200 günlük ortalamanın altında ama 50 günlük ortalama henüz 200 günlüğün altına inmedi; yön teyit "
                     "edilmediği için endeks kolu nakitte.")
         text = f"Endeks kolu yönü {word}: {why}. {tail}"
         return {"dir": dirn, "word": word, "wordLow": low, "vol": round(rv * 100, 2), "magnitude": round(mag, 2), "target": target,
-                "price": round(last, 2), "sma50": round(sma50, 2), "sma200": round(sma200, 2), "src": DIR_SRC, "text": text}
+                "price": round(last, 2), "sma50": round(sma50, 2), "sma200": round(sma200, 2), "src": DIR_SRC, "text": text,
+                "dipBlock": blocked}
 
     @staticmethod
     def index_weights(target):
@@ -1420,6 +1481,10 @@ class Engine:
         self.dividends()
         trend = self.trend(done)
         rows = self.momentum_table(done)
+        try:
+            self.nasdaq_watch()
+        except Exception as e:                     # the watch is informational; never block the daily decision
+            self.notes.append(f"Nasdaq izleme verisi alınamadı: {type(e).__name__}")
         sig = self.index_signal(done)
         month = self.today[:7]
         flip = self.M.get("trendUp") is not None and self.M.get("trendUp") != trend["up"]
@@ -1487,7 +1552,7 @@ class Engine:
     # ---------------- run
     def run(self):
         held = [p["ticker"] for p in self.P["positions"]]
-        self.load_quotes(held + ["SPY"])
+        self.load_quotes(held + ["SPY", INDEX_ETF])
         if "SPY" not in self.quotes:
             self.status = "uyari"
             self.notes.append("SPY verisi alınamadı; bu çalışmada işlem yapılmadı")
@@ -1498,6 +1563,7 @@ class Engine:
         self.apply_deposits()
         self.guard()
         self.margin_check()
+        self.nasdaq_update()
         kind = "guard"
         if (self.now.time() >= DAILY_AFTER and self.M.get("lastDailyDate") != self.today
                 and not self.quotes["SPY"]["stale"]):

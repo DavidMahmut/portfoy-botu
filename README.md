@@ -42,6 +42,13 @@ Gerçek paraya geçmeden önce bot üç ay sanal çalışır. Sayfadaki karne he
 
 **Neden değişti:** v4 (kaldıraçsız, yalnızca long) 15–23 Ekim'de SPY ile başa baş gitti ama düşüşten kazanamıyordu; trend filtresi SPY'a baktığı için Nasdaq ve çipler düşerken tam yatırımda kaldı. İki yönlü, oynaklık hedefli varyantlar `backtest.py` ile 2018–2026 günlük verilerle karşılaştırıldı (`backtest_results.json`): v5 yıllık %20,4, en kötü düşüş %−31 (3.000 $ → 15.315 $); v4 %18,7 ve %−26; SPY %14,2 ve %−34. Yönü QQQ'nun kendi trendinden almak (%−40'a varan düşüş) ve sepette zayıf hisseleri short'lamak (%−45 ile %−58) daha kötü çıktığı için kullanılmadı. Aynı kurallar yalnızca long olsaydı yıllık %21,4 ve %−29,5 olurdu: short tarafı 2022 gibi uzun düşüşlerde korur, hızlı toparlanmalarda maliyet yaratır. Uyarı: hisse listesi bugünün başarılı şirketlerinden oluştuğu için sepet sonuçları iyimserdir; 3x fonlar oynak ve yatay piyasada değer kaybeder.
 
+### Nasdaq düşüş takibi (29 Ekim 2026'dan itibaren)
+
+Sayfanın kenarındaki panel, Nasdaq 100 fonu QQQ'nun tüm zamanların zirvesinden ne kadar aşağıda olduğunu gösterir (−%10 düzeltme, −%20 ayı piyasası). `dip_study.py` (`.github/workflows/dip.yml`, sonuç `dip_results.json`) 1999–2026 verisiyle şunu test etti:
+
+- **Yalnızca %20 düşüşleri takip edip almak** (zirveden %20 düşünce QQQ al, yeni zirvede sat): yıllık %5,5, en kötü düşüş %−80 (QQQ al-tut: %10,7 ve %−83). Zamanın üçte birinden fazlasında nakitte kaldığı için yükselişleri kaçırır. 3x fonla yapılsaydı 2000–2002 çöküşünde hesap sıfırlanırdı. Kullanılmıyor.
+- **v5'e eklenen kural:** Nasdaq zirvesinden %20 veya daha fazla düşmüşse endeks kolu short açmaz, yeni zirveye kadar nakitte bekler. Endeks kolunun yıllık getirisi 1999–2026'da %14,7'den %15,4'e, 2018–2026'da %17,0'dan %20,2'ye çıktı; en kötü düşüş azaldı.
+
 ### Önceki stratejiler
 
 - **v4 (15–23 Ekim 2026):** SPY trend filtresi, %50 QQQ + %50 momentum sepeti, kaldıraçsız. 15–23 Ekim: %−1,0 (SPY %−1,1).

@@ -242,6 +242,19 @@ def test_v5_downtrend_goes_short():
     print("down-trend OK: SQQQ", round(mv["SQQQ"]), "exposure", round(expo, 2), "| net", P["netExposure"])
 
 
+def test_v5_no_short_after_nasdaq_20pct_fall():
+    def qqq(end):
+        up = trend(end, 0.0012)
+        return [round(x * (0.75 if i >= 230 else 1.0), 4) for i, x in enumerate(up)]
+    L, eng, _ = first_daily(spy=lambda end: trend(end, -0.0012), qqq=qqq)
+    W, ix = L["meta"]["nasdaq"], L["meta"]["index"]
+    mv, expo = sleeve(L)
+    assert W["active"] and W["level"] == "bear" and W["ddPct"] <= -20, W
+    assert ix["target"] == 0 and mv["SQQQ"] == 0 and all(v == 0 for v in mv.values()), (ix, mv)
+    assert "short açmaz" in L["runs"][-1]["decisions"][0] and L["config"]["dipRule"].startswith("Kural")
+    print("Nasdaq -20% rule OK: dd", W["ddPct"], "-> no short, index sleeve in cash")
+
+
 def test_v5_unconfirmed_drop_waits_in_cash():
     def spy(end):
         up = trend(end, 0.0007)
