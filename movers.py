@@ -71,7 +71,11 @@ def headline(t):
     try:
         import news as N
         items = N.fetch_yf(t)
-        return {k: items[0].get(k) for k in ("title", "url", "publisher", "at")} if items else None
+        if not items:
+            return None
+        h = {k: items[0].get(k) for k in ("title", "url", "publisher", "at")}
+        h["at"] = h["at"].isoformat() if hasattr(h["at"], "isoformat") else h["at"]     # JSON needs text, not datetime
+        return h
     except Exception:
         return None
 
@@ -112,9 +116,13 @@ def main():
         if prev < MIN_PRICE or last < 1 or not math.isfinite(dv) or dv < MIN_DOLLAR_VOL:
             continue
         w = float(c.iloc[-6]) if len(c) >= 6 else float(c.iloc[0])
+        o, hi, lo = (float(s[k].iloc[-1]) for k in ("Open", "High", "Low"))
+        gap = o / prev - 1 if o > 0 else 0.0
         rows.append({"ticker": t, "name": names.get(t, t), "price": round(last, 2), "prevClose": round(prev, 2),
                      "d1Pct": round((last / prev - 1) * 100, 2), "w1Pct": round((last / w - 1) * 100, 2),
-                     "dollarVolM": round(dv / 1e6, 1), "date": str(s.index[-1].date())})
+                     "dollarVolM": round(dv / 1e6, 1), "date": str(s.index[-1].date()), "gapPct": round(gap * 100, 2),
+                     # opened 15 %+ higher and then barely moved: the typical picture of a takeover at a fixed price
+                     "buyout": bool(gap > 0.15 and last > prev and (hi - lo) / last < 0.03)})
     by = lambda k, rev: sorted(rows, key=lambda r: r[k], reverse=rev)[:TOP_N]
     alerts = [r for r in rows if abs(r["d1Pct"]) >= ALERT * 100]
     alerts.sort(key=lambda r: -abs(r["d1Pct"]))
@@ -130,11 +138,20 @@ def main():
             study = json.loads((ROOT / "movers_study.json").read_text()).get("summary")
         except Exception:
             study = None
-    out = {"asOf": now.isoformat(timespec="minutes"), "session": "açık" if now.time() < datetime.strptime("16:00", "%H:%M").time() else "kapanış",
+    closed = now.time() >= datetime.strptime("16:00", "%H:%M").time() or now.weekday() >= 5
+    hist = dict(old.get("spikeHistory") or {})
+    d = max((r["date"] for r in rows), default=None)  # the trader reads this the next morning (sert yükseliş short'u)
+    if d and not (hist.get(d) or {}).get("final"):
+        hist[d] = {"final": closed or d < today, "at": now.isoformat(timespec="minutes"),
+                   "rows": [{k: r.get(k) for k in ("ticker", "name", "price", "prevClose", "d1Pct", "gapPct", "dollarVolM",
+                                                   "buyout", "headline")}
+                            for r in alerts if r["date"] == d]}
+    hist = {d: hist[d] for d in sorted(hist)[-15:]}
+    out = {"asOf": now.isoformat(timespec="minutes"), "session": "kapanış" if closed else "açık",
            "universeSize": len(names), "screened": len(rows), "minPrice": MIN_PRICE, "minDollarVolM": MIN_DOLLAR_VOL / 1e6,
            "dailyLosers": by("d1Pct", False), "dailyGainers": by("d1Pct", True),
            "weeklyLosers": by("w1Pct", False), "weeklyGainers": by("w1Pct", True), "alerts": alerts,
-           "alerted": {today: sorted(sent | {r["ticker"] for r in alerts})},
+           "alerted": {today: sorted(sent | {r["ticker"] for r in alerts})}, "spikeHistory": hist,
            "study": {**study, "text": study_text(study)} if study else None,
            "notes": "Nasdaq'ta işlem gören hisse senetleri (ETF, varant, imtiyazlı hisse hariç); fiyatı 3 $'ın, son 20 günlük "
                     "ortalama işlem hacmi 2 milyon $'ın altındakiler elendi. Günlük değişim önceki kapanışa göre (seans "
