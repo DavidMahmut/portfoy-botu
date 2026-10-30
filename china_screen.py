@@ -50,6 +50,14 @@ UNIVERSE = {
 }
 
 
+# Never screened or shown: companies whose securities US persons may not buy or sell (OFAC NS-CMIC list,
+# Executive Order 14032), plus Sugon/Dawning to stay on the safe side.
+BANNED = {"0981.HK": "SMIC", "688981.SS": "SMIC", "002415.SZ": "Hikvision", "0020.HK": "SenseTime",
+          "603019.SS": "Sugon (Dawning)"}
+for _t in BANNED:
+    UNIVERSE.pop(_t, None)
+
+
 def load(tickers):
     import yfinance as yf
     df = yf.download(sorted(tickers), period="2y", interval="1d", auto_adjust=True, group_by="ticker", progress=False,
@@ -112,6 +120,7 @@ def main():
         except Exception:
             pass
     out = {"asOf": datetime.utcnow().isoformat(timespec="seconds") + "Z", "count": len(rows),
+           "excluded": {t: n + " (ABD yaptırım listesi: ABD'de yaşayanlar alıp satamaz)" for t, n in BANNED.items()},
            "missing": sorted(set(UNIVERSE) - set(data)), "uptrendCount": sum(1 for r in rows if r["uptrend"]),
            "benchmarks": bench, "rows": rows,
            "notes": "Yahoo Finance günlük kapanışları (temettü düzeltmeli). Yükseliş trendi: fiyat 200 günlük ortalamanın "
