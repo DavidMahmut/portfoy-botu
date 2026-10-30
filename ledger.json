@@ -99,9 +99,9 @@
   "dipRule": "Kural: Nasdaq 100 (QQQ) zirvesinden %20 veya daha fazla düşmüşse endeks kolu short açmaz; yön aşağı olsa bile yeni zirveye kadar nakitte bekler. O noktada short geç kalmıştır ve ayı piyasalarının sert tepki yükselişlerine yakalanır. 1999–2026 testinde bu kural endeks kolunun yıllık getirisini %14,7'den %15,4'e çıkardı, en kötü düşüşünü %−46'dan %−43'e indirdi; 2018–2026'da %17,0'dan %20,2'ye çıkardı. Düşüşte kaldıraçla almak ise 2000 çöküşünde hesabı sıfırlardı, bu yüzden kullanılmıyor."
  },
  "portfolio": {
-  "asOf": "2026-10-30T13:33:35-04:00",
-  "benchmarkPrice": 755.79,
-  "benchmarkValue": 2917.77,
+  "asOf": "2026-10-30T13:43:42-04:00",
+  "benchmarkPrice": 755.46,
+  "benchmarkValue": 2916.48,
   "cash": 130.45,
   "positions": [
    {
@@ -113,16 +113,16 @@
     "shares": 0.542,
     "avgCost": 242.6212,
     "costBasis": 131.5,
-    "lastPrice": 245.81,
-    "lastPriceAt": "2026-10-30T13:00:00-04:00",
+    "lastPrice": 247.11,
+    "lastPriceAt": "2026-10-30T13:15:00-04:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (13:00 ET)",
+     "title": "Yahoo Finance 5 dk mum (13:15 ET)",
      "url": "https://finance.yahoo.com/quote/CRWD/"
     },
-    "marketValue": 133.23,
-    "exposure": 133.23,
-    "unrealized": 1.73,
-    "unrealizedPct": 1.32,
+    "marketValue": 133.93,
+    "exposure": 133.93,
+    "unrealized": 2.43,
+    "unrealizedPct": 1.85,
     "openedAt": "2026-10-15",
     "openedTs": "2026-10-15T10:00:00-04:00",
     "lastAddDate": "2026-10-15",
@@ -131,8 +131,8 @@
     "tookProfit": false,
     "thesis": "Momentum lideri: sıralamada 1. (puan 49,40). Getiriler: 1 ay +%0,48, 3 ay +%19,43, 6 ay +%131,98; fiyat 50 günlük ortalamanın (232,73 $) üstünde. Tez bozulur: zarar-kes veya ilk 10'dan çıkış.",
     "taxBasisAdj": 46.59,
-    "maintReq": 33.31,
-    "lastBarTs": "2026-10-30T13:00:00-04:00",
+    "maintReq": 33.48,
+    "lastBarTs": "2026-10-30T13:15:00-04:00",
     "stopMode": "disaster"
    },
    {
@@ -144,16 +144,16 @@
     "shares": 0.5043,
     "avgCost": 263.2916,
     "costBasis": 132.78,
-    "lastPrice": 232.7,
-    "lastPriceAt": "2026-10-30T13:30:00-04:00",
+    "lastPrice": 233.295,
+    "lastPriceAt": "2026-10-30T13:40:00-04:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (13:30 ET)",
+     "title": "Yahoo Finance 5 dk mum (13:40 ET)",
      "url": "https://finance.yahoo.com/quote/DDOG/"
     },
-    "marketValue": 117.35,
-    "exposure": 117.35,
-    "unrealized": -15.43,
-    "unrealizedPct": -11.62,
+    "marketValue": 117.65,
+    "exposure": 117.65,
+    "unrealized": -15.13,
+    "unrealizedPct": -11.39,
     "openedAt": "2026-10-15",
     "openedTs": "2026-10-15T10:00:00-04:00",
     "lastAddDate": "2026-10-15",
@@ -161,8 +161,8 @@
     "extremeSinceEntry": 284.7499,
     "tookProfit": false,
     "thesis": "Momentum lideri: sıralamada 2. (puan 37,61). Getiriler: 1 ay +%14,03, 3 ay +%1,73, 6 ay +%113,14; fiyat 50 günlük ortalamanın (246,68 $) üstünde. Tez bozulur: zarar-kes veya ilk 10'dan çıkış.",
-    "maintReq": 29.34,
-    "lastBarTs": "2026-10-30T13:30:00-04:00",
+    "maintReq": 29.41,
+    "lastBarTs": "2026-10-30T13:40:00-04:00",
     "stopMode": "disaster",
     "taxBasisAdj": 0.64
    },
@@ -176,16 +176,16 @@
     "shares": 1.5217,
     "avgCost": 723.6266,
     "costBasis": 1101.14,
-    "lastPrice": 689.1374,
-    "lastPriceAt": "2026-10-30T13:30:00-04:00",
+    "lastPrice": 688.66,
+    "lastPriceAt": "2026-10-30T13:40:00-04:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (13:30 ET)",
+     "title": "Yahoo Finance 5 dk mum (13:40 ET)",
      "url": "https://finance.yahoo.com/quote/QQQ/"
     },
-    "marketValue": 1048.66,
-    "exposure": 1048.66,
-    "unrealized": -52.48,
-    "unrealizedPct": -4.77,
+    "marketValue": 1047.93,
+    "exposure": 1047.93,
+    "unrealized": -53.21,
+    "unrealizedPct": -4.83,
     "openedAt": "2026-10-15",
     "openedTs": "2026-10-15T12:55:00-04:00",
     "lastAddDate": "2026-10-15",
@@ -193,7 +193,7 @@
     "extremeSinceEntry": 729.43,
     "tookProfit": false,
     "thesis": "Çekirdek pozisyon: Nasdaq 100 fonu QQQ, paranın %50'si. Piyasa trendi yukarıyken tutulur; tek hisselerin dalgalanmasından bağımsız geniş piyasa getirisi sağlar.",
-    "maintReq": 262.17,
+    "maintReq": 261.98,
     "lastBarTs": "2026-10-23T15:55:00-04:00",
     "taxBasisAdj": 5.53
    },
@@ -207,16 +207,16 @@
     "shares": 0.1459,
     "avgCost": 909.4595,
     "costBasis": 132.69,
-    "lastPrice": 872.94,
-    "lastPriceAt": "2026-10-30T13:30:00-04:00",
+    "lastPrice": 873.24,
+    "lastPriceAt": "2026-10-30T13:40:00-04:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (13:30 ET)",
+     "title": "Yahoo Finance 5 dk mum (13:40 ET)",
      "url": "https://finance.yahoo.com/quote/MU/"
     },
-    "marketValue": 127.36,
-    "exposure": 127.36,
-    "unrealized": -5.33,
-    "unrealizedPct": -4.02,
+    "marketValue": 127.41,
+    "exposure": 127.41,
+    "unrealized": -5.28,
+    "unrealizedPct": -3.98,
     "openedAt": "2026-10-15",
     "openedTs": "2026-10-15T12:55:00-04:00",
     "lastAddDate": "2026-10-15",
@@ -224,8 +224,8 @@
     "extremeSinceEntry": 990.0,
     "tookProfit": false,
     "thesis": "Momentum sepeti: 12-1 ay getirisi +%381,20 ile uygun hisseler arasında 1. sırada; fiyat 200 günlük ortalamanın (711,72 $) üstünde; sektör: Yarı iletken. Ay sonuna kadar tutulur; yalnızca maliyetin %25 altına inerse satılır.",
-    "maintReq": 31.84,
-    "lastBarTs": "2026-10-30T13:30:00-04:00"
+    "maintReq": 31.85,
+    "lastBarTs": "2026-10-30T13:40:00-04:00"
    },
    {
     "stopMode": "disaster",
@@ -237,16 +237,16 @@
     "shares": 0.286,
     "avgCost": 464.1945,
     "costBasis": 132.76,
-    "lastPrice": 414.62,
-    "lastPriceAt": "2026-10-30T13:30:00-04:00",
+    "lastPrice": 415.975,
+    "lastPriceAt": "2026-10-30T13:40:00-04:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (13:30 ET)",
+     "title": "Yahoo Finance 5 dk mum (13:40 ET)",
      "url": "https://finance.yahoo.com/quote/DELL/"
     },
-    "marketValue": 118.58,
-    "exposure": 118.58,
-    "unrealized": -14.18,
-    "unrealizedPct": -10.68,
+    "marketValue": 118.97,
+    "exposure": 118.97,
+    "unrealized": -13.79,
+    "unrealizedPct": -10.39,
     "openedAt": "2026-10-15",
     "openedTs": "2026-10-15T12:55:00-04:00",
     "lastAddDate": "2026-10-15",
@@ -255,8 +255,8 @@
     "tookProfit": false,
     "thesis": "Momentum sepeti: 12-1 ay getirisi +%254,31 ile uygun hisseler arasında 2. sırada; fiyat 200 günlük ortalamanın (310,65 $) üstünde; sektör: Yapay zekâ donanımı. Ay sonuna kadar tutulur; yalnızca maliyetin %25 altına inerse satılır.",
     "taxBasisAdj": 27.13,
-    "maintReq": 29.65,
-    "lastBarTs": "2026-10-30T13:30:00-04:00"
+    "maintReq": 29.74,
+    "lastBarTs": "2026-10-30T13:40:00-04:00"
    },
    {
     "stopMode": "disaster",
@@ -268,16 +268,16 @@
     "shares": 0.5641,
     "avgCost": 235.3276,
     "costBasis": 132.75,
-    "lastPrice": 193.25,
-    "lastPriceAt": "2026-10-30T13:30:00-04:00",
+    "lastPrice": 193.165,
+    "lastPriceAt": "2026-10-30T13:40:00-04:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (13:30 ET)",
+     "title": "Yahoo Finance 5 dk mum (13:40 ET)",
      "url": "https://finance.yahoo.com/quote/MRVL/"
     },
-    "marketValue": 109.01,
-    "exposure": 109.01,
-    "unrealized": -23.74,
-    "unrealizedPct": -17.88,
+    "marketValue": 108.96,
+    "exposure": 108.96,
+    "unrealized": -23.79,
+    "unrealizedPct": -17.92,
     "openedAt": "2026-10-15",
     "openedTs": "2026-10-15T12:55:00-04:00",
     "lastAddDate": "2026-10-15",
@@ -285,8 +285,8 @@
     "extremeSinceEntry": 253.6599,
     "tookProfit": false,
     "thesis": "Momentum sepeti: 12-1 ay getirisi +%148,01 ile uygun hisseler arasında 4. sırada; fiyat 200 günlük ortalamanın (174,38 $) üstünde; sektör: Yarı iletken. Ay sonuna kadar tutulur; yalnızca maliyetin %25 altına inerse satılır.",
-    "maintReq": 27.25,
-    "lastBarTs": "2026-10-30T13:30:00-04:00"
+    "maintReq": 27.24,
+    "lastBarTs": "2026-10-30T13:40:00-04:00"
    },
    {
     "stopMode": "disaster",
@@ -298,16 +298,16 @@
     "shares": 0.3575,
     "avgCost": 371.3556,
     "costBasis": 132.76,
-    "lastPrice": 362.15,
-    "lastPriceAt": "2026-10-30T13:30:00-04:00",
+    "lastPrice": 361.52,
+    "lastPriceAt": "2026-10-30T13:40:00-04:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (13:30 ET)",
+     "title": "Yahoo Finance 5 dk mum (13:40 ET)",
      "url": "https://finance.yahoo.com/quote/PANW/"
     },
-    "marketValue": 129.47,
-    "exposure": 129.47,
-    "unrealized": -3.29,
-    "unrealizedPct": -2.48,
+    "marketValue": 129.24,
+    "exposure": 129.24,
+    "unrealized": -3.52,
+    "unrealizedPct": -2.65,
     "openedAt": "2026-10-15",
     "openedTs": "2026-10-15T12:55:00-04:00",
     "lastAddDate": "2026-10-15",
@@ -315,8 +315,8 @@
     "extremeSinceEntry": 405.76,
     "tookProfit": false,
     "thesis": "Momentum sepeti: 12-1 ay getirisi +%75,87 ile uygun hisseler arasında 9. sırada; fiyat 200 günlük ortalamanın (258,98 $) üstünde; sektör: Yazılım. Ay sonuna kadar tutulur; yalnızca maliyetin %25 altına inerse satılır.",
-    "maintReq": 32.37,
-    "lastBarTs": "2026-10-30T13:30:00-04:00"
+    "maintReq": 32.31,
+    "lastBarTs": "2026-10-30T13:40:00-04:00"
    },
    {
     "stopMode": "disaster",
@@ -328,25 +328,25 @@
     "shares": 0.9342,
     "avgCost": 142.121,
     "costBasis": 132.77,
-    "lastPrice": 153.715,
-    "lastPriceAt": "2026-10-30T13:00:00-04:00",
+    "lastPrice": 153.66,
+    "lastPriceAt": "2026-10-30T13:15:00-04:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (13:00 ET)",
+     "title": "Yahoo Finance 5 dk mum (13:15 ET)",
      "url": "https://finance.yahoo.com/quote/COP/"
     },
-    "marketValue": 143.6,
-    "exposure": 143.6,
-    "unrealized": 10.83,
-    "unrealizedPct": 8.16,
+    "marketValue": 143.55,
+    "exposure": 143.55,
+    "unrealized": 10.78,
+    "unrealizedPct": 8.12,
     "openedAt": "2026-10-15",
     "openedTs": "2026-10-15T12:55:00-04:00",
     "lastAddDate": "2026-10-15",
     "stopPrice": 106.59,
-    "extremeSinceEntry": 153.72,
+    "extremeSinceEntry": 153.7881,
     "tookProfit": false,
     "thesis": "Momentum sepeti: 12-1 ay getirisi +%59,07 ile uygun hisseler arasında 11. sırada; fiyat 200 günlük ortalamanın (118,22 $) üstünde; sektör: Petrol ve gaz. Ay sonuna kadar tutulur; yalnızca maliyetin %25 altına inerse satılır.",
-    "maintReq": 35.9,
-    "lastBarTs": "2026-10-30T13:00:00-04:00"
+    "maintReq": 35.89,
+    "lastBarTs": "2026-10-30T13:15:00-04:00"
    },
    {
     "stopMode": "disaster",
@@ -358,16 +358,16 @@
     "shares": 0.2028,
     "avgCost": 654.6146,
     "costBasis": 132.76,
-    "lastPrice": 673.355,
-    "lastPriceAt": "2026-10-30T13:30:00-04:00",
+    "lastPrice": 673.945,
+    "lastPriceAt": "2026-10-30T13:40:00-04:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (13:30 ET)",
+     "title": "Yahoo Finance 5 dk mum (13:40 ET)",
      "url": "https://finance.yahoo.com/quote/DE/"
     },
-    "marketValue": 136.56,
-    "exposure": 136.56,
-    "unrealized": 3.8,
-    "unrealizedPct": 2.86,
+    "marketValue": 136.68,
+    "exposure": 136.68,
+    "unrealized": 3.92,
+    "unrealizedPct": 2.95,
     "openedAt": "2026-10-15",
     "openedTs": "2026-10-15T12:55:00-04:00",
     "lastAddDate": "2026-10-15",
@@ -375,8 +375,8 @@
     "extremeSinceEntry": 675.69,
     "tookProfit": false,
     "thesis": "Momentum sepeti: 12-1 ay getirisi +%55,78 ile uygun hisseler arasında 12. sırada; fiyat 200 günlük ortalamanın (595,10 $) üstünde; sektör: Sanayi ve savunma. Ay sonuna kadar tutulur; yalnızca maliyetin %25 altına inerse satılır.",
-    "maintReq": 34.14,
-    "lastBarTs": "2026-10-30T13:30:00-04:00"
+    "maintReq": 34.17,
+    "lastBarTs": "2026-10-30T13:40:00-04:00"
    },
    {
     "stopMode": "disaster",
@@ -388,16 +388,16 @@
     "shares": 0.7598,
     "avgCost": 174.7223,
     "costBasis": 132.75,
-    "lastPrice": 187.23,
-    "lastPriceAt": "2026-10-30T13:30:00-04:00",
+    "lastPrice": 186.7704,
+    "lastPriceAt": "2026-10-30T13:40:00-04:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (13:30 ET)",
+     "title": "Yahoo Finance 5 dk mum (13:40 ET)",
      "url": "https://finance.yahoo.com/quote/XOM/"
     },
-    "marketValue": 142.26,
-    "exposure": 142.26,
-    "unrealized": 9.51,
-    "unrealizedPct": 7.16,
+    "marketValue": 141.91,
+    "exposure": 141.91,
+    "unrealized": 9.16,
+    "unrealizedPct": 6.9,
     "openedAt": "2026-10-15",
     "openedTs": "2026-10-15T12:55:00-04:00",
     "lastAddDate": "2026-10-15",
@@ -405,8 +405,8 @@
     "extremeSinceEntry": 188.5,
     "tookProfit": false,
     "thesis": "Momentum sepeti: 12-1 ay getirisi +%50,86 ile uygun hisseler arasında 13. sırada; fiyat 200 günlük ortalamanın (151,16 $) üstünde; sektör: Petrol ve gaz. Ay sonuna kadar tutulur; yalnızca maliyetin %25 altına inerse satılır.",
-    "maintReq": 35.56,
-    "lastBarTs": "2026-10-30T13:30:00-04:00"
+    "maintReq": 35.48,
+    "lastBarTs": "2026-10-30T13:40:00-04:00"
    },
    {
     "stopMode": "managed",
@@ -418,16 +418,16 @@
     "shares": 3.5238,
     "avgCost": 67.053,
     "costBasis": 236.28,
-    "lastPrice": 61.57,
-    "lastPriceAt": "2026-10-30T13:30:00-04:00",
+    "lastPrice": 61.445,
+    "lastPriceAt": "2026-10-30T13:40:00-04:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (13:30 ET)",
+     "title": "Yahoo Finance 5 dk mum (13:40 ET)",
      "url": "https://finance.yahoo.com/quote/TQQQ/"
     },
-    "marketValue": 216.96,
-    "exposure": 650.88,
-    "unrealized": -19.32,
-    "unrealizedPct": -8.18,
+    "marketValue": 216.52,
+    "exposure": 649.56,
+    "unrealized": -19.76,
+    "unrealizedPct": -8.36,
     "openedAt": "2026-10-26",
     "openedTs": "2026-10-26T10:00:00-04:00",
     "lastAddDate": "2026-10-26",
@@ -435,14 +435,14 @@
     "extremeSinceEntry": 67.01950073242188,
     "tookProfit": false,
     "thesis": "Endeks kolu, TQQQ (3x): 0,00 $ → 236,29 $. Endeks kolu yönü YUKARI: SPY dünkü kapanış 759,97 $, 200 günlük ortalama 727,01 $ (+%4,53), 50 günlük ortalama 767,81 $. QQQ'nun 20 günlük oynaklığı yıllık %18,4; büyüklük %25 ÷ %18,4 = 1,36x. Hedef maruziyet +1,36x.",
-    "maintReq": 162.72
+    "maintReq": 162.39
    }
   ],
-  "positionsValue": 2423.04,
+  "positionsValue": 2422.75,
   "realizedPL": -328.31,
-  "totalPL": -446.51,
-  "totalPLPct": -14.88,
-  "totalValue": 2553.49,
+  "totalPL": -446.8,
+  "totalPLPct": -14.89,
+  "totalValue": 2553.2,
   "costs": {
    "slippage": 9.9587,
    "commission": 15.75,
@@ -453,24 +453,24 @@
    "dividendsReceived": 0.0
   },
   "netDeposits": 3000.0,
-  "longValue": 2423.04,
+  "longValue": 2422.75,
   "shortValue": 0.0,
-  "grossExposure": 2856.96,
-  "netExposure": 2856.96,
+  "grossExposure": 2855.79,
+  "netExposure": 2855.79,
   "leverage": 1.119,
-  "maintenanceReq": 714.25,
-  "marginBuffer": 1839.24,
-  "twrPct": -14.26,
-  "benchmarkTwrPct": -2.2,
-  "regTInitialReq": 1265.76,
-  "regTExcess": 1287.73,
-  "buyingPower": 2575.46,
+  "maintenanceReq": 713.94,
+  "marginBuffer": 1839.26,
+  "twrPct": -14.27,
+  "benchmarkTwrPct": -2.24,
+  "regTInitialReq": 1265.51,
+  "regTExcess": 1287.69,
+  "buyingPower": 2575.39,
   "marginEligible": true
  },
  "meta": {
   "lastDailyDate": "2026-10-30",
   "brakeDate": null,
-  "lastRunAt": "2026-10-30T13:33:35-04:00",
+  "lastRunAt": "2026-10-30T13:43:42-04:00",
   "lastError": null,
   "engine": "trend-vol v5",
   "units": 2978.240478,
@@ -493,8 +493,8 @@
    "navStart": 0.9022071991326953,
    "spyStart": 762.47,
    "peak": 0.9377080261414672,
-   "maxDD": -8.57,
-   "maxDDAt": "2026-10-30T13:33:35-04:00",
+   "maxDD": -8.6,
+   "maxDDAt": "2026-10-30T13:38:40-04:00",
    "errors": 0,
    "runDays": [
     "2026-10-26",
@@ -3525,71 +3525,71 @@
   },
   {
    "date": "2026-10-30",
-   "at": "2026-10-30T13:33:35-04:00",
-   "totalValue": 2553.49,
+   "at": "2026-10-30T13:43:42-04:00",
+   "totalValue": 2553.2,
    "cash": 130.45,
-   "positionsValue": 2423.04,
-   "plPct": -14.88,
-   "twrPct": -14.26,
+   "positionsValue": 2422.75,
+   "plPct": -14.89,
+   "twrPct": -14.27,
    "netDeposits": 3000.0,
    "leverage": 1.119,
-   "benchmarkPrice": 755.79,
-   "benchmarkValue": 2917.77,
+   "benchmarkPrice": 755.46,
+   "benchmarkValue": 2916.48,
    "holdings": [
     {
      "ticker": "CRWD",
      "side": "long",
-     "value": 133.23
+     "value": 133.93
     },
     {
      "ticker": "DDOG",
      "side": "long",
-     "value": 117.35
+     "value": 117.65
     },
     {
      "ticker": "QQQ",
      "side": "long",
-     "value": 1048.66
+     "value": 1047.93
     },
     {
      "ticker": "MU",
      "side": "long",
-     "value": 127.36
+     "value": 127.41
     },
     {
      "ticker": "DELL",
      "side": "long",
-     "value": 118.58
+     "value": 118.97
     },
     {
      "ticker": "MRVL",
      "side": "long",
-     "value": 109.01
+     "value": 108.96
     },
     {
      "ticker": "PANW",
      "side": "long",
-     "value": 129.47
+     "value": 129.24
     },
     {
      "ticker": "COP",
      "side": "long",
-     "value": 143.6
+     "value": 143.55
     },
     {
      "ticker": "DE",
      "side": "long",
-     "value": 136.56
+     "value": 136.68
     },
     {
      "ticker": "XOM",
      "side": "long",
-     "value": 142.26
+     "value": 141.91
     },
     {
      "ticker": "TQQQ",
      "side": "long",
-     "value": 216.96
+     "value": 216.52
     }
    ]
   }
@@ -43237,6 +43237,212 @@
     ],
     "actions": [],
     "note": "Normal: pozisyonlar zarar-kese %9,5–%44,2 uzakta, kaldıraç 1,12x, SPY −%1,76; işlem gerekmedi."
+   },
+   {
+    "at": "2026-10-30T13:38:40-04:00",
+    "kind": "guard",
+    "status": "normal",
+    "spyPrice": 755.34,
+    "spyChangePct": -1.82,
+    "totalValue": 2552.47,
+    "benchmarkValue": 2916.04,
+    "leverage": 1.119,
+    "marginBuffer": 1838.67,
+    "positions": [
+     {
+      "ticker": "CRWD",
+      "side": "long",
+      "price": 246.16,
+      "dayChangePct": -5.74,
+      "stopPrice": 181.97,
+      "distancePct": 35.28
+     },
+     {
+      "ticker": "DDOG",
+      "side": "long",
+      "price": 232.885,
+      "dayChangePct": -12.4,
+      "stopPrice": 197.47,
+      "distancePct": 17.93
+     },
+     {
+      "ticker": "QQQ",
+      "side": "long",
+      "price": 688.57,
+      "dayChangePct": -3.74,
+      "stopPrice": null,
+      "distancePct": null
+     },
+     {
+      "ticker": "MU",
+      "side": "long",
+      "price": 872.6,
+      "dayChangePct": -6.6,
+      "stopPrice": 682.09,
+      "distancePct": 27.93
+     },
+     {
+      "ticker": "DELL",
+      "side": "long",
+      "price": 415.525,
+      "dayChangePct": -12.61,
+      "stopPrice": 348.15,
+      "distancePct": 19.35
+     },
+     {
+      "ticker": "MRVL",
+      "side": "long",
+      "price": 193.14,
+      "dayChangePct": -11.54,
+      "stopPrice": 176.5,
+      "distancePct": 9.43
+     },
+     {
+      "ticker": "PANW",
+      "side": "long",
+      "price": 362.56,
+      "dayChangePct": -4.73,
+      "stopPrice": 278.52,
+      "distancePct": 30.17
+     },
+     {
+      "ticker": "COP",
+      "side": "long",
+      "price": 153.535,
+      "dayChangePct": 2.34,
+      "stopPrice": 106.59,
+      "distancePct": 44.04
+     },
+     {
+      "ticker": "DE",
+      "side": "long",
+      "price": 673.68,
+      "dayChangePct": 2.07,
+      "stopPrice": 490.96,
+      "distancePct": 37.22
+     },
+     {
+      "ticker": "XOM",
+      "side": "long",
+      "price": 186.89,
+      "dayChangePct": 1.96,
+      "stopPrice": 131.04,
+      "distancePct": 42.62
+     },
+     {
+      "ticker": "TQQQ",
+      "side": "long",
+      "price": 61.465,
+      "dayChangePct": -11.25,
+      "stopPrice": null,
+      "distancePct": null
+     }
+    ],
+    "actions": [],
+    "note": "Normal: pozisyonlar zarar-kese %9,4–%44,0 uzakta, kaldıraç 1,12x, SPY −%1,82; işlem gerekmedi."
+   },
+   {
+    "at": "2026-10-30T13:43:42-04:00",
+    "kind": "guard",
+    "status": "normal",
+    "spyPrice": 755.46,
+    "spyChangePct": -1.81,
+    "totalValue": 2553.2,
+    "benchmarkValue": 2916.48,
+    "leverage": 1.119,
+    "marginBuffer": 1839.26,
+    "positions": [
+     {
+      "ticker": "CRWD",
+      "side": "long",
+      "price": 247.11,
+      "dayChangePct": -5.38,
+      "stopPrice": 181.97,
+      "distancePct": 35.8
+     },
+     {
+      "ticker": "DDOG",
+      "side": "long",
+      "price": 233.295,
+      "dayChangePct": -12.24,
+      "stopPrice": 197.47,
+      "distancePct": 18.14
+     },
+     {
+      "ticker": "QQQ",
+      "side": "long",
+      "price": 688.66,
+      "dayChangePct": -3.73,
+      "stopPrice": null,
+      "distancePct": null
+     },
+     {
+      "ticker": "MU",
+      "side": "long",
+      "price": 873.24,
+      "dayChangePct": -6.53,
+      "stopPrice": 682.09,
+      "distancePct": 28.02
+     },
+     {
+      "ticker": "DELL",
+      "side": "long",
+      "price": 415.975,
+      "dayChangePct": -12.52,
+      "stopPrice": 348.15,
+      "distancePct": 19.48
+     },
+     {
+      "ticker": "MRVL",
+      "side": "long",
+      "price": 193.165,
+      "dayChangePct": -11.53,
+      "stopPrice": 176.5,
+      "distancePct": 9.44
+     },
+     {
+      "ticker": "PANW",
+      "side": "long",
+      "price": 361.52,
+      "dayChangePct": -5.01,
+      "stopPrice": 278.52,
+      "distancePct": 29.8
+     },
+     {
+      "ticker": "COP",
+      "side": "long",
+      "price": 153.66,
+      "dayChangePct": 2.42,
+      "stopPrice": 106.59,
+      "distancePct": 44.16
+     },
+     {
+      "ticker": "DE",
+      "side": "long",
+      "price": 673.945,
+      "dayChangePct": 2.11,
+      "stopPrice": 490.96,
+      "distancePct": 37.27
+     },
+     {
+      "ticker": "XOM",
+      "side": "long",
+      "price": 186.7704,
+      "dayChangePct": 1.9,
+      "stopPrice": 131.04,
+      "distancePct": 42.53
+     },
+     {
+      "ticker": "TQQQ",
+      "side": "long",
+      "price": 61.445,
+      "dayChangePct": -11.28,
+      "stopPrice": null,
+      "distancePct": null
+     }
+    ],
+    "actions": [],
+    "note": "Normal: pozisyonlar zarar-kese %9,4–%44,2 uzakta, kaldıraç 1,12x, SPY −%1,81; işlem gerekmedi."
    }
   ]
  },
@@ -53644,7 +53850,7 @@
   "start": "2026-10-26",
   "startAt": "2026-10-26T09:30:28-04:00",
   "end": "2027-01-26",
-  "asOf": "2026-10-30T13:33:35-04:00",
+  "asOf": "2026-10-30T13:43:42-04:00",
   "strategy": "v5",
   "history": [
    {
@@ -53689,12 +53895,12 @@
   "daysElapsed": 5,
   "daysTotal": 63,
   "finished": false,
-  "returnPct": -4.97,
-  "spyReturnPct": -0.88,
-  "excessPct": -4.09,
-  "maxDrawdownPct": -8.57,
-  "maxDrawdownAt": "2026-10-30T13:33:35-04:00",
-  "drawdownNowPct": -8.57,
+  "returnPct": -4.98,
+  "spyReturnPct": -0.92,
+  "excessPct": -4.06,
+  "maxDrawdownPct": -8.6,
+  "maxDrawdownAt": "2026-10-30T13:38:40-04:00",
+  "drawdownNowPct": -8.58,
   "trades": {
    "closed": 2,
    "wins": 0,
@@ -53707,9 +53913,9 @@
   "monthly": [
    {
     "month": "2026-10",
-    "returnPct": -4.97,
-    "spyPct": -0.88,
-    "excessPct": -4.09
+    "returnPct": -4.98,
+    "spyPct": -0.92,
+    "excessPct": -4.06
    }
   ],
   "uptime": {
@@ -53727,14 +53933,14 @@
     "key": "spy",
     "label": "SPY'ı geçmek (masraflar düşülmüş)",
     "ok": false,
-    "value": -4.09,
+    "value": -4.06,
     "unit": "pct"
    },
    {
     "key": "dd",
     "label": "En büyük düşüş %20'den az",
     "ok": true,
-    "value": -8.57,
+    "value": -8.6,
     "unit": "pct"
    },
    {
