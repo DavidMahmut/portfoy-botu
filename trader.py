@@ -99,6 +99,25 @@ EVENT_AFTER, EVENT_LAST_ENTRY = dtime(10, 30), dtime(11, 30)   # decide after th
 EVENT_HOLD_DAYS = 2                       # exit at the close two trading days after entry
 EVENT_EXIT_AFTER = dtime(15, 50)
 EVENT_SLOTS, EVENT_RISK, EVENT_CAP = 4, 0.01, 0.25   # max open trades; risk 1 % of the sleeve per trade; 25 % cap
+SPIKE_MOVE = 0.30                         # sert yükseliş short'u: previous day's close at least 30 % above the day before
+SPIKE_MIN_PRICE, SPIKE_MIN_DV = 5.0, 50.0  # real price >= 5 $ the day before, 20-day average >= 50 M $ traded a day
+SPIKE_HOLD_DAYS = 10                      # trading days including the entry day; cover at the close of the last one
+SPIKE_STOP = 0.50                         # stop 50 % above the entry price
+SPIKE_SIZE, SPIKE_SLOTS = 0.05, 6         # each trade 5 % of the event sleeve; at most 6 open
+SPIKE_BORROW = 0.30                       # assumed borrow fee for freshly spiked small stocks (hard to borrow), per year
+SPIKE_SLIP = 0.0015                       # wider spread than large caps: 0.15 % per fill
+SPIKE_AFTER, SPIKE_LAST_ENTRY = dtime(9, 35), dtime(10, 30)
+SANCTIONED_NAMES = ("SMIC", "Semiconductor Manufacturing International", "Hikvision", "SenseTime", "Sugon", "Dawning",
+                    "China Mobile", "China Telecom", "China Unicom", "Inspur", "DJI", "Megvii", "iFlytek", "Dahua")
+MOVERS = ROOT / "movers.json"
+SPIKE_TEST_KEY = "fadeUp|r5_dv50|t30|s50|h10"   # spike_results.json candidate that matches these settings
+SPIKE_RULE_TEXT = (
+    "Sert yükseliş short'u: bir Nasdaq hissesi bir günde en az %30 yükselerek kapanırsa ertesi sabah açılışta (09:35 ET) "
+    "short açılır. Şartlar: önceki gün fiyatı en az 5 $, son 20 günde günde ortalama en az 50 milyon $ işlem (ödünç "
+    "bulunabilecek kadar büyük ve likit), satın alma haberiyle yatay seyretmiyor, ABD yaptırım listesinde değil, o sabah "
+    "%10'dan fazla düşmemiş (SEC Rule 201). Büyüklük haber kolunun %5'i, aynı anda en fazla 6 işlem; zarar-kes girişin "
+    "%50 üstü; çıkış 10. işlem gününün kapanışında. Ödünç ücreti yıllık %30 varsayılır. Gerekçe: 2019–2026 testinde bu "
+    "tür sıçramalar sonraki iki haftada çoğunlukla geri verildi.")
 RESET_CAPITAL = 3000.0
 DIP_LEVELS = (-0.10, -0.20)               # Nasdaq 100 watch: correction / bear-market thresholds from the all-time high
 DIP_NO_SHORT = True                       # after a 20 % fall from the high (until a new high) the index sleeve never shorts
@@ -149,6 +168,8 @@ CONFIG_TEXT = {
         "yükselişte QQQ ve 3x fon TQQQ, teyitli düşüşte −3x ters fon SQQQ. Diğer yarı haber şoku kolunda: bir hisse "
         "haberle önceki kapanışa göre en az %8 boşlukla açılır ve ilk saatte piyasa bu tepkinin tersine dönerse o yöne girilir "
         "(sert düşüp toparlanana long, sert yükselip sönene short), 2 işlem günü tutulur, zarar-kes ilk saatin öbür ucunda. "
+        "Aynı kolun ikinci tetiği (Kasım 2026'dan itibaren): bir günde %30+ yükselen likit Nasdaq hissesine ertesi sabah short, "
+        "10 işlem günü tutulur. "
         "Aralık 2023 – Ekim 2026 testinde (164 hisse) bu kural işlem başına ortalama %+0,74 getirdi ve dönemin iki yarısında "
         "da kârlıydı; haberin yönünde girmek ise zarar ettirdi. Kâr garantisi yoktur: işlemlerin yarısından fazlası zararla "
         "kapandı, kâr kazananların daha büyük olmasından geliyor. Önceki hesap (8–30 Ekim) arşivlendi."),
@@ -176,6 +197,7 @@ CONFIG_TEXT = {
         "büyüklük, zarar-keste kaybın kolun yaklaşık %1'i olacağı şekilde ayarlanır (bir işlem en fazla kolun %25'i); "
         "aynı anda en fazla 4 işlem; çıkış 2 işlem günü sonra kapanışta. SEC Rule 201 yüzünden %10'dan fazla düşmüş "
         "hisseye short açılmaz; özsermaye 2.000 $'ın altına inerse short açılmaz (FINRA 4210).",
+        SPIKE_RULE_TEXT,
         "Kaldıraç sınırı: endeks kolu en fazla 3x, haber kolu 1x; hesap düzeyindeki 3x sınırı, Reg T başlangıç teminatı ve "
         "FINRA 4210 bakım teminatı her emirde ve her çalışmada kontrol edilir. 3x fonlar için FINRA kaldıraçlı ETF teminatı %75'tir.",
         "3x ve −3x fonlar günlük getiriyi üçe katlar; dalgalı ve yatay piyasada zamanla değer kaybeder (oynaklık erimesi) ve "
@@ -302,6 +324,10 @@ class Engine:
         self.C.update(CONFIG_TEXT)
         self.C["maxLeverage"] = MAX_EXPO
         self.C["dipRule"] = DIP_RULE_TEXT
+        self.C["spikeRule"] = {"text": SPIKE_RULE_TEXT, "testKey": SPIKE_TEST_KEY, "testPortfolio": "f5_s6",
+                               "move": SPIKE_MOVE, "minPrice": SPIKE_MIN_PRICE, "minDollarVolM": SPIKE_MIN_DV,
+                               "stop": SPIKE_STOP, "holdDays": SPIKE_HOLD_DAYS, "size": SPIKE_SIZE, "slots": SPIKE_SLOTS,
+                               "borrow": SPIKE_BORROW}
         self.C["legalSources"] = list(LEGAL.values())
         self.C["brokerModel"] = {
             "name": "Interactive Brokers — IBKR Pro (Tiered)", "commission": "0,0035 $/hisse, en az 0,35 $, en fazla %1",
@@ -684,8 +710,8 @@ class Engine:
         self.actions.append(f"{t} long ({usd(value)})")
         return tr
 
-    def open_short(self, t, dollars, quote, quote_at, reason, rule):
-        ex = round(quote * (1 - SLIP), 4)
+    def open_short(self, t, dollars, quote, quote_at, reason, rule, slip=SLIP, locate=None):
+        ex = round(quote * (1 - slip), 4)
         shares = floor4(dollars / ex)
         value = round(shares * ex, 2)
         if shares <= 0 or value < MIN_TRADE:
@@ -707,7 +733,7 @@ class Engine:
         else:
             self.P["positions"].append(self._new_position(t, "short", shares, ex, value, quote, quote_at, reason))
         tr = self._log("SHORT", t, "short", shares, quote, quote_at, ex, value, comm, fees, reason, rule,
-                       extra={"locate": "Kolay ödünç (ETB) varsayımı: büyük, likit hisse"})
+                       extra={"locate": locate or "Kolay ödünç (ETB) varsayımı: büyük, likit hisse"})
         self._wash_check_open(t, "short", value)
         self.actions.append(f"{t} short ({usd(value)})")
         return tr
@@ -759,7 +785,7 @@ class Engine:
         full = p["shares"] - shares < 0.0001
         if full:
             shares = p["shares"]
-        ex = round(quote * (1 + SLIP), 4)
+        ex = round(quote * (1 + p.get("slip", SLIP)), 4)
         value = round(shares * ex, 2)
         comm = commission(shares, value)
         realized = round(shares * (p["avgCost"] - ex) - comm, 2)
@@ -877,9 +903,9 @@ class Engine:
         if days <= 0:
             return
         debit = max(0.0, -self.P["cash"])
-        short_v = sum(p["shares"] * p["lastPrice"] for p in self.P["positions"] if p["side"] == "short")
         interest = round(debit * MARGIN_RATE * days / 360, 2)
-        borrow = round(short_v * BORROW_RATE * days / 360, 2)
+        borrow = round(sum(p["shares"] * p["lastPrice"] * p.get("borrowRate", BORROW_RATE) for p in self.P["positions"]
+                           if p["side"] == "short") * days / 360, 2)
         if interest or borrow:
             self.P["cash"] = round(self.P["cash"] - interest - borrow, 2)
             self._cost("interest", interest)
@@ -991,7 +1017,9 @@ class Engine:
             if hit:
                 ts, eff, extreme, fill = hit
                 word = "indi" if p["side"] == "long" else "çıktı"
-                head = ((f"Haber şoku zarar-kesi (ilk saatin {'en düşük' if p['side'] == 'long' else 'en yüksek'} "
+                head = ((f"Sert yükseliş short'unun zarar-kesi (giriş fiyatının %{trn(SPIKE_STOP * 100, 0)} üstü) "
+                         "tetiklendi: ") if p.get("spike") else
+                        (f"Haber şoku zarar-kesi (ilk saatin {'en düşük' if p['side'] == 'long' else 'en yüksek'} "
                          "seviyesinin ötesi) tetiklendi: ") if event else
                         (f"Felaket zarar-kesi (maliyetin %25 {'altı' if p['side'] == 'long' else 'üstü'}) tetiklendi: "
                          if fixed else "Bekleyen zarar-kes emri tetiklendi: "))
@@ -1001,7 +1029,8 @@ class Engine:
                              if fill != eff else f"Emir {trn(fill)} $'dan gerçekleşti."))
                 self.close(p, p["shares"], fill, ts,
                            reason + (f" {COOLDOWN_DAYS} gün yeniden alınmayacak." if fixed and not event else ""),
-                           "haber şoku zarar-kesi" if event else "felaket zarar-kesi" if fixed else "zarar-kes")
+                           "sert yükseliş zarar-kesi" if p.get("spike") else "haber şoku zarar-kesi" if event else
+                           "felaket zarar-kesi" if fixed else "zarar-kes")
                 if fixed and not event:
                     self.M.setdefault("cooldown", {})[p["ticker"]] = self.today
                 self.status = "alarm"
@@ -1633,10 +1662,11 @@ class Engine:
             items = N.fetch_yf(t)
         except Exception:
             items = []
+        at = lambda n: n.get("at").isoformat() if hasattr(n.get("at"), "isoformat") else str(n.get("at") or "")
         cutoff = (date.fromisoformat(self.today) - timedelta(days=3)).isoformat()
-        fresh = [n for n in items if (n.get("at") or "")[:10] >= cutoff]
+        fresh = [n for n in items if at(n)[:10] >= cutoff]
         n = (fresh or items or [None])[0]
-        return {"title": n["title"], "url": n["url"], "publisher": n.get("publisher"), "at": n.get("at")} if n else None
+        return {"title": n["title"], "url": n["url"], "publisher": n.get("publisher"), "at": at(n) or None} if n else None
 
     def event_scan(self):
         """Once a day after the first hour (10:30 New York time): stocks that opened at least 8 % away from yesterday's
@@ -1692,7 +1722,7 @@ class Engine:
         self.revalue()
         sleeve = self.P["totalValue"] * EVENT_SHARE
         used = sum(abs(p["marketValue"]) for p in open_ev)
-        slots = EVENT_SLOTS - len(open_ev)
+        slots = EVENT_SLOTS - len([p for p in open_ev if not p.get("spike")])
         lines = []
         for r in cands:
             t, side = r["ticker"], r["side"]
@@ -1770,11 +1800,129 @@ class Engine:
         else:
             self.notes.extend(lines)
 
+    def _trading_day_before(self, d):
+        days = trading_days((date.fromisoformat(d) - timedelta(days=12)).isoformat(), d)
+        return days[-2] if len(days) >= 2 and days[-1] == d else days[-1]
+
+    def spike_scan(self):
+        """Once a day right after the open (sert yükseliş short'u): the Nasdaq stocks that closed at least 30 % higher on
+        the previous trading day (list written by movers.py) are shorted at the open, stop 50 % above the entry, covered at
+        the close of the 10th trading day. spike_study.py (2019-2026, real price >= 5 $, 20 M $ a day): such spikes gave
+        back a large part of the jump; profitable in both halves of the period, after a 30 %/year borrow fee."""
+        self.M["spikeScanDate"] = self.today
+        prev_day = self._trading_day_before(self.today)
+        try:
+            mv = json.loads(MOVERS.read_text(encoding="utf-8"))
+        except Exception:
+            mv = {}
+        day = (mv.get("spikeHistory") or {}).get(prev_day) or {}
+        scan = {"date": self.today, "at": iso(self.now), "spikeDate": prev_day, "final": day.get("final"),
+                "listAt": day.get("at"), "candidates": [], "taken": [], "skipped": [],
+                "rule": f"{prev_day} günü en az %{trn(SPIKE_MOVE * 100, 0)} yükselen Nasdaq hissesine açılışta short; zarar-kes "
+                        f"girişin %{trn(SPIKE_STOP * 100, 0)} üstü; {SPIKE_HOLD_DAYS}. işlem günü kapanışta çıkış."}
+        rows = sorted([r for r in day.get("rows") or [] if (r.get("d1Pct") or 0) >= SPIKE_MOVE * 100],
+                      key=lambda r: -r["d1Pct"])
+        scan["candidates"] = [r["ticker"] for r in rows]
+        self.revalue()
+        sleeve = self.P["totalValue"] * EVENT_SHARE
+        open_ev = [p for p in self.P["positions"] if p.get("sleeve") == "event"]
+        used = sum(abs(p["marketValue"]) for p in open_ev)
+        slots = SPIKE_SLOTS - len([p for p in open_ev if p.get("spike")])
+        held = {p["ticker"] for p in self.P["positions"]}
+        lines = []
+        for r in rows:
+            t = r["ticker"]
+            base = {k: r.get(k) for k in ("ticker", "name", "d1Pct", "prevClose", "price", "dollarVolM")}
+            why = None
+            if any(n.lower() in (r.get("name") or "").lower() for n in SANCTIONED_NAMES):
+                why = "ABD yaptırım listesindeki şirket; asla işlem yapılmaz"
+            elif r.get("buyout"):
+                why = "satın alma fiyatı gibi yatay seyrediyor; short anlamsız"
+            elif (r.get("prevClose") or 0) < SPIKE_MIN_PRICE:
+                why = f"önceki kapanış {trn(SPIKE_MIN_PRICE, 0)} $'ın altında (çok küçük hisse)"
+            elif (r.get("dollarVolM") or 0) < SPIKE_MIN_DV:
+                why = f"günlük işlem hacmi {trn(SPIKE_MIN_DV, 0)} milyon $'ın altında"
+            elif t in held:
+                why = "bu hisse zaten portföyde"
+            elif slots <= 0:
+                why = f"en fazla {SPIKE_SLOTS} açık sert yükseliş short'u"
+            if why:
+                scan["skipped"].append({**base, "why": why})
+                continue
+            self.quotes_for([t])
+            q = self.quotes.get(t)
+            if not q or q["stale"]:
+                scan["skipped"].append({**base, "why": "güncel fiyat yok"})
+                continue
+            price = q["price"]
+            if q["ssr"]:
+                scan["skipped"].append({**base, "why": "SEC Rule 201: bugün %10'dan fazla düştü, short açılamaz"})
+                self.comply("SEC Rule 201", f"{t}: açığa satış kısıtı",
+                            f"{t} önceki kapanışa göre %10 veya daha fazla düştü; en iyi alış fiyatının altında açığa satış "
+                            "yasak. Sert yükseliş kuralı bu hissede short açmadı.", "ssr")
+                continue
+            if price < SPIKE_MIN_PRICE:
+                scan["skipped"].append({**base, "why": f"fiyat {trn(SPIKE_MIN_PRICE, 0)} $'ın altında"})
+                continue
+            want = min(sleeve * SPIKE_SIZE, max(0.0, sleeve - used))
+            amount, limit = self._allowed_mv(t, "short", want)
+            if amount < MIN_TRADE:
+                scan["skipped"].append({**base, "why": "özsermaye 2.000 $ altında, short açılamaz (FINRA 4210)"
+                                        if limit == "min2000" else "haber kolunda ya da teminatta yer yok"})
+                continue
+            stop = round(price * (1 + SPIKE_STOP), 2)
+            exit_day = self._trading_day_after(self.today, SPIKE_HOLD_DAYS - 1)
+            news = r.get("headline") or self._headline(t)
+            back = (price / r["price"] - 1) * 100 if r.get("price") else None
+            reason = (f"Sert yükseliş short'u: {t} ({r.get('name') or t}) {prev_day} günü {trpct(r['d1Pct'])} yükseldi "
+                      f"({trn(r['prevClose'])} $ → {trn(r['price'])} $)"
+                      + (f"; bugün {trn(price)} $'dan ({trpct(back)}) işlem görüyor" if back is not None else "")
+                      + f". 2019–2026 testinde bu tür sıçramalar sonraki iki haftada genellikle geri verildi. Short açıldı: "
+                      f"kolun %{trn(SPIKE_SIZE * 100, 0)}'i, zarar-kes {trn(stop)} $ (girişin %{trn(SPIKE_STOP * 100, 0)} "
+                      f"üstü), çıkış {exit_day} kapanışında. Ödünç ücreti yıllık %{trn(SPIKE_BORROW * 100, 0)} varsayıldı.")
+            if news and news.get("title"):
+                reason += f" Haber: “{news['title']}” ({news.get('publisher') or 'Yahoo Finance'})."
+            tr = self.open_short(t, amount, price, q["at"], reason, "sert yükseliş short", slip=SPIKE_SLIP,
+                                 locate=f"Zor ödünç (HTB) varsayımı: yıllık %{trn(SPIKE_BORROW * 100, 0)} ödünç ücreti")
+            if not tr:
+                scan["skipped"].append({**base, "why": "emir gerçekleşmedi"})
+                continue
+            if news and news.get("url"):
+                tr["sources"].insert(0, {"title": news["title"], "url": news["url"]})
+            pos = self._pos(t, "short")
+            pos.update(sleeve="event", spike=True, stopMode="event", stopPrice=stop, extremeSinceEntry=price,
+                       exitDate=exit_day, holdDays=SPIKE_HOLD_DAYS, borrowRate=SPIKE_BORROW, slip=SPIKE_SLIP,
+                       name=r.get("name") or t, headline=news,
+                       event={"spikeDate": prev_day, "spikePct": r["d1Pct"], "prevClose": r["prevClose"], "close": r["price"]})
+            used += amount
+            slots -= 1
+            held.add(t)
+            scan["taken"].append({**base, "amount": round(amount, 2), "entry": round(price, 2), "stop": stop,
+                                  "exitDate": exit_day, "headline": news})
+            lines.append(f"Sert yükseliş short'u: {t} {usd(amount)} ({prev_day} günü {trpct(r['d1Pct'])}).")
+        if not rows:
+            lines.append(f"Sert yükseliş short'u: {prev_day} günü %{trn(SPIKE_MOVE * 100, 0)}+ yükselen uygun Nasdaq hissesi "
+                         "yok" + ("" if day else " (hareketliler listesi bulunamadı)") + ".")
+        elif not scan["taken"]:
+            lines.append(f"Sert yükseliş short'u: {len(rows)} aday vardı, kurala uyan işlem çıkmadı.")
+        self.M["spikeScan"] = scan
+        run = next((x for x in reversed(self.L["runs"]) if x.get("date") == self.today), None)
+        if run is not None:
+            run["spikes"] = scan
+            run.setdefault("decisions", []).extend(lines)
+        else:
+            self.notes.extend(lines)
+
     def event_exits(self):
         for p in [p for p in self.P["positions"] if p.get("sleeve") == "event" and p.get("exitDate")]:
             due = self.today > p["exitDate"] or (self.today == p["exitDate"] and self.now.time() >= EVENT_EXIT_AFTER)
             q = self.quotes.get(p["ticker"])
             if not due or not q or q["stale"]:
+                continue
+            if p.get("spike"):
+                self.close(p, p["shares"], q["price"], q["at"],
+                           f"Sert yükseliş short'unun süresi doldu: {p.get('openedAt')} tarihinde açıldı; plan gereği "
+                           f"{p.get('holdDays', SPIKE_HOLD_DAYS)}. işlem gününün kapanışında kapatıldı.", "sert yükseliş çıkış")
                 continue
             self.close(p, p["shares"], q["price"], q["at"],
                        f"Haber şoku işleminin süresi doldu: {p.get('openedAt')} tarihinde açıldı; plan gereği "
@@ -1801,6 +1949,15 @@ class Engine:
                 and not self.quotes["SPY"]["stale"]):
             self.daily()
             kind = "daily"
+            self.margin_check()
+        if (EVENT_SHARE > 0 and SPIKE_AFTER <= self.now.time() < SPIKE_LAST_ENTRY
+                and self.M.get("spikeScanDate") != self.today and not self.quotes["SPY"]["stale"]):
+            try:
+                self.spike_scan()
+                kind = "spike" if kind == "guard" else kind
+            except Exception as e:             # one rule; never block the rest of the run
+                self.M["spikeScanDate"] = self.today
+                self.notes.append(f"Sert yükseliş taraması yapılamadı: {type(e).__name__}: {e}")
             self.margin_check()
         if (EVENT_SHARE > 0 and EVENT_AFTER <= self.now.time() < EVENT_LAST_ENTRY
                 and self.M.get("eventScanDate") != self.today and not self.quotes["SPY"]["stale"]):

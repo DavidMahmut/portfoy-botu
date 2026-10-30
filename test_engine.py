@@ -32,6 +32,17 @@ BASE_V3 = json.loads((ROOT / "test_fixture_v3.json").read_text())   # live ledge
 DEPOSITS = json.loads((ROOT / "deposits.json").read_text())
 RESTORE = json.loads((ROOT / "v3_restore.json").read_text())
 DAY, NXT = "2026-11-02", "2026-11-03"
+SCRATCH = Path(__import__("tempfile").mkdtemp())
+T.MOVERS = SCRATCH / "movers.json"
+SPIKES = {   # Friday 30 Oct: Nasdaq stocks that closed 20 %+ higher (movers.py spikeHistory)
+    "ZAPP": dict(name="Zapp Therapeutics Inc.", prevClose=8.0, price=11.6, d1Pct=45.0, dollarVolM=60.0),
+    "BUYO": dict(name="Buyout Target Corp.", prevClose=20.0, price=27.0, d1Pct=35.0, dollarVolM=80.0, buyout=True),
+    "PENY": dict(name="Penny Bio Inc.", prevClose=2.5, price=4.0, d1Pct=60.0, dollarVolM=30.0),
+    "THIN": dict(name="Thin Trade Inc.", prevClose=9.0, price=12.6, d1Pct=40.0, dollarVolM=4.0),
+    "SMLL": dict(name="Small Jump Inc.", prevClose=10.0, price=12.2, d1Pct=22.0, dollarVolM=50.0),
+    "SSRX": dict(name="Down Again Inc.", prevClose=9.0, price=12.0, d1Pct=33.3, dollarVolM=70.0),
+    "SMCX": dict(name="Semiconductor Manufacturing International Corp.", prevClose=6.0, price=8.4, d1Pct=40.0, dollarVolM=90.0),
+}
 
 
 
@@ -391,6 +402,107 @@ def test_fees_and_commission():
     assert T.commission(1, 100) == 0.35 and T.commission(0.5, 20) == 0.2 and T.commission(200, 1000) == 0.7
     assert T.init_rate("TQQQ", "long") == 0.75 and T.init_rate("AAPL", "long") == 0.5
     print("fees and commission OK")
+
+
+# ---------------------------------------------------------------- tests (v6.1: sert yükseliş short'u)
+def write_movers(final=True, day="2026-10-30"):
+    rows = [{"ticker": t, "gapPct": 5.0, "buyout": False, "headline": None, **v} for t, v in SPIKES.items()]
+    T.MOVERS.write_text(json.dumps({"spikeHistory": {day: {"final": final, "at": day + "T16:25-04:00", "rows": rows}}}))
+
+
+def spike_paths(paths):
+    for t, v in SPIKES.items():
+        paths[t] = [v["prevClose"]] * 259 + [v["price"]]
+
+
+def spike_open(paths, n):
+    """ZAPP opens at 11.00 (a bit below Friday's close); SSRX opens 12 % lower, so SEC Rule 201 blocks a short."""
+    return {"ZAPP": flat_bars(11.0, n=n), "SSRX": flat_bars(10.5, n=n)}
+
+
+def spike_first(hhmm="09:40"):
+    write_movers()
+    return first_daily(hhmm=hhmm, overrides=spike_open, paths_fn=spike_paths)
+
+
+def test_spike_short_entry():
+    L, eng, _ = spike_first()
+    sp = {p["ticker"]: p for p in L["portfolio"]["positions"] if p.get("spike")}
+    scan = L["meta"]["spikeScan"]
+    assert set(sp) == {"ZAPP"}, (set(sp), scan["skipped"])
+    z = sp["ZAPP"]
+    assert z["side"] == "short" and z["sleeve"] == "event" and z["stopMode"] == "event" and z["borrowRate"] == T.SPIKE_BORROW
+    assert abs(z["stopPrice"] - 11.0 * (1 + T.SPIKE_STOP)) < 0.02 and z["exitDate"] == "2026-11-13", (z["stopPrice"], z["exitDate"])
+    assert z["name"] == "Zapp Therapeutics Inc." and z["event"]["spikePct"] == 45.0
+    sl = L["portfolio"]["totalValue"] * T.EVENT_SHARE
+    assert abs(abs(z["marketValue"]) - sl * T.SPIKE_SIZE) < 2, (z["marketValue"], sl)
+    why = {x["ticker"]: x["why"] for x in scan["skipped"]}
+    assert "satın alma" in why["BUYO"] and "5 $" in why["PENY"] and "hacmi" in why["THIN"], why
+    assert "Rule 201" in why["SSRX"] and "yaptırım" in why["SMCX"] and "SMLL" not in scan["candidates"], why
+    tr = [t for t in eng.new_trades if t["rule"] == "sert yükseliş short"]
+    assert len(tr) == 1 and tr[0]["action"] == "SHORT" and "Zor ödünç" in tr[0]["locate"] and "Sert yükseliş" in tr[0]["reason"]
+    assert L["meta"]["engine"] == T.ENGINE and L["portfolio"]["cash"] > 2900
+    print("spike short OK:", tr[0]["ticker"], tr[0]["value"], "| skipped:", why)
+
+
+def test_spike_once_a_day_and_index_later():
+    L, _, paths = spike_first()
+    n = len([t for t in L["trades"] if t["rule"] == "sert yükseliş short"])
+    k = nbars("10:35")
+    eng = run(L, "10:35", FakeData(DAY, paths, bars_for(paths, spike_open(paths, k), n=k)))
+    assert len([t for t in L["trades"] if t["rule"] == "sert yükseliş short"]) == n == 1
+    mv, expo = sleeve(L)
+    assert abs(expo - L["meta"]["index"]["target"]) < 0.31 and regt_ok(L["portfolio"]), (mv, expo)
+    assert any(p.get("spike") for p in L["portfolio"]["positions"]) and L["meta"]["eventScan"]["date"] == DAY
+    print("spike once a day OK; index sleeve built at 10:35:", {k: round(v) for k, v in mv.items()})
+
+
+def test_spike_stop_and_borrow():
+    L, _, paths = spike_first()
+    z = next(p for p in L["portfolio"]["positions"] if p.get("spike"))
+    borrow0 = L["portfolio"].get("costs", {}).get("borrow", 0)
+    paths["ZAPP"] = paths["ZAPP"][:-1] + [11.0]
+    ov = {"ZAPP": flat_bars(11.5, n=2) + [("09:40", 12.0, z["stopPrice"] * 1.02, 11.9, 16.0)]}
+    k = nbars("09:45")
+    eng = run(L, "09:45", FakeData(NXT, paths, bars_for(paths, ov, n=k)), day=NXT)
+    cov = [t for t in eng.new_trades if t["ticker"] == "ZAPP"]
+    assert cov and cov[0]["action"] == "COVER" and cov[0]["rule"] == "sert yükseliş zarar-kesi", cov
+    assert cov[0]["realizedPL"] < 0 and "ZAPP" not in L["meta"].get("cooldown", {})
+    borrow = L["portfolio"]["costs"]["borrow"] - borrow0
+    assert borrow >= round(abs(z["marketValue"]) * T.SPIKE_BORROW / 360, 2) - 0.01, borrow
+    print("spike stop OK:", cov[0]["realizedPL"], "| borrow", round(borrow, 2))
+
+
+def test_spike_time_exit():
+    L, _, paths = spike_first()
+    paths["ZAPP"] = paths["ZAPP"][:-1] + [9.0]
+    n = nbars("15:55")
+    eng = run(L, "15:55", FakeData("2026-11-13", paths, bars_for(paths, {"ZAPP": flat_bars(8.0, n=n)}, n=n)), day="2026-11-13")
+    cov = [t for t in eng.new_trades if t["ticker"] == "ZAPP"]
+    assert cov and cov[0]["rule"] == "sert yükseliş çıkış" and cov[0]["realizedPL"] > 0, cov
+    print("spike timed exit OK:", cov[0]["realizedPL"])
+
+
+def test_spike_missing_list():
+    T.MOVERS.write_text("{}")
+    L, _, _ = first_daily(hhmm="09:40", overrides=spike_open, paths_fn=spike_paths)
+    assert not any(p.get("spike") for p in L["portfolio"]["positions"]) and L["meta"]["spikeScan"]["candidates"] == []
+    print("spike scan without a list OK")
+
+
+def test_event_headline_with_datetime():
+    """yfinance news times arrive as datetime objects; the headline lookup must not break the event scan."""
+    from datetime import timezone
+    keep = N.fetch_yf
+    N.fetch_yf = lambda t: [{"title": f"{t} moves on news", "url": "https://example.com/" + t, "publisher": "Wire",
+                             "at": datetime(2026, 11, 2, 12, 0, tzinfo=timezone.utc), "summary": "", "tags": []}]
+    try:
+        L, _, _ = first_daily(overrides=events, paths_fn=intc_crash)
+    finally:
+        N.fetch_yf = keep
+    E = ev(L)
+    assert {"NKE", "AVGO"} <= set(E) and E["NKE"]["headline"]["at"].startswith("2026-11-02"), E.keys()
+    print("event scan with datetime headlines OK")
 
 
 if __name__ == "__main__":

@@ -33,8 +33,9 @@ BORROW = 0.30
 THRESH = (0.20, 0.30, 0.50)
 STOPS = (0.30, 0.50, 0.75, None)
 HOLDS = (3, 5, 10, 15, 20)              # trading days held (open entries: 1 = cover at the close of the entry day)
-FILTERS = {"r5_dv20": (5.0, 20e6, True), "r5_dv5": (5.0, 5e6, True), "r10_dv20": (10.0, 20e6, True),
-           "r3_dv2": (3.0, 2e6, True), "adj5_dv20": (5.0, 20e6, False)}
+FILTERS = {"r5_dv50": (5.0, 50e6, True), "r5_dv20": (5.0, 20e6, True), "r5_dv5": (5.0, 5e6, True),
+           "r10_dv20": (10.0, 20e6, True), "r3_dv2": (3.0, 2e6, True), "adj5_dv20": (5.0, 20e6, False)}
+LIVE = "fadeUp|r5_dv50|t30|s50|h10"     # the rule the trader uses (sert yükseliş short'u)
 LOOK = max(HOLDS) + 3
 
 
@@ -230,19 +231,21 @@ def main():
     rob = sorted([g for g in grid if g["robust"]], key=lambda g: -(g["tStat"] or 0))
     # the live candidates: next-open short, real price >= 5 $, 20 M $ a day, 30 %+ spike
     cands = {}
-    for kind, entry, th in (("fadeUp", "open1", 0.30), ("fadeUp", "open1", 0.20), ("crashShort", "open2", 0.30)):
-        sel = pick(ev, "r5_dv20", kind, th)
+    for fname, kind, entry, th in (("r5_dv50", "fadeUp", "open1", 0.30), ("r5_dv50", "fadeUp", "open1", 0.50),
+                                   ("r5_dv20", "fadeUp", "open1", 0.30), ("r5_dv20", "fadeUp", "open1", 0.50),
+                                   ("r5_dv20", "crashShort", "open2", 0.30)):
+        sel = pick(ev, fname, kind, th)
         for stop in STOPS:
             for hold in (5, 10, 15):
                 tr = [x for x in (trade(e, -1, entry, stop, hold) for e in sel) if x]
-                key = f"{kind}|t{int(th * 100)}|s{int(stop * 100) if stop else 0}|h{hold}"
+                key = f"{kind}|{fname}|t{int(th * 100)}|s{int(stop * 100) if stop else 0}|h{hold}"
                 s = summarize(tr)
                 c = {"summary": s, "robust": robust(s),
                      "borrow100": brief([x for x in (trade(e, -1, entry, stop, hold, 1.0) for e in sel) if x]),
                      "borrow200": brief([x for x in (trade(e, -1, entry, stop, hold, 2.0) for e in sel) if x]),
                      "portfolio": {f"f{int(f * 100)}_s{sl}": {k: v for k, v in portfolio(tr, f, sl).items() if k != "curve"}
-                                   for f in (0.05, 0.10) for sl in (4, 8)}}
-                if kind == "fadeUp" and hold == 10 and stop in (None, 0.50):
+                                   for f in (0.05, 0.10) for sl in (4, 6, 8)}}
+                if kind == "fadeUp" and hold == 10 and stop in (None, 0.50, 0.75) and th == 0.30:
                     by = lambda f: brief([x for x, e in ((trade(e, -1, entry, stop, hold), e) for e in sel) if x and f(e)])
                     c["slices"] = {"noReverseSplitBefore": by(lambda e: not e["rsBefore"]),
                                    "reverseSplitBefore": by(lambda e: e["rsBefore"]),
@@ -250,7 +253,7 @@ def main():
                                    "price5to20": by(lambda e: e["prevRaw"] < 20), "price20plus": by(lambda e: e["prevRaw"] >= 20),
                                    "dv50plus": by(lambda e: e["dv"] >= 50e6), "move30to50": by(lambda e: e["move"] < 0.5),
                                    "move50plus": by(lambda e: e["move"] >= 0.5)}
-                    c["curve"] = portfolio(tr, 0.05, 8)["curve"]
+                    c["curve"] = portfolio(tr, 0.05, 6)["curve"]
                     c["examples"] = [{k: (round(x[k] * 100, 2) if k in ("ret", "gross", "mae") else x[k])
                                       for k in ("t", "d", "out", "ret", "gross", "mae", "why")}
                                      for x in sorted(tr, key=lambda z: z["d"])[-15:]]
@@ -261,7 +264,8 @@ def main():
            "from": min((e["d"] for e in ev), default=None), "to": max((e["d"] for e in ev), default=None),
            "assumptions": {"costPct": COST * 100, "stopSlipPct": STOP_SLIP * 100, "borrowPctYear": BORROW * 100,
                            "split": MID, "sleeveStart": 1500},
-           "robustCount": len(rob), "robustTop": rob[:30], "candidates": cands, "grid": grid,
+           "robustCount": len(rob), "robustTop": rob[:30], "live": LIVE, "candidates": cands,
+           "grid": [g for g in grid if g["filter"] in ("r5_dv50", "r5_dv20", "adj5_dv20")],
            "notes": "Günlük veriler; bugün Nasdaq'ta işlem gören hisseler (hayatta kalma yanılgısı var, short tarafının "
                     "aleyhine). Fiyat filtresi o gün gerçekten işlem gören fiyatla (ters bölünme düzeltmesi geri alındı). "
                     "Satın alma haberiyle yükselip yatay kalan hisseler hariç. Sağlam = 60+ işlem, iki yarıda da pozitif, "
@@ -272,7 +276,7 @@ def main():
     for k, c in cands.items():
         s = c["summary"]
         print(k, s.get("trades"), s.get("avgPct"), s.get("winRatePct"), s.get("tStat"), s.get("worstPct"), c["robust"],
-              c["portfolio"]["f5_s8"].get("cagrPct"), c["portfolio"]["f5_s8"].get("maxDrawdownPct"))
+              c["portfolio"]["f5_s6"].get("cagrPct"), c["portfolio"]["f5_s6"].get("maxDrawdownPct"))
     return 0
 
 

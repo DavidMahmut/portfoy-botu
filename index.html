@@ -451,9 +451,15 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
     <div class="sec-head"><h2 id="h-ev">Haber şoku kolu</h2><span class="small muted" id="evAsOf">—</span></div>
     <div class="panel" style="display:flex;flex-direction:column;gap:14px">
       <p class="small" id="evRule" style="margin:0;max-width:90ch"></p>
-      <div><h3 style="font-size:15px;margin:0 0 8px">Açık haber işlemleri</h3><div id="evOpen" class="small muted">—</div></div>
-      <div><h3 style="font-size:15px;margin:0 0 8px">Bugünün taraması</h3><div id="evScan" class="small muted">—</div></div>
+      <div><h3 style="font-size:15px;margin:0 0 8px">Açık işlemler (haber kolu)</h3><div id="evOpen" class="small muted">—</div></div>
+      <div><h3 style="font-size:15px;margin:0 0 8px">Bugünün açılış boşluğu taraması</h3><div id="evScan" class="small muted">—</div></div>
       <p class="small muted" id="evTest" style="margin:0;max-width:90ch"></p>
+      <div id="sert-yukselis" style="border-top:1px solid var(--line,#8883);padding-top:12px;display:flex;flex-direction:column;gap:10px">
+        <h3 style="font-size:15px;margin:0">Sert yükseliş short'u (aynı kolun ikinci tetiği)</h3>
+        <p class="small" id="spRule" style="margin:0;max-width:90ch"></p>
+        <div id="spScan" class="small muted">—</div>
+        <p class="small muted" id="spTest" style="margin:0;max-width:90ch"></p>
+      </div>
     </div>
   </section>
 
@@ -846,7 +852,7 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
     else { var ul=el("ul",{class:"dip-ev"}); op.forEach(function(x){
       var h=x.headline, ev=x.event||{};
       ul.appendChild(el("li",null, el("div",null, el("b",{text:x.ticker}), el("span",{text:" · "+(x.side==="short"?"SHORT":"LONG")+" "+usd(Math.abs(x.marketValue))+" · giriş "+fmtNum(x.avgCost,2)+" $ · zarar-kes "+fmtNum(x.stopPrice,2)+" $ · çıkış "+dShort(x.exitDate)+" · "+pct(x.unrealizedPct)})),
-        el("div",{class:"muted",text:"Açılış boşluğu "+pct(ev.gapPct)+", ilk saat "+pct(ev.firstHourPct)}),
+        el("div",{class:"muted",text:x.spike? "Sert yükseliş short'u: "+dShort(ev.spikeDate)+" günü "+pct(ev.spikePct)+" yükselmişti ("+fmtNum(ev.prevClose,2)+" $ → "+fmtNum(ev.close,2)+" $); ödünç ücreti yıllık %"+fmtNum((x.borrowRate||0)*100,0) : "Açılış boşluğu "+pct(ev.gapPct)+", ilk saat "+pct(ev.firstHourPct)}),
         h? el("div",null, el("a",{href:h.url,target:"_blank",rel:"noopener",text:h.title}), el("span",{class:"muted",text:" · "+(h.publisher||"")})) : null)); });
       o.appendChild(ul); }
     var sc=$("evScan"); clear(sc);
@@ -860,6 +866,25 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
     if(T&&T.variants){ var v=T.variants.filter(function(x){return x.gap===0.08&&x.mode==="rev"&&x.hold===2;})[0];
       if(v) tx.textContent="Test ("+dLong(T.from)+" – "+dLong(T.to)+", "+T.tickers+" hisse): bu kuralla "+v.all.trades+" işlem, kazanma oranı %"+fmtNum(v.all.winRatePct,1)+", işlem başına ortalama "+pct(v.all.avgPct)+"; 3.000 $'lık kol için "+pct(v.sleeve.returnPct)+", en kötü düşüş "+pct(v.sleeve.maxDrawdownPct)+". İlk yarı "+pct(v.sleeveFirstHalf.returnPct)+", ikinci yarı "+pct(v.sleeveSecondHalf.returnPct)+". Kâr garantisi yoktur. Ayrıntı: event_results.json."; }
     else tx.textContent="";
+    renderSpikes();
+  }
+  function renderSpikes(){
+    var M=S.meta||{}, R=(S.config||{}).spikeRule||null, scan=M.spikeScan||null;
+    $("spRule").textContent=R? R.text : "Kural yükleniyor…";
+    var sc=$("spScan"); clear(sc);
+    if(!scan) sc.textContent="Tarama her işlem günü açılıştan hemen sonra (09:35 ET), bir önceki günün %20+ hareket listesinden yapılır.";
+    else if(!(scan.candidates||[]).length) sc.textContent=dShort(scan.date)+": "+dShort(scan.spikeDate)+" günü kurala uyacak kadar yükselen Nasdaq hissesi yoktu.";
+    else { var ul=el("ul",{class:"dip-ev"});
+      (scan.taken||[]).forEach(function(r){ ul.appendChild(el("li",null, el("b",{text:r.ticker}), el("span",{text:" · "+dShort(scan.spikeDate)+" günü "+pct(r.d1Pct)+" → SHORT "+usd(r.amount)+", giriş "+fmtNum(r.entry,2)+" $, zarar-kes "+fmtNum(r.stop,2)+" $, çıkış "+dShort(r.exitDate)}))); });
+      (scan.skipped||[]).forEach(function(r){ ul.appendChild(el("li",{class:"muted"}, el("b",{text:r.ticker}), el("span",{text:" · "+pct(r.d1Pct)+" → girilmedi: "+r.why}))); });
+      sc.appendChild(ul); }
+    var T=S.spTest, tx=$("spTest"), c=T&&R&&T.candidates&&T.candidates[R.testKey];
+    if(c&&c.summary){ var s=c.summary, pf=c.portfolio&&c.portfolio[R.testPortfolio];
+      tx.textContent="Test ("+dLong(T.from)+" – "+dLong(T.to)+", bugün Nasdaq'ta işlem gören "+T.tickers+" hisse): "+s.trades+" işlem, kazanma oranı %"+fmtNum(s.winRatePct,1)
+        +", işlem başına ortalama "+pct(s.avgPct)+" (ödünç ücreti yıllık %30 ve maliyetler düşülmüş; %100 ödünç ücretiyle "+pct(c.borrow100.avgPct)+"). İlk yarı (2019–2022) "+pct(s.firstHalfAvgPct)+", ikinci yarı (2023–2026) "+pct(s.secondHalfAvgPct)
+        +". En kötü tek işlem "+pct(s.worstPct)+"."+(pf? " Kol simülasyonu (işlem başına %"+fmtNum(R.size*100,0)+", en fazla "+R.slots+" açık): yıllık "+pct(pf.cagrPct)+", en kötü düşüş "+pct(pf.maxDrawdownPct)+"." : "")
+        +" Batan şirketler veride yok; küçük hisselerde ödünç bulunamayabilir. Kâr garantisi yoktur. Ayrıntı: spike_results.json.";
+    } else tx.textContent="";
   }
   function renderAlloc(){
     var p=S.portfolio; var bar=$("allocBar"), list=$("allocList"), cap=$("expCap"); clear(bar); clear(list); clear(cap);
@@ -1257,11 +1282,15 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
     fetch("event_results.json?t="+Date.now(),{cache:"no-store"}).then(function(r){ if(!r.ok) throw 0; return r.json(); })
       .then(function(x){ S.evTest=x; }, function(){ S.evTest=null; }).then(function(){ try{ renderEvents(); }catch(e){ console.error(e); } });
   }
+  function loadSp(){
+    fetch("spike_results.json?t="+Date.now(),{cache:"no-store"}).then(function(r){ if(!r.ok) throw 0; return r.json(); })
+      .then(function(x){ S.spTest=x; }, function(){ S.spTest=null; }).then(function(){ try{ renderSpikes(); }catch(e){ console.error(e); } });
+  }
   function loadMovers(){
     fetch("movers.json?t="+Date.now(),{cache:"no-store"}).then(function(r){ if(!r.ok) throw 0; return r.json(); })
       .then(function(x){ S.movers=x; }, function(){ S.movers=null; }).then(function(){ try{ renderMovers(); }catch(e){ console.error(e); } });
   }
-  load(); loadExt(); loadNews(); loadDip(); loadEv(); loadMovers(); setInterval(load, 60000); setInterval(loadMovers, 300000); setInterval(loadExt, 60000); setInterval(loadNews, 300000);
+  load(); loadExt(); loadNews(); loadDip(); loadEv(); loadSp(); loadMovers(); setInterval(load, 60000); setInterval(loadMovers, 300000); setInterval(loadExt, 60000); setInterval(loadNews, 300000);
 })();
 </script>
 </body>
