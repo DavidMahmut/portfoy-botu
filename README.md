@@ -24,7 +24,7 @@ Sanal bir **ABD kredili hesabında iki yönlü (long ya da short) işlem yapan**
 
 12 Ekim 13:01'deki v2 işlemleri (3x'e yakın kaldıraç) Reg T alım gücünü aştığı için gerçek bir hesapta reddedilirdi; v3'e geçişte iptal edildi, pozisyonlar o anın öncesine döndürüldü (`v3_restore.json`) ve ilk işlemlere IBKR komisyonu geriye dönük eklendi.
 
-## 3 aylık karne (v5: 23 Ekim 2026'dan itibaren 3 ay)
+## 3 aylık karne (v6: 2 Kasım 2026'dan itibaren 3 ay)
 
 Gerçek paraya geçmeden önce bot üç ay sanal çalışır. Sayfadaki karne her çalışmada güncellenir (`ledger.json` → `scorecard`): zaman ağırlıklı getiri ve SPY farkı, en büyük düşüş, kazanan işlem oranı, kâr faktörü, aylık getiriler ve botun kaç işlem gününde çalıştığı. Şartlar: SPY'ı masraflar düşüldükten sonra geçmek, en büyük düşüşün %20'den az olması, teminat çağrısı olmaması ve botun işlem günlerinin en az %95'inde çalışması.
 
@@ -32,15 +32,15 @@ Gerçek paraya geçmeden önce bot üç ay sanal çalışır. Sayfadaki karne he
 
 `watch.py` (`.github/workflows/watch.yml`) piyasa öncesi (04:00–09:30 ET) ve sonrası (16:00–20:00 ET) 30 dakikada bir açık pozisyonların seans dışı fiyatını Yahoo Finance'ten alır ve `extended.json`'a yazar; sayfada "Seans dışı izleme" panelinde gösterilir. Yalnızca izlemedir: bot bu saatlerde işlem yapmaz.
 
-## Strateji (v5, 23 Ekim 2026'dan itibaren): iki yönlü, en fazla 3x
+## Strateji (v6, 2 Kasım 2026'dan itibaren): yeni 3.000 $ hesap, iki yönlü
 
-1. **Yön (her gün, dünkü kapanışla):** SPY 200 günlük ortalamasının üstündeyse yön yukarı. Altındaysa ve 50 günlük ortalaması da 200 günlüğün altındaysa yön aşağı. Arada kalırsa kararsız (nakit).
-2. **Endeks kolu (%50):** hedef maruziyet = %25 ÷ QQQ'nun 20 günlük yıllık oynaklığı, en fazla 3x. Yukarıda QQQ + 3x fon TQQQ, aşağıda −3x ters fon SQQQ. Hepsi nakitle alınır (kredi yok). Hedefle fark 0,3x'ten küçükse işlem yapılmaz.
-3. **Momentum sepeti (%50):** SPY 200 günlük ortalamasının üstündeyken 12-1 ay getirisi en yüksek, 200 günlük ortalamasının üstündeki 10 hisse, eşit ağırlık, sektör başına en fazla 3. Ayın ilk işlem günü yenilenir; ilk 20'de kalan tutulur. SPY ortalamanın altına inerse sepet nakde geçer.
-4. **Felaket zarar-kesi (sepet):** maliyetin %25 aleyhine; sonra 30 gün o hisseye girilmez. Endeks kolunda fiyat zarar-kesi yok, risk büyüklükle yönetilir.
-5. **Sınırlar:** toplam ekonomik maruziyet en fazla 2x (3x × %50 + 1x × %50); hesap düzeyinde 3x, Reg T ve FINRA 4210 her çalışmada kontrol edilir.
+Önceki hesap (8 Ekim – 30 Ekim, 3.000 $ yatırıldı, son değer yaklaşık 2.553 $) kapatıldı; özeti `ledger.json` → `previousAccounts`, tam kaydı `archive/` klasöründe.
 
-**Neden değişti:** v4 (kaldıraçsız, yalnızca long) 15–23 Ekim'de SPY ile başa baş gitti ama düşüşten kazanamıyordu; trend filtresi SPY'a baktığı için Nasdaq ve çipler düşerken tam yatırımda kaldı. İki yönlü, oynaklık hedefli varyantlar `backtest.py` ile 2018–2026 günlük verilerle karşılaştırıldı (`backtest_results.json`): v5 yıllık %20,4, en kötü düşüş %−31 (3.000 $ → 15.315 $); v4 %18,7 ve %−26; SPY %14,2 ve %−34. Yönü QQQ'nun kendi trendinden almak (%−40'a varan düşüş) ve sepette zayıf hisseleri short'lamak (%−45 ile %−58) daha kötü çıktığı için kullanılmadı. Aynı kurallar yalnızca long olsaydı yıllık %21,4 ve %−29,5 olurdu: short tarafı 2022 gibi uzun düşüşlerde korur, hızlı toparlanmalarda maliyet yaratır. Uyarı: hisse listesi bugünün başarılı şirketlerinden oluştuğu için sepet sonuçları iyimserdir; 3x fonlar oynak ve yatay piyasada değer kaybeder.
+1. **Endeks kolu (%50):** S&P 500 (SPY) 200 günlük ortalamasının üstündeyse long, altındaysa ve 50 günlük de 200 günlüğün altındaysa short, arada nakit. Büyüklük %25 ÷ QQQ'nun 20 günlük oynaklığı, en fazla 3x; QQQ + 3x fon TQQQ ya da −3x ters fon SQQQ, hepsi nakitle.
+2. **Haber şoku kolu (%50):** her gün 10:30'da 166 büyük hisse taranır. Önceki kapanışa göre en az %8 boşlukla açılan ve ilk saatte bu tepkinin tersine dönen hisseye o yönde girilir: sert düşüp toparlanana long, sert yükselip sönene short. Zarar-kes ilk saatin öbür ucu, büyüklük zarar-keste kaybın kolun yaklaşık %1'i olacağı şekilde (en fazla kolun %25'i), aynı anda en fazla 4 işlem, çıkış 2 işlem günü sonra kapanışta. Haberin yönünde devam edenlere girilmez. SEC Rule 201 nedeniyle %10'dan fazla düşmüş hisseye short açılmaz.
+3. **Momentum sepeti kapalı** (yalnızca long çalışıyordu).
+
+**Test (`event_study.py`, sonuç `event_results.json`, Aralık 2023 – Ekim 2026, 164 hisse, 5.669 haber günü):** haberin yönünde girmek zarar ettirdi (%3+ boşlukta işlem başına ortalama %−0,23). Yalnızca %8+ şoklarda ilk saatteki dönüşün yönünde girmek işlem başına ortalama %+0,74 getirdi (386 işlem, kazanma oranı %47); 3.000 $'lık kol için yaklaşık 3 yılda %+33, en kötü düşüş %−9; dönemin iki yarısında da kârlı, ama ikinci yarıda işlem başına kazanç azaldı. Kâr garantisi yoktur.
 
 ### Nasdaq düşüş takibi (29 Ekim 2026'dan itibaren)
 

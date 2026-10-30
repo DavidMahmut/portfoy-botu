@@ -333,6 +333,7 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
   <nav class="tabs" aria-label="Bölümler">
     <a href="#ozet">Özet</a>
     <a href="#nasdaq">Nasdaq düşüş takibi</a>
+    <a href="#haber-kolu">Haber şoku</a>
     <a href="#karne">Karne</a>
     <a href="#haberler">Haberler</a>
     <a href="#pozisyonlar">Pozisyonlar</a>
@@ -433,6 +434,16 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
     </div>
     <p class="small muted" id="dipStudy" style="margin:0"></p>
   </aside>
+
+  <section id="haber-kolu" aria-labelledby="h-ev">
+    <div class="sec-head"><h2 id="h-ev">Haber şoku kolu</h2><span class="small muted" id="evAsOf">—</span></div>
+    <div class="panel" style="display:flex;flex-direction:column;gap:14px">
+      <p class="small" id="evRule" style="margin:0;max-width:90ch"></p>
+      <div><h3 style="font-size:15px;margin:0 0 8px">Açık haber işlemleri</h3><div id="evOpen" class="small muted">—</div></div>
+      <div><h3 style="font-size:15px;margin:0 0 8px">Bugünün taraması</h3><div id="evScan" class="small muted">—</div></div>
+      <p class="small muted" id="evTest" style="margin:0;max-width:90ch"></p>
+    </div>
+  </section>
 
   <section id="karne" aria-labelledby="h-karne">
     <div class="sec-head"><h2 id="h-karne">3 aylık karne</h2><span class="small muted" id="kRange">12 Ekim 2026 – 12 Ocak 2027</span></div>
@@ -579,7 +590,9 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
     var total=p.totalValue, pl=isNum(p.totalPL)?p.totalPL:total-dep, twr=isNum(p.twrPct)?p.twrPct:pl/dep*100;
     $("total").textContent=usd(total);
     var d=$("pl"); d.className="delta "+cls(pl); d.textContent=sgnUsd(pl)+"  "+pct(twr)+"  toplam";
-    $("since2").textContent="Gerçekleşen kâr/zarar: "+sgnUsd(p.realizedPL||0)+" · Getiri yüzdesi zaman ağırlıklıdır (para eklemeleri getiri sayılmaz).";
+    var pa=(S.prev||[]).slice(-1)[0];
+    $("since2").textContent="Gerçekleşen kâr/zarar: "+sgnUsd(p.realizedPL||0)+" · Getiri yüzdesi zaman ağırlıklıdır (para eklemeleri getiri sayılmaz)."
+      +(pa? " Önceki hesap ("+dShort(pa.start)+" – "+dShort(pa.end)+"): "+usd(pa.invested)+" yatırıldı, son değer "+usd(pa.endValue)+" ("+pct(pa.twrPct)+"; SPY "+pct(pa.spyTwrPct)+"). Tam kaydı depoda: "+(pa.archive||"archive/")+"." : "");
     var reg=(S.meta&&S.meta.regime)||{}, bm=c.brokerModel||{};
     var rate=isNum(bm.marginRate)?" · faiz yıllık %"+fmtNum(bm.marginRate*100,2):"";
     if(p.cash<0) setKpi("k-cash","Kredi borcu",usd(-p.cash),"Aracı kurumdan borç"+rate,"down");
@@ -772,6 +785,30 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
         +"; yalnızca %20 düşüşte alıp zirvede satan "+pct(b.cagrPct)+" / "+pct(b.maxDrawdownPct)+" (zamanın %"+fmtNum(b.inMarketPct,0)
         +"'inde piyasada); v5 endeks kolu "+pct(c.cagrPct)+" / "+pct(c.maxDrawdownPct)+". Ayrıntı: dip_results.json.";
     } else st.textContent="";
+  }
+  function renderEvents(){
+    var M=S.meta||{}, scan=M.eventScan||null, P=S.portfolio||{}, c=S.config||{};
+    $("evRule").textContent="Kural: bir hisse haberle önceki kapanışa göre en az %8 boşlukla açılır ve ilk saatte (09:30–10:30 ET) piyasa bu tepkinin tersine dönerse o yöne girilir: sert düşüp toparlanana long, sert yükselip sönene short. 2 işlem günü tutulur; zarar-kes ilk saatin öbür ucunun hemen ötesinde, büyüklük zarar-keste kaybın kolun yaklaşık %1'i olacağı şekilde. Haberin yönünde devam edenlere girilmez. %10'dan fazla düşmüş hisseye SEC Rule 201 yüzünden short açılmaz. Paranın yarısı bu kolda.";
+    $("evAsOf").textContent=scan? "Son tarama "+dShort(scan.at)+" "+tm(scan.at)+" · "+(scan.checked||0)+" hisse" : "Tarama her işlem günü 10:30 ET'den sonra";
+    var op=(P.positions||[]).filter(function(x){return x.sleeve==="event";}), o=$("evOpen"); clear(o);
+    if(!op.length) o.textContent="Açık haber işlemi yok.";
+    else { var ul=el("ul",{class:"dip-ev"}); op.forEach(function(x){
+      var h=x.headline, ev=x.event||{};
+      ul.appendChild(el("li",null, el("div",null, el("b",{text:x.ticker}), el("span",{text:" · "+(x.side==="short"?"SHORT":"LONG")+" "+usd(Math.abs(x.marketValue))+" · giriş "+fmtNum(x.avgCost,2)+" $ · zarar-kes "+fmtNum(x.stopPrice,2)+" $ · çıkış "+dShort(x.exitDate)+" · "+pct(x.unrealizedPct)})),
+        el("div",{class:"muted",text:"Açılış boşluğu "+pct(ev.gapPct)+", ilk saat "+pct(ev.firstHourPct)}),
+        h? el("div",null, el("a",{href:h.url,target:"_blank",rel:"noopener",text:h.title}), el("span",{class:"muted",text:" · "+(h.publisher||"")})) : null)); });
+      o.appendChild(ul); }
+    var sc=$("evScan"); clear(sc);
+    if(!scan) sc.textContent="Henüz tarama yok.";
+    else if(!(scan.gaps||[]).length) sc.textContent=dShort(scan.date)+": "+(scan.checked||0)+" hissede %8 veya daha büyük açılış boşluğu yok.";
+    else { var ul2=el("ul",{class:"dip-ev"});
+      (scan.taken||[]).forEach(function(r){ ul2.appendChild(el("li",null, el("b",{text:r.ticker}), el("span",{text:" · boşluk "+pct(r.gapPct)+", ilk saat "+pct(r.firstHourPct)+" → "+(r.side==="short"?"SHORT":"LONG")+" "+usd(r.amount)}))); });
+      (scan.skipped||[]).forEach(function(r){ ul2.appendChild(el("li",{class:"muted"}, el("b",{text:r.ticker}), el("span",{text:" · boşluk "+pct(r.gapPct)+", ilk saat "+pct(r.firstHourPct)+" → girilmedi: "+r.why}))); });
+      sc.appendChild(ul2); }
+    var T=S.evTest, tx=$("evTest");
+    if(T&&T.variants){ var v=T.variants.filter(function(x){return x.gap===0.08&&x.mode==="rev"&&x.hold===2;})[0];
+      if(v) tx.textContent="Test ("+dLong(T.from)+" – "+dLong(T.to)+", "+T.tickers+" hisse): bu kuralla "+v.all.trades+" işlem, kazanma oranı %"+fmtNum(v.all.winRatePct,1)+", işlem başına ortalama "+pct(v.all.avgPct)+"; 3.000 $'lık kol için "+pct(v.sleeve.returnPct)+", en kötü düşüş "+pct(v.sleeve.maxDrawdownPct)+". İlk yarı "+pct(v.sleeveFirstHalf.returnPct)+", ikinci yarı "+pct(v.sleeveSecondHalf.returnPct)+". Kâr garantisi yoktur. Ayrıntı: event_results.json."; }
+    else tx.textContent="";
   }
   function renderAlloc(){
     var p=S.portfolio; var bar=$("allocBar"), list=$("allocList"), cap=$("expCap"); clear(bar); clear(list); clear(cap);
@@ -1127,6 +1164,7 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
 
   function renderAll(){
     try{ renderDip(); }catch(e){ console.error(e); }
+    try{ renderEvents(); }catch(e){ console.error(e); }
     try{ renderSummary(); renderRisk(); renderExt(); renderScore(); renderNews(); renderAlloc(); renderPositions(); renderTrades(); renderRuns(); renderLaw(); renderRules(); renderChart(); }
     catch(e){ console.error(e); }
   }
@@ -1141,7 +1179,7 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
     .then(function(L){
       var sig=(L.meta&&L.meta.lastRunAt||"")+"|"+(L.trades||[]).length+"|"+(L.compliance||[]).length; if(sig===lastSig) { renderRisk(); return; } lastSig=sig;
       S.config=L.config||null; S.portfolio=L.portfolio||null; S.meta=L.meta||{};
-      S.trades=L.trades||[]; S.snapshots=L.snapshots||[]; S.runs=L.runs||[]; S.compliance=L.compliance||[]; S.tax=L.tax||{}; S.score=L.scorecard||null;
+      S.prev=L.previousAccounts||[]; S.trades=L.trades||[]; S.snapshots=L.snapshots||[]; S.runs=L.runs||[]; S.compliance=L.compliance||[]; S.tax=L.tax||{}; S.score=L.scorecard||null;
       var days=Object.keys(L.checks||{}).sort(); var d=days[days.length-1];
       S.checks= d? {date:d, entries:L.checks[d]} : null;
       renderAll();
@@ -1164,7 +1202,11 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
     fetch("dip_results.json?t="+Date.now(),{cache:"no-store"}).then(function(r){ if(!r.ok) throw 0; return r.json(); })
       .then(function(x){ S.dip=x; }, function(){ S.dip=null; }).then(function(){ try{ renderDip(); }catch(e){ console.error(e); } });
   }
-  load(); loadExt(); loadNews(); loadDip(); setInterval(load, 60000); setInterval(loadExt, 60000); setInterval(loadNews, 300000);
+  function loadEv(){
+    fetch("event_results.json?t="+Date.now(),{cache:"no-store"}).then(function(r){ if(!r.ok) throw 0; return r.json(); })
+      .then(function(x){ S.evTest=x; }, function(){ S.evTest=null; }).then(function(){ try{ renderEvents(); }catch(e){ console.error(e); } });
+  }
+  load(); loadExt(); loadNews(); loadDip(); loadEv(); setInterval(load, 60000); setInterval(loadExt, 60000); setInterval(loadNews, 300000);
 })();
 </script>
 </body>

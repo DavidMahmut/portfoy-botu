@@ -112,3 +112,11 @@ for _g, _ts in {
 
 def group_of(t):
     return GROUP.get(t, "other")
+
+
+# News-shock (event) sleeve: the stocks above plus liquid large caps from other sectors (same list as event_study.py)
+EVENT_EXTRA = ("ABNB ADI ADP AFRM AMGN AXP BAC BBY BIIB BKNG BMY C CCL CHWY CMCSA CMG COF CSCO CVNA CVS DAL DECK DHR DIS "
+               "DKNG DOCU DXCM EBAY ENPH ETSY EXPE F FDX FSLR GILD GM HON HPE HPQ IBM INTU KO LCID LOW LULU LVS LYFT MAR "
+               "MCHP MDT MMM MO MRK MRNA MSTR NCLH NEE ON ORLY PEP PFE PG PINS PYPL RBLX RCL REGN RIVN ROKU SCHW SNAP SPOT "
+               "STX T TGT TMO TTD TXN U UAL ULTA UPS USB VZ WBD WDAY WDC WFC WYNN YUM ZS").split()
+EVENT_UNIVERSE = sorted({t for t in UNIVERSE if t not in ETFS} | set(EVENT_EXTRA))

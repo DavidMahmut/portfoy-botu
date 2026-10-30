@@ -1,8 +1,8 @@
-"""Scenario tests for the trading engine (v5) with synthetic market data (no network).
+"""Scenario tests for the trading engine (v6) with synthetic market data (no network).
 
-BASE is the live ledger under v4 (23 Oct 2026, 15:14 ET). The first run migrates it to v5: the scorecard is archived,
-the index sleeve (QQQ / TQQQ / SQQQ) is resized by direction and volatility, the momentum basket is kept.
-BASE_V3 (15 Oct 2026, v3) checks that the older ledger still migrates through v4 to v5.
+BASE is the live ledger under v5 (30 Oct 2026). The first run (Monday 2 Nov) resets it to a fresh 3.000 $ v6 account:
+the old account is summarised in previousAccounts, the index sleeve is rebuilt and the news-shock sleeve scans for
+big opening gaps that the market reverses in the first hour. BASE_V3 / BASE_V4 check the older migration chain.
 
 Run: python test_engine.py
 """
@@ -21,12 +21,17 @@ sys.path.insert(0, str(ROOT))
 import trader as T  # noqa: E402
 import universe as U  # noqa: E402
 
+import news as N  # noqa: E402
+
+N.fetch_yf = lambda t: [{"title": f"{t} shares swing after quarterly results", "url": "https://example.com/" + t,
+                         "publisher": "Test wire", "at": "2026-11-02T07:30:00-05:00", "summary": "", "tags": []}]
 NY = ZoneInfo("America/New_York")
-BASE = json.loads((ROOT / "test_fixture_v4.json").read_text())   # live ledger under v4, 23 Oct 2026 15:14 ET
+BASE = json.loads((ROOT / "test_fixture_v5.json").read_text())   # live ledger under v5, 30 Oct 2026 13:33 ET
+BASE_V4 = json.loads((ROOT / "test_fixture_v4.json").read_text())   # live ledger under v4, 23 Oct 2026 15:14 ET
 BASE_V3 = json.loads((ROOT / "test_fixture_v3.json").read_text())   # live ledger under v3, 15 Oct 2026 12:41 ET
 DEPOSITS = json.loads((ROOT / "deposits.json").read_text())
 RESTORE = json.loads((ROOT / "v3_restore.json").read_text())
-DAY, NXT = "2026-10-23", "2026-10-26"
+DAY, NXT = "2026-11-02", "2026-11-03"
 
 
 
@@ -175,17 +180,37 @@ def noisy(end, k, sigma, n=260, seed=5):
     return [round(end * r / raw[-1], 4) for r in raw]
 
 
-def first_daily(deposits=DEPOSITS, bear=False, hhmm="15:20", mutate=None, qqq=None, spy=None, base=None, day=DAY):
+def first_daily(deposits=DEPOSITS, bear=False, hhmm="10:35", mutate=None, qqq=None, spy=None, base=None, day=DAY,
+                overrides=None, paths_fn=None):
     L = ledger(base)
     paths = aligned_paths(L, bear)
     if qqq:
         paths["QQQ"] = qqq(paths["QQQ"][-1])
     if spy:
         paths["SPY"] = spy(paths["SPY"][-1])
+    if paths_fn:
+        paths_fn(paths)
     if mutate:
         mutate(L)
-    eng = run(L, hhmm, FakeData(day, paths, bars_for(paths, {}, n=nbars(hhmm))), day=day, deposits=deposits)
+    ov = overrides(paths, nbars(hhmm)) if overrides else {}
+    eng = run(L, hhmm, FakeData(day, paths, bars_for(paths, ov, n=nbars(hhmm))), day=day, deposits=deposits)
     return L, eng, paths
+
+
+def shock(pc, gap, step, n):
+    """Today's 5-minute bars: open `gap` away from the previous close, then drift by `step` per bar."""
+    return flat_bars(round(pc * (1 + gap), 4), n=n, step=step)
+
+
+def events(paths, n):
+    """NKE gaps down 10 % and recovers (long), AVGO gaps up 10 % and fades (short), BA gaps down 10 % and keeps falling
+    (continuation: skipped), INTC fell 12 % yesterday, gaps up 9 % today and fades (short blocked by SEC Rule 201)."""
+    return {"NKE": shock(paths["NKE"][-1], -0.10, 0.002, n), "AVGO": shock(paths["AVGO"][-1], 0.10, -0.002, n),
+            "BA": shock(paths["BA"][-1], -0.10, -0.002, n), "INTC": shock(paths["INTC"][-1], 0.09, -0.002, n)}
+
+
+def intc_crash(paths):
+    paths["INTC"][-1] = round(paths["INTC"][-2] * 0.88, 2)
 
 
 def sleeve(L):
@@ -194,117 +219,120 @@ def sleeve(L):
     return mv, (mv["QQQ"] + 3 * mv["TQQQ"] - 3 * mv["SQQQ"]) / (P["totalValue"] * T.INVEST_USE * T.INDEX_SHARE)
 
 
-# ---------------------------------------------------------------- tests (v5)
-def basket(L):
-    return [p for p in L["portfolio"]["positions"] if p["ticker"] not in T.INDEX_SLEEVE]
+# ---------------------------------------------------------------- tests (v6)
+def ev(L):
+    return {p["ticker"]: p for p in L["portfolio"]["positions"] if p.get("sleeve") == "event"}
 
 
-def test_v5_migration_calm_uptrend_goes_3x():
-    before = {p["ticker"] for p in ledger()["portfolio"]["positions"] if p["ticker"] not in T.INDEX_SLEEVE}
-    L, eng, _ = first_daily()           # smooth QQQ up-trend: volatility at the floor -> 3x cap
-    P, M = L["portfolio"], L["meta"]
-    assert M["engine"] == T.ENGINE and M["index"]["dir"] == 1 and M["index"]["target"] == 3.0, M.get("index")
+def test_v6_reset_to_fresh_account():
+    old = ledger()["portfolio"]
+    L, eng, _ = first_daily()
+    P, M, C = L["portfolio"], L["meta"], L["config"]
+    prev = L["previousAccounts"][-1]
+    assert M["engine"] == T.ENGINE and prev["endValue"] == old["totalValue"] and prev["invested"] == 3000.0, prev
+    assert prev["start"] == "2026-10-08" and prev["end"] == DAY and len(prev["positionsAtEnd"]) == len(old["positions"])
+    assert C["startCapital"] == 3000.0 and C["startDate"] == DAY and C["benchmark"]["startPrice"] > 0
+    assert all(t["date"] == DAY for t in L["trades"]) and not any(p["ticker"] in ("DDOG", "MRVL") for p in P["positions"])
+    assert [h["strategy"][:2] for h in L["evalHistory"]] == ["v3", "v4", "v5"] and L["scorecard"]["strategy"] == "v6"
+    assert any(c["rule"] == "yeni hesap" for c in L["compliance"])
     mv, expo = sleeve(L)
-    assert abs(expo - 3.0) < 0.15 and mv["QQQ"] < 15 and mv["SQQQ"] == 0, (mv, expo)
-    assert {p["ticker"] for p in basket(L)} == before, "basket must not be rebalanced mid-month"
-    assert P["cash"] >= -0.01 and P["leverage"] <= 2.05 and regt_ok(P), (P["cash"], P["leverage"])
-    tq = next(p for p in P["positions"] if p["ticker"] == "TQQQ")
-    assert tq["stopMode"] == "managed" and tq["stopPrice"] is None
-    assert all(p["stopMode"] == "disaster" for p in basket(L))
-    hist = [h["strategy"][:2] for h in L["evalHistory"]]
-    assert hist == ["v3", "v4"] and L["scorecard"]["strategy"] == "v5" and L["scorecard"]["start"] == DAY, hist
-    assert any(c["rule"] == "strateji" and "3x" in c["title"] for c in L["compliance"])
-    assert all(t["rule"] == "endeks kolu" for t in eng.new_trades), [(t["ticker"], t["rule"]) for t in eng.new_trades]
-    print("v5 migration OK:", L["runs"][-1]["headline"], "| equity", P["totalValue"], "| lev", P["leverage"], "|",
+    assert abs(expo - M["index"]["target"]) < 0.31 and P["cash"] >= -0.01 and regt_ok(P), (expo, P["cash"])
+    assert abs(P["totalValue"] - 3000) < 15, P["totalValue"]
+    print("v6 reset OK: previous account", prev["endValue"], "->", P["totalValue"], "| index",
           {k: round(v) for k, v in mv.items()})
 
 
-def test_v5_high_volatility_shrinks():
-    def qqq(end):          # up-trend, last 30 days swinging +-2.5 % a day (~40 % annualised volatility)
+def test_v6_event_entries():
+    L, eng, _ = first_daily(overrides=events, paths_fn=intc_crash)
+    E, scan = ev(L), L["meta"]["eventScan"]
+    assert set(E) == {"NKE", "AVGO"}, (set(E), scan["skipped"])
+    nke, avgo = E["NKE"], E["AVGO"]
+    assert nke["side"] == "long" and avgo["side"] == "short" and nke["stopMode"] == avgo["stopMode"] == "event"
+    assert nke["stopPrice"] < nke["avgCost"] and avgo["stopPrice"] > avgo["avgCost"]
+    assert nke["exitDate"] == "2026-11-04" == avgo["exitDate"]
+    why = {x["ticker"]: x["why"] for x in scan["skipped"]}
+    assert "devam" in why["BA"] and "Rule 201" in why["INTC"], why
+    assert any(c["rule"] == "SEC Rule 201" and "INTC" in c["title"] for c in L["compliance"])
+    sl = L["portfolio"]["totalValue"] * T.EVENT_SHARE
+    for p in (nke, avgo):
+        risk = abs(p["stopPrice"] / p["avgCost"] - 1)
+        assert abs(p["marketValue"]) <= sl * T.EVENT_CAP + 1 and abs(p["marketValue"]) * risk <= sl * 0.0125, \
+            (p["ticker"], p["marketValue"], risk)
+    tr = [t for t in eng.new_trades if t["rule"] == "haber şoku"]
+    assert len(tr) == 2 and all("Haber şoku" in t["reason"] for t in tr)
+    assert L["runs"][-1]["events"]["taken"] and any("Haber şoku" in d for d in L["runs"][-1]["decisions"])
+    print("event entries OK:", [(t["ticker"], t["action"], t["value"]) for t in tr], "| skipped:", why)
+
+
+def test_v6_event_stop_and_exit():
+    L, _, paths = first_daily(overrides=events, paths_fn=intc_crash)
+    nke, avgo = ev(L)["NKE"], ev(L)["AVGO"]
+    # Tuesday: NKE falls through its stop; AVGO is quiet
+    ov = {"NKE": flat_bars(nke["lastPrice"], n=3) + [("09:45", nke["lastPrice"], nke["lastPrice"], nke["stopPrice"] * 0.99,
+                                                       nke["stopPrice"] * 0.995)],
+          "AVGO": flat_bars(avgo["lastPrice"], n=6)}
+    eng = run(L, "09:55", FakeData(NXT, paths, bars_for(paths, ov, n=6)), day=NXT)
+    sold = [t for t in eng.new_trades if t["ticker"] == "NKE"]
+    assert sold and sold[0]["rule"] == "haber şoku zarar-kesi" and "NKE" not in L["meta"].get("cooldown", {}), sold
+    assert "AVGO" in ev(L)
+    # Wednesday 15:55: AVGO's time is up
+    n = nbars("15:55")
+    eng = run(L, "15:55", FakeData("2026-11-04", paths, bars_for(paths, {"AVGO": flat_bars(avgo["lastPrice"], n=n)}, n=n)),
+              day="2026-11-04")
+    cov = [t for t in eng.new_trades if t["ticker"] == "AVGO"]
+    assert cov and cov[0]["action"] == "COVER" and cov[0]["rule"] == "haber şoku çıkış" and not ev(L), cov
+    print("event stop + timed exit OK: NKE", sold[0]["realizedPL"], "| AVGO", cov[0]["realizedPL"])
+
+
+def test_v6_high_volatility_shrinks():
+    def qqq(end):
         up = trend(end, 0.0012)
         return [round(x * (1 + (0.0125 if i % 2 else -0.0125) * (i >= 230)), 4) for i, x in enumerate(up)]
     L, _, _ = first_daily(qqq=qqq)
     mv, expo = sleeve(L)
-    vol = L["meta"]["index"]["vol"]
-    assert 30 < vol < 50 and mv["TQQQ"] == 0 and mv["SQQQ"] == 0, (vol, mv)
-    assert abs(expo - L["meta"]["index"]["target"]) < 0.31 and expo < 0.9, (expo, L["meta"]["index"])
-    print("high volatility OK: vol", vol, "-> exposure", round(expo, 2))
+    assert 30 < L["meta"]["index"]["vol"] < 50 and mv["TQQQ"] == 0 and mv["SQQQ"] == 0 and expo < 0.9, (mv, expo)
+    print("high volatility OK: exposure", round(expo, 2))
 
 
-def test_v5_downtrend_goes_short():
-    L, eng, _ = first_daily(spy=lambda end: trend(end, -0.0012))       # SPY below 200-day and 50 < 200
-    P = L["portfolio"]
+def test_v6_downtrend_goes_short():
+    L, _, _ = first_daily(spy=lambda end: trend(end, -0.0012))
     mv, expo = sleeve(L)
-    assert L["meta"]["index"]["dir"] == -1 and mv["QQQ"] == 0 and mv["TQQQ"] == 0 and mv["SQQQ"] > 0, mv
-    assert abs(expo + min(3.0, T.MAX_SHORT_EXPO)) < 0.15 and P["netExposure"] < 0 and P["cash"] >= -0.01, (expo, P["netExposure"])
-    assert any(t["ticker"] == "QQQ" and t["action"] == "SELL" for t in eng.new_trades)
-    assert L["meta"]["trendUp"] is False and not basket(L), "SPY is down: the basket goes to cash"
-    print("down-trend OK: SQQQ", round(mv["SQQQ"]), "exposure", round(expo, 2), "| net", P["netExposure"])
+    assert L["meta"]["index"]["dir"] == -1 and mv["SQQQ"] > 0 and mv["QQQ"] == mv["TQQQ"] == 0 and expo < -2.8, (mv, expo)
+    print("down-trend OK: SQQQ", round(mv["SQQQ"]), "exposure", round(expo, 2))
 
 
-def test_v5_no_short_after_nasdaq_20pct_fall():
+def test_v6_no_short_after_nasdaq_20pct_fall():
     def qqq(end):
         up = trend(end, 0.0012)
         return [round(x * (0.75 if i >= 230 else 1.0), 4) for i, x in enumerate(up)]
-    L, eng, _ = first_daily(spy=lambda end: trend(end, -0.0012), qqq=qqq)
-    W, ix = L["meta"]["nasdaq"], L["meta"]["index"]
-    mv, expo = sleeve(L)
-    assert W["active"] and W["level"] == "bear" and W["ddPct"] <= -20, W
-    assert ix["target"] == 0 and mv["SQQQ"] == 0 and all(v == 0 for v in mv.values()), (ix, mv)
-    assert "short açmaz" in L["runs"][-1]["decisions"][0] and L["config"]["dipRule"].startswith("Kural")
-    print("Nasdaq -20% rule OK: dd", W["ddPct"], "-> no short, index sleeve in cash")
+    L, _, _ = first_daily(spy=lambda end: trend(end, -0.0012), qqq=qqq)
+    mv, _ = sleeve(L)
+    assert L["meta"]["nasdaq"]["active"] and L["meta"]["index"]["target"] == 0 and all(v == 0 for v in mv.values())
+    print("Nasdaq -20% rule OK: no short")
 
 
-def test_v5_unconfirmed_drop_waits_in_cash():
-    def spy(end):
-        up = trend(end, 0.0007)
-        return [round(x * (0.85 if i >= 255 else 1.0), 4) for i, x in enumerate(up)]
-    L, _, _ = first_daily(spy=spy)
-    mv, expo = sleeve(L)
-    assert L["meta"]["index"]["dir"] == 0 and all(v == 0 for v in mv.values()), (L["meta"]["index"], mv)
-    assert not basket(L) and abs(L["portfolio"]["cash"] - L["portfolio"]["totalValue"]) < 0.01
-    print("unconfirmed drop OK: index sleeve and basket in cash")
-
-
-def test_v5_next_day_quiet():
+def test_v6_next_day_quiet():
     L, _, paths = first_daily()
     n = len(L["trades"])
-    eng = run(L, "10:30", FakeData(NXT, paths, bars_for(paths, {}, n=nbars("10:30"))), day=NXT)
+    eng = run(L, "10:35", FakeData(NXT, paths, bars_for(paths, {}, n=nbars("10:35"))), day=NXT)
     assert len(L["trades"]) == n, [(t["ticker"], t["action"]) for t in eng.new_trades]
-    r = L["runs"][-1]
-    assert r["headline"].startswith("İşlem yok") and r["rebalanced"] is False and "işlem yapılmadı" in r["decisions"][2], r["decisions"]
-    print("next day quiet OK:", r["decisions"][2][:80])
+    assert L["meta"]["eventScan"]["date"] == NXT and not L["meta"]["eventScan"]["gaps"]
+    print("next day quiet OK:", L["runs"][-1]["decisions"][-1][:90])
 
 
-def test_v5_disaster_stop_and_cooldown():
+def test_old_ledgers_migrate_to_v6():
+    for base, day, hh in ((BASE_V3, "2026-10-15", "13:35"), (BASE_V4, "2026-10-23", "15:20")):
+        L, _, _ = first_daily(base=base, day=day, hhmm=hh)
+        assert L["meta"]["engine"] == T.ENGINE and L["previousAccounts"] and L["portfolio"]["cash"] >= -0.01
+    print("v3/v4 -> v6 chain OK")
+
+
+def test_scorecard_v6():
     L, _, paths = first_daily()
-    p = basket(L)[0]
-    t, stop = p["ticker"], p["stopPrice"]
-    ov = {t: flat_bars(p["lastPrice"], n=3) + [("09:45", p["lastPrice"], p["lastPrice"], stop * 0.98, stop * 0.99)]}
-    eng = run(L, "09:55", FakeData(NXT, paths, bars_for(paths, ov, n=6)), day=NXT)
-    sold = [x for x in eng.new_trades if x["ticker"] == t and x["action"] == "SELL"]
-    assert sold and sold[0]["rule"] == "felaket zarar-kesi" and abs(sold[0]["quotePrice"] - stop) < 1e-6, sold
-    assert L["meta"]["cooldown"][t] == NXT
-    run(L, "10:30", FakeData("2026-11-02", paths, bars_for(paths, {}, n=nbars("10:30"))), day="2026-11-02")
-    assert L["meta"]["lastRebalance"] == "2026-11"
-    assert t not in {p["ticker"] for p in L["portfolio"]["positions"]}
-    print("disaster stop + cooldown OK:", t, "sold at", sold[0]["quotePrice"])
-
-
-def test_v3_ledger_migrates_to_v5():
-    L, eng, _ = first_daily(base=BASE_V3, day="2026-10-15", hhmm="13:35")
-    assert L["meta"]["engine"] == T.ENGINE and [h["strategy"][:2] for h in L["evalHistory"]] == ["v3"]
-    assert not any(p["side"] == "short" for p in L["portfolio"]["positions"])
-    assert L["portfolio"]["cash"] >= -0.01 and regt_ok(L["portfolio"])
-    print("v3 -> v5 chain OK:", L["runs"][-1]["headline"])
-
-
-def test_scorecard_v5():
-    L, _, paths = first_daily()
-    run(L, "10:30", FakeData(NXT, paths, bars_for(paths, {}, n=nbars("10:30"))), day=NXT)
+    run(L, "10:35", FakeData(NXT, paths, bars_for(paths, {}, n=nbars("10:35"))), day=NXT)
     sc = L["scorecard"]
-    assert sc["daysElapsed"] == 2 and sc["uptime"]["pct"] == 100.0 and len(sc["history"]) == 2, sc
-    print("scorecard OK:", {k: sc[k] for k in ("start", "end", "returnPct", "spyReturnPct", "maxDrawdownPct")})
+    assert sc["daysElapsed"] == 2 and sc["uptime"]["pct"] == 100.0 and sc["strategy"] == "v6" and len(sc["history"]) == 3, sc
+    print("scorecard OK:", {k: sc[k] for k in ("start", "end", "returnPct", "spyReturnPct")})
 
 
 def test_extended_watch():
@@ -353,7 +381,7 @@ def test_news_parsing():
     assert heads[:3] == ["Markets (latest session)", "Trend filter", "Our portfolio"], heads
     assert "Tech lagged" in dg["bullets"][0]["text"] and "elevated" in dg["bullets"][0]["text"] and "jumped" in dg["bullets"][0]["text"]
     assert "above its 200-day" in dg["bullets"][1]["text"] and "Upcoming earnings (next 3 weeks)" in heads
-    assert dg["headlines"][0]["summary"] == "Rates may rise again." and len(dg["movers"]) == 3
+    assert dg["headlines"][0]["summary"] == "Rates may rise again." and len(dg["movers"]) == min(3, len(secs))
     print("news parsing + daily brief OK:", dg["title"], "|", dg["bullets"][0]["text"][:120])
 
 

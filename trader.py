@@ -34,7 +34,7 @@ ROOT = Path(__file__).resolve().parent
 LEDGER = ROOT / "ledger.json"
 DEPOSITS = ROOT / "deposits.json"
 RESTORE = ROOT / "v3_restore.json"
-ENGINE = "trend-vol v5"
+ENGINE = "trend-event v6"
 
 # ---- broker model: IBKR Pro (Tiered), US stocks/ETFs
 SLIP = 0.0005                            # 0.05 % slippage on every fill
@@ -78,10 +78,11 @@ CHECK_DAYS_KEPT = 5
 COMPLIANCE_KEPT = 400
 WASH_DAYS = 30
 
-# ---- strategy v5 (from 23 Oct 2026): two-directional, volatility-targeted index sleeve + monthly momentum basket
+# ---- strategy v6 (from 2 Nov 2026, fresh 3.000 $ account): 50 % two-directional, volatility-targeted index sleeve
+# + 50 % news-shock sleeve (big opening gaps that the market reverses in the first hour). The momentum basket is off.
 INDEX_ETF, INDEX_BULL, INDEX_BEAR = "QQQ", "TQQQ", "SQQQ"   # 1x, 3x and -3x Nasdaq 100
 INDEX_SLEEVE = (INDEX_ETF, INDEX_BULL, INDEX_BEAR)
-INDEX_SHARE, BASKET_SHARE = 0.50, 0.50    # share of equity per sleeve
+INDEX_SHARE, BASKET_SHARE, EVENT_SHARE = 0.50, 0.0, 0.50   # share of equity per sleeve (basket off since v6)
 DIR_SRC = "SPY"                           # direction from SPY's 200/50-day trend (QQQ's own trend tested worse)
 MAX_SHORT_EXPO = 3.0                      # short side at most -3x
 VOL_TARGET, VOL_FLOOR, MAX_EXPO = 0.25, 0.05, 3.0   # sleeve exposure = 25 % / realised 20-day vol, at most 3x
@@ -91,6 +92,14 @@ BASKET_N, BASKET_KEEP, GROUP_CAP = 10, 20, 3
 DISASTER, COOLDOWN_DAYS = 0.25, 30        # single-stock stop 25 % against cost, then 30 days out
 INVEST_USE = 0.98                         # keep ~2 % cash for costs; never borrow
 CORE_ETF = INDEX_ETF
+# news-shock sleeve (tested in event_study.py, Dec 2023 - Oct 2026)
+EVENT_GAP = 0.08                          # opening gap of at least 8 % against the previous close
+EVENT_MIN_MOVE = 0.005                    # first hour must move at least 0.5 % against the gap
+EVENT_AFTER, EVENT_LAST_ENTRY = dtime(10, 30), dtime(11, 30)   # decide after the first hour
+EVENT_HOLD_DAYS = 2                       # exit at the close two trading days after entry
+EVENT_EXIT_AFTER = dtime(15, 50)
+EVENT_SLOTS, EVENT_RISK, EVENT_CAP = 4, 0.01, 0.25   # max open trades; risk 1 % of the sleeve per trade; 25 % cap
+RESET_CAPITAL = 3000.0
 DIP_LEVELS = (-0.10, -0.20)               # Nasdaq 100 watch: correction / bear-market thresholds from the all-time high
 DIP_NO_SHORT = True                       # after a 20 % fall from the high (until a new high) the index sleeve never shorts
 DIP_RULE_TEXT = (
@@ -134,17 +143,15 @@ LEGAL = {
 SCHEDULE_TEXT = ("Piyasa açıkken 5 dakikada bir (GitHub Actions döngüsü). Günlük rejim, sıralama ve "
                  "alım-satımlar 10:00'dan (New York) sonraki ilk çalışmada.")
 CONFIG_TEXT = {
-    "strategyName": "İki yönlü trend + oynaklık hedefli endeks kolu + aylık momentum sepeti (v5, en fazla 3x)",
+    "strategyName": "İki yönlü endeks kolu + haber şoku kolu (v6, 2 Kasım 2026'dan itibaren yeni 3.000 $ hesap)",
     "strategySummary": (
-        "23 Ekim 2026'dan itibaren iki yönlü: paranın yarısı Nasdaq 100'de, trendin yönünde ve oynaklığa göre ayarlanan "
-        "kaldıraçla (−3x ile +3x arası). Yükseliş trendinde QQQ ve 3x fon TQQQ, düşüş trendinde −3x ters fon SQQQ tutulur; "
-        "piyasa sakinken kaldıraç artar, fırtınada kendiliğinden küçülür. Diğer yarı, SPY'ın trendi yukarıyken son 12 ayın en "
-        "güçlü 10 hissesinden oluşan aylık sepette. 2018–2026 geriye dönük testte v5 yıllık %20,4 getirdi, en kötü düşüşü "
-        "%−31 oldu (v4: %18,7 ve %−26; SPY: %14,2 ve %−34). Short tarafı 2022 gibi uzun düşüşlerde kaybı yarıya indirdi, "
-        "2019 ve 2020'deki hızlı toparlanmalarda ise maliyet yarattı. Önceki stratejiler: v3 (kaldıraçlı long/short, dar "
-        "zarar-kes) 12–15 Ekim'de SPY'ın %8,4 gerisinde kaldı; v4 (kaldıraçsız, yalnızca long) kaybı durdurdu ama düşüşten "
-        "kazanamıyordu. "
-        "Hesap ve ücret modeli: Interactive Brokers (IBKR Pro, Tiered) kredili hesap, ABD kuralları."),
+        "Paranın yarısı Nasdaq 100'de, S&P 500 trendinin yönünde ve oynaklığa göre ayarlanan kaldıraçla (−3x ile +3x arası): "
+        "yükselişte QQQ ve 3x fon TQQQ, teyitli düşüşte −3x ters fon SQQQ. Diğer yarı haber şoku kolunda: bir hisse "
+        "haberle önceki kapanışa göre en az %8 boşlukla açılır ve ilk saatte piyasa bu tepkinin tersine dönerse o yöne girilir "
+        "(sert düşüp toparlanana long, sert yükselip sönene short), 2 işlem günü tutulur, zarar-kes ilk saatin öbür ucunda. "
+        "Aralık 2023 – Ekim 2026 testinde (164 hisse) bu kural işlem başına ortalama %+0,74 getirdi ve dönemin iki yarısında "
+        "da kârlıydı; haberin yönünde girmek ise zarar ettirdi. Kâr garantisi yoktur: işlemlerin yarısından fazlası zararla "
+        "kapandı, kâr kazananların daha büyük olmasından geliyor. Önceki hesap (8–30 Ekim) arşivlendi."),
     "execution": (
         "Yahoo Finance verileri (yfinance): kararlar bir önceki günün kapanış fiyatlarıyla, işlemler 5 dakikalık güncel "
         "fiyatla. Kesirli hisse. Her emirde IBKR Pro Tiered komisyonu: hisse başına 0,0035 $, en az 0,35 $, en fazla işlem "
@@ -162,15 +169,15 @@ CONFIG_TEXT = {
         "Nasdaq düşüş kuralı: Nasdaq 100 (QQQ) zirvesinden %20 veya daha fazla düşmüşse endeks kolu short açmaz, yeni zirveye "
         "kadar nakitte bekler (yön yukarıysa long kuralı aynen çalışır). Sayfanın kenarındaki panel zirveden uzaklığı canlı "
         "gösterir.",
-        "Momentum sepeti (paranın %50'si, 10 hisse, eşit ağırlık): SPY 200 günlük ortalamasının üstündeyken 12-1 ay getirisi "
-        "en yüksek ve fiyatı 200 günlük ortalamasının üstünde olan hisseler; aynı sektörden en fazla 3. Ayın ilk işlem günü "
-        "yenilenir; ilk 20'de kalan tutulur, düşen satılır. SPY ortalamanın altına inerse sepet satılıp nakde geçilir.",
-        "Felaket zarar-kesi (sepetteki hisseler): fiyat maliyetin %25 aleyhine giderse pozisyon kapanır (5 dakikalık mumlarla "
-        "kontrol), sonra 30 gün o hisseye girilmez. Endeks kolunda fiyat zarar-kesi yoktur: risk her gün oynaklığa göre "
-        "ayarlanan büyüklükle yönetilir.",
-        "Kaldıraç sınırı: endeks kolu en fazla 3x, sepet 1x; toplam ekonomik maruziyet en fazla 2x (3x × %50 + 1x × %50). "
-        "Hesap düzeyindeki 3x sınırı, Reg T başlangıç teminatı ve FINRA 4210 bakım teminatı her emirde ve her çalışmada "
-        "kontrol edilir. 3x fonlar için FINRA kaldıraçlı ETF teminatı %75'tir.",
+        "Haber şoku kolu (paranın %50'si): her gün 10:30'da (ilk saatten sonra) 166 büyük hisse taranır. Önceki kapanışa göre "
+        "en az %8 boşlukla açılan ve ilk saatte haberin tersine en az %0,5 dönen hisseye o yönde girilir: düşüşle açılıp "
+        "toparlanana long, yükselişle açılıp sönene short. Haberin yönünde devam edenlere girilmez (testte zarar ettirdi).",
+        "Haber şoku risk kuralları: zarar-kes ilk saatin en düşük (long) ya da en yüksek (short) seviyesinin hemen ötesi; "
+        "büyüklük, zarar-keste kaybın kolun yaklaşık %1'i olacağı şekilde ayarlanır (bir işlem en fazla kolun %25'i); "
+        "aynı anda en fazla 4 işlem; çıkış 2 işlem günü sonra kapanışta. SEC Rule 201 yüzünden %10'dan fazla düşmüş "
+        "hisseye short açılmaz; özsermaye 2.000 $'ın altına inerse short açılmaz (FINRA 4210).",
+        "Kaldıraç sınırı: endeks kolu en fazla 3x, haber kolu 1x; hesap düzeyindeki 3x sınırı, Reg T başlangıç teminatı ve "
+        "FINRA 4210 bakım teminatı her emirde ve her çalışmada kontrol edilir. 3x fonlar için FINRA kaldıraçlı ETF teminatı %75'tir.",
         "3x ve −3x fonlar günlük getiriyi üçe katlar; dalgalı ve yatay piyasada zamanla değer kaybeder (oynaklık erimesi) ve "
         "tek bir kötü günde endeks %10 düşerse TQQQ yaklaşık %30 düşer. Bu yüzden yalnızca trend belirgin ve oynaklık "
         "düşükken büyük tutulur.",
@@ -318,6 +325,9 @@ class Engine:
             eng = "trend-momentum v4"
         if eng == "trend-momentum v4":
             self._to_v5()
+            eng = "trend-vol v5"
+        if eng == "trend-vol v5":
+            self._to_v6()
             return
         if eng != "long-short-bot v2":       # v1 ledgers: same field upgrades v2 did
             for p in self.P["positions"]:
@@ -405,6 +415,53 @@ class Engine:
                     "getirdi, en kötü düşüşü %−31 oldu (v4: %18,7 ve %−26; SPY: %14,2 ve %−34). Değerlendirme karnesi bugünden "
                     "itibaren 3 ay için yeniden başladı.", "letf")
         self.notes.append("v5 stratejisine geçildi")
+
+    def _to_v6(self):
+        """Fresh 3.000 $ account for v6. The old account is summarised in `previousAccounts` (its full ledger is kept
+        in archive/ in the repository); positions are not sold, the old paper account simply ends here."""
+        L, P, C, M = self.L, self.P, self.C, self.M
+        sc = L.get("scorecard")
+        hist = list(L.get("evalHistory", []))
+        if sc and sc.get("strategy") == "v5" and sc.get("start"):
+            hist.append({"strategy": "v5: iki yönlü endeks + momentum sepeti", "start": sc.get("start"), "end": self.today,
+                         "returnPct": sc.get("returnPct"), "spyReturnPct": sc.get("spyReturnPct"),
+                         "excessPct": sc.get("excessPct"), "maxDrawdownPct": sc.get("maxDrawdownPct"),
+                         "trades": sc.get("trades"), "daysElapsed": sc.get("daysElapsed")})
+        costs = P.get("costs", {})
+        prev = {"name": f"Hesap {len(L.get('previousAccounts', [])) + 1}", "start": C.get("startDate"), "end": self.today,
+                "invested": P.get("netDeposits"), "endValue": P.get("totalValue"), "twrPct": P.get("twrPct"),
+                "spyTwrPct": P.get("benchmarkTwrPct"), "realizedPL": P.get("realizedPL"),
+                "trades": sum(1 for t in L.get("trades", []) if t.get("action") in ("BUY", "SELL", "SHORT", "COVER")
+                              and not t.get("cancelled")),
+                "costs": round(sum(num(v) for k, v in costs.items() if k != "dividendsReceived"), 2),
+                "positionsAtEnd": [{"ticker": p["ticker"], "side": p["side"], "value": p.get("marketValue"),
+                                    "unrealizedPct": p.get("unrealizedPct")} for p in P.get("positions", [])],
+                "archive": f"archive/ledger_{self.today}.json"}
+        d0 = date.fromisoformat(self.today)
+        m = d0.month + 3
+        end = date(d0.year + (m - 1) // 12, (m - 1) % 12 + 1, min(d0.day, 28))
+        newC = {k: v for k, v in C.items() if k not in ("deposits", "benchmark")}
+        newC.update(startCapital=RESET_CAPITAL, startDate=self.today,
+                    benchmark={"ticker": "SPY", "startPrice": None, "startAt": None, "shares": 0.0})
+        newM = {"engine": ENGINE, "units": RESET_CAPITAL, "appliedDeposits": list(M.get("appliedDeposits", [])),
+                "lastAccrualDate": self.today, "cooldown": {}, "nasdaq": M.get("nasdaq") or {}, "lastDailyDate": None,
+                "lastRebalance": None, "trendUp": None,
+                "evaluation": {"start": self.today, "end": end.isoformat(), "startTs": iso(self.now), "strategy": "v6"}}
+        newP = {"cash": RESET_CAPITAL, "positions": [], "realizedPL": 0.0, "netDeposits": RESET_CAPITAL,
+                "costs": {"slippage": 0.0, "commission": 0.0, "fees": 0.0, "interest": 0.0, "borrow": 0.0,
+                          "dividendsPaid": 0.0, "dividendsReceived": 0.0}}
+        prev_accounts = list(L.get("previousAccounts", [])) + [prev]
+        L.clear()
+        L.update({"config": newC, "portfolio": newP, "meta": newM, "trades": [], "snapshots": [], "checks": {},
+                  "runs": [], "compliance": [], "tax": {}, "evalHistory": hist, "previousAccounts": prev_accounts})
+        self.P, self.C, self.M = L["portfolio"], L["config"], L["meta"]
+        self.comply("yeni hesap", "Hesap 3.000 $ ile sıfırdan başladı (v6)",
+                    f"Önceki hesap {prev['start']} – {prev['end']}: {usd(prev['invested'] or 0)} yatırıldı, son değer "
+                    f"{usd(prev['endValue'] or 0)} (zaman ağırlıklı %{trn(prev['twrPct'] or 0)}; SPY %{trn(prev['spyTwrPct'] or 0)}). "
+                    "Yeni hesapta paranın yarısı iki yönlü endeks kolunda, yarısı haber şoku kolunda: açılışta %8 veya daha "
+                    "fazla boşlukla açılan hisse ilk saatte haberin tersine dönerse o yöne girilir. Yalnızca long çalışan "
+                    "momentum sepeti kapatıldı.", None)
+        self.notes.append("v6: yeni hesap")
 
     def _rollback_v2(self):
         """Cancel the v2 trades of 12 Oct 2026 13:01 (a real broker would have rejected them for exceeding
@@ -768,6 +825,9 @@ class Engine:
             totalPL=round(equity - dep, 2), totalPLPct=round((equity - dep) / dep * 100, 2),
             twrPct=round((equity / units - 1) * 100, 2), asOf=iso(self.now))
         spy = self.quotes.get("SPY")
+        if spy and not self.C["benchmark"].get("startPrice"):
+            self.C["benchmark"].update(startPrice=round(spy["price"], 2), startAt=iso(spy["at"]),
+                                       shares=round(float(self.C["startCapital"]) / spy["price"], 6))
         if spy:
             self.P["benchmarkPrice"] = round(spy["price"], 2)
             self.P["benchmarkValue"] = round(self.C["benchmark"]["shares"] * spy["price"], 2)
@@ -906,7 +966,8 @@ class Engine:
             if p.get("lastBarTs"):
                 b = b[b.index >= pd.Timestamp(p["lastBarTs"])]
             ext, stop, hit = p["extremeSinceEntry"], p["stopPrice"], None
-            fixed = p.get("stopMode") == "disaster"
+            fixed = p.get("stopMode") in ("disaster", "event")
+            event = p.get("stopMode") == "event"
             if p["side"] == "long":
                 trail = 0.0 if fixed else STOP_LONG[p.get("lev", 1)][1]
                 for ts, row in b.iterrows():
@@ -930,14 +991,18 @@ class Engine:
             if hit:
                 ts, eff, extreme, fill = hit
                 word = "indi" if p["side"] == "long" else "çıktı"
-                reason = ((f"Felaket zarar-kesi (maliyetin %25 {'altı' if p['side'] == 'long' else 'üstü'}) tetiklendi: "
-                           if fixed else "Bekleyen zarar-kes emri tetiklendi: ")
+                head = ((f"Haber şoku zarar-kesi (ilk saatin {'en düşük' if p['side'] == 'long' else 'en yüksek'} "
+                         "seviyesinin ötesi) tetiklendi: ") if event else
+                        (f"Felaket zarar-kesi (maliyetin %25 {'altı' if p['side'] == 'long' else 'üstü'}) tetiklendi: "
+                         if fixed else "Bekleyen zarar-kes emri tetiklendi: "))
+                reason = (head
                           + f"{hm(ts)} ET mumunda fiyat {trn(extreme)} $'a {word}, zarar-kes seviyesi {trn(eff)} $. "
                           + (f"Mum seviyenin ötesinde açıldığı için açılış fiyatından ({trn(fill)} $) kapatıldı."
                              if fill != eff else f"Emir {trn(fill)} $'dan gerçekleşti."))
-                self.close(p, p["shares"], fill, ts, reason + (f" {COOLDOWN_DAYS} gün yeniden alınmayacak." if fixed else ""),
-                           "felaket zarar-kesi" if fixed else "zarar-kes")
-                if fixed:
+                self.close(p, p["shares"], fill, ts,
+                           reason + (f" {COOLDOWN_DAYS} gün yeniden alınmayacak." if fixed and not event else ""),
+                           "haber şoku zarar-kesi" if event else "felaket zarar-kesi" if fixed else "zarar-kes")
+                if fixed and not event:
                     self.M.setdefault("cooldown", {})[p["ticker"]] = self.today
                 self.status = "alarm"
                 continue
@@ -1129,7 +1194,9 @@ class Engine:
         sma200 = sum(c[-200:]) / 200
         up = c[-1] > sma200
         gap = (c[-1] / sma200 - 1) * 100
-        if up:
+        if BASKET_SHARE <= 0:
+            tail = "(v6'da momentum sepeti kapalı; bu bilgi kayıt içindir.)"
+        elif up:
             tail = "Sepet: en güçlü 10 hissede long."
         elif BASKET_SHORTS:
             tail = "Sepet: düşüş trendinde en zayıf 10 hissede short."
@@ -1147,7 +1214,8 @@ class Engine:
         done = h[h.index.date < self.now.date()]["Close"]
         if done.empty:
             return
-        W = self.M.setdefault("nasdaq", {})
+        W = self.M.get("nasdaq") or {}
+        self.M["nasdaq"] = W
         W.update(ath=round(float(done.max()), 2), athDate=done.idxmax().date().isoformat(), athChecked=self.today)
         if self.quotes.get(INDEX_ETF):
             self.nasdaq_update()
@@ -1334,7 +1402,7 @@ class Engine:
     def basket_rebalance(self, trend, rows, decisions, rejected, sources):
         self.revalue()
         if not trend["up"]:
-            for p in [p for p in self.P["positions"] if p["ticker"] not in INDEX_SLEEVE]:
+            for p in [p for p in self.P["positions"] if p["ticker"] not in INDEX_SLEEVE and p.get("sleeve") != "event"]:
                 if p["side"] == "short" and BASKET_SHORTS:
                     continue
                 q = self.quotes.get(p["ticker"])
@@ -1354,7 +1422,7 @@ class Engine:
         keep = []
         for p in list(self.P["positions"]):
             t = p["ticker"]
-            if t in INDEX_SLEEVE:
+            if t in INDEX_SLEEVE or p.get("sleeve") == "event":
                 continue
             q = self.quotes.get(t)
             r = by_t.get(t)
@@ -1497,15 +1565,19 @@ class Engine:
         idx_word = (f"endeks {'+' if sig['target'] > 0 else '−' if sig['target'] < 0 else ''}{trn(abs(sig['target']), 2)}x"
                     if sig else "endeks verisi yok")
         self.M["regime"] = {"name": "up" if sig and sig["dir"] > 0 else "down" if sig and sig["dir"] < 0 else "neutral",
-                            "label": f"Yön {sig['wordLow'] if sig else '—'}: {idx_word}, sepet {basket_word}",
+                            "label": f"Yön {sig['wordLow'] if sig else '—'}: {idx_word}, "
+                                     + (f"sepet {basket_word}" if BASKET_SHARE > 0 else "haber şoku kolu açık"),
                             "budget": 1.0}
         go = self.index_rebalance(sig, "sell", decisions, rejected, sources) if sig else False
-        if due:
+        if BASKET_SHARE <= 0:
+            due = False
+            decisions.append("Momentum sepeti v6'da kapalı: paranın yarısı endeks kolunda, yarısı haber şoku kolunda.")
+        elif due:
             if flip:
                 decisions.append("Piyasa trendi yön değiştirdiği için sepet ay beklenmeden dengelendi.")
             self.basket_rebalance(trend, rows, decisions, rejected, sources)
             self.M["lastRebalance"] = month
-        else:
+        if BASKET_SHARE > 0 and not due:
             nxt = [d for d in trading_days(self.today, (date.fromisoformat(self.today) + timedelta(days=40)).isoformat())
                    if d[:7] != month]
             decisions.append(f"Sepet: ay içi kontrol, felaket zarar-kesleri izlendi, işlem gerekmedi. Sonraki aylık dengeleme "
@@ -1539,15 +1611,174 @@ class Engine:
             "regime": self.M["regime"], "rebalanced": due, "index": self.M.get("index"),
             "indicators": [{"label": i["label"], "value": i["value"], "change": i["change"]} for i in inds],
             "decisions": decisions, "rejected": rejected, "watchlist": watch, "sources": uniq,
-            "ranking": rows[:20], "shortRanking": shorts[:10],
+            "ranking": rows[:20] if BASKET_SHARE > 0 else [], "shortRanking": shorts[:10] if BASKET_SHARE > 0 else [],
             "rankingNote": ("Puan = 12-1 ay getirisi (son ay hariç 12 aylık getiri, %). Long için uygun: fiyat 200 günlük "
                             "ortalamanın üstünde ve puan pozitif; sepet ilk 10'dan (sektör başına en fazla 3) oluşur, ilk 20'de "
                             "kalan tutulur. Short listesi: fiyatı 200 günlük ortalamanın altında ve puanı negatif en zayıf "
                             "hisseler" + (" (piyasa trendi aşağı dönerse short sepeti buradan kurulur)." if BASKET_SHORTS
                                           else " (yalnızca izleme; v5'te sepet düşüşte nakde geçer).")),
-            "nextSteps": "Felaket zarar-kesleri piyasa açıkken 5 dakikada bir, endeks kolunun yönü ve büyüklüğü her gün "
-                         "10:00'dan sonra kontrol ediliyor. Sepet ayın ilk işlem gününde yenilenir.",
+            "nextSteps": "Endeks kolunun yönü ve büyüklüğü her gün 10:00'dan sonra, haber şoku taraması 10:30'dan sonra; "
+                         "haber işlemlerinin zarar-kesleri piyasa açıkken 5 dakikada bir kontrol ediliyor.",
         })
+
+    # ---------------- news-shock sleeve (v6)
+    def _trading_day_after(self, d, n):
+        days = trading_days(d, (date.fromisoformat(d) + timedelta(days=n * 2 + 10)).isoformat())
+        return days[min(n, len(days) - 1)]
+
+    def _headline(self, t):
+        """Latest Yahoo Finance headline for the ticker (best effort; the trade never depends on it)."""
+        try:
+            import news as N
+            items = N.fetch_yf(t)
+        except Exception:
+            items = []
+        cutoff = (date.fromisoformat(self.today) - timedelta(days=3)).isoformat()
+        fresh = [n for n in items if (n.get("at") or "")[:10] >= cutoff]
+        n = (fresh or items or [None])[0]
+        return {"title": n["title"], "url": n["url"], "publisher": n.get("publisher"), "at": n.get("at")} if n else None
+
+    def event_scan(self):
+        """Once a day after the first hour (10:30 New York time): stocks that opened at least 8 % away from yesterday's
+        close and that the market turned against the gap during the first hour. Trade in the direction of that turn,
+        stop just beyond the other end of the first-hour range, exit at the close two trading days later."""
+        self.M["eventScanDate"] = self.today
+        uni = U.EVENT_UNIVERSE
+        bars = self.data.intraday(uni)
+        hist = self.data.daily(uni, period="5d")
+        today = self.now.date()
+        scan = {"date": self.today, "at": iso(self.now), "checked": 0, "gaps": [], "taken": [], "skipped": [],
+                "rule": f"Açılış boşluğu en az %{trn(EVENT_GAP * 100, 0)}; ilk saatte haberin tersine en az "
+                        f"%{trn(EVENT_MIN_MOVE * 100, 1)} dönüş; {EVENT_HOLD_DAYS} işlem günü tut, zarar-kes ilk saatin öbür ucu."}
+        held = {p["ticker"] for p in self.P["positions"]}
+        open_ev = [p for p in self.P["positions"] if p.get("sleeve") == "event"]
+        cands = []
+        for t in uni:
+            b, h = bars.get(t), hist.get(t)
+            if b is None or h is None:
+                continue
+            b = b[b.index.date == today]
+            past = h[h.index.date < today]
+            if b.empty or len(past) < 2:
+                continue
+            scan["checked"] += 1
+            first = b.index[0]
+            if first.hour != 9 or first.minute != 30:
+                continue
+            h1 = b[b.index < first.replace(hour=10, minute=30)]
+            if len(h1) < 10:
+                continue
+            pc, o = float(past["Close"].iloc[-1]), float(h1["Open"].iloc[0])
+            gap = o / pc - 1
+            if abs(gap) < EVENT_GAP or o < 5:
+                continue
+            hc, hh, hl = float(h1["Close"].iloc[-1]), float(h1["High"].max()), float(h1["Low"].min())
+            move = hc / o - 1
+            row = {"ticker": t, "name": U.name_of(t), "gapPct": round(gap * 100, 2), "firstHourPct": round(move * 100, 2),
+                   "prevClose": round(pc, 2), "open": round(o, 2), "h1High": round(hh, 2), "h1Low": round(hl, 2),
+                   "h1Close": round(hc, 2)}
+            scan["gaps"].append(row)
+            if abs(move) < EVENT_MIN_MOVE:
+                scan["skipped"].append({**row, "why": "ilk saatte belirgin bir yön yok"})
+                continue
+            if (move > 0) == (gap > 0):
+                scan["skipped"].append({**row, "why": "ilk saatte haberin yönünde devam etti; testte bu durum zarar ettirdi"})
+                continue
+            side = "long" if move > 0 else "short"
+            ssr = hl <= pc * (1 - SSR_DROP) or float(past["Low"].iloc[-1]) <= float(past["Close"].iloc[-2]) * (1 - SSR_DROP)
+            cands.append({**row, "side": side, "ssr": ssr,
+                          "stop": round(hl * 0.999, 2) if side == "long" else round(hh * 1.001, 2)})
+        cands.sort(key=lambda r: -abs(r["gapPct"]))
+        self.revalue()
+        sleeve = self.P["totalValue"] * EVENT_SHARE
+        used = sum(abs(p["marketValue"]) for p in open_ev)
+        slots = EVENT_SLOTS - len(open_ev)
+        lines = []
+        for r in cands:
+            t, side = r["ticker"], r["side"]
+            if t in held:
+                scan["skipped"].append({**r, "why": "bu hisse zaten portföyde"})
+                continue
+            if slots <= 0:
+                scan["skipped"].append({**r, "why": f"en fazla {EVENT_SLOTS} açık haber işlemi"})
+                continue
+            if side == "short" and r["ssr"]:
+                scan["skipped"].append({**r, "why": "SEC Rule 201: hisse önceki kapanışa göre %10 düştüğü için short açılamaz"})
+                self.comply("SEC Rule 201", f"{t}: açığa satış kısıtı",
+                            f"{t} bugün ya da dün önceki kapanışa göre %10 veya daha fazla düştü; en iyi alış fiyatının altında "
+                            "açığa satış yasak. Haber şoku kuralı bu hissede short açmadı.", "ssr")
+                continue
+            self.quotes_for([t])
+            q = self.quotes.get(t)
+            if not q or q["stale"]:
+                scan["skipped"].append({**r, "why": "güncel fiyat yok"})
+                continue
+            price = q["price"]
+            risk = (price / r["stop"] - 1) if side == "long" else (r["stop"] / price - 1)
+            if risk <= 0.002:
+                scan["skipped"].append({**r, "why": "fiyat zarar-kes seviyesine çok yakın"})
+                continue
+            want = min(sleeve * min(EVENT_CAP, EVENT_RISK / risk), max(0.0, sleeve - used))
+            if side == "long":
+                want = min(want, max(0.0, self.P["cash"]) / (1 + SLIP) - COMM_MIN * 2)
+            amount, limit = self._allowed_mv(t, side, want)
+            if amount < MIN_TRADE:
+                scan["skipped"].append({**r, "why": "özsermaye 2.000 $ altında, short açılamaz (FINRA 4210)"
+                                        if limit == "min2000" else "yeterli nakit ya da teminat yok"})
+                continue
+            news = self._headline(t)
+            exit_day = self._trading_day_after(self.today, EVENT_HOLD_DAYS)
+            word = "düşüşle" if r["gapPct"] < 0 else "yükselişle"
+            turn = "toparlandı" if side == "long" else "geri verdi"
+            reason = (f"Haber şoku: {t} önceki kapanışa ({trn(r['prevClose'])} $) göre {trpct(r['gapPct'])} {word} açıldı, ilk "
+                      f"saatte {trpct(r['firstHourPct'])} {turn}: piyasa haberin ilk tepkisini abartılı buldu. Kural gereği "
+                      f"{'long' if side == 'long' else 'short'} açıldı. Zarar-kes {trn(r['stop'])} $ (ilk saatin "
+                      f"{'en düşüğünün' if side == 'long' else 'en yükseğinin'} hemen ötesi, risk %{trn(risk * 100, 1)}); "
+                      f"çıkış {exit_day} kapanışında. Büyüklük: haber kolunun %{trn(min(EVENT_CAP, EVENT_RISK / risk) * 100, 0)}'i, "
+                      f"zarar-keste kaybı kolun yaklaşık %{trn(EVENT_RISK * 100, 0)}'i.")
+            if news:
+                reason += f" Haber: “{news['title']}” ({news.get('publisher') or 'Yahoo Finance'})."
+            fn = self.open_long if side == "long" else self.open_short
+            tr = fn(t, amount, price, q["at"], reason, "haber şoku")
+            if not tr:
+                scan["skipped"].append({**r, "why": "emir gerçekleşmedi"})
+                continue
+            if news:
+                tr["sources"].insert(0, {"title": news["title"], "url": news["url"]})
+            pos = self._pos(t, side)
+            pos.update(sleeve="event", stopMode="event", stopPrice=r["stop"], extremeSinceEntry=price, exitDate=exit_day,
+                       event={k: r[k] for k in ("gapPct", "firstHourPct", "prevClose", "open", "h1High", "h1Low")},
+                       headline=news)
+            used += amount
+            slots -= 1
+            held.add(t)
+            scan["taken"].append({**r, "amount": round(amount, 2), "price": round(price, 2), "exitDate": exit_day,
+                                  "headline": news})
+            lines.append(f"Haber şoku: {t} {'LONG' if side == 'long' else 'SHORT'} {usd(amount)} (boşluk "
+                         f"{trpct(r['gapPct'])}, ilk saat {trpct(r['firstHourPct'])}).")
+        if not scan["gaps"]:
+            lines.append(f"Haber şoku: {scan['checked']} hissede %{trn(EVENT_GAP * 100, 0)}+ açılış boşluğu yok; işlem yapılmadı.")
+        elif not scan["taken"]:
+            lines.append(f"Haber şoku: {len(scan['gaps'])} hissede büyük boşluk var ama kurala uyan işlem çıkmadı.")
+        self.M["eventScan"] = scan
+        run = next((x for x in reversed(self.L["runs"]) if x.get("date") == self.today), None)
+        if run is not None:
+            run["events"] = scan
+            run.setdefault("decisions", []).extend(lines)
+            if scan["taken"]:
+                run["headline"] = f"{len(scan['taken'])} haber şoku işlemi · " + run.get("headline", "")
+        else:
+            self.notes.extend(lines)
+
+    def event_exits(self):
+        for p in [p for p in self.P["positions"] if p.get("sleeve") == "event" and p.get("exitDate")]:
+            due = self.today > p["exitDate"] or (self.today == p["exitDate"] and self.now.time() >= EVENT_EXIT_AFTER)
+            q = self.quotes.get(p["ticker"])
+            if not due or not q or q["stale"]:
+                continue
+            self.close(p, p["shares"], q["price"], q["at"],
+                       f"Haber şoku işleminin süresi doldu: {p.get('openedAt')} tarihinde açıldı; plan gereği "
+                       f"{EVENT_HOLD_DAYS} işlem günü sonra kapanışta kapatıldı.", "haber şoku çıkış")
 
     # ---------------- run
     def run(self):
@@ -1564,11 +1795,21 @@ class Engine:
         self.guard()
         self.margin_check()
         self.nasdaq_update()
+        self.event_exits()
         kind = "guard"
         if (self.now.time() >= DAILY_AFTER and self.M.get("lastDailyDate") != self.today
                 and not self.quotes["SPY"]["stale"]):
             self.daily()
             kind = "daily"
+            self.margin_check()
+        if (EVENT_SHARE > 0 and EVENT_AFTER <= self.now.time() < EVENT_LAST_ENTRY
+                and self.M.get("eventScanDate") != self.today and not self.quotes["SPY"]["stale"]):
+            try:
+                self.event_scan()
+                kind = "event"
+            except Exception as e:             # the scan is one sleeve; never block the rest of the run
+                self.M["eventScanDate"] = self.today
+                self.notes.append(f"Haber şoku taraması yapılamadı: {type(e).__name__}: {e}")
             self.margin_check()
         self.revalue()
         if self.status == "normal":
