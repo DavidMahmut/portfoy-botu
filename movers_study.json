@@ -1,0 +1,403 @@
+{
+ "asOf": "2026-10-30T19:52:36Z",
+ "tickers": 3402,
+ "events": 15813,
+ "from": "2019-01-02",
+ "to": "2026-10-29",
+ "results": {
+  "up": {
+   "count": 8863,
+   "medianMovePct": 27.4,
+   "nextGapMedianPct": -0.59,
+   "fadeFromClose": {
+    "1d": {
+     "n": 8863,
+     "rawMeanPct": -0.58,
+     "rawMedianPct": -2.34,
+     "tradeMeanPct": 0.28,
+     "tradeMedianPct": 2.04,
+     "winRatePct": 57.8
+    },
+    "2d": {
+     "n": 8857,
+     "rawMeanPct": -1.32,
+     "rawMedianPct": -3.6,
+     "tradeMeanPct": 1.02,
+     "tradeMedianPct": 3.3,
+     "winRatePct": 59.7
+    },
+    "5d": {
+     "n": 8843,
+     "rawMeanPct": -3.03,
+     "rawMedianPct": -6.44,
+     "tradeMeanPct": 2.73,
+     "tradeMedianPct": 6.14,
+     "winRatePct": 62.2
+    },
+    "10d": {
+     "n": 8831,
+     "rawMeanPct": -6.01,
+     "rawMedianPct": -9.01,
+     "tradeMeanPct": 5.71,
+     "tradeMedianPct": 8.71,
+     "winRatePct": 64.4
+    },
+    "20d": {
+     "n": 8805,
+     "rawMeanPct": -7.46,
+     "rawMedianPct": -13.68,
+     "tradeMeanPct": 7.16,
+     "tradeMedianPct": 13.38,
+     "winRatePct": 66.8
+    }
+   },
+   "fadeFromNextOpen": {
+    "1d": {
+     "n": 8863,
+     "rawMeanPct": -0.58,
+     "rawMedianPct": -2.34,
+     "tradeMeanPct": 0.59,
+     "tradeMedianPct": 1.32,
+     "winRatePct": 56.1
+    },
+    "2d": {
+     "n": 8857,
+     "rawMeanPct": -1.32,
+     "rawMedianPct": -3.6,
+     "tradeMeanPct": 1.27,
+     "tradeMedianPct": 2.54,
+     "winRatePct": 58.6
+    },
+    "5d": {
+     "n": 8843,
+     "rawMeanPct": -3.03,
+     "rawMedianPct": -6.44,
+     "tradeMeanPct": 2.92,
+     "tradeMedianPct": 5.45,
+     "winRatePct": 62.2
+    },
+    "10d": {
+     "n": 8831,
+     "rawMeanPct": -6.01,
+     "rawMedianPct": -9.01,
+     "tradeMeanPct": 5.81,
+     "tradeMedianPct": 8.27,
+     "winRatePct": 64.2
+    },
+    "20d": {
+     "n": 8805,
+     "rawMeanPct": -7.46,
+     "rawMedianPct": -13.68,
+     "tradeMeanPct": 7.16,
+     "tradeMedianPct": 12.74,
+     "winRatePct": 66.6
+    }
+   },
+   "fade5dFirstHalf": {
+    "n": 3466,
+    "rawMeanPct": -0.23,
+    "rawMedianPct": -4.66,
+    "tradeMeanPct": -0.07,
+    "tradeMedianPct": 4.36,
+    "winRatePct": 58.1
+   },
+   "fade5dSecondHalf": {
+    "n": 5377,
+    "rawMeanPct": -4.83,
+    "rawMedianPct": -7.67,
+    "tradeMeanPct": 4.53,
+    "tradeMedianPct": 7.37,
+    "winRatePct": 64.8
+   },
+   "fade5dLiquid": {
+    "n": 3279,
+    "rawMeanPct": -3.37,
+    "rawMedianPct": -5.87,
+    "tradeMeanPct": 3.07,
+    "tradeMedianPct": 5.57,
+    "winRatePct": 61.1
+   },
+   "fade5dThin": {
+    "n": 5564,
+    "rawMeanPct": -2.83,
+    "rawMedianPct": -6.76,
+    "tradeMeanPct": 2.53,
+    "tradeMedianPct": 6.46,
+    "winRatePct": 62.8
+   },
+   "byYear": {
+    "2019": {
+     "n": 273,
+     "rawMeanPct": -0.96,
+     "rawMedianPct": -3.79,
+     "tradeMeanPct": 0.66,
+     "tradeMedianPct": 3.49,
+     "winRatePct": 60.4
+    },
+    "2020": {
+     "n": 1194,
+     "rawMeanPct": 2.26,
+     "rawMedianPct": -2.89,
+     "tradeMeanPct": -2.56,
+     "tradeMedianPct": 2.59,
+     "winRatePct": 54.1
+    },
+    "2021": {
+     "n": 1260,
+     "rawMeanPct": -1.16,
+     "rawMedianPct": -7.15,
+     "tradeMeanPct": 0.86,
+     "tradeMedianPct": 6.85,
+     "winRatePct": 61.7
+    },
+    "2022": {
+     "n": 739,
+     "rawMeanPct": -2.39,
+     "rawMedianPct": -3.19,
+     "tradeMeanPct": 2.09,
+     "tradeMedianPct": 2.89,
+     "winRatePct": 57.5
+    },
+    "2023": {
+     "n": 713,
+     "rawMeanPct": -4.15,
+     "rawMedianPct": -5.26,
+     "tradeMeanPct": 3.85,
+     "tradeMedianPct": 4.96,
+     "winRatePct": 61.3
+    },
+    "2024": {
+     "n": 1323,
+     "rawMeanPct": -1.17,
+     "rawMedianPct": -7.51,
+     "tradeMeanPct": 0.87,
+     "tradeMedianPct": 7.21,
+     "winRatePct": 63.4
+    },
+    "2025": {
+     "n": 1898,
+     "rawMeanPct": -6.64,
+     "rawMedianPct": -8.46,
+     "tradeMeanPct": 6.34,
+     "tradeMedianPct": 8.16,
+     "winRatePct": 66.8
+    },
+    "2026": {
+     "n": 1443,
+     "rawMeanPct": -6.14,
+     "rawMedianPct": -8.19,
+     "tradeMeanPct": 5.84,
+     "tradeMedianPct": 7.89,
+     "winRatePct": 65.1
+    }
+   }
+  },
+  "down": {
+   "count": 6950,
+   "medianMovePct": -26.0,
+   "nextGapMedianPct": 0.0,
+   "fadeFromClose": {
+    "1d": {
+     "n": 6950,
+     "rawMeanPct": -0.2,
+     "rawMedianPct": -1.24,
+     "tradeMeanPct": -0.5,
+     "tradeMedianPct": -1.54,
+     "winRatePct": 43.6
+    },
+    "2d": {
+     "n": 6945,
+     "rawMeanPct": -1.53,
+     "rawMedianPct": -2.78,
+     "tradeMeanPct": -1.83,
+     "tradeMedianPct": -3.08,
+     "winRatePct": 40.6
+    },
+    "5d": {
+     "n": 6927,
+     "rawMeanPct": -3.15,
+     "rawMedianPct": -5.68,
+     "tradeMeanPct": -3.45,
+     "tradeMedianPct": -5.98,
+     "winRatePct": 36.8
+    },
+    "10d": {
+     "n": 6897,
+     "rawMeanPct": -5.23,
+     "rawMedianPct": -8.64,
+     "tradeMeanPct": -5.53,
+     "tradeMedianPct": -8.94,
+     "winRatePct": 35.0
+    },
+    "20d": {
+     "n": 6846,
+     "rawMeanPct": -7.13,
+     "rawMedianPct": -12.83,
+     "tradeMeanPct": -7.43,
+     "tradeMedianPct": -13.13,
+     "winRatePct": 33.1
+    }
+   },
+   "fadeFromNextOpen": {
+    "1d": {
+     "n": 6950,
+     "rawMeanPct": -0.2,
+     "rawMedianPct": -1.24,
+     "tradeMeanPct": -1.3,
+     "tradeMedianPct": -1.96,
+     "winRatePct": 41.0
+    },
+    "2d": {
+     "n": 6945,
+     "rawMeanPct": -1.53,
+     "rawMedianPct": -2.78,
+     "tradeMeanPct": -2.51,
+     "tradeMedianPct": -3.42,
+     "winRatePct": 38.7
+    },
+    "5d": {
+     "n": 6927,
+     "rawMeanPct": -3.15,
+     "rawMedianPct": -5.68,
+     "tradeMeanPct": -4.08,
+     "tradeMedianPct": -6.41,
+     "winRatePct": 35.9
+    },
+    "10d": {
+     "n": 6897,
+     "rawMeanPct": -5.23,
+     "rawMedianPct": -8.64,
+     "tradeMeanPct": -6.75,
+     "tradeMedianPct": -9.24,
+     "winRatePct": 34.4
+    },
+    "20d": {
+     "n": 6846,
+     "rawMeanPct": -7.13,
+     "rawMedianPct": -12.83,
+     "tradeMeanPct": -9.45,
+     "tradeMedianPct": -13.21,
+     "winRatePct": 32.8
+    }
+   },
+   "fade5dFirstHalf": {
+    "n": 2248,
+    "rawMeanPct": 1.32,
+    "rawMedianPct": -2.22,
+    "tradeMeanPct": 1.02,
+    "tradeMedianPct": -2.52,
+    "winRatePct": 44.1
+   },
+   "fade5dSecondHalf": {
+    "n": 4679,
+    "rawMeanPct": -5.3,
+    "rawMedianPct": -7.94,
+    "tradeMeanPct": -5.6,
+    "tradeMedianPct": -8.24,
+    "winRatePct": 33.4
+   },
+   "fade5dLiquid": {
+    "n": 2442,
+    "rawMeanPct": -1.91,
+    "rawMedianPct": -4.84,
+    "tradeMeanPct": -2.21,
+    "tradeMedianPct": -5.14,
+    "winRatePct": 38.9
+   },
+   "fade5dThin": {
+    "n": 4485,
+    "rawMeanPct": -3.82,
+    "rawMedianPct": -6.15,
+    "tradeMeanPct": -4.12,
+    "tradeMedianPct": -6.45,
+    "winRatePct": 35.7
+   },
+   "byYear": {
+    "2019": {
+     "n": 236,
+     "rawMeanPct": -0.89,
+     "rawMedianPct": -2.2,
+     "tradeMeanPct": -1.19,
+     "tradeMedianPct": -2.5,
+     "winRatePct": 37.3
+    },
+    "2020": {
+     "n": 822,
+     "rawMeanPct": 6.01,
+     "rawMedianPct": 0.0,
+     "tradeMeanPct": 5.71,
+     "tradeMedianPct": -0.3,
+     "winRatePct": 49.1
+    },
+    "2021": {
+     "n": 580,
+     "rawMeanPct": -1.17,
+     "rawMedianPct": -2.85,
+     "tradeMeanPct": -1.47,
+     "tradeMedianPct": -3.15,
+     "winRatePct": 42.1
+    },
+    "2022": {
+     "n": 610,
+     "rawMeanPct": -1.77,
+     "rawMedianPct": -3.19,
+     "tradeMeanPct": -2.07,
+     "tradeMedianPct": -3.49,
+     "winRatePct": 41.8
+    },
+    "2023": {
+     "n": 645,
+     "rawMeanPct": -0.95,
+     "rawMedianPct": -4.0,
+     "tradeMeanPct": -1.25,
+     "tradeMedianPct": -4.3,
+     "winRatePct": 40.9
+    },
+    "2024": {
+     "n": 1007,
+     "rawMeanPct": -3.17,
+     "rawMedianPct": -6.8,
+     "tradeMeanPct": -3.47,
+     "tradeMedianPct": -7.1,
+     "winRatePct": 37.1
+    },
+    "2025": {
+     "n": 1674,
+     "rawMeanPct": -5.69,
+     "rawMedianPct": -7.94,
+     "tradeMeanPct": -5.99,
+     "tradeMedianPct": -8.24,
+     "winRatePct": 32.4
+    },
+    "2026": {
+     "n": 1353,
+     "rawMeanPct": -8.47,
+     "rawMedianPct": -10.81,
+     "tradeMeanPct": -8.77,
+     "tradeMedianPct": -11.11,
+     "winRatePct": 28.1
+    }
+   }
+  }
+ },
+ "summary": {
+  "text": "Günde %20+ yükselen 8863 durumda hisse sonraki 5 günde ortalama %-3.03 (medyan %-6.44) hareket etti; %20+ düşen 6950 durumda ortalama %-3.15 (medyan %-5.68). Ters yöne 5 günlük işlem (maliyet sonrası): yükselene short %2.73 ortalama, kazanma %62.2; düşene long %-3.45 ortalama, kazanma %36.8. Batan şirketler veride olmadığı için düşüş sonrası toparlanma olduğundan iyi görünür.",
+  "up5d": {
+   "n": 8843,
+   "rawMeanPct": -3.03,
+   "rawMedianPct": -6.44,
+   "tradeMeanPct": 2.73,
+   "tradeMedianPct": 6.14,
+   "winRatePct": 62.2
+  },
+  "down5d": {
+   "n": 6927,
+   "rawMeanPct": -3.15,
+   "rawMedianPct": -5.68,
+   "tradeMeanPct": -3.45,
+   "tradeMedianPct": -5.98,
+   "winRatePct": 36.8
+  }
+ },
+ "notes": "Günlük kapanışlar; bugün Nasdaq'ta işlem gören hisseler (hayatta kalma yanılgısı var). Filtre: önceki gün fiyatı ≥ 3 $, 20 günlük ortalama işlem hacmi ≥ 2 milyon $. Ters işlem = yükselene short, düşene long; gidiş-dönüş maliyet %0,3; short ödünç ücreti dahil değil (küçük hisselerde yüksek olabilir)."
+}
