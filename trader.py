@@ -1659,7 +1659,7 @@ class Engine:
         """Latest Yahoo Finance headline for the ticker (best effort; the trade never depends on it)."""
         try:
             import news as N
-            items = N.fetch_yf(t)
+            items = N.fetch_yf(t) or N.fetch_rss(t)
         except Exception:
             items = []
         at = lambda n: n.get("at").isoformat() if hasattr(n.get("at"), "isoformat") else str(n.get("at") or "")

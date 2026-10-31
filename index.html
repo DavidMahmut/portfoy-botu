@@ -826,9 +826,21 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
     $("mvAsOf").textContent=dShort(X.asOf)+" "+tm(X.asOf)+" · "+(X.screened||0)+" hisse";
     var al=$("mvAlerts"); clear(al);
     if((X.alerts||[]).length){
-      var box=el("div",{class:"mv-alert"}, el("b",{text:"Bugün %20 veya daha fazla hareket eden "+X.alerts.length+" hisse: "}));
-      X.alerts.slice(0,12).forEach(function(r,i){ box.appendChild(el("span",{text:(i?", ":"")})); box.appendChild(el("a",{href:"https://robinhood.com/stocks/"+r.ticker,target:"_blank",rel:"noopener",text:r.ticker+" "+pct(r.d1Pct)})); });
-      box.appendChild(el("div",{class:"small",text:"Her yeni %20 hareketinde GitHub bir bildirim (issue) açar; GitHub uygulaması ya da e-postayla haber gelir."}));
+      var low=X.alerts.filter(function(r){return r.risk&&r.risk.low;}), risky=X.alerts.filter(function(r){return !(r.risk&&r.risk.low);});
+      var box=el("div",{class:"mv-alert"}, el("b",{text:"Bugün %20 veya daha fazla hareket eden "+X.alerts.length+" hisse; düşük riskli "+low.length+" tanesi:"}));
+      [3,2,1].forEach(function(lv){
+        var g=low.filter(function(r){return r.level===lv;}); if(!g.length) return;
+        var line=el("div",null, el("span",{class:"small",text:(lv===3?"Seviye 3 · çok sert (%50+): ":lv===2?"Seviye 2 · sert (%30–50): ":"Seviye 1 · dikkat (%20–30): ")}));
+        g.forEach(function(r,i){ line.appendChild(el("span",{text:(i?", ":"")})); line.appendChild(el("a",{href:"https://robinhood.com/stocks/"+r.ticker,target:"_blank",rel:"noopener",text:r.ticker+" "+pct(r.d1Pct)})); });
+        box.appendChild(line);
+      });
+      if(!low.length && X.alerts.some(function(r){return r.risk;})) box.appendChild(el("div",{class:"small",text:"Bugün düşük riskli hisse yok."}));
+      if(risky.length){
+        var rl=el("div",{class:"small muted"}, el("span",{text:"Riskli bulunup elenen: "}));
+        risky.slice(0,15).forEach(function(r,i){ rl.appendChild(el("span",{text:(i?", ":"")})); rl.appendChild(el("span",{title:(r.risk&&r.risk.reasons||[]).join("; "),text:r.ticker+" "+pct(r.d1Pct)})); });
+        box.appendChild(rl);
+      }
+      box.appendChild(el("div",{class:"small",text:"Düşük risk: fiyat ≥ 10 $, piyasa değeri ≥ 2 milyar $, günde ≥ 20 milyon $ işlem, en az 1 yıldır borsada, son 60 günde aşırı oynak değil, son 12 ayda ters bölünme yok. Kapanıştan sonra günde bir kez yalnızca bunlar e-postayla bildirilir (GitHub issue). Düşük risk, risksiz demek değildir."}));
       al.appendChild(box);
     }
     var b=$("mvBody"); clear(b);

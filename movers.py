@@ -21,6 +21,17 @@ NY = ZoneInfo("America/New_York")
 SYMBOLS_URL = "https://www.nasdaqtrader.com/dynamic/SymDir/nasdaqlisted.txt"
 MIN_PRICE, MIN_DOLLAR_VOL = 3.0, 2_000_000     # skip penny stocks and stocks too thin to trade
 ALERT, TOP_N = 0.20, 25
+# Daily e-mail: only the lower-risk 20 % movers. A stock is "riskli" (left out of the e-mail) if any of these fail.
+LOW_RISK = {"minPrice": 10.0,        # previous close >= 10 $ (no penny / near-penny stocks)
+            "minCapB": 2.0,          # market value >= 2 billion $ (mid and large companies)
+            "minDollarVolM": 20.0,   # >= 20 million $ traded a day on average (easy to get in and out)
+            "minDays": 250,          # listed for about a year or more (no fresh IPO / SPAC)
+            "maxDailyVolPct": 5.0,   # typical daily swing over the previous 60 days <= 5 % (not a chronic gambler's stock)
+            "reverseSplitDays": 365} # no reverse split in the last 12 months (a sign of a collapsing share price)
+LEVELS = ((0.50, 3, "Seviye 3 · çok sert (%50 ve üzeri)"), (0.30, 2, "Seviye 2 · sert (%30–50)"),
+          (0.20, 1, "Seviye 1 · dikkat (%20–30)"))
+SANCTIONED_NAMES = ("Semiconductor Manufacturing International", "Hikvision", "SenseTime", "Sugon", "Dawning",
+                    "China Mobile", "China Telecom", "China Unicom", "Inspur", "Megvii", "iFlytek", "Dahua")
 SKIP_NAME = re.compile(r"warrant|right|unit|preferred|notes? due|debenture|depositary share.*preferred|%", re.I)
 OWNER = "DavidMahmut"
 
@@ -70,7 +81,7 @@ def download(tickers, **kw):
 def headline(t):
     try:
         import news as N
-        items = N.fetch_yf(t)
+        items = N.fetch_yf(t) or N.fetch_rss(t)
         if not items:
             return None
         h = {k: items[0].get(k) for k in ("title", "url", "publisher", "at")}
@@ -78,6 +89,118 @@ def headline(t):
         return h
     except Exception:
         return None
+
+
+def trn(x, d=1):
+    return f"{x:,.{d}f}".replace(",", " ").replace(".", ",").replace(" ", ".")
+
+
+def level_of(d1pct):
+    a = abs(d1pct) / 100
+    return next((lv for th, lv, _ in LEVELS if a >= th), 0)
+
+
+def market_cap(t):
+    try:
+        import yfinance as yf
+        fi = yf.Ticker(t).fast_info
+        for k in ("marketCap", "market_cap"):
+            try:
+                v = fi[k]
+            except Exception:
+                v = getattr(fi, k, None)
+            if v and v > 0:
+                return float(v)
+    except Exception as e:
+        print("market cap failed:", t, e)
+    return None
+
+
+def risk_check(alerts, cache):
+    """Marks each 20 % mover as lower-risk or risky (with the reasons, in Turkish). `cache` keeps the slow lookups
+    (one year of history, market value) per ticker for the day."""
+    need = [r["ticker"] for r in alerts if r["ticker"] not in cache]
+    hist = download(need, period="13mo", interval="1d", actions=True) if need else {}
+    for t in need:
+        s, c = hist.get(t), {"capB": None, "days": None, "dailyVolPct": None, "reverseSplit": None}
+        cap = market_cap(t)
+        c["capB"] = round(cap / 1e9, 2) if cap else None
+        if s is not None and len(s):
+            d_last = s.index[-1].date()
+            past = s[[d < d_last for d in s.index.date]] if len(s) > 1 else s
+            c["days"] = int(len(past))
+            r = past["Close"].astype(float).pct_change().dropna().tail(60)
+            c["dailyVolPct"] = round(float(r.std() * 100), 2) if len(r) > 10 else None
+            if "Stock Splits" in s:
+                sp = s["Stock Splits"].astype(float).fillna(0)
+                recent = sp[[(d_last - d).days <= LOW_RISK["reverseSplitDays"] for d in s.index.date]]
+                rs = recent[(recent > 0) & (recent < 1)]
+                c["reverseSplit"] = str(rs.index[-1].date()) if len(rs) else None
+        cache[t] = c
+    L = LOW_RISK
+    for r in alerts:
+        c, why = cache.get(r["ticker"], {}), []
+        if any(n.lower() in (r.get("name") or "").lower() for n in SANCTIONED_NAMES):
+            why.append("ABD yaptırım listesinde")
+        if r["prevClose"] < L["minPrice"]:
+            why.append(f"fiyatı {L['minPrice']:.0f} $'ın altında")
+        if c.get("capB") is None:
+            why.append("piyasa değeri bulunamadı")
+        elif c["capB"] < L["minCapB"]:
+            why.append(f"küçük şirket (piyasa değeri {c['capB']:.1f} milyar $)".replace(".", ","))
+        if r["dollarVolM"] < L["minDollarVolM"]:
+            why.append(f"işlem hacmi düşük (günde {r['dollarVolM']:.1f} milyon $)".replace(".", ","))
+        if c.get("days") is not None and c["days"] < L["minDays"]:
+            why.append(f"borsada 1 yıldan kısa süredir ({c['days']} işlem günü)")
+        if c.get("dailyVolPct") is not None and c["dailyVolPct"] > L["maxDailyVolPct"]:
+            why.append(f"aşırı oynak (günde ortalama %{c['dailyVolPct']:.1f} oynuyor)".replace(".", ","))
+        if c.get("reverseSplit"):
+            why.append(f"son 12 ayda ters bölünme ({c['reverseSplit']})")
+        if r.get("buyout"):
+            why.append("satın alma fiyatına sabitlenmiş görünüyor")
+        r["level"] = level_of(r["d1Pct"])
+        r["capB"] = c.get("capB")
+        r["risk"] = {"low": not why, "reasons": why}
+    return alerts
+
+
+def summary_mail(day, alerts, study, now):
+    """One e-mail per trading day after the close: only the lower-risk 20 % movers, grouped by how violent the move was."""
+    low = [r for r in alerts if r.get("risk", {}).get("low")]
+    risky = [r for r in alerts if not r.get("risk", {}).get("low")]
+    if not low:
+        return None
+    dt = datetime.strptime(day, "%Y-%m-%d")
+    title = (f"Nasdaq günlük özet {dt:%d.%m.%Y}: {len(low)} düşük riskli %20 hareket ("
+             + ", ".join(f"{r['ticker']} {'+' if r['d1Pct'] > 0 else '−'}%{abs(r['d1Pct']):.0f}" for r in low[:5]) + (" …" if len(low) > 5 else "") + ")")
+    body = [title, "", f"@{OWNER} {dt:%d.%m.%Y} kapanışında %20 veya daha fazla hareket eden Nasdaq hisselerinden yalnızca "
+            "düşük riskli olanlar (fiyat ≥ 10 $, piyasa değeri ≥ 2 milyar $, günde ≥ 20 milyon $ işlem, en az 1 yıldır "
+            "borsada, son 60 günde aşırı oynak değil, son 12 ayda ters bölünme yok), hareketin şiddetine göre:", ""]
+    for th, lv, label in LEVELS:
+        grp = sorted([r for r in low if r["level"] == lv], key=lambda r: -abs(r["d1Pct"]))
+        if not grp:
+            continue
+        body.append(f"### {label}")
+        for r in grp:
+            h = r.get("headline") or {}
+            d = "yükseldi" if r["d1Pct"] > 0 else "düştü"
+            arrow = "▲" if r["d1Pct"] > 0 else "▼"
+            body.append(f"- {arrow} **{r['ticker']}** ({r['name']}): %{trn(abs(r['d1Pct']))} {d}, {trn(r['prevClose'], 2)} $ → "
+                        f"{trn(r['price'], 2)} $, piyasa değeri {trn(r['capB'])} milyar $, günde {trn(r['dollarVolM'], 0)} milyon $ "
+                        f"işlem, haftalık {'+' if r['w1Pct'] >= 0 else '−'}%{trn(abs(r['w1Pct']))}"
+                        + (f"\n  Haber: [{h.get('title')}]({h.get('url')})" if h.get("url") else ""))
+        body.append("")
+    if risky:
+        body.append(f"Riskli bulunduğu için listeye alınmayan {len(risky)} hisse: "
+                    + "; ".join(f"{r['ticker']}: {r['risk']['reasons'][0]}" for r in risky[:12])
+                    + (" …" if len(risky) > 12 else "") + ".")
+        body.append("")
+    if study:
+        body.append("Geçmişte ne oldu (2019–2026 testi): " + study_text(study))
+        body.append("")
+    body.append("Düşük risk, risksiz demek değildir; bu bir bildirimdir, alım-satım önerisi değildir. Tüm liste: "
+                "https://davidmahmut.github.io/portfoy-botu/#hareketliler")
+    return "\n".join(body) + "\n"
 
 
 def _p(x):
@@ -130,8 +253,12 @@ def main():
         r["headline"] = headline(r["ticker"])
     old = json.loads((ROOT / "movers.json").read_text()) if (ROOT / "movers.json").exists() else {}
     today = now.date().isoformat()
+    cache = dict((old.get("riskCache") or {}).get(today) or {})
+    try:
+        risk_check(alerts, cache)
+    except Exception as e:                       # the watch list must not fail because of the risk lookup
+        print("risk check failed:", e)
     sent = set((old.get("alerted") or {}).get(today, []))
-    new = [r for r in alerts if r["ticker"] not in sent]
     study = None
     if (ROOT / "movers_study.json").exists():
         try:
@@ -139,6 +266,10 @@ def main():
         except Exception:
             study = None
     closed = now.time() >= datetime.strptime("16:00", "%H:%M").time() or now.weekday() >= 5
+    bar_day = max((r["date"] for r in rows), default=today)
+    mail = None
+    if closed and old.get("mailedDay") != bar_day:
+        mail = summary_mail(bar_day, alerts, study, now)
     hist = dict(old.get("spikeHistory") or {})
     d = max((r["date"] for r in rows), default=None)  # the trader reads this the next morning (sert yükseliş short'u)
     if d and not (hist.get(d) or {}).get("final"):
@@ -152,31 +283,21 @@ def main():
            "dailyLosers": by("d1Pct", False), "dailyGainers": by("d1Pct", True),
            "weeklyLosers": by("w1Pct", False), "weeklyGainers": by("w1Pct", True), "alerts": alerts,
            "alerted": {today: sorted(sent | {r["ticker"] for r in alerts})}, "spikeHistory": hist,
+           "riskCache": {today: cache}, "lowRisk": LOW_RISK,
+           "mailedDay": bar_day if closed else old.get("mailedDay"),
            "study": {**study, "text": study_text(study)} if study else None,
            "notes": "Nasdaq'ta işlem gören hisse senetleri (ETF, varant, imtiyazlı hisse hariç); fiyatı 3 $'ın, son 20 günlük "
                     "ortalama işlem hacmi 2 milyon $'ın altındakiler elendi. Günlük değişim önceki kapanışa göre (seans "
-                    "açıkken anlık fiyatla), haftalık değişim 5 işlem günü öncesine göre. Yalnızca izleme; bot bu listeyle "
-                    "işlem yapmaz."}
+                    "açıkken anlık fiyatla), haftalık değişim 5 işlem günü öncesine göre. Bot bu listeden yalnızca "
+                    "\"sert yükseliş short'u\" kuralına uyanlara ertesi sabah girer."}
     (ROOT / "movers.json").write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")
     md = ROOT / "alerts_new.md"
-    if new:
-        def line(r):
-            h = r.get("headline") or {}
-            d = "yükseldi" if r["d1Pct"] > 0 else "düştü"
-            return (f"- **{r['ticker']}** ({r['name']}): bugün %{abs(r['d1Pct']):.1f} {d}, fiyat {r['price']} $ "
-                    f"(önceki kapanış {r['prevClose']} $, haftalık {r['w1Pct']:+.1f}%)"
-                    + (f"\n  Haber: [{h.get('title')}]({h.get('url')})" if h.get("url") else ""))
-        title = "Nasdaq %20 hareket: " + ", ".join(f"{r['ticker']} {r['d1Pct']:+.0f}%" for r in new[:6]) + \
-                (f" ve {len(new) - 6} hisse daha" if len(new) > 6 else "")
-        body = [title, "", f"@{OWNER} {now:%d.%m.%Y %H:%M} ET itibarıyla günlük %20 veya daha fazla hareket eden Nasdaq hisseleri:", ""]
-        body += [line(r) for r in new]
-        if study:
-            body += ["", "Geçmişte ne oldu (2019–2026 testi, aynı filtrelerle): " + study_text(study)]
-        body += ["", "Bu bir bildirimdir, alım-satım önerisi değildir. Tüm liste: https://davidmahmut.github.io/portfoy-botu/#hareketliler"]
-        md.write_text("\n".join(body) + "\n", encoding="utf-8")
+    if mail:
+        md.write_text(mail, encoding="utf-8")
     elif md.exists():
         md.unlink()
-    print(len(rows), "screened;", len(alerts), "alerts;", len(new), "new")
+    print(len(rows), "screened;", len(alerts), "alerts;", sum(1 for r in alerts if r.get("risk", {}).get("low")), "low risk;",
+          "mail" if mail else "no mail")
     return 0
 
 
