@@ -28,6 +28,8 @@ LOW_RISK = {"minPrice": 10.0,        # previous close >= 10 $ (no penny / near-p
             "minDays": 250,          # listed for about a year or more (no fresh IPO / SPAC)
             "maxDailyVolPct": 5.0,   # typical daily swing over the previous 60 days <= 5 % (not a chronic gambler's stock)
             "reverseSplitDays": 365} # no reverse split in the last 12 months (a sign of a collapsing share price)
+# "Fell a lot and calmed down" alert (rebound_study.py rule crash20_s3), only for lower-risk companies
+REBOUND = {"crash": 0.20, "minAge": 10, "maxAge": 60, "calm": 0.70, "minPrice": 10.0, "minCapB": 2.0, "minDollarVolM": 20.0}
 LEVELS = ((0.50, 3, "Seviye 3 · çok sert (%50 ve üzeri)"), (0.30, 2, "Seviye 2 · sert (%30–50)"),
           (0.20, 1, "Seviye 1 · dikkat (%20–30)"))
 SANCTIONED_NAMES = ("Semiconductor Manufacturing International", "Hikvision", "SenseTime", "Sugon", "Dawning",
@@ -328,6 +330,78 @@ def risk_check(alerts, cache, data=None, F=None):
     return alerts
 
 
+def rebound_signal(s):
+    """A one-day fall of 20 %+ 10-60 trading days ago (and none since), then calm: no new 20-day closing low in the last
+    10 days, price above its 10- and 20-day averages, last 10 days at least 30 % less volatile than the 10 before."""
+    c = s["Close"].astype(float)
+    r = c.pct_change()
+    n = len(c)
+    if n < 80:
+        return None
+    if (r.iloc[-REBOUND["minAge"]:] <= -REBOUND["crash"]).any():
+        return None
+    hits = [i for i in range(max(1, n - 1 - REBOUND["maxAge"]), n - REBOUND["minAge"]) if r.iloc[i] <= -REBOUND["crash"]]
+    if not hits:
+        return None
+    i = hits[-1]
+    last10, prev10 = c.iloc[-10:], c.iloc[-20:-10]
+    v_now, v_prev = float(r.iloc[-10:].std()), float(r.iloc[-20:-10].std())
+    price = float(c.iloc[-1])
+    if not (last10.min() > prev10.min() and price > c.tail(10).mean() and price > c.tail(20).mean()
+            and v_prev > 0 and v_now < v_prev * REBOUND["calm"]):
+        return None
+    sp = s["Stock Splits"].astype(float).fillna(0).tail(252) if "Stock Splits" in s else pd.Series(dtype=float)
+    return {"crashDate": str(s.index[i].date()), "crashPct": round(float(r.iloc[i]) * 100, 1), "ageDays": int(n - 1 - i),
+            "preCrash": round(float(c.iloc[i - 1]), 2), "crashClose": round(float(c.iloc[i]), 2),
+            "baseLow": round(float(c.tail(20).min()), 2), "calmerPct": round((1 - v_now / v_prev) * 100),
+            "reverseSplit": bool(((sp > 0) & (sp < 1)).any())}
+
+
+def rebound_mail(day, picks, now):
+    dt = datetime.strptime(day, "%Y-%m-%d")
+    title = ("ÖNEMLİ — Düşüp dengelenen hisse kriterine uydu: "
+             + ", ".join(f"{p['ticker']}" for p in picks[:6]) + (" …" if len(picks) > 6 else "") + " (alım adayı)")
+    st = {}
+    try:
+        R = json.loads((ROOT / "rebound_results.json").read_text(encoding="utf-8"))["results"]
+        st = {h: R.get(f"crash20_s3|h{h}") or {} for h in (20, 60)}
+    except Exception:
+        pass
+    body = [title, "", f"@{OWNER} {dt:%d.%m.%Y} kapanışına göre şu hisse(ler) senin kriterine uydu: son 10–60 işlem günü "
+            "içinde bir günde %20+ düştü, sonra dengelendi (10 gündür yeni dip yok, fiyat 10 ve 20 günlük ortalamanın "
+            "üstünde, oynaklık azaldı) ve düşük riskli şirket (fiyat ≥ 10 $, piyasa değeri ≥ 2 milyar $, günde ≥ 20 milyon "
+            "$ işlem, son 12 ayda ters bölünme yok).", ""]
+    for p in picks:
+        h = p.get("headline") or {}
+        body.append(f"### {p['ticker']} — {p['name']}")
+        dt_c = datetime.strptime(p["crashDate"], "%Y-%m-%d")
+        body.append(f"- Düşüş: {dt_c:%d.%m.%Y} günü −%{trn(abs(p['crashPct']))} ({trn(p['preCrash'], 2)} $ → "
+                    f"{trn(p['crashClose'], 2)} $), {p['ageDays']} işlem günü önce")
+        body.append(f"- Şimdi: {trn(p['price'], 2)} $; 52 haftalık zirveden "
+                    + (f"−%{trn(abs(p['ddPct']))}" if p.get("ddPct") is not None else "–")
+                    + f"; dengelenme dibi {trn(p['baseLow'], 2)} $; oynaklık %{p['calmerPct']} azaldı")
+        body.append(f"- Piyasa değeri {p['capB']:.1f} milyar $".replace(".", ",")
+                    + (f", F/K {p['pe']:.1f}".replace(".", ",") if p.get("pe") else ", şirket zararda (F/K yok)")
+                    + f", günde {p['dollarVolM']:.0f} milyon $ işlem")
+        body.append(f"- Olası plan: zarar-kes dengelenme dibinin biraz altı (yaklaşık {round(p['baseLow'] * 0.97, 2)} $)".replace(".", ","))
+        body.append(f"- Robinhood: https://robinhood.com/stocks/{p['ticker']}")
+        if h.get("url"):
+            body.append(f"- Son haber: [{h.get('title')}]({h.get('url')})")
+        body.append("")
+    if st.get(20).get("trades") if st.get(20) else False:
+        a, b = st[20], st.get(60) or {}
+        sp = lambda x: ("+" if x >= 0 else "−") + "%" + trn(abs(x))
+        body.append("Bu kuralın geçmişi (2019–2026, aynı filtrelerle, ertesi açılışta alım): "
+                    f"20 gün tutulan {a['trades']} işlemde ortalama {sp(a['avgPct'])}, kârlı işlem oranı %{a['winRatePct']:.0f}, "
+                    f"aynı günlerde QQQ'ya göre {sp(a['avgExcessPct'])}; 60 günde ortalama {sp(b.get('avgPct', 0))}, "
+                    f"QQQ'ya göre {sp(b.get('avgExcessPct', 0))}. Yani bu kural geçmişte piyasayı geçmedi; batan "
+                    "şirketler veride olmadığı için gerçek sonuç daha da kötü olabilir.")
+        body.append("")
+    body.append("Bu bir bildirimdir; yatırım tavsiyesi değildir, karar senin. Kendi araştırmanı yap ve kaybetmeyi göze "
+                "alabileceğin kadarla gir. Tüm liste: https://davidmahmut.github.io/portfoy-botu/#hareketliler")
+    return "\n".join(body) + "\n"
+
+
 def summary_mail(day, alerts, study, now):
     """One e-mail per trading day after the close: only the lower-risk 20 % movers, grouped by how violent the move was."""
     low = [r for r in alerts if r.get("risk", {}).get("low")]
@@ -400,7 +474,7 @@ def main():
         print("fundamentals step failed:", e)
         F = {}
     ndx, spx = set((F.get("index") or {}).get("ndx") or []), set((F.get("index") or {}).get("spx") or [])
-    rows, screen = [], []
+    rows, screen, rebound = [], [], []
     for t, s in data.items():
         c, v = s["Close"].astype(float), s["Volume"].astype(float)
         last, prev = float(c.iloc[-1]), float(c.iloc[-2])
@@ -420,6 +494,15 @@ def main():
                        CATEGORY.get(t, ""), r2(lo52, 4 if lo52 and lo52 < 1 else 2), r2(hi52, 4 if hi52 and hi52 < 1 else 2)])
         o, hi, lo = (float(s[k].iloc[-1]) for k in ("Open", "High", "Low"))
         gap = o / prev - 1 if o > 0 else 0.0
+        if last >= REBOUND["minPrice"] and dv >= REBOUND["minDollarVolM"] * 1e6 and (capb or 0) >= REBOUND["minCapB"]:
+            try:
+                sig = rebound_signal(s)
+            except Exception:
+                sig = None
+            if sig and not sig.pop("reverseSplit") and not any(x.lower() in names.get(t, "").lower() for x in SANCTIONED_NAMES):
+                rebound.append({"ticker": t, "name": names.get(t, t), "price": round(last, 2), "date": str(s.index[-1].date()),
+                                "capB": round(capb, 2), "pe": round(pe, 1) if pe else None, "dollarVolM": round(dv / 1e6, 1),
+                                "ddPct": round((last / hi52 - 1) * 100, 1) if hi52 else None, **sig})
         rows.append({"ticker": t, "name": names.get(t, t), "price": round(last, 2), "prevClose": round(prev, 2),
                      "d1Pct": round((last / prev - 1) * 100, 2), "w1Pct": round((last / w - 1) * 100, 2),
                      "dollarVolM": round(dv / 1e6, 1), "date": str(s.index[-1].date()), "gapPct": round(gap * 100, 2),
@@ -452,6 +535,14 @@ def main():
         except Exception:
             study = None
     closed = now.time() >= datetime.strptime("16:00", "%H:%M").time() or now.weekday() >= 5
+    rebound = [p for p in rebound if p["date"] == bar_day]
+    reb_sent = {k: v for k, v in (old.get("reboundAlerted") or {}).items()
+                if (datetime.fromisoformat(today) - datetime.fromisoformat(v)).days <= 150}
+    reb_new = [p for p in rebound if reb_sent.get(p["ticker"]) != p["crashDate"]] if closed else []
+    for p in reb_new:
+        p["headline"] = headline(p["ticker"])
+        reb_sent[p["ticker"]] = p["crashDate"]
+    reb_mail = rebound_mail(bar_day, reb_new, now) if reb_new else None
     mail = None
     if closed and old.get("mailedDay") != bar_day:
         mail = summary_mail(bar_day, alerts, study, now)
@@ -471,6 +562,7 @@ def main():
            "alerted": {today: sorted(sent | {r["ticker"] for r in alerts})}, "spikeHistory": hist,
            "riskCache": {today: cache}, "lowRisk": LOW_RISK,
            "mailedDay": bar_day if closed else old.get("mailedDay"),
+           "rebound": rebound, "reboundAlerted": reb_sent, "reboundRule": REBOUND,
            "study": {**study, "text": study_text(study)} if study else None,
            "screen": {"cols": SCREEN_COLS, "rows": screen, "fundamentalsDate": F.get("date"),
                       "indexDate": (F.get("index") or {}).get("date")},
@@ -479,6 +571,11 @@ def main():
                     "açıkken anlık fiyatla), haftalık değişim 5 işlem günü öncesine göre. Bot bu listeden yalnızca "
                     "\"sert yükseliş short'u\" kuralına uyanlara ertesi sabah girer."}
     (ROOT / "movers.json").write_text(json.dumps(out, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    rm = ROOT / "rebound_new.md"
+    if reb_mail:
+        rm.write_text(reb_mail, encoding="utf-8")
+    elif rm.exists():
+        rm.unlink()
     md = ROOT / "alerts_new.md"
     if mail:
         md.write_text(mail, encoding="utf-8")

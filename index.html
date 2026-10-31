@@ -1029,6 +1029,12 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
       box.appendChild(el("div",{class:"small",text:"Düşük risk: fiyat ≥ 10 $, piyasa değeri ≥ 2 milyar $, günde ≥ 20 milyon $ işlem, en az 1 yıldır borsada, son 60 günde aşırı oynak değil, son 12 ayda ters bölünme yok. Kapanıştan sonra günde bir kez yalnızca bunlar e-postayla bildirilir (GitHub issue). Düşük risk, risksiz demek değildir."}));
       al.appendChild(box);
     }
+    if((X.rebound||[]).length){
+      var rb=el("div",{class:"mv-alert",style:"border-left-color:var(--accent);background:var(--accent-soft);margin-top:8px"}, el("b",{text:"Düşüp dengelenen ve kriterine uyan "+X.rebound.length+" hisse: "}));
+      X.rebound.forEach(function(p,i){ rb.appendChild(el("span",{text:(i?", ":"")})); rb.appendChild(el("a",{href:"https://robinhood.com/stocks/"+p.ticker,target:"_blank",rel:"noopener",title:p.crashDate+" günü "+pct(p.crashPct)+" düştü, "+p.ageDays+" işlem günü önce; dengelenme dibi "+fmtNum(p.baseLow,2)+" $",text:p.ticker+" ("+pct(p.crashPct)+", "+p.ageDays+" gün önce)"})); });
+      rb.appendChild(el("div",{class:"small",text:"Kural: son 10–60 işlem gününde bir günde %20+ düşüş, sonra 10 gündür yeni dip yok, fiyat 10 ve 20 günlük ortalamanın üstünde, oynaklık azaldı; fiyat ≥ 10 $, piyasa değeri ≥ 2 milyar $, günde ≥ 20 milyon $ işlem. Yeni bir hisse bu kurala girince kapanıştan sonra ÖNEMLİ başlıklı e-posta gelir. 2019–2026 testinde bu kural ortalamada QQQ'yu geçmedi; yatırım tavsiyesi değildir."}));
+      al.appendChild(rb);
+    }
     mvTable();
     var st=X.study&&X.study.text;
     $("mvNote").textContent=(X.notes||"")+" Sembole tıklayınca Robinhood sayfası açılır."+(st? " Geçmiş: "+st : "")+" Bu liste alım-satım önerisi değildir.";
