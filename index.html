@@ -320,8 +320,20 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
 .mv-table td.l{text-align:left;font-family:var(--f-body)}
 .mv-table td.l a{font-weight:700;font-family:var(--f-mono)}
 .mv-table .nm{display:block;font-size:12px;color:var(--muted);max-width:28ch;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mv-filter{border:1px solid var(--line);border-radius:8px;padding:10px 12px;background:var(--panel)}
+.mv-filter summary{cursor:pointer;font-weight:700;font-size:15px}
+.mv-filter summary .small{font-weight:400;margin-left:6px}
+.mvf-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px 14px;margin-top:10px}
+.mvf-grid label,.mvf-pair{display:flex;flex-direction:column;gap:4px;font-size:13px;color:var(--muted);font-weight:600;min-width:0}
+.mvf-pair .two{display:flex;gap:6px}
+.mvf-grid input,.mvf-grid select{font:inherit;font-size:14px;font-weight:400;padding:6px 8px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink);min-width:0;width:100%;box-sizing:border-box}
+.mvf-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.mvf-actions button,.mv-more{font:inherit;font-size:13px;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--panel);color:var(--ink);cursor:pointer}
+.mvf-actions button.on{background:var(--accent-soft);border-color:var(--accent);color:var(--accent)}
+.tr-b{display:inline-block;font-family:var(--f-mono);font-size:11px;padding:1px 5px;border-radius:4px;margin-left:3px}
+.tr-b.up{background:var(--gain-soft)} .tr-b.down{background:var(--loss-soft)} .tr-b.flat{background:var(--bg);color:var(--muted)}
 .mv-alert{border-left:3px solid var(--warn);padding:8px 12px;background:var(--warn-soft);border-radius:6px;font-size:14px}
-@media (max-width:520px){.mv-table th:nth-child(2),.mv-table td:nth-child(2),.mv-table th:nth-child(5),.mv-table td:nth-child(5){display:none}.mv-table th,.mv-table td{padding:8px 6px}.mv-table{font-size:13px}.mv-table .nm{max-width:16ch}}
+@media (max-width:520px){.mv-table th:nth-child(2),.mv-table td:nth-child(2),.mv-table th:nth-child(5),.mv-table td:nth-child(5),.mv-table th:nth-child(7),.mv-table td:nth-child(7),.mv-table th:nth-child(8),.mv-table td:nth-child(8){display:none}.mv-table th,.mv-table td{padding:8px 6px}.mv-table{font-size:13px}.mv-table .nm{max-width:16ch}}
 @media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
 </style>
 
@@ -467,13 +479,45 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
     <div class="sec-head"><h2 id="h-mv">Nasdaq hareketliler</h2><span class="small muted" id="mvAsOf">—</span></div>
     <div class="panel" style="display:flex;flex-direction:column;gap:12px">
       <div id="mvAlerts"></div>
+      <details class="mv-filter" id="mvFilter" open>
+        <summary>Filtreler <span class="small muted" id="mvFCount"></span></summary>
+        <div class="mvf-grid">
+          <label>Hisse türü
+            <select id="f_type">
+              <option value="">Tümü (Nasdaq'ta işlem gören)</option>
+              <option value="ndx">Nasdaq-100 üyesi</option>
+              <option value="spx">S&amp;P 500 üyesi</option>
+              <option value="any">Nasdaq-100 ya da S&amp;P 500</option>
+              <option value="none">Endeks dışı</option>
+              <option value="Q">Nasdaq Global Select (en büyük segment)</option>
+              <option value="G">Nasdaq Global Market (orta)</option>
+              <option value="S">Nasdaq Capital Market (küçük şirketler)</option>
+            </select></label>
+          <div class="mvf-pair"><span>Hisse fiyatı ($)</span><div class="two"><input id="f_pmin" type="text" inputmode="decimal" placeholder="en az" aria-label="Fiyat en az"><input id="f_pmax" type="text" inputmode="decimal" placeholder="en çok" aria-label="Fiyat en çok"></div></div>
+          <div class="mvf-pair"><span>Hacim (milyon $/gün)</span><div class="two"><input id="f_vmin" type="text" inputmode="decimal" placeholder="en az" aria-label="Hacim en az"><input id="f_vmax" type="text" inputmode="decimal" placeholder="en çok" aria-label="Hacim en çok"></div></div>
+          <div class="mvf-pair"><span>Piyasa değeri (milyar $)</span><div class="two"><input id="f_cmin" type="text" inputmode="decimal" placeholder="en az" aria-label="Piyasa değeri en az"><input id="f_cmax" type="text" inputmode="decimal" placeholder="en çok" aria-label="Piyasa değeri en çok"></div></div>
+          <label>Trend: 30 günlük ortalama
+            <select id="f_s30"><option value="">Fark etmez</option><option value="up">Fiyat ortalamanın üstünde</option><option value="down">Fiyat ortalamanın altında</option></select></label>
+          <label>Trend: 200 günlük ortalama
+            <select id="f_s200"><option value="">Fark etmez</option><option value="up">Fiyat ortalamanın üstünde</option><option value="down">Fiyat ortalamanın altında</option></select></label>
+          <div class="mvf-pair"><span>F/K (P/E)</span><div class="two"><input id="f_pemin" type="text" inputmode="decimal" placeholder="en az" aria-label="F/K en az"><input id="f_pemax" type="text" inputmode="decimal" placeholder="en çok" aria-label="F/K en çok"></div></div>
+          <div class="mvf-pair"><span>ATR (14 gün, fiyatın %'si)</span><div class="two"><input id="f_amin" type="text" inputmode="decimal" placeholder="en az" aria-label="ATR en az"><input id="f_amax" type="text" inputmode="decimal" placeholder="en çok" aria-label="ATR en çok"></div></div>
+        </div>
+        <div class="mvf-actions">
+          <button type="button" id="f_low">Düşük risk ön ayarı</button>
+          <button type="button" id="f_trend">Yükseliş trendi (30 ve 200 günün üstünde)</button>
+          <button type="button" id="f_reset">Filtreleri sıfırla</button>
+        </div>
+        <p class="small muted" style="margin:10px 0 0;max-width:95ch">Tür: Nasdaq-100 ve S&amp;P 500 üyeliği (Wikipedia, haftada bir) ve Nasdaq segmenti (Global Select en sıkı listeleme şartları olan en büyük grup, Capital Market küçük şirketler). Trend: fiyat 30 ve 200 günlük basit ortalamanın üstünde mi. F/K: fiyat ÷ son 12 ayın hisse başı kârı; zarar eden şirkette boş kalır ve F/K filtresi kullanılınca listeden çıkar. ATR: son 14 günün ortalama gerçek aralığı (gün içi aralık ve gece boşlukları dahil), fiyatın yüzdesi olarak; yönü değil, hissenin tipik günlük hareket büyüklüğünü gösterir. Piyasa değeri ve F/K günde bir alınan hisse sayısı ve kârla, anlık fiyattan hesaplanır (Yahoo Finance). Filtreler bu tarayıcıda hatırlanır.</p>
+      </details>
       <div class="mv-tabs" role="group" aria-label="Liste">
         <button type="button" data-k="dailyLosers" aria-pressed="true">Günün en çok düşenleri</button>
         <button type="button" data-k="dailyGainers" aria-pressed="false">Günün en çok yükselenleri</button>
         <button type="button" data-k="weeklyLosers" aria-pressed="false">Haftanın en çok düşenleri</button>
         <button type="button" data-k="weeklyGainers" aria-pressed="false">Haftanın en çok yükselenleri</button>
       </div>
-      <div class="tbl-wrap"><table class="mv-table"><thead><tr><th>Hisse</th><th>Fiyat $</th><th>Gün</th><th>Hafta</th><th>Hacim (milyon $/gün)</th></tr></thead><tbody id="mvBody"><tr><td colspan="5" class="muted">Veriler yükleniyor…</td></tr></tbody></table></div>
+      <div class="tbl-wrap"><table class="mv-table"><thead><tr><th>Hisse</th><th>Fiyat $</th><th>Gün</th><th>Hafta</th><th>Hacim<br>milyon $/gün</th><th>Piyasa değeri<br>milyar $</th><th>F/K</th><th>ATR %</th><th>Trend<br>30 / 200</th></tr></thead><tbody id="mvBody"><tr><td colspan="9" class="muted">Veriler yükleniyor…</td></tr></tbody></table></div>
+      <div><button type="button" class="mv-more" id="mvMore" hidden>Daha fazla göster</button></div>
       <p class="small muted" id="mvNote" style="margin:0;max-width:90ch"></p>
     </div>
   </section>
@@ -819,10 +863,68 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
         +"'inde piyasada); v5 endeks kolu "+pct(c.cagrPct)+" / "+pct(c.maxDrawdownPct)+". Ayrıntı: dip_results.json.";
     } else st.textContent="";
   }
-  var mvKey="dailyLosers";
+  var mvKey="dailyLosers", mvLimit=25, mvF={};
+  var F_IDS={type:"f_type",pmin:"f_pmin",pmax:"f_pmax",vmin:"f_vmin",vmax:"f_vmax",cmin:"f_cmin",cmax:"f_cmax",s30:"f_s30",s200:"f_s200",pemin:"f_pemin",pemax:"f_pemax",amin:"f_amin",amax:"f_amax"};
+  try{ mvF=JSON.parse(localStorage.getItem("mvFilters")||"{}")||{}; }catch(e){ mvF={}; }
+  function fNum(v){ if(v==null||v==="") return null; var x=parseFloat(String(v).replace(/\s/g,"").replace(",",".")); return isFinite(x)?x:null; }
+  function fSync(){ Object.keys(F_IDS).forEach(function(k){ var n=$(F_IDS[k]); if(n) n.value=(mvF[k]==null?"":String(mvF[k]).replace(".",",")); }); }
+  function fRead(){ Object.keys(F_IDS).forEach(function(k){ var n=$(F_IDS[k]); if(!n) return; mvF[k]= n.tagName==="SELECT"? (n.value||null) : fNum(n.value); }); try{ localStorage.setItem("mvFilters",JSON.stringify(mvF)); }catch(e){} }
+  function fActive(){ return Object.keys(F_IDS).filter(function(k){ return mvF[k]!=null && mvF[k]!==""; }).length; }
+  function screenRows(X){
+    var Sc=X&&X.screen; if(!Sc||!Sc.rows||!Sc.cols) return null;
+    var ci={}; Sc.cols.forEach(function(c,i){ ci[c]=i; });
+    return Sc.rows.map(function(r){ return {ticker:r[ci.t],name:r[ci.n],price:r[ci.p],d1Pct:r[ci.d1],w1Pct:r[ci.w1],dollarVolM:r[ci.dv],capB:r[ci.cap],pe:r[ci.pe],s30:r[ci.s30],s200:r[ci.s200],atr:r[ci.atr],idx:r[ci.idx]||"",tier:r[ci.tier]||""}; });
+  }
+  function fPass(r){
+    var f=mvF, t=f.type;
+    if(t==="ndx"&&r.idx.indexOf("N")<0) return false;
+    if(t==="spx"&&r.idx.indexOf("S")<0) return false;
+    if(t==="any"&&!r.idx) return false;
+    if(t==="none"&&r.idx) return false;
+    if((t==="Q"||t==="G"||t==="S")&&r.tier!==t) return false;
+    function rng(v,lo,hi){ if(lo==null&&hi==null) return true; if(!isNum(v)) return false; return !(lo!=null&&v<lo) && !(hi!=null&&v>hi); }
+    if(!rng(r.price,f.pmin,f.pmax)||!rng(r.dollarVolM,f.vmin,f.vmax)||!rng(r.capB,f.cmin,f.cmax)||!rng(r.pe,f.pemin,f.pemax)||!rng(r.atr,f.amin,f.amax)) return false;
+    function tr(sma,want){ if(!want) return true; if(!isNum(sma)) return false; return want==="up"? r.price>sma : r.price<sma; }
+    return tr(r.s30,f.s30)&&tr(r.s200,f.s200);
+  }
+  function trBadge(price,sma,label){
+    if(!isNum(sma)) return el("span",{class:"tr-b flat",title:label+" günlük ortalama için yeterli geçmiş yok",text:label+" –"});
+    var up=price>sma; return el("span",{class:"tr-b "+(up?"up":"down"),title:label+" günlük ortalama "+fmtNum(sma,2)+" $; fiyat "+(up?"üstünde":"altında"),text:label+(up?"▲":"▼")});
+  }
+  function mvTable(){
+    var X=S.movers, b=$("mvBody"); if(!b) return; clear(b);
+    var all=screenRows(X), list, total;
+    if(all){
+      var k={dailyLosers:["d1Pct",1],dailyGainers:["d1Pct",-1],weeklyLosers:["w1Pct",1],weeklyGainers:["w1Pct",-1]}[mvKey];
+      list=all.filter(fPass).filter(function(r){return isNum(r[k[0]]);}).sort(function(a,c){ return k[1]*(a[k[0]]-c[k[0]]); });
+      total=all.length;
+      $("mvFCount").textContent="· "+(fActive()? fActive()+" filtre açık, ":"")+list.length+" / "+total+" hisse uyuyor"
+        +(X.screen.fundamentalsDate? "" : " · piyasa değeri ve F/K verisi henüz alınamadı")+(X.screen.indexDate? "" : " · endeks üyelikleri henüz yok");
+    } else { list=(X&&X[mvKey])||[]; $("mvFCount").textContent="· filtre verisi bir sonraki güncellemede gelecek"; }
+    if(!list.length){ b.appendChild(el("tr",null, el("td",{colspan:"9",class:"muted",text:"Filtrelere uyan hisse yok."}))); }
+    list.slice(0,mvLimit).forEach(function(r){
+      b.appendChild(el("tr",null,
+        el("td",{class:"l"}, el("a",{href:"https://robinhood.com/stocks/"+r.ticker,target:"_blank",rel:"noopener",text:r.ticker}), el("span",{class:"nm",text:r.name+((r.idx||"").indexOf("N")>=0?" · Nasdaq-100":(r.idx||"").indexOf("S")>=0?" · S&P 500":"")})),
+        el("td",{text:fmtNum(r.price,2)}), el("td",{class:cls(r.d1Pct),text:pct(r.d1Pct)}), el("td",{class:cls(r.w1Pct),text:pct(r.w1Pct)}),
+        el("td",{text:fmtNum(r.dollarVolM,1)}),
+        el("td",{text:isNum(r.capB)?fmtNum(r.capB,r.capB<10?2:1):"–"}),
+        el("td",{text:isNum(r.pe)?fmtNum(r.pe,1):"–",title:isNum(r.pe)?"":"Zarar ediyor ya da veri yok"}),
+        el("td",{text:isNum(r.atr)?fmtNum(r.atr,1):"–",title:isNum(r.atr)&&isNum(r.price)?"Tipik günlük hareket ≈ "+fmtNum(r.atr*r.price/100,2)+" $":""}),
+        all? el("td",null, trBadge(r.price,r.s30,"30"), trBadge(r.price,r.s200,"200")) : el("td",{text:"–"})));
+    });
+    var more=$("mvMore"); more.hidden=list.length<=mvLimit; more.textContent="Daha fazla göster ("+Math.min(list.length-mvLimit,100)+" hisse daha)";
+  }
+  fSync();
+  try{ if(window.innerWidth<640 && !fActive()) $("mvFilter").open=false; }catch(e){}
+  Object.keys(F_IDS).forEach(function(k){ var n=$(F_IDS[k]); if(!n) return; n.addEventListener(n.tagName==="SELECT"?"change":"input",function(){ fRead(); mvLimit=25; try{ mvTable(); }catch(e){ console.error(e); } }); });
+  function fSet(o){ mvF=o; try{ localStorage.setItem("mvFilters",JSON.stringify(mvF)); }catch(e){} fSync(); mvLimit=25; try{ mvTable(); }catch(e){ console.error(e); } }
+  $("f_low").addEventListener("click",function(){ fSet(Object.assign({},mvF,{pmin:10,cmin:2,vmin:20})); });
+  $("f_trend").addEventListener("click",function(){ fSet(Object.assign({},mvF,{s30:"up",s200:"up"})); });
+  $("f_reset").addEventListener("click",function(){ fSet({}); });
+  $("mvMore").addEventListener("click",function(){ mvLimit+=100; mvTable(); });
   function renderMovers(){
     var X=S.movers;
-    if(!X){ $("mvBody").innerHTML='<tr><td colspan="5" class="muted">Liste henüz oluşmadı; piyasa açıkken saatte bir güncellenir.</td></tr>'; return; }
+    if(!X){ $("mvBody").innerHTML='<tr><td colspan="9" class="muted">Liste henüz oluşmadı; piyasa açıkken saatte bir güncellenir.</td></tr>'; return; }
     $("mvAsOf").textContent=dShort(X.asOf)+" "+tm(X.asOf)+" · "+(X.screened||0)+" hisse";
     var al=$("mvAlerts"); clear(al);
     if((X.alerts||[]).length){
@@ -843,18 +945,12 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
       box.appendChild(el("div",{class:"small",text:"Düşük risk: fiyat ≥ 10 $, piyasa değeri ≥ 2 milyar $, günde ≥ 20 milyon $ işlem, en az 1 yıldır borsada, son 60 günde aşırı oynak değil, son 12 ayda ters bölünme yok. Kapanıştan sonra günde bir kez yalnızca bunlar e-postayla bildirilir (GitHub issue). Düşük risk, risksiz demek değildir."}));
       al.appendChild(box);
     }
-    var b=$("mvBody"); clear(b);
-    (X[mvKey]||[]).forEach(function(r){
-      b.appendChild(el("tr",null,
-        el("td",{class:"l"}, el("a",{href:"https://robinhood.com/stocks/"+r.ticker,target:"_blank",rel:"noopener",text:r.ticker}), el("span",{class:"nm",text:r.name})),
-        el("td",{text:fmtNum(r.price,2)}), el("td",{class:cls(r.d1Pct),text:pct(r.d1Pct)}), el("td",{class:cls(r.w1Pct),text:pct(r.w1Pct)}),
-        el("td",{text:fmtNum(r.dollarVolM,1)})));
-    });
+    mvTable();
     var st=X.study&&X.study.text;
     $("mvNote").textContent=(X.notes||"")+" Sembole tıklayınca Robinhood sayfası açılır."+(st? " Geçmiş: "+st : "")+" Bu liste alım-satım önerisi değildir.";
     Array.prototype.forEach.call(document.querySelectorAll(".mv-tabs button"),function(btn){ btn.setAttribute("aria-pressed", btn.getAttribute("data-k")===mvKey?"true":"false"); });
   }
-  Array.prototype.forEach.call(document.querySelectorAll(".mv-tabs button"),function(btn){ btn.addEventListener("click",function(){ mvKey=btn.getAttribute("data-k"); try{ renderMovers(); }catch(e){ console.error(e); } }); });
+  Array.prototype.forEach.call(document.querySelectorAll(".mv-tabs button"),function(btn){ btn.addEventListener("click",function(){ mvKey=btn.getAttribute("data-k"); mvLimit=25; try{ renderMovers(); }catch(e){ console.error(e); } }); });
   function renderEvents(){
     var M=S.meta||{}, scan=M.eventScan||null, P=S.portfolio||{}, c=S.config||{};
     $("evRule").textContent="Kural: bir hisse haberle önceki kapanışa göre en az %8 boşlukla açılır ve ilk saatte (09:30–10:30 ET) piyasa bu tepkinin tersine dönerse o yöne girilir: sert düşüp toparlanana long, sert yükselip sönene short. 2 işlem günü tutulur; zarar-kes ilk saatin öbür ucunun hemen ötesinde, büyüklük zarar-keste kaybın kolun yaklaşık %1'i olacağı şekilde. Haberin yönünde devam edenlere girilmez. %10'dan fazla düşmüş hisseye SEC Rule 201 yüzünden short açılmaz. Paranın yarısı bu kolda.";

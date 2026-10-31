@@ -34,6 +34,9 @@ SANCTIONED_NAMES = ("Semiconductor Manufacturing International", "Hikvision", "S
                     "China Mobile", "China Telecom", "China Unicom", "Inspur", "Megvii", "iFlytek", "Dahua")
 SKIP_NAME = re.compile(r"warrant|right|unit|preferred|notes? due|debenture|depositary share.*preferred|%", re.I)
 OWNER = "DavidMahmut"
+FUND = ROOT / "fundamentals.json"          # once a day: shares, EPS, market value (Yahoo screener) + index members
+CATEGORY = {}                             # Nasdaq market tier: Q Global Select, G Global Market, S Capital Market
+SCREEN_COLS = ["t", "n", "p", "d1", "w1", "dv", "cap", "pe", "s30", "s200", "atr", "idx", "tier"]
 
 
 def nasdaq_symbols():
@@ -50,7 +53,92 @@ def nasdaq_symbols():
         if SKIP_NAME.search(name) or not re.fullmatch(r"[A-Z]{1,5}", sym):
             continue
         out[sym] = name.split(" - ")[0].strip()
+        CATEGORY[sym] = f.get("Market Category", "")
     return out
+
+
+def _index_list(url, cols):
+    import io
+    import requests
+    html = requests.get(url, timeout=30, headers={"User-Agent": "portfoy-botu/1.0 (github.com/DavidMahmut/portfoy-botu)"}).text
+    for tb in pd.read_html(io.StringIO(html)):
+        for c in cols:
+            if c in tb.columns:
+                vals = [str(x).strip().replace(".", "-") for x in tb[c] if isinstance(x, str)]
+                if len(vals) >= 90:
+                    return sorted(set(vals))
+    return []
+
+
+def fundamentals(today):
+    """Shares outstanding, trailing EPS and market value for every Nasdaq stock (Yahoo screener, 250 per page), once a
+    day; Nasdaq-100 and S&P 500 members (Wikipedia), once a week. Kept in fundamentals.json."""
+    F = json.loads(FUND.read_text(encoding="utf-8")) if FUND.exists() else {}
+    changed = False
+    idx = F.get("index") or {}
+    if not idx.get("date") or (datetime.fromisoformat(today) - datetime.fromisoformat(idx["date"])).days >= 7:
+        try:
+            ndx = _index_list("https://en.wikipedia.org/wiki/Nasdaq-100", ("Ticker", "Symbol"))
+            spx = _index_list("https://en.wikipedia.org/wiki/List_of_S%26P_500_companies", ("Symbol", "Ticker"))
+            if len(ndx) >= 90 and len(spx) >= 450:
+                F["index"] = {"date": today, "ndx": ndx, "spx": spx}
+                changed = True
+        except Exception as e:
+            print("index lists failed:", e)
+    if F.get("date") != today:
+        rows = {}
+        try:
+            import yfinance as yf
+            from yfinance import EquityQuery as Q
+            q = Q("and", [Q("eq", ["region", "us"]), Q("is-in", ["exchange", "NMS", "NGM", "NCM"])])
+            off, total = 0, 1
+            while off < total and off < 9000:
+                r = yf.screen(q, offset=off, size=250, sortField="intradaymarketcap", sortAsc=False)
+                quotes = r.get("quotes") or []
+                total = int(r.get("total") or 0)
+                for x in quotes:
+                    t = x.get("symbol")
+                    if not t:
+                        continue
+                    rows[t] = {"sh": x.get("sharesOutstanding"), "eps": x.get("epsTrailingTwelveMonths"),
+                               "cap": x.get("marketCap"), "pe": x.get("trailingPE")}
+                if not quotes:
+                    break
+                off += len(quotes)
+                time.sleep(0.5)
+        except Exception as e:
+            print("fundamentals failed:", e)
+        print("fundamentals:", len(rows))
+        if len(rows) >= 500:
+            F.update(date=today, rows=rows)
+            changed = True
+    if changed:
+        FUND.write_text(json.dumps(F, separators=(",", ":")), encoding="utf-8")
+    return F
+
+
+def cap_pe(t, price, F):
+    f = (F.get("rows") or {}).get(t) or {}
+    sh, eps = f.get("sh"), f.get("eps")
+    cap = sh * price if sh else f.get("cap")
+    pe = price / eps if eps and eps > 0 else None
+    return (cap / 1e9 if cap else None), pe
+
+
+def indicators(s):
+    """30- and 200-day simple averages (with the latest price) and the 14-day average true range of the completed
+    days before today, in % of the previous close."""
+    c = s["Close"].astype(float)
+    s30 = float(c.tail(30).mean()) if len(c) >= 30 else None
+    s200 = float(c.tail(200).mean()) if len(c) >= 200 else None
+    p = s.iloc[:-1]
+    atr = None
+    if len(p) >= 15:
+        h, l, pc = p["High"].astype(float), p["Low"].astype(float), p["Close"].astype(float).shift(1)
+        tr = pd.concat([h - l, (h - pc).abs(), (l - pc).abs()], axis=1).max(axis=1).dropna().tail(14)
+        prev = float(p["Close"].iloc[-1])
+        atr = float(tr.mean() / prev * 100) if len(tr) and prev > 0 else None
+    return s30, s200, atr
 
 
 def download(tickers, **kw):
@@ -116,14 +204,17 @@ def market_cap(t):
     return None
 
 
-def risk_check(alerts, cache):
+def risk_check(alerts, cache, data=None, F=None):
     """Marks each 20 % mover as lower-risk or risky (with the reasons, in Turkish). `cache` keeps the slow lookups
     (one year of history, market value) per ticker for the day."""
+    data, F = data or {}, F or {}
     need = [r["ticker"] for r in alerts if r["ticker"] not in cache]
-    hist = download(need, period="13mo", interval="1d", actions=True) if need else {}
+    miss = [t for t in need if t not in data or len(data[t]) < 200]
+    hist = {**{t: data[t] for t in need if t in data}, **(download(miss, period="13mo", interval="1d", actions=True) if miss else {})}
+    price = {r["ticker"]: r["price"] for r in alerts}
     for t in need:
         s, c = hist.get(t), {"capB": None, "days": None, "dailyVolPct": None, "reverseSplit": None}
-        cap = market_cap(t)
+        cap = (cap_pe(t, price[t], F)[0] or 0) * 1e9 or market_cap(t)
         c["capB"] = round(cap / 1e9, 2) if cap else None
         if s is not None and len(s):
             d_last = s.index[-1].date()
@@ -228,8 +319,15 @@ def main():
         print("symbol list failed:", e)
         prev = json.loads((ROOT / "movers.json").read_text()) if (ROOT / "movers.json").exists() else {}
         names = prev.get("universe", {})
-    data = download(sorted(names), period="1mo", interval="1d")
-    rows = []
+    data = download(sorted(names), period="13mo", interval="1d", actions=True)
+    today = now.date().isoformat()
+    try:
+        F = fundamentals(today)
+    except Exception as e:
+        print("fundamentals step failed:", e)
+        F = {}
+    ndx, spx = set((F.get("index") or {}).get("ndx") or []), set((F.get("index") or {}).get("spx") or [])
+    rows, screen = [], []
     for t, s in data.items():
         c, v = s["Close"].astype(float), s["Volume"].astype(float)
         last, prev = float(c.iloc[-1]), float(c.iloc[-2])
@@ -239,6 +337,12 @@ def main():
         if prev < MIN_PRICE or last < 1 or not math.isfinite(dv) or dv < MIN_DOLLAR_VOL:
             continue
         w = float(c.iloc[-6]) if len(c) >= 6 else float(c.iloc[0])
+        s30, s200, atr = indicators(s)
+        capb, pe = cap_pe(t, last, F)
+        r2 = lambda x, d=2: round(x, d) if x is not None and math.isfinite(x) else None
+        screen.append([t, names.get(t, t), r2(last), r2((last / prev - 1) * 100), r2((last / w - 1) * 100), r2(dv / 1e6, 1),
+                       r2(capb), r2(pe, 1), r2(s30), r2(s200), r2(atr), ("N" if t in ndx else "") + ("S" if t in spx else ""),
+                       CATEGORY.get(t, "")])
         o, hi, lo = (float(s[k].iloc[-1]) for k in ("Open", "High", "Low"))
         gap = o / prev - 1 if o > 0 else 0.0
         rows.append({"ticker": t, "name": names.get(t, t), "price": round(last, 2), "prevClose": round(prev, 2),
@@ -252,10 +356,9 @@ def main():
     for r in alerts[:30]:
         r["headline"] = headline(r["ticker"])
     old = json.loads((ROOT / "movers.json").read_text()) if (ROOT / "movers.json").exists() else {}
-    today = now.date().isoformat()
     cache = dict((old.get("riskCache") or {}).get(today) or {})
     try:
-        risk_check(alerts, cache)
+        risk_check(alerts, cache, data, F)
     except Exception as e:                       # the watch list must not fail because of the risk lookup
         print("risk check failed:", e)
     sent = set((old.get("alerted") or {}).get(today, []))
@@ -286,11 +389,13 @@ def main():
            "riskCache": {today: cache}, "lowRisk": LOW_RISK,
            "mailedDay": bar_day if closed else old.get("mailedDay"),
            "study": {**study, "text": study_text(study)} if study else None,
+           "screen": {"cols": SCREEN_COLS, "rows": screen, "fundamentalsDate": F.get("date"),
+                      "indexDate": (F.get("index") or {}).get("date")},
            "notes": "Nasdaq'ta işlem gören hisse senetleri (ETF, varant, imtiyazlı hisse hariç); fiyatı 3 $'ın, son 20 günlük "
                     "ortalama işlem hacmi 2 milyon $'ın altındakiler elendi. Günlük değişim önceki kapanışa göre (seans "
                     "açıkken anlık fiyatla), haftalık değişim 5 işlem günü öncesine göre. Bot bu listeden yalnızca "
                     "\"sert yükseliş short'u\" kuralına uyanlara ertesi sabah girer."}
-    (ROOT / "movers.json").write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")
+    (ROOT / "movers.json").write_text(json.dumps(out, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     md = ROOT / "alerts_new.md"
     if mail:
         md.write_text(mail, encoding="utf-8")
