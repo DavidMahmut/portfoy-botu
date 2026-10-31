@@ -1,0 +1,3322 @@
+{
+ "asOf": "2026-10-31T04:33:50Z",
+ "tickers": 3228,
+ "lastBar": "2026-10-30",
+ "filters": {
+  "minPrice": 10.0,
+  "minDollarVolM": 20.0,
+  "costPct": 0.2
+ },
+ "results": {
+  "crash20_now|h20": {
+   "trades": 853,
+   "avgPct": 0.66,
+   "medianPct": -0.94,
+   "winRatePct": 48.5,
+   "worstPct": -97.6,
+   "avgExcessPct": -2.45,
+   "medianExcessPct": -2.71,
+   "beatQqqPct": 43.1,
+   "tStatExcess": -2.7,
+   "firstHalfExcessPct": -0.68,
+   "secondHalfExcessPct": -4.3,
+   "byYearExcess": {
+    "2019": {
+     "n": 40,
+     "avgPct": -4.99
+    },
+    "2020": {
+     "n": 147,
+     "avgPct": 6.86
+    },
+    "2021": {
+     "n": 144,
+     "avgPct": -8.35
+    },
+    "2022": {
+     "n": 104,
+     "avgPct": 0.93
+    },
+    "2023": {
+     "n": 65,
+     "avgPct": -4.3
+    },
+    "2024": {
+     "n": 92,
+     "avgPct": -5.52
+    },
+    "2025": {
+     "n": 138,
+     "avgPct": -5.9
+    },
+    "2026": {
+     "n": 123,
+     "avgPct": -1.59
+    }
+   },
+   "robust": false
+  },
+  "crash20_now|h60": {
+   "trades": 791,
+   "avgPct": 11.22,
+   "medianPct": -2.99,
+   "winRatePct": 46.8,
+   "worstPct": -98.9,
+   "avgExcessPct": 3.52,
+   "medianExcessPct": -6.97,
+   "beatQqqPct": 39.9,
+   "tStatExcess": 0.43,
+   "firstHalfExcessPct": 0.72,
+   "secondHalfExcessPct": 6.51,
+   "byYearExcess": {
+    "2019": {
+     "n": 38,
+     "avgPct": -9.43
+    },
+    "2020": {
+     "n": 142,
+     "avgPct": 24.06
+    },
+    "2021": {
+     "n": 132,
+     "avgPct": -23.48
+    },
+    "2022": {
+     "n": 97,
+     "avgPct": 3.46
+    },
+    "2023": {
+     "n": 63,
+     "avgPct": -12.77
+    },
+    "2024": {
+     "n": 89,
+     "avgPct": -13.21
+    },
+    "2025": {
+     "n": 130,
+     "avgPct": 38.86
+    },
+    "2026": {
+     "n": 100,
+     "avgPct": -5.85
+    }
+   },
+   "robust": false
+  },
+  "crash20_s1|h20": {
+   "trades": 1944,
+   "avgPct": 1.68,
+   "medianPct": -0.6,
+   "winRatePct": 48.8,
+   "worstPct": -90.4,
+   "avgExcessPct": -0.79,
+   "medianExcessPct": -2.38,
+   "beatQqqPct": 43.5,
+   "tStatExcess": -0.93,
+   "firstHalfExcessPct": -0.09,
+   "secondHalfExcessPct": -1.53,
+   "byYearExcess": {
+    "2019": {
+     "n": 115,
+     "avgPct": 0.98
+    },
+    "2020": {
+     "n": 393,
+     "avgPct": 3.79
+    },
+    "2021": {
+     "n": 272,
+     "avgPct": -5.51
+    },
+    "2022": {
+     "n": 224,
+     "avgPct": -0.87
+    },
+    "2023": {
+     "n": 138,
+     "avgPct": -2.62
+    },
+    "2024": {
+     "n": 206,
+     "avgPct": -4.81
+    },
+    "2025": {
+     "n": 321,
+     "avgPct": 0.91
+    },
+    "2026": {
+     "n": 275,
+     "avgPct": -1.38
+    }
+   },
+   "robust": false
+  },
+  "crash20_s1|h60": {
+   "trades": 999,
+   "avgPct": 4.4,
+   "medianPct": -2.17,
+   "winRatePct": 47.0,
+   "worstPct": -95.9,
+   "avgExcessPct": -2.52,
+   "medianExcessPct": -8.92,
+   "beatQqqPct": 39.3,
+   "tStatExcess": -1.18,
+   "firstHalfExcessPct": -1.83,
+   "secondHalfExcessPct": -3.3,
+   "byYearExcess": {
+    "2019": {
+     "n": 65,
+     "avgPct": -0.8
+    },
+    "2020": {
+     "n": 182,
+     "avgPct": 12.91
+    },
+    "2021": {
+     "n": 154,
+     "avgPct": -19.62
+    },
+    "2022": {
+     "n": 130,
+     "avgPct": -1.92
+    },
+    "2023": {
+     "n": 76,
+     "avgPct": -12.29
+    },
+    "2024": {
+     "n": 113,
+     "avgPct": -9.33
+    },
+    "2025": {
+     "n": 173,
+     "avgPct": 4.2
+    },
+    "2026": {
+     "n": 106,
+     "avgPct": -2.66
+    }
+   },
+   "robust": false
+  },
+  "crash20_s2|h20": {
+   "trades": 1552,
+   "avgPct": 1.25,
+   "medianPct": -0.74,
+   "winRatePct": 48.1,
+   "worstPct": -90.4,
+   "avgExcessPct": -1.11,
+   "medianExcessPct": -2.81,
+   "beatQqqPct": 43.2,
+   "tStatExcess": -1.08,
+   "firstHalfExcessPct": -1.2,
+   "secondHalfExcessPct": -1.01,
+   "byYearExcess": {
+    "2019": {
+     "n": 94,
+     "avgPct": -0.15
+    },
+    "2020": {
+     "n": 348,
+     "avgPct": 1.8
+    },
+    "2021": {
+     "n": 191,
+     "avgPct": -6.35
+    },
+    "2022": {
+     "n": 177,
+     "avgPct": -2.1
+    },
+    "2023": {
+     "n": 111,
+     "avgPct": -1.7
+    },
+    "2024": {
+     "n": 151,
+     "avgPct": -4.08
+    },
+    "2025": {
+     "n": 260,
+     "avgPct": 1.35
+    },
+    "2026": {
+     "n": 220,
+     "avgPct": -1.35
+    }
+   },
+   "robust": false
+  },
+  "crash20_s2|h60": {
+   "trades": 900,
+   "avgPct": 4.6,
+   "medianPct": -2.04,
+   "winRatePct": 47.2,
+   "worstPct": -95.9,
+   "avgExcessPct": -2.14,
+   "medianExcessPct": -9.69,
+   "beatQqqPct": 38.4,
+   "tStatExcess": -0.92,
+   "firstHalfExcessPct": -3.44,
+   "secondHalfExcessPct": -0.67,
+   "byYearExcess": {
+    "2019": {
+     "n": 60,
+     "avgPct": 2.09
+    },
+    "2020": {
+     "n": 176,
+     "avgPct": 7.51
+    },
+    "2021": {
+     "n": 125,
+     "avgPct": -22.93
+    },
+    "2022": {
+     "n": 116,
+     "avgPct": -1.93
+    },
+    "2023": {
+     "n": 66,
+     "avgPct": -9.18
+    },
+    "2024": {
+     "n": 97,
+     "avgPct": -5.22
+    },
+    "2025": {
+     "n": 158,
+     "avgPct": 5.73
+    },
+    "2026": {
+     "n": 102,
+     "avgPct": -0.74
+    }
+   },
+   "robust": false
+  },
+  "crash20_s3|h20": {
+   "trades": 1013,
+   "avgPct": 1.99,
+   "medianPct": -0.3,
+   "winRatePct": 49.3,
+   "worstPct": -71.6,
+   "avgExcessPct": -0.26,
+   "medianExcessPct": -2.53,
+   "beatQqqPct": 43.0,
+   "tStatExcess": -0.19,
+   "firstHalfExcessPct": -1.74,
+   "secondHalfExcessPct": 1.47,
+   "byYearExcess": {
+    "2019": {
+     "n": 67,
+     "avgPct": 1.98
+    },
+    "2020": {
+     "n": 240,
+     "avgPct": 1.75
+    },
+    "2021": {
+     "n": 114,
+     "avgPct": -10.42
+    },
+    "2022": {
+     "n": 127,
+     "avgPct": -2.5
+    },
+    "2023": {
+     "n": 65,
+     "avgPct": 0.5
+    },
+    "2024": {
+     "n": 84,
+     "avgPct": -1.71
+    },
+    "2025": {
+     "n": 172,
+     "avgPct": 4.68
+    },
+    "2026": {
+     "n": 144,
+     "avgPct": -0.06
+    }
+   },
+   "robust": false
+  },
+  "crash20_s3|h60": {
+   "trades": 726,
+   "avgPct": 6.17,
+   "medianPct": -0.84,
+   "winRatePct": 48.8,
+   "worstPct": -93.4,
+   "avgExcessPct": -0.65,
+   "medianExcessPct": -7.89,
+   "beatQqqPct": 39.5,
+   "tStatExcess": -0.24,
+   "firstHalfExcessPct": -2.5,
+   "secondHalfExcessPct": 1.62,
+   "byYearExcess": {
+    "2019": {
+     "n": 54,
+     "avgPct": 1.82
+    },
+    "2020": {
+     "n": 156,
+     "avgPct": 8.37
+    },
+    "2021": {
+     "n": 89,
+     "avgPct": -25.56
+    },
+    "2022": {
+     "n": 102,
+     "avgPct": -1.28
+    },
+    "2023": {
+     "n": 51,
+     "avgPct": -7.73
+    },
+    "2024": {
+     "n": 71,
+     "avgPct": -4.32
+    },
+    "2025": {
+     "n": 123,
+     "avgPct": 9.13
+    },
+    "2026": {
+     "n": 80,
+     "avgPct": 1.33
+    }
+   },
+   "robust": false
+  },
+  "crash30_now|h20": {
+   "trades": 213,
+   "avgPct": -3.04,
+   "medianPct": -3.72,
+   "winRatePct": 42.3,
+   "worstPct": -97.6,
+   "avgExcessPct": -5.02,
+   "medianExcessPct": -3.63,
+   "beatQqqPct": 40.8,
+   "tStatExcess": -2.24,
+   "firstHalfExcessPct": -3.23,
+   "secondHalfExcessPct": -6.38,
+   "byYearExcess": {
+    "2019": {
+     "n": 6,
+     "avgPct": -3.94
+    },
+    "2020": {
+     "n": 19,
+     "avgPct": 11.88
+    },
+    "2021": {
+     "n": 42,
+     "avgPct": -7.45
+    },
+    "2022": {
+     "n": 25,
+     "avgPct": -7.44
+    },
+    "2023": {
+     "n": 24,
+     "avgPct": -8.47
+    },
+    "2024": {
+     "n": 20,
+     "avgPct": -9.5
+    },
+    "2025": {
+     "n": 47,
+     "avgPct": -7.13
+    },
+    "2026": {
+     "n": 30,
+     "avgPct": -1.44
+    }
+   },
+   "robust": false
+  },
+  "crash30_now|h60": {
+   "trades": 201,
+   "avgPct": 22.55,
+   "medianPct": -10.8,
+   "winRatePct": 34.3,
+   "worstPct": -98.9,
+   "avgExcessPct": 17.39,
+   "medianExcessPct": -13.56,
+   "beatQqqPct": 33.8,
+   "tStatExcess": 0.55,
+   "firstHalfExcessPct": -13.29,
+   "secondHalfExcessPct": 41.77,
+   "byYearExcess": {
+    "2019": {
+     "n": 6,
+     "avgPct": -19.68
+    },
+    "2020": {
+     "n": 18,
+     "avgPct": 25.33
+    },
+    "2021": {
+     "n": 40,
+     "avgPct": -28.89
+    },
+    "2022": {
+     "n": 25,
+     "avgPct": -14.6
+    },
+    "2023": {
+     "n": 23,
+     "avgPct": -20.75
+    },
+    "2024": {
+     "n": 20,
+     "avgPct": -18.97
+    },
+    "2025": {
+     "n": 45,
+     "avgPct": 125.08
+    },
+    "2026": {
+     "n": 24,
+     "avgPct": -3.92
+    }
+   },
+   "robust": false
+  },
+  "crash30_s1|h20": {
+   "trades": 505,
+   "avgPct": -1.18,
+   "medianPct": -2.76,
+   "winRatePct": 42.8,
+   "worstPct": -88.0,
+   "avgExcessPct": -3.29,
+   "medianExcessPct": -4.01,
+   "beatQqqPct": 39.6,
+   "tStatExcess": -2.3,
+   "firstHalfExcessPct": -4.68,
+   "secondHalfExcessPct": -2.2,
+   "byYearExcess": {
+    "2019": {
+     "n": 19,
+     "avgPct": -0.8
+    },
+    "2020": {
+     "n": 64,
+     "avgPct": 2.81
+    },
+    "2021": {
+     "n": 89,
+     "avgPct": -9.96
+    },
+    "2022": {
+     "n": 50,
+     "avgPct": -6.36
+    },
+    "2023": {
+     "n": 44,
+     "avgPct": -9.07
+    },
+    "2024": {
+     "n": 47,
+     "avgPct": -6.47
+    },
+    "2025": {
+     "n": 96,
+     "avgPct": 4.31
+    },
+    "2026": {
+     "n": 96,
+     "avgPct": -3.48
+    }
+   },
+   "robust": false
+  },
+  "crash30_s1|h60": {
+   "trades": 287,
+   "avgPct": 3.93,
+   "medianPct": -6.2,
+   "winRatePct": 41.5,
+   "worstPct": -95.9,
+   "avgExcessPct": -1.8,
+   "medianExcessPct": -12.11,
+   "beatQqqPct": 34.5,
+   "tStatExcess": -0.18,
+   "firstHalfExcessPct": -13.71,
+   "secondHalfExcessPct": 8.35,
+   "byYearExcess": {
+    "2019": {
+     "n": 13,
+     "avgPct": -5.87
+    },
+    "2020": {
+     "n": 31,
+     "avgPct": 3.89
+    },
+    "2021": {
+     "n": 55,
+     "avgPct": -26.24
+    },
+    "2022": {
+     "n": 33,
+     "avgPct": -12.46
+    },
+    "2023": {
+     "n": 29,
+     "avgPct": -17.12
+    },
+    "2024": {
+     "n": 32,
+     "avgPct": -17.85
+    },
+    "2025": {
+     "n": 51,
+     "avgPct": 51.9
+    },
+    "2026": {
+     "n": 43,
+     "avgPct": -6.62
+    }
+   },
+   "robust": false
+  },
+  "crash30_s2|h20": {
+   "trades": 375,
+   "avgPct": 1.06,
+   "medianPct": -2.56,
+   "winRatePct": 44.3,
+   "worstPct": -90.4,
+   "avgExcessPct": -0.97,
+   "medianExcessPct": -4.13,
+   "beatQqqPct": 41.3,
+   "tStatExcess": -0.27,
+   "firstHalfExcessPct": -5.36,
+   "secondHalfExcessPct": 2.71,
+   "byYearExcess": {
+    "2019": {
+     "n": 15,
+     "avgPct": -3.49
+    },
+    "2020": {
+     "n": 59,
+     "avgPct": 0.6
+    },
+    "2021": {
+     "n": 56,
+     "avgPct": -11.87
+    },
+    "2022": {
+     "n": 41,
+     "avgPct": -5.74
+    },
+    "2023": {
+     "n": 31,
+     "avgPct": -8.94
+    },
+    "2024": {
+     "n": 28,
+     "avgPct": -3.14
+    },
+    "2025": {
+     "n": 72,
+     "avgPct": 18.75
+    },
+    "2026": {
+     "n": 73,
+     "avgPct": -5.92
+    }
+   },
+   "robust": false
+  },
+  "crash30_s2|h60": {
+   "trades": 242,
+   "avgPct": 2.95,
+   "medianPct": -5.07,
+   "winRatePct": 44.2,
+   "worstPct": -95.9,
+   "avgExcessPct": -2.76,
+   "medianExcessPct": -11.21,
+   "beatQqqPct": 35.1,
+   "tStatExcess": -0.37,
+   "firstHalfExcessPct": -15.34,
+   "secondHalfExcessPct": 7.72,
+   "byYearExcess": {
+    "2019": {
+     "n": 11,
+     "avgPct": -8.57
+    },
+    "2020": {
+     "n": 29,
+     "avgPct": -1.27
+    },
+    "2021": {
+     "n": 40,
+     "avgPct": -30.0
+    },
+    "2022": {
+     "n": 30,
+     "avgPct": -11.87
+    },
+    "2023": {
+     "n": 23,
+     "avgPct": -13.36
+    },
+    "2024": {
+     "n": 22,
+     "avgPct": -10.28
+    },
+    "2025": {
+     "n": 44,
+     "avgPct": 38.7
+    },
+    "2026": {
+     "n": 43,
+     "avgPct": -3.49
+    }
+   },
+   "robust": false
+  },
+  "crash30_s3|h20": {
+   "trades": 257,
+   "avgPct": 1.83,
+   "medianPct": -3.03,
+   "winRatePct": 42.4,
+   "worstPct": -88.0,
+   "avgExcessPct": 0.04,
+   "medianExcessPct": -4.61,
+   "beatQqqPct": 38.1,
+   "tStatExcess": 0.01,
+   "firstHalfExcessPct": -6.2,
+   "secondHalfExcessPct": 5.49,
+   "byYearExcess": {
+    "2019": {
+     "n": 13,
+     "avgPct": -5.41
+    },
+    "2020": {
+     "n": 42,
+     "avgPct": -3.44
+    },
+    "2021": {
+     "n": 38,
+     "avgPct": -13.28
+    },
+    "2022": {
+     "n": 27,
+     "avgPct": -0.9
+    },
+    "2023": {
+     "n": 22,
+     "avgPct": -8.94
+    },
+    "2024": {
+     "n": 17,
+     "avgPct": -1.18
+    },
+    "2025": {
+     "n": 51,
+     "avgPct": 26.38
+    },
+    "2026": {
+     "n": 47,
+     "avgPct": -7.99
+    }
+   },
+   "robust": false
+  },
+  "crash30_s3|h60": {
+   "trades": 191,
+   "avgPct": 6.21,
+   "medianPct": -4.02,
+   "winRatePct": 45.5,
+   "worstPct": -96.6,
+   "avgExcessPct": 0.24,
+   "medianExcessPct": -11.14,
+   "beatQqqPct": 36.6,
+   "tStatExcess": 0.03,
+   "firstHalfExcessPct": -13.26,
+   "secondHalfExcessPct": 12.27,
+   "byYearExcess": {
+    "2019": {
+     "n": 10,
+     "avgPct": -6.91
+    },
+    "2020": {
+     "n": 26,
+     "avgPct": -0.47
+    },
+    "2021": {
+     "n": 32,
+     "avgPct": -29.84
+    },
+    "2022": {
+     "n": 22,
+     "avgPct": -7.13
+    },
+    "2023": {
+     "n": 16,
+     "avgPct": -16.08
+    },
+    "2024": {
+     "n": 17,
+     "avgPct": -11.56
+    },
+    "2025": {
+     "n": 37,
+     "avgPct": 47.77
+    },
+    "2026": {
+     "n": 31,
+     "avgPct": -2.41
+    }
+   },
+   "robust": false
+  },
+  "dd30_now|h20": {
+   "trades": 19069,
+   "avgPct": 0.56,
+   "medianPct": -0.24,
+   "winRatePct": 49.3,
+   "worstPct": -97.6,
+   "avgExcessPct": -1.27,
+   "medianExcessPct": -2.13,
+   "beatQqqPct": 43.4,
+   "tStatExcess": -9.66,
+   "firstHalfExcessPct": -1.2,
+   "secondHalfExcessPct": -1.33,
+   "byYearExcess": {
+    "2019": {
+     "n": 1331,
+     "avgPct": -0.17
+    },
+    "2020": {
+     "n": 1777,
+     "avgPct": -0.11
+    },
+    "2021": {
+     "n": 2296,
+     "avgPct": -4.6
+    },
+    "2022": {
+     "n": 3700,
+     "avgPct": 0.01
+    },
+    "2023": {
+     "n": 1905,
+     "avgPct": -2.4
+    },
+    "2024": {
+     "n": 1981,
+     "avgPct": -2.07
+    },
+    "2025": {
+     "n": 3075,
+     "avgPct": -0.15
+    },
+    "2026": {
+     "n": 3004,
+     "avgPct": -1.36
+    }
+   },
+   "robust": false
+  },
+  "dd30_now|h60": {
+   "trades": 8156,
+   "avgPct": 3.38,
+   "medianPct": 0.18,
+   "winRatePct": 50.3,
+   "worstPct": -98.9,
+   "avgExcessPct": -2.4,
+   "medianExcessPct": -5.69,
+   "beatQqqPct": 40.1,
+   "tStatExcess": -2.82,
+   "firstHalfExcessPct": -3.22,
+   "secondHalfExcessPct": -1.58,
+   "byYearExcess": {
+    "2019": {
+     "n": 641,
+     "avgPct": -1.43
+    },
+    "2020": {
+     "n": 860,
+     "avgPct": 3.02
+    },
+    "2021": {
+     "n": 1078,
+     "avgPct": -13.09
+    },
+    "2022": {
+     "n": 1473,
+     "avgPct": -0.43
+    },
+    "2023": {
+     "n": 834,
+     "avgPct": -5.86
+    },
+    "2024": {
+     "n": 889,
+     "avgPct": -5.24
+    },
+    "2025": {
+     "n": 1339,
+     "avgPct": 3.73
+    },
+    "2026": {
+     "n": 1042,
+     "avgPct": -1.86
+    }
+   },
+   "robust": false
+  },
+  "dd30_s1|h20": {
+   "trades": 11733,
+   "avgPct": 0.22,
+   "medianPct": -0.71,
+   "winRatePct": 48.0,
+   "worstPct": -98.1,
+   "avgExcessPct": -1.42,
+   "medianExcessPct": -2.21,
+   "beatQqqPct": 42.7,
+   "tStatExcess": -8.01,
+   "firstHalfExcessPct": -1.27,
+   "secondHalfExcessPct": -1.56,
+   "byYearExcess": {
+    "2019": {
+     "n": 850,
+     "avgPct": -0.86
+    },
+    "2020": {
+     "n": 1078,
+     "avgPct": 2.37
+    },
+    "2021": {
+     "n": 1376,
+     "avgPct": -5.7
+    },
+    "2022": {
+     "n": 2266,
+     "avgPct": -0.45
+    },
+    "2023": {
+     "n": 1217,
+     "avgPct": -1.66
+    },
+    "2024": {
+     "n": 1155,
+     "avgPct": -2.82
+    },
+    "2025": {
+     "n": 1997,
+     "avgPct": -0.22
+    },
+    "2026": {
+     "n": 1794,
+     "avgPct": -2.15
+    }
+   },
+   "robust": false
+  },
+  "dd30_s1|h60": {
+   "trades": 5878,
+   "avgPct": 2.72,
+   "medianPct": -1.09,
+   "winRatePct": 48.6,
+   "worstPct": -99.0,
+   "avgExcessPct": -2.74,
+   "medianExcessPct": -6.11,
+   "beatQqqPct": 40.3,
+   "tStatExcess": -3.76,
+   "firstHalfExcessPct": -2.73,
+   "secondHalfExcessPct": -2.75,
+   "byYearExcess": {
+    "2019": {
+     "n": 473,
+     "avgPct": -1.69
+    },
+    "2020": {
+     "n": 588,
+     "avgPct": 7.81
+    },
+    "2021": {
+     "n": 754,
+     "avgPct": -15.52
+    },
+    "2022": {
+     "n": 1117,
+     "avgPct": -0.07
+    },
+    "2023": {
+     "n": 627,
+     "avgPct": -7.75
+    },
+    "2024": {
+     "n": 611,
+     "avgPct": -6.77
+    },
+    "2025": {
+     "n": 1034,
+     "avgPct": 1.33
+    },
+    "2026": {
+     "n": 674,
+     "avgPct": -0.73
+    }
+   },
+   "robust": false
+  },
+  "dd30_s2|h20": {
+   "trades": 8327,
+   "avgPct": 0.13,
+   "medianPct": -0.87,
+   "winRatePct": 47.6,
+   "worstPct": -98.1,
+   "avgExcessPct": -1.42,
+   "medianExcessPct": -2.29,
+   "beatQqqPct": 42.7,
+   "tStatExcess": -6.52,
+   "firstHalfExcessPct": -1.41,
+   "secondHalfExcessPct": -1.43,
+   "byYearExcess": {
+    "2019": {
+     "n": 635,
+     "avgPct": -0.35
+    },
+    "2020": {
+     "n": 791,
+     "avgPct": 1.12
+    },
+    "2021": {
+     "n": 897,
+     "avgPct": -5.94
+    },
+    "2022": {
+     "n": 1661,
+     "avgPct": -0.57
+    },
+    "2023": {
+     "n": 909,
+     "avgPct": -1.3
+    },
+    "2024": {
+     "n": 771,
+     "avgPct": -2.58
+    },
+    "2025": {
+     "n": 1415,
+     "avgPct": -0.07
+    },
+    "2026": {
+     "n": 1248,
+     "avgPct": -2.36
+    }
+   },
+   "robust": false
+  },
+  "dd30_s2|h60": {
+   "trades": 4679,
+   "avgPct": 2.59,
+   "medianPct": -0.87,
+   "winRatePct": 48.6,
+   "worstPct": -99.0,
+   "avgExcessPct": -2.87,
+   "medianExcessPct": -6.23,
+   "beatQqqPct": 39.5,
+   "tStatExcess": -3.27,
+   "firstHalfExcessPct": -3.73,
+   "secondHalfExcessPct": -2.0,
+   "byYearExcess": {
+    "2019": {
+     "n": 384,
+     "avgPct": -0.7
+    },
+    "2020": {
+     "n": 487,
+     "avgPct": 2.6
+    },
+    "2021": {
+     "n": 551,
+     "avgPct": -16.28
+    },
+    "2022": {
+     "n": 923,
+     "avgPct": -0.85
+    },
+    "2023": {
+     "n": 525,
+     "avgPct": -7.23
+    },
+    "2024": {
+     "n": 452,
+     "avgPct": -4.72
+    },
+    "2025": {
+     "n": 829,
+     "avgPct": 2.87
+    },
+    "2026": {
+     "n": 528,
+     "avgPct": -2.12
+    }
+   },
+   "robust": false
+  },
+  "dd30_s3|h20": {
+   "trades": 4856,
+   "avgPct": 0.4,
+   "medianPct": -0.41,
+   "winRatePct": 48.9,
+   "worstPct": -98.4,
+   "avgExcessPct": -1.22,
+   "medianExcessPct": -2.13,
+   "beatQqqPct": 43.5,
+   "tStatExcess": -3.47,
+   "firstHalfExcessPct": -1.49,
+   "secondHalfExcessPct": -0.95,
+   "byYearExcess": {
+    "2019": {
+     "n": 406,
+     "avgPct": -0.41
+    },
+    "2020": {
+     "n": 502,
+     "avgPct": -0.49
+    },
+    "2021": {
+     "n": 484,
+     "avgPct": -4.47
+    },
+    "2022": {
+     "n": 1022,
+     "avgPct": -0.99
+    },
+    "2023": {
+     "n": 482,
+     "avgPct": -0.51
+    },
+    "2024": {
+     "n": 406,
+     "avgPct": -3.0
+    },
+    "2025": {
+     "n": 871,
+     "avgPct": 0.65
+    },
+    "2026": {
+     "n": 683,
+     "avgPct": -2.1
+    }
+   },
+   "robust": false
+  },
+  "dd30_s3|h60": {
+   "trades": 3320,
+   "avgPct": 3.21,
+   "medianPct": 0.12,
+   "winRatePct": 50.1,
+   "worstPct": -99.1,
+   "avgExcessPct": -2.32,
+   "medianExcessPct": -5.43,
+   "beatQqqPct": 40.9,
+   "tStatExcess": -3.11,
+   "firstHalfExcessPct": -2.78,
+   "secondHalfExcessPct": -1.83,
+   "byYearExcess": {
+    "2019": {
+     "n": 287,
+     "avgPct": -0.31
+    },
+    "2020": {
+     "n": 376,
+     "avgPct": 3.27
+    },
+    "2021": {
+     "n": 349,
+     "avgPct": -15.48
+    },
+    "2022": {
+     "n": 709,
+     "avgPct": -0.73
+    },
+    "2023": {
+     "n": 340,
+     "avgPct": -7.26
+    },
+    "2024": {
+     "n": 299,
+     "avgPct": -3.83
+    },
+    "2025": {
+     "n": 612,
+     "avgPct": 1.33
+    },
+    "2026": {
+     "n": 348,
+     "avgPct": -0.36
+    }
+   },
+   "robust": false
+  },
+  "dd40_now|h20": {
+   "trades": 11794,
+   "avgPct": 0.64,
+   "medianPct": -0.41,
+   "winRatePct": 49.0,
+   "worstPct": -97.6,
+   "avgExcessPct": -1.19,
+   "medianExcessPct": -2.18,
+   "beatQqqPct": 44.1,
+   "tStatExcess": -6.98,
+   "firstHalfExcessPct": -1.24,
+   "secondHalfExcessPct": -1.14,
+   "byYearExcess": {
+    "2019": {
+     "n": 756,
+     "avgPct": 0.08
+    },
+    "2020": {
+     "n": 1018,
+     "avgPct": 0.67
+    },
+    "2021": {
+     "n": 1495,
+     "avgPct": -5.24
+    },
+    "2022": {
+     "n": 2666,
+     "avgPct": -0.09
+    },
+    "2023": {
+     "n": 1061,
+     "avgPct": -2.17
+    },
+    "2024": {
+     "n": 1121,
+     "avgPct": -2.33
+    },
+    "2025": {
+     "n": 1787,
+     "avgPct": 0.26
+    },
+    "2026": {
+     "n": 1890,
+     "avgPct": -1.18
+    }
+   },
+   "robust": false
+  },
+  "dd40_now|h60": {
+   "trades": 5220,
+   "avgPct": 3.78,
+   "medianPct": -0.8,
+   "winRatePct": 49.0,
+   "worstPct": -98.9,
+   "avgExcessPct": -2.18,
+   "medianExcessPct": -6.19,
+   "beatQqqPct": 40.0,
+   "tStatExcess": -1.69,
+   "firstHalfExcessPct": -3.46,
+   "secondHalfExcessPct": -0.81,
+   "byYearExcess": {
+    "2019": {
+     "n": 380,
+     "avgPct": -0.5
+    },
+    "2020": {
+     "n": 544,
+     "avgPct": 5.87
+    },
+    "2021": {
+     "n": 716,
+     "avgPct": -16.08
+    },
+    "2022": {
+     "n": 1073,
+     "avgPct": -0.81
+    },
+    "2023": {
+     "n": 482,
+     "avgPct": -7.25
+    },
+    "2024": {
+     "n": 513,
+     "avgPct": -4.83
+    },
+    "2025": {
+     "n": 821,
+     "avgPct": 7.74
+    },
+    "2026": {
+     "n": 691,
+     "avgPct": -3.48
+    }
+   },
+   "robust": false
+  },
+  "dd40_s1|h20": {
+   "trades": 6965,
+   "avgPct": 0.03,
+   "medianPct": -1.12,
+   "winRatePct": 47.5,
+   "worstPct": -97.8,
+   "avgExcessPct": -1.54,
+   "medianExcessPct": -2.37,
+   "beatQqqPct": 43.0,
+   "tStatExcess": -6.87,
+   "firstHalfExcessPct": -1.58,
+   "secondHalfExcessPct": -1.49,
+   "byYearExcess": {
+    "2019": {
+     "n": 450,
+     "avgPct": -0.69
+    },
+    "2020": {
+     "n": 567,
+     "avgPct": 3.85
+    },
+    "2021": {
+     "n": 865,
+     "avgPct": -6.77
+    },
+    "2022": {
+     "n": 1595,
+     "avgPct": -0.96
+    },
+    "2023": {
+     "n": 669,
+     "avgPct": -1.38
+    },
+    "2024": {
+     "n": 624,
+     "avgPct": -2.76
+    },
+    "2025": {
+     "n": 1110,
+     "avgPct": -0.25
+    },
+    "2026": {
+     "n": 1085,
+     "avgPct": -2.08
+    }
+   },
+   "robust": false
+  },
+  "dd40_s1|h60": {
+   "trades": 3614,
+   "avgPct": 2.06,
+   "medianPct": -2.09,
+   "winRatePct": 47.2,
+   "worstPct": -98.4,
+   "avgExcessPct": -3.08,
+   "medianExcessPct": -7.36,
+   "beatQqqPct": 39.8,
+   "tStatExcess": -3.69,
+   "firstHalfExcessPct": -3.95,
+   "secondHalfExcessPct": -2.13,
+   "byYearExcess": {
+    "2019": {
+     "n": 262,
+     "avgPct": -1.1
+    },
+    "2020": {
+     "n": 325,
+     "avgPct": 10.28
+    },
+    "2021": {
+     "n": 500,
+     "avgPct": -19.27
+    },
+    "2022": {
+     "n": 802,
+     "avgPct": -1.1
+    },
+    "2023": {
+     "n": 348,
+     "avgPct": -9.07
+    },
+    "2024": {
+     "n": 347,
+     "avgPct": -5.41
+    },
+    "2025": {
+     "n": 605,
+     "avgPct": 3.29
+    },
+    "2026": {
+     "n": 425,
+     "avgPct": -1.47
+    }
+   },
+   "robust": false
+  },
+  "dd40_s2|h20": {
+   "trades": 4882,
+   "avgPct": -0.22,
+   "medianPct": -1.45,
+   "winRatePct": 46.2,
+   "worstPct": -90.4,
+   "avgExcessPct": -1.6,
+   "medianExcessPct": -2.75,
+   "beatQqqPct": 42.6,
+   "tStatExcess": -5.82,
+   "firstHalfExcessPct": -1.89,
+   "secondHalfExcessPct": -1.32,
+   "byYearExcess": {
+    "2019": {
+     "n": 326,
+     "avgPct": 0.15
+    },
+    "2020": {
+     "n": 399,
+     "avgPct": 1.81
+    },
+    "2021": {
+     "n": 567,
+     "avgPct": -6.94
+    },
+    "2022": {
+     "n": 1171,
+     "avgPct": -1.27
+    },
+    "2023": {
+     "n": 498,
+     "avgPct": -0.28
+    },
+    "2024": {
+     "n": 411,
+     "avgPct": -2.87
+    },
+    "2025": {
+     "n": 768,
+     "avgPct": -0.12
+    },
+    "2026": {
+     "n": 742,
+     "avgPct": -2.39
+    }
+   },
+   "robust": false
+  },
+  "dd40_s2|h60": {
+   "trades": 2814,
+   "avgPct": 1.99,
+   "medianPct": -1.95,
+   "winRatePct": 47.1,
+   "worstPct": -93.1,
+   "avgExcessPct": -3.13,
+   "medianExcessPct": -7.29,
+   "beatQqqPct": 39.7,
+   "tStatExcess": -3.08,
+   "firstHalfExcessPct": -5.02,
+   "secondHalfExcessPct": -1.03,
+   "byYearExcess": {
+    "2019": {
+     "n": 214,
+     "avgPct": 1.42
+    },
+    "2020": {
+     "n": 261,
+     "avgPct": 2.66
+    },
+    "2021": {
+     "n": 352,
+     "avgPct": -20.0
+    },
+    "2022": {
+     "n": 652,
+     "avgPct": -2.12
+    },
+    "2023": {
+     "n": 289,
+     "avgPct": -7.38
+    },
+    "2024": {
+     "n": 246,
+     "avgPct": -4.67
+    },
+    "2025": {
+     "n": 470,
+     "avgPct": 4.57
+    },
+    "2026": {
+     "n": 330,
+     "avgPct": -0.71
+    }
+   },
+   "robust": false
+  },
+  "dd40_s3|h20": {
+   "trades": 2770,
+   "avgPct": 0.28,
+   "medianPct": -0.99,
+   "winRatePct": 47.4,
+   "worstPct": -87.3,
+   "avgExcessPct": -1.13,
+   "medianExcessPct": -2.46,
+   "beatQqqPct": 43.4,
+   "tStatExcess": -1.99,
+   "firstHalfExcessPct": -2.07,
+   "secondHalfExcessPct": -0.08,
+   "byYearExcess": {
+    "2019": {
+     "n": 193,
+     "avgPct": -0.2
+    },
+    "2020": {
+     "n": 263,
+     "avgPct": -0.37
+    },
+    "2021": {
+     "n": 298,
+     "avgPct": -6.21
+    },
+    "2022": {
+     "n": 707,
+     "avgPct": -1.47
+    },
+    "2023": {
+     "n": 257,
+     "avgPct": 0.03
+    },
+    "2024": {
+     "n": 201,
+     "avgPct": -3.53
+    },
+    "2025": {
+     "n": 458,
+     "avgPct": 3.03
+    },
+    "2026": {
+     "n": 393,
+     "avgPct": -2.0
+    }
+   },
+   "robust": false
+  },
+  "dd40_s3|h60": {
+   "trades": 1966,
+   "avgPct": 2.93,
+   "medianPct": -1.49,
+   "winRatePct": 48.0,
+   "worstPct": -91.0,
+   "avgExcessPct": -2.0,
+   "medianExcessPct": -5.67,
+   "beatQqqPct": 41.1,
+   "tStatExcess": -1.76,
+   "firstHalfExcessPct": -4.09,
+   "secondHalfExcessPct": 0.45,
+   "byYearExcess": {
+    "2019": {
+     "n": 144,
+     "avgPct": 0.16
+    },
+    "2020": {
+     "n": 204,
+     "avgPct": 4.45
+    },
+    "2021": {
+     "n": 216,
+     "avgPct": -19.38
+    },
+    "2022": {
+     "n": 496,
+     "avgPct": -2.17
+    },
+    "2023": {
+     "n": 185,
+     "avgPct": -5.89
+    },
+    "2024": {
+     "n": 151,
+     "avgPct": -4.0
+    },
+    "2025": {
+     "n": 346,
+     "avgPct": 4.11
+    },
+    "2026": {
+     "n": 224,
+     "avgPct": 3.01
+    }
+   },
+   "robust": false
+  },
+  "dd50_now|h20": {
+   "trades": 6781,
+   "avgPct": 0.85,
+   "medianPct": -0.68,
+   "winRatePct": 48.4,
+   "worstPct": -97.6,
+   "avgExcessPct": -0.95,
+   "medianExcessPct": -2.19,
+   "beatQqqPct": 44.5,
+   "tStatExcess": -3.89,
+   "firstHalfExcessPct": -1.43,
+   "secondHalfExcessPct": -0.39,
+   "byYearExcess": {
+    "2019": {
+     "n": 341,
+     "avgPct": 0.38
+    },
+    "2020": {
+     "n": 523,
+     "avgPct": 1.94
+    },
+    "2021": {
+     "n": 960,
+     "avgPct": -5.26
+    },
+    "2022": {
+     "n": 1842,
+     "avgPct": -0.72
+    },
+    "2023": {
+     "n": 570,
+     "avgPct": -1.25
+    },
+    "2024": {
+     "n": 555,
+     "avgPct": -1.93
+    },
+    "2025": {
+     "n": 949,
+     "avgPct": 1.28
+    },
+    "2026": {
+     "n": 1041,
+     "avgPct": -0.63
+    }
+   },
+   "robust": false
+  },
+  "dd50_now|h60": {
+   "trades": 3102,
+   "avgPct": 4.16,
+   "medianPct": -1.57,
+   "winRatePct": 47.9,
+   "worstPct": -98.9,
+   "avgExcessPct": -1.43,
+   "medianExcessPct": -6.8,
+   "beatQqqPct": 40.7,
+   "tStatExcess": -1.17,
+   "firstHalfExcessPct": -3.68,
+   "secondHalfExcessPct": 1.33,
+   "byYearExcess": {
+    "2019": {
+     "n": 187,
+     "avgPct": -1.03
+    },
+    "2020": {
+     "n": 293,
+     "avgPct": 11.48
+    },
+    "2021": {
+     "n": 470,
+     "avgPct": -16.79
+    },
+    "2022": {
+     "n": 760,
+     "avgPct": -2.07
+    },
+    "2023": {
+     "n": 255,
+     "avgPct": -5.01
+    },
+    "2024": {
+     "n": 271,
+     "avgPct": -3.08
+    },
+    "2025": {
+     "n": 467,
+     "avgPct": 10.42
+    },
+    "2026": {
+     "n": 399,
+     "avgPct": -2.25
+    }
+   },
+   "robust": false
+  },
+  "dd50_s1|h20": {
+   "trades": 3823,
+   "avgPct": 0.12,
+   "medianPct": -1.55,
+   "winRatePct": 47.0,
+   "worstPct": -97.3,
+   "avgExcessPct": -1.35,
+   "medianExcessPct": -2.43,
+   "beatQqqPct": 43.3,
+   "tStatExcess": -4.09,
+   "firstHalfExcessPct": -1.67,
+   "secondHalfExcessPct": -0.97,
+   "byYearExcess": {
+    "2019": {
+     "n": 189,
+     "avgPct": -0.68
+    },
+    "2020": {
+     "n": 277,
+     "avgPct": 4.81
+    },
+    "2021": {
+     "n": 523,
+     "avgPct": -6.53
+    },
+    "2022": {
+     "n": 1087,
+     "avgPct": -1.15
+    },
+    "2023": {
+     "n": 334,
+     "avgPct": -0.39
+    },
+    "2024": {
+     "n": 287,
+     "avgPct": -3.36
+    },
+    "2025": {
+     "n": 559,
+     "avgPct": 0.4
+    },
+    "2026": {
+     "n": 567,
+     "avgPct": -1.43
+    }
+   },
+   "robust": false
+  },
+  "dd50_s1|h60": {
+   "trades": 2035,
+   "avgPct": 2.35,
+   "medianPct": -3.39,
+   "winRatePct": 46.4,
+   "worstPct": -98.3,
+   "avgExcessPct": -2.48,
+   "medianExcessPct": -7.16,
+   "beatQqqPct": 39.6,
+   "tStatExcess": -1.4,
+   "firstHalfExcessPct": -4.62,
+   "secondHalfExcessPct": 0.21,
+   "byYearExcess": {
+    "2019": {
+     "n": 117,
+     "avgPct": -1.3
+    },
+    "2020": {
+     "n": 168,
+     "avgPct": 13.59
+    },
+    "2021": {
+     "n": 301,
+     "avgPct": -19.07
+    },
+    "2022": {
+     "n": 550,
+     "avgPct": -2.97
+    },
+    "2023": {
+     "n": 186,
+     "avgPct": -9.87
+    },
+    "2024": {
+     "n": 174,
+     "avgPct": -6.05
+    },
+    "2025": {
+     "n": 311,
+     "avgPct": 9.29
+    },
+    "2026": {
+     "n": 228,
+     "avgPct": 0.82
+    }
+   },
+   "robust": false
+  },
+  "dd50_s2|h20": {
+   "trades": 2590,
+   "avgPct": -0.5,
+   "medianPct": -2.01,
+   "winRatePct": 45.4,
+   "worstPct": -90.4,
+   "avgExcessPct": -1.63,
+   "medianExcessPct": -3.07,
+   "beatQqqPct": 42.5,
+   "tStatExcess": -3.89,
+   "firstHalfExcessPct": -2.06,
+   "secondHalfExcessPct": -1.11,
+   "byYearExcess": {
+    "2019": {
+     "n": 131,
+     "avgPct": 0.16
+    },
+    "2020": {
+     "n": 173,
+     "avgPct": 2.84
+    },
+    "2021": {
+     "n": 334,
+     "avgPct": -6.16
+    },
+    "2022": {
+     "n": 784,
+     "avgPct": -1.76
+    },
+    "2023": {
+     "n": 244,
+     "avgPct": 0.28
+    },
+    "2024": {
+     "n": 174,
+     "avgPct": -3.31
+    },
+    "2025": {
+     "n": 368,
+     "avgPct": -0.52
+    },
+    "2026": {
+     "n": 382,
+     "avgPct": -1.58
+    }
+   },
+   "robust": false
+  },
+  "dd50_s2|h60": {
+   "trades": 1542,
+   "avgPct": -0.28,
+   "medianPct": -5.49,
+   "winRatePct": 44.8,
+   "worstPct": -94.3,
+   "avgExcessPct": -4.31,
+   "medianExcessPct": -7.53,
+   "beatQqqPct": 38.7,
+   "tStatExcess": -4.78,
+   "firstHalfExcessPct": -5.8,
+   "secondHalfExcessPct": -2.39,
+   "byYearExcess": {
+    "2019": {
+     "n": 89,
+     "avgPct": 0.48
+    },
+    "2020": {
+     "n": 116,
+     "avgPct": 5.82
+    },
+    "2021": {
+     "n": 218,
+     "avgPct": -19.79
+    },
+    "2022": {
+     "n": 446,
+     "avgPct": -3.24
+    },
+    "2023": {
+     "n": 148,
+     "avgPct": -7.74
+    },
+    "2024": {
+     "n": 109,
+     "avgPct": -3.16
+    },
+    "2025": {
+     "n": 237,
+     "avgPct": -2.75
+    },
+    "2026": {
+     "n": 179,
+     "avgPct": 2.99
+    }
+   },
+   "robust": false
+  },
+  "dd50_s3|h20": {
+   "trades": 1447,
+   "avgPct": -0.68,
+   "medianPct": -1.73,
+   "winRatePct": 45.5,
+   "worstPct": -87.3,
+   "avgExcessPct": -1.69,
+   "medianExcessPct": -2.88,
+   "beatQqqPct": 42.5,
+   "tStatExcess": -3.24,
+   "firstHalfExcessPct": -2.31,
+   "secondHalfExcessPct": -0.87,
+   "byYearExcess": {
+    "2019": {
+     "n": 75,
+     "avgPct": 0.23
+    },
+    "2020": {
+     "n": 111,
+     "avgPct": -1.58
+    },
+    "2021": {
+     "n": 169,
+     "avgPct": -4.99
+    },
+    "2022": {
+     "n": 468,
+     "avgPct": -1.93
+    },
+    "2023": {
+     "n": 131,
+     "avgPct": 1.35
+    },
+    "2024": {
+     "n": 87,
+     "avgPct": -3.18
+    },
+    "2025": {
+     "n": 220,
+     "avgPct": -0.89
+    },
+    "2026": {
+     "n": 186,
+     "avgPct": -1.34
+    }
+   },
+   "robust": false
+  },
+  "dd50_s3|h60": {
+   "trades": 1041,
+   "avgPct": 0.59,
+   "medianPct": -3.43,
+   "winRatePct": 45.9,
+   "worstPct": -91.0,
+   "avgExcessPct": -3.26,
+   "medianExcessPct": -5.6,
+   "beatQqqPct": 41.4,
+   "tStatExcess": -3.33,
+   "firstHalfExcessPct": -4.73,
+   "secondHalfExcessPct": -1.29,
+   "byYearExcess": {
+    "2019": {
+     "n": 56,
+     "avgPct": -4.23
+    },
+    "2020": {
+     "n": 89,
+     "avgPct": 3.04
+    },
+    "2021": {
+     "n": 120,
+     "avgPct": -18.04
+    },
+    "2022": {
+     "n": 331,
+     "avgPct": -2.08
+    },
+    "2023": {
+     "n": 98,
+     "avgPct": -7.65
+    },
+    "2024": {
+     "n": 64,
+     "avgPct": -4.0
+    },
+    "2025": {
+     "n": 173,
+     "avgPct": -1.59
+    },
+    "2026": {
+     "n": 110,
+     "avgPct": 6.42
+    }
+   },
+   "robust": false
+  }
+ },
+ "robust": [],
+ "today": [
+  {
+   "ticker": "GPCR",
+   "name": "Structure Therapeutics Inc.",
+   "price": 21.87,
+   "ddPct": -77.0,
+   "crash20AgeDays": 719,
+   "crash20Pct": -42.8,
+   "dollarVolM": 28.0,
+   "capB": 1.56,
+   "pe": null,
+   "rules": [
+    "dd30_s1",
+    "dd40_s1",
+    "dd50_s1"
+   ],
+   "robustRules": []
+  },
+  {
+   "ticker": "TTD",
+   "name": "The Trade Desk, Inc.",
+   "price": 12.29,
+   "ddPct": -75.8,
+   "crash20AgeDays": 59,
+   "crash20Pct": -21.9,
+   "dollarVolM": 189.3,
+   "capB": 5.28,
+   "pe": 14.8,
+   "rules": [
+    "crash20_s1",
+    "dd30_s1",
+    "dd40_s1",
+    "dd50_s1"
+   ],
+   "robustRules": []
+  },
+  {
+   "ticker": "QURE",
+   "name": "uniQure N.V.",
+   "price": 24.83,
+   "ddPct": -64.5,
+   "crash20AgeDays": 23,
+   "crash20Pct": -37.3,
+   "dollarVolM": 40.1,
+   "capB": 1.72,
+   "pe": null,
+   "rules": [
+    "crash20_s1",
+    "crash20_s2",
+    "crash30_s1",
+    "crash30_s2",
+    "dd30_s1",
+    "dd30_s2",
+    "dd40_s1",
+    "dd40_s2",
+    "dd50_s1",
+    "dd50_s2"
+   ],
+   "robustRules": []
+  },
+  {
+   "ticker": "NKTR",
+   "name": "Nektar Therapeutics",
+   "price": 38.87,
+   "ddPct": -64.3,
+   "crash20AgeDays": 21,
+   "crash20Pct": -22.4,
+   "dollarVolM": 45.5,
+   "capB": 1.33,
+   "pe": null,
+   "rules": [
+    "crash20_s1",
+    "crash20_s2",
+    "dd30_s1",
+    "dd30_s2",
+    "dd40_s1",
+    "dd40_s2",
+    "dd50_s1",
+    "dd50_s2"
+   ],
+   "robustRules": []
+  },
+  {
+   "ticker": "RKLB",
+   "name": "Rocket Lab Corporation",
+   "price": 54.73,
+   "ddPct": -63.8,
+   "crash20AgeDays": null,
+   "crash20Pct": null,
+   "dollarVolM": 1230.6,
+   "capB": 32.75,
+   "pe": null,
+   "rules": [
+    "dd30_s1",
+    "dd40_s1",
+    "dd50_s1"
+   ],
+   "robustRules": []
+  },
+  {
+   "ticker": "QDEL",
+   "name": "QuidelOrtho Corporation",
+   "price": 13.25,
+   "ddPct": -62.8,
+   "crash20AgeDays": 59,
+   "crash20Pct": -24.7,
+   "dollarVolM": 30.6,
+   "capB": 0.91,
+   "pe": null,
+   "rules": [
+    "crash20_s1",
+    "dd30_s1",
+    "dd40_s1",
+    "dd50_s1"
+   ],
+   "robustRules": []
+  },
+  {
+   "ticker": "AXTI",
+   "name": "AXT Inc",
+   "price": 55.06,
+   "ddPct": -61.5,
+   "crash20AgeDays": 145,
+   "crash20Pct": -20.5,
+   "dollarVolM": 594.7,
+   "capB": 3.61,
+   "pe": 1376.5,
+   "rules": [
+    "dd30_s1",
+    "dd40_s1",
+    "dd50_s1"
+   ],
+   "robustRules": []
+  },
+  {
+   "ticker": "Z",
+   "name": "Zillow Group, Inc.",
+   "price": 30.96,
+   "ddPct": -59.8,
+   "crash20AgeDays": 1252,
+   "crash20Pct": -24.9,
+   "dollarVolM": 133.2,
+   "capB": 5.49,
+   "pe": 134.6,
+   "rules": [
+    "dd30_s1",
+    "dd40_s1",
+    "dd50_s1"
+   ],
+   "robustRules": []
+  },
+  {
+   "ticker": "RARE",
+   "name": "Ultragenyx Pharmaceutical Inc.",
+   "price": 16.1,
+   "ddPct": -59.6,
+   "crash20AgeDays": 40,
+   "crash20Pct": -44.0,
+   "dollarVolM": 53.2,
+   "capB": 1.59,
+   "pe": null,
+   "rules": [
+    "crash20_s1",
+    "crash30_s1",
+    "dd30_s1",
+    "dd40_s1",
+    "dd50_s1"
+   ],
+   "robustRules": []
+  },
+  {
+   "ticker": "PODD",
+   "name": "Insulet Corporation",
+   "price": 149.68,
+   "ddPct": -57.8,
+   "crash20AgeDays": 61,
+   "crash20Pct": -20.1,
+   "dollarVolM": 208.1,
+   "capB": 10.38,
+   "pe": 28.0,
+   "rules": [
+    "dd30_s1",
+    "dd30_s2",
+    "dd40_s1",
+    "dd40_s2",
+    "dd50_s1",
+    "dd50_s2"
+   ],
+   "robustRules": []
+  },
+  {
+   "ticker": "ZG",
+   "name": "Zillow Group, Inc.",
+   "price": 31.89,
+   "ddPct": -57.4,
+   "crash20AgeDays": 1252,
+   "crash20Pct": -23.0,
+   "dollarVolM": 31.0,
+   "capB": 1.32,
+   "pe": 138.7,
+   "rules": [
+    "dd30_s1",
+    "dd40_s1",
+    "dd50_s1"
+   ],
+   "robustRules": []
+  },
+  {
+   "ticker": "LASR",
+   "name": "nLIGHT, Inc.",
+   "price": 37.13,
+   "ddPct": -57.3,
+   "crash20AgeDays": 59,
+   "crash20Pct": -25.6,
+   "dollarVolM": 38.7,
+   "capB": 2.14,
+   "pe": null,
+   "rules": [
+    "crash20_s1",
+    "dd30_s1",
+    "dd40_s1",
+    "dd50_s1"
+   ],
+   "robustRules": []
+  },
+  {
+   "ticker": "PSIX",
+   "name": "Power Solutions International, Inc.",
+   "price": 45.73,
+   "ddPct": -57.1,
+   "crash20AgeDays": 119,
+   "crash20Pct": -39.2,
+   "dollarVolM": 20.3,
+   "capB": 1.05,
+   "pe": 15.6,
+   "rules": [
+    "dd30_s1",
+    "dd40_s1",
+    "dd50_s1"
+   ],
+   "robustRules": []
+  },
+  {
+   "ticker": "UPST",
+   "name": "Upstart Holdings, Inc.",
+   "price": 23.02,
+   "ddPct": -55.8,
+   "crash20AgeDays": 746,
+   "crash20Pct": -27.3,
+   "dollarVolM": 89.5,
+   "capB": 2.24,
+   "pe": 46.0,
+   "rules": [
+    "dd30_s1",
+    "dd40_s1",
+    "dd50_s1"
+   ],
+   "robustRules": []
+  },
+  {
+   "ticker": "LIF",
+   "name": "Life360, Inc.",
+   "price": 44.44,
+   "ddPct": -55.6,
+   "crash20AgeDays": 57,
+   "crash20Pct": -24.8,
+   "dollarVolM": 25.6,
+   "capB": 3.62,
+   "pe": 25.8,
+   "rules": [
+    "crash20_s1",
+    "crash20_s2",
+    "dd30_s1",
+    "dd30_s2",
+    "dd40_s1",
+    "dd40_s2",
+    "dd50_s1",
+    "dd50_s2"
+   ],
+   "robustRules": []
+  },
+  {
+   "ticker": "MNDY",
+   "name": "monday.com Ltd.",
+   "price": 95.6,
+   "ddPct": -54.6,
+   "crash20AgeDays": 183,
+   "crash20Pct": -20.8,
+   "dollarVolM": 91.8,
+   "capB": 4.04,
+   "pe": 40.3,
+   "rules": [
+    "dd30_s1",
+    "dd40_s1",
+    "dd50_s1"
+   ],
+   "robustRules": []
+  },
+  {
+   "ticker": "CELC",
+   "name": "Celcuity Inc.",
+   "price": 69.13,
+   "ddPct": -54.2,
+   "crash20AgeDays": 105,
+   "crash20Pct": -25.7,
+   "dollarVolM": 120.9,
+   "capB": 3.38,
+   "pe": null,
+   "rules": [
+    "dd30_s1",
+    "dd30_s2",
+    "dd30_s3",
+    "dd40_s1",
+    "dd40_s2",
+    "dd40_s3",
+    "dd50_s1",
+    "dd50_s2",
+    "dd50_s3"
+   ],
+   "robustRules": []
+  },
+  {
+   "ticker": "WDC",
+   "name": "Western Digital Corporation",
+   "price": 366.11,
+   "ddPct": -54.2,
+   "crash20AgeDays": 1666,
+   "crash20Pct": -20.4,
+   "dollarVolM": 3885.3,
+   "capB": 137.04,
+   "pe": 12.9,
+   "rules": [
+    "dd30_s1",
+    "dd40_s1",
+    "dd50_s1"
+   ],
+   "robustRules": []
+  },
+  {
+   "ticker": "CELH",
+   "name": "Celsius Holdings, Inc.",
+   "price": 29.12,
+   "ddPct": -52.6,
+   "crash20AgeDays": 246,
+   "crash20Pct": -24.8,
+   "dollarVolM": 147.3,
+   "capB": 7.37,
+   "pe": 126.6,
+   "rules": [
+    "dd30_s1",
+    "dd30_s2",
+    "dd40_s1",
+    "dd40_s2",
+    "dd50_s1",
+    "dd50_s2"
+   ],
+   "robustRules": []
+  },
+  {
+   "ticker": "LULU",
+   "name": "lululemon athletica inc.",
+   "price": 107.24,
+   "ddPct": -52.5,
+   "crash20AgeDays": 1666,
+   "crash20Pct": -21.4,
+   "dollarVolM": 393.7,
+   "capB": 11.32,
+   "pe": 8.8,
+   "rules": [
+    "dd30_s1",
+    "dd30_s2",
+    "dd40_s1",
+    "dd40_s2",
+    "dd50_s1",
+    "dd50_s2"
+   ],
+   "robustRules": []
+  },
+  {
+   "ticker": "LQDA",
+   "name": "Liquidia Corporation",
+   "price": 45.06,
+   "ddPct": -51.9,
+   "crash20AgeDays": 22,
+   "crash20Pct": -57.2,
+   "dollarVolM": 186.3,
+   "capB": 4.03,
+   "pe": 32.4,
+   "rules": [
+    "crash20_s1",
+    "crash20_s2",
+    "crash20_s3",
+    "crash30_s1",
+    "crash30_s2",
+    "crash30_s3",
+    "dd30_s1",
+    "dd30_s2",
+    "dd30_s3",
+    "dd40_s1",
+    "dd40_s2",
+    "dd40_s3",
+    "dd50_s1",
+    "dd50_s2",
+    "dd50_s3"
+   ],
+   "robustRules": []
+  },
+  {
+   "ticker": "EQPT",
+   "name": "EquipmentShare.com Inc",
+   "price": 17.18,
+   "ddPct": -51.6,
+   "crash20AgeDays": null,
+   "crash20Pct": null,
+   "dollarVolM": 57.9,
+   "capB": 3.71,
+   "pe": 156.2,
+   "rules": [
+    "dd30_s1",
+    "dd30_s2",
+    "dd40_s1",
+    "dd40_s2",
+    "dd50_s1",
+    "dd50_s2"
+   ],
+   "robustRules": []
+  },
+  {
+   "ticker": "PLAB",
+   "name": "Photronics, Inc.",
+   "price": 27.58,
+   "ddPct": -50.8,
+   "crash20AgeDays": 108,
+   "crash20Pct": -36.4,
+   "dollarVolM": 20.2,
+   "capB": 1.63,
+   "pe": 9.8,
+   "rules": [
+    "dd30_s1",
+    "dd40_s1",
+    "dd50_s1"
+   ],
+   "robustRules": []
+  },
+  {
+   "ticker": "WING",
+   "name": "Wingstop Inc.",
+   "price": 149.73,
+   "ddPct": -50.6,
+   "crash20AgeDays": 501,
+   "crash20Pct": -21.4,
+   "dollarVolM": 171.8,
+   "capB": 4.05,
+   "pe": 35.1,
+   "rules": [
+    "dd30_s1",
+    "dd30_s2",
+    "dd40_s1",
+    "dd40_s2",
+    "dd50_s1",
+    "dd50_s2"
+   ],
+   "robustRules": []
+  },
+  {
+   "ticker": "INTU",
+   "name": "Intuit Inc.",
+   "price": 341.09,
+   "ddPct": -50.0,
+   "crash20AgeDays": 112,
+   "crash20Pct": -20.0,
+   "dollarVolM": 1003.1,
+   "capB": 91.15,
+   "pe": 20.7,
+   "rules": [
+    "dd30_s1",
+    "dd30_s2",
+    "dd40_s1",
+    "dd40_s2",
+    "dd50_s1",
+    "dd50_s2"
+   ],
+   "robustRules": []
+  },
+  {
+   "ticker": "TCOM",
+   "name": "Trip.com Group Limited",
+   "price": 39.59,
+   "ddPct": -49.9,
+   "crash20AgeDays": null,
+   "crash20Pct": null,
+   "dollarVolM": 99.9,
+   "capB": 24.93,
+   "pe": 8.0,
+   "rules": [
+    "dd30_s1",
+    "dd30_s2",
+    "dd40_s1",
+    "dd40_s2"
+   ],
+   "robustRules": []
+  },
+  {
+   "ticker": "IONS",
+   "name": "Ionis Pharmaceuticals, Inc.",
+   "price": 43.52,
+   "ddPct": -49.8,
+   "crash20AgeDays": 80,
+   "crash20Pct": -23.9,
+   "dollarVolM": 120.0,
+   "capB": 7.23,
+   "pe": null,
+   "rules": [
+    "dd30_s1",
+    "dd40_s1"
+   ],
+   "robustRules": []
+  },
+  {
+   "ticker": "PRCT",
+   "name": "PROCEPT BioRobotics Corporation",
+   "price": 19.2,
+   "ddPct": -49.6,
+   "crash20AgeDays": 881,
+   "crash20Pct": -25.3,
+   "dollarVolM": 20.8,
+   "capB": 1.09,
+   "pe": null,
+   "rules": [
+    "dd30_s1",
+    "dd40_s1"
+   ],
+   "robustRules": []
+  },
+  {
+   "ticker": "MLTX",
+   "name": "MoonLake Immunotherapeutics",
+   "price": 11.78,
+   "ddPct": -49.4,
+   "crash20AgeDays": 274,
+   "crash20Pct": -89.9,
+   "dollarVolM": 23.0,
+   "capB": 1.0,
+   "pe": null,
+   "rules": [
+    "dd30_s1",
+    "dd30_s2",
+    "dd40_s1",
+    "dd40_s2"
+   ],
+   "robustRules": []
+  },
+  {
+   "ticker": "BBNX",
+   "name": "Beta Bionics, Inc.",
+   "price": 16.75,
+   "ddPct": -48.8,
+   "crash20AgeDays": 203,
+   "crash20Pct": -37.0,
+   "dollarVolM": 20.5,
+   "capB": 0.91,
+   "pe": null,
+   "rules": [
+    "dd30_s1",
+    "dd40_s1"
+   ],
+   "robustRules": []
+  },
+  {
+   "ticker": "SOFI",
+   "name": "SoFi Technologies, Inc.",
+   "price": 16.76,
+   "ddPct": -48.8,
+   "crash20AgeDays": null,
+   "crash20Pct": null,
+   "dollarVolM": 843.9,
+   "capB": 21.73,
+   "pe": 30.5,
+   "rules": [
+    "dd30_s1",
+    "dd30_s2",
+    "dd40_s1",
+    "dd40_s2"
+   ],
+   "robustRules": []
+  },
+  {
+   "ticker": "XENE",
+   "name": "Xenon Pharmaceuticals Inc.",
+   "price": 37.41,
+   "ddPct": -48.5,
+   "crash20AgeDays": 30,
+   "crash20Pct": -30.7,
+   "dollarVolM": 52.4,
+   "capB": 3.62,
+   "pe": null,
+   "rules": [
+    "crash20_s1",
+    "crash20_s2",
+    "crash30_s1",
+    "crash30_s2",
+    "dd30_s1",
+    "dd30_s2",
+    "dd40_s1",
+    "dd40_s2"
+   ],
+   "robustRules": []
+  },
+  {
+   "ticker": "WIX",
+   "name": "Wix.com Ltd.",
+   "price": 77.07,
+   "ddPct": -48.0,
+   "crash20AgeDays": 118,
+   "crash20Pct": -27.1,
+   "dollarVolM": 62.3,
+   "capB": 3.23,
+   "pe": null,
+   "rules": [
+    "dd30_s1",
+    "dd40_s1"
+   ],
+   "robustRules": []
+  },
+  {
+   "ticker": "PATK",
+   "name": "Patrick Industries, Inc.",
+   "price": 77.68,
+   "ddPct": -47.7,
+   "crash20AgeDays": 1664,
+   "crash20Pct": -35.7,
+   "dollarVolM": 55.8,
+   "capB": 2.49,
+   "pe": 18.5,
+   "rules": [
+    "dd30_s1",
+    "dd30_s2",
+    "dd40_s1",
+    "dd40_s2"
+   ],
+   "robustRules": []
+  },
+  {
+   "ticker": "LI",
+   "name": "Li Auto Inc.",
+   "price": 11.03,
+   "ddPct": -47.4,
+   "crash20AgeDays": 1163,
+   "crash20Pct": -20.6,
+   "dollarVolM": 31.0,
+   "capB": 8.88,
+   "pe": null,
+   "rules": [
+    "dd30_s1",
+    "dd40_s1"
+   ],
+   "robustRules": []
+  },
+  {
+   "ticker": "PEGA",
+   "name": "Pegasystems Inc.",
+   "price": 33.93,
+   "ddPct": -47.0,
+   "crash20AgeDays": 1123,
+   "crash20Pct": -20.7,
+   "dollarVolM": 110.6,
+   "capB": 5.55,
+   "pe": 20.9,
+   "rules": [
+    "dd30_s1",
+    "dd40_s1"
+   ],
+   "robustRules": []
+  },
+  {
+   "ticker": "SNDX",
+   "name": "Syndax Pharmaceuticals, Inc.",
+   "price": 13.65,
+   "ddPct": -46.7,
+   "crash20AgeDays": 374,
+   "crash20Pct": -21.6,
+   "dollarVolM": 39.8,
+   "capB": 1.22,
+   "pe": null,
+   "rules": [
+    "dd30_s1",
+    "dd40_s1"
+   ],
+   "robustRules": []
+  },
+  {
+   "ticker": "VSNT",
+   "name": "Versant Media Group, Inc.",
+   "price": 31.42,
+   "ddPct": -46.7,
+   "crash20AgeDays": null,
+   "crash20Pct": null,
+   "dollarVolM": 54.7,
+   "capB": 4.36,
+   "pe": 5.9,
+   "rules": [
+    "dd30_s1",
+    "dd30_s2",
+    "dd40_s1",
+    "dd40_s2"
+   ],
+   "robustRules": []
+  },
+  {
+   "ticker": "VERA",
+   "name": "Vera Therapeutics, Inc.",
+   "price": 30.98,
+   "ddPct": -44.7,
+   "crash20AgeDays": 352,
+   "crash20Pct": -25.9,
+   "dollarVolM": 51.3,
+   "capB": 2.23,
+   "pe": null,
+   "rules": [
+    "dd30_s1",
+    "dd30_s2",
+    "dd40_s1",
+    "dd40_s2"
+   ],
+   "robustRules": []
+  },
+  {
+   "ticker": "OLED",
+   "name": "Universal Display Corporation",
+   "price": 83.92,
+   "ddPct": -44.6,
+   "crash20AgeDays": 2007,
+   "crash20Pct": -20.5,
+   "dollarVolM": 68.3,
+   "capB": 3.78,
+   "pe": 17.1,
+   "rules": [
+    "dd30_s1",
+    "dd40_s1"
+   ],
+   "robustRules": []
+  },
+  {
+   "ticker": "STEP",
+   "name": "StepStone Group Inc.",
+   "price": 43.22,
+   "ddPct": -44.4,
+   "crash20AgeDays": null,
+   "crash20Pct": null,
+   "dollarVolM": 38.4,
+   "capB": 3.56,
+   "pe": null,
+   "rules": [
+    "dd30_s1",
+    "dd30_s2",
+    "dd40_s1",
+    "dd40_s2"
+   ],
+   "robustRules": []
+  },
+  {
+   "ticker": "ADMA",
+   "name": "ADMA Biologics Inc",
+   "price": 11.41,
+   "ddPct": -44.2,
+   "crash20AgeDays": 1664,
+   "crash20Pct": -25.0,
+   "dollarVolM": 29.3,
+   "capB": 2.56,
+   "pe": 16.3,
+   "rules": [
+    "dd30_s1",
+    "dd30_s2",
+    "dd40_s1",
+    "dd40_s2"
+   ],
+   "robustRules": []
+  },
+  {
+   "ticker": "DKNG",
+   "name": "DraftKings Inc.",
+   "price": 20.91,
+   "ddPct": -43.5,
+   "crash20AgeDays": 999,
+   "crash20Pct": -27.8,
+   "dollarVolM": 258.3,
+   "capB": 10.38,
+   "pe": null,
+   "rules": [
+    "dd30_s1",
+    "dd30_s2",
+    "dd40_s1",
+    "dd40_s2"
+   ],
+   "robustRules": []
+  },
+  {
+   "ticker": "BL",
+   "name": "BlackLine, Inc.",
+   "price": 33.81,
+   "ddPct": -43.2,
+   "crash20AgeDays": null,
+   "crash20Pct": null,
+   "dollarVolM": 30.0,
+   "capB": 1.97,
+   "pe": 59.3,
+   "rules": [
+    "dd30_s1",
+    "dd30_s2",
+    "dd40_s1",
+    "dd40_s2"
+   ],
+   "robustRules": []
+  },
+  {
+   "ticker": "PDFS",
+   "name": "PDF Solutions, Inc.",
+   "price": 41.0,
+   "ddPct": -42.8,
+   "crash20AgeDays": null,
+   "crash20Pct": null,
+   "dollarVolM": 26.5,
+   "capB": 1.73,
+   "pe": 164.0,
+   "rules": [
+    "dd30_s1",
+    "dd40_s1"
+   ],
+   "robustRules": []
+  },
+  {
+   "ticker": "LEGN",
+   "name": "Legend Biotech Corporation",
+   "price": 21.63,
+   "ddPct": -42.3,
+   "crash20AgeDays": null,
+   "crash20Pct": null,
+   "dollarVolM": 38.7,
+   "capB": 4.21,
+   "pe": null,
+   "rules": [
+    "dd30_s1",
+    "dd30_s2",
+    "dd40_s1",
+    "dd40_s2"
+   ],
+   "robustRules": []
+  },
+  {
+   "ticker": "ABVX",
+   "name": "Abivax SA",
+   "price": 86.59,
+   "ddPct": -41.8,
+   "crash20AgeDays": 105,
+   "crash20Pct": -44.1,
+   "dollarVolM": 95.2,
+   "capB": 7.58,
+   "pe": null,
+   "rules": [
+    "dd30_s1",
+    "dd40_s1"
+   ],
+   "robustRules": []
+  },
+  {
+   "ticker": "IRTC",
+   "name": "iRhythm Holdings, Inc.",
+   "price": 123.37,
+   "ddPct": -41.8,
+   "crash20AgeDays": 1396,
+   "crash20Pct": -39.5,
+   "dollarVolM": 54.6,
+   "capB": 4.07,
+   "pe": null,
+   "rules": [
+    "dd30_s1",
+    "dd30_s2",
+    "dd40_s1",
+    "dd40_s2"
+   ],
+   "robustRules": []
+  },
+  {
+   "ticker": "MAZE",
+   "name": "Maze Therapeutics, Inc.",
+   "price": 31.48,
+   "ddPct": -41.3,
+   "crash20AgeDays": 152,
+   "crash20Pct": -35.2,
+   "dollarVolM": 23.1,
+   "capB": 1.75,
+   "pe": null,
+   "rules": [
+    "dd30_s1",
+    "dd40_s1"
+   ],
+   "robustRules": []
+  },
+  {
+   "ticker": "ERAS",
+   "name": "Erasca, Inc.",
+   "price": 14.35,
+   "ddPct": -40.9,
+   "crash20AgeDays": 129,
+   "crash20Pct": -48.3,
+   "dollarVolM": 77.2,
+   "capB": 5.02,
+   "pe": null,
+   "rules": [
+    "dd30_s1",
+    "dd40_s1"
+   ],
+   "robustRules": []
+  },
+  {
+   "ticker": "ROAD",
+   "name": "Construction Partners, Inc.",
+   "price": 89.8,
+   "ddPct": -40.5,
+   "crash20AgeDays": null,
+   "crash20Pct": null,
+   "dollarVolM": 52.2,
+   "capB": 4.33,
+   "pe": 35.2,
+   "rules": [
+    "dd30_s1",
+    "dd30_s2",
+    "dd40_s1",
+    "dd40_s2"
+   ],
+   "robustRules": []
+  },
+  {
+   "ticker": "TSCO",
+   "name": "Tractor Supply Company",
+   "price": 33.94,
+   "ddPct": -40.4,
+   "crash20AgeDays": null,
+   "crash20Pct": null,
+   "dollarVolM": 511.5,
+   "capB": 17.68,
+   "pe": 18.2,
+   "rules": [
+    "dd30_s1",
+    "dd30_s2",
+    "dd40_s1",
+    "dd40_s2"
+   ],
+   "robustRules": []
+  },
+  {
+   "ticker": "CG",
+   "name": "The Carlyle Group Inc.",
+   "price": 40.18,
+   "ddPct": -40.3,
+   "crash20AgeDays": 1666,
+   "crash20Pct": -21.2,
+   "dollarVolM": 124.1,
+   "capB": 14.32,
+   "pe": 41.4,
+   "rules": [
+    "dd30_s1",
+    "dd30_s2",
+    "dd40_s1",
+    "dd40_s2"
+   ],
+   "robustRules": []
+  },
+  {
+   "ticker": "MRCY",
+   "name": "Mercury Systems Inc",
+   "price": 77.54,
+   "ddPct": -39.6,
+   "crash20AgeDays": 186,
+   "crash20Pct": -22.3,
+   "dollarVolM": 43.8,
+   "capB": 4.72,
+   "pe": null,
+   "rules": [
+    "dd30_s1"
+   ],
+   "robustRules": []
+  },
+  {
+   "ticker": "IMNM",
+   "name": "Immunome, Inc.",
+   "price": 18.21,
+   "ddPct": -39.4,
+   "crash20AgeDays": 1122,
+   "crash20Pct": -20.4,
+   "dollarVolM": 25.8,
+   "capB": 2.15,
+   "pe": null,
+   "rules": [
+    "dd30_s1"
+   ],
+   "robustRules": []
+  },
+  {
+   "ticker": "CRUS",
+   "name": "Cirrus Logic, Inc.",
+   "price": 109.82,
+   "ddPct": -39.1,
+   "crash20AgeDays": null,
+   "crash20Pct": null,
+   "dollarVolM": 87.4,
+   "capB": 5.5,
+   "pe": 13.4,
+   "rules": [
+    "dd30_s1"
+   ],
+   "robustRules": []
+  },
+  {
+   "ticker": "DYN",
+   "name": "Dyne Therapeutics, Inc.",
+   "price": 16.69,
+   "ddPct": -38.9,
+   "crash20AgeDays": 345,
+   "crash20Pct": -21.4,
+   "dollarVolM": 46.5,
+   "capB": 3.12,
+   "pe": null,
+   "rules": [
+    "dd30_s1",
+    "dd30_s2"
+   ],
+   "robustRules": []
+  },
+  {
+   "ticker": "SFD",
+   "name": "Smithfield Foods, Inc.",
+   "price": 18.34,
+   "ddPct": -38.5,
+   "crash20AgeDays": null,
+   "crash20Pct": null,
+   "dollarVolM": 39.4,
+   "capB": 7.22,
+   "pe": 8.0,
+   "rules": [
+    "dd30_s1"
+   ],
+   "robustRules": []
+  },
+  {
+   "ticker": "SMCI",
+   "name": "Super Micro Computer, Inc.",
+   "price": 32.95,
+   "ddPct": -37.8,
+   "crash20AgeDays": 99,
+   "crash20Pct": -28.0,
+   "dollarVolM": 1310.4,
+   "capB": 21.65,
+   "pe": 10.1,
+   "rules": [
+    "dd30_s1"
+   ],
+   "robustRules": []
+  },
+  {
+   "ticker": "MZTI",
+   "name": "The Marzetti Company",
+   "price": 109.74,
+   "ddPct": -37.7,
+   "crash20AgeDays": null,
+   "crash20Pct": null,
+   "dollarVolM": 39.0,
+   "capB": 2.99,
+   "pe": 15.7,
+   "rules": [
+    "dd30_s1",
+    "dd30_s2"
+   ],
+   "robustRules": []
+  },
+  {
+   "ticker": "ADEA",
+   "name": "Adeia Inc.",
+   "price": 21.45,
+   "ddPct": -37.5,
+   "crash20AgeDays": null,
+   "crash20Pct": null,
+   "dollarVolM": 25.5,
+   "capB": 2.37,
+   "pe": 19.7,
+   "rules": [
+    "dd30_s1"
+   ],
+   "robustRules": []
+  },
+  {
+   "ticker": "ARWR",
+   "name": "Arrowhead Pharmaceuticals, Inc.",
+   "price": 59.9,
+   "ddPct": -37.3,
+   "crash20AgeDays": 731,
+   "crash20Pct": -26.8,
+   "dollarVolM": 106.0,
+   "capB": 8.46,
+   "pe": null,
+   "rules": [
+    "dd30_s1",
+    "dd30_s2",
+    "dd30_s3"
+   ],
+   "robustRules": []
+  },
+  {
+   "ticker": "LYFT",
+   "name": "Lyft, Inc.",
+   "price": 16.16,
+   "ddPct": -36.7,
+   "crash20AgeDays": 933,
+   "crash20Pct": -36.4,
+   "dollarVolM": 162.4,
+   "capB": 6.12,
+   "pe": 2.4,
+   "rules": [
+    "dd30_s1"
+   ],
+   "robustRules": []
+  },
+  {
+   "ticker": "ESTA",
+   "name": "Establishment Labs Holdings Inc.",
+   "price": 62.46,
+   "ddPct": -36.0,
+   "crash20AgeDays": 452,
+   "crash20Pct": -26.4,
+   "dollarVolM": 30.8,
+   "capB": 1.86,
+   "pe": null,
+   "rules": [
+    "dd30_s1"
+   ],
+   "robustRules": []
+  },
+  {
+   "ticker": "OSIS",
+   "name": "OSI Systems, Inc.",
+   "price": 199.44,
+   "ddPct": -36.0,
+   "crash20AgeDays": null,
+   "crash20Pct": null,
+   "dollarVolM": 37.4,
+   "capB": 3.14,
+   "pe": 22.3,
+   "rules": [
+    "dd30_s1",
+    "dd30_s2"
+   ],
+   "robustRules": []
+  },
+  {
+   "ticker": "IMVT",
+   "name": "Immunovant, Inc.",
+   "price": 29.17,
+   "ddPct": -35.8,
+   "crash20AgeDays": 1318,
+   "crash20Pct": -26.0,
+   "dollarVolM": 40.6,
+   "capB": 6.03,
+   "pe": null,
+   "rules": [
+    "dd30_s1"
+   ],
+   "robustRules": []
+  },
+  {
+   "ticker": "TNDM",
+   "name": "Tandem Diabetes Care, Inc.",
+   "price": 19.11,
+   "ddPct": -35.5,
+   "crash20AgeDays": 421,
+   "crash20Pct": -35.2,
+   "dollarVolM": 37.8,
+   "capB": 1.33,
+   "pe": null,
+   "rules": [
+    "dd30_s1",
+    "dd30_s2"
+   ],
+   "robustRules": []
+  },
+  {
+   "ticker": "PGY",
+   "name": "Pagaya Technologies Ltd.",
+   "price": 19.23,
+   "ddPct": -35.4,
+   "crash20AgeDays": 183,
+   "crash20Pct": -23.9,
+   "dollarVolM": 37.4,
+   "capB": 1.39,
+   "pe": 13.9,
+   "rules": [
+    "dd30_s1",
+    "dd30_s2"
+   ],
+   "robustRules": []
+  },
+  {
+   "ticker": "AMBA",
+   "name": "Ambarella, Inc.",
+   "price": 63.12,
+   "ddPct": -34.7,
+   "crash20AgeDays": 107,
+   "crash20Pct": -21.4,
+   "dollarVolM": 92.7,
+   "capB": 2.79,
+   "pe": null,
+   "rules": [
+    "dd30_s1"
+   ],
+   "robustRules": []
+  },
+  {
+   "ticker": "MIRM",
+   "name": "Mirum Pharmaceuticals, Inc.",
+   "price": 85.0,
+   "ddPct": -34.6,
+   "crash20AgeDays": 1475,
+   "crash20Pct": -22.7,
+   "dollarVolM": 62.5,
+   "capB": 5.52,
+   "pe": null,
+   "rules": [
+    "dd30_s1",
+    "dd30_s2",
+    "dd30_s3"
+   ],
+   "robustRules": []
+  },
+  {
+   "ticker": "STOK",
+   "name": "Stoke Therapeutics, Inc.",
+   "price": 26.29,
+   "ddPct": -34.6,
+   "crash20AgeDays": 821,
+   "crash20Pct": -32.1,
+   "dollarVolM": 30.3,
+   "capB": 1.7,
+   "pe": null,
+   "rules": [
+    "dd30_s1",
+    "dd30_s2"
+   ],
+   "robustRules": []
+  },
+  {
+   "ticker": "ECHO",
+   "name": "EchoStar Corporation",
+   "price": 96.94,
+   "ddPct": -34.2,
+   "crash20AgeDays": 748,
+   "crash20Pct": -31.3,
+   "dollarVolM": 407.8,
+   "capB": 15.46,
+   "pe": null,
+   "rules": [
+    "dd30_s1",
+    "dd30_s2"
+   ],
+   "robustRules": []
+  },
+  {
+   "ticker": "PTCT",
+   "name": "PTC Therapeutics, Inc.",
+   "price": 59.97,
+   "ddPct": -34.0,
+   "crash20AgeDays": 754,
+   "crash20Pct": -22.7,
+   "dollarVolM": 63.2,
+   "capB": 5.01,
+   "pe": null,
+   "rules": [
+    "dd30_s1"
+   ],
+   "robustRules": []
+  },
+  {
+   "ticker": "TNGX",
+   "name": "Tango Therapeutics, Inc.",
+   "price": 22.72,
+   "ddPct": -33.9,
+   "crash20AgeDays": 496,
+   "crash20Pct": -37.5,
+   "dollarVolM": 108.7,
+   "capB": 3.83,
+   "pe": null,
+   "rules": [
+    "dd30_s1"
+   ],
+   "robustRules": []
+  },
+  {
+   "ticker": "COO",
+   "name": "The Cooper Companies, Inc.",
+   "price": 59.55,
+   "ddPct": -33.7,
+   "crash20AgeDays": null,
+   "crash20Pct": null,
+   "dollarVolM": 180.7,
+   "capB": 11.32,
+   "pe": 20.5,
+   "rules": [
+    "dd30_s1"
+   ],
+   "robustRules": []
+  },
+  {
+   "ticker": "TPG",
+   "name": "TPG Inc.",
+   "price": 46.68,
+   "ddPct": -33.7,
+   "crash20AgeDays": null,
+   "crash20Pct": null,
+   "dollarVolM": 127.0,
+   "capB": 7.47,
+   "pe": 69.7,
+   "rules": [
+    "dd30_s1",
+    "dd30_s2"
+   ],
+   "robustRules": []
+  },
+  {
+   "ticker": "AGIO",
+   "name": "Agios Pharmaceuticals, Inc.",
+   "price": 30.55,
+   "ddPct": -33.6,
+   "crash20AgeDays": 135,
+   "crash20Pct": -23.0,
+   "dollarVolM": 39.2,
+   "capB": 1.82,
+   "pe": null,
+   "rules": [
+    "dd30_s1"
+   ],
+   "robustRules": []
+  },
+  {
+   "ticker": "ACAD",
+   "name": "ACADIA Pharmaceuticals Inc.",
+   "price": 20.59,
+   "ddPct": -33.5,
+   "crash20AgeDays": 1095,
+   "crash20Pct": -33.3,
+   "dollarVolM": 33.5,
+   "capB": 3.55,
+   "pe": 9.2,
+   "rules": [
+    "dd30_s1",
+    "dd30_s2"
+   ],
+   "robustRules": []
+  },
+  {
+   "ticker": "CLDX",
+   "name": "Celldex Therapeutics, Inc.",
+   "price": 30.1,
+   "ddPct": -33.3,
+   "crash20AgeDays": 1942,
+   "crash20Pct": -31.6,
+   "dollarVolM": 39.7,
+   "capB": 2.36,
+   "pe": null,
+   "rules": [
+    "dd30_s1",
+    "dd30_s2"
+   ],
+   "robustRules": []
+  },
+  {
+   "ticker": "SOLS",
+   "name": "Solstice Advanced Materials Inc.",
+   "price": 60.55,
+   "ddPct": -33.3,
+   "crash20AgeDays": null,
+   "crash20Pct": null,
+   "dollarVolM": 128.7,
+   "capB": 9.62,
+   "pe": 45.9,
+   "rules": [
+    "dd30_s1"
+   ],
+   "robustRules": []
+  }
+ ],
+ "notes": "Bugün Nasdaq'ta işlem gören hisseler (batan şirketler yok: düşen hisseyi almak olduğundan iyi görünür). Getiri: ertesi açılışta al, 20 veya 60 işlem günü tut; 'excess' aynı günlerde QQQ'ya göre fark."
+}
