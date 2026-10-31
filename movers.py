@@ -178,6 +178,36 @@ def indicators(s):
     return s30, s200, atr
 
 
+def fix_splits(s):
+    """Yahoo sometimes records a split but leaves the older prices unadjusted for a few days, which shows up as a fake
+    +2.000 % week after a 1-for-50 reverse split. When the price jump across the split day matches the split ratio
+    (rather than "no change"), the earlier prices are adjusted here."""
+    if "Stock Splits" not in s:
+        return s
+    sp = s["Stock Splits"].astype(float).fillna(0)
+    ev = sp[(sp > 0) & (sp != 1)]
+    if ev.empty:
+        return s
+    s = s.copy()
+    for ts, r in ev.items():
+        i = s.index.get_loc(ts)
+        if not isinstance(i, int) or i == 0:
+            continue
+        before = float(s["Close"].iloc[i - 1])
+        after = float(s["Open"].iloc[i]) if float(s["Open"].iloc[i]) > 0 else float(s["Close"].iloc[i])
+        if not (before > 0 and after > 0 and math.isfinite(before) and math.isfinite(after)):
+            continue
+        jump = after / before                       # about 1 / ratio when the history is not adjusted yet
+        if abs(math.log(jump * r)) < abs(math.log(jump)):
+            k = 1 / r
+            for c in ("Open", "High", "Low", "Close", "Adj Close"):
+                if c in s.columns:
+                    s.iloc[:i, s.columns.get_loc(c)] = s[c].iloc[:i].astype(float) * k
+            if "Volume" in s.columns:
+                s.iloc[:i, s.columns.get_loc("Volume")] = s["Volume"].iloc[:i].astype(float) / k
+    return s
+
+
 def download(tickers, **kw):
     import yfinance as yf
     frames = {}
@@ -198,7 +228,11 @@ def download(tickers, **kw):
             except Exception:
                 continue
             if len(s) >= 3:
-                frames[t] = s
+                try:
+                    frames[t] = fix_splits(s)
+                except Exception as e:
+                    print("split check failed:", t, e)
+                    frames[t] = s
         time.sleep(1)
     return frames
 

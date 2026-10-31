@@ -960,7 +960,7 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
         el("td",{class:"l"}, el("a",{href:"https://robinhood.com/stocks/"+r.ticker,target:"_blank",rel:"noopener",text:r.ticker}), el("span",{class:"nm",text:r.name+((r.idx||"").indexOf("N")>=0?" · Nasdaq-100":(r.idx||"").indexOf("S")>=0?" · S&P 500":"")})),
         el("td",{text:fmtNum(r.price,2)}), el("td",{class:cls(r.d1Pct),text:pct(r.d1Pct)}), el("td",{class:cls(r.w1Pct),text:pct(r.w1Pct)}),
         el("td",{text:fmtNum(r.dollarVolM,1)}),
-        el("td",{text:isNum(r.capB)?fmtNum(r.capB,r.capB<10?2:1):"–"}),
+        el("td",{text:isNum(r.capB)?(r.capB<0.01?"<0,01":fmtNum(r.capB,r.capB<10?2:1)):"–",title:isNum(r.capB)?fmtNum(r.capB*1000,0)+" milyon $":""}),
         el("td",{text:isNum(r.pe)?fmtNum(r.pe,1):"–",title:isNum(r.pe)?"":"Zarar ediyor ya da veri yok"}),
         el("td",{text:isNum(r.atr)?fmtNum(r.atr,1):"–",title:isNum(r.atr)&&isNum(r.price)?"Tipik günlük hareket ≈ "+fmtNum(r.atr*r.price/100,2)+" $":""}),
         all? el("td",null, trBadge(r.price,r.s30,"30"), trBadge(r.price,r.s200,"200")) : el("td",{text:"–"})));
