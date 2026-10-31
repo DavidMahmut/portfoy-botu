@@ -28,14 +28,16 @@ jobs:
       - run: pip install -r requirements.txt requests lxml
       - name: Hareketlileri tara
         run: python movers.py
-      - name: Yüzde 20 bildirimi
+      - name: Bildirimler (düşüp dengelenen + günlük %20 özeti)
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          if [ -f alerts_new.md ]; then
-            gh issue create --title "$(head -n1 alerts_new.md)" --body-file alerts_new.md || echo "::warning::bildirim açılamadı"
-            rm -f alerts_new.md
-          fi
+          for f in rebound_new.md alerts_new.md; do
+            if [ -f "$f" ]; then
+              gh issue create --title "$(head -n1 "$f")" --body-file "$f" || echo "::warning::bildirim açılamadı ($f)"
+              rm -f "$f"
+            fi
+          done
       - name: Sonucu kaydet
         run: |
           git config user.name "portfoy-bot"
