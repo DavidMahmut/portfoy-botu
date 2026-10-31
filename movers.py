@@ -330,6 +330,11 @@ def risk_check(alerts, cache, data=None, F=None):
     return alerts
 
 
+def gh_text(lines):
+    """Issue text: the first line is the title; in the body every $ is escaped, since GitHub shows $...$ as a formula."""
+    return "\n".join([lines[0]] + [x.replace("$", "\\$") for x in lines[1:]]) + "\n"
+
+
 def rebound_signal(s):
     """A one-day fall of 20 %+ 10-60 trading days ago (and none since), then calm: no new 20-day closing low in the last
     10 days, price above its 10- and 20-day averages, last 10 days at least 30 % less volatile than the 10 before."""
@@ -353,7 +358,7 @@ def rebound_signal(s):
     sp = s["Stock Splits"].astype(float).fillna(0).tail(252) if "Stock Splits" in s else pd.Series(dtype=float)
     return {"crashDate": str(s.index[i].date()), "crashPct": round(float(r.iloc[i]) * 100, 1), "ageDays": int(n - 1 - i),
             "preCrash": round(float(c.iloc[i - 1]), 2), "crashClose": round(float(c.iloc[i]), 2),
-            "baseLow": round(float(c.tail(20).min()), 2), "calmerPct": round((1 - v_now / v_prev) * 100),
+            "baseLow": round(float(c.tail(10).min()), 2), "calmerPct": round((1 - v_now / v_prev) * 100),
             "reverseSplit": bool(((sp > 0) & (sp < 1)).any())}
 
 
@@ -379,11 +384,14 @@ def rebound_mail(day, picks, now):
                     f"{trn(p['crashClose'], 2)} $), {p['ageDays']} işlem günü önce")
         body.append(f"- Şimdi: {trn(p['price'], 2)} $; 52 haftalık zirveden "
                     + (f"−%{trn(abs(p['ddPct']))}" if p.get("ddPct") is not None else "–")
-                    + f"; dengelenme dibi {trn(p['baseLow'], 2)} $; oynaklık %{p['calmerPct']} azaldı")
+                    + f"; son 10 günün dibi {trn(p['baseLow'], 2)} $; oynaklık %{p['calmerPct']} azaldı")
         body.append(f"- Piyasa değeri {p['capB']:.1f} milyar $".replace(".", ",")
                     + (f", F/K {p['pe']:.1f}".replace(".", ",") if p.get("pe") else ", şirket zararda (F/K yok)")
                     + f", günde {p['dollarVolM']:.0f} milyon $ işlem")
-        body.append(f"- Olası plan: zarar-kes dengelenme dibinin biraz altı (yaklaşık {round(p['baseLow'] * 0.97, 2)} $)".replace(".", ","))
+        stop = p["baseLow"] * 0.97
+        body.append(f"- Olası plan: zarar-kes son 10 günün dibinin (%{trn(abs(p['price'] / p['baseLow'] - 1) * 100)} aşağıda, "
+                    f"{trn(p['baseLow'], 2)} $) biraz altı: yaklaşık {trn(stop, 2)} $, yani fiyattan "
+                    f"−%{trn((1 - stop / p['price']) * 100)}")
         body.append(f"- Robinhood: https://robinhood.com/stocks/{p['ticker']}")
         if h.get("url"):
             body.append(f"- Son haber: [{h.get('title')}]({h.get('url')})")
@@ -399,7 +407,7 @@ def rebound_mail(day, picks, now):
         body.append("")
     body.append("Bu bir bildirimdir; yatırım tavsiyesi değildir, karar senin. Kendi araştırmanı yap ve kaybetmeyi göze "
                 "alabileceğin kadarla gir. Tüm liste: https://davidmahmut.github.io/portfoy-botu/#hareketliler")
-    return "\n".join(body) + "\n"
+    return gh_text(body)
 
 
 def summary_mail(day, alerts, study, now):
@@ -438,7 +446,7 @@ def summary_mail(day, alerts, study, now):
         body.append("")
     body.append("Düşük risk, risksiz demek değildir; bu bir bildirimdir, alım-satım önerisi değildir. Tüm liste: "
                 "https://davidmahmut.github.io/portfoy-botu/#hareketliler")
-    return "\n".join(body) + "\n"
+    return gh_text(body)
 
 
 def _p(x):
