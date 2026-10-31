@@ -333,12 +333,15 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
 .mvf-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
 .mvf-actions button,.mv-more{font:inherit;font-size:13px;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--panel);color:var(--ink);cursor:pointer}
 .mvf-actions button.on{background:var(--accent-soft);border-color:var(--accent);color:var(--accent)}
-.r52{min-width:96px}
-.r52-bar{position:relative;height:4px;border-radius:2px;background:var(--line);margin:5px 0 5px auto;width:90px}
+.r52{min-width:0}
+.r52-bar{position:relative;height:4px;border-radius:2px;background:var(--line);margin:5px 0 5px auto;width:72px}
 .r52-dot{position:absolute;top:50%;width:9px;height:9px;border-radius:50%;background:var(--accent);transform:translate(-50%,-50%)}
 .r52-txt{display:block;font-size:11px;color:var(--muted)}
 .tr-b{display:block;width:max-content;margin-left:auto;font-family:var(--f-mono);font-size:11px;padding:1px 5px;border-radius:4px;margin-top:2px}
-.mv-table th,.mv-table td{padding-left:8px;padding-right:8px}
+.mv-table th,.mv-table td{padding-left:7px;padding-right:7px}
+.mv-table{font-size:14px}
+.mv-table th{font-size:11px;letter-spacing:.03em}
+.mv-table .nm{max-width:20ch}
 .th-sort{all:unset;box-sizing:border-box;display:inline-flex;align-items:flex-end;gap:3px;cursor:pointer;font:inherit;color:inherit;text-transform:inherit;letter-spacing:inherit;text-align:inherit;border-radius:3px}
 .mv-table th:first-child{text-align:left}
 .th-sort:hover{color:var(--ink)}
@@ -961,7 +964,7 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
     return el("td",{class:"r52",title:"52 hafta: en düşük "+fmtNum(r.lo52,d(r.lo52))+" $, en yüksek "+fmtNum(r.hi52,d(r.hi52))+" $. Fiyat zirveden "+pct(fromHi)+", dipten "+pct(fromLo)+"."},
       el("div",{class:"r52-bar"}, el("span",{class:"r52-dot",style:"left:"+(pos*100).toFixed(1)+"%"})),
       el("span",{class:"r52-txt",text:fmtNum(r.lo52,d(r.lo52))+" – "+fmtNum(r.hi52,d(r.hi52))}),
-      el("span",{class:"r52-txt",text: fromHi>-0.05? "zirvede" : fromLo<0.05? "dipte" : "zirveden "+pct(fromHi)}));
+      el("span",{class:"r52-txt",text: fromHi>-0.05? "zirvede" : fromLo<0.05? "dipte" : pos>=0.5? "zirveden "+pct(fromHi) : "dipten "+pct(fromLo)}));
   }
   function mvTable(){
     var X=S.movers, b=$("mvBody"); if(!b) return; clear(b);
