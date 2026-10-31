@@ -326,6 +326,9 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
 .mvf-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px 14px;margin-top:10px}
 .mvf-grid label,.mvf-pair{display:flex;flex-direction:column;gap:4px;font-size:13px;color:var(--muted);font-weight:600;min-width:0}
 .mvf-pair .two{display:flex;gap:6px}
+.mvf-chg{grid-column:span 2;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);align-items:center;gap:6px 8px}
+.mvf-chg>span{grid-column:1/-1}
+@media (max-width:560px){.mvf-chg{grid-column:auto;grid-template-columns:minmax(0,1fr)}}
 .mvf-grid input,.mvf-grid select{font:inherit;font-size:14px;font-weight:400;padding:6px 8px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink);min-width:0;width:100%;box-sizing:border-box}
 .mvf-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
 .mvf-actions button,.mv-more{font:inherit;font-size:13px;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--panel);color:var(--ink);cursor:pointer}
@@ -490,6 +493,8 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
       <details class="mv-filter" id="mvFilter" open>
         <summary>Filtreler <span class="small muted" id="mvFCount"></span></summary>
         <div class="mvf-grid">
+          <div class="mvf-pair mvf-chg"><span>Günlük değişim (%)</span><select id="f_d1dir" aria-label="Yön"><option value="">Her iki yön</option><option value="up">▲ Yükselenler</option><option value="down">▼ Düşenler</option></select><div class="two"><input id="f_d1min" type="text" inputmode="decimal" placeholder="en az %" aria-label="Günlük değişim en az yüzde"><input id="f_d1max" type="text" inputmode="decimal" placeholder="en çok %" aria-label="Günlük değişim en çok yüzde"></div></div>
+          <div class="mvf-pair mvf-chg"><span>Haftalık değişim (%)</span><select id="f_w1dir" aria-label="Yön"><option value="">Her iki yön</option><option value="up">▲ Yükselenler</option><option value="down">▼ Düşenler</option></select><div class="two"><input id="f_w1min" type="text" inputmode="decimal" placeholder="en az %" aria-label="Haftalık değişim en az yüzde"><input id="f_w1max" type="text" inputmode="decimal" placeholder="en çok %" aria-label="Haftalık değişim en çok yüzde"></div></div>
           <label>Hisse türü
             <select id="f_type">
               <option value="">Tümü (Nasdaq'ta işlem gören)</option>
@@ -516,7 +521,7 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
           <button type="button" id="f_trend">Yükseliş trendi (30 ve 200 günün üstünde)</button>
           <button type="button" id="f_reset">Filtreleri sıfırla</button>
         </div>
-        <p class="small muted" style="margin:10px 0 0;max-width:95ch">Tür: Nasdaq-100 ve S&amp;P 500 üyeliği (Wikipedia, haftada bir) ve Nasdaq segmenti (Global Select en sıkı listeleme şartları olan en büyük grup, Capital Market küçük şirketler). Trend: fiyat 30 ve 200 günlük basit ortalamanın üstünde mi. F/K: fiyat ÷ son 12 ayın hisse başı kârı; zarar eden şirkette boş kalır ve F/K filtresi kullanılınca listeden çıkar. ATR: son 14 günün ortalama gerçek aralığı (gün içi aralık ve gece boşlukları dahil), fiyatın yüzdesi olarak; yönü değil, hissenin tipik günlük hareket büyüklüğünü gösterir. Piyasa değeri ve F/K günde bir alınan hisse sayısı ve kârla, anlık fiyattan hesaplanır (Yahoo Finance). Filtreler bu tarayıcıda hatırlanır.</p>
+        <p class="small muted" style="margin:10px 0 0;max-width:95ch">Değişim: yönü seçip yüzdeyi pozitif sayı olarak yazın; örneğin "▼ Düşenler, en az 20" bugün %20 veya daha fazla düşenleri, "▲ Yükselenler, en az 5, en çok 10" %5–10 yükselenleri gösterir. "Her iki yön" seçiliyse yüzde iki yöndeki büyüklüğe uygulanır. Tür: Nasdaq-100 ve S&amp;P 500 üyeliği (Wikipedia, haftada bir) ve Nasdaq segmenti (Global Select en sıkı listeleme şartları olan en büyük grup, Capital Market küçük şirketler). Trend: fiyat 30 ve 200 günlük basit ortalamanın üstünde mi. F/K: fiyat ÷ son 12 ayın hisse başı kârı; zarar eden şirkette boş kalır ve F/K filtresi kullanılınca listeden çıkar. ATR: son 14 günün ortalama gerçek aralığı (gün içi aralık ve gece boşlukları dahil), fiyatın yüzdesi olarak; yönü değil, hissenin tipik günlük hareket büyüklüğünü gösterir. Piyasa değeri ve F/K günde bir alınan hisse sayısı ve kârla, anlık fiyattan hesaplanır (Yahoo Finance). Filtreler bu tarayıcıda hatırlanır.</p>
       </details>
       <div class="mv-tabs" role="group" aria-label="Liste">
         <button type="button" data-k="dailyLosers" aria-pressed="true">Günün en çok düşenleri</button>
@@ -901,7 +906,7 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
       mvLimit=25; try{ mvTable(); }catch(e){ console.error(e); }
     });
   });
-  var F_IDS={type:"f_type",pmin:"f_pmin",pmax:"f_pmax",vmin:"f_vmin",vmax:"f_vmax",cmin:"f_cmin",cmax:"f_cmax",s30:"f_s30",s200:"f_s200",pemin:"f_pemin",pemax:"f_pemax",amin:"f_amin",amax:"f_amax"};
+  var F_IDS={d1dir:"f_d1dir",d1min:"f_d1min",d1max:"f_d1max",w1dir:"f_w1dir",w1min:"f_w1min",w1max:"f_w1max",type:"f_type",pmin:"f_pmin",pmax:"f_pmax",vmin:"f_vmin",vmax:"f_vmax",cmin:"f_cmin",cmax:"f_cmax",s30:"f_s30",s200:"f_s200",pemin:"f_pemin",pemax:"f_pemax",amin:"f_amin",amax:"f_amax"};
   try{ mvF=JSON.parse(localStorage.getItem("mvFilters")||"{}")||{}; }catch(e){ mvF={}; }
   function fNum(v){ if(v==null||v==="") return null; var x=parseFloat(String(v).replace(/\s/g,"").replace(",",".")); return isFinite(x)?x:null; }
   function fSync(){ Object.keys(F_IDS).forEach(function(k){ var n=$(F_IDS[k]); if(n) n.value=(mvF[k]==null?"":String(mvF[k]).replace(".",",")); }); }
@@ -921,6 +926,15 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
     if((t==="Q"||t==="G"||t==="S")&&r.tier!==t) return false;
     function rng(v,lo,hi){ if(lo==null&&hi==null) return true; if(!isNum(v)) return false; return !(lo!=null&&v<lo) && !(hi!=null&&v>hi); }
     if(!rng(r.price,f.pmin,f.pmax)||!rng(r.dollarVolM,f.vmin,f.vmax)||!rng(r.capB,f.cmin,f.cmax)||!rng(r.pe,f.pemin,f.pemax)||!rng(r.atr,f.amin,f.amax)) return false;
+    function chg(v,dir,lo,hi){
+      if(!dir&&lo==null&&hi==null) return true;
+      if(!isNum(v)) return false;
+      if(dir==="up"&&v<=0) return false;
+      if(dir==="down"&&v>=0) return false;
+      var a=Math.abs(v); lo=lo==null?null:Math.abs(lo); hi=hi==null?null:Math.abs(hi);
+      return !(lo!=null&&a<lo) && !(hi!=null&&a>hi);
+    }
+    if(!chg(r.d1Pct,f.d1dir,f.d1min,f.d1max)||!chg(r.w1Pct,f.w1dir,f.w1min,f.w1max)) return false;
     function tr(sma,want){ if(!want) return true; if(!isNum(sma)) return false; return want==="up"? r.price>sma : r.price<sma; }
     return tr(r.s30,f.s30)&&tr(r.s200,f.s200);
   }
@@ -955,7 +969,12 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
   }
   fSync();
   try{ if(window.innerWidth<640 && !fActive()) $("mvFilter").open=false; }catch(e){}
-  Object.keys(F_IDS).forEach(function(k){ var n=$(F_IDS[k]); if(!n) return; n.addEventListener(n.tagName==="SELECT"?"change":"input",function(){ fRead(); mvLimit=25; try{ mvTable(); }catch(e){ console.error(e); } }); });
+  Object.keys(F_IDS).forEach(function(k){ var n=$(F_IDS[k]); if(!n) return; n.addEventListener(n.tagName==="SELECT"?"change":"input",function(){
+    fRead(); mvLimit=25;
+    if((k==="d1dir"||k==="w1dir")&&n.value){   // a chosen direction also picks the matching list (biggest moves first)
+      mvKey=(k==="d1dir"?"daily":"weekly")+(n.value==="up"?"Gainers":"Losers"); mvSort=null; try{ localStorage.removeItem("mvSort"); }catch(e){}
+    }
+    try{ mvTable(); }catch(e){ console.error(e); } }); });
   function fSet(o){ mvF=o; try{ localStorage.setItem("mvFilters",JSON.stringify(mvF)); }catch(e){} fSync(); mvLimit=25; try{ mvTable(); }catch(e){ console.error(e); } }
   $("f_low").addEventListener("click",function(){ fSet(Object.assign({},mvF,{pmin:10,cmin:2,vmin:20})); });
   $("f_trend").addEventListener("click",function(){ fSet(Object.assign({},mvF,{s30:"up",s200:"up"})); });
