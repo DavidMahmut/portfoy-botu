@@ -57,17 +57,53 @@ def nasdaq_symbols():
     return out
 
 
-def _index_list(url, cols):
+UA = {"User-Agent": "portfoy-botu/1.0 (https://github.com/DavidMahmut/portfoy-botu)"}
+
+
+def _wiki_list(url, cols):
     import io
     import requests
-    html = requests.get(url, timeout=30, headers={"User-Agent": "portfoy-botu/1.0 (github.com/DavidMahmut/portfoy-botu)"}).text
-    for tb in pd.read_html(io.StringIO(html)):
+    r = requests.get(url, timeout=30, headers=UA)
+    r.raise_for_status()
+    for tb in pd.read_html(io.StringIO(r.text)):
         for c in cols:
             if c in tb.columns:
                 vals = [str(x).strip().replace(".", "-") for x in tb[c] if isinstance(x, str)]
                 if len(vals) >= 90:
                     return sorted(set(vals))
     return []
+
+
+def index_lists():
+    """Nasdaq-100 and S&P 500 members. Wikipedia first; fallbacks: Nasdaq's own list API and the open
+    datasets/s-and-p-500-companies CSV on GitHub. Returns (ndx, spx, errors)."""
+    import requests
+    errs, ndx, spx = [], [], []
+    try:
+        ndx = _wiki_list("https://en.wikipedia.org/wiki/Nasdaq-100", ("Ticker", "Symbol"))
+    except Exception as e:
+        errs.append(f"wiki ndx: {type(e).__name__}: {str(e)[:120]}")
+    if len(ndx) < 90:
+        try:
+            r = requests.get("https://api.nasdaq.com/api/quote/list-type/nasdaq100", timeout=30,
+                             headers={**UA, "Accept": "application/json", "User-Agent": "Mozilla/5.0"})
+            rows = (((r.json() or {}).get("data") or {}).get("data") or {}).get("rows") or []
+            ndx = sorted({x["symbol"].strip() for x in rows if x.get("symbol")})
+        except Exception as e:
+            errs.append(f"nasdaq api: {type(e).__name__}: {str(e)[:120]}")
+    try:
+        spx = _wiki_list("https://en.wikipedia.org/wiki/List_of_S%26P_500_companies", ("Symbol", "Ticker"))
+    except Exception as e:
+        errs.append(f"wiki spx: {type(e).__name__}: {str(e)[:120]}")
+    if len(spx) < 450:
+        try:
+            import io
+            r = requests.get("https://raw.githubusercontent.com/datasets/s-and-p-500-companies/main/data/constituents.csv",
+                             timeout=30, headers=UA)
+            spx = sorted({str(x).strip().replace(".", "-") for x in pd.read_csv(io.StringIO(r.text))["Symbol"]})
+        except Exception as e:
+            errs.append(f"spx csv: {type(e).__name__}: {str(e)[:120]}")
+    return ndx, spx, errs
 
 
 def fundamentals(today):
@@ -78,13 +114,14 @@ def fundamentals(today):
     idx = F.get("index") or {}
     if not idx.get("date") or (datetime.fromisoformat(today) - datetime.fromisoformat(idx["date"])).days >= 7:
         try:
-            ndx = _index_list("https://en.wikipedia.org/wiki/Nasdaq-100", ("Ticker", "Symbol"))
-            spx = _index_list("https://en.wikipedia.org/wiki/List_of_S%26P_500_companies", ("Symbol", "Ticker"))
+            ndx, spx, errs = index_lists()
+            F["indexError"] = "; ".join(errs + [f"ndx {len(ndx)}, spx {len(spx)}"])
+            changed = True
             if len(ndx) >= 90 and len(spx) >= 450:
                 F["index"] = {"date": today, "ndx": ndx, "spx": spx}
-                changed = True
         except Exception as e:
-            print("index lists failed:", e)
+            F["indexError"] = f"{type(e).__name__}: {e}"
+            changed = True
     if F.get("date") != today:
         rows = {}
         try:
@@ -350,8 +387,16 @@ def main():
                      "dollarVolM": round(dv / 1e6, 1), "date": str(s.index[-1].date()), "gapPct": round(gap * 100, 2),
                      # opened 15 %+ higher and then barely moved: the typical picture of a takeover at a fixed price
                      "buyout": bool(gap > 0.15 and last > prev and (hi - lo) / last < 0.03)})
-    by = lambda k, rev: sorted(rows, key=lambda r: r[k], reverse=rev)[:TOP_N]
-    alerts = [r for r in rows if abs(r["d1Pct"]) >= ALERT * 100]
+    # Yahoo sometimes has no bar yet for the latest session in some tickers: their "daily" change would be yesterday's,
+    # so only stocks with a bar for the latest session count for the daily lists, the 20 % alerts and the e-mail.
+    bar_day = max((r["date"] for r in rows), default=now.date().isoformat())
+    fresh = [r for r in rows if r["date"] == bar_day]
+    stale = {r["ticker"] for r in rows if r["date"] != bar_day}
+    for row in screen:
+        if row[0] in stale:
+            row[3] = None
+    by = lambda k, rev, src=rows: sorted(src, key=lambda r: r[k], reverse=rev)[:TOP_N]
+    alerts = [r for r in fresh if abs(r["d1Pct"]) >= ALERT * 100]
     alerts.sort(key=lambda r: -abs(r["d1Pct"]))
     for r in alerts[:30]:
         r["headline"] = headline(r["ticker"])
@@ -369,13 +414,12 @@ def main():
         except Exception:
             study = None
     closed = now.time() >= datetime.strptime("16:00", "%H:%M").time() or now.weekday() >= 5
-    bar_day = max((r["date"] for r in rows), default=today)
     mail = None
     if closed and old.get("mailedDay") != bar_day:
         mail = summary_mail(bar_day, alerts, study, now)
     hist = dict(old.get("spikeHistory") or {})
     d = max((r["date"] for r in rows), default=None)  # the trader reads this the next morning (sert yükseliş short'u)
-    if d and not (hist.get(d) or {}).get("final"):
+    if d and (closed or not (hist.get(d) or {}).get("final")):   # an after-close run always has the final word
         hist[d] = {"final": closed or d < today, "at": now.isoformat(timespec="minutes"),
                    "rows": [{k: r.get(k) for k in ("ticker", "name", "price", "prevClose", "d1Pct", "gapPct", "dollarVolM",
                                                    "buyout", "headline")}
@@ -383,7 +427,8 @@ def main():
     hist = {d: hist[d] for d in sorted(hist)[-15:]}
     out = {"asOf": now.isoformat(timespec="minutes"), "session": "kapanış" if closed else "açık",
            "universeSize": len(names), "screened": len(rows), "minPrice": MIN_PRICE, "minDollarVolM": MIN_DOLLAR_VOL / 1e6,
-           "dailyLosers": by("d1Pct", False), "dailyGainers": by("d1Pct", True),
+           "barDay": bar_day, "staleTickers": len(stale),
+           "dailyLosers": by("d1Pct", False, fresh), "dailyGainers": by("d1Pct", True, fresh),
            "weeklyLosers": by("w1Pct", False), "weeklyGainers": by("w1Pct", True), "alerts": alerts,
            "alerted": {today: sorted(sent | {r["ticker"] for r in alerts})}, "spikeHistory": hist,
            "riskCache": {today: cache}, "lowRisk": LOW_RISK,
