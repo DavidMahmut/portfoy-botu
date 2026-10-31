@@ -332,6 +332,13 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
 .mvf-actions button.on{background:var(--accent-soft);border-color:var(--accent);color:var(--accent)}
 .tr-b{display:block;width:max-content;margin-left:auto;font-family:var(--f-mono);font-size:11px;padding:1px 5px;border-radius:4px;margin-top:2px}
 .mv-table th,.mv-table td{padding-left:8px;padding-right:8px}
+.th-sort{all:unset;box-sizing:border-box;display:inline-flex;align-items:flex-end;gap:3px;cursor:pointer;font:inherit;color:inherit;text-transform:inherit;letter-spacing:inherit;text-align:inherit;border-radius:3px}
+.mv-table th:first-child{text-align:left}
+.th-sort:hover{color:var(--ink)}
+.th-sort:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.th-sort .ar{display:inline-block;font-size:11px;color:var(--accent)}
+.th-sort .ar:empty{display:none}
+.mv-table th[aria-sort="ascending"],.mv-table th[aria-sort="descending"]{color:var(--ink)}
 .tr-b.up{background:var(--gain-soft)} .tr-b.down{background:var(--loss-soft)} .tr-b.flat{background:var(--bg);color:var(--muted)}
 .mv-alert{border-left:3px solid var(--warn);padding:8px 12px;background:var(--warn-soft);border-radius:6px;font-size:14px}
 @media (max-width:520px){.mv-table th:nth-child(2),.mv-table td:nth-child(2),.mv-table th:nth-child(5),.mv-table td:nth-child(5),.mv-table th:nth-child(7),.mv-table td:nth-child(7),.mv-table th:nth-child(8),.mv-table td:nth-child(8){display:none}.mv-table th,.mv-table td{padding:8px 6px}.mv-table{font-size:13px}.mv-table .nm{max-width:16ch}}
@@ -517,8 +524,8 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
         <button type="button" data-k="weeklyLosers" aria-pressed="false">Haftanın en çok düşenleri</button>
         <button type="button" data-k="weeklyGainers" aria-pressed="false">Haftanın en çok yükselenleri</button>
       </div>
-      <div class="tbl-wrap"><table class="mv-table"><thead><tr><th>Hisse</th><th>Fiyat $</th><th>Gün</th><th>Hafta</th><th>Hacim<br>milyon $/gün</th><th>Piyasa değeri<br>milyar $</th><th>F/K</th><th>ATR %</th><th>Trend</th></tr></thead><tbody id="mvBody"><tr><td colspan="9" class="muted">Veriler yükleniyor…</td></tr></tbody></table></div>
-      <div><button type="button" class="mv-more" id="mvMore" hidden>Daha fazla göster</button></div>
+      <div class="tbl-wrap"><table class="mv-table"><thead><tr><th aria-sort="none"><button type="button" class="th-sort" data-sort="ticker" data-kind="A">Hisse<span class="ar" aria-hidden="true"></span></button></th><th aria-sort="none"><button type="button" class="th-sort" data-sort="price" data-kind="N">Fiyat $<span class="ar" aria-hidden="true"></span></button></th><th aria-sort="none"><button type="button" class="th-sort" data-sort="d1Pct" data-kind="N">Gün<span class="ar" aria-hidden="true"></span></button></th><th aria-sort="none"><button type="button" class="th-sort" data-sort="w1Pct" data-kind="N">Hafta<span class="ar" aria-hidden="true"></span></button></th><th aria-sort="none"><button type="button" class="th-sort" data-sort="dollarVolM" data-kind="N">Hacim<br>milyon $/gün<span class="ar" aria-hidden="true"></span></button></th><th aria-sort="none"><button type="button" class="th-sort" data-sort="capB" data-kind="N">Piyasa değeri<br>milyar $<span class="ar" aria-hidden="true"></span></button></th><th aria-sort="none"><button type="button" class="th-sort" data-sort="pe" data-kind="N">F/K<span class="ar" aria-hidden="true"></span></button></th><th aria-sort="none"><button type="button" class="th-sort" data-sort="atr" data-kind="N">ATR %<span class="ar" aria-hidden="true"></span></button></th><th aria-sort="none"><button type="button" class="th-sort" data-sort="trend" data-kind="N">Trend<span class="ar" aria-hidden="true"></span></button></th></tr></thead><tbody id="mvBody"><tr><td colspan="9" class="muted">Veriler yükleniyor…</td></tr></tbody></table></div>
+      <div class="small muted" style="display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center"><button type="button" class="mv-more" id="mvMore" hidden>Daha fazla göster</button><span id="mvSortNote">Sıralamak için başlıklara tıklayın: ilk tıklama en çoktan en aza (Hisse'de A'dan Z'ye), ikinci tıklama tersine çevirir.</span></div>
       <p class="small muted" id="mvNote" style="margin:0;max-width:90ch"></p>
     </div>
   </section>
@@ -864,7 +871,36 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
         +"'inde piyasada); v5 endeks kolu "+pct(c.cagrPct)+" / "+pct(c.maxDrawdownPct)+". Ayrıntı: dip_results.json.";
     } else st.textContent="";
   }
-  var mvKey="dailyLosers", mvLimit=25, mvF={};
+  var mvKey="dailyLosers", mvLimit=25, mvF={}, mvSort=null;
+  try{ mvSort=JSON.parse(localStorage.getItem("mvSort")||"null"); }catch(e){ mvSort=null; }
+  function sortVal(r,k){ if(k==="ticker") return r.ticker||null; if(k==="trend") return isNum(r.s200)&&isNum(r.price)&&r.s200>0? r.price/r.s200-1 : null; var v=r[k]; return isNum(v)? v : null; }
+  function sortList(list,k,dir){
+    return list.sort(function(a,b){
+      var x=sortVal(a,k), y=sortVal(b,k);
+      if(x==null&&y==null) return 0; if(x==null) return 1; if(y==null) return -1;   // missing values always last
+      var c= typeof x==="string"? x.localeCompare(y,"tr") : x-y;
+      return dir==="asc"? c : -c;
+    });
+  }
+  function sortHeads(){
+    Array.prototype.forEach.call(document.querySelectorAll(".th-sort"),function(btn){
+      var k=btn.getAttribute("data-sort"), th=btn.parentNode, on=mvSort&&mvSort.key===k, txt=btn.getAttribute("data-kind")==="A";
+      th.setAttribute("aria-sort", on? (mvSort.dir==="asc"?"ascending":"descending") : "none");
+      btn.querySelector(".ar").textContent= on? (mvSort.dir==="asc"?"▲":"▼") : "";
+      btn.title= on? (txt? (mvSort.dir==="asc"?"A'dan Z'ye; tıklayınca Z'den A'ya":"Z'den A'ya; tıklayınca A'dan Z'ye") : (mvSort.dir==="asc"?"En azdan en çoğa; tıklayınca en çoktan en aza":"En çoktan en aza; tıklayınca en azdan en çoğa"))
+                     : (txt? "A'dan Z'ye sırala" : (k==="trend"? "200 günlük ortalamaya uzaklığa göre sırala" : "En çoktan en aza sırala"));
+    });
+    Array.prototype.forEach.call(document.querySelectorAll(".mv-tabs button"),function(b){ b.setAttribute("aria-pressed", !mvSort && b.getAttribute("data-k")===mvKey? "true":"false"); });
+    var n=$("mvSortNote"); if(n) n.textContent= mvSort? "Başlığa göre sıralı; sekmeye tıklayınca sekmenin sıralamasına döner. Boş değerler hep en sonda." : "Sıralamak için başlıklara tıklayın: ilk tıklama en çoktan en aza (Hisse'de A'dan Z'ye), ikinci tıklama tersine çevirir.";
+  }
+  Array.prototype.forEach.call(document.querySelectorAll(".th-sort"),function(btn){
+    btn.addEventListener("click",function(){
+      var k=btn.getAttribute("data-sort"), first=btn.getAttribute("data-kind")==="A"? "asc":"desc";
+      mvSort= (mvSort&&mvSort.key===k)? {key:k,dir:mvSort.dir==="asc"?"desc":"asc"} : {key:k,dir:first};
+      try{ localStorage.setItem("mvSort",JSON.stringify(mvSort)); }catch(e){}
+      mvLimit=25; try{ mvTable(); }catch(e){ console.error(e); }
+    });
+  });
   var F_IDS={type:"f_type",pmin:"f_pmin",pmax:"f_pmax",vmin:"f_vmin",vmax:"f_vmax",cmin:"f_cmin",cmax:"f_cmax",s30:"f_s30",s200:"f_s200",pemin:"f_pemin",pemax:"f_pemax",amin:"f_amin",amax:"f_amax"};
   try{ mvF=JSON.parse(localStorage.getItem("mvFilters")||"{}")||{}; }catch(e){ mvF={}; }
   function fNum(v){ if(v==null||v==="") return null; var x=parseFloat(String(v).replace(/\s/g,"").replace(",",".")); return isFinite(x)?x:null; }
@@ -897,11 +933,13 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
     var all=screenRows(X), list, total;
     if(all){
       var k={dailyLosers:["d1Pct",1],dailyGainers:["d1Pct",-1],weeklyLosers:["w1Pct",1],weeklyGainers:["w1Pct",-1]}[mvKey];
-      list=all.filter(fPass).filter(function(r){return isNum(r[k[0]]);}).sort(function(a,c){ return k[1]*(a[k[0]]-c[k[0]]); });
+      list= mvSort? sortList(all.filter(fPass), mvSort.key, mvSort.dir)
+                  : all.filter(fPass).filter(function(r){return isNum(r[k[0]]);}).sort(function(a,c){ return k[1]*(a[k[0]]-c[k[0]]); });
       total=all.length;
       $("mvFCount").textContent="· "+(fActive()? fActive()+" filtre açık, ":"")+list.length+" / "+total+" hisse uyuyor"
         +(X.screen.fundamentalsDate? "" : " · piyasa değeri ve F/K verisi henüz alınamadı")+(X.screen.indexDate? "" : " · endeks üyelikleri henüz yok");
-    } else { list=(X&&X[mvKey])||[]; $("mvFCount").textContent="· filtre verisi bir sonraki güncellemede gelecek"; }
+    } else { list=((X&&X[mvKey])||[]).slice(); if(mvSort) sortList(list, mvSort.key, mvSort.dir); $("mvFCount").textContent="· filtre verisi bir sonraki güncellemede gelecek"; }
+    sortHeads();
     if(!list.length){ b.appendChild(el("tr",null, el("td",{colspan:"9",class:"muted",text:"Filtrelere uyan hisse yok."}))); }
     list.slice(0,mvLimit).forEach(function(r){
       b.appendChild(el("tr",null,
@@ -949,9 +987,9 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
     mvTable();
     var st=X.study&&X.study.text;
     $("mvNote").textContent=(X.notes||"")+" Sembole tıklayınca Robinhood sayfası açılır."+(st? " Geçmiş: "+st : "")+" Bu liste alım-satım önerisi değildir.";
-    Array.prototype.forEach.call(document.querySelectorAll(".mv-tabs button"),function(btn){ btn.setAttribute("aria-pressed", btn.getAttribute("data-k")===mvKey?"true":"false"); });
+    Array.prototype.forEach.call(document.querySelectorAll(".mv-tabs button"),function(btn){ btn.setAttribute("aria-pressed", !mvSort&&btn.getAttribute("data-k")===mvKey?"true":"false"); });
   }
-  Array.prototype.forEach.call(document.querySelectorAll(".mv-tabs button"),function(btn){ btn.addEventListener("click",function(){ mvKey=btn.getAttribute("data-k"); mvLimit=25; try{ renderMovers(); }catch(e){ console.error(e); } }); });
+  Array.prototype.forEach.call(document.querySelectorAll(".mv-tabs button"),function(btn){ btn.addEventListener("click",function(){ mvKey=btn.getAttribute("data-k"); mvSort=null; try{ localStorage.removeItem("mvSort"); }catch(e){} mvLimit=25; try{ renderMovers(); }catch(e){ console.error(e); } }); });
   function renderEvents(){
     var M=S.meta||{}, scan=M.eventScan||null, P=S.portfolio||{}, c=S.config||{};
     $("evRule").textContent="Kural: bir hisse haberle önceki kapanışa göre en az %8 boşlukla açılır ve ilk saatte (09:30–10:30 ET) piyasa bu tepkinin tersine dönerse o yöne girilir: sert düşüp toparlanana long, sert yükselip sönene short. 2 işlem günü tutulur; zarar-kes ilk saatin öbür ucunun hemen ötesinde, büyüklük zarar-keste kaybın kolun yaklaşık %1'i olacağı şekilde. Haberin yönünde devam edenlere girilmez. %10'dan fazla düşmüş hisseye SEC Rule 201 yüzünden short açılmaz. Paranın yarısı bu kolda.";
