@@ -1,0 +1,31 @@
+name: Düşüş sonrası toparlanma testi
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  study:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt requests
+      - name: Testi çalıştır
+        run: python rebound_study.py
+      - name: Sonucu kaydet
+        run: |
+          git config user.name "portfoy-bot"
+          git config user.email "portfoy-bot@users.noreply.github.com"
+          git add rebound_results.json
+          git commit -q -m "Düşüş sonrası toparlanma testi sonucu" || exit 0
+          for i in 1 2 3; do
+            if git pull -q --rebase && git push -q; then exit 0; fi
+            sleep 10
+          done
