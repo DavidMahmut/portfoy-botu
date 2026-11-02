@@ -128,10 +128,10 @@
   "totalPL": 0.0,
   "totalPLPct": 0.0,
   "twrPct": 0.0,
-  "asOf": "2026-11-02T09:30:30-05:00",
-  "benchmarkPrice": 759.5,
-  "benchmarkValue": 3032.7,
-  "benchmarkTwrPct": 1.09
+  "asOf": "2026-11-02T09:40:36-05:00",
+  "benchmarkPrice": 759.09,
+  "benchmarkValue": 3031.07,
+  "benchmarkTwrPct": 1.04
  },
  "meta": {
   "engine": "trend-event v6",
@@ -163,8 +163,32 @@
     "2026-11-02"
    ]
   },
-  "lastRunAt": "2026-11-02T09:30:30-05:00",
-  "lastError": null
+  "lastRunAt": "2026-11-02T09:40:36-05:00",
+  "lastError": null,
+  "spikeScanDate": "2026-11-02",
+  "spikeScan": {
+   "date": "2026-11-02",
+   "at": "2026-11-02T09:35:34-05:00",
+   "spikeDate": "2026-10-30",
+   "final": true,
+   "listAt": "2026-10-31T00:40-04:00",
+   "candidates": [
+    "GDYN"
+   ],
+   "taken": [],
+   "skipped": [
+    {
+     "ticker": "GDYN",
+     "name": "Grid Dynamics Holdings, Inc.",
+     "d1Pct": 40.78,
+     "prevClose": 9.49,
+     "price": 13.36,
+     "dollarVolM": 8.9,
+     "why": "günlük işlem hacmi 50 milyon $'ın altında"
+    }
+   ],
+   "rule": "2026-10-30 günü en az %30 yükselen Nasdaq hissesine açılışta short; zarar-kes girişin %50 üstü; 10. işlem günü kapanışta çıkış."
+  }
  },
  "trades": [],
  "snapshots": [
@@ -184,7 +208,7 @@
   },
   {
    "date": "2026-11-02",
-   "at": "2026-11-02T09:30:30-05:00",
+   "at": "2026-11-02T09:40:36-05:00",
    "totalValue": 3000.0,
    "cash": 3000.0,
    "positionsValue": 0.0,
@@ -192,8 +216,8 @@
    "twrPct": 0.0,
    "netDeposits": 3000.0,
    "leverage": 0.0,
-   "benchmarkPrice": 759.5,
-   "benchmarkValue": 3032.7,
+   "benchmarkPrice": 759.09,
+   "benchmarkValue": 3031.07,
    "holdings": []
   }
  ],
@@ -270,6 +294,34 @@
     "positions": [],
     "actions": [],
     "note": "Normal: SPY +%0,50; işlem gerekmedi."
+   },
+   {
+    "at": "2026-11-02T09:35:34-05:00",
+    "kind": "spike",
+    "status": "normal",
+    "spyPrice": 759.27,
+    "spyChangePct": 0.47,
+    "totalValue": 3000.0,
+    "benchmarkValue": 3031.78,
+    "leverage": 0.0,
+    "marginBuffer": 3000.0,
+    "positions": [],
+    "actions": [],
+    "note": "Sert yükseliş short'u: 1 aday vardı, kurala uyan işlem çıkmadı."
+   },
+   {
+    "at": "2026-11-02T09:40:36-05:00",
+    "kind": "guard",
+    "status": "normal",
+    "spyPrice": 759.09,
+    "spyChangePct": 0.45,
+    "totalValue": 3000.0,
+    "benchmarkValue": 3031.07,
+    "leverage": 0.0,
+    "marginBuffer": 3000.0,
+    "positions": [],
+    "actions": [],
+    "note": "Normal: SPY +%0,45; işlem gerekmedi."
    }
   ]
  },
@@ -431,7 +483,7 @@
   "start": "2026-10-30",
   "startAt": "2026-10-30T15:50:43-04:00",
   "end": "2027-01-28",
-  "asOf": "2026-11-02T09:30:30-05:00",
+  "asOf": "2026-11-02T09:40:36-05:00",
   "strategy": "v6",
   "history": [
    {
@@ -492,12 +544,12 @@
     "daysElapsed": 5
    }
   ],
-  "daysElapsed": 1,
+  "daysElapsed": 2,
   "daysTotal": 61,
   "finished": false,
   "returnPct": 0.0,
-  "spyReturnPct": 1.09,
-  "excessPct": -1.09,
+  "spyReturnPct": 1.04,
+  "excessPct": -1.04,
   "maxDrawdownPct": 0.0,
   "maxDrawdownAt": "2026-10-30T15:50:43-04:00",
   "drawdownNowPct": 0.0,
@@ -520,13 +572,13 @@
    {
     "month": "2026-11",
     "returnPct": 0.0,
-    "spyPct": 1.08,
-    "excessPct": -1.08
+    "spyPct": 1.03,
+    "excessPct": -1.03
    }
   ],
   "uptime": {
-   "due": 1,
-   "ran": 1,
+   "due": 2,
+   "ran": 2,
    "pct": 100.0
   },
   "errors": 0,
@@ -537,7 +589,7 @@
     "key": "spy",
     "label": "SPY'ı geçmek (masraflar düşülmüş)",
     "ok": false,
-    "value": -1.09,
+    "value": -1.04,
     "unit": "pct"
    },
    {
