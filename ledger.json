@@ -4,7 +4,7 @@
   "startDate": "2026-10-30",
   "currency": "USD",
   "strategyName": "İki yönlü endeks kolu + haber şoku kolu (v6, 2 Kasım 2026'dan itibaren yeni 3.000 $ hesap)",
-  "strategySummary": "Paranın yarısı Nasdaq 100'de, S&P 500 trendinin yönünde ve oynaklığa göre ayarlanan kaldıraçla (−3x ile +3x arası): yükselişte QQQ ve 3x fon TQQQ, teyitli düşüşte −3x ters fon SQQQ. Diğer yarı haber şoku kolunda: bir hisse haberle önceki kapanışa göre en az %8 boşlukla açılır ve ilk saatte piyasa bu tepkinin tersine dönerse o yöne girilir (sert düşüp toparlanana long, sert yükselip sönene short), 2 işlem günü tutulur, zarar-kes ilk saatin öbür ucunda. Aralık 2023 – Ekim 2026 testinde (164 hisse) bu kural işlem başına ortalama %+0,74 getirdi ve dönemin iki yarısında da kârlıydı; haberin yönünde girmek ise zarar ettirdi. Kâr garantisi yoktur: işlemlerin yarısından fazlası zararla kapandı, kâr kazananların daha büyük olmasından geliyor. Önceki hesap (8–30 Ekim) arşivlendi.",
+  "strategySummary": "Paranın yarısı Nasdaq 100'de, S&P 500 trendinin yönünde ve oynaklığa göre ayarlanan kaldıraçla (−3x ile +3x arası): yükselişte QQQ ve 3x fon TQQQ, teyitli düşüşte −3x ters fon SQQQ. Diğer yarı haber şoku kolunda: bir hisse haberle önceki kapanışa göre en az %8 boşlukla açılır ve ilk saatte piyasa bu tepkinin tersine dönerse o yöne girilir (sert düşüp toparlanana long, sert yükselip sönene short), 2 işlem günü tutulur, zarar-kes ilk saatin öbür ucunda. Aynı kolun ikinci tetiği (Kasım 2026'dan itibaren): bir günde %30+ yükselen likit Nasdaq hissesine ertesi sabah short, 10 işlem günü tutulur. Aralık 2023 – Ekim 2026 testinde (164 hisse) bu kural işlem başına ortalama %+0,74 getirdi ve dönemin iki yarısında da kârlıydı; haberin yönünde girmek ise zarar ettirdi. Kâr garantisi yoktur: işlemlerin yarısından fazlası zararla kapandı, kâr kazananların daha büyük olmasından geliyor. Önceki hesap (8–30 Ekim) arşivlendi.",
   "schedule": "Piyasa açıkken 5 dakikada bir (GitHub Actions döngüsü). Günlük rejim, sıralama ve alım-satımlar 10:00'dan (New York) sonraki ilk çalışmada.",
   "execution": "Yahoo Finance verileri (yfinance): kararlar bir önceki günün kapanış fiyatlarıyla, işlemler 5 dakikalık güncel fiyatla. Kesirli hisse. Her emirde IBKR Pro Tiered komisyonu: hisse başına 0,0035 $, en az 0,35 $, en fazla işlem tutarının %1'i. Satışlarda SEC ücreti (milyon $'da 20,60 $) ve FINRA TAF. %0,05 fiyat kayması. Kaldıraç 3x fonlarla sağlanır ve hepsi nakitle alınır; kredi faizi ödenmez. Temettüler hesaba geçer.",
   "rules": [
@@ -13,6 +13,7 @@
    "Nasdaq düşüş kuralı: Nasdaq 100 (QQQ) zirvesinden %20 veya daha fazla düşmüşse endeks kolu short açmaz, yeni zirveye kadar nakitte bekler (yön yukarıysa long kuralı aynen çalışır). Sayfanın kenarındaki panel zirveden uzaklığı canlı gösterir.",
    "Haber şoku kolu (paranın %50'si): her gün 10:30'da (ilk saatten sonra) 166 büyük hisse taranır. Önceki kapanışa göre en az %8 boşlukla açılan ve ilk saatte haberin tersine en az %0,5 dönen hisseye o yönde girilir: düşüşle açılıp toparlanana long, yükselişle açılıp sönene short. Haberin yönünde devam edenlere girilmez (testte zarar ettirdi).",
    "Haber şoku risk kuralları: zarar-kes ilk saatin en düşük (long) ya da en yüksek (short) seviyesinin hemen ötesi; büyüklük, zarar-keste kaybın kolun yaklaşık %1'i olacağı şekilde ayarlanır (bir işlem en fazla kolun %25'i); aynı anda en fazla 4 işlem; çıkış 2 işlem günü sonra kapanışta. SEC Rule 201 yüzünden %10'dan fazla düşmüş hisseye short açılmaz; özsermaye 2.000 $'ın altına inerse short açılmaz (FINRA 4210).",
+   "Sert yükseliş short'u: bir Nasdaq hissesi bir günde en az %30 yükselerek kapanırsa ertesi sabah açılışta (09:35 ET) short açılır. Şartlar: önceki gün fiyatı en az 5 $, son 20 günde günde ortalama en az 50 milyon $ işlem (ödünç bulunabilecek kadar büyük ve likit), satın alma haberiyle yatay seyretmiyor, ABD yaptırım listesinde değil, o sabah %10'dan fazla düşmemiş (SEC Rule 201). Büyüklük haber kolunun %5'i, aynı anda en fazla 6 işlem; zarar-kes girişin %50 üstü; çıkış 10. işlem gününün kapanışında. Ödünç ücreti yıllık %30 varsayılır. Gerekçe: 2019–2026 testinde bu tür sıçramalar sonraki iki haftada çoğunlukla geri verildi.",
    "Kaldıraç sınırı: endeks kolu en fazla 3x, haber kolu 1x; hesap düzeyindeki 3x sınırı, Reg T başlangıç teminatı ve FINRA 4210 bakım teminatı her emirde ve her çalışmada kontrol edilir. 3x fonlar için FINRA kaldıraçlı ETF teminatı %75'tir.",
    "3x ve −3x fonlar günlük getiriyi üçe katlar; dalgalı ve yatay piyasada zamanla değer kaybeder (oynaklık erimesi) ve tek bir kötü günde endeks %10 düşerse TQQQ yaklaşık %30 düşer. Bu yüzden yalnızca trend belirgin ve oynaklık düşükken büyük tutulur.",
    "Vergi (öğrenme amaçlı, basitleştirilmiş): 1 yıl veya daha kısa tutulan pozisyonların kazancı kısa vadelidir ve normal gelir gibi vergilenir. Zararla satılan hisse 30 gün içinde yeniden alınırsa (wash sale) zarar o yıl düşülemez. Net sermaye zararının yılda en fazla 3.000 $'ı gelirden düşülebilir. Vergi tavsiyesi değildir.",
@@ -82,6 +83,19 @@
    "startPrice": 751.31,
    "startAt": "2026-10-30T14:40:00-04:00",
    "shares": 3.993026
+  },
+  "spikeRule": {
+   "text": "Sert yükseliş short'u: bir Nasdaq hissesi bir günde en az %30 yükselerek kapanırsa ertesi sabah açılışta (09:35 ET) short açılır. Şartlar: önceki gün fiyatı en az 5 $, son 20 günde günde ortalama en az 50 milyon $ işlem (ödünç bulunabilecek kadar büyük ve likit), satın alma haberiyle yatay seyretmiyor, ABD yaptırım listesinde değil, o sabah %10'dan fazla düşmemiş (SEC Rule 201). Büyüklük haber kolunun %5'i, aynı anda en fazla 6 işlem; zarar-kes girişin %50 üstü; çıkış 10. işlem gününün kapanışında. Ödünç ücreti yıllık %30 varsayılır. Gerekçe: 2019–2026 testinde bu tür sıçramalar sonraki iki haftada çoğunlukla geri verildi.",
+   "testKey": "fadeUp|r5_dv50|t30|s50|h10",
+   "testPortfolio": "f5_s6",
+   "move": 0.3,
+   "minPrice": 5.0,
+   "minDollarVolM": 50.0,
+   "stop": 0.5,
+   "holdDays": 10,
+   "size": 0.05,
+   "slots": 6,
+   "borrow": 0.3
   }
  },
  "portfolio": {
@@ -114,10 +128,10 @@
   "totalPL": 0.0,
   "totalPLPct": 0.0,
   "twrPct": 0.0,
-  "asOf": "2026-10-30T16:05:48-04:00",
-  "benchmarkPrice": 751.38,
-  "benchmarkValue": 3000.28,
-  "benchmarkTwrPct": 0.01
+  "asOf": "2026-11-02T09:30:30-05:00",
+  "benchmarkPrice": 759.5,
+  "benchmarkValue": 3032.7,
+  "benchmarkTwrPct": 1.09
  },
  "meta": {
   "engine": "trend-event v6",
@@ -126,7 +140,7 @@
    "2026-10-12-1700",
    "2026-10-12-1000"
   ],
-  "lastAccrualDate": "2026-10-30",
+  "lastAccrualDate": "2026-11-02",
   "cooldown": {},
   "nasdaq": {},
   "lastDailyDate": null,
@@ -145,10 +159,11 @@
    "maxDDAt": "2026-10-30T15:50:43-04:00",
    "errors": 0,
    "runDays": [
-    "2026-10-30"
+    "2026-10-30",
+    "2026-11-02"
    ]
   },
-  "lastRunAt": "2026-10-30T16:05:48-04:00",
+  "lastRunAt": "2026-11-02T09:30:30-05:00",
   "lastError": null
  },
  "trades": [],
@@ -165,6 +180,20 @@
    "leverage": 0.0,
    "benchmarkPrice": 751.38,
    "benchmarkValue": 3000.28,
+   "holdings": []
+  },
+  {
+   "date": "2026-11-02",
+   "at": "2026-11-02T09:30:30-05:00",
+   "totalValue": 3000.0,
+   "cash": 3000.0,
+   "positionsValue": 0.0,
+   "plPct": 0.0,
+   "twrPct": 0.0,
+   "netDeposits": 3000.0,
+   "leverage": 0.0,
+   "benchmarkPrice": 759.5,
+   "benchmarkValue": 3032.7,
    "holdings": []
   }
  ],
@@ -225,6 +254,22 @@
     "positions": [],
     "actions": [],
     "note": "Normal: SPY −%2,34; işlem gerekmedi."
+   }
+  ],
+  "2026-11-02": [
+   {
+    "at": "2026-11-02T09:30:30-05:00",
+    "kind": "guard",
+    "status": "normal",
+    "spyPrice": 759.5,
+    "spyChangePct": 0.5,
+    "totalValue": 3000.0,
+    "benchmarkValue": 3032.7,
+    "leverage": 0.0,
+    "marginBuffer": 3000.0,
+    "positions": [],
+    "actions": [],
+    "note": "Normal: SPY +%0,50; işlem gerekmedi."
    }
   ]
  },
@@ -386,7 +431,7 @@
   "start": "2026-10-30",
   "startAt": "2026-10-30T15:50:43-04:00",
   "end": "2027-01-28",
-  "asOf": "2026-10-30T16:05:48-04:00",
+  "asOf": "2026-11-02T09:30:30-05:00",
   "strategy": "v6",
   "history": [
    {
@@ -451,8 +496,8 @@
   "daysTotal": 61,
   "finished": false,
   "returnPct": 0.0,
-  "spyReturnPct": 0.01,
-  "excessPct": -0.01,
+  "spyReturnPct": 1.09,
+  "excessPct": -1.09,
   "maxDrawdownPct": 0.0,
   "maxDrawdownAt": "2026-10-30T15:50:43-04:00",
   "drawdownNowPct": 0.0,
@@ -471,6 +516,12 @@
     "returnPct": 0.0,
     "spyPct": 0.01,
     "excessPct": -0.01
+   },
+   {
+    "month": "2026-11",
+    "returnPct": 0.0,
+    "spyPct": 1.08,
+    "excessPct": -1.08
    }
   ],
   "uptime": {
@@ -486,7 +537,7 @@
     "key": "spy",
     "label": "SPY'ı geçmek (masraflar düşülmüş)",
     "ok": false,
-    "value": -0.01,
+    "value": -1.09,
     "unit": "pct"
    },
    {
