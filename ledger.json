@@ -111,16 +111,16 @@
     "shares": 2.008,
     "avgCost": 695.4676,
     "costBasis": 1396.5,
-    "lastPrice": 685.19,
-    "lastPriceAt": "2026-11-02T14:30:00-05:00",
+    "lastPrice": 683.97,
+    "lastPriceAt": "2026-11-02T14:40:00-05:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (14:30 ET)",
+     "title": "Yahoo Finance 5 dk mum (14:40 ET)",
      "url": "https://finance.yahoo.com/quote/QQQ/"
     },
-    "marketValue": 1375.86,
-    "exposure": 1375.86,
-    "unrealized": -20.64,
-    "unrealizedPct": -1.48,
+    "marketValue": 1373.41,
+    "exposure": 1373.41,
+    "unrealized": -23.09,
+    "unrealizedPct": -1.65,
     "openedAt": "2026-11-02",
     "openedTs": "2026-11-02T09:50:00-05:00",
     "lastAddDate": "2026-11-02",
@@ -128,7 +128,7 @@
     "extremeSinceEntry": 695.1199951171875,
     "tookProfit": false,
     "thesis": "Endeks kolu, QQQ (1x): 0,00 $ → 1.396,50 $. Endeks kolu yönü YUKARI: SPY dünkü kapanış 755,72 $, 200 günlük ortalama 728,85 $ (+%3,69), 50 günlük ortalama 767,49 $. QQQ'nun 20 günlük oynaklığı yıllık %22,6; büyüklük %25 ÷ %22,6 = 1,10x. Hedef maruziyet +1,10x.",
-    "maintReq": 343.97
+    "maintReq": 343.35
    },
    {
     "stopMode": "managed",
@@ -140,16 +140,16 @@
     "shares": 1.1627,
     "avgCost": 63.2117,
     "costBasis": 73.5,
-    "lastPrice": 60.52,
-    "lastPriceAt": "2026-11-02T14:30:00-05:00",
+    "lastPrice": 60.17,
+    "lastPriceAt": "2026-11-02T14:40:00-05:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (14:30 ET)",
+     "title": "Yahoo Finance 5 dk mum (14:40 ET)",
      "url": "https://finance.yahoo.com/quote/TQQQ/"
     },
-    "marketValue": 70.37,
-    "exposure": 211.1,
-    "unrealized": -3.13,
-    "unrealizedPct": -4.26,
+    "marketValue": 69.96,
+    "exposure": 209.88,
+    "unrealized": -3.54,
+    "unrealizedPct": -4.82,
     "openedAt": "2026-11-02",
     "openedTs": "2026-11-02T09:50:00-05:00",
     "lastAddDate": "2026-11-02",
@@ -157,7 +157,7 @@
     "extremeSinceEntry": 63.18009948730469,
     "tookProfit": false,
     "thesis": "Endeks kolu, TQQQ (3x): 0,00 $ → 73,50 $. Endeks kolu yönü YUKARI: SPY dünkü kapanış 755,72 $, 200 günlük ortalama 728,85 $ (+%3,69), 50 günlük ortalama 767,49 $. QQQ'nun 20 günlük oynaklığı yıllık %22,6; büyüklük %25 ÷ %22,6 = 1,10x. Hedef maruziyet +1,10x.",
-    "maintReq": 52.77
+    "maintReq": 52.47
    }
   ],
   "realizedPL": 0.0,
@@ -171,26 +171,26 @@
    "dividendsPaid": 0.0,
    "dividendsReceived": 0.0
   },
-  "longValue": 1446.23,
+  "longValue": 1443.37,
   "shortValue": 0.0,
-  "positionsValue": 1446.23,
-  "totalValue": 2975.53,
-  "grossExposure": 1586.96,
-  "netExposure": 1586.96,
+  "positionsValue": 1443.37,
+  "totalValue": 2972.67,
+  "grossExposure": 1583.29,
+  "netExposure": 1583.29,
   "leverage": 0.533,
-  "maintenanceReq": 396.74,
-  "marginBuffer": 2578.79,
-  "regTInitialReq": 740.71,
-  "regTExcess": 2234.82,
-  "buyingPower": 4469.65,
+  "maintenanceReq": 395.82,
+  "marginBuffer": 2576.85,
+  "regTInitialReq": 739.18,
+  "regTExcess": 2233.49,
+  "buyingPower": 4466.99,
   "marginEligible": true,
-  "totalPL": -24.47,
-  "totalPLPct": -0.82,
-  "twrPct": -0.82,
-  "asOf": "2026-11-02T14:33:12-05:00",
-  "benchmarkPrice": 754.57,
-  "benchmarkValue": 3013.02,
-  "benchmarkTwrPct": 0.43
+  "totalPL": -27.33,
+  "totalPLPct": -0.91,
+  "twrPct": -0.91,
+  "asOf": "2026-11-02T14:43:16-05:00",
+  "benchmarkPrice": 753.87,
+  "benchmarkValue": 3010.22,
+  "benchmarkTwrPct": 0.34
  },
  "meta": {
   "engine": "trend-event v6",
@@ -205,9 +205,9 @@
    "ath": 759.66,
    "athDate": "2026-10-06",
    "athChecked": "2026-11-02",
-   "price": 685.19,
-   "at": "2026-11-02T14:30:00-05:00",
-   "ddPct": -9.8,
+   "price": 683.97,
+   "at": "2026-11-02T14:40:00-05:00",
+   "ddPct": -9.96,
    "level": "normal",
    "triggerPrice": 607.73,
    "correctionPrice": 683.69
@@ -224,15 +224,15 @@
    "navStart": 1.0,
    "spyStart": 751.31,
    "peak": 1.0019966666666666,
-   "maxDD": -1.01,
-   "maxDDAt": "2026-11-02T14:33:12-05:00",
+   "maxDD": -1.11,
+   "maxDDAt": "2026-11-02T14:38:15-05:00",
    "errors": 0,
    "runDays": [
     "2026-10-30",
     "2026-11-02"
    ]
   },
-  "lastRunAt": "2026-11-02T14:33:12-05:00",
+  "lastRunAt": "2026-11-02T14:43:16-05:00",
   "lastError": null,
   "spikeScanDate": "2026-11-02",
   "spikeScan": {
@@ -375,26 +375,26 @@
   },
   {
    "date": "2026-11-02",
-   "at": "2026-11-02T14:33:12-05:00",
-   "totalValue": 2975.53,
+   "at": "2026-11-02T14:43:16-05:00",
+   "totalValue": 2972.67,
    "cash": 1529.3,
-   "positionsValue": 1446.23,
-   "plPct": -0.82,
-   "twrPct": -0.82,
+   "positionsValue": 1443.37,
+   "plPct": -0.91,
+   "twrPct": -0.91,
    "netDeposits": 3000.0,
    "leverage": 0.533,
-   "benchmarkPrice": 754.57,
-   "benchmarkValue": 3013.02,
+   "benchmarkPrice": 753.87,
+   "benchmarkValue": 3010.22,
    "holdings": [
     {
      "ticker": "QQQ",
      "side": "long",
-     "value": 1375.86
+     "value": 1373.41
     },
     {
      "ticker": "TQQQ",
      "side": "long",
-     "value": 70.37
+     "value": 69.96
     }
    ]
   }
@@ -2249,6 +2249,68 @@
     ],
     "actions": [],
     "note": "Normal: kaldıraç 0,53x, SPY −%0,15; işlem gerekmedi."
+   },
+   {
+    "at": "2026-11-02T14:38:15-05:00",
+    "kind": "guard",
+    "status": "normal",
+    "spyPrice": 753.95,
+    "spyChangePct": -0.23,
+    "totalValue": 2972.6,
+    "benchmarkValue": 3010.54,
+    "leverage": 0.533,
+    "marginBuffer": 2576.79,
+    "positions": [
+     {
+      "ticker": "QQQ",
+      "side": "long",
+      "price": 683.93,
+      "dayChangePct": -0.95,
+      "stopPrice": null,
+      "distancePct": null
+     },
+     {
+      "ticker": "TQQQ",
+      "side": "long",
+      "price": 60.1803,
+      "dayChangePct": -2.95,
+      "stopPrice": null,
+      "distancePct": null
+     }
+    ],
+    "actions": [],
+    "note": "Normal: kaldıraç 0,53x, SPY −%0,23; işlem gerekmedi."
+   },
+   {
+    "at": "2026-11-02T14:43:16-05:00",
+    "kind": "guard",
+    "status": "normal",
+    "spyPrice": 753.87,
+    "spyChangePct": -0.24,
+    "totalValue": 2972.67,
+    "benchmarkValue": 3010.22,
+    "leverage": 0.533,
+    "marginBuffer": 2576.85,
+    "positions": [
+     {
+      "ticker": "QQQ",
+      "side": "long",
+      "price": 683.97,
+      "dayChangePct": -0.94,
+      "stopPrice": null,
+      "distancePct": null
+     },
+     {
+      "ticker": "TQQQ",
+      "side": "long",
+      "price": 60.17,
+      "dayChangePct": -2.97,
+      "stopPrice": null,
+      "distancePct": null
+     }
+    ],
+    "actions": [],
+    "note": "Normal: kaldıraç 0,53x, SPY −%0,24; işlem gerekmedi."
    }
   ]
  },
@@ -2598,7 +2660,7 @@
   "start": "2026-10-30",
   "startAt": "2026-10-30T15:50:43-04:00",
   "end": "2027-01-28",
-  "asOf": "2026-11-02T14:33:12-05:00",
+  "asOf": "2026-11-02T14:43:16-05:00",
   "strategy": "v6",
   "history": [
    {
@@ -2662,12 +2724,12 @@
   "daysElapsed": 2,
   "daysTotal": 61,
   "finished": false,
-  "returnPct": -0.82,
-  "spyReturnPct": 0.43,
+  "returnPct": -0.91,
+  "spyReturnPct": 0.34,
   "excessPct": -1.25,
-  "maxDrawdownPct": -1.01,
-  "maxDrawdownAt": "2026-11-02T14:33:12-05:00",
-  "drawdownNowPct": -1.01,
+  "maxDrawdownPct": -1.11,
+  "maxDrawdownAt": "2026-11-02T14:38:15-05:00",
+  "drawdownNowPct": -1.11,
   "trades": {
    "closed": 0,
    "wins": 0,
@@ -2686,8 +2748,8 @@
    },
    {
     "month": "2026-11",
-    "returnPct": -0.82,
-    "spyPct": 0.42,
+    "returnPct": -0.91,
+    "spyPct": 0.33,
     "excessPct": -1.24
    }
   ],
@@ -2711,7 +2773,7 @@
     "key": "dd",
     "label": "En büyük düşüş %20'den az",
     "ok": true,
-    "value": -1.01,
+    "value": -1.11,
     "unit": "pct"
    },
    {
