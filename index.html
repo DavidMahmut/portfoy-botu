@@ -312,7 +312,23 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
   .wrap > .dip-side{grid-column:2;grid-row:3 / span 12;align-self:start;position:sticky;top:16px;max-height:calc(100vh - 32px);overflow:auto}
 }
 /* Nasdaq movers */
-.mv-tabs{display:flex;flex-wrap:wrap;gap:6px}
+.mv-tabs,.mv-views{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.mv-views button{font:inherit;font-size:13px;padding:5px 12px;border-radius:6px;border:1px solid var(--line);background:var(--panel);color:var(--ink);cursor:pointer}
+.mv-views button[aria-pressed="true"]{background:var(--accent);color:#fff;border-color:var(--accent)}
+.mv-x{all:unset;cursor:pointer;color:var(--muted);font-size:11px;margin-right:4px;padding:0 2px;border-radius:3px}
+.mv-x:focus-visible{outline:2px solid var(--accent)}
+.mv-table.v-ind{font-size:13px}
+.mv-table.v-ind th,.mv-table.v-ind td{padding-left:5px;padding-right:5px}
+.mv-table.v-ind .nm{max-width:15ch}
+.mv-table td.ema{white-space:nowrap}
+.mv-table td.ema .ind-b{margin-left:2px}
+.ind-b{display:inline-block;font-family:var(--f-mono);font-size:11px;padding:1px 5px;border-radius:4px;background:var(--bg);color:var(--muted)}
+.ind-b.up{background:var(--gain-soft);color:var(--gain)} .ind-b.down{background:var(--loss-soft);color:var(--loss)}
+tr.mv-det td{background:var(--bg);white-space:normal;text-align:left}
+.det-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:8px 14px;padding:6px 2px}
+.det-grid div{font-size:13px;line-height:1.4}
+.det-grid b{display:block;font-size:12px;color:var(--muted);font-weight:600;text-transform:none;letter-spacing:0}
+.det-grid .v{font-family:var(--f-mono);font-size:12px}
 .mv-tabs button{font:inherit;font-size:13px;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--panel);color:var(--ink);cursor:pointer}
 .mv-tabs button[aria-pressed="true"]{background:var(--ink);color:var(--panel);border-color:var(--ink)}
 .mv-table{min-width:0}
@@ -351,7 +367,7 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
 .mv-table th[aria-sort="ascending"],.mv-table th[aria-sort="descending"]{color:var(--ink)}
 .tr-b.up{background:var(--gain-soft)} .tr-b.down{background:var(--loss-soft)} .tr-b.flat{background:var(--bg);color:var(--muted)}
 .mv-alert{border-left:3px solid var(--warn);padding:8px 12px;background:var(--warn-soft);border-radius:6px;font-size:14px}
-@media (max-width:520px){.mv-table th:nth-child(2),.mv-table td:nth-child(2),.mv-table th:nth-child(6),.mv-table td:nth-child(6),.mv-table th:nth-child(8),.mv-table td:nth-child(8),.mv-table th:nth-child(9),.mv-table td:nth-child(9){display:none}.mv-table th,.mv-table td{padding:8px 6px}.mv-table{font-size:13px}.mv-table .nm{max-width:16ch}}
+@media (max-width:520px){.mv-table .hm{display:none}.mv-table th,.mv-table td{padding:8px 6px}.mv-table{font-size:13px}.mv-table .nm{max-width:16ch}}
 @media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
 </style>
 
@@ -524,6 +540,26 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
           <div class="mvf-pair"><span>F/K (P/E)</span><div class="two"><input id="f_pemin" type="text" inputmode="decimal" placeholder="en az" aria-label="F/K en az"><input id="f_pemax" type="text" inputmode="decimal" placeholder="en çok" aria-label="F/K en çok"></div></div>
           <div class="mvf-pair"><span>ATR (14 gün, fiyatın %'si)</span><div class="two"><input id="f_amin" type="text" inputmode="decimal" placeholder="en az" aria-label="ATR en az"><input id="f_amax" type="text" inputmode="decimal" placeholder="en çok" aria-label="ATR en çok"></div></div>
         </div>
+        <details class="mvf-ind" id="mvFInd" style="margin-top:10px">
+          <summary style="cursor:pointer;font-weight:600;font-size:14px">İndikatör filtreleri <span class="small muted">(ATR % filtresi yukarıda)</span></summary>
+          <div class="mvf-grid">
+<label>1 · EMA 20/50/200<select id="fi_ema"><option value="">Fark etmez</option><option value="up">Fiyat > 20 > 50 > 200 (güçlü yükseliş)</option><option value="down">Fiyat < 20 < 50 < 200 (güçlü düşüş)</option><option value="a200">Fiyat EMA 200 üstünde</option><option value="b200">Fiyat EMA 200 altında</option></select></label>
+<div class="mvf-pair"><span>2 · RSI (14)</span><div class="two"><input id="fi_rsimin" type="text" inputmode="decimal" placeholder="en az"><input id="fi_rsimax" type="text" inputmode="decimal" placeholder="en çok"></div></div>
+<label>3 · MACD<select id="fi_macd"><option value="">Fark etmez</option><option value="xup">Yukarı kesişim (son 3 gün)</option><option value="xdn">Aşağı kesişim (son 3 gün)</option><option value="hpos">Histogram pozitif</option><option value="hneg">Histogram negatif</option><option value="above0">MACD sıfırın üstünde</option></select></label>
+<label>4 · VWAP<select id="fi_vwap"><option value="">Fark etmez</option><option value="above">Fiyat VWAP üstünde</option><option value="below">Fiyat VWAP altında</option></select></label>
+<label>5 · Hacim profili (POC)<select id="fi_poc"><option value="">Fark etmez</option><option value="above">Fiyat POC üstünde</option><option value="below">Fiyat POC altında</option></select></label>
+<label>6 · Bollinger<select id="fi_bb"><option value="">Fark etmez</option><option value="below">Alt bandın altında</option><option value="above">Üst bandın üstünde</option><option value="lowhalf">Alt yarıda (%B < 50)</option><option value="sq">Sıkışma (dar bant)</option></select></label>
+<label>7 · Supertrend<select id="fi_st"><option value="">Fark etmez</option><option value="buy">AL</option><option value="sell">SAT</option><option value="newbuy">Yeni AL (son 3 gün)</option><option value="newsell">Yeni SAT (son 3 gün)</option></select></label>
+<label>9 · Stochastic RSI<select id="fi_sk"><option value="">Fark etmez</option><option value="os">Aşırı satım (K ≤ 20)</option><option value="ob">Aşırı alım (K ≥ 80)</option><option value="xup">Dipten yukarı kesişim</option><option value="xdn">Tepeden aşağı kesişim</option></select></label>
+<label>10 · Ichimoku<select id="fi_ich"><option value="">Fark etmez</option><option value="above">Bulut üstü</option><option value="in">Bulut içi</option><option value="below">Bulut altı</option><option value="abovetk">Bulut üstü + Tenkan > Kijun</option></select></label>
+<div class="mvf-pair"><span>11 · ADX</span><div class="two"><input id="fi_adxmin" type="text" inputmode="decimal" placeholder="en az"><input id="fi_adxmax" type="text" inputmode="decimal" placeholder="en çok"></div></div>
+<label>11 · DMI yönü<select id="fi_dmi"><option value="">Fark etmez</option><option value="up">+DI > −DI (yukarı)</option><option value="down">−DI > +DI (aşağı)</option></select></label>
+<label>12 · OBV<select id="fi_obv"><option value="">Fark etmez</option><option value="up">Yükseliyor</option><option value="down">Düşüyor</option></select></label>
+<label>13 · Fibonacci (52 hafta)<select id="fi_fib"><option value="">Fark etmez</option><option value="23.6">%23,6 yakınında</option><option value="38.2">%38,2 yakınında</option><option value="50">%50 yakınında</option><option value="61.8">%61,8 yakınında</option><option value="78.6">%78,6 yakınında</option></select></label>
+<label>14 · Anchored VWAP<select id="fi_av"><option value="">Fark etmez</option><option value="aboveH">52h zirveden AVWAP üstünde</option><option value="belowH">52h zirveden AVWAP altında</option><option value="aboveL">52h dipten AVWAP üstünde</option><option value="belowL">52h dipten AVWAP altında</option></select></label>
+<label>15 · Pivot<select id="fi_pv"><option value="">Fark etmez</option><option value="r1">R1 üstünde</option><option value="p">Pivot üstünde</option><option value="bp">Pivot altında</option><option value="s1">S1 altında</option></select></label>
+          </div>
+        </details>
         <div class="mvf-actions">
           <button type="button" id="f_low">Düşük risk ön ayarı</button>
           <button type="button" id="f_trend">Yükseliş trendi (30 ve 200 günün üstünde)</button>
@@ -537,7 +573,8 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
         <button type="button" data-k="weeklyLosers" aria-pressed="false">Haftanın en çok düşenleri</button>
         <button type="button" data-k="weeklyGainers" aria-pressed="false">Haftanın en çok yükselenleri</button>
       </div>
-      <div class="tbl-wrap"><table class="mv-table"><thead><tr><th aria-sort="none"><button type="button" class="th-sort" data-sort="ticker" data-kind="A">Hisse<span class="ar" aria-hidden="true"></span></button></th><th aria-sort="none"><button type="button" class="th-sort" data-sort="price" data-kind="N">Fiyat $<span class="ar" aria-hidden="true"></span></button></th><th aria-sort="none"><button type="button" class="th-sort" data-sort="d1Pct" data-kind="N">Gün<span class="ar" aria-hidden="true"></span></button></th><th aria-sort="none"><button type="button" class="th-sort" data-sort="w1Pct" data-kind="N">Hafta<span class="ar" aria-hidden="true"></span></button></th><th aria-sort="none"><button type="button" class="th-sort" data-sort="r52" data-kind="N">52 hafta<br>dip – zirve<span class="ar" aria-hidden="true"></span></button></th><th aria-sort="none"><button type="button" class="th-sort" data-sort="dollarVolM" data-kind="N">Hacim<br>milyon $/gün<span class="ar" aria-hidden="true"></span></button></th><th aria-sort="none"><button type="button" class="th-sort" data-sort="capB" data-kind="N">Piyasa değeri<br>milyar $<span class="ar" aria-hidden="true"></span></button></th><th aria-sort="none"><button type="button" class="th-sort" data-sort="pe" data-kind="N">F/K<span class="ar" aria-hidden="true"></span></button></th><th aria-sort="none"><button type="button" class="th-sort" data-sort="atr" data-kind="N">ATR %<span class="ar" aria-hidden="true"></span></button></th><th aria-sort="none"><button type="button" class="th-sort" data-sort="trend" data-kind="N">Trend<span class="ar" aria-hidden="true"></span></button></th></tr></thead><tbody id="mvBody"><tr><td colspan="10" class="muted">Veriler yükleniyor…</td></tr></tbody></table></div>
+      <div class="mv-views" role="group" aria-label="Görünüm"><span class="small muted">Görünüm:</span><button type="button" data-v="basic" aria-pressed="true">Temel</button><button type="button" data-v="ind" aria-pressed="false">İndikatörler (15)</button></div>
+      <div class="tbl-wrap"><table class="mv-table" id="mvTbl"><thead id="mvHead"></thead><tbody id="mvBody"><tr><td colspan="10" class="muted">Veriler yükleniyor…</td></tr></tbody></table></div>
       <div class="small muted" style="display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center"><button type="button" class="mv-more" id="mvMore" hidden>Daha fazla göster</button><span id="mvSortNote">Sıralamak için başlıklara tıklayın: ilk tıklama en çoktan en aza (Hisse'de A'dan Z'ye), ikinci tıklama tersine çevirir.</span></div>
       <p class="small muted" id="mvNote" style="margin:0;max-width:90ch"></p>
     </div>
@@ -886,7 +923,18 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
   }
   var mvKey="dailyLosers", mvLimit=25, mvF={}, mvSort=null;
   try{ mvSort=JSON.parse(localStorage.getItem("mvSort")||"null"); }catch(e){ mvSort=null; }
-  function sortVal(r,k){ if(k==="ticker") return r.ticker||null; if(k==="trend") return isNum(r.s200)&&isNum(r.price)&&r.s200>0? r.price/r.s200-1 : null;
+  function indVal(r,k){
+    var I=r.ind; if(!I) return null; var p=r.price;
+    if(k==="i:ema") return isNum(I.e20)&&isNum(I.e50)? (p>I.e20)+(I.e20>I.e50)+(isNum(I.e200)? (I.e50>I.e200)+(p>I.e200) : 0) + (p/I.e20-1) : null;
+    if(k==="i:rsi") return I.rsi; if(k==="i:macd") return isNum(I.macdH)? I.macdH + 10*(I.macdX||0) : null;
+    if(k==="i:st") return isNum(I.stDir)? I.stDir*(1000-Math.min(999,I.stAge||0)) : null;
+    if(k==="i:adx") return isNum(I.adx)? I.adx*(I.pdi>=I.mdi?1:-1) : null;
+    if(k==="i:bb") return I.bbPb; if(k==="i:sk") return I.skK; if(k==="i:obv") return I.obvUp;
+    if(k==="i:ich") return isNum(I.ichPos)? I.ichPos*2+(I.ichTk||0) : null;
+    if(k==="i:vwap"){ var w=isNum(I.vwap)?I.vwap:I.vwap20; return isNum(w)&&w>0? p/w-1 : null; }
+    return null;
+  }
+  function sortVal(r,k){ if(k.indexOf("i:")===0){ var iv=indVal(r,k); return isNum(iv)? iv : null; } if(k==="ticker") return r.ticker||null; if(k==="trend") return isNum(r.s200)&&isNum(r.price)&&r.s200>0? r.price/r.s200-1 : null;
     if(k==="r52") return isNum(r.lo52)&&isNum(r.hi52)&&r.hi52>r.lo52&&isNum(r.price)? (r.price-r.lo52)/(r.hi52-r.lo52) : null; var v=r[k]; return isNum(v)? v : null; }
   function sortList(list,k,dir){
     return list.sort(function(a,b){
@@ -907,24 +955,59 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
     Array.prototype.forEach.call(document.querySelectorAll(".mv-tabs button"),function(b){ b.setAttribute("aria-pressed", !mvSort && b.getAttribute("data-k")===mvKey? "true":"false"); });
     var n=$("mvSortNote"); if(n) n.textContent= mvSort? "Başlığa göre sıralı; sekmeye tıklayınca sekmenin sıralamasına döner. Boş değerler hep en sonda." : "Sıralamak için başlıklara tıklayın: ilk tıklama en çoktan en aza (Hisse'de A'dan Z'ye), ikinci tıklama tersine çevirir.";
   }
-  Array.prototype.forEach.call(document.querySelectorAll(".th-sort"),function(btn){
+  function bindSort(btn){
     btn.addEventListener("click",function(){
       var k=btn.getAttribute("data-sort"), first=btn.getAttribute("data-kind")==="A"? "asc":"desc";
       mvSort= (mvSort&&mvSort.key===k)? {key:k,dir:mvSort.dir==="asc"?"desc":"asc"} : {key:k,dir:first};
       try{ localStorage.setItem("mvSort",JSON.stringify(mvSort)); }catch(e){}
       mvLimit=25; try{ mvTable(); }catch(e){ console.error(e); }
     });
-  });
-  var F_IDS={r52:"f_r52",r52pct:"f_r52pct",d1dir:"f_d1dir",d1min:"f_d1min",d1max:"f_d1max",w1dir:"f_w1dir",w1min:"f_w1min",w1max:"f_w1max",type:"f_type",pmin:"f_pmin",pmax:"f_pmax",vmin:"f_vmin",vmax:"f_vmax",cmin:"f_cmin",cmax:"f_cmax",s30:"f_s30",s200:"f_s200",pemin:"f_pemin",pemax:"f_pemax",amin:"f_amin",amax:"f_amax"};
+  }
+  var F_IDS={iema:"fi_ema",irsimin:"fi_rsimin",irsimax:"fi_rsimax",imacd:"fi_macd",ivwap:"fi_vwap",ipoc:"fi_poc",ibb:"fi_bb",ist:"fi_st",isk:"fi_sk",iich:"fi_ich",iadxmin:"fi_adxmin",iadxmax:"fi_adxmax",idmi:"fi_dmi",iobv:"fi_obv",ifib:"fi_fib",iav:"fi_av",ipv:"fi_pv",r52:"f_r52",r52pct:"f_r52pct",d1dir:"f_d1dir",d1min:"f_d1min",d1max:"f_d1max",w1dir:"f_w1dir",w1min:"f_w1min",w1max:"f_w1max",type:"f_type",pmin:"f_pmin",pmax:"f_pmax",vmin:"f_vmin",vmax:"f_vmax",cmin:"f_cmin",cmax:"f_cmax",s30:"f_s30",s200:"f_s200",pemin:"f_pemin",pemax:"f_pemax",amin:"f_amin",amax:"f_amax"};
   try{ mvF=JSON.parse(localStorage.getItem("mvFilters")||"{}")||{}; }catch(e){ mvF={}; }
   function fNum(v){ if(v==null||v==="") return null; var x=parseFloat(String(v).replace(/\s/g,"").replace(",",".")); return isFinite(x)?x:null; }
-  function fSync(){ Object.keys(F_IDS).forEach(function(k){ var n=$(F_IDS[k]); if(n) n.value=(mvF[k]==null?"":String(mvF[k]).replace(".",",")); }); }
+  function fSync(){ Object.keys(F_IDS).forEach(function(k){ var n=$(F_IDS[k]); if(!n) return; n.value= mvF[k]==null? "" : n.tagName==="SELECT"? String(mvF[k]) : String(mvF[k]).replace(".",","); }); }
   function fRead(){ Object.keys(F_IDS).forEach(function(k){ var n=$(F_IDS[k]); if(!n) return; mvF[k]= n.tagName==="SELECT"? (n.value||null) : fNum(n.value); }); try{ localStorage.setItem("mvFilters",JSON.stringify(mvF)); }catch(e){} }
   function fActive(){ return Object.keys(F_IDS).filter(function(k){ return mvF[k]!=null && mvF[k]!==""; }).length; }
   function screenRows(X){
     var Sc=X&&X.screen; if(!Sc||!Sc.rows||!Sc.cols) return null;
     var ci={}; Sc.cols.forEach(function(c,i){ ci[c]=i; });
-    return Sc.rows.map(function(r){ return {ticker:r[ci.t],name:r[ci.n],price:r[ci.p],d1Pct:r[ci.d1],w1Pct:r[ci.w1],dollarVolM:r[ci.dv],capB:r[ci.cap],pe:r[ci.pe],s30:r[ci.s30],s200:r[ci.s200],atr:r[ci.atr],idx:r[ci.idx]||"",tier:r[ci.tier]||"",lo52:ci.lo52!=null?r[ci.lo52]:null,hi52:ci.hi52!=null?r[ci.hi52]:null}; });
+    var Ic=X.ind&&X.ind.cols, Ir=(X.ind&&X.ind.rows)||{};
+    var mk=function(t){ var a=Ir[t]; if(!a||!Ic) return null; var o={}; Ic.forEach(function(c,i){ o[c]=a[i]; }); return o; };
+    return Sc.rows.map(function(r){ return {ind:mk(r[ci.t]),ticker:r[ci.t],name:r[ci.n],price:r[ci.p],d1Pct:r[ci.d1],w1Pct:r[ci.w1],dollarVolM:r[ci.dv],capB:r[ci.cap],pe:r[ci.pe],s30:r[ci.s30],s200:r[ci.s200],atr:r[ci.atr],idx:r[ci.idx]||"",tier:r[ci.tier]||"",lo52:ci.lo52!=null?r[ci.lo52]:null,hi52:ci.hi52!=null?r[ci.hi52]:null}; });
+  }
+  function fInd(r,f){
+    var keys=["iema","irsimin","irsimax","imacd","ivwap","ipoc","ibb","ist","isk","iich","iadxmin","iadxmax","idmi","iobv","ifib","iav","ipv"];
+    if(!keys.some(function(k){ return f[k]!=null&&f[k]!==""; })) return true;
+    var I=r.ind, p=r.price; if(!I||!isNum(p)) return false;
+    function has(x){ return isNum(x); }
+    if(f.iema){ if(!has(I.e20)||!has(I.e50)||!has(I.e200)) return false;
+      if(f.iema==="up"&&!(p>I.e20&&I.e20>I.e50&&I.e50>I.e200)) return false;
+      if(f.iema==="down"&&!(p<I.e20&&I.e20<I.e50&&I.e50<I.e200)) return false;
+      if(f.iema==="a200"&&!(p>I.e200)) return false; if(f.iema==="b200"&&!(p<I.e200)) return false; }
+    if(f.irsimin!=null&&!(has(I.rsi)&&I.rsi>=f.irsimin)) return false;
+    if(f.irsimax!=null&&!(has(I.rsi)&&I.rsi<=f.irsimax)) return false;
+    if(f.imacd){ if(!has(I.macdH)) return false; var m=f.imacd;
+      if((m==="xup"&&I.macdX!==1)||(m==="xdn"&&I.macdX!==-1)||(m==="hpos"&&I.macdH<=0)||(m==="hneg"&&I.macdH>=0)||(m==="above0"&&!I.macdUp)) return false; }
+    if(f.ivwap){ var w=has(I.vwap)?I.vwap:I.vwap20; if(!has(w)||(f.ivwap==="above"? p<=w : p>=w)) return false; }
+    if(f.ipoc){ if(!has(I.poc)||(f.ipoc==="above"? p<=I.poc : p>=I.poc)) return false; }
+    if(f.ibb){ if(!has(I.bbPb)) return false; var b=f.ibb;
+      if((b==="below"&&I.bbPb>=0)||(b==="above"&&I.bbPb<=1)||(b==="lowhalf"&&I.bbPb>=0.5)||(b==="sq"&&!I.bbSq)) return false; }
+    if(f.ist){ if(!has(I.stDir)) return false; var s=f.ist;
+      if((s==="buy"&&I.stDir!==1)||(s==="sell"&&I.stDir!==-1)||(s==="newbuy"&&!(I.stDir===1&&I.stAge<=2))||(s==="newsell"&&!(I.stDir===-1&&I.stAge<=2))) return false; }
+    if(f.isk){ if(!has(I.skK)) return false; var q=f.isk;
+      if((q==="os"&&I.skK>20)||(q==="ob"&&I.skK<80)||(q==="xup"&&I.skX!==1)||(q==="xdn"&&I.skX!==-1)) return false; }
+    if(f.iich){ if(I.ichPos==null) return false; var c=f.iich;
+      if((c==="above"&&I.ichPos!==1)||(c==="in"&&I.ichPos!==0)||(c==="below"&&I.ichPos!==-1)||(c==="abovetk"&&!(I.ichPos===1&&I.ichTk))) return false; }
+    if(f.iadxmin!=null&&!(has(I.adx)&&I.adx>=f.iadxmin)) return false;
+    if(f.iadxmax!=null&&!(has(I.adx)&&I.adx<=f.iadxmax)) return false;
+    if(f.idmi){ if(!has(I.pdi)||(f.idmi==="up"? I.pdi<=I.mdi : I.mdi<=I.pdi)) return false; }
+    if(f.iobv){ if(I.obvUp==null||(f.iobv==="up")!==(I.obvUp===1)) return false; }
+    if(f.ifib){ if(!has(I.fib)||Math.abs(I.fib-parseFloat(f.ifib))>3) return false; }
+    if(f.iav){ var a=f.iav, ref=a.slice(-1)==="H"?I.avH:I.avL; if(!has(ref)||(a.indexOf("above")===0? p<=ref : p>=ref)) return false; }
+    if(f.ipv){ var v=f.ipv; if(!has(I.pvP)) return false;
+      if((v==="r1"&&p<=I.pvR1)||(v==="p"&&p<=I.pvP)||(v==="bp"&&p>=I.pvP)||(v==="s1"&&p>=I.pvS1)) return false; }
+    return true;
   }
   function fPass(r){
     var f=mvF, t=f.type;
@@ -944,6 +1027,7 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
       return !(lo!=null&&a<lo) && !(hi!=null&&a>hi);
     }
     if(!chg(r.d1Pct,f.d1dir,f.d1min,f.d1max)||!chg(r.w1Pct,f.w1dir,f.w1min,f.w1max)) return false;
+    if(!fInd(r,f)) return false;
     if(f.r52){
       if(!isNum(r.lo52)||!isNum(r.hi52)||!isNum(r.price)) return false;
       var tol=f.r52pct==null? 5 : Math.abs(f.r52pct);
@@ -966,9 +1050,87 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
       el("span",{class:"r52-txt",text:fmtNum(r.lo52,d(r.lo52))+" – "+fmtNum(r.hi52,d(r.hi52))}),
       el("span",{class:"r52-txt",text: fromHi>-0.05? "zirvede" : fromLo<0.05? "dipte" : pos>=0.5? "zirveden "+pct(fromHi) : "dipten "+pct(fromLo)}));
   }
+  var mvView="basic", mvOpen={};
+  try{ mvView=localStorage.getItem("mvView")||"basic"; }catch(e){}
+  function tdT(txt,c,title){ return el("td",{class:c||"",text:txt,title:title||""}); }
+  function badge(txt,dir,title){ return el("span",{class:"ind-b "+(dir>0?"up":dir<0?"down":""),title:title||"",text:txt}); }
+  function emaCell(r){
+    var I=r.ind; if(!I) return tdT("–"); var p=r.price;
+    var b=function(x,l){ return isNum(x)? badge(l+(p>x?"▲":"▼"), p>x?1:-1, "EMA "+l+": "+fmtNum(x,2)+" $; fiyat "+(p>x?"üstünde":"altında")) : badge(l+" –",0,"Yeterli geçmiş yok"); };
+    return el("td",{class:"ema"}, b(I.e20,"20"), b(I.e50,"50"), b(I.e200,"200"));
+  }
+  var COLS={
+    basic:[
+      {k:"ticker",l:"Hisse",t:"A"},
+      {k:"price",l:"Fiyat $",hm:1,f:function(r){ return tdT(fmtNum(r.price,2)); }},
+      {k:"d1Pct",l:"Gün",f:function(r){ return tdT(pct(r.d1Pct),cls(r.d1Pct)); }},
+      {k:"w1Pct",l:"Hafta",f:function(r){ return tdT(pct(r.w1Pct),cls(r.w1Pct)); }},
+      {k:"r52",l:"52 hafta<br>dip – zirve",f:function(r){ return r52Cell(r); }},
+      {k:"dollarVolM",l:"Hacim<br>milyon $/gün",hm:1,f:function(r){ return tdT(fmtNum(r.dollarVolM,1)); }},
+      {k:"capB",l:"Piyasa değeri<br>milyar $",f:function(r){ return tdT(isNum(r.capB)?(r.capB<0.01?"<0,01":fmtNum(r.capB,r.capB<10?2:1)):"–","",isNum(r.capB)?fmtNum(r.capB*1000,0)+" milyon $":""); }},
+      {k:"pe",l:"F/K",hm:1,f:function(r){ return tdT(isNum(r.pe)?fmtNum(r.pe,1):"–","",isNum(r.pe)?"":"Zarar ediyor ya da veri yok"); }},
+      {k:"atr",l:"ATR %",hm:1,f:function(r){ return tdT(isNum(r.atr)?fmtNum(r.atr,1):"–","",isNum(r.atr)&&isNum(r.price)?"Tipik günlük hareket ≈ "+fmtNum(r.atr*r.price/100,2)+" $":""); }},
+      {k:"trend",l:"Trend",f:function(r){ return isNum(r.s200)||isNum(r.s30)? el("td",null, trBadge(r.price,r.s30,"30"), trBadge(r.price,r.s200,"200")) : tdT("–"); }}],
+    ind:[
+      {k:"ticker",l:"Hisse",t:"A"},
+      {k:"d1Pct",l:"Gün",f:function(r){ return tdT(pct(r.d1Pct),cls(r.d1Pct)); }},
+      {k:"i:ema",l:"EMA<br>20/50/200",f:emaCell},
+      {k:"i:rsi",l:"RSI",f:function(r){ var v=r.ind&&r.ind.rsi; return isNum(v)? el("td",null,badge(fmtNum(v,0), v<=30?1:v>=70?-1:0, v<=30?"30 altı: aşırı satım":v>=70?"70 üstü: aşırı alım":"Nötr bölge")) : tdT("–"); }},
+      {k:"i:macd",l:"MACD",f:function(r){ var I=r.ind; if(!I||!isNum(I.macdH)) return tdT("–"); var x=I.macdX; return el("td",null,badge(x===1?"↑ kesti":x===-1?"↓ kesti":(I.macdH>=0?"+":"−")+fmtNum(Math.abs(I.macdH),2), x||(I.macdH>=0?1:-1), "MACD histogramı fiyatın %"+fmtNum(I.macdH,2)+"'si; MACD sıfırın "+(I.macdUp?"üstünde":"altında"))); }},
+      {k:"i:st",l:"Super-<br>trend",f:function(r){ var I=r.ind; if(!I||!isNum(I.stDir)) return tdT("–"); return el("td",null,badge((I.stDir>0?"AL ":"SAT ")+I.stAge+"g", I.stDir, "Supertrend "+(I.stDir>0?"AL":"SAT")+" konumunda, "+I.stAge+" işlem günüdür; seviye "+fmtNum(I.st,2)+" $")); }},
+      {k:"i:adx",l:"ADX<br>DMI",f:function(r){ var I=r.ind; if(!I||!isNum(I.adx)) return tdT("–"); var up=I.pdi>=I.mdi; return el("td",null,badge(fmtNum(I.adx,0)+(up?" ▲":" ▼"), I.adx>=25?(up?1:-1):0, "ADX "+fmtNum(I.adx,1)+" ("+(I.adx>=25?"güçlü trend":I.adx>=20?"trend başlıyor":"zayıf trend")+"), +DI "+fmtNum(I.pdi,1)+", −DI "+fmtNum(I.mdi,1))); }},
+      {k:"i:bb",l:"Bollinger<br>%B",hm:1,f:function(r){ var I=r.ind; if(!I||!isNum(I.bbPb)) return tdT("–"); var v=I.bbPb*100; return el("td",null,badge(fmtNum(v,0).replace("-","−")+(I.bbSq?" · sıkışma":""), v<0?1:v>100?-1:0, "%B: 0 alt bant, 100 üst bant. Alt "+fmtNum(I.bbL,2)+" $, üst "+fmtNum(I.bbU,2)+" $"+(I.bbSq?"; bant genişliği son 6 ayın en dar %10'unda (sıkışma)":""))); }},
+      {k:"i:sk",l:"Stoch<br>RSI",hm:1,f:function(r){ var I=r.ind; if(!I||!isNum(I.skK)) return tdT("–"); return el("td",null,badge(fmtNum(I.skK,0)+(I.skX===1?" ↑":I.skX===-1?" ↓":""), I.skK<=20||I.skX===1?1:I.skK>=80||I.skX===-1?-1:0, "%K "+fmtNum(I.skK,1)+", %D "+fmtNum(I.skD,1)+(I.skX===1?"; 20 altından yukarı kesişim":I.skX===-1?"; 80 üstünden aşağı kesişim":""))); }},
+      {k:"i:ich",l:"Ichimoku<br>bulut",f:function(r){ var I=r.ind; if(!I||I.ichPos==null) return tdT("–"); return el("td",null,badge((I.ichPos>0?"üstte":I.ichPos<0?"altta":"içinde")+(I.ichTk?" ▲":""), I.ichPos, "Bulut "+fmtNum(I.ichBot,2)+" – "+fmtNum(I.ichTop,2)+" $; Tenkan "+(I.ichTk?">":"<")+" Kijun")); }},
+      {k:"i:obv",l:"OBV",hm:1,f:function(r){ var I=r.ind; if(!I||I.obvUp==null) return tdT("–"); return el("td",null,badge(I.obvUp?"↑":"↓", I.obvUp?1:-1, "OBV 20 günlük ortalamasının "+(I.obvUp?"üstünde: hacim alıcı tarafta":"altında: hacim satıcı tarafta"))); }},
+      {k:"i:vwap",l:"VWAP",hm:1,f:function(r){ var I=r.ind; if(!I) return tdT("–"); var w=isNum(I.vwap)?I.vwap:I.vwap20; if(!isNum(w)) return tdT("–"); var d=(r.price/w-1)*100; return el("td",null,badge(pct(d), d>0?1:-1, (isNum(I.vwap)?"Gün içi VWAP ":"20 günlük VWAP ")+fmtNum(w,2)+" $")); }}]
+  };
+  function tickerCell(r,ncols){
+    var open=!!mvOpen[r.ticker];
+    var btn=el("button",{type:"button",class:"mv-x","aria-expanded":open?"true":"false",title:"15 indikatörün ayrıntısı",text:open?"▾":"▸"});
+    btn.addEventListener("click",function(){ mvOpen[r.ticker]=!mvOpen[r.ticker]; mvTable(); });
+    return el("td",{class:"l"}, btn, el("a",{href:"https://robinhood.com/stocks/"+r.ticker,target:"_blank",rel:"noopener",text:r.ticker}), el("span",{class:"nm",text:r.name+((r.idx||"").indexOf("N")>=0?" · Nasdaq-100":(r.idx||"").indexOf("S")>=0?" · S&P 500":"")}));
+  }
+  function detRow(r,ncols){
+    var I=r.ind||{}, p=r.price, g=el("div",{class:"det-grid"});
+    function item(t,v,txt){ g.appendChild(el("div",null, el("b",{text:t}), el("span",{class:"v",text:v}), txt? el("div",{class:"muted",text:txt}) : null)); }
+    function n2(x){ return isNum(x)? fmtNum(x, x<1?4:2)+" $" : "–"; }
+    function rel(x){ return isNum(x)&&x>0? " (fiyat "+pct((p/x-1)*100)+")" : ""; }
+    var ord= isNum(I.e200)? (p>I.e20&&I.e20>I.e50&&I.e50>I.e200? "Fiyat > 20 > 50 > 200: güçlü yükseliş dizilimi" : p<I.e20&&I.e20<I.e50&&I.e50<I.e200? "Fiyat < 20 < 50 < 200: güçlü düşüş dizilimi" : "Karışık dizilim; fiyat 200 günlüğün "+(p>I.e200?"üstünde":"altında")) : "200 günlük için yeterli geçmiş yok";
+    item("1 · EMA 20 / 50 / 200", n2(I.e20)+" / "+n2(I.e50)+" / "+n2(I.e200), ord);
+    item("2 · RSI (14)", isNum(I.rsi)? fmtNum(I.rsi,1):"–", isNum(I.rsi)? (I.rsi<=30?"Aşırı satım bölgesi (≤ 30)":I.rsi>=70?"Aşırı alım bölgesi (≥ 70)":"Nötr (30–70)") : "");
+    item("3 · MACD (12/26/9)", isNum(I.macdH)? "Histogram "+pct(I.macdH)+" (fiyata göre)":"–", (I.macdX===1?"Son 3 günde yukarı kesişim. ":I.macdX===-1?"Son 3 günde aşağı kesişim. ":"")+(I.macdUp?"MACD sıfırın üstünde":"MACD sıfırın altında"));
+    item("4 · VWAP", (isNum(I.vwap)? "Gün içi "+n2(I.vwap)+rel(I.vwap):"Gün içi veri yok")+" · 20 gün "+n2(I.vwap20), "Hacim ağırlıklı ortalama fiyat; üstünde işlem alıcıların kontrolünü gösterir");
+    item("5 · Hacim profili (60 gün)", "En yoğun fiyat (POC) "+n2(I.poc)+rel(I.poc), "Son 60 günde en çok işlemin döndüğü seviye; çoğu zaman destek/direnç olur");
+    item("6 · Bollinger (20, 2)", "Alt "+n2(I.bbL)+" · Üst "+n2(I.bbU)+(isNum(I.bbPb)?" · %B "+fmtNum(I.bbPb*100,0).replace("-","−"):""), I.bbSq? "Sıkışma: bant son 6 ayın en dar %10'unda; sert hareket yaklaşıyor olabilir" : isNum(I.bbPb)&&I.bbPb<0? "Alt bandın altında" : isNum(I.bbPb)&&I.bbPb>1? "Üst bandın üstünde" : "Bantların içinde");
+    item("7 · Supertrend (10, 3)", isNum(I.stDir)? (I.stDir>0?"AL":"SAT")+" · "+I.stAge+" gündür · seviye "+n2(I.st) : "–", isNum(I.stDir)? (I.stDir>0?"Seviye aynı zamanda izleyen zarar-kes olarak kullanılır":"Seviyenin üstüne kapanış AL sinyali verir") : "");
+    item("8 · ATR (14)", isNum(I.atrD)? n2(I.atrD)+" · %"+fmtNum(I.atrD/p*100,1) : "–", isNum(I.atrD)? "2×ATR zarar-kes ≈ "+n2(p-2*I.atrD) : "");
+    item("9 · Stochastic RSI", isNum(I.skK)? "%K "+fmtNum(I.skK,0)+" · %D "+fmtNum(I.skD,0) : "–", I.skX===1? "20 altından yukarı kesişim (kısa vadeli dönüş)" : I.skX===-1? "80 üstünden aşağı kesişim" : isNum(I.skK)? (I.skK<=20?"Aşırı satım":I.skK>=80?"Aşırı alım":"Nötr") : "");
+    item("10 · Ichimoku", I.ichPos==null? "–" : (I.ichPos>0?"Bulutun üstünde":I.ichPos<0?"Bulutun altında":"Bulutun içinde")+" · bulut "+n2(I.ichBot)+" – "+n2(I.ichTop), "Tenkan "+(I.ichTk?"Kijun'un üstünde (kısa vade olumlu)":"Kijun'un altında"));
+    item("11 · ADX / DMI (14)", isNum(I.adx)? "ADX "+fmtNum(I.adx,1)+" · +DI "+fmtNum(I.pdi,1)+" · −DI "+fmtNum(I.mdi,1) : "–", isNum(I.adx)? (I.adx>=25?"Güçlü trend":I.adx>=20?"Trend başlıyor":"Zayıf / yatay")+", yön "+(I.pdi>=I.mdi?"yukarı":"aşağı") : "");
+    item("12 · OBV", I.obvUp==null? "–" : I.obvUp? "Yükseliyor":"Düşüyor", "OBV 20 günlük ortalamasının "+(I.obvUp?"üstünde: hacim alıcı tarafta":"altında: hacim satıcı tarafta"));
+    var fib="–";
+    if(isNum(r.lo52)&&isNum(r.hi52)&&r.hi52>r.lo52){ fib=[23.6,38.2,50,61.8,78.6].map(function(q){ return "%"+fmtNum(q,1)+" "+fmtNum(r.hi52-(r.hi52-r.lo52)*q/100, 2); }).join(" · "); }
+    item("13 · Fibonacci (52 hafta)", fib, isNum(I.fib)? "Fiyat yükselişin %"+fmtNum(I.fib,1)+"'ini geri verdi (0 = zirvede, 100 = dipte)" : "");
+    item("14 · Anchored VWAP", "52h zirveden "+n2(I.avH)+rel(I.avH)+" · 52h dipten "+n2(I.avL)+rel(I.avL), "Zirve ya da dip gününden beri alanların ortalama maliyeti");
+    item("15 · Pivot (dünkü seansa göre)", "S2 "+n2(I.pvS2)+" · S1 "+n2(I.pvS1)+" · P "+n2(I.pvP)+" · R1 "+n2(I.pvR1)+" · R2 "+n2(I.pvR2), isNum(I.pvP)? "Fiyat pivotun "+(p>=I.pvP?"üstünde":"altında") : "");
+    return el("tr",{class:"mv-det"}, el("td",{colspan:String(ncols)}, r.ind? g : el("span",{class:"muted",text:"Bu hisse için indikatör verisi bir sonraki güncellemede gelecek."})));
+  }
+  function mvHead(){
+    var hd=$("mvHead"); if(!hd) return; clear(hd); var tr=el("tr");
+    COLS[mvView].forEach(function(c){
+      var b=el("button",{type:"button",class:"th-sort","data-sort":c.k,"data-kind":c.t||"N"}); b.innerHTML=c.l+'<span class="ar" aria-hidden="true"></span>';
+      bindSort(b); tr.appendChild(el("th",{"aria-sort":"none",class:c.hm?"hm":""}, b));
+    });
+    hd.appendChild(tr);
+    Array.prototype.forEach.call(document.querySelectorAll(".mv-views button"),function(b){ b.setAttribute("aria-pressed", b.getAttribute("data-v")===mvView?"true":"false"); });
+  }
   function mvTable(){
     var X=S.movers, b=$("mvBody"); if(!b) return; clear(b);
-    var all=screenRows(X), list, total;
+    if(!COLS[mvView]) mvView="basic";
+    mvHead();
+    var tb=$("mvTbl"); if(tb) tb.classList.toggle("v-ind", mvView==="ind");
+    var all=screenRows(X), list, total, cols=COLS[mvView], nc=cols.length;
     if(all){
       var k={dailyLosers:["d1Pct",1],dailyGainers:["d1Pct",-1],weeklyLosers:["w1Pct",1],weeklyGainers:["w1Pct",-1]}[mvKey];
       list= mvSort? sortList(all.filter(fPass), mvSort.key, mvSort.dir)
@@ -978,21 +1140,18 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
         +(X.screen.fundamentalsDate? "" : " · piyasa değeri ve F/K verisi henüz alınamadı")+(X.screen.indexDate? "" : " · endeks üyelikleri henüz yok");
     } else { list=((X&&X[mvKey])||[]).slice(); if(mvSort) sortList(list, mvSort.key, mvSort.dir); $("mvFCount").textContent="· filtre verisi bir sonraki güncellemede gelecek"; }
     sortHeads();
-    if(!list.length){ b.appendChild(el("tr",null, el("td",{colspan:"10",class:"muted",text:"Filtrelere uyan hisse yok."}))); }
+    if(!list.length){ b.appendChild(el("tr",null, el("td",{colspan:String(nc),class:"muted",text:"Filtrelere uyan hisse yok."}))); }
     list.slice(0,mvLimit).forEach(function(r){
-      b.appendChild(el("tr",null,
-        el("td",{class:"l"}, el("a",{href:"https://robinhood.com/stocks/"+r.ticker,target:"_blank",rel:"noopener",text:r.ticker}), el("span",{class:"nm",text:r.name+((r.idx||"").indexOf("N")>=0?" · Nasdaq-100":(r.idx||"").indexOf("S")>=0?" · S&P 500":"")})),
-        el("td",{text:fmtNum(r.price,2)}), el("td",{class:cls(r.d1Pct),text:pct(r.d1Pct)}), el("td",{class:cls(r.w1Pct),text:pct(r.w1Pct)}),
-        r52Cell(r),
-        el("td",{text:fmtNum(r.dollarVolM,1)}),
-        el("td",{text:isNum(r.capB)?(r.capB<0.01?"<0,01":fmtNum(r.capB,r.capB<10?2:1)):"–",title:isNum(r.capB)?fmtNum(r.capB*1000,0)+" milyon $":""}),
-        el("td",{text:isNum(r.pe)?fmtNum(r.pe,1):"–",title:isNum(r.pe)?"":"Zarar ediyor ya da veri yok"}),
-        el("td",{text:isNum(r.atr)?fmtNum(r.atr,1):"–",title:isNum(r.atr)&&isNum(r.price)?"Tipik günlük hareket ≈ "+fmtNum(r.atr*r.price/100,2)+" $":""}),
-        all? el("td",null, trBadge(r.price,r.s30,"30"), trBadge(r.price,r.s200,"200")) : el("td",{text:"–"})));
+      var tr=el("tr");
+      cols.forEach(function(c){ var td= c.k==="ticker"? tickerCell(r,nc) : c.f(r); if(c.hm) td.classList.add("hm"); tr.appendChild(td); });
+      b.appendChild(tr);
+      if(mvOpen[r.ticker]) b.appendChild(detRow(r,nc));
     });
     var more=$("mvMore"); more.hidden=list.length<=mvLimit; more.textContent="Daha fazla göster ("+Math.min(list.length-mvLimit,100)+" hisse daha)";
   }
+  Array.prototype.forEach.call(document.querySelectorAll(".mv-views button"),function(b){ b.addEventListener("click",function(){ mvView=b.getAttribute("data-v"); try{ localStorage.setItem("mvView",mvView); }catch(e){} if(mvSort&&String(mvSort.key).indexOf("i:")===0&&mvView!=="ind"){ mvSort=null; } try{ mvTable(); }catch(e){ console.error(e); } }); });
   fSync();
+  try{ if(["iema","irsimin","irsimax","imacd","ivwap","ipoc","ibb","ist","isk","iich","iadxmin","iadxmax","idmi","iobv","ifib","iav","ipv"].some(function(k){ return mvF[k]!=null&&mvF[k]!==""; })) $("mvFInd").open=true; }catch(e){}
   try{ if(window.innerWidth<640 && !fActive()) $("mvFilter").open=false; }catch(e){}
   Object.keys(F_IDS).forEach(function(k){ var n=$(F_IDS[k]); if(!n) return; n.addEventListener(n.tagName==="SELECT"?"change":"input",function(){
     fRead(); mvLimit=25;

@@ -16,6 +16,8 @@ from zoneinfo import ZoneInfo
 
 import pandas as pd
 
+import indicators as IND
+
 ROOT = Path(__file__).resolve().parent
 NY = ZoneInfo("America/New_York")
 SYMBOLS_URL = "https://www.nasdaqtrader.com/dynamic/SymDir/nasdaqlisted.txt"
@@ -516,6 +518,24 @@ def main():
                      "dollarVolM": round(dv / 1e6, 1), "date": str(s.index[-1].date()), "gapPct": round(gap * 100, 2),
                      # opened 15 %+ higher and then barely moved: the typical picture of a takeover at a fixed price
                      "buyout": bool(gap > 0.15 and last > prev and (hi - lo) / last < 0.03)})
+    ind = {}
+    try:                                    # 15 technical indicators per screened stock (session VWAP from 5-minute bars)
+        bars5 = {}
+        try:
+            bars5 = download([r["ticker"] for r in rows], period="1d", interval="5m")
+        except Exception as e:
+            print("5-minute bars failed:", e)
+        for r in rows:
+            t = r["ticker"]
+            try:
+                sv = IND.session_vwap(bars5.get(t)) if t in bars5 else None
+                snap = IND.snapshot(data[t], sv)
+                if snap:
+                    ind[t] = snap
+            except Exception as e:
+                print("indicators failed:", t, e)
+    except Exception as e:
+        print("indicator step failed:", e)
     # Yahoo sometimes has no bar yet for the latest session in some tickers: their "daily" change would be yesterday's,
     # so only stocks with a bar for the latest session count for the daily lists, the 20 % alerts and the e-mail.
     bar_day = max((r["date"] for r in rows), default=now.date().isoformat())
@@ -571,6 +591,7 @@ def main():
            "riskCache": {today: cache}, "lowRisk": LOW_RISK,
            "mailedDay": bar_day if closed else old.get("mailedDay"),
            "rebound": rebound, "reboundAlerted": reb_sent, "reboundRule": REBOUND,
+           "ind": {"cols": IND.SNAP_COLS, "rows": ind},
            "study": {**study, "text": study_text(study)} if study else None,
            "screen": {"cols": SCREEN_COLS, "rows": screen, "fundamentalsDate": F.get("date"),
                       "indexDate": (F.get("index") or {}).get("date")},
