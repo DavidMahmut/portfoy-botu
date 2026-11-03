@@ -99,7 +99,7 @@
   }
  },
  "portfolio": {
-  "cash": 1529.3,
+  "cash": 1183.61,
   "positions": [
    {
     "stopMode": "managed",
@@ -111,16 +111,16 @@
     "shares": 2.008,
     "avgCost": 695.4676,
     "costBasis": 1396.5,
-    "lastPrice": 686.3199,
-    "lastPriceAt": "2026-11-03T10:20:00-05:00",
+    "lastPrice": 685.84,
+    "lastPriceAt": "2026-11-03T10:30:00-05:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (10:20 ET)",
+     "title": "Yahoo Finance 5 dk mum (10:30 ET)",
      "url": "https://finance.yahoo.com/quote/QQQ/"
     },
-    "marketValue": 1378.13,
-    "exposure": 1378.13,
-    "unrealized": -18.37,
-    "unrealizedPct": -1.32,
+    "marketValue": 1377.17,
+    "exposure": 1377.17,
+    "unrealized": -19.33,
+    "unrealizedPct": -1.38,
     "openedAt": "2026-11-02",
     "openedTs": "2026-11-02T09:50:00-05:00",
     "lastAddDate": "2026-11-02",
@@ -128,7 +128,7 @@
     "extremeSinceEntry": 695.1199951171875,
     "tookProfit": false,
     "thesis": "Endeks kolu, QQQ (1x): 0,00 $ → 1.396,50 $. Endeks kolu yönü YUKARI: SPY dünkü kapanış 755,72 $, 200 günlük ortalama 728,85 $ (+%3,69), 50 günlük ortalama 767,49 $. QQQ'nun 20 günlük oynaklığı yıllık %22,6; büyüklük %25 ÷ %22,6 = 1,10x. Hedef maruziyet +1,10x.",
-    "maintReq": 344.53
+    "maintReq": 344.29
    },
    {
     "stopMode": "managed",
@@ -140,16 +140,16 @@
     "shares": 1.1627,
     "avgCost": 63.2117,
     "costBasis": 73.5,
-    "lastPrice": 60.76,
-    "lastPriceAt": "2026-11-03T10:20:00-05:00",
+    "lastPrice": 60.61,
+    "lastPriceAt": "2026-11-03T10:30:00-05:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (10:20 ET)",
+     "title": "Yahoo Finance 5 dk mum (10:30 ET)",
      "url": "https://finance.yahoo.com/quote/TQQQ/"
     },
-    "marketValue": 70.65,
-    "exposure": 211.94,
-    "unrealized": -2.85,
-    "unrealizedPct": -3.88,
+    "marketValue": 70.47,
+    "exposure": 211.41,
+    "unrealized": -3.03,
+    "unrealizedPct": -4.12,
     "openedAt": "2026-11-02",
     "openedTs": "2026-11-02T09:50:00-05:00",
     "lastAddDate": "2026-11-02",
@@ -157,40 +157,85 @@
     "extremeSinceEntry": 63.18009948730469,
     "tookProfit": false,
     "thesis": "Endeks kolu, TQQQ (3x): 0,00 $ → 73,50 $. Endeks kolu yönü YUKARI: SPY dünkü kapanış 755,72 $, 200 günlük ortalama 728,85 $ (+%3,69), 50 günlük ortalama 767,49 $. QQQ'nun 20 günlük oynaklığı yıllık %22,6; büyüklük %25 ÷ %22,6 = 1,10x. Hedef maruziyet +1,10x.",
-    "maintReq": 52.98
+    "maintReq": 52.85
+   },
+   {
+    "stopMode": "event",
+    "ticker": "SHOP",
+    "name": "Shopify",
+    "kind": "Hisse",
+    "side": "long",
+    "lev": 1,
+    "shares": 2.4419,
+    "avgCost": 141.4214,
+    "costBasis": 345.34,
+    "lastPrice": 141.3507,
+    "lastPriceAt": "2026-11-03T10:30:00-05:00",
+    "priceSource": {
+     "title": "Yahoo Finance 5 dk mum (10:30 ET)",
+     "url": "https://finance.yahoo.com/quote/SHOP/"
+    },
+    "marketValue": 345.16,
+    "exposure": 345.16,
+    "unrealized": -0.18,
+    "unrealizedPct": -0.05,
+    "openedAt": "2026-11-03",
+    "openedTs": "2026-11-03T10:30:00-05:00",
+    "lastAddDate": "2026-11-03",
+    "stopPrice": 135.51,
+    "extremeSinceEntry": 141.35069274902344,
+    "tookProfit": false,
+    "thesis": "Haber şoku: SHOP önceki kapanışa (156,22 $) göre −%12,81 düşüşle açıldı, ilk saatte +%4,77 toparlandı: piyasa haberin ilk tepkisini abartılı buldu. Kural gereği long açıldı. Zarar-kes 135,51 $ (ilk saatin en düşüğünün hemen ötesi, risk %4,3); çıkış 2026-11-05 kapanışında. Büyüklük: haber kolunun %23'i, zarar-keste kaybı kolun yaklaşık %1'i. Haber: “Apple stock falls, chip stocks rebound as oil extends decline: AlphaCheck” (Yahoo Finance).",
+    "sleeve": "event",
+    "exitDate": "2026-11-05",
+    "event": {
+     "gapPct": -12.81,
+     "firstHourPct": 4.77,
+     "prevClose": 156.22,
+     "open": 136.21,
+     "h1High": 143.5,
+     "h1Low": 135.65
+    },
+    "headline": {
+     "title": "Apple stock falls, chip stocks rebound as oil extends decline: AlphaCheck",
+     "url": "https://finance.yahoo.com/markets/article/apple-stock-falls-chip-stocks-rebound-as-oil-extends-decline-alphacheck-150120677.html?.tsrc=rss",
+     "publisher": "Yahoo Finance",
+     "at": "2026-11-03T15:01:20+00:00"
+    },
+    "maintReq": 86.29
    }
   ],
   "realizedPL": 0.0,
   "netDeposits": 3000.0,
   "costs": {
-   "slippage": 0.7347,
-   "commission": 0.7,
+   "slippage": 0.9074,
+   "commission": 1.05,
    "fees": 0.0,
    "interest": 0.0,
    "borrow": 0.0,
    "dividendsPaid": 0.0,
    "dividendsReceived": 0.0
   },
-  "longValue": 1448.78,
+  "longValue": 1792.8,
   "shortValue": 0.0,
-  "positionsValue": 1448.78,
-  "totalValue": 2978.08,
-  "grossExposure": 1590.07,
-  "netExposure": 1590.07,
-  "leverage": 0.534,
-  "maintenanceReq": 397.51,
-  "marginBuffer": 2580.57,
-  "regTInitialReq": 742.05,
-  "regTExcess": 2236.03,
-  "buyingPower": 4472.06,
+  "positionsValue": 1792.8,
+  "totalValue": 2976.41,
+  "grossExposure": 1933.74,
+  "netExposure": 1933.74,
+  "leverage": 0.65,
+  "maintenanceReq": 483.43,
+  "marginBuffer": 2492.98,
+  "regTInitialReq": 914.02,
+  "regTExcess": 2062.39,
+  "buyingPower": 4124.78,
   "marginEligible": true,
-  "totalPL": -21.92,
-  "totalPLPct": -0.73,
-  "twrPct": -0.73,
-  "asOf": "2026-11-03T10:20:59-05:00",
-  "benchmarkPrice": 754.5,
-  "benchmarkValue": 3012.74,
-  "benchmarkTwrPct": 0.42
+  "totalPL": -23.59,
+  "totalPLPct": -0.79,
+  "twrPct": -0.79,
+  "asOf": "2026-11-03T10:31:05-05:00",
+  "benchmarkPrice": 754.41,
+  "benchmarkValue": 3012.38,
+  "benchmarkTwrPct": 0.41
  },
  "meta": {
   "engine": "trend-event v6",
@@ -205,9 +250,9 @@
    "ath": 759.66,
    "athDate": "2026-10-06",
    "athChecked": "2026-11-03",
-   "price": 686.32,
-   "at": "2026-11-03T10:20:00-05:00",
-   "ddPct": -9.65,
+   "price": 685.84,
+   "at": "2026-11-03T10:30:00-05:00",
+   "ddPct": -9.72,
    "level": "normal",
    "triggerPrice": 607.73,
    "correctionPrice": 683.69
@@ -233,7 +278,7 @@
     "2026-11-03"
    ]
   },
-  "lastRunAt": "2026-11-03T10:20:59-05:00",
+  "lastRunAt": "2026-11-03T10:31:05-05:00",
   "lastError": null,
   "spikeScanDate": "2026-11-03",
   "spikeScan": {
@@ -274,13 +319,49 @@
    "now": 1.09,
    "date": "2026-11-03"
   },
-  "eventScanDate": "2026-11-02",
+  "eventScanDate": "2026-11-03",
   "eventScan": {
-   "date": "2026-11-02",
-   "at": "2026-11-02T10:31:04-05:00",
+   "date": "2026-11-03",
+   "at": "2026-11-03T10:31:05-05:00",
    "checked": 165,
-   "gaps": [],
-   "taken": [],
+   "gaps": [
+    {
+     "ticker": "SHOP",
+     "name": "Shopify",
+     "gapPct": -12.81,
+     "firstHourPct": 4.77,
+     "prevClose": 156.22,
+     "open": 136.21,
+     "h1High": 143.5,
+     "h1Low": 135.65,
+     "h1Close": 142.71
+    }
+   ],
+   "taken": [
+    {
+     "ticker": "SHOP",
+     "name": "Shopify",
+     "gapPct": -12.81,
+     "firstHourPct": 4.77,
+     "prevClose": 156.22,
+     "open": 136.21,
+     "h1High": 143.5,
+     "h1Low": 135.65,
+     "h1Close": 142.71,
+     "side": "long",
+     "ssr": true,
+     "stop": 135.51,
+     "amount": 345.34,
+     "price": 141.35,
+     "exitDate": "2026-11-05",
+     "headline": {
+      "title": "Apple stock falls, chip stocks rebound as oil extends decline: AlphaCheck",
+      "url": "https://finance.yahoo.com/markets/article/apple-stock-falls-chip-stocks-rebound-as-oil-extends-decline-alphacheck-150120677.html?.tsrc=rss",
+      "publisher": "Yahoo Finance",
+      "at": "2026-11-03T15:01:20+00:00"
+     }
+    }
+   ],
    "skipped": [],
    "rule": "Açılış boşluğu en az %8; ilk saatte haberin tersine en az %0,5 dönüş; 2 işlem günü tut, zarar-kes ilk saatin öbür ucu."
   }
@@ -357,6 +438,46 @@
    ],
    "runId": "2026-11-02",
    "by": "bot"
+  },
+  {
+   "id": "t-20261103-01",
+   "ts": "2026-11-03T10:31:05-05:00",
+   "date": "2026-11-03",
+   "action": "BUY",
+   "side": "long",
+   "ticker": "SHOP",
+   "name": "Shopify",
+   "kind": "Hisse",
+   "shares": 2.4419,
+   "quotePrice": 141.3507,
+   "quoteAt": "2026-11-03T10:30:00-05:00",
+   "slippagePct": 0.05,
+   "execPrice": 141.4214,
+   "value": 345.34,
+   "commission": 0.35,
+   "fees": 0.0,
+   "priceSource": {
+    "title": "Yahoo Finance 5 dk mum (10:30 ET)",
+    "url": "https://finance.yahoo.com/quote/SHOP/"
+   },
+   "reason": "Haber şoku: SHOP önceki kapanışa (156,22 $) göre −%12,81 düşüşle açıldı, ilk saatte +%4,77 toparlandı: piyasa haberin ilk tepkisini abartılı buldu. Kural gereği long açıldı. Zarar-kes 135,51 $ (ilk saatin en düşüğünün hemen ötesi, risk %4,3); çıkış 2026-11-05 kapanışında. Büyüklük: haber kolunun %23'i, zarar-keste kaybı kolun yaklaşık %1'i. Haber: “Apple stock falls, chip stocks rebound as oil extends decline: AlphaCheck” (Yahoo Finance).",
+   "rule": "haber şoku",
+   "sources": [
+    {
+     "title": "Apple stock falls, chip stocks rebound as oil extends decline: AlphaCheck",
+     "url": "https://finance.yahoo.com/markets/article/apple-stock-falls-chip-stocks-rebound-as-oil-extends-decline-alphacheck-150120677.html?.tsrc=rss"
+    },
+    {
+     "title": "Yahoo Finance: SHOP",
+     "url": "https://finance.yahoo.com/quote/SHOP/"
+    },
+    {
+     "title": "yfinance (Yahoo Finance verileri)",
+     "url": "https://github.com/ranaroussi/yfinance"
+    }
+   ],
+   "runId": "2026-11-03",
+   "by": "bot"
   }
  ],
  "snapshots": [
@@ -401,26 +522,31 @@
   },
   {
    "date": "2026-11-03",
-   "at": "2026-11-03T10:20:59-05:00",
-   "totalValue": 2978.08,
-   "cash": 1529.3,
-   "positionsValue": 1448.78,
-   "plPct": -0.73,
-   "twrPct": -0.73,
+   "at": "2026-11-03T10:31:05-05:00",
+   "totalValue": 2976.41,
+   "cash": 1183.61,
+   "positionsValue": 1792.8,
+   "plPct": -0.79,
+   "twrPct": -0.79,
    "netDeposits": 3000.0,
-   "leverage": 0.534,
-   "benchmarkPrice": 754.5,
-   "benchmarkValue": 3012.74,
+   "leverage": 0.65,
+   "benchmarkPrice": 754.41,
+   "benchmarkValue": 3012.38,
    "holdings": [
     {
      "ticker": "QQQ",
      "side": "long",
-     "value": 1378.13
+     "value": 1377.17
     },
     {
      "ticker": "TQQQ",
      "side": "long",
-     "value": 70.65
+     "value": 70.47
+    },
+    {
+     "ticker": "SHOP",
+     "side": "long",
+     "value": 345.16
     }
    ]
   }
@@ -3145,6 +3271,77 @@
     ],
     "actions": [],
     "note": "Normal: kaldıraç 0,53x, SPY +%0,32; işlem gerekmedi."
+   },
+   {
+    "at": "2026-11-03T10:26:04-05:00",
+    "kind": "guard",
+    "status": "normal",
+    "spyPrice": 754.6,
+    "spyChangePct": 0.33,
+    "totalValue": 2977.54,
+    "benchmarkValue": 3013.16,
+    "leverage": 0.534,
+    "marginBuffer": 2580.18,
+    "positions": [
+     {
+      "ticker": "QQQ",
+      "side": "long",
+      "price": 686.0858,
+      "dayChangePct": 0.73,
+      "stopPrice": null,
+      "distancePct": null
+     },
+     {
+      "ticker": "TQQQ",
+      "side": "long",
+      "price": 60.705,
+      "dayChangePct": 2.09,
+      "stopPrice": null,
+      "distancePct": null
+     }
+    ],
+    "actions": [],
+    "note": "Normal: kaldıraç 0,53x, SPY +%0,33; işlem gerekmedi."
+   },
+   {
+    "at": "2026-11-03T10:31:05-05:00",
+    "kind": "event",
+    "status": "normal",
+    "spyPrice": 754.41,
+    "spyChangePct": 0.31,
+    "totalValue": 2976.41,
+    "benchmarkValue": 3012.38,
+    "leverage": 0.65,
+    "marginBuffer": 2492.98,
+    "positions": [
+     {
+      "ticker": "QQQ",
+      "side": "long",
+      "price": 685.84,
+      "dayChangePct": 0.7,
+      "stopPrice": null,
+      "distancePct": null
+     },
+     {
+      "ticker": "TQQQ",
+      "side": "long",
+      "price": 60.61,
+      "dayChangePct": 1.93,
+      "stopPrice": null,
+      "distancePct": null
+     },
+     {
+      "ticker": "SHOP",
+      "side": "long",
+      "price": 141.3507,
+      "dayChangePct": -9.52,
+      "stopPrice": 135.51,
+      "distancePct": 4.31
+     }
+    ],
+    "actions": [
+     "SHOP long (345,34 $)"
+    ]
    }
   ]
  },
@@ -3336,7 +3533,7 @@
    "date": "2026-11-03",
    "at": "2026-11-03T10:00:47-05:00",
    "by": "bot",
-   "headline": "İşlem yok · Yön yukarı: endeks +1,12x, haber şoku kolu açık, kaldıraç 0,53x",
+   "headline": "1 haber şoku işlemi · İşlem yok · Yön yukarı: endeks +1,12x, haber şoku kolu açık, kaldıraç 0,53x",
    "marketSummary": "S&P 500 (SPY) +%0,14 · Nasdaq 100 (QQQ) +%0,47 · Russell 2000 (IWM) +%0,39. VIX korku endeksi 20,77 (−%1,80); WTI petrol 95,79 $ (−%0,69); ABD 10 yıllık faiz %4,93 (+4 baz puan). Endeks kolu yönü YUKARI: SPY dünkü kapanış 752,10 $, 200 günlük ortalama 729,15 $ (+%3,15), 50 günlük ortalama 767,22 $. QQQ'nun 20 günlük oynaklığı yıllık %22,4; büyüklük %25 ÷ %22,4 = 1,12x. Hedef maruziyet +1,12x. Piyasa trendi yukarı: SPY dünkü kapanış 752,10 $, 200 günlük ortalama 729,15 $ (+%3,15). (v6'da momentum sepeti kapalı; bu bilgi kayıt içindir.) Sonuç: net değer 2.973,41 $, nakit 1.529,30 $, kaldıraç 0,53x.",
    "regime": {
     "name": "up",
@@ -3405,7 +3602,8 @@
     "Endeks kolu yönü YUKARI: SPY dünkü kapanış 752,10 $, 200 günlük ortalama 729,15 $ (+%3,15), 50 günlük ortalama 767,22 $. QQQ'nun 20 günlük oynaklığı yıllık %22,4; büyüklük %25 ÷ %22,4 = 1,12x. Hedef maruziyet +1,12x.",
     "Piyasa trendi yukarı: SPY dünkü kapanış 752,10 $, 200 günlük ortalama 729,15 $ (+%3,15). (v6'da momentum sepeti kapalı; bu bilgi kayıt içindir.)",
     "Endeks kolu: hedef 1,12x, mevcut 1,09x; fark 0,3x'ten küçük olduğu için işlem yapılmadı.",
-    "Momentum sepeti v6'da kapalı: paranın yarısı endeks kolunda, yarısı haber şoku kolunda."
+    "Momentum sepeti v6'da kapalı: paranın yarısı endeks kolunda, yarısı haber şoku kolunda.",
+    "Haber şoku: SHOP LONG 345,34 $ (boşluk −%12,81, ilk saat +%4,77)."
    ],
    "rejected": [],
    "watchlist": [
@@ -3495,7 +3693,52 @@
    "ranking": [],
    "shortRanking": [],
    "rankingNote": "Puan = 12-1 ay getirisi (son ay hariç 12 aylık getiri, %). Long için uygun: fiyat 200 günlük ortalamanın üstünde ve puan pozitif; sepet ilk 10'dan (sektör başına en fazla 3) oluşur, ilk 20'de kalan tutulur. Short listesi: fiyatı 200 günlük ortalamanın altında ve puanı negatif en zayıf hisseler (yalnızca izleme; v5'te sepet düşüşte nakde geçer).",
-   "nextSteps": "Endeks kolunun yönü ve büyüklüğü her gün 10:00'dan sonra, haber şoku taraması 10:30'dan sonra; haber işlemlerinin zarar-kesleri piyasa açıkken 5 dakikada bir kontrol ediliyor."
+   "nextSteps": "Endeks kolunun yönü ve büyüklüğü her gün 10:00'dan sonra, haber şoku taraması 10:30'dan sonra; haber işlemlerinin zarar-kesleri piyasa açıkken 5 dakikada bir kontrol ediliyor.",
+   "events": {
+    "date": "2026-11-03",
+    "at": "2026-11-03T10:31:05-05:00",
+    "checked": 165,
+    "gaps": [
+     {
+      "ticker": "SHOP",
+      "name": "Shopify",
+      "gapPct": -12.81,
+      "firstHourPct": 4.77,
+      "prevClose": 156.22,
+      "open": 136.21,
+      "h1High": 143.5,
+      "h1Low": 135.65,
+      "h1Close": 142.71
+     }
+    ],
+    "taken": [
+     {
+      "ticker": "SHOP",
+      "name": "Shopify",
+      "gapPct": -12.81,
+      "firstHourPct": 4.77,
+      "prevClose": 156.22,
+      "open": 136.21,
+      "h1High": 143.5,
+      "h1Low": 135.65,
+      "h1Close": 142.71,
+      "side": "long",
+      "ssr": true,
+      "stop": 135.51,
+      "amount": 345.34,
+      "price": 141.35,
+      "exitDate": "2026-11-05",
+      "headline": {
+       "title": "Apple stock falls, chip stocks rebound as oil extends decline: AlphaCheck",
+       "url": "https://finance.yahoo.com/markets/article/apple-stock-falls-chip-stocks-rebound-as-oil-extends-decline-alphacheck-150120677.html?.tsrc=rss",
+       "publisher": "Yahoo Finance",
+       "at": "2026-11-03T15:01:20+00:00"
+      }
+     }
+    ],
+    "skipped": [],
+    "rule": "Açılış boşluğu en az %8; ilk saatte haberin tersine en az %0,5 dönüş; 2 işlem günü tut, zarar-kes ilk saatin öbür ucu."
+   }
   }
  ],
  "compliance": [
@@ -3510,7 +3753,7 @@
  ],
  "tax": {
   "2026": {
-   "commissions": 0.7
+   "commissions": 1.05
   }
  },
  "evalHistory": [
@@ -3659,7 +3902,7 @@
   "start": "2026-10-30",
   "startAt": "2026-10-30T15:50:43-04:00",
   "end": "2027-01-28",
-  "asOf": "2026-11-03T10:20:59-05:00",
+  "asOf": "2026-11-03T10:31:05-05:00",
   "strategy": "v6",
   "history": [
    {
@@ -3723,12 +3966,12 @@
   "daysElapsed": 3,
   "daysTotal": 61,
   "finished": false,
-  "returnPct": -0.73,
-  "spyReturnPct": 0.42,
-  "excessPct": -1.16,
+  "returnPct": -0.79,
+  "spyReturnPct": 0.41,
+  "excessPct": -1.2,
   "maxDrawdownPct": -1.35,
   "maxDrawdownAt": "2026-11-02T15:40:42-05:00",
-  "drawdownNowPct": -0.93,
+  "drawdownNowPct": -0.98,
   "trades": {
    "closed": 0,
    "wins": 0,
@@ -3747,9 +3990,9 @@
    },
    {
     "month": "2026-11",
-    "returnPct": -0.73,
-    "spyPct": 0.42,
-    "excessPct": -1.15
+    "returnPct": -0.79,
+    "spyPct": 0.4,
+    "excessPct": -1.19
    }
   ],
   "uptime": {
@@ -3765,7 +4008,7 @@
     "key": "spy",
     "label": "SPY'ı geçmek (masraflar düşülmüş)",
     "ok": false,
-    "value": -1.16,
+    "value": -1.2,
     "unit": "pct"
    },
    {
