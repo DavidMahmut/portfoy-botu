@@ -1,27 +1,58 @@
 {
- "asOf": "2026-10-30T19:33:12-04:00",
+ "asOf": "2026-11-02T19:54:31-05:00",
  "session": "post",
  "sessionLabel": "Piyasa sonrası (16:00–20:00 ET)",
- "equity": 3000.0,
- "totalImpact": 0.0,
- "totalImpactPct": 0.0,
- "items": [],
+ "equity": 2966.15,
+ "totalImpact": 2.25,
+ "totalImpactPct": 0.08,
+ "items": [
+  {
+   "ticker": "QQQ",
+   "name": "Invesco QQQ (Nasdaq 100)",
+   "side": "long",
+   "lev": 1,
+   "shares": 2.008,
+   "stopPrice": null,
+   "refClose": 681.13,
+   "refAt": "2026-11-02T15:55:00-05:00",
+   "price": 682.08,
+   "at": "2026-11-02T19:50:00-05:00",
+   "changePct": 0.14,
+   "impact": 1.91,
+   "beyondStop": false
+  },
+  {
+   "ticker": "TQQQ",
+   "name": "ProShares UltraPro QQQ (3x Nasdaq 100)",
+   "side": "long",
+   "lev": 3,
+   "shares": 1.1627,
+   "stopPrice": null,
+   "refClose": 59.45,
+   "refAt": "2026-11-02T15:55:00-05:00",
+   "price": 59.7485,
+   "at": "2026-11-02T19:50:00-05:00",
+   "changePct": 0.5,
+   "impact": 0.35,
+   "beyondStop": false
+  }
+ ],
  "market": [
   {
    "ticker": "SPY",
    "label": "S&P 500 (SPY)",
-   "refClose": 755.71,
-   "price": 756.63,
-   "at": "2026-10-30T19:31:20-04:00",
-   "changePct": 0.12
+   "refClose": 752.12,
+   "price": 752.55,
+   "at": "2026-11-02T19:50:00-05:00",
+   "changePct": 0.06
   },
   {
    "ticker": "QQQ",
    "label": "Nasdaq 100 (QQQ)",
-   "refClose": 690.56,
-   "price": 692.02,
-   "at": "2026-10-30T19:30:00-04:00",
-   "changePct": 0.21
+   "refClose": 681.13,
+   "price": 682.08,
+   "at": "2026-11-02T19:50:00-05:00",
+   "changePct": 0.14
   }
  ],
  "note": "Yalnızca izleme: bot bu saatlerde işlem yapmaz, zarar-kes emirleri normal seansta işler. Seans dışında işlem hacmi düşüktür, fiyatlar sert oynayabilir ve ertesi açılış farklı olabilir.",
