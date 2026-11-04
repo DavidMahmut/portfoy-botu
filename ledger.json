@@ -99,7 +99,7 @@
   }
  },
  "portfolio": {
-  "cash": 1793.67,
+  "cash": 1406.39,
   "positions": [
    {
     "stopMode": "managed",
@@ -111,16 +111,16 @@
     "shares": 2.008,
     "avgCost": 695.4676,
     "costBasis": 1396.5,
-    "lastPrice": 696.245,
-    "lastPriceAt": "2026-11-04T13:00:00-05:00",
+    "lastPrice": 695.6995,
+    "lastPriceAt": "2026-11-04T13:10:00-05:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (13:00 ET)",
+     "title": "Yahoo Finance 5 dk mum (13:10 ET)",
      "url": "https://finance.yahoo.com/quote/QQQ/"
     },
-    "marketValue": 1398.06,
-    "exposure": 1398.06,
-    "unrealized": 1.56,
-    "unrealizedPct": 0.11,
+    "marketValue": 1396.96,
+    "exposure": 1396.96,
+    "unrealized": 0.46,
+    "unrealizedPct": 0.03,
     "openedAt": "2026-11-02",
     "openedTs": "2026-11-02T09:50:00-05:00",
     "lastAddDate": "2026-11-02",
@@ -128,7 +128,7 @@
     "extremeSinceEntry": 695.1199951171875,
     "tookProfit": false,
     "thesis": "Endeks kolu, QQQ (1x): 0,00 $ → 1.396,50 $. Endeks kolu yönü YUKARI: SPY dünkü kapanış 755,72 $, 200 günlük ortalama 728,85 $ (+%3,69), 50 günlük ortalama 767,49 $. QQQ'nun 20 günlük oynaklığı yıllık %22,6; büyüklük %25 ÷ %22,6 = 1,10x. Hedef maruziyet +1,10x.",
-    "maintReq": 349.51
+    "maintReq": 349.24
    },
    {
     "stopMode": "managed",
@@ -140,16 +140,16 @@
     "shares": 1.1627,
     "avgCost": 63.2117,
     "costBasis": 73.5,
-    "lastPrice": 63.3822,
-    "lastPriceAt": "2026-11-04T13:00:00-05:00",
+    "lastPrice": 63.235,
+    "lastPriceAt": "2026-11-04T13:10:00-05:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (13:00 ET)",
+     "title": "Yahoo Finance 5 dk mum (13:10 ET)",
      "url": "https://finance.yahoo.com/quote/TQQQ/"
     },
-    "marketValue": 73.69,
-    "exposure": 221.08,
-    "unrealized": 0.19,
-    "unrealizedPct": 0.26,
+    "marketValue": 73.52,
+    "exposure": 220.57,
+    "unrealized": 0.02,
+    "unrealizedPct": 0.03,
     "openedAt": "2026-11-02",
     "openedTs": "2026-11-02T09:50:00-05:00",
     "lastAddDate": "2026-11-02",
@@ -157,7 +157,7 @@
     "extremeSinceEntry": 63.18009948730469,
     "tookProfit": false,
     "thesis": "Endeks kolu, TQQQ (3x): 0,00 $ → 73,50 $. Endeks kolu yönü YUKARI: SPY dünkü kapanış 755,72 $, 200 günlük ortalama 728,85 $ (+%3,69), 50 günlük ortalama 767,49 $. QQQ'nun 20 günlük oynaklığı yıllık %22,6; büyüklük %25 ÷ %22,6 = 1,10x. Hedef maruziyet +1,10x.",
-    "maintReq": 55.27
+    "maintReq": 55.14
    },
    {
     "stopMode": "event",
@@ -169,16 +169,16 @@
     "shares": 2.4419,
     "avgCost": 141.4214,
     "costBasis": 345.34,
-    "lastPrice": 151.93,
-    "lastPriceAt": "2026-11-04T13:00:00-05:00",
+    "lastPrice": 151.7556,
+    "lastPriceAt": "2026-11-04T13:10:00-05:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (13:00 ET)",
+     "title": "Yahoo Finance 5 dk mum (13:10 ET)",
      "url": "https://finance.yahoo.com/quote/SHOP/"
     },
-    "marketValue": 371.0,
-    "exposure": 371.0,
-    "unrealized": 25.66,
-    "unrealizedPct": 7.43,
+    "marketValue": 370.57,
+    "exposure": 370.57,
+    "unrealized": 25.23,
+    "unrealizedPct": 7.31,
     "openedAt": "2026-11-03",
     "openedTs": "2026-11-03T10:30:00-05:00",
     "lastAddDate": "2026-11-03",
@@ -202,8 +202,8 @@
      "publisher": "Yahoo Finance",
      "at": "2026-11-03T15:01:20+00:00"
     },
-    "maintReq": 92.75,
-    "lastBarTs": "2026-11-04T13:00:00-05:00"
+    "maintReq": 92.64,
+    "lastBarTs": "2026-11-04T13:10:00-05:00"
    },
    {
     "stopMode": "event",
@@ -215,21 +215,21 @@
     "shares": 1.1552,
     "avgCost": 201.899,
     "costBasis": 233.23,
-    "lastPrice": 198.68,
-    "lastPriceAt": "2026-11-04T13:00:00-05:00",
+    "lastPrice": 198.33,
+    "lastPriceAt": "2026-11-04T13:10:00-05:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (13:00 ET)",
+     "title": "Yahoo Finance 5 dk mum (13:10 ET)",
      "url": "https://finance.yahoo.com/quote/FSLR/"
     },
-    "marketValue": -229.52,
-    "exposure": 229.52,
-    "unrealized": 3.71,
-    "unrealizedPct": 1.59,
+    "marketValue": -229.11,
+    "exposure": 229.11,
+    "unrealized": 4.12,
+    "unrealizedPct": 1.77,
     "openedAt": "2026-11-04",
     "openedTs": "2026-11-04T10:30:00-05:00",
     "lastAddDate": "2026-11-04",
     "stopPrice": 215.08,
-    "extremeSinceEntry": 198.1,
+    "extremeSinceEntry": 197.1768,
     "tookProfit": false,
     "thesis": "Haber şoku: FSLR önceki kapanışa (185,90 $) göre +%10,81 yükselişle açıldı, ilk saatte −%1,61 geri verdi: piyasa haberin ilk tepkisini abartılı buldu. Kural gereği short açıldı. Zarar-kes 215,08 $ (ilk saatin en yükseğinin hemen ötesi, risk %6,5); çıkış 2026-11-06 kapanışında. Büyüklük: haber kolunun %15'i, zarar-keste kaybı kolun yaklaşık %1'i. Haber: “First Solar Jumps 9% After Democratic Sweep, but Trump’s Tariffs Already Favor It” (Benzinga Prediction Markets).",
     "sleeve": "event",
@@ -248,87 +248,41 @@
      "publisher": "Benzinga Prediction Markets",
      "at": "2026-11-04T14:15:25+00:00"
     },
-    "maintReq": 68.85,
-    "lastBarTs": "2026-11-04T13:00:00-05:00"
-   },
-   {
-    "stopMode": "event",
-    "ticker": "MMM",
-    "name": "MMM",
-    "kind": "Hisse",
-    "side": "short",
-    "lev": 1,
-    "shares": 1.9893,
-    "avgCost": 189.8001,
-    "costBasis": 377.57,
-    "lastPrice": 193.74,
-    "lastPriceAt": "2026-11-04T13:00:00-05:00",
-    "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (13:00 ET)",
-     "url": "https://finance.yahoo.com/quote/MMM/"
-    },
-    "marketValue": -385.41,
-    "exposure": 385.41,
-    "unrealized": -7.84,
-    "unrealizedPct": -2.08,
-    "openedAt": "2026-11-04",
-    "openedTs": "2026-11-04T10:30:00-05:00",
-    "lastAddDate": "2026-11-04",
-    "stopPrice": 194.41,
-    "extremeSinceEntry": 189.895,
-    "tookProfit": false,
-    "thesis": "Haber şoku: MMM önceki kapanışa (177,05 $) göre +%8,84 yükselişle açıldı, ilk saatte −%1,58 geri verdi: piyasa haberin ilk tepkisini abartılı buldu. Kural gereği short açıldı. Zarar-kes 194,41 $ (ilk saatin en yükseğinin hemen ötesi, risk %2,4); çıkış 2026-11-06 kapanışında. Büyüklük: haber kolunun %25'i, zarar-keste kaybı kolun yaklaşık %1'i. Haber: “3M Reaches $7.35B PFAS Personal Injury Settlement, Maintains 2026 Outlook” (MarketBeat).",
-    "sleeve": "event",
-    "exitDate": "2026-11-06",
-    "event": {
-     "gapPct": 8.84,
-     "firstHourPct": -1.58,
-     "prevClose": 177.05,
-     "open": 192.7,
-     "h1High": 194.22,
-     "h1Low": 187.74
-    },
-    "headline": {
-     "title": "3M Reaches $7.35B PFAS Personal Injury Settlement, Maintains 2026 Outlook",
-     "url": "https://www.marketbeat.com/instant-alerts/event-3m-reaches-735b-pfas-personal-injury-settlement-maintains-2026-outlook-2026-11-04/?utm_source=yahoofinance&utm_medium=yahoofinance",
-     "publisher": "MarketBeat",
-     "at": "2026-11-04T15:14:27+00:00"
-    },
-    "maintReq": 115.62,
-    "lastBarTs": "2026-11-04T13:00:00-05:00"
+    "maintReq": 68.73,
+    "lastBarTs": "2026-11-04T13:10:00-05:00"
    }
   ],
-  "realizedPL": 0.0,
+  "realizedPL": -9.71,
   "netDeposits": 3000.0,
   "costs": {
-   "slippage": 1.2129,
-   "commission": 1.75,
+   "slippage": 1.4063,
+   "commission": 2.1,
    "fees": 0.04,
    "interest": 0.0,
    "borrow": 0.0,
    "dividendsPaid": 0.0,
    "dividendsReceived": 0.0
   },
-  "longValue": 1842.75,
-  "shortValue": 614.92,
-  "positionsValue": 1227.83,
-  "totalValue": 3021.5,
-  "grossExposure": 2605.06,
-  "netExposure": 1375.22,
-  "leverage": 0.862,
-  "maintenanceReq": 682.0,
-  "marginBuffer": 2339.5,
-  "regTInitialReq": 1247.26,
-  "regTExcess": 1774.24,
-  "buyingPower": 3548.48,
+  "longValue": 1841.06,
+  "shortValue": 229.11,
+  "positionsValue": 1611.95,
+  "totalValue": 3018.34,
+  "grossExposure": 2217.22,
+  "netExposure": 1759.0,
+  "leverage": 0.735,
+  "maintenanceReq": 565.75,
+  "marginBuffer": 2452.59,
+  "regTInitialReq": 1053.47,
+  "regTExcess": 1964.87,
+  "buyingPower": 3929.75,
   "marginEligible": true,
-  "totalPL": 21.5,
-  "totalPLPct": 0.72,
-  "twrPct": 0.72,
-  "asOf": "2026-11-04T13:02:09-05:00",
-  "benchmarkPrice": 768.94,
-  "benchmarkValue": 3070.4,
-  "benchmarkTwrPct": 2.35
+  "totalPL": 18.34,
+  "totalPLPct": 0.61,
+  "twrPct": 0.61,
+  "asOf": "2026-11-04T13:12:13-05:00",
+  "benchmarkPrice": 768.75,
+  "benchmarkValue": 3069.64,
+  "benchmarkTwrPct": 2.32
  },
  "meta": {
   "engine": "trend-event v6",
@@ -343,9 +297,9 @@
    "ath": 759.66,
    "athDate": "2026-10-06",
    "athChecked": "2026-11-04",
-   "price": 696.24,
-   "at": "2026-11-04T13:00:00-05:00",
-   "ddPct": -8.35,
+   "price": 695.7,
+   "at": "2026-11-04T13:10:00-05:00",
+   "ddPct": -8.42,
    "level": "normal",
    "triggerPrice": 607.73,
    "correctionPrice": 683.69
@@ -372,7 +326,7 @@
     "2026-11-04"
    ]
   },
-  "lastRunAt": "2026-11-04T13:02:09-05:00",
+  "lastRunAt": "2026-11-04T13:12:13-05:00",
   "lastError": null,
   "spikeScanDate": "2026-11-04",
   "spikeScan": {
@@ -723,6 +677,45 @@
    "runId": "2026-11-04",
    "by": "bot",
    "locate": "Kolay ödünç (ETB) varsayımı: büyük, likit hisse"
+  },
+  {
+   "id": "t-20261104-03",
+   "ts": "2026-11-04T13:12:13-05:00",
+   "date": "2026-11-04",
+   "action": "COVER",
+   "side": "short",
+   "ticker": "MMM",
+   "name": "MMM",
+   "kind": "Hisse",
+   "shares": 1.9893,
+   "quotePrice": 194.41,
+   "quoteAt": "2026-11-04T13:05:00-05:00",
+   "slippagePct": 0.05,
+   "execPrice": 194.5072,
+   "value": 386.93,
+   "commission": 0.35,
+   "fees": 0.0,
+   "priceSource": {
+    "title": "Yahoo Finance 5 dk mum (13:05 ET)",
+    "url": "https://finance.yahoo.com/quote/MMM/"
+   },
+   "reason": "Haber şoku zarar-kesi (ilk saatin en yüksek seviyesinin ötesi) tetiklendi: 13:05 ET mumunda fiyat 194,63 $'a çıktı, zarar-kes seviyesi 194,41 $. Emir 194,41 $'dan gerçekleşti.",
+   "rule": "haber şoku zarar-kesi",
+   "sources": [
+    {
+     "title": "Yahoo Finance: MMM",
+     "url": "https://finance.yahoo.com/quote/MMM/"
+    },
+    {
+     "title": "yfinance (Yahoo Finance verileri)",
+     "url": "https://github.com/ranaroussi/yfinance"
+    }
+   ],
+   "runId": "2026-11-04",
+   "by": "bot",
+   "realizedPL": -9.71,
+   "holdingDays": 0,
+   "taxTerm": "kısa vade"
   }
  ],
  "snapshots": [
@@ -797,41 +790,36 @@
   },
   {
    "date": "2026-11-04",
-   "at": "2026-11-04T13:02:09-05:00",
-   "totalValue": 3021.5,
-   "cash": 1793.67,
-   "positionsValue": 1227.83,
-   "plPct": 0.72,
-   "twrPct": 0.72,
+   "at": "2026-11-04T13:12:13-05:00",
+   "totalValue": 3018.34,
+   "cash": 1406.39,
+   "positionsValue": 1611.95,
+   "plPct": 0.61,
+   "twrPct": 0.61,
    "netDeposits": 3000.0,
-   "leverage": 0.862,
-   "benchmarkPrice": 768.94,
-   "benchmarkValue": 3070.4,
+   "leverage": 0.735,
+   "benchmarkPrice": 768.75,
+   "benchmarkValue": 3069.64,
    "holdings": [
     {
      "ticker": "QQQ",
      "side": "long",
-     "value": 1398.06
+     "value": 1396.96
     },
     {
      "ticker": "TQQQ",
      "side": "long",
-     "value": 73.69
+     "value": 73.52
     },
     {
      "ticker": "SHOP",
      "side": "long",
-     "value": 371.0
+     "value": 370.57
     },
     {
      "ticker": "FSLR",
      "side": "short",
-     "value": -229.52
-    },
-    {
-     "ticker": "MMM",
-     "side": "short",
-     "value": -385.41
+     "value": -229.11
     }
    ]
   }
@@ -8340,6 +8328,109 @@
     ],
     "actions": [],
     "note": "MMM zarar-kes seviyesine %3'ten yakın"
+   },
+   {
+    "at": "2026-11-04T13:07:12-05:00",
+    "kind": "guard",
+    "status": "uyari",
+    "spyPrice": 769.04,
+    "spyChangePct": 1.95,
+    "totalValue": 3020.65,
+    "benchmarkValue": 3070.8,
+    "leverage": 0.862,
+    "marginBuffer": 2338.87,
+    "positions": [
+     {
+      "ticker": "QQQ",
+      "side": "long",
+      "price": 696.35,
+      "dayChangePct": 1.62,
+      "stopPrice": null,
+      "distancePct": null
+     },
+     {
+      "ticker": "TQQQ",
+      "side": "long",
+      "price": 63.41,
+      "dayChangePct": 4.72,
+      "stopPrice": null,
+      "distancePct": null
+     },
+     {
+      "ticker": "SHOP",
+      "side": "long",
+      "price": 151.455,
+      "dayChangePct": 6.23,
+      "stopPrice": 135.51,
+      "distancePct": 11.77
+     },
+     {
+      "ticker": "FSLR",
+      "side": "short",
+      "price": 197.785,
+      "dayChangePct": 6.39,
+      "stopPrice": 215.08,
+      "distancePct": 8.74
+     },
+     {
+      "ticker": "MMM",
+      "side": "short",
+      "price": 194.225,
+      "dayChangePct": 9.7,
+      "stopPrice": 194.41,
+      "distancePct": 0.1
+     }
+    ],
+    "actions": [],
+    "note": "MMM zarar-kes seviyesine %3'ten yakın"
+   },
+   {
+    "at": "2026-11-04T13:12:13-05:00",
+    "kind": "guard",
+    "status": "alarm",
+    "spyPrice": 768.75,
+    "spyChangePct": 1.91,
+    "totalValue": 3018.34,
+    "benchmarkValue": 3069.64,
+    "leverage": 0.735,
+    "marginBuffer": 2452.59,
+    "positions": [
+     {
+      "ticker": "QQQ",
+      "side": "long",
+      "price": 695.6995,
+      "dayChangePct": 1.52,
+      "stopPrice": null,
+      "distancePct": null
+     },
+     {
+      "ticker": "TQQQ",
+      "side": "long",
+      "price": 63.235,
+      "dayChangePct": 4.43,
+      "stopPrice": null,
+      "distancePct": null
+     },
+     {
+      "ticker": "SHOP",
+      "side": "long",
+      "price": 151.7556,
+      "dayChangePct": 6.44,
+      "stopPrice": 135.51,
+      "distancePct": 11.99
+     },
+     {
+      "ticker": "FSLR",
+      "side": "short",
+      "price": 198.33,
+      "dayChangePct": 6.69,
+      "stopPrice": 215.08,
+      "distancePct": 8.45
+     }
+    ],
+    "actions": [
+     "MMM short kapatıldı (386,93 $)"
+    ]
    }
   ]
  },
@@ -9044,7 +9135,8 @@
  ],
  "tax": {
   "2026": {
-   "commissions": 1.79
+   "commissions": 2.14,
+   "shortTermRealized": -9.71
   }
  },
  "evalHistory": [
@@ -9193,7 +9285,7 @@
   "start": "2026-10-30",
   "startAt": "2026-10-30T15:50:43-04:00",
   "end": "2027-01-28",
-  "asOf": "2026-11-04T13:02:09-05:00",
+  "asOf": "2026-11-04T13:12:13-05:00",
   "strategy": "v6",
   "history": [
    {
@@ -9257,20 +9349,20 @@
   "daysElapsed": 4,
   "daysTotal": 61,
   "finished": false,
-  "returnPct": 0.72,
-  "spyReturnPct": 2.35,
-  "excessPct": -1.63,
+  "returnPct": 0.61,
+  "spyReturnPct": 2.32,
+  "excessPct": -1.71,
   "maxDrawdownPct": -1.35,
   "maxDrawdownAt": "2026-11-02T15:40:42-05:00",
-  "drawdownNowPct": -0.17,
+  "drawdownNowPct": -0.28,
   "trades": {
-   "closed": 0,
+   "closed": 1,
    "wins": 0,
-   "winRatePct": null,
+   "winRatePct": 0.0,
    "avgWin": null,
-   "avgLoss": null,
-   "profitFactor": null,
-   "realizedPL": 0
+   "avgLoss": -9.71,
+   "profitFactor": 0.0,
+   "realizedPL": -9.71
   },
   "monthly": [
    {
@@ -9281,9 +9373,9 @@
    },
    {
     "month": "2026-11",
-    "returnPct": 0.72,
-    "spyPct": 2.34,
-    "excessPct": -1.62
+    "returnPct": 0.61,
+    "spyPct": 2.31,
+    "excessPct": -1.7
    }
   ],
   "uptime": {
@@ -9299,7 +9391,7 @@
     "key": "spy",
     "label": "SPY'ı geçmek (masraflar düşülmüş)",
     "ok": false,
-    "value": -1.63,
+    "value": -1.71,
     "unit": "pct"
    },
    {
