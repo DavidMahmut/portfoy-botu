@@ -111,16 +111,16 @@
     "shares": 2.008,
     "avgCost": 695.4676,
     "costBasis": 1396.5,
-    "lastPrice": 697.09,
-    "lastPriceAt": "2026-11-04T10:40:00-05:00",
+    "lastPrice": 692.54,
+    "lastPriceAt": "2026-11-04T10:50:00-05:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (10:40 ET)",
+     "title": "Yahoo Finance 5 dk mum (10:50 ET)",
      "url": "https://finance.yahoo.com/quote/QQQ/"
     },
-    "marketValue": 1399.76,
-    "exposure": 1399.76,
-    "unrealized": 3.26,
-    "unrealizedPct": 0.23,
+    "marketValue": 1390.62,
+    "exposure": 1390.62,
+    "unrealized": -5.88,
+    "unrealizedPct": -0.42,
     "openedAt": "2026-11-02",
     "openedTs": "2026-11-02T09:50:00-05:00",
     "lastAddDate": "2026-11-02",
@@ -128,7 +128,7 @@
     "extremeSinceEntry": 695.1199951171875,
     "tookProfit": false,
     "thesis": "Endeks kolu, QQQ (1x): 0,00 $ → 1.396,50 $. Endeks kolu yönü YUKARI: SPY dünkü kapanış 755,72 $, 200 günlük ortalama 728,85 $ (+%3,69), 50 günlük ortalama 767,49 $. QQQ'nun 20 günlük oynaklığı yıllık %22,6; büyüklük %25 ÷ %22,6 = 1,10x. Hedef maruziyet +1,10x.",
-    "maintReq": 349.94
+    "maintReq": 347.66
    },
    {
     "stopMode": "managed",
@@ -140,16 +140,16 @@
     "shares": 1.1627,
     "avgCost": 63.2117,
     "costBasis": 73.5,
-    "lastPrice": 63.61,
-    "lastPriceAt": "2026-11-04T10:40:00-05:00",
+    "lastPrice": 62.39,
+    "lastPriceAt": "2026-11-04T10:50:00-05:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (10:40 ET)",
+     "title": "Yahoo Finance 5 dk mum (10:50 ET)",
      "url": "https://finance.yahoo.com/quote/TQQQ/"
     },
-    "marketValue": 73.96,
-    "exposure": 221.88,
-    "unrealized": 0.46,
-    "unrealizedPct": 0.63,
+    "marketValue": 72.54,
+    "exposure": 217.62,
+    "unrealized": -0.96,
+    "unrealizedPct": -1.31,
     "openedAt": "2026-11-02",
     "openedTs": "2026-11-02T09:50:00-05:00",
     "lastAddDate": "2026-11-02",
@@ -157,7 +157,7 @@
     "extremeSinceEntry": 63.18009948730469,
     "tookProfit": false,
     "thesis": "Endeks kolu, TQQQ (3x): 0,00 $ → 73,50 $. Endeks kolu yönü YUKARI: SPY dünkü kapanış 755,72 $, 200 günlük ortalama 728,85 $ (+%3,69), 50 günlük ortalama 767,49 $. QQQ'nun 20 günlük oynaklığı yıllık %22,6; büyüklük %25 ÷ %22,6 = 1,10x. Hedef maruziyet +1,10x.",
-    "maintReq": 55.47
+    "maintReq": 54.41
    },
    {
     "stopMode": "event",
@@ -169,21 +169,21 @@
     "shares": 2.4419,
     "avgCost": 141.4214,
     "costBasis": 345.34,
-    "lastPrice": 148.69,
-    "lastPriceAt": "2026-11-04T10:40:00-05:00",
+    "lastPrice": 149.285,
+    "lastPriceAt": "2026-11-04T10:50:00-05:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (10:40 ET)",
+     "title": "Yahoo Finance 5 dk mum (10:50 ET)",
      "url": "https://finance.yahoo.com/quote/SHOP/"
     },
-    "marketValue": 363.09,
-    "exposure": 363.09,
-    "unrealized": 17.75,
-    "unrealizedPct": 5.14,
+    "marketValue": 364.54,
+    "exposure": 364.54,
+    "unrealized": 19.2,
+    "unrealizedPct": 5.56,
     "openedAt": "2026-11-03",
     "openedTs": "2026-11-03T10:30:00-05:00",
     "lastAddDate": "2026-11-03",
     "stopPrice": 135.51,
-    "extremeSinceEntry": 149.7699,
+    "extremeSinceEntry": 149.785,
     "tookProfit": false,
     "thesis": "Haber şoku: SHOP önceki kapanışa (156,22 $) göre −%12,81 düşüşle açıldı, ilk saatte +%4,77 toparlandı: piyasa haberin ilk tepkisini abartılı buldu. Kural gereği long açıldı. Zarar-kes 135,51 $ (ilk saatin en düşüğünün hemen ötesi, risk %4,3); çıkış 2026-11-05 kapanışında. Büyüklük: haber kolunun %23'i, zarar-keste kaybı kolun yaklaşık %1'i. Haber: “Apple stock falls, chip stocks rebound as oil extends decline: AlphaCheck” (Yahoo Finance).",
     "sleeve": "event",
@@ -202,8 +202,8 @@
      "publisher": "Yahoo Finance",
      "at": "2026-11-03T15:01:20+00:00"
     },
-    "maintReq": 90.77,
-    "lastBarTs": "2026-11-04T10:40:00-05:00"
+    "maintReq": 91.13,
+    "lastBarTs": "2026-11-04T10:50:00-05:00"
    },
    {
     "stopMode": "event",
@@ -215,16 +215,16 @@
     "shares": 1.1552,
     "avgCost": 201.899,
     "costBasis": 233.23,
-    "lastPrice": 203.78,
-    "lastPriceAt": "2026-11-04T10:40:00-05:00",
+    "lastPrice": 203.48,
+    "lastPriceAt": "2026-11-04T10:50:00-05:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (10:40 ET)",
+     "title": "Yahoo Finance 5 dk mum (10:50 ET)",
      "url": "https://finance.yahoo.com/quote/FSLR/"
     },
-    "marketValue": -235.41,
-    "exposure": 235.41,
-    "unrealized": -2.18,
-    "unrealizedPct": -0.93,
+    "marketValue": -235.06,
+    "exposure": 235.06,
+    "unrealized": -1.83,
+    "unrealizedPct": -0.78,
     "openedAt": "2026-11-04",
     "openedTs": "2026-11-04T10:30:00-05:00",
     "lastAddDate": "2026-11-04",
@@ -248,8 +248,8 @@
      "publisher": "Benzinga Prediction Markets",
      "at": "2026-11-04T14:15:25+00:00"
     },
-    "maintReq": 70.62,
-    "lastBarTs": "2026-11-04T10:40:00-05:00"
+    "maintReq": 70.52,
+    "lastBarTs": "2026-11-04T10:50:00-05:00"
    },
    {
     "stopMode": "event",
@@ -261,16 +261,16 @@
     "shares": 1.9893,
     "avgCost": 189.8001,
     "costBasis": 377.57,
-    "lastPrice": 190.865,
-    "lastPriceAt": "2026-11-04T10:40:00-05:00",
+    "lastPrice": 191.52,
+    "lastPriceAt": "2026-11-04T10:50:00-05:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (10:40 ET)",
+     "title": "Yahoo Finance 5 dk mum (10:50 ET)",
      "url": "https://finance.yahoo.com/quote/MMM/"
     },
-    "marketValue": -379.69,
-    "exposure": 379.69,
-    "unrealized": -2.12,
-    "unrealizedPct": -0.56,
+    "marketValue": -380.99,
+    "exposure": 380.99,
+    "unrealized": -3.42,
+    "unrealizedPct": -0.91,
     "openedAt": "2026-11-04",
     "openedTs": "2026-11-04T10:30:00-05:00",
     "lastAddDate": "2026-11-04",
@@ -294,8 +294,8 @@
      "publisher": "MarketBeat",
      "at": "2026-11-04T15:14:27+00:00"
     },
-    "maintReq": 113.91,
-    "lastBarTs": "2026-11-04T10:40:00-05:00"
+    "maintReq": 114.3,
+    "lastBarTs": "2026-11-04T10:50:00-05:00"
    }
   ],
   "realizedPL": 0.0,
@@ -309,26 +309,26 @@
    "dividendsPaid": 0.0,
    "dividendsReceived": 0.0
   },
-  "longValue": 1836.8,
-  "shortValue": 615.09,
-  "positionsValue": 1221.71,
-  "totalValue": 3015.38,
-  "grossExposure": 2599.82,
-  "netExposure": 1369.63,
-  "leverage": 0.862,
-  "maintenanceReq": 680.71,
-  "marginBuffer": 2334.67,
-  "regTInitialReq": 1244.44,
-  "regTExcess": 1770.94,
-  "buyingPower": 3541.88,
+  "longValue": 1827.7,
+  "shortValue": 616.05,
+  "positionsValue": 1211.65,
+  "totalValue": 3005.32,
+  "grossExposure": 2588.83,
+  "netExposure": 1356.73,
+  "leverage": 0.861,
+  "maintenanceReq": 678.02,
+  "marginBuffer": 2327.3,
+  "regTInitialReq": 1240.01,
+  "regTExcess": 1765.31,
+  "buyingPower": 3530.62,
   "marginEligible": true,
-  "totalPL": 15.38,
-  "totalPLPct": 0.51,
-  "twrPct": 0.51,
-  "asOf": "2026-11-04T10:41:11-05:00",
-  "benchmarkPrice": 767.26,
-  "benchmarkValue": 3063.69,
-  "benchmarkTwrPct": 2.12
+  "totalPL": 5.32,
+  "totalPLPct": 0.18,
+  "twrPct": 0.18,
+  "asOf": "2026-11-04T10:51:17-05:00",
+  "benchmarkPrice": 764.99,
+  "benchmarkValue": 3054.62,
+  "benchmarkTwrPct": 1.82
  },
  "meta": {
   "engine": "trend-event v6",
@@ -343,9 +343,9 @@
    "ath": 759.66,
    "athDate": "2026-10-06",
    "athChecked": "2026-11-04",
-   "price": 697.09,
-   "at": "2026-11-04T10:40:00-05:00",
-   "ddPct": -8.24,
+   "price": 692.54,
+   "at": "2026-11-04T10:50:00-05:00",
+   "ddPct": -8.84,
    "level": "normal",
    "triggerPrice": 607.73,
    "correctionPrice": 683.69
@@ -372,7 +372,7 @@
     "2026-11-04"
    ]
   },
-  "lastRunAt": "2026-11-04T10:41:11-05:00",
+  "lastRunAt": "2026-11-04T10:51:17-05:00",
   "lastError": null,
   "spikeScanDate": "2026-11-04",
   "spikeScan": {
@@ -797,41 +797,41 @@
   },
   {
    "date": "2026-11-04",
-   "at": "2026-11-04T10:41:11-05:00",
-   "totalValue": 3015.38,
+   "at": "2026-11-04T10:51:17-05:00",
+   "totalValue": 3005.32,
    "cash": 1793.67,
-   "positionsValue": 1221.71,
-   "plPct": 0.51,
-   "twrPct": 0.51,
+   "positionsValue": 1211.65,
+   "plPct": 0.18,
+   "twrPct": 0.18,
    "netDeposits": 3000.0,
-   "leverage": 0.862,
-   "benchmarkPrice": 767.26,
-   "benchmarkValue": 3063.69,
+   "leverage": 0.861,
+   "benchmarkPrice": 764.99,
+   "benchmarkValue": 3054.62,
    "holdings": [
     {
      "ticker": "QQQ",
      "side": "long",
-     "value": 1399.76
+     "value": 1390.62
     },
     {
      "ticker": "TQQQ",
      "side": "long",
-     "value": 73.96
+     "value": 72.54
     },
     {
      "ticker": "SHOP",
      "side": "long",
-     "value": 363.09
+     "value": 364.54
     },
     {
      "ticker": "FSLR",
      "side": "short",
-     "value": -235.41
+     "value": -235.06
     },
     {
      "ticker": "MMM",
      "side": "short",
-     "value": -379.69
+     "value": -380.99
     }
    ]
   }
@@ -6800,6 +6800,116 @@
     ],
     "actions": [],
     "note": "MMM zarar-kes seviyesine %3'ten yakın"
+   },
+   {
+    "at": "2026-11-04T10:46:16-05:00",
+    "kind": "guard",
+    "status": "uyari",
+    "spyPrice": 766.09,
+    "spyChangePct": 1.56,
+    "totalValue": 3007.73,
+    "benchmarkValue": 3059.02,
+    "leverage": 0.861,
+    "marginBuffer": 2329.35,
+    "positions": [
+     {
+      "ticker": "QQQ",
+      "side": "long",
+      "price": 694.14,
+      "dayChangePct": 1.29,
+      "stopPrice": null,
+      "distancePct": null
+     },
+     {
+      "ticker": "TQQQ",
+      "side": "long",
+      "price": 62.84,
+      "dayChangePct": 3.78,
+      "stopPrice": null,
+      "distancePct": null
+     },
+     {
+      "ticker": "SHOP",
+      "side": "long",
+      "price": 148.375,
+      "dayChangePct": 4.07,
+      "stopPrice": 135.51,
+      "distancePct": 9.49
+     },
+     {
+      "ticker": "FSLR",
+      "side": "short",
+      "price": 203.29,
+      "dayChangePct": 9.35,
+      "stopPrice": 215.08,
+      "distancePct": 5.8
+     },
+     {
+      "ticker": "MMM",
+      "side": "short",
+      "price": 191.18,
+      "dayChangePct": 7.98,
+      "stopPrice": 194.41,
+      "distancePct": 1.69
+     }
+    ],
+    "actions": [],
+    "note": "MMM zarar-kes seviyesine %3'ten yakın"
+   },
+   {
+    "at": "2026-11-04T10:51:17-05:00",
+    "kind": "guard",
+    "status": "uyari",
+    "spyPrice": 764.99,
+    "spyChangePct": 1.41,
+    "totalValue": 3005.32,
+    "benchmarkValue": 3054.62,
+    "leverage": 0.861,
+    "marginBuffer": 2327.3,
+    "positions": [
+     {
+      "ticker": "QQQ",
+      "side": "long",
+      "price": 692.54,
+      "dayChangePct": 1.06,
+      "stopPrice": null,
+      "distancePct": null
+     },
+     {
+      "ticker": "TQQQ",
+      "side": "long",
+      "price": 62.39,
+      "dayChangePct": 3.04,
+      "stopPrice": null,
+      "distancePct": null
+     },
+     {
+      "ticker": "SHOP",
+      "side": "long",
+      "price": 149.285,
+      "dayChangePct": 4.71,
+      "stopPrice": 135.51,
+      "distancePct": 10.17
+     },
+     {
+      "ticker": "FSLR",
+      "side": "short",
+      "price": 203.48,
+      "dayChangePct": 9.46,
+      "stopPrice": 215.08,
+      "distancePct": 5.7
+     },
+     {
+      "ticker": "MMM",
+      "side": "short",
+      "price": 191.52,
+      "dayChangePct": 8.17,
+      "stopPrice": 194.41,
+      "distancePct": 1.51
+     }
+    ],
+    "actions": [],
+    "note": "MMM zarar-kes seviyesine %3'ten yakın"
    }
   ]
  },
@@ -7653,7 +7763,7 @@
   "start": "2026-10-30",
   "startAt": "2026-10-30T15:50:43-04:00",
   "end": "2027-01-28",
-  "asOf": "2026-11-04T10:41:11-05:00",
+  "asOf": "2026-11-04T10:51:17-05:00",
   "strategy": "v6",
   "history": [
    {
@@ -7717,12 +7827,12 @@
   "daysElapsed": 4,
   "daysTotal": 61,
   "finished": false,
-  "returnPct": 0.51,
-  "spyReturnPct": 2.12,
-  "excessPct": -1.61,
+  "returnPct": 0.18,
+  "spyReturnPct": 1.82,
+  "excessPct": -1.64,
   "maxDrawdownPct": -1.35,
   "maxDrawdownAt": "2026-11-02T15:40:42-05:00",
-  "drawdownNowPct": -0.37,
+  "drawdownNowPct": -0.71,
   "trades": {
    "closed": 0,
    "wins": 0,
@@ -7741,9 +7851,9 @@
    },
    {
     "month": "2026-11",
-    "returnPct": 0.51,
-    "spyPct": 2.11,
-    "excessPct": -1.6
+    "returnPct": 0.18,
+    "spyPct": 1.81,
+    "excessPct": -1.63
    }
   ],
   "uptime": {
@@ -7759,7 +7869,7 @@
     "key": "spy",
     "label": "SPY'ı geçmek (masraflar düşülmüş)",
     "ok": false,
-    "value": -1.61,
+    "value": -1.64,
     "unit": "pct"
    },
    {
