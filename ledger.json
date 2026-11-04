@@ -99,7 +99,7 @@
   }
  },
  "portfolio": {
-  "cash": 1183.61,
+  "cash": 1793.67,
   "positions": [
    {
     "stopMode": "managed",
@@ -111,16 +111,16 @@
     "shares": 2.008,
     "avgCost": 695.4676,
     "costBasis": 1396.5,
-    "lastPrice": 699.47,
-    "lastPriceAt": "2026-11-04T10:20:00-05:00",
+    "lastPrice": 697.29,
+    "lastPriceAt": "2026-11-04T10:30:00-05:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (10:20 ET)",
+     "title": "Yahoo Finance 5 dk mum (10:30 ET)",
      "url": "https://finance.yahoo.com/quote/QQQ/"
     },
-    "marketValue": 1404.54,
-    "exposure": 1404.54,
-    "unrealized": 8.04,
-    "unrealizedPct": 0.58,
+    "marketValue": 1400.16,
+    "exposure": 1400.16,
+    "unrealized": 3.66,
+    "unrealizedPct": 0.26,
     "openedAt": "2026-11-02",
     "openedTs": "2026-11-02T09:50:00-05:00",
     "lastAddDate": "2026-11-02",
@@ -128,7 +128,7 @@
     "extremeSinceEntry": 695.1199951171875,
     "tookProfit": false,
     "thesis": "Endeks kolu, QQQ (1x): 0,00 $ → 1.396,50 $. Endeks kolu yönü YUKARI: SPY dünkü kapanış 755,72 $, 200 günlük ortalama 728,85 $ (+%3,69), 50 günlük ortalama 767,49 $. QQQ'nun 20 günlük oynaklığı yıllık %22,6; büyüklük %25 ÷ %22,6 = 1,10x. Hedef maruziyet +1,10x.",
-    "maintReq": 351.13
+    "maintReq": 350.04
    },
    {
     "stopMode": "managed",
@@ -140,16 +140,16 @@
     "shares": 1.1627,
     "avgCost": 63.2117,
     "costBasis": 73.5,
-    "lastPrice": 64.2399,
-    "lastPriceAt": "2026-11-04T10:20:00-05:00",
+    "lastPrice": 63.67,
+    "lastPriceAt": "2026-11-04T10:30:00-05:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (10:20 ET)",
+     "title": "Yahoo Finance 5 dk mum (10:30 ET)",
      "url": "https://finance.yahoo.com/quote/TQQQ/"
     },
-    "marketValue": 74.69,
-    "exposure": 224.08,
-    "unrealized": 1.19,
-    "unrealizedPct": 1.62,
+    "marketValue": 74.03,
+    "exposure": 222.09,
+    "unrealized": 0.53,
+    "unrealizedPct": 0.72,
     "openedAt": "2026-11-02",
     "openedTs": "2026-11-02T09:50:00-05:00",
     "lastAddDate": "2026-11-02",
@@ -157,7 +157,7 @@
     "extremeSinceEntry": 63.18009948730469,
     "tookProfit": false,
     "thesis": "Endeks kolu, TQQQ (3x): 0,00 $ → 73,50 $. Endeks kolu yönü YUKARI: SPY dünkü kapanış 755,72 $, 200 günlük ortalama 728,85 $ (+%3,69), 50 günlük ortalama 767,49 $. QQQ'nun 20 günlük oynaklığı yıllık %22,6; büyüklük %25 ÷ %22,6 = 1,10x. Hedef maruziyet +1,10x.",
-    "maintReq": 56.02
+    "maintReq": 55.52
    },
    {
     "stopMode": "event",
@@ -169,21 +169,21 @@
     "shares": 2.4419,
     "avgCost": 141.4214,
     "costBasis": 345.34,
-    "lastPrice": 149.0,
-    "lastPriceAt": "2026-11-04T10:20:00-05:00",
+    "lastPrice": 148.615,
+    "lastPriceAt": "2026-11-04T10:30:00-05:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (10:20 ET)",
+     "title": "Yahoo Finance 5 dk mum (10:30 ET)",
      "url": "https://finance.yahoo.com/quote/SHOP/"
     },
-    "marketValue": 363.84,
-    "exposure": 363.84,
-    "unrealized": 18.5,
-    "unrealizedPct": 5.36,
+    "marketValue": 362.9,
+    "exposure": 362.9,
+    "unrealized": 17.56,
+    "unrealizedPct": 5.08,
     "openedAt": "2026-11-03",
     "openedTs": "2026-11-03T10:30:00-05:00",
     "lastAddDate": "2026-11-03",
     "stopPrice": 135.51,
-    "extremeSinceEntry": 149.34,
+    "extremeSinceEntry": 149.7699,
     "tookProfit": false,
     "thesis": "Haber şoku: SHOP önceki kapanışa (156,22 $) göre −%12,81 düşüşle açıldı, ilk saatte +%4,77 toparlandı: piyasa haberin ilk tepkisini abartılı buldu. Kural gereği long açıldı. Zarar-kes 135,51 $ (ilk saatin en düşüğünün hemen ötesi, risk %4,3); çıkış 2026-11-05 kapanışında. Büyüklük: haber kolunun %23'i, zarar-keste kaybı kolun yaklaşık %1'i. Haber: “Apple stock falls, chip stocks rebound as oil extends decline: AlphaCheck” (Yahoo Finance).",
     "sleeve": "event",
@@ -202,41 +202,131 @@
      "publisher": "Yahoo Finance",
      "at": "2026-11-03T15:01:20+00:00"
     },
-    "maintReq": 90.96,
-    "lastBarTs": "2026-11-04T10:20:00-05:00"
+    "maintReq": 90.73,
+    "lastBarTs": "2026-11-04T10:30:00-05:00"
+   },
+   {
+    "stopMode": "event",
+    "ticker": "FSLR",
+    "name": "FSLR",
+    "kind": "Hisse",
+    "side": "short",
+    "lev": 1,
+    "shares": 1.1552,
+    "avgCost": 201.899,
+    "costBasis": 233.23,
+    "lastPrice": 202.0,
+    "lastPriceAt": "2026-11-04T10:30:00-05:00",
+    "priceSource": {
+     "title": "Yahoo Finance 5 dk mum (10:30 ET)",
+     "url": "https://finance.yahoo.com/quote/FSLR/"
+    },
+    "marketValue": -233.35,
+    "exposure": 233.35,
+    "unrealized": -0.12,
+    "unrealizedPct": -0.05,
+    "openedAt": "2026-11-04",
+    "openedTs": "2026-11-04T10:30:00-05:00",
+    "lastAddDate": "2026-11-04",
+    "stopPrice": 215.08,
+    "extremeSinceEntry": 202.0,
+    "tookProfit": false,
+    "thesis": "Haber şoku: FSLR önceki kapanışa (185,90 $) göre +%10,81 yükselişle açıldı, ilk saatte −%1,61 geri verdi: piyasa haberin ilk tepkisini abartılı buldu. Kural gereği short açıldı. Zarar-kes 215,08 $ (ilk saatin en yükseğinin hemen ötesi, risk %6,5); çıkış 2026-11-06 kapanışında. Büyüklük: haber kolunun %15'i, zarar-keste kaybı kolun yaklaşık %1'i. Haber: “First Solar Jumps 9% After Democratic Sweep, but Trump’s Tariffs Already Favor It” (Benzinga Prediction Markets).",
+    "sleeve": "event",
+    "exitDate": "2026-11-06",
+    "event": {
+     "gapPct": 10.81,
+     "firstHourPct": -1.61,
+     "prevClose": 185.9,
+     "open": 206.0,
+     "h1High": 214.87,
+     "h1Low": 202.15
+    },
+    "headline": {
+     "title": "First Solar Jumps 9% After Democratic Sweep, but Trump’s Tariffs Already Favor It",
+     "url": "https://www.benzinga.com/markets/prediction-markets/26/11/62865339/first-solar-democratic-sweep?utm_source=yahooFinance&utm_campaign=partner_feed&utm_medium=referral",
+     "publisher": "Benzinga Prediction Markets",
+     "at": "2026-11-04T14:15:25+00:00"
+    },
+    "maintReq": 70.01
+   },
+   {
+    "stopMode": "event",
+    "ticker": "MMM",
+    "name": "MMM",
+    "kind": "Hisse",
+    "side": "short",
+    "lev": 1,
+    "shares": 1.9893,
+    "avgCost": 189.8001,
+    "costBasis": 377.57,
+    "lastPrice": 189.895,
+    "lastPriceAt": "2026-11-04T10:30:00-05:00",
+    "priceSource": {
+     "title": "Yahoo Finance 5 dk mum (10:30 ET)",
+     "url": "https://finance.yahoo.com/quote/MMM/"
+    },
+    "marketValue": -377.76,
+    "exposure": 377.76,
+    "unrealized": -0.19,
+    "unrealizedPct": -0.05,
+    "openedAt": "2026-11-04",
+    "openedTs": "2026-11-04T10:30:00-05:00",
+    "lastAddDate": "2026-11-04",
+    "stopPrice": 194.41,
+    "extremeSinceEntry": 189.89500427246094,
+    "tookProfit": false,
+    "thesis": "Haber şoku: MMM önceki kapanışa (177,05 $) göre +%8,84 yükselişle açıldı, ilk saatte −%1,58 geri verdi: piyasa haberin ilk tepkisini abartılı buldu. Kural gereği short açıldı. Zarar-kes 194,41 $ (ilk saatin en yükseğinin hemen ötesi, risk %2,4); çıkış 2026-11-06 kapanışında. Büyüklük: haber kolunun %25'i, zarar-keste kaybı kolun yaklaşık %1'i. Haber: “3M Reaches $7.35B PFAS Personal Injury Settlement, Maintains 2026 Outlook” (MarketBeat).",
+    "sleeve": "event",
+    "exitDate": "2026-11-06",
+    "event": {
+     "gapPct": 8.84,
+     "firstHourPct": -1.58,
+     "prevClose": 177.05,
+     "open": 192.7,
+     "h1High": 194.22,
+     "h1Low": 187.74
+    },
+    "headline": {
+     "title": "3M Reaches $7.35B PFAS Personal Injury Settlement, Maintains 2026 Outlook",
+     "url": "https://www.marketbeat.com/instant-alerts/event-3m-reaches-735b-pfas-personal-injury-settlement-maintains-2026-outlook-2026-11-04/?utm_source=yahoofinance&utm_medium=yahoofinance",
+     "publisher": "MarketBeat",
+     "at": "2026-11-04T15:14:27+00:00"
+    },
+    "maintReq": 113.33
    }
   ],
   "realizedPL": 0.0,
   "netDeposits": 3000.0,
   "costs": {
-   "slippage": 0.9074,
-   "commission": 1.05,
-   "fees": 0.0,
+   "slippage": 1.2129,
+   "commission": 1.75,
+   "fees": 0.04,
    "interest": 0.0,
    "borrow": 0.0,
    "dividendsPaid": 0.0,
    "dividendsReceived": 0.0
   },
-  "longValue": 1843.07,
-  "shortValue": 0.0,
-  "positionsValue": 1843.07,
-  "totalValue": 3026.68,
-  "grossExposure": 1992.45,
-  "netExposure": 1992.45,
-  "leverage": 0.658,
-  "maintenanceReq": 498.11,
-  "marginBuffer": 2528.57,
-  "regTInitialReq": 940.21,
-  "regTExcess": 2086.47,
-  "buyingPower": 4172.94,
+  "longValue": 1837.09,
+  "shortValue": 611.11,
+  "positionsValue": 1225.98,
+  "totalValue": 3019.65,
+  "grossExposure": 2596.26,
+  "netExposure": 1374.04,
+  "leverage": 0.86,
+  "maintenanceReq": 679.63,
+  "marginBuffer": 2340.02,
+  "regTInitialReq": 1242.61,
+  "regTExcess": 1777.04,
+  "buyingPower": 3554.09,
   "marginEligible": true,
-  "totalPL": 26.68,
-  "totalPLPct": 0.89,
-  "twrPct": 0.89,
-  "asOf": "2026-11-04T10:20:55-05:00",
-  "benchmarkPrice": 767.57,
-  "benchmarkValue": 3064.93,
-  "benchmarkTwrPct": 2.16
+  "totalPL": 19.65,
+  "totalPLPct": 0.66,
+  "twrPct": 0.66,
+  "asOf": "2026-11-04T10:30:59-05:00",
+  "benchmarkPrice": 766.43,
+  "benchmarkValue": 3060.37,
+  "benchmarkTwrPct": 2.01
  },
  "meta": {
   "engine": "trend-event v6",
@@ -251,9 +341,9 @@
    "ath": 759.66,
    "athDate": "2026-10-06",
    "athChecked": "2026-11-04",
-   "price": 699.47,
-   "at": "2026-11-04T10:20:00-05:00",
-   "ddPct": -7.92,
+   "price": 697.29,
+   "at": "2026-11-04T10:30:00-05:00",
+   "ddPct": -8.21,
    "level": "normal",
    "triggerPrice": 607.73,
    "correctionPrice": 683.69
@@ -280,7 +370,7 @@
     "2026-11-04"
    ]
   },
-  "lastRunAt": "2026-11-04T10:20:55-05:00",
+  "lastRunAt": "2026-11-04T10:30:59-05:00",
   "lastError": null,
   "spikeScanDate": "2026-11-04",
   "spikeScan": {
@@ -309,50 +399,131 @@
    "now": 1.1,
    "date": "2026-11-04"
   },
-  "eventScanDate": "2026-11-03",
+  "eventScanDate": "2026-11-04",
   "eventScan": {
-   "date": "2026-11-03",
-   "at": "2026-11-03T10:31:05-05:00",
+   "date": "2026-11-04",
+   "at": "2026-11-04T10:30:59-05:00",
    "checked": 165,
    "gaps": [
     {
-     "ticker": "SHOP",
-     "name": "Shopify",
-     "gapPct": -12.81,
-     "firstHourPct": 4.77,
-     "prevClose": 156.22,
-     "open": 136.21,
-     "h1High": 143.5,
-     "h1Low": 135.65,
-     "h1Close": 142.71
+     "ticker": "DDOG",
+     "name": "Datadog",
+     "gapPct": -9.42,
+     "firstHourPct": -1.3,
+     "prevClose": 220.52,
+     "open": 199.74,
+     "h1High": 207.74,
+     "h1Low": 188.38,
+     "h1Close": 197.15
+    },
+    {
+     "ticker": "FSLR",
+     "name": "FSLR",
+     "gapPct": 10.81,
+     "firstHourPct": -1.61,
+     "prevClose": 185.9,
+     "open": 206.0,
+     "h1High": 214.87,
+     "h1Low": 202.15,
+     "h1Close": 202.69
+    },
+    {
+     "ticker": "MMM",
+     "name": "MMM",
+     "gapPct": 8.84,
+     "firstHourPct": -1.58,
+     "prevClose": 177.05,
+     "open": 192.7,
+     "h1High": 194.22,
+     "h1Low": 187.74,
+     "h1Close": 189.65
+    },
+    {
+     "ticker": "VST",
+     "name": "Vistra",
+     "gapPct": -10.17,
+     "firstHourPct": -4.39,
+     "prevClose": 139.59,
+     "open": 125.4,
+     "h1High": 128.07,
+     "h1Low": 119.6,
+     "h1Close": 119.89
     }
    ],
    "taken": [
     {
-     "ticker": "SHOP",
-     "name": "Shopify",
-     "gapPct": -12.81,
-     "firstHourPct": 4.77,
-     "prevClose": 156.22,
-     "open": 136.21,
-     "h1High": 143.5,
-     "h1Low": 135.65,
-     "h1Close": 142.71,
-     "side": "long",
-     "ssr": true,
-     "stop": 135.51,
-     "amount": 345.34,
-     "price": 141.35,
-     "exitDate": "2026-11-05",
+     "ticker": "FSLR",
+     "name": "FSLR",
+     "gapPct": 10.81,
+     "firstHourPct": -1.61,
+     "prevClose": 185.9,
+     "open": 206.0,
+     "h1High": 214.87,
+     "h1Low": 202.15,
+     "h1Close": 202.69,
+     "side": "short",
+     "ssr": false,
+     "stop": 215.08,
+     "amount": 233.25,
+     "price": 202.0,
+     "exitDate": "2026-11-06",
      "headline": {
-      "title": "Apple stock falls, chip stocks rebound as oil extends decline: AlphaCheck",
-      "url": "https://finance.yahoo.com/markets/article/apple-stock-falls-chip-stocks-rebound-as-oil-extends-decline-alphacheck-150120677.html?.tsrc=rss",
-      "publisher": "Yahoo Finance",
-      "at": "2026-11-03T15:01:20+00:00"
+      "title": "First Solar Jumps 9% After Democratic Sweep, but Trump’s Tariffs Already Favor It",
+      "url": "https://www.benzinga.com/markets/prediction-markets/26/11/62865339/first-solar-democratic-sweep?utm_source=yahooFinance&utm_campaign=partner_feed&utm_medium=referral",
+      "publisher": "Benzinga Prediction Markets",
+      "at": "2026-11-04T14:15:25+00:00"
+     }
+    },
+    {
+     "ticker": "MMM",
+     "name": "MMM",
+     "gapPct": 8.84,
+     "firstHourPct": -1.58,
+     "prevClose": 177.05,
+     "open": 192.7,
+     "h1High": 194.22,
+     "h1Low": 187.74,
+     "h1Close": 189.65,
+     "side": "short",
+     "ssr": false,
+     "stop": 194.41,
+     "amount": 377.59,
+     "price": 189.9,
+     "exitDate": "2026-11-06",
+     "headline": {
+      "title": "3M Reaches $7.35B PFAS Personal Injury Settlement, Maintains 2026 Outlook",
+      "url": "https://www.marketbeat.com/instant-alerts/event-3m-reaches-735b-pfas-personal-injury-settlement-maintains-2026-outlook-2026-11-04/?utm_source=yahoofinance&utm_medium=yahoofinance",
+      "publisher": "MarketBeat",
+      "at": "2026-11-04T15:14:27+00:00"
      }
     }
    ],
-   "skipped": [],
+   "skipped": [
+    {
+     "ticker": "DDOG",
+     "name": "Datadog",
+     "gapPct": -9.42,
+     "firstHourPct": -1.3,
+     "prevClose": 220.52,
+     "open": 199.74,
+     "h1High": 207.74,
+     "h1Low": 188.38,
+     "h1Close": 197.15,
+     "why": "ilk saatte haberin yönünde devam etti; testte bu durum zarar ettirdi"
+    },
+    {
+     "ticker": "VST",
+     "name": "Vistra",
+     "gapPct": -10.17,
+     "firstHourPct": -4.39,
+     "prevClose": 139.59,
+     "open": 125.4,
+     "h1High": 128.07,
+     "h1Low": 119.6,
+     "h1Close": 119.89,
+     "why": "ilk saatte haberin yönünde devam etti; testte bu durum zarar ettirdi"
+    }
+   ],
    "rule": "Açılış boşluğu en az %8; ilk saatte haberin tersine en az %0,5 dönüş; 2 işlem günü tut, zarar-kes ilk saatin öbür ucu."
   }
  },
@@ -468,6 +639,88 @@
    ],
    "runId": "2026-11-03",
    "by": "bot"
+  },
+  {
+   "id": "t-20261104-01",
+   "ts": "2026-11-04T10:30:59-05:00",
+   "date": "2026-11-04",
+   "action": "SHORT",
+   "side": "short",
+   "ticker": "FSLR",
+   "name": "FSLR",
+   "kind": "Hisse",
+   "shares": 1.1552,
+   "quotePrice": 202.0,
+   "quoteAt": "2026-11-04T10:30:00-05:00",
+   "slippagePct": 0.05,
+   "execPrice": 201.899,
+   "value": 233.23,
+   "commission": 0.35,
+   "fees": 0.02,
+   "priceSource": {
+    "title": "Yahoo Finance 5 dk mum (10:30 ET)",
+    "url": "https://finance.yahoo.com/quote/FSLR/"
+   },
+   "reason": "Haber şoku: FSLR önceki kapanışa (185,90 $) göre +%10,81 yükselişle açıldı, ilk saatte −%1,61 geri verdi: piyasa haberin ilk tepkisini abartılı buldu. Kural gereği short açıldı. Zarar-kes 215,08 $ (ilk saatin en yükseğinin hemen ötesi, risk %6,5); çıkış 2026-11-06 kapanışında. Büyüklük: haber kolunun %15'i, zarar-keste kaybı kolun yaklaşık %1'i. Haber: “First Solar Jumps 9% After Democratic Sweep, but Trump’s Tariffs Already Favor It” (Benzinga Prediction Markets).",
+   "rule": "haber şoku",
+   "sources": [
+    {
+     "title": "First Solar Jumps 9% After Democratic Sweep, but Trump’s Tariffs Already Favor It",
+     "url": "https://www.benzinga.com/markets/prediction-markets/26/11/62865339/first-solar-democratic-sweep?utm_source=yahooFinance&utm_campaign=partner_feed&utm_medium=referral"
+    },
+    {
+     "title": "Yahoo Finance: FSLR",
+     "url": "https://finance.yahoo.com/quote/FSLR/"
+    },
+    {
+     "title": "yfinance (Yahoo Finance verileri)",
+     "url": "https://github.com/ranaroussi/yfinance"
+    }
+   ],
+   "runId": "2026-11-04",
+   "by": "bot",
+   "locate": "Kolay ödünç (ETB) varsayımı: büyük, likit hisse"
+  },
+  {
+   "id": "t-20261104-02",
+   "ts": "2026-11-04T10:30:59-05:00",
+   "date": "2026-11-04",
+   "action": "SHORT",
+   "side": "short",
+   "ticker": "MMM",
+   "name": "MMM",
+   "kind": "Hisse",
+   "shares": 1.9893,
+   "quotePrice": 189.895,
+   "quoteAt": "2026-11-04T10:30:00-05:00",
+   "slippagePct": 0.05,
+   "execPrice": 189.8001,
+   "value": 377.57,
+   "commission": 0.35,
+   "fees": 0.02,
+   "priceSource": {
+    "title": "Yahoo Finance 5 dk mum (10:30 ET)",
+    "url": "https://finance.yahoo.com/quote/MMM/"
+   },
+   "reason": "Haber şoku: MMM önceki kapanışa (177,05 $) göre +%8,84 yükselişle açıldı, ilk saatte −%1,58 geri verdi: piyasa haberin ilk tepkisini abartılı buldu. Kural gereği short açıldı. Zarar-kes 194,41 $ (ilk saatin en yükseğinin hemen ötesi, risk %2,4); çıkış 2026-11-06 kapanışında. Büyüklük: haber kolunun %25'i, zarar-keste kaybı kolun yaklaşık %1'i. Haber: “3M Reaches $7.35B PFAS Personal Injury Settlement, Maintains 2026 Outlook” (MarketBeat).",
+   "rule": "haber şoku",
+   "sources": [
+    {
+     "title": "3M Reaches $7.35B PFAS Personal Injury Settlement, Maintains 2026 Outlook",
+     "url": "https://www.marketbeat.com/instant-alerts/event-3m-reaches-735b-pfas-personal-injury-settlement-maintains-2026-outlook-2026-11-04/?utm_source=yahoofinance&utm_medium=yahoofinance"
+    },
+    {
+     "title": "Yahoo Finance: MMM",
+     "url": "https://finance.yahoo.com/quote/MMM/"
+    },
+    {
+     "title": "yfinance (Yahoo Finance verileri)",
+     "url": "https://github.com/ranaroussi/yfinance"
+    }
+   ],
+   "runId": "2026-11-04",
+   "by": "bot",
+   "locate": "Kolay ödünç (ETB) varsayımı: büyük, likit hisse"
   }
  ],
  "snapshots": [
@@ -542,31 +795,41 @@
   },
   {
    "date": "2026-11-04",
-   "at": "2026-11-04T10:20:55-05:00",
-   "totalValue": 3026.68,
-   "cash": 1183.61,
-   "positionsValue": 1843.07,
-   "plPct": 0.89,
-   "twrPct": 0.89,
+   "at": "2026-11-04T10:30:59-05:00",
+   "totalValue": 3019.65,
+   "cash": 1793.67,
+   "positionsValue": 1225.98,
+   "plPct": 0.66,
+   "twrPct": 0.66,
    "netDeposits": 3000.0,
-   "leverage": 0.658,
-   "benchmarkPrice": 767.57,
-   "benchmarkValue": 3064.93,
+   "leverage": 0.86,
+   "benchmarkPrice": 766.43,
+   "benchmarkValue": 3060.37,
    "holdings": [
     {
      "ticker": "QQQ",
      "side": "long",
-     "value": 1404.54
+     "value": 1400.16
     },
     {
      "ticker": "TQQQ",
      "side": "long",
-     "value": 74.69
+     "value": 74.03
     },
     {
      "ticker": "SHOP",
      "side": "long",
-     "value": 363.84
+     "value": 362.9
+    },
+    {
+     "ticker": "FSLR",
+     "side": "short",
+     "value": -233.35
+    },
+    {
+     "ticker": "MMM",
+     "side": "short",
+     "value": -377.76
     }
    ]
   }
@@ -6328,6 +6591,103 @@
     ],
     "actions": [],
     "note": "Normal: pozisyonlar zarar-kese %9,9–%9,9 uzakta, kaldıraç 0,66x, SPY +%1,75; işlem gerekmedi."
+   },
+   {
+    "at": "2026-11-04T10:25:58-05:00",
+    "kind": "guard",
+    "status": "normal",
+    "spyPrice": 765.68,
+    "spyChangePct": 1.5,
+    "totalValue": 3019.89,
+    "benchmarkValue": 3057.38,
+    "leverage": 0.657,
+    "marginBuffer": 2523.94,
+    "positions": [
+     {
+      "ticker": "QQQ",
+      "side": "long",
+      "price": 696.48,
+      "dayChangePct": 1.63,
+      "stopPrice": null,
+      "distancePct": null
+     },
+     {
+      "ticker": "TQQQ",
+      "side": "long",
+      "price": 63.435,
+      "dayChangePct": 4.76,
+      "stopPrice": null,
+      "distancePct": null
+     },
+     {
+      "ticker": "SHOP",
+      "side": "long",
+      "price": 149.06,
+      "dayChangePct": 4.55,
+      "stopPrice": 135.51,
+      "distancePct": 10.0
+     }
+    ],
+    "actions": [],
+    "note": "Normal: pozisyonlar zarar-kese %10,0–%10,0 uzakta, kaldıraç 0,66x, SPY +%1,50; işlem gerekmedi."
+   },
+   {
+    "at": "2026-11-04T10:30:59-05:00",
+    "kind": "event",
+    "status": "uyari",
+    "spyPrice": 766.43,
+    "spyChangePct": 1.6,
+    "totalValue": 3019.65,
+    "benchmarkValue": 3060.37,
+    "leverage": 0.86,
+    "marginBuffer": 2340.02,
+    "positions": [
+     {
+      "ticker": "QQQ",
+      "side": "long",
+      "price": 697.29,
+      "dayChangePct": 1.75,
+      "stopPrice": null,
+      "distancePct": null
+     },
+     {
+      "ticker": "TQQQ",
+      "side": "long",
+      "price": 63.67,
+      "dayChangePct": 5.15,
+      "stopPrice": null,
+      "distancePct": null
+     },
+     {
+      "ticker": "SHOP",
+      "side": "long",
+      "price": 148.615,
+      "dayChangePct": 4.24,
+      "stopPrice": 135.51,
+      "distancePct": 9.67
+     },
+     {
+      "ticker": "FSLR",
+      "side": "short",
+      "price": 202.0,
+      "dayChangePct": 8.66,
+      "stopPrice": 215.08,
+      "distancePct": 6.48
+     },
+     {
+      "ticker": "MMM",
+      "side": "short",
+      "price": 189.895,
+      "dayChangePct": 7.26,
+      "stopPrice": 194.41,
+      "distancePct": 2.38
+     }
+    ],
+    "actions": [
+     "FSLR short (233,23 $)",
+     "MMM short (377,57 $)"
+    ],
+    "note": "MMM zarar-kes seviyesine %3'ten yakın"
    }
   ]
  },
@@ -6730,7 +7090,7 @@
    "date": "2026-11-04",
    "at": "2026-11-04T10:00:43-05:00",
    "by": "bot",
-   "headline": "İşlem yok · Yön yukarı: endeks +1,11x, haber şoku kolu açık, kaldıraç 0,66x",
+   "headline": "2 haber şoku işlemi · İşlem yok · Yön yukarı: endeks +1,11x, haber şoku kolu açık, kaldıraç 0,66x",
    "marketSummary": "S&P 500 (SPY) +%1,81 · Nasdaq 100 (QQQ) +%1,98 · Russell 2000 (IWM) +%1,54. VIX korku endeksi 17,20 (−%17,43); WTI petrol 93,34 $ (−%2,86); ABD 10 yıllık faiz %4,93 (−2 baz puan). Endeks kolu yönü YUKARI: SPY dünkü kapanış 754,35 $, 200 günlük ortalama 729,47 $ (+%3,41), 50 günlük ortalama 767,04 $. QQQ'nun 20 günlük oynaklığı yıllık %22,5; büyüklük %25 ÷ %22,5 = 1,11x. Hedef maruziyet +1,11x. Piyasa trendi yukarı: SPY dünkü kapanış 754,35 $, 200 günlük ortalama 729,47 $ (+%3,41). (v6'da momentum sepeti kapalı; bu bilgi kayıt içindir.) Sonuç: net değer 3.017,94 $, nakit 1.183,61 $, kaldıraç 0,66x.",
    "regime": {
     "name": "up",
@@ -6799,7 +7159,9 @@
     "Endeks kolu yönü YUKARI: SPY dünkü kapanış 754,35 $, 200 günlük ortalama 729,47 $ (+%3,41), 50 günlük ortalama 767,04 $. QQQ'nun 20 günlük oynaklığı yıllık %22,5; büyüklük %25 ÷ %22,5 = 1,11x. Hedef maruziyet +1,11x.",
     "Piyasa trendi yukarı: SPY dünkü kapanış 754,35 $, 200 günlük ortalama 729,47 $ (+%3,41). (v6'da momentum sepeti kapalı; bu bilgi kayıt içindir.)",
     "Endeks kolu: hedef 1,11x, mevcut 1,10x; fark 0,3x'ten küçük olduğu için işlem yapılmadı.",
-    "Momentum sepeti v6'da kapalı: paranın yarısı endeks kolunda, yarısı haber şoku kolunda."
+    "Momentum sepeti v6'da kapalı: paranın yarısı endeks kolunda, yarısı haber şoku kolunda.",
+    "Haber şoku: FSLR SHORT 233,25 $ (boşluk +%10,81, ilk saat −%1,61).",
+    "Haber şoku: MMM SHORT 377,59 $ (boşluk +%8,84, ilk saat −%1,58)."
    ],
    "rejected": [],
    "watchlist": [
@@ -6889,7 +7251,133 @@
    "ranking": [],
    "shortRanking": [],
    "rankingNote": "Puan = 12-1 ay getirisi (son ay hariç 12 aylık getiri, %). Long için uygun: fiyat 200 günlük ortalamanın üstünde ve puan pozitif; sepet ilk 10'dan (sektör başına en fazla 3) oluşur, ilk 20'de kalan tutulur. Short listesi: fiyatı 200 günlük ortalamanın altında ve puanı negatif en zayıf hisseler (yalnızca izleme; v5'te sepet düşüşte nakde geçer).",
-   "nextSteps": "Endeks kolunun yönü ve büyüklüğü her gün 10:00'dan sonra, haber şoku taraması 10:30'dan sonra; haber işlemlerinin zarar-kesleri piyasa açıkken 5 dakikada bir kontrol ediliyor."
+   "nextSteps": "Endeks kolunun yönü ve büyüklüğü her gün 10:00'dan sonra, haber şoku taraması 10:30'dan sonra; haber işlemlerinin zarar-kesleri piyasa açıkken 5 dakikada bir kontrol ediliyor.",
+   "events": {
+    "date": "2026-11-04",
+    "at": "2026-11-04T10:30:59-05:00",
+    "checked": 165,
+    "gaps": [
+     {
+      "ticker": "DDOG",
+      "name": "Datadog",
+      "gapPct": -9.42,
+      "firstHourPct": -1.3,
+      "prevClose": 220.52,
+      "open": 199.74,
+      "h1High": 207.74,
+      "h1Low": 188.38,
+      "h1Close": 197.15
+     },
+     {
+      "ticker": "FSLR",
+      "name": "FSLR",
+      "gapPct": 10.81,
+      "firstHourPct": -1.61,
+      "prevClose": 185.9,
+      "open": 206.0,
+      "h1High": 214.87,
+      "h1Low": 202.15,
+      "h1Close": 202.69
+     },
+     {
+      "ticker": "MMM",
+      "name": "MMM",
+      "gapPct": 8.84,
+      "firstHourPct": -1.58,
+      "prevClose": 177.05,
+      "open": 192.7,
+      "h1High": 194.22,
+      "h1Low": 187.74,
+      "h1Close": 189.65
+     },
+     {
+      "ticker": "VST",
+      "name": "Vistra",
+      "gapPct": -10.17,
+      "firstHourPct": -4.39,
+      "prevClose": 139.59,
+      "open": 125.4,
+      "h1High": 128.07,
+      "h1Low": 119.6,
+      "h1Close": 119.89
+     }
+    ],
+    "taken": [
+     {
+      "ticker": "FSLR",
+      "name": "FSLR",
+      "gapPct": 10.81,
+      "firstHourPct": -1.61,
+      "prevClose": 185.9,
+      "open": 206.0,
+      "h1High": 214.87,
+      "h1Low": 202.15,
+      "h1Close": 202.69,
+      "side": "short",
+      "ssr": false,
+      "stop": 215.08,
+      "amount": 233.25,
+      "price": 202.0,
+      "exitDate": "2026-11-06",
+      "headline": {
+       "title": "First Solar Jumps 9% After Democratic Sweep, but Trump’s Tariffs Already Favor It",
+       "url": "https://www.benzinga.com/markets/prediction-markets/26/11/62865339/first-solar-democratic-sweep?utm_source=yahooFinance&utm_campaign=partner_feed&utm_medium=referral",
+       "publisher": "Benzinga Prediction Markets",
+       "at": "2026-11-04T14:15:25+00:00"
+      }
+     },
+     {
+      "ticker": "MMM",
+      "name": "MMM",
+      "gapPct": 8.84,
+      "firstHourPct": -1.58,
+      "prevClose": 177.05,
+      "open": 192.7,
+      "h1High": 194.22,
+      "h1Low": 187.74,
+      "h1Close": 189.65,
+      "side": "short",
+      "ssr": false,
+      "stop": 194.41,
+      "amount": 377.59,
+      "price": 189.9,
+      "exitDate": "2026-11-06",
+      "headline": {
+       "title": "3M Reaches $7.35B PFAS Personal Injury Settlement, Maintains 2026 Outlook",
+       "url": "https://www.marketbeat.com/instant-alerts/event-3m-reaches-735b-pfas-personal-injury-settlement-maintains-2026-outlook-2026-11-04/?utm_source=yahoofinance&utm_medium=yahoofinance",
+       "publisher": "MarketBeat",
+       "at": "2026-11-04T15:14:27+00:00"
+      }
+     }
+    ],
+    "skipped": [
+     {
+      "ticker": "DDOG",
+      "name": "Datadog",
+      "gapPct": -9.42,
+      "firstHourPct": -1.3,
+      "prevClose": 220.52,
+      "open": 199.74,
+      "h1High": 207.74,
+      "h1Low": 188.38,
+      "h1Close": 197.15,
+      "why": "ilk saatte haberin yönünde devam etti; testte bu durum zarar ettirdi"
+     },
+     {
+      "ticker": "VST",
+      "name": "Vistra",
+      "gapPct": -10.17,
+      "firstHourPct": -4.39,
+      "prevClose": 139.59,
+      "open": 125.4,
+      "h1High": 128.07,
+      "h1Low": 119.6,
+      "h1Close": 119.89,
+      "why": "ilk saatte haberin yönünde devam etti; testte bu durum zarar ettirdi"
+     }
+    ],
+    "rule": "Açılış boşluğu en az %8; ilk saatte haberin tersine en az %0,5 dönüş; 2 işlem günü tut, zarar-kes ilk saatin öbür ucu."
+   }
   }
  ],
  "compliance": [
@@ -6904,7 +7392,7 @@
  ],
  "tax": {
   "2026": {
-   "commissions": 1.05
+   "commissions": 1.79
   }
  },
  "evalHistory": [
@@ -7053,7 +7541,7 @@
   "start": "2026-10-30",
   "startAt": "2026-10-30T15:50:43-04:00",
   "end": "2027-01-28",
-  "asOf": "2026-11-04T10:20:55-05:00",
+  "asOf": "2026-11-04T10:30:59-05:00",
   "strategy": "v6",
   "history": [
    {
@@ -7117,12 +7605,12 @@
   "daysElapsed": 4,
   "daysTotal": 61,
   "finished": false,
-  "returnPct": 0.89,
-  "spyReturnPct": 2.16,
-  "excessPct": -1.27,
+  "returnPct": 0.66,
+  "spyReturnPct": 2.01,
+  "excessPct": -1.36,
   "maxDrawdownPct": -1.35,
   "maxDrawdownAt": "2026-11-02T15:40:42-05:00",
-  "drawdownNowPct": 0.0,
+  "drawdownNowPct": -0.23,
   "trades": {
    "closed": 0,
    "wins": 0,
@@ -7141,9 +7629,9 @@
    },
    {
     "month": "2026-11",
-    "returnPct": 0.89,
-    "spyPct": 2.15,
-    "excessPct": -1.26
+    "returnPct": 0.66,
+    "spyPct": 2.0,
+    "excessPct": -1.34
    }
   ],
   "uptime": {
@@ -7159,7 +7647,7 @@
     "key": "spy",
     "label": "SPY'ı geçmek (masraflar düşülmüş)",
     "ok": false,
-    "value": -1.27,
+    "value": -1.36,
     "unit": "pct"
    },
    {
