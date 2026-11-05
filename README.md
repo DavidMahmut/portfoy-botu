@@ -57,6 +57,8 @@ Sayfanın kenarındaki panel, Nasdaq 100 fonu QQQ'nun tüm zamanların zirvesind
 - **Yalnızca %20 düşüşleri takip edip almak** (zirveden %20 düşünce QQQ al, yeni zirvede sat): yıllık %5,5, en kötü düşüş %−80 (QQQ al-tut: %10,7 ve %−83). Zamanın üçte birinden fazlasında nakitte kaldığı için yükselişleri kaçırır. 3x fonla yapılsaydı 2000–2002 çöküşünde hesap sıfırlanırdı. Kullanılmıyor.
 - **v5'e eklenen kural:** Nasdaq zirvesinden %20 veya daha fazla düşmüşse endeks kolu short açmaz, yeni zirveye kadar nakitte bekler. Endeks kolunun yıllık getirisi 1999–2026'da %14,7'den %15,4'e, 2018–2026'da %17,0'dan %20,2'ye çıktı; en kötü düşüş azaldı.
 
+**Endeks kolu fren testi (5 Kasım 2026, `dip_study.py`):** QQQ zirvesinden %10+ aşağıda ve 50 günlük ortalamasının altındayken maruziyeti 0,5x'e ya da sıfıra indirmek, QQQ 50 günlüğün altındayken 0,5x, 5 günde %5+ düşüşte 0,5x ve hedef oynaklığı %25 yerine %20 / %15 yapmak test edildi. Hiçbiri getiriyi ve en kötü düşüşü birlikte iyileştirmedi: düzeltme freni 1999–2026'da yıllık getiriyi %15,0'dan %11,7'ye, 2010–2026'da %22,0'dan %17,8'e indirdi (dipte satıp toparlanmayı kaçırıyor). %20 hedef oynaklık yalnızca bir risk ayarı: yılda yaklaşık 2–3 puan daha az getiri karşılığında en kötü düşüş 3–5 puan daha küçük. Kural değiştirilmedi.
+
 ### Önceki stratejiler
 
 - **v4 (15–23 Ekim 2026):** SPY trend filtresi, %50 QQQ + %50 momentum sepeti, kaldıraçsız. 15–23 Ekim: %−1,0 (SPY %−1,1).
