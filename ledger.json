@@ -99,7 +99,7 @@
   }
  },
  "portfolio": {
-  "cash": 1406.39,
+  "cash": 1469.46,
   "positions": [
    {
     "stopMode": "managed",
@@ -111,16 +111,16 @@
     "shares": 2.008,
     "avgCost": 695.4676,
     "costBasis": 1396.5,
-    "lastPrice": 661.49,
-    "lastPriceAt": "2026-11-05T10:20:00-05:00",
+    "lastPrice": 660.5305,
+    "lastPriceAt": "2026-11-05T10:30:00-05:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (10:20 ET)",
+     "title": "Yahoo Finance 5 dk mum (10:30 ET)",
      "url": "https://finance.yahoo.com/quote/QQQ/"
     },
-    "marketValue": 1328.27,
-    "exposure": 1328.27,
-    "unrealized": -68.23,
-    "unrealizedPct": -4.89,
+    "marketValue": 1326.35,
+    "exposure": 1326.35,
+    "unrealized": -70.15,
+    "unrealizedPct": -5.02,
     "openedAt": "2026-11-02",
     "openedTs": "2026-11-02T09:50:00-05:00",
     "lastAddDate": "2026-11-02",
@@ -128,7 +128,7 @@
     "extremeSinceEntry": 695.1199951171875,
     "tookProfit": false,
     "thesis": "Endeks kolu, QQQ (1x): 0,00 $ → 1.396,50 $. Endeks kolu yönü YUKARI: SPY dünkü kapanış 755,72 $, 200 günlük ortalama 728,85 $ (+%3,69), 50 günlük ortalama 767,49 $. QQQ'nun 20 günlük oynaklığı yıllık %22,6; büyüklük %25 ÷ %22,6 = 1,10x. Hedef maruziyet +1,10x.",
-    "maintReq": 332.07
+    "maintReq": 331.59
    },
    {
     "stopMode": "managed",
@@ -140,16 +140,16 @@
     "shares": 1.1627,
     "avgCost": 63.2117,
     "costBasis": 73.5,
-    "lastPrice": 54.025,
-    "lastPriceAt": "2026-11-05T10:20:00-05:00",
+    "lastPrice": 53.808,
+    "lastPriceAt": "2026-11-05T10:30:00-05:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (10:20 ET)",
+     "title": "Yahoo Finance 5 dk mum (10:30 ET)",
      "url": "https://finance.yahoo.com/quote/TQQQ/"
     },
-    "marketValue": 62.81,
-    "exposure": 188.44,
-    "unrealized": -10.69,
-    "unrealizedPct": -14.54,
+    "marketValue": 62.56,
+    "exposure": 187.69,
+    "unrealized": -10.94,
+    "unrealizedPct": -14.88,
     "openedAt": "2026-11-02",
     "openedTs": "2026-11-02T09:50:00-05:00",
     "lastAddDate": "2026-11-02",
@@ -157,7 +157,7 @@
     "extremeSinceEntry": 63.18009948730469,
     "tookProfit": false,
     "thesis": "Endeks kolu, TQQQ (3x): 0,00 $ → 73,50 $. Endeks kolu yönü YUKARI: SPY dünkü kapanış 755,72 $, 200 günlük ortalama 728,85 $ (+%3,69), 50 günlük ortalama 767,49 $. QQQ'nun 20 günlük oynaklığı yıllık %22,6; büyüklük %25 ÷ %22,6 = 1,10x. Hedef maruziyet +1,10x.",
-    "maintReq": 47.11
+    "maintReq": 46.92
    },
    {
     "stopMode": "event",
@@ -169,16 +169,16 @@
     "shares": 2.4419,
     "avgCost": 141.4214,
     "costBasis": 345.34,
-    "lastPrice": 139.74,
-    "lastPriceAt": "2026-11-05T10:20:00-05:00",
+    "lastPrice": 139.78,
+    "lastPriceAt": "2026-11-05T10:30:00-05:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (10:20 ET)",
+     "title": "Yahoo Finance 5 dk mum (10:30 ET)",
      "url": "https://finance.yahoo.com/quote/SHOP/"
     },
-    "marketValue": 341.23,
-    "exposure": 341.23,
-    "unrealized": -4.11,
-    "unrealizedPct": -1.19,
+    "marketValue": 341.33,
+    "exposure": 341.33,
+    "unrealized": -4.01,
+    "unrealizedPct": -1.16,
     "openedAt": "2026-11-03",
     "openedTs": "2026-11-03T10:30:00-05:00",
     "lastAddDate": "2026-11-03",
@@ -202,8 +202,8 @@
      "publisher": "Yahoo Finance",
      "at": "2026-11-03T15:01:20+00:00"
     },
-    "maintReq": 85.31,
-    "lastBarTs": "2026-11-05T10:20:00-05:00"
+    "maintReq": 85.33,
+    "lastBarTs": "2026-11-05T10:30:00-05:00"
    },
    {
     "stopMode": "event",
@@ -215,21 +215,21 @@
     "shares": 1.1552,
     "avgCost": 201.899,
     "costBasis": 233.23,
-    "lastPrice": 190.0,
-    "lastPriceAt": "2026-11-05T10:20:00-05:00",
+    "lastPrice": 188.57,
+    "lastPriceAt": "2026-11-05T10:30:00-05:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (10:20 ET)",
+     "title": "Yahoo Finance 5 dk mum (10:30 ET)",
      "url": "https://finance.yahoo.com/quote/FSLR/"
     },
-    "marketValue": -219.49,
-    "exposure": 219.49,
-    "unrealized": 13.74,
-    "unrealizedPct": 5.89,
+    "marketValue": -217.84,
+    "exposure": 217.84,
+    "unrealized": 15.39,
+    "unrealizedPct": 6.6,
     "openedAt": "2026-11-04",
     "openedTs": "2026-11-04T10:30:00-05:00",
     "lastAddDate": "2026-11-04",
     "stopPrice": 215.08,
-    "extremeSinceEntry": 188.0001,
+    "extremeSinceEntry": 186.41,
     "tookProfit": false,
     "thesis": "Haber şoku: FSLR önceki kapanışa (185,90 $) göre +%10,81 yükselişle açıldı, ilk saatte −%1,61 geri verdi: piyasa haberin ilk tepkisini abartılı buldu. Kural gereği short açıldı. Zarar-kes 215,08 $ (ilk saatin en yükseğinin hemen ötesi, risk %6,5); çıkış 2026-11-06 kapanışında. Büyüklük: haber kolunun %15'i, zarar-keste kaybı kolun yaklaşık %1'i. Haber: “First Solar Jumps 9% After Democratic Sweep, but Trump’s Tariffs Already Favor It” (Benzinga Prediction Markets).",
     "sleeve": "event",
@@ -248,41 +248,131 @@
      "publisher": "Benzinga Prediction Markets",
      "at": "2026-11-04T14:15:25+00:00"
     },
-    "maintReq": 65.85,
-    "lastBarTs": "2026-11-05T10:20:00-05:00"
+    "maintReq": 65.35,
+    "lastBarTs": "2026-11-05T10:30:00-05:00"
+   },
+   {
+    "stopMode": "event",
+    "ticker": "QCOM",
+    "name": "Qualcomm",
+    "kind": "Hisse",
+    "side": "long",
+    "lev": 1,
+    "shares": 1.9269,
+    "avgCost": 156.2381,
+    "costBasis": 301.06,
+    "lastPrice": 156.16,
+    "lastPriceAt": "2026-11-05T10:30:00-05:00",
+    "priceSource": {
+     "title": "Yahoo Finance 5 dk mum (10:30 ET)",
+     "url": "https://finance.yahoo.com/quote/QCOM/"
+    },
+    "marketValue": 300.9,
+    "exposure": 300.9,
+    "unrealized": -0.16,
+    "unrealizedPct": -0.05,
+    "openedAt": "2026-11-05",
+    "openedTs": "2026-11-05T10:30:00-05:00",
+    "lastAddDate": "2026-11-05",
+    "stopPrice": 148.94,
+    "extremeSinceEntry": 156.16000366210938,
+    "tookProfit": false,
+    "thesis": "Haber şoku: QCOM önceki kapanışa (173,19 $) göre −%13,22 düşüşle açıldı, ilk saatte +%4,09 toparlandı: piyasa haberin ilk tepkisini abartılı buldu. Kural gereği long açıldı. Zarar-kes 148,94 $ (ilk saatin en düşüğünün hemen ötesi, risk %4,8); çıkış 2026-11-09 kapanışında. Büyüklük: haber kolunun %21'i, zarar-keste kaybı kolun yaklaşık %1'i. Haber: “Qualcomm, Micron, Sandisk, and AMD stocks sink, leading chip sector lower” (Yahoo Finance).",
+    "sleeve": "event",
+    "exitDate": "2026-11-09",
+    "event": {
+     "gapPct": -13.22,
+     "firstHourPct": 4.09,
+     "prevClose": 173.19,
+     "open": 150.3,
+     "h1High": 159.27,
+     "h1Low": 149.09
+    },
+    "headline": {
+     "title": "Qualcomm, Micron, Sandisk, and AMD stocks sink, leading chip sector lower",
+     "url": "https://finance.yahoo.com/markets/article/qualcomm-micron-arm-stocks-sink-lead-chip-sector-lower-133100607.html",
+     "publisher": "Yahoo Finance",
+     "at": "2026-11-05T13:31:00+00:00"
+    },
+    "maintReq": 75.23
+   },
+   {
+    "stopMode": "event",
+    "ticker": "U",
+    "name": "U",
+    "kind": "Hisse",
+    "side": "short",
+    "lev": 1,
+    "shares": 7.7394,
+    "avgCost": 47.1414,
+    "costBasis": 364.85,
+    "lastPrice": 47.165,
+    "lastPriceAt": "2026-11-05T10:30:00-05:00",
+    "priceSource": {
+     "title": "Yahoo Finance 5 dk mum (10:30 ET)",
+     "url": "https://finance.yahoo.com/quote/U/"
+    },
+    "marketValue": -365.03,
+    "exposure": 365.03,
+    "unrealized": -0.18,
+    "unrealizedPct": -0.05,
+    "openedAt": "2026-11-05",
+    "openedTs": "2026-11-05T10:30:00-05:00",
+    "lastAddDate": "2026-11-05",
+    "stopPrice": 48.61,
+    "extremeSinceEntry": 47.165000915527344,
+    "tookProfit": false,
+    "thesis": "Haber şoku: U önceki kapanışa (42,46 $) göre +%13,19 yükselişle açıldı, ilk saatte −%2,95 geri verdi: piyasa haberin ilk tepkisini abartılı buldu. Kural gereği short açıldı. Zarar-kes 48,61 $ (ilk saatin en yükseğinin hemen ötesi, risk %3,1); çıkış 2026-11-09 kapanışında. Büyüklük: haber kolunun %25'i, zarar-keste kaybı kolun yaklaşık %1'i. Haber: “Vector Ads Lift Unity to First GAAP Profit: Rapid Earnings Reaction” (Motley Fool).",
+    "sleeve": "event",
+    "exitDate": "2026-11-09",
+    "event": {
+     "gapPct": 13.19,
+     "firstHourPct": -2.95,
+     "prevClose": 42.46,
+     "open": 48.06,
+     "h1High": 48.56,
+     "h1Low": 44.82
+    },
+    "headline": {
+     "title": "Vector Ads Lift Unity to First GAAP Profit: Rapid Earnings Reaction",
+     "url": "https://www.fool.com/investing/2026/11/05/vector-ads-lift-unity-to-first-gaap-profit-rapid-earnings-reaction/",
+     "publisher": "Motley Fool",
+     "at": "2026-11-05T14:55:52+00:00"
+    },
+    "maintReq": 109.51
    }
   ],
   "realizedPL": -9.71,
   "netDeposits": 3000.0,
   "costs": {
-   "slippage": 1.4063,
-   "commission": 2.1,
-   "fees": 0.04,
+   "slippage": 1.7395,
+   "commission": 2.8,
+   "fees": 0.06,
    "interest": 0.0,
    "borrow": 0.0,
    "dividendsPaid": 0.0,
    "dividendsReceived": 0.0
   },
-  "longValue": 1732.32,
-  "shortValue": 219.49,
-  "positionsValue": 1512.83,
-  "totalValue": 2919.22,
-  "grossExposure": 2077.44,
-  "netExposure": 1638.46,
-  "leverage": 0.712,
-  "maintenanceReq": 530.34,
-  "marginBuffer": 2388.88,
-  "regTInitialReq": 991.61,
-  "regTExcess": 1927.61,
-  "buyingPower": 3855.23,
+  "longValue": 2031.14,
+  "shortValue": 582.86,
+  "positionsValue": 1448.28,
+  "totalValue": 2917.74,
+  "grossExposure": 2739.13,
+  "netExposure": 1573.4,
+  "leverage": 0.939,
+  "maintenanceReq": 713.93,
+  "marginBuffer": 2203.81,
+  "regTInitialReq": 1322.64,
+  "regTExcess": 1595.1,
+  "buyingPower": 3190.19,
   "marginEligible": true,
-  "totalPL": -80.78,
-  "totalPLPct": -2.69,
-  "twrPct": -2.69,
-  "asOf": "2026-11-05T10:21:03-05:00",
-  "benchmarkPrice": 749.05,
-  "benchmarkValue": 2990.98,
-  "benchmarkTwrPct": -0.3
+  "totalPL": -82.26,
+  "totalPLPct": -2.74,
+  "twrPct": -2.74,
+  "asOf": "2026-11-05T10:31:08-05:00",
+  "benchmarkPrice": 748.64,
+  "benchmarkValue": 2989.34,
+  "benchmarkTwrPct": -0.36
  },
  "meta": {
   "engine": "trend-event v6",
@@ -297,9 +387,9 @@
    "ath": 759.66,
    "athDate": "2026-10-06",
    "athChecked": "2026-11-05",
-   "price": 661.49,
-   "at": "2026-11-05T10:20:00-05:00",
-   "ddPct": -12.92,
+   "price": 660.53,
+   "at": "2026-11-05T10:30:00-05:00",
+   "ddPct": -13.05,
    "level": "correction",
    "triggerPrice": 607.73,
    "correctionPrice": 683.69
@@ -316,8 +406,8 @@
    "navStart": 1.0,
    "spyStart": 751.31,
    "peak": 1.0088933333333332,
-   "maxDD": -3.55,
-   "maxDDAt": "2026-11-05T10:21:03-05:00",
+   "maxDD": -3.74,
+   "maxDDAt": "2026-11-05T10:26:07-05:00",
    "errors": 0,
    "runDays": [
     "2026-10-30",
@@ -327,7 +417,7 @@
     "2026-11-05"
    ]
   },
-  "lastRunAt": "2026-11-05T10:21:03-05:00",
+  "lastRunAt": "2026-11-05T10:31:08-05:00",
   "lastError": null,
   "spikeScanDate": "2026-11-05",
   "spikeScan": {
@@ -356,128 +446,174 @@
    "now": 1.07,
    "date": "2026-11-05"
   },
-  "eventScanDate": "2026-11-04",
+  "eventScanDate": "2026-11-05",
   "eventScan": {
-   "date": "2026-11-04",
-   "at": "2026-11-04T10:30:59-05:00",
+   "date": "2026-11-05",
+   "at": "2026-11-05T10:31:08-05:00",
    "checked": 165,
    "gaps": [
     {
-     "ticker": "DDOG",
-     "name": "Datadog",
-     "gapPct": -9.42,
-     "firstHourPct": -1.3,
-     "prevClose": 220.52,
-     "open": 199.74,
-     "h1High": 207.74,
-     "h1Low": 188.38,
-     "h1Close": 197.15
+     "ticker": "APP",
+     "name": "AppLovin",
+     "gapPct": 28.77,
+     "firstHourPct": 2.69,
+     "prevClose": 271.75,
+     "open": 349.94,
+     "h1High": 365.33,
+     "h1Low": 338.88,
+     "h1Close": 359.35
     },
     {
-     "ticker": "FSLR",
-     "name": "FSLR",
-     "gapPct": 10.81,
-     "firstHourPct": -1.61,
-     "prevClose": 185.9,
-     "open": 206.0,
-     "h1High": 214.87,
-     "h1Low": 202.15,
-     "h1Close": 202.69
+     "ticker": "ARM",
+     "name": "Arm Holdings",
+     "gapPct": -10.36,
+     "firstHourPct": -1.97,
+     "prevClose": 191.8,
+     "open": 171.93,
+     "h1High": 175.83,
+     "h1Low": 166.43,
+     "h1Close": 168.54
     },
     {
-     "ticker": "MMM",
-     "name": "MMM",
-     "gapPct": 8.84,
-     "firstHourPct": -1.58,
-     "prevClose": 177.05,
-     "open": 192.7,
-     "h1High": 194.22,
-     "h1Low": 187.74,
-     "h1Close": 189.65
+     "ticker": "EXPE",
+     "name": "EXPE",
+     "gapPct": -11.03,
+     "firstHourPct": -2.07,
+     "prevClose": 315.88,
+     "open": 281.03,
+     "h1High": 288.96,
+     "h1Low": 272.37,
+     "h1Close": 275.2
     },
     {
-     "ticker": "VST",
-     "name": "Vistra",
-     "gapPct": -10.17,
-     "firstHourPct": -4.39,
-     "prevClose": 139.59,
-     "open": 125.4,
-     "h1High": 128.07,
-     "h1Low": 119.6,
-     "h1Close": 119.89
+     "ticker": "QCOM",
+     "name": "Qualcomm",
+     "gapPct": -13.22,
+     "firstHourPct": 4.09,
+     "prevClose": 173.19,
+     "open": 150.3,
+     "h1High": 159.27,
+     "h1Low": 149.09,
+     "h1Close": 156.44
+    },
+    {
+     "ticker": "SNAP",
+     "name": "SNAP",
+     "gapPct": -10.64,
+     "firstHourPct": -2.17,
+     "prevClose": 5.92,
+     "open": 5.29,
+     "h1High": 5.56,
+     "h1Low": 5.09,
+     "h1Close": 5.18
+    },
+    {
+     "ticker": "U",
+     "name": "U",
+     "gapPct": 13.19,
+     "firstHourPct": -2.95,
+     "prevClose": 42.46,
+     "open": 48.06,
+     "h1High": 48.56,
+     "h1Low": 44.82,
+     "h1Close": 46.64
     }
    ],
    "taken": [
     {
-     "ticker": "FSLR",
-     "name": "FSLR",
-     "gapPct": 10.81,
-     "firstHourPct": -1.61,
-     "prevClose": 185.9,
-     "open": 206.0,
-     "h1High": 214.87,
-     "h1Low": 202.15,
-     "h1Close": 202.69,
-     "side": "short",
-     "ssr": false,
-     "stop": 215.08,
-     "amount": 233.25,
-     "price": 202.0,
-     "exitDate": "2026-11-06",
+     "ticker": "QCOM",
+     "name": "Qualcomm",
+     "gapPct": -13.22,
+     "firstHourPct": 4.09,
+     "prevClose": 173.19,
+     "open": 150.3,
+     "h1High": 159.27,
+     "h1Low": 149.09,
+     "h1Close": 156.44,
+     "side": "long",
+     "ssr": true,
+     "stop": 148.94,
+     "amount": 301.06,
+     "price": 156.16,
+     "exitDate": "2026-11-09",
      "headline": {
-      "title": "First Solar Jumps 9% After Democratic Sweep, but Trump’s Tariffs Already Favor It",
-      "url": "https://www.benzinga.com/markets/prediction-markets/26/11/62865339/first-solar-democratic-sweep?utm_source=yahooFinance&utm_campaign=partner_feed&utm_medium=referral",
-      "publisher": "Benzinga Prediction Markets",
-      "at": "2026-11-04T14:15:25+00:00"
+      "title": "Qualcomm, Micron, Sandisk, and AMD stocks sink, leading chip sector lower",
+      "url": "https://finance.yahoo.com/markets/article/qualcomm-micron-arm-stocks-sink-lead-chip-sector-lower-133100607.html",
+      "publisher": "Yahoo Finance",
+      "at": "2026-11-05T13:31:00+00:00"
      }
     },
     {
-     "ticker": "MMM",
-     "name": "MMM",
-     "gapPct": 8.84,
-     "firstHourPct": -1.58,
-     "prevClose": 177.05,
-     "open": 192.7,
-     "h1High": 194.22,
-     "h1Low": 187.74,
-     "h1Close": 189.65,
+     "ticker": "U",
+     "name": "U",
+     "gapPct": 13.19,
+     "firstHourPct": -2.95,
+     "prevClose": 42.46,
+     "open": 48.06,
+     "h1High": 48.56,
+     "h1Low": 44.82,
+     "h1Close": 46.64,
      "side": "short",
      "ssr": false,
-     "stop": 194.41,
-     "amount": 377.59,
-     "price": 189.9,
-     "exitDate": "2026-11-06",
+     "stop": 48.61,
+     "amount": 364.85,
+     "price": 47.17,
+     "exitDate": "2026-11-09",
      "headline": {
-      "title": "3M Reaches $7.35B PFAS Personal Injury Settlement, Maintains 2026 Outlook",
-      "url": "https://www.marketbeat.com/instant-alerts/event-3m-reaches-735b-pfas-personal-injury-settlement-maintains-2026-outlook-2026-11-04/?utm_source=yahoofinance&utm_medium=yahoofinance",
-      "publisher": "MarketBeat",
-      "at": "2026-11-04T15:14:27+00:00"
+      "title": "Vector Ads Lift Unity to First GAAP Profit: Rapid Earnings Reaction",
+      "url": "https://www.fool.com/investing/2026/11/05/vector-ads-lift-unity-to-first-gaap-profit-rapid-earnings-reaction/",
+      "publisher": "Motley Fool",
+      "at": "2026-11-05T14:55:52+00:00"
      }
     }
    ],
    "skipped": [
     {
-     "ticker": "DDOG",
-     "name": "Datadog",
-     "gapPct": -9.42,
-     "firstHourPct": -1.3,
-     "prevClose": 220.52,
-     "open": 199.74,
-     "h1High": 207.74,
-     "h1Low": 188.38,
-     "h1Close": 197.15,
+     "ticker": "APP",
+     "name": "AppLovin",
+     "gapPct": 28.77,
+     "firstHourPct": 2.69,
+     "prevClose": 271.75,
+     "open": 349.94,
+     "h1High": 365.33,
+     "h1Low": 338.88,
+     "h1Close": 359.35,
      "why": "ilk saatte haberin yönünde devam etti; testte bu durum zarar ettirdi"
     },
     {
-     "ticker": "VST",
-     "name": "Vistra",
-     "gapPct": -10.17,
-     "firstHourPct": -4.39,
-     "prevClose": 139.59,
-     "open": 125.4,
-     "h1High": 128.07,
-     "h1Low": 119.6,
-     "h1Close": 119.89,
+     "ticker": "ARM",
+     "name": "Arm Holdings",
+     "gapPct": -10.36,
+     "firstHourPct": -1.97,
+     "prevClose": 191.8,
+     "open": 171.93,
+     "h1High": 175.83,
+     "h1Low": 166.43,
+     "h1Close": 168.54,
+     "why": "ilk saatte haberin yönünde devam etti; testte bu durum zarar ettirdi"
+    },
+    {
+     "ticker": "EXPE",
+     "name": "EXPE",
+     "gapPct": -11.03,
+     "firstHourPct": -2.07,
+     "prevClose": 315.88,
+     "open": 281.03,
+     "h1High": 288.96,
+     "h1Low": 272.37,
+     "h1Close": 275.2,
+     "why": "ilk saatte haberin yönünde devam etti; testte bu durum zarar ettirdi"
+    },
+    {
+     "ticker": "SNAP",
+     "name": "SNAP",
+     "gapPct": -10.64,
+     "firstHourPct": -2.17,
+     "prevClose": 5.92,
+     "open": 5.29,
+     "h1High": 5.56,
+     "h1Low": 5.09,
+     "h1Close": 5.18,
      "why": "ilk saatte haberin yönünde devam etti; testte bu durum zarar ettirdi"
     }
    ],
@@ -717,6 +853,87 @@
    "realizedPL": -9.71,
    "holdingDays": 0,
    "taxTerm": "kısa vade"
+  },
+  {
+   "id": "t-20261105-01",
+   "ts": "2026-11-05T10:31:08-05:00",
+   "date": "2026-11-05",
+   "action": "BUY",
+   "side": "long",
+   "ticker": "QCOM",
+   "name": "Qualcomm",
+   "kind": "Hisse",
+   "shares": 1.9269,
+   "quotePrice": 156.16,
+   "quoteAt": "2026-11-05T10:30:00-05:00",
+   "slippagePct": 0.05,
+   "execPrice": 156.2381,
+   "value": 301.06,
+   "commission": 0.35,
+   "fees": 0.0,
+   "priceSource": {
+    "title": "Yahoo Finance 5 dk mum (10:30 ET)",
+    "url": "https://finance.yahoo.com/quote/QCOM/"
+   },
+   "reason": "Haber şoku: QCOM önceki kapanışa (173,19 $) göre −%13,22 düşüşle açıldı, ilk saatte +%4,09 toparlandı: piyasa haberin ilk tepkisini abartılı buldu. Kural gereği long açıldı. Zarar-kes 148,94 $ (ilk saatin en düşüğünün hemen ötesi, risk %4,8); çıkış 2026-11-09 kapanışında. Büyüklük: haber kolunun %21'i, zarar-keste kaybı kolun yaklaşık %1'i. Haber: “Qualcomm, Micron, Sandisk, and AMD stocks sink, leading chip sector lower” (Yahoo Finance).",
+   "rule": "haber şoku",
+   "sources": [
+    {
+     "title": "Qualcomm, Micron, Sandisk, and AMD stocks sink, leading chip sector lower",
+     "url": "https://finance.yahoo.com/markets/article/qualcomm-micron-arm-stocks-sink-lead-chip-sector-lower-133100607.html"
+    },
+    {
+     "title": "Yahoo Finance: QCOM",
+     "url": "https://finance.yahoo.com/quote/QCOM/"
+    },
+    {
+     "title": "yfinance (Yahoo Finance verileri)",
+     "url": "https://github.com/ranaroussi/yfinance"
+    }
+   ],
+   "runId": "2026-11-05",
+   "by": "bot"
+  },
+  {
+   "id": "t-20261105-02",
+   "ts": "2026-11-05T10:31:08-05:00",
+   "date": "2026-11-05",
+   "action": "SHORT",
+   "side": "short",
+   "ticker": "U",
+   "name": "U",
+   "kind": "Hisse",
+   "shares": 7.7394,
+   "quotePrice": 47.165,
+   "quoteAt": "2026-11-05T10:30:00-05:00",
+   "slippagePct": 0.05,
+   "execPrice": 47.1414,
+   "value": 364.85,
+   "commission": 0.35,
+   "fees": 0.02,
+   "priceSource": {
+    "title": "Yahoo Finance 5 dk mum (10:30 ET)",
+    "url": "https://finance.yahoo.com/quote/U/"
+   },
+   "reason": "Haber şoku: U önceki kapanışa (42,46 $) göre +%13,19 yükselişle açıldı, ilk saatte −%2,95 geri verdi: piyasa haberin ilk tepkisini abartılı buldu. Kural gereği short açıldı. Zarar-kes 48,61 $ (ilk saatin en yükseğinin hemen ötesi, risk %3,1); çıkış 2026-11-09 kapanışında. Büyüklük: haber kolunun %25'i, zarar-keste kaybı kolun yaklaşık %1'i. Haber: “Vector Ads Lift Unity to First GAAP Profit: Rapid Earnings Reaction” (Motley Fool).",
+   "rule": "haber şoku",
+   "sources": [
+    {
+     "title": "Vector Ads Lift Unity to First GAAP Profit: Rapid Earnings Reaction",
+     "url": "https://www.fool.com/investing/2026/11/05/vector-ads-lift-unity-to-first-gaap-profit-rapid-earnings-reaction/"
+    },
+    {
+     "title": "Yahoo Finance: U",
+     "url": "https://finance.yahoo.com/quote/U/"
+    },
+    {
+     "title": "yfinance (Yahoo Finance verileri)",
+     "url": "https://github.com/ranaroussi/yfinance"
+    }
+   ],
+   "runId": "2026-11-05",
+   "by": "bot",
+   "locate": "Kolay ödünç (ETB) varsayımı: büyük, likit hisse"
   }
  ],
  "snapshots": [
@@ -826,36 +1043,46 @@
   },
   {
    "date": "2026-11-05",
-   "at": "2026-11-05T10:21:03-05:00",
-   "totalValue": 2919.22,
-   "cash": 1406.39,
-   "positionsValue": 1512.83,
-   "plPct": -2.69,
-   "twrPct": -2.69,
+   "at": "2026-11-05T10:31:08-05:00",
+   "totalValue": 2917.74,
+   "cash": 1469.46,
+   "positionsValue": 1448.28,
+   "plPct": -2.74,
+   "twrPct": -2.74,
    "netDeposits": 3000.0,
-   "leverage": 0.712,
-   "benchmarkPrice": 749.05,
-   "benchmarkValue": 2990.98,
+   "leverage": 0.939,
+   "benchmarkPrice": 748.64,
+   "benchmarkValue": 2989.34,
    "holdings": [
     {
      "ticker": "QQQ",
      "side": "long",
-     "value": 1328.27
+     "value": 1326.35
     },
     {
      "ticker": "TQQQ",
      "side": "long",
-     "value": 62.81
+     "value": 62.56
     },
     {
      "ticker": "SHOP",
      "side": "long",
-     "value": 341.23
+     "value": 341.33
     },
     {
      "ticker": "FSLR",
      "side": "short",
-     "value": -219.49
+     "value": -217.84
+    },
+    {
+     "ticker": "QCOM",
+     "side": "long",
+     "value": 300.9
+    },
+    {
+     "ticker": "U",
+     "side": "short",
+     "value": -365.03
     }
    ]
   }
@@ -10631,6 +10858,118 @@
     ],
     "actions": [],
     "note": "Normal: pozisyonlar zarar-kese %3,1–%13,2 uzakta, kaldıraç 0,71x, SPY −%2,32; işlem gerekmedi."
+   },
+   {
+    "at": "2026-11-05T10:26:07-05:00",
+    "kind": "guard",
+    "status": "uyari",
+    "spyPrice": 746.45,
+    "spyChangePct": -2.66,
+    "totalValue": 2913.51,
+    "benchmarkValue": 2980.59,
+    "leverage": 0.709,
+    "marginBuffer": 2386.34,
+    "positions": [
+     {
+      "ticker": "QQQ",
+      "side": "long",
+      "price": 658.57,
+      "dayChangePct": -4.82,
+      "stopPrice": null,
+      "distancePct": null
+     },
+     {
+      "ticker": "TQQQ",
+      "side": "long",
+      "price": 53.215,
+      "dayChangePct": -14.5,
+      "stopPrice": null,
+      "distancePct": null
+     },
+     {
+      "ticker": "SHOP",
+      "side": "long",
+      "price": 139.25,
+      "dayChangePct": -9.0,
+      "stopPrice": 135.51,
+      "distancePct": 2.76
+     },
+     {
+      "ticker": "FSLR",
+      "side": "short",
+      "price": 188.02,
+      "dayChangePct": -3.34,
+      "stopPrice": 215.08,
+      "distancePct": 14.39
+     }
+    ],
+    "actions": [],
+    "note": "SHOP zarar-kes seviyesine %3'ten yakın"
+   },
+   {
+    "at": "2026-11-05T10:31:08-05:00",
+    "kind": "event",
+    "status": "normal",
+    "spyPrice": 748.64,
+    "spyChangePct": -2.37,
+    "totalValue": 2917.74,
+    "benchmarkValue": 2989.34,
+    "leverage": 0.939,
+    "marginBuffer": 2203.81,
+    "positions": [
+     {
+      "ticker": "QQQ",
+      "side": "long",
+      "price": 660.5305,
+      "dayChangePct": -4.54,
+      "stopPrice": null,
+      "distancePct": null
+     },
+     {
+      "ticker": "TQQQ",
+      "side": "long",
+      "price": 53.808,
+      "dayChangePct": -13.55,
+      "stopPrice": null,
+      "distancePct": null
+     },
+     {
+      "ticker": "SHOP",
+      "side": "long",
+      "price": 139.78,
+      "dayChangePct": -8.66,
+      "stopPrice": 135.51,
+      "distancePct": 3.15
+     },
+     {
+      "ticker": "FSLR",
+      "side": "short",
+      "price": 188.57,
+      "dayChangePct": -3.05,
+      "stopPrice": 215.08,
+      "distancePct": 14.06
+     },
+     {
+      "ticker": "QCOM",
+      "side": "long",
+      "price": 156.16,
+      "dayChangePct": -9.83,
+      "stopPrice": 148.94,
+      "distancePct": 4.85
+     },
+     {
+      "ticker": "U",
+      "side": "short",
+      "price": 47.165,
+      "dayChangePct": 11.08,
+      "stopPrice": 48.61,
+      "distancePct": 3.06
+     }
+    ],
+    "actions": [
+     "QCOM long (301,06 $)",
+     "U short (364,85 $)"
+    ]
    }
   ]
  },
@@ -11326,7 +11665,7 @@
    "date": "2026-11-05",
    "at": "2026-11-05T10:00:42-05:00",
    "by": "bot",
-   "headline": "İşlem yok · Yön yukarı: endeks +1,08x, haber şoku kolu açık, kaldıraç 0,72x",
+   "headline": "2 haber şoku işlemi · İşlem yok · Yön yukarı: endeks +1,08x, haber şoku kolu açık, kaldıraç 0,72x",
    "marketSummary": "S&P 500 (SPY) −%1,60 · Nasdaq 100 (QQQ) −%3,55 · Russell 2000 (IWM) −%1,13. VIX korku endeksi 19,22 (+%15,71); WTI petrol 89,65 $ (+%1,74); ABD 10 yıllık faiz %4,89 (+0 baz puan). Endeks kolu yönü YUKARI: SPY dünkü kapanış 766,81 $, 200 günlük ortalama 729,91 $ (+%5,05), 50 günlük ortalama 767,06 $. QQQ'nun 20 günlük oynaklığı yıllık %23,0; büyüklük %25 ÷ %23,0 = 1,08x. Hedef maruziyet +1,08x. Piyasa trendi yukarı: SPY dünkü kapanış 766,81 $, 200 günlük ortalama 729,91 $ (+%5,05). (v6'da momentum sepeti kapalı; bu bilgi kayıt içindir.) Sonuç: net değer 2.939,61 $, nakit 1.406,39 $, kaldıraç 0,72x.",
    "regime": {
     "name": "up",
@@ -11395,7 +11734,9 @@
     "Endeks kolu yönü YUKARI: SPY dünkü kapanış 766,81 $, 200 günlük ortalama 729,91 $ (+%5,05), 50 günlük ortalama 767,06 $. QQQ'nun 20 günlük oynaklığı yıllık %23,0; büyüklük %25 ÷ %23,0 = 1,08x. Hedef maruziyet +1,08x.",
     "Piyasa trendi yukarı: SPY dünkü kapanış 766,81 $, 200 günlük ortalama 729,91 $ (+%5,05). (v6'da momentum sepeti kapalı; bu bilgi kayıt içindir.)",
     "Endeks kolu: hedef 1,08x, mevcut 1,07x; fark 0,3x'ten küçük olduğu için işlem yapılmadı.",
-    "Momentum sepeti v6'da kapalı: paranın yarısı endeks kolunda, yarısı haber şoku kolunda."
+    "Momentum sepeti v6'da kapalı: paranın yarısı endeks kolunda, yarısı haber şoku kolunda.",
+    "Haber şoku: QCOM LONG 301,06 $ (boşluk −%13,22, ilk saat +%4,09).",
+    "Haber şoku: U SHORT 364,85 $ (boşluk +%13,19, ilk saat −%2,95)."
    ],
    "rejected": [],
    "watchlist": [
@@ -11485,7 +11826,179 @@
    "ranking": [],
    "shortRanking": [],
    "rankingNote": "Puan = 12-1 ay getirisi (son ay hariç 12 aylık getiri, %). Long için uygun: fiyat 200 günlük ortalamanın üstünde ve puan pozitif; sepet ilk 10'dan (sektör başına en fazla 3) oluşur, ilk 20'de kalan tutulur. Short listesi: fiyatı 200 günlük ortalamanın altında ve puanı negatif en zayıf hisseler (yalnızca izleme; v5'te sepet düşüşte nakde geçer).",
-   "nextSteps": "Endeks kolunun yönü ve büyüklüğü her gün 10:00'dan sonra, haber şoku taraması 10:30'dan sonra; haber işlemlerinin zarar-kesleri piyasa açıkken 5 dakikada bir kontrol ediliyor."
+   "nextSteps": "Endeks kolunun yönü ve büyüklüğü her gün 10:00'dan sonra, haber şoku taraması 10:30'dan sonra; haber işlemlerinin zarar-kesleri piyasa açıkken 5 dakikada bir kontrol ediliyor.",
+   "events": {
+    "date": "2026-11-05",
+    "at": "2026-11-05T10:31:08-05:00",
+    "checked": 165,
+    "gaps": [
+     {
+      "ticker": "APP",
+      "name": "AppLovin",
+      "gapPct": 28.77,
+      "firstHourPct": 2.69,
+      "prevClose": 271.75,
+      "open": 349.94,
+      "h1High": 365.33,
+      "h1Low": 338.88,
+      "h1Close": 359.35
+     },
+     {
+      "ticker": "ARM",
+      "name": "Arm Holdings",
+      "gapPct": -10.36,
+      "firstHourPct": -1.97,
+      "prevClose": 191.8,
+      "open": 171.93,
+      "h1High": 175.83,
+      "h1Low": 166.43,
+      "h1Close": 168.54
+     },
+     {
+      "ticker": "EXPE",
+      "name": "EXPE",
+      "gapPct": -11.03,
+      "firstHourPct": -2.07,
+      "prevClose": 315.88,
+      "open": 281.03,
+      "h1High": 288.96,
+      "h1Low": 272.37,
+      "h1Close": 275.2
+     },
+     {
+      "ticker": "QCOM",
+      "name": "Qualcomm",
+      "gapPct": -13.22,
+      "firstHourPct": 4.09,
+      "prevClose": 173.19,
+      "open": 150.3,
+      "h1High": 159.27,
+      "h1Low": 149.09,
+      "h1Close": 156.44
+     },
+     {
+      "ticker": "SNAP",
+      "name": "SNAP",
+      "gapPct": -10.64,
+      "firstHourPct": -2.17,
+      "prevClose": 5.92,
+      "open": 5.29,
+      "h1High": 5.56,
+      "h1Low": 5.09,
+      "h1Close": 5.18
+     },
+     {
+      "ticker": "U",
+      "name": "U",
+      "gapPct": 13.19,
+      "firstHourPct": -2.95,
+      "prevClose": 42.46,
+      "open": 48.06,
+      "h1High": 48.56,
+      "h1Low": 44.82,
+      "h1Close": 46.64
+     }
+    ],
+    "taken": [
+     {
+      "ticker": "QCOM",
+      "name": "Qualcomm",
+      "gapPct": -13.22,
+      "firstHourPct": 4.09,
+      "prevClose": 173.19,
+      "open": 150.3,
+      "h1High": 159.27,
+      "h1Low": 149.09,
+      "h1Close": 156.44,
+      "side": "long",
+      "ssr": true,
+      "stop": 148.94,
+      "amount": 301.06,
+      "price": 156.16,
+      "exitDate": "2026-11-09",
+      "headline": {
+       "title": "Qualcomm, Micron, Sandisk, and AMD stocks sink, leading chip sector lower",
+       "url": "https://finance.yahoo.com/markets/article/qualcomm-micron-arm-stocks-sink-lead-chip-sector-lower-133100607.html",
+       "publisher": "Yahoo Finance",
+       "at": "2026-11-05T13:31:00+00:00"
+      }
+     },
+     {
+      "ticker": "U",
+      "name": "U",
+      "gapPct": 13.19,
+      "firstHourPct": -2.95,
+      "prevClose": 42.46,
+      "open": 48.06,
+      "h1High": 48.56,
+      "h1Low": 44.82,
+      "h1Close": 46.64,
+      "side": "short",
+      "ssr": false,
+      "stop": 48.61,
+      "amount": 364.85,
+      "price": 47.17,
+      "exitDate": "2026-11-09",
+      "headline": {
+       "title": "Vector Ads Lift Unity to First GAAP Profit: Rapid Earnings Reaction",
+       "url": "https://www.fool.com/investing/2026/11/05/vector-ads-lift-unity-to-first-gaap-profit-rapid-earnings-reaction/",
+       "publisher": "Motley Fool",
+       "at": "2026-11-05T14:55:52+00:00"
+      }
+     }
+    ],
+    "skipped": [
+     {
+      "ticker": "APP",
+      "name": "AppLovin",
+      "gapPct": 28.77,
+      "firstHourPct": 2.69,
+      "prevClose": 271.75,
+      "open": 349.94,
+      "h1High": 365.33,
+      "h1Low": 338.88,
+      "h1Close": 359.35,
+      "why": "ilk saatte haberin yönünde devam etti; testte bu durum zarar ettirdi"
+     },
+     {
+      "ticker": "ARM",
+      "name": "Arm Holdings",
+      "gapPct": -10.36,
+      "firstHourPct": -1.97,
+      "prevClose": 191.8,
+      "open": 171.93,
+      "h1High": 175.83,
+      "h1Low": 166.43,
+      "h1Close": 168.54,
+      "why": "ilk saatte haberin yönünde devam etti; testte bu durum zarar ettirdi"
+     },
+     {
+      "ticker": "EXPE",
+      "name": "EXPE",
+      "gapPct": -11.03,
+      "firstHourPct": -2.07,
+      "prevClose": 315.88,
+      "open": 281.03,
+      "h1High": 288.96,
+      "h1Low": 272.37,
+      "h1Close": 275.2,
+      "why": "ilk saatte haberin yönünde devam etti; testte bu durum zarar ettirdi"
+     },
+     {
+      "ticker": "SNAP",
+      "name": "SNAP",
+      "gapPct": -10.64,
+      "firstHourPct": -2.17,
+      "prevClose": 5.92,
+      "open": 5.29,
+      "h1High": 5.56,
+      "h1Low": 5.09,
+      "h1Close": 5.18,
+      "why": "ilk saatte haberin yönünde devam etti; testte bu durum zarar ettirdi"
+     }
+    ],
+    "rule": "Açılış boşluğu en az %8; ilk saatte haberin tersine en az %0,5 dönüş; 2 işlem günü tut, zarar-kes ilk saatin öbür ucu."
+   }
   }
  ],
  "compliance": [
@@ -11500,7 +12013,7 @@
  ],
  "tax": {
   "2026": {
-   "commissions": 2.14,
+   "commissions": 2.86,
    "shortTermRealized": -9.71
   }
  },
@@ -11650,7 +12163,7 @@
   "start": "2026-10-30",
   "startAt": "2026-10-30T15:50:43-04:00",
   "end": "2027-01-28",
-  "asOf": "2026-11-05T10:21:03-05:00",
+  "asOf": "2026-11-05T10:31:08-05:00",
   "strategy": "v6",
   "history": [
    {
@@ -11714,12 +12227,12 @@
   "daysElapsed": 5,
   "daysTotal": 61,
   "finished": false,
-  "returnPct": -2.69,
-  "spyReturnPct": -0.3,
+  "returnPct": -2.74,
+  "spyReturnPct": -0.36,
   "excessPct": -2.39,
-  "maxDrawdownPct": -3.55,
-  "maxDrawdownAt": "2026-11-05T10:21:03-05:00",
-  "drawdownNowPct": -3.55,
+  "maxDrawdownPct": -3.74,
+  "maxDrawdownAt": "2026-11-05T10:26:07-05:00",
+  "drawdownNowPct": -3.6,
   "trades": {
    "closed": 1,
    "wins": 0,
@@ -11738,8 +12251,8 @@
    },
    {
     "month": "2026-11",
-    "returnPct": -2.69,
-    "spyPct": -0.31,
+    "returnPct": -2.74,
+    "spyPct": -0.36,
     "excessPct": -2.38
    }
   ],
@@ -11763,7 +12276,7 @@
     "key": "dd",
     "label": "En büyük düşüş %20'den az",
     "ok": true,
-    "value": -3.55,
+    "value": -3.74,
     "unit": "pct"
    },
    {
