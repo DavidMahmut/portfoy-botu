@@ -47,7 +47,7 @@ def prepare(px):
     direction = pd.Series(np.where(spy > sma200, 1, np.where(sma50 < sma200, -1, 0)), index=idx)
     direction[sma200.isna()] = 1
     return pd.DataFrame({"q": q, "r": r, "r3": r3, "ri": ri, "rf": rf, "dd": dd, "ath": ath, "rv": rv,
-                         "dir": direction})
+                         "dir": direction, "qs50": q.rolling(50).mean(), "r5": q / q.shift(5) - 1})
 
 
 def run(D, weights_fn):
@@ -93,6 +93,32 @@ def make_v5(overlay=None, thr=-0.20):
             tgt = max(tgt, 1.0)
         elif overlay == "long3" and dip:
             tgt = 3.0
+        cur = st.get("w", (0.0, 0.0, 0.0))
+        now = expo(cur)
+        if abs(tgt - now) >= 0.3 or ((tgt == 0) != (now == 0)):
+            cur = v5_weights(tgt)
+        st["w"] = cur
+        return cur
+    return fn
+
+
+def make_v6x(vt=0.25, brake=None, cap=0.5):
+    """v6 index sleeve (v5 + no short after a 20 % Nasdaq fall) with an optional brake tested in Nov 2026:
+    'corr50'  - QQQ 10 %+ below its high AND below its own 50-day average: exposure at most `cap`,
+    'below50' - QQQ below its own 50-day average: exposure at most `cap`,
+    'crash5'  - QQQ fell 5 %+ in 5 days: exposure at most `cap` that day (re-checked daily)."""
+    def fn(i, row, st):
+        rv = row["rv"] if not math.isnan(row["rv"]) else 0.2
+        tgt = row["dir"] * min(3.0, vt / max(rv, 0.05))
+        dip = row["dd"] <= -0.20 or (st.get("dip") and row["q"] < row["ath"])
+        st["dip"] = bool(dip)
+        if dip:
+            tgt = max(tgt, 0.0)
+        below = not math.isnan(row["qs50"]) and row["q"] < row["qs50"]
+        hit = (brake == "corr50" and row["dd"] <= -0.10 and below) or (brake == "below50" and below) \
+            or (brake == "crash5" and not math.isnan(row["r5"]) and row["r5"] <= -0.05)
+        if hit and tgt > cap:
+            tgt = cap
         cur = st.get("w", (0.0, 0.0, 0.0))
         now = expo(cur)
         if abs(tgt - now) >= 0.3 or ((tgt == 0) != (now == 0)):
@@ -183,6 +209,14 @@ def main(px=None):
         ("v5_noshort", "v5 + Nasdaq %20 düşmüşse short açma", make_v5("noshort")),
         ("v5_long1", "v5 + Nasdaq %20 düşmüşse en az 1x long", make_v5("long1")),
         ("v5_long3", "v5 + Nasdaq %20 düşmüşse 3x long", make_v5("long3")),
+        ("v6", "v6 endeks kolu (şu anki kural: v5 + %20 düşüşte short yok)", make_v6x()),
+        ("v6_corr50_h", "v6 + düzeltmede (zirveden %10+ aşağı ve 50 günlüğün altı) en fazla 0,5x", make_v6x(brake="corr50")),
+        ("v6_corr50_0", "v6 + düzeltmede nakit", make_v6x(brake="corr50", cap=0.0)),
+        ("v6_below50_h", "v6 + QQQ 50 günlüğün altındaysa en fazla 0,5x", make_v6x(brake="below50")),
+        ("v6_crash5_h", "v6 + QQQ 5 günde %5+ düştüyse en fazla 0,5x", make_v6x(brake="crash5")),
+        ("v6_vt20", "v6, hedef oynaklık %20", make_v6x(vt=0.20)),
+        ("v6_vt15", "v6, hedef oynaklık %15", make_v6x(vt=0.15)),
+        ("v6_vt20_corr50_h", "v6, hedef oynaklık %20 + düzeltme freni", make_v6x(vt=0.20, brake="corr50")),
     ]
     res = {}
     for key, label, fn in strategies:
