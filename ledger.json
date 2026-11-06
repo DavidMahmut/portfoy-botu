@@ -233,7 +233,7 @@
   "totalPL": -134.08,
   "totalPLPct": -4.47,
   "twrPct": -4.47,
-  "asOf": "2026-11-06T16:00:43-05:00",
+  "asOf": "2026-11-06T16:05:46-05:00",
   "benchmarkPrice": 735.44,
   "benchmarkValue": 2936.63,
   "benchmarkTwrPct": -2.11
@@ -282,7 +282,7 @@
     "2026-11-06"
    ]
   },
-  "lastRunAt": "2026-11-06T16:00:43-05:00",
+  "lastRunAt": "2026-11-06T16:05:46-05:00",
   "lastError": null,
   "spikeScanDate": "2026-11-06",
   "spikeScan": {
@@ -1237,7 +1237,7 @@
   },
   {
    "date": "2026-11-06",
-   "at": "2026-11-06T16:00:43-05:00",
+   "at": "2026-11-06T16:05:46-05:00",
    "totalValue": 2865.92,
    "cash": 1849.62,
    "positionsValue": 1016.3,
@@ -17909,6 +17909,45 @@
     ],
     "actions": [],
     "note": "ABNB zarar-kes seviyesine %3'ten yakın"
+   },
+   {
+    "at": "2026-11-06T16:05:46-05:00",
+    "kind": "guard",
+    "status": "uyari",
+    "spyPrice": 735.44,
+    "spyChangePct": 0.33,
+    "totalValue": 2865.92,
+    "benchmarkValue": 2936.63,
+    "leverage": 0.65,
+    "marginBuffer": 2382.3,
+    "positions": [
+     {
+      "ticker": "QQQ",
+      "side": "long",
+      "price": 656.22,
+      "dayChangePct": 1.42,
+      "stopPrice": null,
+      "distancePct": null
+     },
+     {
+      "ticker": "TQQQ",
+      "side": "long",
+      "price": 52.25,
+      "dayChangePct": 3.53,
+      "stopPrice": null,
+      "distancePct": null
+     },
+     {
+      "ticker": "ABNB",
+      "side": "short",
+      "price": 190.02,
+      "dayChangePct": 11.69,
+      "stopPrice": 192.69,
+      "distancePct": 1.41
+     }
+    ],
+    "actions": [],
+    "note": "ABNB zarar-kes seviyesine %3'ten yakın"
    }
   ]
  },
@@ -19619,7 +19658,7 @@
   "start": "2026-10-30",
   "startAt": "2026-10-30T15:50:43-04:00",
   "end": "2027-01-28",
-  "asOf": "2026-11-06T16:00:43-05:00",
+  "asOf": "2026-11-06T16:05:46-05:00",
   "strategy": "v6",
   "history": [
    {
