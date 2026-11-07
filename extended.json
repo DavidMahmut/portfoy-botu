@@ -1,10 +1,10 @@
 {
- "asOf": "2026-11-06T16:24:39-05:00",
- "session": "post",
- "sessionLabel": "Piyasa sonrası (16:00–20:00 ET)",
+ "asOf": "2026-11-07T03:43:33-05:00",
+ "session": "pre",
+ "sessionLabel": "Piyasa öncesi (04:00–09:30 ET)",
  "equity": 2865.92,
- "totalImpact": 1.51,
- "totalImpactPct": 0.05,
+ "totalImpact": 1.66,
+ "totalImpactPct": 0.06,
  "items": [
   {
    "ticker": "QQQ",
@@ -15,10 +15,10 @@
    "stopPrice": null,
    "refClose": 656.22,
    "refAt": "2026-11-06T15:55:00-05:00",
-   "price": 656.87,
-   "at": "2026-11-06T16:20:00-05:00",
-   "changePct": 0.1,
-   "impact": 1.31,
+   "price": 657.5,
+   "at": "2026-11-06T19:55:00-05:00",
+   "changePct": 0.2,
+   "impact": 2.57,
    "beyondStop": false
   },
   {
@@ -30,10 +30,10 @@
    "stopPrice": null,
    "refClose": 52.25,
    "refAt": "2026-11-06T15:55:00-05:00",
-   "price": 52.3805,
-   "at": "2026-11-06T16:20:00-05:00",
-   "changePct": 0.25,
-   "impact": 0.15,
+   "price": 52.53,
+   "at": "2026-11-06T19:55:00-05:00",
+   "changePct": 0.54,
+   "impact": 0.33,
    "beyondStop": false
   },
   {
@@ -45,10 +45,10 @@
    "stopPrice": 192.69,
    "refClose": 190.02,
    "refAt": "2026-11-06T15:55:00-05:00",
-   "price": 189.99,
-   "at": "2026-11-06T16:13:23-05:00",
-   "changePct": -0.02,
-   "impact": 0.06,
+   "price": 190.6677,
+   "at": "2026-11-06T19:55:00-05:00",
+   "changePct": 0.34,
+   "impact": -1.23,
    "beyondStop": false
   }
  ],
@@ -57,17 +57,17 @@
    "ticker": "SPY",
    "label": "S&P 500 (SPY)",
    "refClose": 735.34,
-   "price": 736.01,
-   "at": "2026-11-06T16:20:00-05:00",
-   "changePct": 0.09
+   "price": 736.53,
+   "at": "2026-11-06T19:55:00-05:00",
+   "changePct": 0.16
   },
   {
    "ticker": "QQQ",
    "label": "Nasdaq 100 (QQQ)",
    "refClose": 656.22,
-   "price": 656.87,
-   "at": "2026-11-06T16:20:00-05:00",
-   "changePct": 0.1
+   "price": 657.5,
+   "at": "2026-11-06T19:55:00-05:00",
+   "changePct": 0.2
   }
  ],
  "note": "Yalnızca izleme: bot bu saatlerde işlem yapmaz, zarar-kes emirleri normal seansta işler. Seans dışında işlem hacmi düşüktür, fiyatlar sert oynayabilir ve ertesi açılış farklı olabilir.",
