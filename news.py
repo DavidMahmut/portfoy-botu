@@ -129,7 +129,6 @@ SA_GOOGLE = "https://news.google.com/rss/search"
 SA_MARKET_N, SA_PER_TICKER, SA_MAX_TICKERS, SA_MAX_AGE_H = 30, 4, 10, 96
 SA_NEWS_N, SA_ANALYSIS_N = 18, 12          # the market list keeps both kinds: short news and longer analysis
 SA_NOISE = re.compile(r"earnings call (transcript|presentation)|\d{4} q\d - results", re.I)
-_SAMPLE = []                               # a few raw link/guid pairs, kept in news.json to check the parsing
 
 
 def _local(tag):
@@ -173,8 +172,6 @@ def parse_sa(content):
             continue                      # earnings-call transcripts and slide decks flood the feed
         out.append({"title": title, "url": url, "at": _parse_time(it.findtext("pubDate")), "kind": kind,
                     "symbols": list(dict.fromkeys(syms))[:6], "author": author})
-        if len(_SAMPLE) < 6:
-            _SAMPLE.append({"link": link[:160], "guid": guid[:120], "url": url[:160]})
     return out
 
 
@@ -238,7 +235,7 @@ def seeking_alpha(tickers, now, prev=None):
                     key=lambda n: n["at"] or "", reverse=True)[:SA_MARKET_N]
     ok = bool(market) or any(p["items"] for p in per)
     out = {"asOf": now.astimezone(NY).isoformat(timespec="seconds"), "ok": ok, "stale": False, "via": via,
-           "errors": errors[:6], "feedCounts": counts, "sample": _SAMPLE[:6], "market": market, "tickers": per,
+           "errors": errors[:6], "feedCounts": counts, "market": market, "tickers": per,
            "source": {"title": "Seeking Alpha", "url": "https://seekingalpha.com/market-news"},
            "note": "Yalnızca başlık ve bağlantı. Yazıların tamamı Seeking Alpha'da; bir kısmı abonelik ister. "
                    "Yatırım tavsiyesi değildir."}
