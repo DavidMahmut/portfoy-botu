@@ -288,23 +288,39 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
   .trade{grid-template-columns:minmax(0,1fr)}
   .trade .meta,.trade .why,.src-chips{grid-column:1}
 }
-/* Nasdaq drawdown watch: sticky side column on wide screens, a card after the summary on narrow ones */
+/* Side column: compact Nasdaq 100 status + Seeking Alpha headlines; sticky on wide screens, a card after the summary on narrow ones */
 .dip-side{display:flex;flex-direction:column;gap:14px}
 .dip-side > *{flex-shrink:0}
-.dip-side h2.dip-big{font-family:var(--f-mono);font-stretch:100%;font-size:34px;font-weight:600;letter-spacing:0;line-height:1}
-.dip-gauge{position:relative;height:40px;margin:4px 0 0}
-.dip-gauge .track{position:absolute;left:0;right:0;top:9px;height:8px;border-radius:4px;background:linear-gradient(90deg,var(--gain-soft) 0 25%,var(--warn-soft) 25% 50%,var(--loss-soft) 50% 100%)}
-.dip-gauge .tick{position:absolute;top:4px;width:1px;height:18px;background:var(--muted)}
-.dip-gauge .lab{position:absolute;top:22px;font-family:var(--f-mono);font-size:11px;color:var(--muted);transform:translateX(-50%)}
-.dip-gauge .mark{position:absolute;top:5px;width:4px;height:16px;border-radius:2px;background:var(--ink);transform:translateX(-50%)}
-.dip-facts{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 10px;margin:0;font-size:13px}
-.dip-facts dt{color:var(--muted)}
-.dip-facts dd{margin:0;text-align:right;font-family:var(--f-mono)}
+.ndx-line{display:flex;flex-direction:column;gap:6px;padding:10px 12px;border:1px solid var(--line);border-radius:8px}
+.ndx-top{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.ndx-top b{font-family:var(--f-mono);font-size:18px;font-weight:600;white-space:nowrap}
+.ndx-top .eyebrow{white-space:nowrap}
+.ndx-top b.mid{color:var(--warn)} .ndx-top b.bad{color:var(--loss)} .ndx-top b.ok{color:var(--gain)}
+.ndx-bar{position:relative;height:8px}
+.ndx-bar .track{position:absolute;inset:2px 0;border-radius:2px;background:linear-gradient(90deg,var(--gain-soft) 0 25%,var(--warn-soft) 25% 50%,var(--loss-soft) 50% 100%)}
+.ndx-bar .tick{position:absolute;top:0;width:1px;height:8px;background:var(--muted)}
+.ndx-bar .mark{position:absolute;top:0;width:3px;height:8px;border-radius:1px;background:var(--ink);transform:translateX(-50%)}
+.ndx-line p{line-height:1.4}
+.sa-h{font-size:20px;margin:0}
+.sa-tabs{display:flex;gap:6px}
+.sa-tabs button{font:inherit;font-size:13px;padding:5px 10px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer}
+.sa-tabs button[aria-pressed="true"]{background:var(--accent-soft);border-color:var(--accent);color:var(--accent);font-weight:600}
+.sa-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;font-size:13.5px}
+.sa-list li{border-top:1px solid var(--line);padding:8px 0}
+.sa-list li:first-child{border-top:none;padding-top:0}
+.sa-list a{color:var(--ink);text-decoration:none;font-weight:500;line-height:1.35}
+.sa-list a:hover{text-decoration:underline;color:var(--accent)}
+.sa-meta{margin-top:3px;font-size:12px;color:var(--muted);display:flex;flex-wrap:wrap;gap:4px 8px;align-items:center}
+.sa-sym{font-family:var(--f-mono);font-size:11px;padding:0 5px;border-radius:4px;background:var(--accent-soft);color:var(--accent)}
+.sa-sym.own{background:var(--warn-soft);color:var(--warn);font-weight:600}
+.sa-tk{font-family:var(--f-mono);font-size:12px;font-weight:600;padding:8px 0 2px;border-top:1px solid var(--line);display:flex;gap:6px;align-items:center}
+.sa-tk:first-child{border-top:none;padding-top:0}
+.sa-tk + li{border-top:none;padding-top:4px}
+.sa-more{font:inherit;font-size:13px;color:var(--accent);background:none;border:none;padding:4px 0;cursor:pointer;text-align:left}
+/* compact event list, used by the news-shock sleeve */
 .dip-ev{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;font-size:13px}
 .dip-ev li{border-top:1px solid var(--line);padding-top:8px}
 .dip-ev b{font-family:var(--f-mono)}
-.dip-side .pill.ok{background:var(--gain-soft);color:var(--gain)}
-.dip-side .pill.mid{background:var(--warn-soft);color:var(--warn)}
 @media (min-width:1260px){
   .wrap{max-width:1460px;display:grid;grid-template-columns:minmax(0,1fr) 300px;column-gap:28px;row-gap:28px}
   .wrap > *{grid-column:1;min-width:0}
@@ -389,7 +405,7 @@ tr.mv-det td{background:var(--bg);white-space:normal;text-align:left}
 
   <nav class="tabs" aria-label="Bölümler">
     <a href="#ozet">Özet</a>
-    <a href="#nasdaq">Nasdaq düşüş takibi</a>
+    <a href="#sa">Seeking Alpha</a>
     <a href="#haber-kolu">Haber şoku</a>
     <a href="#hareketliler">Hareketliler</a>
     <a href="#karne">Karne</a>
@@ -471,26 +487,23 @@ tr.mv-det td{background:var(--bg);white-space:normal;text-align:left}
     </div>
   </section>
 
-  <aside class="dip-side panel" id="nasdaq" aria-labelledby="h-dip">
+  <aside class="dip-side panel" id="sa" aria-labelledby="h-sa">
+    <div class="ndx-line" id="nasdaq" title="Nasdaq 100 fonu QQQ'nun zirvesinden uzaklığı. Botun kuralı: %20 veya daha fazla düşüşte endeks kolu short açmaz.">
+      <div class="ndx-top"><span class="eyebrow" style="margin:0">Nasdaq 100</span><b id="ndxDd">—</b></div>
+      <div class="ndx-bar" aria-hidden="true"><span class="track"></span><span class="tick" style="left:25%"></span><span class="tick" style="left:50%"></span><span class="mark" id="ndxMark" hidden></span></div>
+      <p class="small" id="ndxTxt" style="margin:0">Veri bekleniyor</p>
+    </div>
     <div>
-      <p class="eyebrow">Nasdaq düşüş takibi</p>
-      <h2 class="dip-big" id="h-dip">—</h2>
-      <p class="small muted" id="dipSub" style="margin:6px 0 0">Nasdaq 100 fonu QQQ'nun zirvesinden uzaklığı</p>
+      <p class="eyebrow">Seeking Alpha</p>
+      <h2 class="sa-h" id="h-sa">Son başlıklar</h2>
+      <p class="small muted" id="saSub" style="margin:4px 0 0">—</p>
     </div>
-    <div class="dip-gauge" id="dipGauge" aria-hidden="true">
-      <span class="track"></span>
-      <span class="tick" style="left:25%"></span><span class="tick" style="left:50%"></span>
-      <span class="lab" style="left:0;transform:none">0</span><span class="lab" style="left:25%">−%10</span><span class="lab" style="left:50%">−%20</span><span class="lab" style="right:0;left:auto;transform:none">−%40</span>
-      <span class="mark" id="dipMark" style="left:0"></span>
+    <div class="sa-tabs" role="group" aria-label="Başlık grubu">
+      <button type="button" data-sa="market" aria-pressed="true">Piyasa akışı</button>
+      <button type="button" data-sa="held" aria-pressed="false">Elimizdekiler</button>
     </div>
-    <div><span class="pill" id="dipPill">Veri bekleniyor</span></div>
-    <dl class="dip-facts" id="dipFacts"></dl>
-    <p class="small" id="dipRule" style="margin:0"></p>
-    <div>
-      <h3 style="font-size:15px;margin:0 0 8px">Geçmişteki %20+ düşüşler</h3>
-      <ul class="dip-ev" id="dipEvents"><li class="muted">Test sonucu bekleniyor…</li></ul>
-    </div>
-    <p class="small muted" id="dipStudy" style="margin:0"></p>
+    <ul class="sa-list" id="saList"><li class="muted">Başlıklar bekleniyor…</li></ul>
+    <p class="small muted" id="saNote" style="margin:0"></p>
   </aside>
 
   <section id="haber-kolu" aria-labelledby="h-ev">
@@ -879,49 +892,73 @@ tr.mv-det td{background:var(--bg);white-space:normal;text-align:left}
   function expOf(x){ return isNum(x.exposure)? x.exposure : Math.abs(x.marketValue||0)*(x.lev||1); }
   function dirOf(x){ return (x.side==="short" || /ters/.test(x.kind||""))? -1 : 1; }
   function renderDip(){
-    var W=(S.meta&&S.meta.nasdaq)||null, D=S.dip, now=D&&D.now||null;
-    var useW=W&&isNum(W.ddPct);
-    var dd=useW? W.ddPct : (now&&isNum(now.drawdownPct)? now.drawdownPct : null);
-    var price=useW? W.price : (now? now.qqq : null), ath=useW? W.ath : (now? now.ath : null);
-    var athDate=useW? W.athDate : (now? now.athDate : null);
-    $("h-dip").textContent=isNum(dd)? pct(dd) : "—";
-    var m=$("dipMark");
+    var W=(S.meta&&S.meta.nasdaq)||null;
+    var dd=W&&isNum(W.ddPct)? W.ddPct : null, b=$("ndxDd"), m=$("ndxMark"), t=$("ndxTxt");
+    if(!b||!t) return;
+    b.textContent=isNum(dd)? pct(dd) : "—";
+    b.className=!isNum(dd)? "" : dd<=-20? "bad" : dd<=-10? "mid" : "ok";
     if(isNum(dd)){ m.hidden=false; m.style.left=Math.min(100,Math.max(0,-dd/40*100)).toFixed(1)+"%"; } else m.hidden=true;
-    var pill=$("dipPill");
-    if(!isNum(dd)){ pill.className="pill"; pill.textContent="Veri bekleniyor"; }
-    else if(dd<=-20){ pill.className="pill warn"; pill.textContent="Ayı piyasası: %20 eşiği aşıldı"; }
-    else if(dd<=-10){ pill.className="pill mid"; pill.textContent="Düzeltme: %10–20 arası düşüş"; }
-    else { pill.className="pill ok"; pill.textContent="Normal: zirveye %10'dan yakın"; }
-    var f=$("dipFacts"); clear(f);
-    function row(a,b){ f.appendChild(el("dt",{text:a})); f.appendChild(el("dd",{text:b})); }
-    if(isNum(price)) row("QQQ şimdi", fmtNum(price,2)+" $");
-    if(isNum(ath)){
-      row("Zirve"+(athDate?" ("+dShort(athDate)+")":""), fmtNum(ath,2)+" $");
-      row("−%10 seviyesi", fmtNum(ath*0.9,2)+" $");
-      row("−%20 seviyesi", fmtNum(ath*0.8,2)+" $");
-      if(isNum(price)&&price>ath*0.8) row("%20 eşiğine", "%"+fmtNum((1-ath*0.8/price)*100,1)+" daha düşüş");
-    }
-    if(useW&&W.at) row("Güncellendi", dShort(W.at)+" "+tm(W.at));
-    $("dipRule").textContent=(S.config&&S.config.dipRule)||"Yalnızca izleme: bu panel botun kararlarını değiştirmez.";
-    var ul=$("dipEvents"); clear(ul);
-    var ev=(D&&D.episodes)||[];
-    if(!ev.length) ul.appendChild(el("li",{class:"muted",text:D?"Kayıt yok.":"Test sonucu bekleniyor…"}));
-    function dur(days){ return days<365? Math.max(1,Math.round(days/30.4))+" ay" : fmtNum(days/365.25,1)+" yıl"; }
-    ev.slice().reverse().forEach(function(e){
-      var y1=(e.peak||"").slice(0,4), y2=e.open? "sürüyor" : (e.recovered||"").slice(0,4);
-      ul.appendChild(el("li",null,
-        el("div",null, el("b",{text:y1===y2? y1 : y1+"–"+y2}), el("span",{text:" · en dip "+pct(e.troughPct)+" ("+dShort(e.trough)+")"})),
-        el("div",{class:"muted",text:"%20 düşüşte alan, dibe kadar: 1x "+pct(e.afterTriggerWorstPct)+", 3x "+pct(e.afterTriggerWorst3xPct)
-          +(e.open? "" : " · zirveye dönüş "+dur(e.daysTriggerToRecovery))})));
-    });
-    var st=$("dipStudy"), R=D&&D.results;
-    if(R&&R.qqq&&R.dip20&&R.v5){
-      var w="1999-2026", a=R.qqq[w], b=R.dip20[w], c=R.v5[w];
-      st.textContent="1999–2026 testi (yıllık getiri / en kötü düşüş): QQQ al-tut "+pct(a.cagrPct)+" / "+pct(a.maxDrawdownPct)
-        +"; yalnızca %20 düşüşte alıp zirvede satan "+pct(b.cagrPct)+" / "+pct(b.maxDrawdownPct)+" (zamanın %"+fmtNum(b.inMarketPct,0)
-        +"'inde piyasada); v5 endeks kolu "+pct(c.cagrPct)+" / "+pct(c.maxDrawdownPct)+". Ayrıntı: dip_results.json.";
-    } else st.textContent="";
+    if(!isNum(dd)){ t.textContent="Veri bekleniyor"; return; }
+    var lvl=dd<=-20? "Ayı piyasası" : dd<=-10? "Düzeltme" : "Normal";
+    var trig=isNum(W.triggerPrice)? W.triggerPrice : (isNum(W.ath)? W.ath*0.8 : null);
+    var txt=lvl+": QQQ "+fmtNum(W.price,2)+" $, zirve "+(isNum(W.ath)? fmtNum(W.ath,2)+" $"+(W.athDate? " ("+dShort(W.athDate)+")" : "") : "—")+". ";
+    if(dd<=-20 || W.active) txt+="%20 eşiği aşıldı: endeks kolu yeni zirveye kadar short açmaz.";
+    else if(isNum(trig)&&isNum(W.price)) txt+="−%20 eşiği "+fmtNum(trig,2)+" $ (%"+fmtNum((1-trig/W.price)*100,1)+" daha düşüş); aşılırsa endeks kolu short açmaz.";
+    t.textContent=txt;
+    t.title=W.at? "Güncellendi "+dShort(W.at)+" "+tm(W.at) : "";
   }
+  var saTab="market", saAll=false;
+  try{ saTab=localStorage.getItem("saTab")||"market"; }catch(e){}
+  function saWhen(s){
+    var d=parseD(s); if(!d) return "";
+    var today=fmtDateShort.format(new Date());
+    return (fmtDateShort.format(d)===today? "" : dShort(s)+" ")+tm(s);
+  }
+  function saItem(n, own){
+    var url=typeof n.url==="string"&&/^https:\/\//i.test(n.url)? n.url : null;
+    var a=url? el("a",{href:url,target:"_blank",rel:"noopener noreferrer",text:n.title}) : el("span",{text:n.title});
+    var meta=el("div",{class:"sa-meta"});
+    if(n.at) meta.appendChild(el("span",{text:saWhen(n.at)}));
+    if(n.kind) meta.appendChild(el("span",{text:n.kind==="news"? "Haber" : "Analiz"}));
+    (n.symbols||[]).slice(0,4).forEach(function(x){ meta.appendChild(el("span",{class:"sa-sym"+(own[x]?" own":""),text:x,title:own[x]? "Botta açık pozisyon" : null})); });
+    return el("li",null,a,meta);
+  }
+  function renderSA(){
+    var ul=$("saList"), sub=$("saSub"), note=$("saNote"); if(!ul) return;
+    var A=S.news&&S.news.seekingAlpha; clear(ul);
+    document.querySelectorAll(".sa-tabs button").forEach(function(btn){ btn.setAttribute("aria-pressed", btn.getAttribute("data-sa")===saTab? "true" : "false"); });
+    var own={}; ((S.portfolio&&S.portfolio.positions)||[]).forEach(function(p){ own[p.ticker]=1; });
+    if(!A){
+      sub.textContent="Başlıklar bir sonraki haber taramasında gelecek (iş günleri 04:00–20:00 ET, 30 dakikada bir).";
+      ul.appendChild(el("li",{class:"muted",text:"Henüz Seeking Alpha verisi yok."})); note.textContent=""; return;
+    }
+    var via=/google/i.test(A.via||"")? " · Google News üzerinden" : "";
+    sub.textContent=A.stale? "Seeking Alpha'ya şu an ulaşılamadı; son alınan liste ("+dShort(A.lastGood)+" "+tm(A.lastGood)+")"+via
+      : "Güncellendi "+dShort(A.asOf)+" "+tm(A.asOf)+via;
+    if(saTab==="held"){
+      var any=false, none=[];
+      (A.tickers||[]).forEach(function(g){
+        if(!g.items||!g.items.length){ none.push(g.ticker); return; }
+        any=true;
+        ul.appendChild(el("li",{class:"sa-tk"}, el("span",{text:g.ticker}), el("span",{class:"muted",style:"font-weight:400",text:g.role==="short"? "açığa satış" : "alış"})));
+        g.items.forEach(function(n){ ul.appendChild(saItem(n, own)); });
+      });
+      if(!any) ul.appendChild(el("li",{class:"muted",text:(A.tickers||[]).length? "Elimizdeki hisseler için son 4 günde Seeking Alpha başlığı yok." : "Botta açık pozisyon yok."}));
+      if(none.length && any) ul.appendChild(el("li",{class:"muted small",text:"Başlık yok: "+none.join(", ")}));
+    } else {
+      var L=A.market||[], base=window.matchMedia&&window.matchMedia("(min-width:1260px)").matches? 15 : 8, lim=saAll? L.length : base;
+      if(!L.length) ul.appendChild(el("li",{class:"muted",text:"Piyasa akışında yeni başlık yok."}));
+      L.slice(0,lim).forEach(function(n){ ul.appendChild(saItem(n, own)); });
+      if(L.length>base) ul.appendChild(el("li",null, el("button",{type:"button",class:"sa-more",id:"saMore",text:saAll? "Daha az göster" : "Tümünü göster ("+L.length+")"})));
+    }
+    note.textContent="Başlıklar Seeking Alpha'nın açık RSS akışından; yazıların tamamı Seeking Alpha'da, bir kısmı abonelik ister. Turuncu etiket: botta açık pozisyon. Bu liste botun kararlarını değiştirmez; yatırım tavsiyesi değildir.";
+  }
+  document.addEventListener("click", function(e){
+    var b=e.target.closest&&e.target.closest(".sa-tabs button, #saMore"); if(!b) return;
+    if(b.id==="saMore") saAll=!saAll;
+    else { saTab=b.getAttribute("data-sa"); saAll=false; try{ localStorage.setItem("saTab",saTab); }catch(x){} }
+    try{ renderSA(); }catch(x){ console.error(x); }
+  });
   var mvKey="dailyLosers", mvLimit=25, mvF={}, mvSort=null;
   try{ mvSort=JSON.parse(localStorage.getItem("mvSort")||"null"); }catch(e){ mvSort=null; }
   function indVal(r,k){
@@ -1598,6 +1635,7 @@ tr.mv-det td{background:var(--bg);white-space:normal;text-align:left}
 
   function renderAll(){
     try{ renderDip(); }catch(e){ console.error(e); }
+    try{ renderSA(); }catch(e){ console.error(e); }
     try{ renderEvents(); }catch(e){ console.error(e); }
     try{ renderSummary(); renderRisk(); renderExt(); renderScore(); renderNews(); renderAlloc(); renderPositions(); renderTrades(); renderRuns(); renderLaw(); renderRules(); renderChart(); }
     catch(e){ console.error(e); }
@@ -1630,11 +1668,7 @@ tr.mv-det td{background:var(--bg);white-space:normal;text-align:left}
       .then(function(x){ S.news=x; }).catch(function(){ S.news=null; })
       .then(function(){ return fetch("brief.json?t="+Date.now(),{cache:"no-store"}).then(function(r){ if(!r.ok) throw 0; return r.json(); }); })
       .then(function(b){ S.brief=b; }, function(){ S.brief=null; })
-      .then(function(){ try{ renderNews(); }catch(e){ console.error(e); } });
-  }
-  function loadDip(){
-    fetch("dip_results.json?t="+Date.now(),{cache:"no-store"}).then(function(r){ if(!r.ok) throw 0; return r.json(); })
-      .then(function(x){ S.dip=x; }, function(){ S.dip=null; }).then(function(){ try{ renderDip(); }catch(e){ console.error(e); } });
+      .then(function(){ try{ renderNews(); }catch(e){ console.error(e); } try{ renderSA(); }catch(e){ console.error(e); } });
   }
   function loadEv(){
     fetch("event_results.json?t="+Date.now(),{cache:"no-store"}).then(function(r){ if(!r.ok) throw 0; return r.json(); })
@@ -1648,7 +1682,7 @@ tr.mv-det td{background:var(--bg);white-space:normal;text-align:left}
     fetch("movers.json?t="+Date.now(),{cache:"no-store"}).then(function(r){ if(!r.ok) throw 0; return r.json(); })
       .then(function(x){ S.movers=x; }, function(){ S.movers=null; }).then(function(){ try{ renderMovers(); }catch(e){ console.error(e); } });
   }
-  load(); loadExt(); loadNews(); loadDip(); loadEv(); loadSp(); loadMovers(); setInterval(load, 60000); setInterval(loadMovers, 300000); setInterval(loadExt, 60000); setInterval(loadNews, 300000);
+  load(); loadExt(); loadNews(); loadEv(); loadSp(); loadMovers(); setInterval(load, 60000); setInterval(loadMovers, 300000); setInterval(loadExt, 60000); setInterval(loadNews, 300000);
 })();
 </script>
 </body>

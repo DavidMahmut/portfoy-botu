@@ -3,12 +3,18 @@
 For every stock the bot holds or watches, plus the broad market, it collects recent Yahoo Finance headlines
 (yfinance, with the Yahoo RSS feed as a fallback) and tags them by theme. It also writes a short English daily
 brief built from market data, the bot's ledger and the headlines - rule-based, no AI. Output: news.json.
+It also reads Seeking Alpha's public RSS feeds (headlines and links only - the articles themselves stay on
+seekingalpha.com and may need a subscription) for the dashboard's side column. If seekingalpha.com refuses the
+request, the same Seeking Alpha headlines are taken from Google News' public RSS search; if both fail, the last
+good list is kept and marked as old.
 Runs from .github/workflows/watch.yml every 30 minutes, 04:00-20:00 New York time.
 """
+import html
 import json
 import os
 import re
 import sys
+import time
 import xml.etree.ElementTree as ET
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -113,6 +119,117 @@ def collect(t, now, limit, seen):
         if len(fresh) >= limit:
             break
     return fresh
+
+
+SA_UA = "Mozilla/5.0 (compatible; portfoy-botu RSS reader; +https://github.com/DavidMahmut/portfoy-botu)"
+SA_FEEDS = [("Piyasa haberleri", "https://seekingalpha.com/market_currents.xml"),
+            ("Tüm yazılar", "https://seekingalpha.com/feed.xml")]
+SA_TICKER = "https://seekingalpha.com/api/sa/combined/{t}.xml"
+SA_GOOGLE = "https://news.google.com/rss/search"
+SA_MARKET_N, SA_PER_TICKER, SA_MAX_TICKERS, SA_MAX_AGE_H = 30, 4, 10, 96
+
+
+def _local(tag):
+    return str(tag).rsplit("}", 1)[-1]
+
+
+def parse_sa(content):
+    """Items of a Seeking Alpha (or Google News) RSS feed: {title, url, at, kind, symbols, author}."""
+    root = ET.fromstring(content)
+    out = []
+    for it in root.iter("item"):
+        title = html.unescape((it.findtext("title") or "").strip())
+        link = (it.findtext("link") or "").strip()
+        if not title or not link.startswith("http"):
+            continue
+        src = it.find("source")
+        if src is not None and src.text and "seeking alpha" not in src.text.lower():
+            continue                      # Google News: keep Seeking Alpha items only
+        title = re.sub(r"\s+-\s+Seeking Alpha$", "", title)
+        syms, author = [], None
+        for ch in it.iter():
+            n, txt = _local(ch.tag), (ch.text or "").strip()
+            if not txt:
+                continue
+            if n == "symbol" or (n == "category" and ch.get("type") == "symbol"):
+                syms.append(txt.upper())
+            elif n in ("author_name", "creator") and not author:
+                author = txt
+        url = link.split("?")[0] if "seekingalpha.com" in link else link
+        guid = it.findtext("guid") or ""
+        kind = ("news" if "/news/" in url or guid.startswith("MarketCurrent") else
+                "analysis" if "/article/" in url or guid.startswith("Article") else None)
+        out.append({"title": title, "url": url, "at": _parse_time(it.findtext("pubDate")), "kind": kind,
+                    "symbols": list(dict.fromkeys(syms))[:6], "author": author})
+    return out
+
+
+def fetch_sa(url, params=None):
+    import requests
+    r = requests.get(url, params=params, timeout=15, headers={"User-Agent": SA_UA, "Accept": "application/rss+xml, application/xml"})
+    if r.status_code != 200:
+        raise RuntimeError(f"HTTP {r.status_code}")
+    if b"<rss" not in r.content[:2000] and b"<feed" not in r.content[:2000]:
+        raise RuntimeError("RSS değil (büyük olasılıkla engellendi)")
+    return parse_sa(r.content)
+
+
+def google_sa(query):
+    return fetch_sa(SA_GOOGLE, {"q": f"{query} site:seekingalpha.com".strip(), "hl": "en-US", "gl": "US", "ceid": "US:en"})
+
+
+def _fresh(items, now, limit, seen):
+    res = []
+    for n in sorted(items, key=lambda x: x["at"] or datetime(1970, 1, 1, tzinfo=timezone.utc), reverse=True):
+        if n["url"] in seen or (n["at"] and now - n["at"] > timedelta(hours=SA_MAX_AGE_H)):
+            continue
+        seen.add(n["url"])
+        res.append(dict(n, at=n["at"].astimezone(NY).isoformat(timespec="minutes") if n["at"] else None))
+        if len(res) >= limit:
+            break
+    return res
+
+
+def seeking_alpha(tickers, now, prev=None):
+    """Recent Seeking Alpha headlines: the market feed plus a few per held ticker."""
+    errors, seen, via = [], set(), "seekingalpha.com RSS"
+    raw = []
+    for name, url in SA_FEEDS:
+        try:
+            raw += fetch_sa(url)
+        except Exception as e:
+            errors.append(f"{name}: {str(e)[:120]}")
+    use_google = not raw
+    if use_google:
+        try:
+            raw = google_sa("when:2d")
+            via = "Google News RSS (yalnızca Seeking Alpha kaynaklı başlıklar)"
+        except Exception as e:
+            errors.append(f"Google News: {str(e)[:120]}")
+    per = []
+    for t, role in tickers[:SA_MAX_TICKERS]:
+        time.sleep(0.4)
+        try:
+            items = google_sa(f'"{t}" when:7d') if use_google else fetch_sa(SA_TICKER.format(t=t))
+        except Exception as e:
+            errors.append(f"{t}: {str(e)[:120]}")
+            items = []
+        per.append({"ticker": t, "role": role, "items": _fresh(items, now, SA_PER_TICKER, seen)})
+    market = _fresh(raw, now, SA_MARKET_N, seen)      # after the tickers, so a held stock's story is listed under it
+    ok = bool(market) or any(p["items"] for p in per)
+    out = {"asOf": now.astimezone(NY).isoformat(timespec="seconds"), "ok": ok, "stale": False, "via": via,
+           "errors": errors[:6], "market": market, "tickers": per,
+           "source": {"title": "Seeking Alpha", "url": "https://seekingalpha.com/market-news"},
+           "note": "Yalnızca başlık ve bağlantı. Yazıların tamamı Seeking Alpha'da; bir kısmı abonelik ister. "
+                   "Yatırım tavsiyesi değildir."}
+    if not ok and prev and (prev.get("market") or any(p.get("items") for p in prev.get("tickers", []))):
+        out.update(market=prev.get("market", []), tickers=prev.get("tickers", []), stale=True,
+                   via=prev.get("via", via), lastGood=prev.get("lastGood") or prev.get("asOf"))
+    elif ok:
+        out["lastGood"] = out["asOf"]
+    print(f"Seeking Alpha via {via}: {len(market)} market, {sum(len(p['items']) for p in per)} ticker headlines, "
+          f"errors: {errors[:3]}")
+    return out
 
 
 def subjects(ledger):
@@ -292,7 +409,19 @@ def main():
     snap, sma200 = market_snapshot(data)
     held = [s_["ticker"] for s_ in sections if s_["role"] in ("long", "short") and s_["ticker"] not in U.ETFS]
     earnings = upcoming_earnings(held, now.astimezone(NY).date())
+    prev_sa = None
+    try:
+        prev_sa = json.loads(OUT.read_text(encoding="utf-8")).get("seekingAlpha")
+    except Exception:
+        pass
+    held_all = [(s_["ticker"], s_["role"]) for s_ in sections if s_["role"] in ("long", "short")]
+    try:
+        sa = seeking_alpha(held_all, now, prev_sa)
+    except Exception as e:
+        print("Seeking Alpha failed:", e)
+        sa = dict(prev_sa or {}, stale=True) if prev_sa else {"ok": False, "errors": [str(e)[:120]], "market": [], "tickers": []}
     out = {"asOf": now.astimezone(NY).isoformat(timespec="seconds"), "sections": sections, "market": market,
+           "seekingAlpha": sa,
            "digest": build_digest(ledger, sections, market, snap, sma200, earnings, now),
            "source": {"title": "Yahoo Finance news feed (yfinance / RSS)", "url": "https://finance.yahoo.com/news/"},
            "note": "Headlines and summaries come straight from the publishers. Theme tags are automatic keyword matches. "
