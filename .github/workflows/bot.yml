@@ -15,7 +15,7 @@ on:
 
 permissions:
   contents: write
-  actions: read
+  actions: write   # the loop starts the Nasdaq movers scan (movers.yml) itself; GitHub's schedule for it is unreliable
 
 jobs:
   trade:
@@ -52,6 +52,8 @@ jobs:
         if: steps.hours.outputs.open == '1' || (inputs.force && steps.hours.outputs.busy == '0')
         env:
           BOT_FORCE: ${{ inputs.force && '1' || '0' }}
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
         run: |
           git config user.name "portfoy-bot"
           git config user.email "portfoy-bot@users.noreply.github.com"
@@ -69,6 +71,7 @@ jobs:
           deadline=$((SECONDS + 345 * 60))
           last_save=$SECONDS
           saved_once=0
+          mv_hour=""
           while true; do
             python trader.py || echo "::warning::trader.py hata verdi"
             # save at once on the first market run (so the page shows the bot is up),
@@ -79,6 +82,14 @@ jobs:
             fi
             if [ "$BOT_FORCE" = "1" ]; then save || true; break; fi
             hm=$((10#$(TZ=America/New_York date +%H%M)))
-            if [ "$hm" -ge 1610 ] || [ "$SECONDS" -ge "$deadline" ]; then save || true; break; fi
+            # Nasdaq movers scan: once an hour at xx:40-xx:59 New York time during the session, and once after the close
+            if [ "$hm" -ge 940 ] && [ "$hm" -lt 1600 ] && [ $((hm % 100)) -ge 40 ] && [ "$mv_hour" != "$((hm / 100))" ]; then
+              if gh workflow run movers.yml --ref main; then mv_hour=$((hm / 100)); else echo "::warning::Hareketliler taraması başlatılamadı"; fi
+            fi
+            if [ "$hm" -ge 1610 ] || [ "$SECONDS" -ge "$deadline" ]; then
+              save || true
+              if [ "$hm" -ge 1610 ]; then gh workflow run movers.yml --ref main || echo "::warning::Kapanış taraması başlatılamadı"; fi
+              break
+            fi
             sleep 300
           done

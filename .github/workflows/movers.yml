@@ -1,10 +1,11 @@
 name: Nasdaq hareketliler
 
 on:
+  # The bot's loop (bot.yml) starts this scan every hour at xx:40 New York time and once at 16:10, because GitHub's
+  # own schedule here was often hours late or skipped. The schedule below is only a backup after the close
+  # (UTC: 16:40 New York in winter, 17:40 in summer); a run on a day already emailed sends nothing new.
   schedule:
-    # every hour during the session and once after the close (UTC; New York is UTC-5 from 1 Nov to 8 Mar)
-    - cron: "40 14-20 * * 1-5"
-    - cron: "25 21 * * 1-5"
+    - cron: "40 21 * * 1-5"
   workflow_dispatch:
 
 permissions:
