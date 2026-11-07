@@ -1,5 +1,5 @@
 {
- "asOf": "2026-11-07T03:43:34-05:00",
+ "asOf": "2026-11-07T03:46:58-05:00",
  "sections": [
   {
    "ticker": "QQQ",
@@ -501,74 +501,48 @@
   }
  ],
  "seekingAlpha": {
-  "asOf": "2026-11-07T03:43:34-05:00",
+  "asOf": "2026-11-07T03:46:58-05:00",
   "ok": true,
   "stale": false,
   "via": "seekingalpha.com RSS",
   "errors": [],
+  "feedCounts": {
+   "Piyasa haberleri": 7,
+   "Tüm yazılar": 11
+  },
+  "sample": [
+   {
+    "link": "https://seekingalpha.com/news/4668704-aes-gaap-eps-of-0_76-revenue-of-3_87b-beats-by-700m?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news",
+    "guid": "https://seekingalpha.com/news/4668704-aes-gaap-eps-of-0_76-revenue-of-3_87b-beats-by-700m?utm_source=feed_news_all&utm_m",
+    "url": "https://seekingalpha.com/news/4668704-aes-gaap-eps-of-0_76-revenue-of-3_87b-beats-by-700m"
+   },
+   {
+    "link": "https://seekingalpha.com/news/4668703-telus-targets-900m-annualized-cash-savings-exiting-2028-while-projecting-500m-ai?utm_source=feed_news_all&utm_medium=refer",
+    "guid": "https://seekingalpha.com/news/4668703-telus-targets-900m-annualized-cash-savings-exiting-2028-while-projecting-500m-ai?u",
+    "url": "https://seekingalpha.com/news/4668703-telus-targets-900m-annualized-cash-savings-exiting-2028-while-projecting-500m-ai"
+   },
+   {
+    "link": "https://seekingalpha.com/news/4668702-haypp-outlines-18-percentminus-25-percent-cagr-to-2028-and-5_5-percent-adjusted-ebit-margin?utm_source=feed_news_all&utm_m",
+    "guid": "https://seekingalpha.com/news/4668702-haypp-outlines-18-percentminus-25-percent-cagr-to-2028-and-5_5-percent-adjusted-eb",
+    "url": "https://seekingalpha.com/news/4668702-haypp-outlines-18-percentminus-25-percent-cagr-to-2028-and-5_5-percent-adjusted-ebit-margin"
+   },
+   {
+    "link": "https://seekingalpha.com/news/4668701-baytex-targets-76000minus-79000-boe-d-in-2027-while-outlining-8-percentminus-10-percent?utm_source=feed_news_all&utm_mediu",
+    "guid": "https://seekingalpha.com/news/4668701-baytex-targets-76000minus-79000-boe-d-in-2027-while-outlining-8-percentminus-10-pe",
+    "url": "https://seekingalpha.com/news/4668701-baytex-targets-76000minus-79000-boe-d-in-2027-while-outlining-8-percentminus-10-percent"
+   },
+   {
+    "link": "https://seekingalpha.com/news/4668699-berkshire-hathaway-utility-asks-california-regulators-for-57-percent-rate-increase?utm_source=feed_news_all&utm_medium=ref",
+    "guid": "https://seekingalpha.com/news/4668699-berkshire-hathaway-utility-asks-california-regulators-for-57-percent-rate-increase",
+    "url": "https://seekingalpha.com/news/4668699-berkshire-hathaway-utility-asks-california-regulators-for-57-percent-rate-increase"
+   },
+   {
+    "link": "https://seekingalpha.com/news/4668700-saputo-expects-1_7b-uk-dairy-division-sale-to-close-in-h2-fy27-as-it-creates-dedicated?utm_source=feed_news_all&utm_medium",
+    "guid": "https://seekingalpha.com/news/4668700-saputo-expects-1_7b-uk-dairy-division-sale-to-close-in-h2-fy27-as-it-creates-dedic",
+    "url": "https://seekingalpha.com/news/4668700-saputo-expects-1_7b-uk-dairy-division-sale-to-close-in-h2-fy27-as-it-creates-dedicated"
+   }
+  ],
   "market": [
-   {
-    "title": "Kontoor Brands, Inc. (KTB) Q3 2026 Earnings Call Transcript",
-    "url": "https://seekingalpha.com/article/4964534-kontoor-brands-inc-ktb-q3-2026-earnings-call-transcript",
-    "at": "2026-11-07T03:34-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "KTB"
-    ],
-    "author": null
-   },
-   {
-    "title": "Kingstone Companies, Inc. 2026 Q3 - Results - Earnings Call Presentation",
-    "url": "https://seekingalpha.com/article/4964533-kingstone-companies-inc-2026-q3-results-earnings-call-presentation",
-    "at": "2026-11-07T03:34-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "KINS"
-    ],
-    "author": null
-   },
-   {
-    "title": "Vistance Networks, Inc. (VISN) Q3 2026 Earnings Call Transcript",
-    "url": "https://seekingalpha.com/article/4963085-vistance-networks-inc-visn-q3-2026-earnings-call-transcript",
-    "at": "2026-11-07T03:24-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "VISN"
-    ],
-    "author": null
-   },
-   {
-    "title": "AirBoss of America Corp. (BOS:CA) Q3 2026 Earnings Call Transcript",
-    "url": "https://seekingalpha.com/article/4964532-airboss-of-america-corp-bos-ca-q3-2026-earnings-call-transcript",
-    "at": "2026-11-07T03:24-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "BOS:CA",
-     "ABSSF"
-    ],
-    "author": null
-   },
-   {
-    "title": "Workiva Inc. (WK) Q3 2026 Earnings Call Transcript",
-    "url": "https://seekingalpha.com/article/4964464-workiva-inc-wk-q3-2026-earnings-call-transcript",
-    "at": "2026-11-07T03:14-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "WK"
-    ],
-    "author": null
-   },
-   {
-    "title": "Alvopetro Energy Ltd. (ALV:CA) Q3 2026 Earnings Call Transcript",
-    "url": "https://seekingalpha.com/article/4964527-alvopetro-energy-ltd-alv-ca-q3-2026-earnings-call-transcript",
-    "at": "2026-11-07T03:04-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "ALV:CA",
-     "ALVOF"
-    ],
-    "author": null
-   },
    {
     "title": "Netflix: Growth Slows, But Potential Remains Intact",
     "url": "https://seekingalpha.com/article/4964524-netflix-growth-slows-but-potential-remains-intact",
@@ -578,38 +552,6 @@
      "NFLX",
      "NFLX:CA",
      "ZNFL:CA"
-    ],
-    "author": null
-   },
-   {
-    "title": "Microchip Technology Incorporated 2027 Q2 - Results - Earnings Call Presentation",
-    "url": "https://seekingalpha.com/article/4964531-microchip-technology-incorporated-2027-q2-results-earnings-call-presentation",
-    "at": "2026-11-07T03:02-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "MCHP",
-     "MCHPP"
-    ],
-    "author": null
-   },
-   {
-    "title": "Workiva Inc. 2026 Q3 - Results - Earnings Call Presentation",
-    "url": "https://seekingalpha.com/article/4964530-workiva-inc-2026-q3-results-earnings-call-presentation",
-    "at": "2026-11-07T03:01-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "WK"
-    ],
-    "author": null
-   },
-   {
-    "title": "Plains All American Pipeline, L.P. Common Units 2026 Q3 - Results - Earnings Call Presentation",
-    "url": "https://seekingalpha.com/article/4964529-plains-all-american-pipeline-l-p-common-units-2026-q3-results-earnings-call-presentation",
-    "at": "2026-11-07T03:00-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "PAA",
-     "PAAPU"
     ],
     "author": null
    },
@@ -634,42 +576,12 @@
     "author": null
    },
    {
-    "title": "Lifetime Brands, Inc. (LCUT) Q3 2026 Earnings Call Transcript",
-    "url": "https://seekingalpha.com/article/4963290-lifetime-brands-inc-lcut-q3-2026-earnings-call-transcript",
-    "at": "2026-11-07T02:34-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "LCUT"
-    ],
-    "author": null
-   },
-   {
     "title": "Aviat Networks: A Strong Outlook Is Offset By The Risk Of A Revision",
     "url": "https://seekingalpha.com/article/4964517-aviat-networks-a-strong-outlook-is-offset-by-the-risk-of-a-revision",
     "at": "2026-11-07T02:18-05:00",
     "kind": "analysis",
     "symbols": [
      "AVNW"
-    ],
-    "author": null
-   },
-   {
-    "title": "The Goodyear Tire & Rubber Company (GT) Q3 2026 Earnings Call Transcript",
-    "url": "https://seekingalpha.com/article/4964525-the-goodyear-tire-and-rubber-company-gt-q3-2026-earnings-call-transcript",
-    "at": "2026-11-07T02:14-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "GT"
-    ],
-    "author": null
-   },
-   {
-    "title": "IBEX Limited 2027 Q1 - Results - Earnings Call Presentation",
-    "url": "https://seekingalpha.com/article/4964522-ibex-limited-2027-q1-results-earnings-call-presentation",
-    "at": "2026-11-07T02:01-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "IBEX"
     ],
     "author": null
    },
@@ -706,17 +618,6 @@
     "author": null
    },
    {
-    "title": "bpost NV/SA (BPOSY) Q3 2026 Earnings Call Transcript",
-    "url": "https://seekingalpha.com/article/4964519-bpost-nv-sa-bposy-q3-2026-earnings-call-transcript",
-    "at": "2026-11-07T01:44-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "BPOSY",
-     "BPOSF"
-    ],
-    "author": null
-   },
-   {
     "title": "HFRO: Leverage Plus NexPoint Affiliated Holdings Presents Forced Selling Risk",
     "url": "https://seekingalpha.com/article/4964509-hfro-leverage-plus-nexpoint-affiliated-holdings-presents-forced-selling-risk",
     "at": "2026-11-07T01:43-05:00",
@@ -725,16 +626,6 @@
      "HFRO.PR.A",
      "HFRO.PR.B",
      "HFRO"
-    ],
-    "author": null
-   },
-   {
-    "title": "Carriage Services, Inc. (CSV) Q3 2026 Earnings Call Transcript",
-    "url": "https://seekingalpha.com/article/4963175-carriage-services-inc-csv-q3-2026-earnings-call-transcript",
-    "at": "2026-11-07T01:34-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "CSV"
     ],
     "author": null
    },
@@ -749,41 +640,11 @@
     "author": null
    },
    {
-    "title": "Marcus & Millichap, Inc. 2026 Q3 - Results - Earnings Call Presentation",
-    "url": "https://seekingalpha.com/article/4964518-marcus-and-millichap-inc-2026-q3-results-earnings-call-presentation",
-    "at": "2026-11-07T01:32-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "MMI"
-    ],
-    "author": null
-   },
-   {
     "title": "AES GAAP EPS of $0.76, revenue of $3.87B beats by $700M",
     "url": "https://seekingalpha.com/news/4668704-aes-gaap-eps-of-0_76-revenue-of-3_87b-beats-by-700m",
     "at": "2026-11-07T01:27-05:00",
     "kind": "news",
     "symbols": [],
-    "author": null
-   },
-   {
-    "title": "Ingredion Incorporated (INGR) Q3 2026 Earnings Call Transcript",
-    "url": "https://seekingalpha.com/article/4963489-ingredion-incorporated-ingr-q3-2026-earnings-call-transcript",
-    "at": "2026-11-07T01:14-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "INGR"
-    ],
-    "author": null
-   },
-   {
-    "title": "Natera, Inc. 2026 Q3 - Results - Earnings Call Presentation",
-    "url": "https://seekingalpha.com/article/4964515-natera-inc-2026-q3-results-earnings-call-presentation",
-    "at": "2026-11-07T01:01-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "NTRA"
-    ],
     "author": null
    },
    {
@@ -797,23 +658,51 @@
     "author": null
    },
    {
-    "title": "Tripadvisor, Inc. (TRIP) Q3 2026 Earnings Call Transcript",
-    "url": "https://seekingalpha.com/article/4964513-tripadvisor-inc-trip-q3-2026-earnings-call-transcript",
-    "at": "2026-11-07T00:54-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "TRIP"
-    ],
+    "title": "Telus targets $900M annualized cash savings exiting 2028 while projecting $500M AI infrastructure revenue over 3 years",
+    "url": "https://seekingalpha.com/news/4668703-telus-targets-900m-annualized-cash-savings-exiting-2028-while-projecting-500m-ai",
+    "at": "2026-11-06T22:15-05:00",
+    "kind": "news",
+    "symbols": [],
     "author": null
    },
    {
-    "title": "The Market Appears To Be Paying Up For NBT Bancorp's Results",
-    "url": "https://seekingalpha.com/article/4964497-the-market-appears-to-be-paying-up-for-nbt-bancorp-results",
-    "at": "2026-11-07T00:48-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "NBTB"
-    ],
+    "title": "Haypp outlines 18%-25% CAGR to 2028 and 5.5% adjusted EBIT margin target while rebalancing U.S./U.K. marketing",
+    "url": "https://seekingalpha.com/news/4668702-haypp-outlines-18-percentminus-25-percent-cagr-to-2028-and-5_5-percent-adjusted-ebit-margin",
+    "at": "2026-11-06T20:47-05:00",
+    "kind": "news",
+    "symbols": [],
+    "author": null
+   },
+   {
+    "title": "Baytex targets 76,000-79,000 BOE/d in 2027 while outlining 8%-10% annual growth through 2029",
+    "url": "https://seekingalpha.com/news/4668701-baytex-targets-76000minus-79000-boe-d-in-2027-while-outlining-8-percentminus-10-percent",
+    "at": "2026-11-06T20:45-05:00",
+    "kind": "news",
+    "symbols": [],
+    "author": null
+   },
+   {
+    "title": "Berkshire Hathaway utility asks California regulators for 57% rate increase",
+    "url": "https://seekingalpha.com/news/4668699-berkshire-hathaway-utility-asks-california-regulators-for-57-percent-rate-increase",
+    "at": "2026-11-06T20:42-05:00",
+    "kind": "news",
+    "symbols": [],
+    "author": null
+   },
+   {
+    "title": "Saputo expects $1.7B UK dairy division sale to close in H2 FY27 as it creates dedicated Ingredients Division",
+    "url": "https://seekingalpha.com/news/4668700-saputo-expects-1_7b-uk-dairy-division-sale-to-close-in-h2-fy27-as-it-creates-dedicated",
+    "at": "2026-11-06T20:18-05:00",
+    "kind": "news",
+    "symbols": [],
+    "author": null
+   },
+   {
+    "title": "Brent crude caps biggest weekly drop since pandemic as war premium begins to unwind",
+    "url": "https://seekingalpha.com/news/4668695-brent-crude-caps-biggest-weekly-drop-since-pandemic-as-war-premium-begins-to-unwind",
+    "at": "2026-11-06T19:57-05:00",
+    "kind": "news",
+    "symbols": [],
     "author": null
    }
   ],
@@ -890,9 +779,9 @@
     "items": [
      {
       "title": "Wall Street's midterm sugar high fades as tech rout wipes out $2T",
-      "url": "https://seekingalpha.com/symbol/TQQQ/news",
+      "url": "https://seekingalpha.com/news/4666732",
       "at": "2026-11-05T10:34-05:00",
-      "kind": null,
+      "kind": "news",
       "symbols": [
        "QQQ",
        "SPY",
@@ -917,6 +806,20 @@
        "QQQ"
       ],
       "author": "Sungarden Investment Publishing"
+     },
+     {
+      "title": "Nasdaq 100 slips into correction as QQQ tests 200-day moving average",
+      "url": "https://seekingalpha.com/news/4663199",
+      "at": "2026-11-03T05:41-05:00",
+      "kind": "news",
+      "symbols": [
+       "QQQ",
+       "QLD",
+       "QID",
+       "TQQQ",
+       "NDX"
+      ],
+      "author": "Sinchita Mitra"
      }
     ]
    },
@@ -926,9 +829,9 @@
     "items": [
      {
       "title": "Nasdaq rebounds after tech selloff but sheds 3% for the week",
-      "url": "https://seekingalpha.com/symbol/ABNB/news",
+      "url": "https://seekingalpha.com/news/4668626",
       "at": "2026-11-06T16:35-05:00",
-      "kind": null,
+      "kind": "news",
       "symbols": [
        "STX",
        "WDC",
@@ -938,6 +841,18 @@
        "ABNB"
       ],
       "author": "Nivedita Hazra"
+     },
+     {
+      "title": "Airbnb \"back in growth mode\" -- analysts",
+      "url": "https://seekingalpha.com/news/4668391",
+      "at": "2026-11-06T14:11-05:00",
+      "kind": "news",
+      "symbols": [
+       "ABNB",
+       "BKNG",
+       "EXPE"
+      ],
+      "author": "Amy Thielen"
      },
      {
       "title": "What Airbnb's 13% Surge Implies (Earnings Review) (Rating Upgrade)",
@@ -951,15 +866,15 @@
       "author": "Luca Socci"
      },
      {
-      "title": "Airbnb, Inc. (ABNB) Q3 2026 Earnings Call Transcript",
-      "url": "https://seekingalpha.com/article/4963644-airbnb-inc-abnb-q3-2026-earnings-call-transcript",
-      "at": "2026-11-06T02:34-05:00",
-      "kind": "analysis",
+      "title": "Airbnb expects Q4 revenue of $3.22B-$3.28B while raising full-year outlook to high-teens growth and ~36% adjusted EBITDA margin",
+      "url": "https://seekingalpha.com/news/4667814",
+      "at": "2026-11-06T02:35-05:00",
+      "kind": "news",
       "symbols": [
        "ABNB",
        "ABNB:CA"
       ],
-      "author": "SA Transcripts"
+      "author": "SA Transcript Insights Editor"
      }
     ]
    }
@@ -969,12 +884,12 @@
    "url": "https://seekingalpha.com/market-news"
   },
   "note": "Yalnızca başlık ve bağlantı. Yazıların tamamı Seeking Alpha'da; bir kısmı abonelik ister. Yatırım tavsiyesi değildir.",
-  "lastGood": "2026-11-07T03:43:34-05:00"
+  "lastGood": "2026-11-07T03:46:58-05:00"
  },
  "digest": {
   "date": "2026-11-07",
   "title": "Daily brief — Saturday, November 7, 2026",
-  "generatedAt": "2026-11-07T03:43-05:00",
+  "generatedAt": "2026-11-07T03:46-05:00",
   "bullets": [
    {
     "head": "Markets (latest session)",
