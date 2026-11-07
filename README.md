@@ -74,6 +74,10 @@ Sayfadaki listeler filtrelenebilir: hisse türü (Nasdaq-100, S&P 500, endeks d�
 
 `movers_study.py` (sonuç `movers_study.json`) 2019–2026 arasındaki 15.813 %20'lik günü inceledi: sert yükselenler sonraki 5 günde ortalama %3 geri verdi (medyan %−6), sert düşenler ise ortalama %3 daha düştü (medyan %−6). Sert düşüşten hemen sonra almak 5 günde ortalama %−3,5 getirdi, işlemlerin yalnızca %37'si kârlıydı; batan şirketler veride olmadığı için gerçek sonuç daha kötüdür.
 
+## Günün dersi
+
+Sayfanın en üstündeki "Günün dersi" kartı her gün bir konu anlatır: önce 15 teknik gösterge (EMA, RSI, MACD, VWAP, hacim profili, Bollinger, Supertrend, ATR, Stochastic RSI, Ichimoku, ADX/DMI, OBV, Fibonacci, Anchored VWAP, pivot noktaları), sonra bir özet ve 55 borsa terimi; liste bitince başa döner (başlangıç 7 Kasım 2026, ziyaretçinin yerel tarihine göre). Gösterge derslerinde temsili bir fiyat serisi üzerinde çizilmiş örnek grafik (üzerine gelince değerler görünür), hesaplama, okuma, tuzaklar, bizim 2019–2026 testimizin sonucu ve son hareketliler taramasından "Bugün piyasada" sayıları vardır. Oklar ve liste ile diğer derslere bakılabilir, "Küçült" o günün dersini kapatır (ertesi gün yeni ders açık gelir). İçerik `lessons.json` dosyasındadır; yatırım tavsiyesi değildir.
+
 ## Haberler
 
 `news.py` portföydeki ve izlenen hisseler ile piyasa için Yahoo Finance başlıklarını toplar, konuya göre etiketler (Fed ve faiz, politika, bilanço, analist, enerji, yapay zekâ) ve `news.json`'a yazar; `watch.yml` ile 04:00–20:00 ET arasında 30 dakikada bir çalışır. `brief.json` elle yazılan Türkçe günlük özettir.
