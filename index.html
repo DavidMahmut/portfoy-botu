@@ -920,7 +920,7 @@ tr.mv-det td{background:var(--bg);white-space:normal;text-align:left}
     var meta=el("div",{class:"sa-meta"});
     if(n.at) meta.appendChild(el("span",{text:saWhen(n.at)}));
     if(n.kind) meta.appendChild(el("span",{text:n.kind==="news"? "Haber" : "Analiz"}));
-    (n.symbols||[]).slice(0,4).forEach(function(x){ meta.appendChild(el("span",{class:"sa-sym"+(own[x]?" own":""),text:x,title:own[x]? "Botta açık pozisyon" : null})); });
+    (n.symbols||[]).filter(function(x){ return !/[:.]/.test(x); }).slice(0,4).forEach(function(x){ meta.appendChild(el("span",{class:"sa-sym"+(own[x]?" own":""),text:x,title:own[x]? "Botta açık pozisyon" : null})); });
     return el("li",null,a,meta);
   }
   function renderSA(){
