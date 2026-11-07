@@ -127,6 +127,9 @@ SA_FEEDS = [("Piyasa haberleri", "https://seekingalpha.com/market_currents.xml")
 SA_TICKER = "https://seekingalpha.com/api/sa/combined/{t}.xml"
 SA_GOOGLE = "https://news.google.com/rss/search"
 SA_MARKET_N, SA_PER_TICKER, SA_MAX_TICKERS, SA_MAX_AGE_H = 30, 4, 10, 96
+SA_NEWS_N, SA_ANALYSIS_N = 18, 12          # the market list keeps both kinds: short news and longer analysis
+SA_NOISE = re.compile(r"earnings call (transcript|presentation)|\d{4} q\d - results", re.I)
+_SAMPLE = []                               # a few raw link/guid pairs, kept in news.json to check the parsing
 
 
 def _local(tag):
@@ -155,12 +158,23 @@ def parse_sa(content):
                 syms.append(txt.upper())
             elif n in ("author_name", "creator") and not author:
                 author = txt
-        url = link.split("?")[0] if "seekingalpha.com" in link else link
-        guid = it.findtext("guid") or ""
-        kind = ("news" if "/news/" in url or guid.startswith("MarketCurrent") else
-                "analysis" if "/article/" in url or guid.startswith("Article") else None)
+        guid = (it.findtext("guid") or "").strip()
+        url = re.sub(r"[?&](utm_[a-z]+|source|feed_item_type)=[^&#]*", "", link) if "seekingalpha.com" in link else link
+        url = url.replace("&", "?", 1) if "?" not in url and "&" in url else url
+        m = re.search(r"(MarketCurrent|Article)\D{0,3}(\d{5,})", guid)
+        if "seekingalpha.com" in url and not re.search(r"/(news|article)/\d", url):
+            if m:                         # ticker feeds link news items to the ticker page; the id is in the guid
+                url = f"https://seekingalpha.com/{'news' if m.group(1) == 'MarketCurrent' else 'article'}/{m.group(2)}"
+            elif guid.startswith("https://seekingalpha.com/"):
+                url = guid
+        kind = ("news" if re.search(r"/news(/|$)", url) or (m and m.group(1) == "MarketCurrent") else
+                "analysis" if "/article/" in url or (m and m.group(1) == "Article") else None)
+        if kind == "analysis" and SA_NOISE.search(title):
+            continue                      # earnings-call transcripts and slide decks flood the feed
         out.append({"title": title, "url": url, "at": _parse_time(it.findtext("pubDate")), "kind": kind,
                     "symbols": list(dict.fromkeys(syms))[:6], "author": author})
+        if len(_SAMPLE) < 6:
+            _SAMPLE.append({"link": link[:160], "guid": guid[:120], "url": url[:160]})
     return out
 
 
@@ -181,9 +195,10 @@ def google_sa(query):
 def _fresh(items, now, limit, seen):
     res = []
     for n in sorted(items, key=lambda x: x["at"] or datetime(1970, 1, 1, tzinfo=timezone.utc), reverse=True):
-        if n["url"] in seen or (n["at"] and now - n["at"] > timedelta(hours=SA_MAX_AGE_H)):
+        key = n["url"] if re.search(r"/(news|article)/\d", n["url"]) else n["url"] + "|" + n["title"]
+        if key in seen or (n["at"] and now - n["at"] > timedelta(hours=SA_MAX_AGE_H)):
             continue
-        seen.add(n["url"])
+        seen.add(key)
         res.append(dict(n, at=n["at"].astimezone(NY).isoformat(timespec="minutes") if n["at"] else None))
         if len(res) >= limit:
             break
@@ -193,10 +208,12 @@ def _fresh(items, now, limit, seen):
 def seeking_alpha(tickers, now, prev=None):
     """Recent Seeking Alpha headlines: the market feed plus a few per held ticker."""
     errors, seen, via = [], set(), "seekingalpha.com RSS"
-    raw = []
+    raw, counts = [], {}
     for name, url in SA_FEEDS:
         try:
-            raw += fetch_sa(url)
+            got = fetch_sa(url)
+            counts[name] = len(got)
+            raw += got
         except Exception as e:
             errors.append(f"{name}: {str(e)[:120]}")
     use_google = not raw
@@ -215,10 +232,13 @@ def seeking_alpha(tickers, now, prev=None):
             errors.append(f"{t}: {str(e)[:120]}")
             items = []
         per.append({"ticker": t, "role": role, "items": _fresh(items, now, SA_PER_TICKER, seen)})
-    market = _fresh(raw, now, SA_MARKET_N, seen)      # after the tickers, so a held stock's story is listed under it
+    # after the tickers, so a held stock's story is listed under it; news and analysis get their own quota
+    news_ = _fresh([n for n in raw if n["kind"] != "analysis"], now, SA_NEWS_N, seen)
+    market = sorted(news_ + _fresh([n for n in raw if n["kind"] == "analysis"], now, SA_ANALYSIS_N, seen),
+                    key=lambda n: n["at"] or "", reverse=True)[:SA_MARKET_N]
     ok = bool(market) or any(p["items"] for p in per)
     out = {"asOf": now.astimezone(NY).isoformat(timespec="seconds"), "ok": ok, "stale": False, "via": via,
-           "errors": errors[:6], "market": market, "tickers": per,
+           "errors": errors[:6], "feedCounts": counts, "sample": _SAMPLE[:6], "market": market, "tickers": per,
            "source": {"title": "Seeking Alpha", "url": "https://seekingalpha.com/market-news"},
            "note": "Yalnızca başlık ve bağlantı. Yazıların tamamı Seeking Alpha'da; bir kısmı abonelik ister. "
                    "Yatırım tavsiyesi değildir."}
