@@ -72,6 +72,7 @@ jobs:
           last_save=$SECONDS
           saved_once=0
           mv_hour=""
+          news_slot=""
           while true; do
             python trader.py || echo "::warning::trader.py hata verdi"
             # save at once on the first market run (so the page shows the bot is up),
@@ -86,9 +87,18 @@ jobs:
             if [ "$hm" -ge 940 ] && [ "$hm" -lt 1600 ] && [ $((hm % 100)) -ge 40 ] && [ "$mv_hour" != "$((hm / 100))" ]; then
               if gh workflow run movers.yml --ref main; then mv_hour=$((hm / 100)); else echo "::warning::Hareketliler taraması başlatılamadı"; fi
             fi
+            # headlines (Yahoo + Seeking Alpha): every half hour, at xx:07-xx:36 and xx:37-xx:59
+            m=$((hm % 100)); slot=""
+            if [ "$m" -ge 37 ]; then slot="$((hm / 100))b"; elif [ "$m" -ge 7 ]; then slot="$((hm / 100))a"; fi
+            if [ -n "$slot" ] && [ "$hm" -ge 937 ] && [ "$hm" -lt 1600 ] && [ "$slot" != "$news_slot" ]; then
+              if gh workflow run watch.yml --ref main; then news_slot=$slot; else echo "::warning::Haber taraması başlatılamadı"; fi
+            fi
             if [ "$hm" -ge 1610 ] || [ "$SECONDS" -ge "$deadline" ]; then
               save || true
-              if [ "$hm" -ge 1610 ]; then gh workflow run movers.yml --ref main || echo "::warning::Kapanış taraması başlatılamadı"; fi
+              if [ "$hm" -ge 1610 ]; then
+                gh workflow run movers.yml --ref main || echo "::warning::Kapanış taraması başlatılamadı"
+                gh workflow run watch.yml --ref main || echo "::warning::Seans sonrası izleme başlatılamadı"   # loops until 20:00
+              fi
               break
             fi
             sleep 300

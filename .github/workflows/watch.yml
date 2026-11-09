@@ -23,7 +23,7 @@ concurrency:
 jobs:
   watch:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 300
     steps:
       - name: Hangi işler çalışacak?
         id: s
@@ -45,26 +45,35 @@ jobs:
       - name: Bağımlılıkları kur
         if: steps.s.outputs.news == '1' || inputs.force
         run: pip install -r requirements.txt
-      - name: Seans dışı fiyatlar
-        if: steps.s.outputs.ext == '1' || inputs.force
-        continue-on-error: true
+      - name: Seans dışı fiyatlar ve haberler
+        # One pass, except after the close: then it repeats every 30 minutes until about 20:00 New York time, because
+        # GitHub's own schedule for this workflow often skipped hours. During the session the bot's loop starts it
+        # every half hour; before the open it still depends on the schedule above.
+        if: steps.s.outputs.news == '1' || inputs.force
         env:
           BOT_FORCE: ${{ inputs.force && '1' || '0' }}
-        run: python watch.py
-      - name: Haberler
-        if: steps.s.outputs.news == '1' || inputs.force
-        continue-on-error: true
-        run: python news.py
-      - name: Kaydet
-        if: steps.s.outputs.news == '1' || inputs.force
         run: |
           git config user.name "portfoy-bot"
           git config user.email "portfoy-bot@users.noreply.github.com"
-          git add extended.json news.json 2>/dev/null || true
-          if git diff --cached --quiet; then exit 0; fi
-          git commit -q -m "İzleme ve haberler: $(TZ=America/New_York date '+%Y-%m-%d %H:%M') ET"
-          for i in 1 2 3; do
-            if git pull -q --rebase && git push -q; then exit 0; fi
-            sleep 10
+          save() {
+            git add extended.json news.json 2>/dev/null || true
+            if git diff --cached --quiet; then return 0; fi
+            git commit -q -m "İzleme ve haberler: $(TZ=America/New_York date '+%Y-%m-%d %H:%M') ET"
+            for i in 1 2 3; do
+              if git pull -q --rebase && git push -q; then return 0; fi
+              sleep 10
+            done
+            echo "::warning::İzleme sonucu gönderilemedi"
+            return 1
+          }
+          while true; do
+            now=$(TZ=America/New_York date +%u%H%M)
+            dow=${now:0:1}; hm=$((10#${now:1:4}))
+            if [ "$BOT_FORCE" = "1" ] || { [ "$dow" -le 5 ] && (( (hm >= 400 && hm < 930) || (hm >= 1600 && hm <= 2005) )); }; then
+              python watch.py || echo "::warning::watch.py hata verdi"
+            fi
+            python news.py || echo "::warning::news.py hata verdi"
+            save || true
+            if [ "$BOT_FORCE" = "1" ] || [ "$dow" -gt 5 ] || [ "$hm" -lt 1600 ] || [ "$hm" -ge 1935 ]; then break; fi
+            sleep 1800
           done
-          echo "::warning::İzleme sonucu gönderilemedi"
