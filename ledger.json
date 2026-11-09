@@ -111,16 +111,16 @@
     "shares": 1.6461,
     "avgCost": 695.4676,
     "costBasis": 1144.81,
-    "lastPrice": 674.722,
-    "lastPriceAt": "2026-11-09T10:20:00-05:00",
+    "lastPrice": 674.838,
+    "lastPriceAt": "2026-11-09T10:30:00-05:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (10:20 ET)",
+     "title": "Yahoo Finance 5 dk mum (10:30 ET)",
      "url": "https://finance.yahoo.com/quote/QQQ/"
     },
-    "marketValue": 1110.66,
-    "exposure": 1110.66,
-    "unrealized": -34.15,
-    "unrealizedPct": -2.98,
+    "marketValue": 1110.85,
+    "exposure": 1110.85,
+    "unrealized": -33.96,
+    "unrealizedPct": -2.97,
     "openedAt": "2026-11-02",
     "openedTs": "2026-11-02T09:50:00-05:00",
     "lastAddDate": "2026-11-02",
@@ -128,7 +128,7 @@
     "extremeSinceEntry": 695.1199951171875,
     "tookProfit": false,
     "thesis": "Endeks kolu, QQQ (1x): 0,00 $ → 1.396,50 $. Endeks kolu yönü YUKARI: SPY dünkü kapanış 755,72 $, 200 günlük ortalama 728,85 $ (+%3,69), 50 günlük ortalama 767,49 $. QQQ'nun 20 günlük oynaklığı yıllık %22,6; büyüklük %25 ÷ %22,6 = 1,10x. Hedef maruziyet +1,10x.",
-    "maintReq": 277.66,
+    "maintReq": 277.71,
     "taxBasisAdj": 8.79
    }
   ],
@@ -143,26 +143,26 @@
    "dividendsPaid": 0.0,
    "dividendsReceived": 0.0
   },
-  "longValue": 1110.66,
+  "longValue": 1110.85,
   "shortValue": 0.0,
-  "positionsValue": 1110.66,
-  "totalValue": 2899.23,
-  "grossExposure": 1110.66,
-  "netExposure": 1110.66,
+  "positionsValue": 1110.85,
+  "totalValue": 2899.42,
+  "grossExposure": 1110.85,
+  "netExposure": 1110.85,
   "leverage": 0.383,
-  "maintenanceReq": 277.66,
-  "marginBuffer": 2621.57,
-  "regTInitialReq": 555.33,
-  "regTExcess": 2343.9,
-  "buyingPower": 4687.8,
+  "maintenanceReq": 277.71,
+  "marginBuffer": 2621.71,
+  "regTInitialReq": 555.43,
+  "regTExcess": 2343.99,
+  "buyingPower": 4687.99,
   "marginEligible": true,
-  "totalPL": -100.77,
-  "totalPLPct": -3.36,
-  "twrPct": -3.36,
-  "asOf": "2026-11-09T10:20:56-05:00",
-  "benchmarkPrice": 749.24,
-  "benchmarkValue": 2991.75,
-  "benchmarkTwrPct": -0.27
+  "totalPL": -100.58,
+  "totalPLPct": -3.35,
+  "twrPct": -3.35,
+  "asOf": "2026-11-09T10:31:01-05:00",
+  "benchmarkPrice": 749.13,
+  "benchmarkValue": 2991.3,
+  "benchmarkTwrPct": -0.29
  },
  "meta": {
   "engine": "trend-event v6",
@@ -177,9 +177,9 @@
    "ath": 759.66,
    "athDate": "2026-10-06",
    "athChecked": "2026-11-09",
-   "price": 674.72,
-   "at": "2026-11-09T10:20:00-05:00",
-   "ddPct": -11.18,
+   "price": 674.84,
+   "at": "2026-11-09T10:30:00-05:00",
+   "ddPct": -11.17,
    "level": "correction",
    "triggerPrice": 607.73,
    "correctionPrice": 683.69
@@ -209,7 +209,7 @@
     "2026-11-09"
    ]
   },
-  "lastRunAt": "2026-11-09T10:20:56-05:00",
+  "lastRunAt": "2026-11-09T10:31:01-05:00",
   "lastError": null,
   "spikeScanDate": "2026-11-09",
   "spikeScan": {
@@ -238,279 +238,14 @@
    "now": 1.09,
    "date": "2026-11-09"
   },
-  "eventScanDate": "2026-11-06",
+  "eventScanDate": "2026-11-09",
   "eventScan": {
-   "date": "2026-11-06",
-   "at": "2026-11-06T10:31:05-05:00",
-   "checked": 165,
-   "gaps": [
-    {
-     "ticker": "ABNB",
-     "name": "ABNB",
-     "gapPct": 12.65,
-     "firstHourPct": -3.38,
-     "prevClose": 170.13,
-     "open": 191.65,
-     "h1High": 192.5,
-     "h1Low": 184.09,
-     "h1Close": 185.18
-    },
-    {
-     "ticker": "AMD",
-     "name": "Advanced Micro Devices",
-     "gapPct": 9.78,
-     "firstHourPct": -0.37,
-     "prevClose": 404.4,
-     "open": 443.96,
-     "h1High": 459.78,
-     "h1Low": 433.93,
-     "h1Close": 442.32
-    },
-    {
-     "ticker": "ANET",
-     "name": "Arista Networks",
-     "gapPct": 8.57,
-     "firstHourPct": -1.41,
-     "prevClose": 159.16,
-     "open": 172.8,
-     "h1High": 173.6,
-     "h1Low": 167.0,
-     "h1Close": 170.36
-    },
-    {
-     "ticker": "CIEN",
-     "name": "Ciena",
-     "gapPct": 9.54,
-     "firstHourPct": -4.26,
-     "prevClose": 230.81,
-     "open": 252.84,
-     "h1High": 256.48,
-     "h1Low": 241.29,
-     "h1Close": 242.06
-    },
-    {
-     "ticker": "DELL",
-     "name": "Dell Technologies",
-     "gapPct": 9.27,
-     "firstHourPct": -3.22,
-     "prevClose": 316.91,
-     "open": 346.3,
-     "h1High": 350.36,
-     "h1Low": 334.5,
-     "h1Close": 335.16
-    },
-    {
-     "ticker": "DKNG",
-     "name": "DKNG",
-     "gapPct": -26.28,
-     "firstHourPct": -2.16,
-     "prevClose": 23.52,
-     "open": 17.34,
-     "h1High": 17.83,
-     "h1Low": 16.6,
-     "h1Close": 16.97
-    },
-    {
-     "ticker": "KLAC",
-     "name": "KLA",
-     "gapPct": 8.26,
-     "firstHourPct": -2.41,
-     "prevClose": 129.8,
-     "open": 140.52,
-     "h1High": 142.62,
-     "h1Low": 137.08,
-     "h1Close": 137.14
-    },
-    {
-     "ticker": "LRCX",
-     "name": "Lam Research",
-     "gapPct": 12.85,
-     "firstHourPct": -3.65,
-     "prevClose": 185.2,
-     "open": 208.99,
-     "h1High": 209.18,
-     "h1Low": 199.93,
-     "h1Close": 201.35
-    },
-    {
-     "ticker": "MRVL",
-     "name": "Marvell Technology",
-     "gapPct": 8.64,
-     "firstHourPct": -4.71,
-     "prevClose": 133.55,
-     "open": 145.09,
-     "h1High": 146.32,
-     "h1Low": 138.02,
-     "h1Close": 138.26
-    },
-    {
-     "ticker": "NET",
-     "name": "Cloudflare",
-     "gapPct": 17.37,
-     "firstHourPct": -5.25,
-     "prevClose": 244.51,
-     "open": 286.97,
-     "h1High": 286.97,
-     "h1Low": 265.0,
-     "h1Close": 271.89
-    }
-   ],
-   "taken": [
-    {
-     "ticker": "ABNB",
-     "name": "ABNB",
-     "gapPct": 12.65,
-     "firstHourPct": -3.38,
-     "prevClose": 170.13,
-     "open": 191.65,
-     "h1High": 192.5,
-     "h1Low": 184.09,
-     "h1Close": 185.18,
-     "side": "short",
-     "ssr": false,
-     "stop": 192.69,
-     "amount": 352.69,
-     "price": 185.15,
-     "exitDate": "2026-11-10",
-     "headline": {
-      "title": "Airbnb stock jumps as company reenters 'growth mode,' plans to develop its own AI agent",
-      "url": "https://finance.yahoo.com/markets/stocks/article/airbnb-stock-jumps-as-company-reenters-growth-mode-plans-to-develop-its-own-ai-agent-150424311.html",
-      "publisher": "Yahoo Finance",
-      "at": "2026-11-06T15:04:24+00:00"
-     }
-    }
-   ],
-   "skipped": [
-    {
-     "ticker": "AMD",
-     "name": "Advanced Micro Devices",
-     "gapPct": 9.78,
-     "firstHourPct": -0.37,
-     "prevClose": 404.4,
-     "open": 443.96,
-     "h1High": 459.78,
-     "h1Low": 433.93,
-     "h1Close": 442.32,
-     "why": "ilk saatte belirgin bir yön yok"
-    },
-    {
-     "ticker": "DKNG",
-     "name": "DKNG",
-     "gapPct": -26.28,
-     "firstHourPct": -2.16,
-     "prevClose": 23.52,
-     "open": 17.34,
-     "h1High": 17.83,
-     "h1Low": 16.6,
-     "h1Close": 16.97,
-     "why": "ilk saatte haberin yönünde devam etti; testte bu durum zarar ettirdi"
-    },
-    {
-     "ticker": "NET",
-     "name": "Cloudflare",
-     "gapPct": 17.37,
-     "firstHourPct": -5.25,
-     "prevClose": 244.51,
-     "open": 286.97,
-     "h1High": 286.97,
-     "h1Low": 265.0,
-     "h1Close": 271.89,
-     "side": "short",
-     "ssr": true,
-     "stop": 287.26,
-     "why": "SEC Rule 201: hisse önceki kapanışa göre %10 düştüğü için short açılamaz"
-    },
-    {
-     "ticker": "LRCX",
-     "name": "Lam Research",
-     "gapPct": 12.85,
-     "firstHourPct": -3.65,
-     "prevClose": 185.2,
-     "open": 208.99,
-     "h1High": 209.18,
-     "h1Low": 199.93,
-     "h1Close": 201.35,
-     "side": "short",
-     "ssr": true,
-     "stop": 209.39,
-     "why": "SEC Rule 201: hisse önceki kapanışa göre %10 düştüğü için short açılamaz"
-    },
-    {
-     "ticker": "CIEN",
-     "name": "Ciena",
-     "gapPct": 9.54,
-     "firstHourPct": -4.26,
-     "prevClose": 230.81,
-     "open": 252.84,
-     "h1High": 256.48,
-     "h1Low": 241.29,
-     "h1Close": 242.06,
-     "side": "short",
-     "ssr": true,
-     "stop": 256.74,
-     "why": "SEC Rule 201: hisse önceki kapanışa göre %10 düştüğü için short açılamaz"
-    },
-    {
-     "ticker": "DELL",
-     "name": "Dell Technologies",
-     "gapPct": 9.27,
-     "firstHourPct": -3.22,
-     "prevClose": 316.91,
-     "open": 346.3,
-     "h1High": 350.36,
-     "h1Low": 334.5,
-     "h1Close": 335.16,
-     "side": "short",
-     "ssr": true,
-     "stop": 350.71,
-     "why": "SEC Rule 201: hisse önceki kapanışa göre %10 düştüğü için short açılamaz"
-    },
-    {
-     "ticker": "MRVL",
-     "name": "Marvell Technology",
-     "gapPct": 8.64,
-     "firstHourPct": -4.71,
-     "prevClose": 133.55,
-     "open": 145.09,
-     "h1High": 146.32,
-     "h1Low": 138.02,
-     "h1Close": 138.26,
-     "side": "short",
-     "ssr": true,
-     "stop": 146.47,
-     "why": "SEC Rule 201: hisse önceki kapanışa göre %10 düştüğü için short açılamaz"
-    },
-    {
-     "ticker": "ANET",
-     "name": "Arista Networks",
-     "gapPct": 8.57,
-     "firstHourPct": -1.41,
-     "prevClose": 159.16,
-     "open": 172.8,
-     "h1High": 173.6,
-     "h1Low": 167.0,
-     "h1Close": 170.36,
-     "side": "short",
-     "ssr": true,
-     "stop": 173.77,
-     "why": "SEC Rule 201: hisse önceki kapanışa göre %10 düştüğü için short açılamaz"
-    },
-    {
-     "ticker": "KLAC",
-     "name": "KLA",
-     "gapPct": 8.26,
-     "firstHourPct": -2.41,
-     "prevClose": 129.8,
-     "open": 140.52,
-     "h1High": 142.62,
-     "h1Low": 137.08,
-     "h1Close": 137.14,
-     "side": "short",
-     "ssr": true,
-     "stop": 142.77,
-     "why": "SEC Rule 201: hisse önceki kapanışa göre %10 düştüğü için short açılamaz"
-    }
-   ],
+   "date": "2026-11-09",
+   "at": "2026-11-09T10:31:01-05:00",
+   "checked": 164,
+   "gaps": [],
+   "taken": [],
+   "skipped": [],
    "rule": "Açılış boşluğu en az %8; ilk saatte haberin tersine en az %0,5 dönüş; 2 işlem günü tut, zarar-kes ilk saatin öbür ucu."
   }
  },
@@ -1316,21 +1051,21 @@
   },
   {
    "date": "2026-11-09",
-   "at": "2026-11-09T10:20:56-05:00",
-   "totalValue": 2899.23,
+   "at": "2026-11-09T10:31:01-05:00",
+   "totalValue": 2899.42,
    "cash": 1788.57,
-   "positionsValue": 1110.66,
-   "plPct": -3.36,
-   "twrPct": -3.36,
+   "positionsValue": 1110.85,
+   "plPct": -3.35,
+   "twrPct": -3.35,
    "netDeposits": 3000.0,
    "leverage": 0.383,
-   "benchmarkPrice": 749.24,
-   "benchmarkValue": 2991.75,
+   "benchmarkPrice": 749.13,
+   "benchmarkValue": 2991.3,
    "holdings": [
     {
      "ticker": "QQQ",
      "side": "long",
-     "value": 1110.66
+     "value": 1110.85
     }
    ]
   }
@@ -16004,6 +15739,52 @@
     ],
     "actions": [],
     "note": "Normal: kaldıraç 0,38x, SPY +%1,90; işlem gerekmedi."
+   },
+   {
+    "at": "2026-11-09T10:26:00-05:00",
+    "kind": "guard",
+    "status": "normal",
+    "spyPrice": 748.88,
+    "spyChangePct": 1.85,
+    "totalValue": 2897.96,
+    "benchmarkValue": 2990.3,
+    "leverage": 0.383,
+    "marginBuffer": 2620.61,
+    "positions": [
+     {
+      "ticker": "QQQ",
+      "side": "long",
+      "price": 673.95,
+      "dayChangePct": 2.72,
+      "stopPrice": null,
+      "distancePct": null
+     }
+    ],
+    "actions": [],
+    "note": "Normal: kaldıraç 0,38x, SPY +%1,85; işlem gerekmedi."
+   },
+   {
+    "at": "2026-11-09T10:31:01-05:00",
+    "kind": "event",
+    "status": "normal",
+    "spyPrice": 749.13,
+    "spyChangePct": 1.88,
+    "totalValue": 2899.42,
+    "benchmarkValue": 2991.3,
+    "leverage": 0.383,
+    "marginBuffer": 2621.71,
+    "positions": [
+     {
+      "ticker": "QQQ",
+      "side": "long",
+      "price": 674.838,
+      "dayChangePct": 2.86,
+      "stopPrice": null,
+      "distancePct": null
+     }
+    ],
+    "actions": [],
+    "note": "Normal: kaldıraç 0,38x, SPY +%1,88; işlem gerekmedi."
    }
   ]
  },
@@ -17549,7 +17330,8 @@
     "Endeks kolu: maruziyet 1,09x → 0,78x.",
     "QQQ AZALT: 1.350,46 $ → 1.107,06 $.",
     "TQQQ SAT: 65,24 $ → 0,00 $.",
-    "Momentum sepeti v6'da kapalı: paranın yarısı endeks kolunda, yarısı haber şoku kolunda."
+    "Momentum sepeti v6'da kapalı: paranın yarısı endeks kolunda, yarısı haber şoku kolunda.",
+    "Haber şoku: 164 hissede %8+ açılış boşluğu yok; işlem yapılmadı."
    ],
    "rejected": [],
    "watchlist": [
@@ -17645,7 +17427,16 @@
    "ranking": [],
    "shortRanking": [],
    "rankingNote": "Puan = 12-1 ay getirisi (son ay hariç 12 aylık getiri, %). Long için uygun: fiyat 200 günlük ortalamanın üstünde ve puan pozitif; sepet ilk 10'dan (sektör başına en fazla 3) oluşur, ilk 20'de kalan tutulur. Short listesi: fiyatı 200 günlük ortalamanın altında ve puanı negatif en zayıf hisseler (yalnızca izleme; v5'te sepet düşüşte nakde geçer).",
-   "nextSteps": "Endeks kolunun yönü ve büyüklüğü her gün 10:00'dan sonra, haber şoku taraması 10:30'dan sonra; haber işlemlerinin zarar-kesleri piyasa açıkken 5 dakikada bir kontrol ediliyor."
+   "nextSteps": "Endeks kolunun yönü ve büyüklüğü her gün 10:00'dan sonra, haber şoku taraması 10:30'dan sonra; haber işlemlerinin zarar-kesleri piyasa açıkken 5 dakikada bir kontrol ediliyor.",
+   "events": {
+    "date": "2026-11-09",
+    "at": "2026-11-09T10:31:01-05:00",
+    "checked": 164,
+    "gaps": [],
+    "taken": [],
+    "skipped": [],
+    "rule": "Açılış boşluğu en az %8; ilk saatte haberin tersine en az %0,5 dönüş; 2 işlem günü tut, zarar-kes ilk saatin öbür ucu."
+   }
   }
  ],
  "compliance": [
@@ -17900,7 +17691,7 @@
   "start": "2026-10-30",
   "startAt": "2026-10-30T15:50:43-04:00",
   "end": "2027-01-28",
-  "asOf": "2026-11-09T10:20:56-05:00",
+  "asOf": "2026-11-09T10:31:01-05:00",
   "strategy": "v6",
   "history": [
    {
@@ -17964,12 +17755,12 @@
   "daysElapsed": 7,
   "daysTotal": 61,
   "finished": false,
-  "returnPct": -3.36,
-  "spyReturnPct": -0.27,
-  "excessPct": -3.08,
+  "returnPct": -3.35,
+  "spyReturnPct": -0.29,
+  "excessPct": -3.06,
   "maxDrawdownPct": -5.37,
   "maxDrawdownAt": "2026-11-05T16:00:42-05:00",
-  "drawdownNowPct": -4.21,
+  "drawdownNowPct": -4.2,
   "trades": {
    "closed": 8,
    "wins": 2,
@@ -17988,9 +17779,9 @@
    },
    {
     "month": "2026-11",
-    "returnPct": -3.36,
-    "spyPct": -0.28,
-    "excessPct": -3.08
+    "returnPct": -3.35,
+    "spyPct": -0.3,
+    "excessPct": -3.05
    }
   ],
   "uptime": {
@@ -18009,7 +17800,7 @@
     "key": "spy",
     "label": "SPY'ı geçmek (masraflar düşülmüş)",
     "ok": false,
-    "value": -3.08,
+    "value": -3.06,
     "unit": "pct"
    },
    {
