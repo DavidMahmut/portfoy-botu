@@ -1,5 +1,9 @@
-"""Nasdaq movers watch (no trading): the biggest daily and weekly gainers and losers among Nasdaq-listed common stocks,
-and an alert when a stock moves 20 % or more in a day.
+"""Movers watch (no trading): the biggest daily and weekly gainers and losers among common stocks listed on Nasdaq, the
+NYSE and NYSE American, and an alert when a Nasdaq stock moves 20 % or more in a day.
+
+NYSE and NYSE American stocks (added 9 Nov 2026) appear in the dashboard table, its indicators and the stop calculator.
+The 20 % e-mail, the "fell and calmed down" alert and the bot's spike-short list stay Nasdaq-only, because the rules
+behind them were tested on Nasdaq stocks.
 
 Runs on GitHub Actions (.github/workflows/movers.yml) every hour during the session and once after the close. Writes
 movers.json for the dashboard; new 20 % alerts are also written to alerts_new.md, which the workflow turns into a GitHub
@@ -21,6 +25,8 @@ import indicators as IND
 ROOT = Path(__file__).resolve().parent
 NY = ZoneInfo("America/New_York")
 SYMBOLS_URL = "https://www.nasdaqtrader.com/dynamic/SymDir/nasdaqlisted.txt"
+OTHER_URL = "https://www.nasdaqtrader.com/dynamic/SymDir/otherlisted.txt"     # NYSE, NYSE American, Arca, Cboe, IEX
+OTHER_EXCHANGES = {"N": "N", "A": "A"}      # otherlisted.txt code -> our code (N NYSE, A NYSE American); Q = Nasdaq
 MIN_PRICE, MIN_DOLLAR_VOL = 3.0, 2_000_000     # skip penny stocks and stocks too thin to trade
 ALERT, TOP_N = 0.20, 25
 # Daily e-mail: only the lower-risk 20 % movers. A stock is "riskli" (left out of the e-mail) if any of these fail.
@@ -40,7 +46,8 @@ SKIP_NAME = re.compile(r"warrant|right|unit|preferred|notes? due|debenture|depos
 OWNER = "DavidMahmut"
 FUND = ROOT / "fundamentals.json"          # once a day: shares, EPS, market value (Yahoo screener) + index members
 CATEGORY = {}                             # Nasdaq market tier: Q Global Select, G Global Market, S Capital Market
-SCREEN_COLS = ["t", "n", "p", "d1", "w1", "dv", "cap", "pe", "s30", "s200", "atr", "idx", "tier", "lo52", "hi52", "lo20", "hi20"]
+EXCHANGE = {}                             # listing exchange: Q Nasdaq, N NYSE, A NYSE American
+SCREEN_COLS = ["t", "n", "p", "d1", "w1", "dv", "cap", "pe", "s30", "s200", "atr", "idx", "tier", "lo52", "hi52", "lo20", "hi20", "ex"]
 
 
 def nasdaq_symbols():
@@ -58,6 +65,35 @@ def nasdaq_symbols():
             continue
         out[sym] = name.split(" - ")[0].strip()
         CATEGORY[sym] = f.get("Market Category", "")
+        EXCHANGE[sym] = "Q"
+    return out
+
+
+NAME_TAIL = re.compile(r"\s+(Class [A-Z] )?(Common Stock|Common Shares|Ordinary Shares|Subordinate Voting Shares|"
+                       r"Shares of Beneficial Interest|Common Units?.*|American Depositary Shares.*|"
+                       r"Sponsored ADR.*|New)(\s*\([^)]*\))?\s*$", re.I)
+
+
+def nyse_symbols():
+    """NYSE and NYSE American common stocks from the Nasdaq Trader 'other listed' directory, in Yahoo's spelling
+    (class shares BRK.B -> BRK-B). ETFs, test issues, preferreds, warrants, units and notes are left out."""
+    import requests
+    txt = requests.get(OTHER_URL, timeout=30, headers={"User-Agent": "Mozilla/5.0"}).text
+    out = {}
+    lines = txt.splitlines()
+    head = lines[0].split("|")
+    for line in lines[1:]:
+        f = dict(zip(head, line.split("|")))
+        sym, name, ex = f.get("ACT Symbol", ""), f.get("Security Name", ""), f.get("Exchange", "")
+        if not sym or line.startswith("File Creation") or ex not in OTHER_EXCHANGES:
+            continue
+        if f.get("Test Issue") == "Y" or f.get("ETF") == "Y" or SKIP_NAME.search(name):
+            continue
+        if not re.fullmatch(r"[A-Z]{1,5}(\.[A-B])?", sym):
+            continue
+        t = sym.replace(".", "-")
+        out[t] = NAME_TAIL.sub("", name).strip().rstrip(",") or t
+        EXCHANGE[t] = OTHER_EXCHANGES[ex]
     return out
 
 
@@ -131,9 +167,9 @@ def fundamentals(today):
         try:
             import yfinance as yf
             from yfinance import EquityQuery as Q
-            q = Q("and", [Q("eq", ["region", "us"]), Q("is-in", ["exchange", "NMS", "NGM", "NCM"])])
+            q = Q("and", [Q("eq", ["region", "us"]), Q("is-in", ["exchange", "NMS", "NGM", "NCM", "NYQ", "ASE"])])
             off, total = 0, 1
-            while off < total and off < 9000:
+            while off < total and off < 12000:
                 r = yf.screen(q, offset=off, size=250, sortField="intradaymarketcap", sortAsc=False)
                 quotes = r.get("quotes") or []
                 total = int(r.get("total") or 0)
@@ -480,6 +516,12 @@ def main():
         print("symbol list failed:", e)
         prev = json.loads((ROOT / "movers.json").read_text()) if (ROOT / "movers.json").exists() else {}
         names = prev.get("universe", {})
+    try:
+        other = nyse_symbols()
+        names.update({t: n for t, n in other.items() if t not in names})
+        print("NYSE / NYSE American:", len(other))
+    except Exception as e:                       # the Nasdaq part must not fail because of the second list
+        print("NYSE symbol list failed:", e)
     data = download(sorted(names), period="13mo", interval="1d", actions=True)
     today = now.date().isoformat()
     try:
@@ -508,10 +550,11 @@ def main():
         screen.append([t, names.get(t, t), r2(last), r2((last / prev - 1) * 100), r2((last / w - 1) * 100), r2(dv / 1e6, 1),
                        r2(capb), r2(pe, 1), r2(s30), r2(s200), r2(atr), ("N" if t in ndx else "") + ("S" if t in spx else ""),
                        CATEGORY.get(t, ""), r2(lo52, 4 if lo52 and lo52 < 1 else 2), r2(hi52, 4 if hi52 and hi52 < 1 else 2),
-                       r2(lo20, 4 if lo20 and lo20 < 1 else 2), r2(hi20, 4 if hi20 and hi20 < 1 else 2)])
+                       r2(lo20, 4 if lo20 and lo20 < 1 else 2), r2(hi20, 4 if hi20 and hi20 < 1 else 2), EXCHANGE.get(t, "Q")])
         o, hi, lo = (float(s[k].iloc[-1]) for k in ("Open", "High", "Low"))
         gap = o / prev - 1 if o > 0 else 0.0
-        if last >= REBOUND["minPrice"] and dv >= REBOUND["minDollarVolM"] * 1e6 and (capb or 0) >= REBOUND["minCapB"]:
+        if EXCHANGE.get(t, "Q") == "Q" and last >= REBOUND["minPrice"] and dv >= REBOUND["minDollarVolM"] * 1e6 \
+                and (capb or 0) >= REBOUND["minCapB"]:
             try:
                 sig = rebound_signal(s)
             except Exception:
@@ -520,7 +563,7 @@ def main():
                 rebound.append({"ticker": t, "name": names.get(t, t), "price": round(last, 2), "date": str(s.index[-1].date()),
                                 "capB": round(capb, 2), "pe": round(pe, 1) if pe else None, "dollarVolM": round(dv / 1e6, 1),
                                 "ddPct": round((last / hi52 - 1) * 100, 1) if hi52 else None, **sig})
-        rows.append({"ticker": t, "name": names.get(t, t), "price": round(last, 2), "prevClose": round(prev, 2),
+        rows.append({"ticker": t, "name": names.get(t, t), "ex": EXCHANGE.get(t, "Q"), "price": round(last, 2), "prevClose": round(prev, 2),
                      "d1Pct": round((last / prev - 1) * 100, 2), "w1Pct": round((last / w - 1) * 100, 2),
                      "dollarVolM": round(dv / 1e6, 1), "date": str(s.index[-1].date()), "gapPct": round(gap * 100, 2),
                      # opened 15 %+ higher and then barely moved: the typical picture of a takeover at a fixed price
@@ -552,7 +595,7 @@ def main():
         if row[0] in stale:
             row[3] = None
     by = lambda k, rev, src=rows: sorted(src, key=lambda r: r[k], reverse=rev)[:TOP_N]
-    alerts = [r for r in fresh if abs(r["d1Pct"]) >= ALERT * 100]
+    alerts = [r for r in fresh if abs(r["d1Pct"]) >= ALERT * 100 and r["ex"] == "Q"]     # e-mail and spike list: Nasdaq
     alerts.sort(key=lambda r: -abs(r["d1Pct"]))
     for r in alerts[:30]:
         r["headline"] = headline(r["ticker"])
@@ -602,10 +645,13 @@ def main():
            "study": {**study, "text": study_text(study)} if study else None,
            "screen": {"cols": SCREEN_COLS, "rows": screen, "fundamentalsDate": F.get("date"),
                       "indexDate": (F.get("index") or {}).get("date")},
-           "notes": "Nasdaq'ta işlem gören hisse senetleri (ETF, varant, imtiyazlı hisse hariç); fiyatı 3 $'ın, son 20 günlük "
+           "exchanges": {"Q": sum(1 for r in rows if r["ex"] == "Q"), "N": sum(1 for r in rows if r["ex"] == "N"),
+                         "A": sum(1 for r in rows if r["ex"] == "A")},
+           "notes": "Nasdaq, NYSE ve NYSE American'da işlem gören hisse senetleri (ETF, varant, imtiyazlı hisse hariç); fiyatı 3 $'ın, son 20 günlük "
                     "ortalama işlem hacmi 2 milyon $'ın altındakiler elendi. Günlük değişim önceki kapanışa göre (seans "
                     "açıkken anlık fiyatla), haftalık değişim 5 işlem günü öncesine göre. Bot bu listeden yalnızca "
-                    "\"sert yükseliş short'u\" kuralına uyanlara ertesi sabah girer."}
+                    "\"sert yükseliş short'u\" kuralına uyan Nasdaq hisselerine ertesi sabah girer; %20 e-postası ve "
+                    "\"düşüp dengelenen hisse\" uyarısı da yalnızca Nasdaq hisselerine bakar."}
     (ROOT / "movers.json").write_text(json.dumps(out, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     rm = ROOT / "rebound_new.md"
     if reb_mail:
