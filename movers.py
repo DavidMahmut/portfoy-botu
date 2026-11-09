@@ -92,7 +92,10 @@ def nyse_symbols():
         if not re.fullmatch(r"[A-Z]{1,5}(\.[A-B])?", sym):
             continue
         t = sym.replace(".", "-")
-        out[t] = NAME_TAIL.sub("", name).strip().rstrip(",") or t
+        nm = name
+        for _ in range(3):                        # e.g. "Berkshire Hathaway Inc. New Common Stock"
+            nm = NAME_TAIL.sub("", nm).strip().rstrip(",")
+        out[t] = nm or t
         EXCHANGE[t] = OTHER_EXCHANGES[ex]
     return out
 
@@ -162,7 +165,7 @@ def fundamentals(today):
         except Exception as e:
             F["indexError"] = f"{type(e).__name__}: {e}"
             changed = True
-    if F.get("date") != today:
+    if F.get("date") != today or F.get("scope") != "nasdaq+nyse":      # NYSE added 9 Nov 2026: refetch once
         rows = {}
         try:
             import yfinance as yf
@@ -187,7 +190,7 @@ def fundamentals(today):
             print("fundamentals failed:", e)
         print("fundamentals:", len(rows))
         if len(rows) >= 500:
-            F.update(date=today, rows=rows)
+            F.update(date=today, rows=rows, scope="nasdaq+nyse")
             changed = True
     if changed:
         FUND.write_text(json.dumps(F, separators=(",", ":")), encoding="utf-8")
