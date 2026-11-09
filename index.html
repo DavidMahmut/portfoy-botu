@@ -380,6 +380,36 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
 .lesson.folded .ls-lead,.lesson.folded #lsBody,.lesson.folded .ls-foot{display:none}
 @media (max-width:820px){.ls-grid{grid-template-columns:minmax(0,1fr)} .ls-nav select{max-width:150px}}
 @media (min-width:1260px){.wrap > .lesson{grid-column:1 / -1}}
+/* Stop hesaplayıcı */
+.sc{display:flex;flex-direction:column;gap:14px}
+.sc-form{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px 14px}
+.sc-form label{display:flex;flex-direction:column;gap:4px;font-size:13px;color:var(--muted);font-weight:600;min-width:0}
+.sc-form input,.sc-form select{font:inherit;font-size:15px;font-weight:400;padding:7px 9px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink);min-width:0;width:100%;box-sizing:border-box}
+.sc-form #scT{font-family:var(--f-mono);font-weight:600;text-transform:uppercase}
+.sc-meta{margin:0;font-size:14px}
+.sc-meta b{font-family:var(--f-mono)}
+.sc-warn{margin:0;font-size:14px;background:var(--warn-soft);color:var(--ink);border-radius:6px;padding:8px 12px}
+.sc-rec{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;background:var(--accent-soft);border-radius:8px;padding:14px 16px}
+.sc-rec .eyebrow{margin:0 0 2px;color:var(--accent)}
+.sc-big{font-family:var(--f-mono);font-size:24px;font-weight:600;line-height:1.15}
+.sc-why{margin:0;font-size:14px;line-height:1.5;max-width:95ch}
+.sc-table{min-width:640px}
+.sc-table th,.sc-table td{white-space:nowrap}
+.sc-table td.l{white-space:normal;min-width:180px}
+.sc-table td.l,.sc-table th.l{text-align:left}
+.sc-table td.l{font-family:var(--f-body)}
+.sc-table td.l span{display:block}
+.sc-table .sc-fam{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;font-family:var(--f-mono)}
+.sc-table tr.rec td{background:var(--accent-soft)}
+.sc-table tr.rec td.l span:first-child{font-weight:700}
+.sc-table td.small{font-family:var(--f-body);text-align:left}
+.sc-bar{display:inline-block;width:64px;height:8px;border-radius:4px;background:var(--line);vertical-align:middle;overflow:hidden}
+.sc-bar i{display:block;height:100%;border-radius:4px}
+.sc-bar i.bad{background:var(--loss)} .sc-bar i.mid{background:var(--warn)} .sc-bar i.ok{background:var(--gain)} .sc-bar i.far{background:var(--muted)}
+.bad-t{color:var(--loss)} .mid-t{color:var(--warn)} .ok-t{color:var(--gain)} .far-t{color:var(--muted)}
+.sc-tips{margin:0;padding-left:18px;font-size:13px;color:var(--muted);display:flex;flex-direction:column;gap:3px}
+.det-stop{all:unset;cursor:pointer;font-size:13px;font-weight:600;color:var(--accent);padding:4px 0}
+.det-stop:hover{text-decoration:underline}
 /* Nasdaq movers */
 .mv-tabs,.mv-views{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
 .mv-views button{font:inherit;font-size:13px;padding:5px 12px;border-radius:6px;border:1px solid var(--line);background:var(--panel);color:var(--ink);cursor:pointer}
@@ -462,6 +492,7 @@ tr.mv-det td{background:var(--bg);white-space:normal;text-align:left}
     <a href="#sa">Seeking Alpha</a>
     <a href="#haber-kolu">Haber şoku</a>
     <a href="#hareketliler">Hareketliler</a>
+    <a href="#stop">Stop hesaplayıcı</a>
     <a href="#karne">Karne</a>
     <a href="#haberler">Haberler</a>
     <a href="#pozisyonlar">Pozisyonlar</a>
@@ -664,6 +695,25 @@ tr.mv-det td{background:var(--bg);white-space:normal;text-align:left}
       <div class="tbl-wrap"><table class="mv-table" id="mvTbl"><thead id="mvHead"></thead><tbody id="mvBody"><tr><td colspan="10" class="muted">Veriler yükleniyor…</td></tr></tbody></table></div>
       <div class="small muted" style="display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center"><button type="button" class="mv-more" id="mvMore" hidden>Daha fazla göster</button><span id="mvSortNote">Sıralamak için başlıklara tıklayın: ilk tıklama en çoktan en aza (Hisse'de A'dan Z'ye), ikinci tıklama tersine çevirir.</span></div>
       <p class="small muted" id="mvNote" style="margin:0;max-width:90ch"></p>
+    </div>
+  </section>
+
+  <section id="stop" aria-labelledby="h-stop">
+    <div class="sec-head"><h2 id="h-stop">Stop hesaplayıcı</h2><span class="small muted">zarar-kes seviyesi ve pozisyon büyüklüğü</span></div>
+    <div class="panel sc">
+      <p class="small muted" style="margin:0;max-width:95ch">Bir hisse yazın: zarar-kes (stop) adaylarını oynaklığa (ATR) ve destek/direnç seviyelerine göre hesaplar, işlem başına hesabınızın ne kadarını riske atmak istediğinize göre kaç hisse alınacağını söyler. Stop düşüşü tahmin etmez; “fikrim yanlış çıktı” noktasını ve o zaman kaybedeceğiniz parayı önceden belirler. Veriler son hareketliler taramasından (seans içinde saatte bir). Yatırım tavsiyesi değildir.</p>
+      <div class="sc-form">
+        <label>Hisse<input id="scT" list="scList" placeholder="ör. INTC" autocomplete="off" spellcheck="false" autocapitalize="characters"></label>
+        <datalist id="scList"></datalist>
+        <label>Yön<select id="scSide"><option value="long">Long (alış)</option><option value="short">Short (açığa satış)</option></select></label>
+        <label>Giriş fiyatı ($)<input id="scEntry" inputmode="decimal" placeholder="son fiyat"></label>
+        <label>Hesap ($)<input id="scAcct" inputmode="decimal" value="3000"></label>
+        <label>İşlem başına risk (%)<input id="scRisk" inputmode="decimal" value="1"></label>
+        <label>ATR çarpanı<select id="scK"><option value="2">2 × ATR</option><option value="2.5">2,5 × ATR</option><option value="3">3 × ATR</option></select></label>
+        <label>Ürün<select id="scLev"><option value="1">Hissenin kendisi (1x)</option><option value="2">2x kaldıraçlı ürün</option><option value="3">3x kaldıraçlı ürün</option></select></label>
+        <label id="scAtrWrap" hidden>ATR (fiyatın %'si)<input id="scAtr" inputmode="decimal" placeholder="ör. 3,2"></label>
+      </div>
+      <div id="scOut" class="sc"><p class="muted">Veriler yükleniyor…</p></div>
     </div>
   </section>
 
@@ -1430,6 +1480,119 @@ tr.mv-det td{background:var(--bg);white-space:normal;text-align:left}
     var lastDay=new Date().toDateString();
     setInterval(function(){ var d=new Date().toDateString(); if(d!==lastDay){ lastDay=d; lsView=null; try{ lsRender(); }catch(e){} } }, 600000);
   })();
+  /* ---------------- Stop hesaplayıcı: stop candidates from ATR and support/resistance + position size from risk */
+  var scPrefs={side:"long", acct:"3000", risk:"1", k:"2.5", lev:"1", t:""};
+  try{ var _sp=JSON.parse(localStorage.getItem("scPrefs")||"null"); if(_sp) for(var _k in _sp) scPrefs[_k]=_sp[_k]; }catch(e){}
+  function scNum(id){ var v=($(id).value||"").trim().replace(/\s/g,""); if(!v) return null; if(v.indexOf(",")>=0) v=v.replace(/\./g,"").replace(",","."); var x=parseFloat(v); return isFinite(x)? x : null; }
+  function scMoney(x){ return isNum(x)? fmtNum(x, Math.abs(x)<1? 4 : 2)+" $" : "—"; }
+  function scFind(t){
+    var rows=screenRows(S.movers); if(!rows||!t) return null; t=t.toUpperCase();
+    for(var i=0;i<rows.length;i++) if(rows[i].ticker===t) return rows[i];
+    return null;
+  }
+  function scList(){
+    var dl=$("scList"), rows=screenRows(S.movers); if(!dl||!rows||dl.options.length) return;
+    rows.slice().sort(function(a,b){ return (b.dollarVolM||0)-(a.dollarVolM||0); }).forEach(function(r){ var o=document.createElement("option"); o.value=r.ticker; o.label=r.name; dl.appendChild(o); });
+  }
+  function scSave(){
+    scPrefs={side:$("scSide").value, acct:$("scAcct").value, risk:$("scRisk").value, k:$("scK").value, lev:$("scLev").value, t:$("scT").value.trim().toUpperCase()};
+    try{ localStorage.setItem("scPrefs", JSON.stringify(scPrefs)); }catch(e){}
+  }
+  function scCalc(){
+    var out=$("scOut"); if(!out) return; clear(out);
+    var t=($("scT").value||"").trim().toUpperCase(), r=scFind(t), side=$("scSide").value, long=side==="long", dir=long? -1 : 1;
+    var lev=+$("scLev").value||1, k=+$("scK").value||2.5, acct=scNum("scAcct"), riskPct=scNum("scRisk");
+    var I=(r&&r.ind)||{}, price=r? r.price : null;
+    $("scAtrWrap").hidden=!!r&&(isNum(I.atrD)||isNum(r.atr));
+    var entry=scNum("scEntry"); if(!isNum(entry)) entry=price;
+    $("scEntry").placeholder=isNum(price)? "son fiyat "+fmtNum(price, price<1?4:2) : "fiyat";
+    var atr= isNum(I.atrD)? I.atrD : (r&&isNum(r.atr)&&isNum(price)? r.atr/100*price : null);
+    if(!isNum(atr)){ var ap=scNum("scAtr"); if(isNum(ap)&&isNum(entry)) atr=ap/100*entry; }
+    if(!t){ out.appendChild(el("p",{class:"muted",text:"Bir hisse sembolü yazın (ör. AAPL, INTC, NVDA). Liste, son taramadaki "+(S.movers&&S.movers.screen? fmtNum(S.movers.screen.rows.length,0) : "")+" Nasdaq hissesinden önerir."})); return; }
+    if(!r&&!(isNum(entry)&&isNum(atr))){
+      out.appendChild(el("p",{class:"sc-warn",text:t+" son taramada yok: ETF'ler, NYSE hisseleri, fiyatı 3 $'ın ya da günlük işlemi 2 milyon $'ın altındaki hisseler taranmıyor. Giriş fiyatını ve ATR'yi (fiyatın yüzdesi) kendiniz yazarsanız yalnızca ATR'ye göre stop hesaplanır."}));
+      $("scAtrWrap").hidden=false; return;
+    }
+    if(!isNum(entry)||!isNum(atr)||atr<=0){ out.appendChild(el("p",{class:"muted",text:"Giriş fiyatı ya da ATR eksik."})); return; }
+    var atrPct=atr/entry*100;
+    // ---- candidates: stop price, family, method, note
+    var C=[];
+    function add(name, fam, stop, why){ if(!isNum(stop)||stop<=0) return; var d=(entry-stop)*(long?1:-1); if(d<=0) return; C.push({name:name, fam:fam, stop:stop, dist:d, atrs:d/atr, pct:d/entry*100, why:why}); }
+    add(fmtNum(k,1)+" × ATR", "Oynaklık", entry+dir*k*atr, "Girişten "+fmtNum(k,1)+" ATR uzakta: hissenin normal günlük dalgalanmasının dışında kalır.");
+    if(r){
+      if(long){
+        add("Son 20 günün dibi − 0,5 ATR", "Yapı", isNum(r.lo20)? r.lo20-0.5*atr : null, "Son 20 günün en düşük fiyatı ("+scMoney(r.lo20)+") kırılırsa yakın dönem yapısı bozulmuş olur.");
+        add("Chandelier: 20 gün zirvesi − 3 ATR", "İz süren", isNum(r.hi20)? r.hi20-3*atr : null, "Kâra geçince stop'u buna göre yukarı taşıyın; fiyat yükseldikçe yükselir.");
+        if(I.stDir===1) add("Supertrend (10, 3) çizgisi", "İz süren", I.st, "Supertrend AL'da; kapanış bu çizginin altına inerse SAT'a döner.");
+      } else {
+        add("Son 20 günün zirvesi + 0,5 ATR", "Yapı", isNum(r.hi20)? r.hi20+0.5*atr : null, "Son 20 günün en yüksek fiyatı ("+scMoney(r.hi20)+") aşılırsa düşüş yapısı bozulmuş olur.");
+        add("Chandelier: 20 gün dibi + 3 ATR", "İz süren", isNum(r.lo20)? r.lo20+3*atr : null, "Kâra geçince stop'u buna göre aşağı taşıyın.");
+        if(I.stDir===-1) add("Supertrend (10, 3) çizgisi", "İz süren", I.st, "Supertrend SAT'ta; kapanış bu çizginin üstüne çıkarsa AL'a döner.");
+      }
+      var B=0.25*atr, lv=long? [["EMA 50",I.e50],["200 günlük ortalama",r.s200],["POC (60 günün en yoğun fiyatı)",I.poc],["Anchored VWAP (52 hafta dibinden)",I.avL],["Pivot S1",I.pvS1],["Bollinger alt bandı",I.bbL],["Ichimoku bulutunun altı",I.ichBot],["52 hafta dibi",r.lo52]]
+                              : [["EMA 50",I.e50],["200 günlük ortalama",r.s200],["POC (60 günün en yoğun fiyatı)",I.poc],["Anchored VWAP (52 hafta zirvesinden)",I.avH],["Pivot R1",I.pvR1],["Bollinger üst bandı",I.bbU],["Ichimoku bulutunun üstü",I.ichTop],["52 hafta zirvesi",r.hi52]];
+      lv.forEach(function(x){ if(isNum(x[1])) add(x[0]+(long? " − 0,25 ATR" : " + 0,25 ATR"), long? "Destek" : "Direnç", x[1]+dir*B, (long? "Destek: " : "Direnç: ")+x[0]+" "+scMoney(x[1])+"; stop biraz "+(long?"altına":"üstüne")+" konur ki tam seviyede tetiklenmesin."); });
+    }
+    C.sort(function(a,b){ return a.dist-b.dist; });
+    // ---- recommendation: structure when its distance is sensible, otherwise k x ATR
+    var atrC=C.filter(function(c){ return c.fam==="Oynaklık"; })[0], swing=C.filter(function(c){ return c.fam==="Yapı"; })[0];
+    var rec= swing&&swing.atrs>=1.5&&swing.atrs<=4? swing : (atrC||C[0]);
+    if(!rec){ out.appendChild(el("p",{class:"sc-warn",text:"Oynaklık çok yüksek (ATR %"+fmtNum(atrPct,1)+"): "+fmtNum(k,1)+" × ATR girişin tamamından büyük, anlamlı bir stop seviyesi yok. Böyle bir hissede stop ile risk sınırlamak pratik değil; pozisyonu çok küçük tutun."})); return; }
+    var recWhy= rec===swing? "Son 20 günün "+(long?"dibi":"zirvesi")+" girişe makul uzaklıkta ("+fmtNum(swing.atrs,1)+" ATR); bu seviye kırılırsa alım nedeni zayıflar. Hem anlamlı hem de normal dalgalanmanın dışında."
+      : swing? "Son 20 günün "+(long?"dibi":"zirvesi")+" girişe "+(swing.atrs<1.5? "çok yakın ("+fmtNum(swing.atrs,1)+" ATR): gürültüde tetiklenebilir" : "çok uzak ("+fmtNum(swing.atrs,1)+" ATR): pozisyon çok küçük kalır")+"; bu yüzden "+fmtNum(k,1)+" × ATR kullanıldı."
+      : fmtNum(k,1)+" × ATR: hissenin normal günlük dalgalanmasının dışında.";
+    var riskUSD=isNum(acct)&&isNum(riskPct)? acct*riskPct/100 : null;
+    function size(c){ var pctMove=c.pct*lev, val= isNum(riskUSD)? riskUSD/(pctMove/100) : null; return {val:val, sh: lev===1&&isNum(val)? val/entry : null, prodPct:pctMove}; }
+    // header
+    out.appendChild(el("p",{class:"sc-meta"}, el("b",{text:t}), r? " · "+r.name : "", " · son fiyat "+scMoney(price)+" · ATR "+scMoney(atr)+" (%"+fmtNum(atrPct,1)+")"
+      +(S.movers&&S.movers.asOf? " · tarama "+dShort(S.movers.asOf)+" "+tm(S.movers.asOf) : "")));
+    if(!atrC) out.appendChild(el("p",{class:"sc-warn",text:"Oynaklık çok yüksek (ATR %"+fmtNum(atrPct,1)+"): "+fmtNum(k,1)+" × ATR girişin tamamından büyük. Aşağıdaki seviyeler normal dalgalanmanın içinde kalır; pozisyonu çok küçük tutun."}));
+    if(r&&I.stDir!=null&&((long&&I.stDir===-1)||(!long&&I.stDir===1))) out.appendChild(el("p",{class:"sc-warn",text:"Dikkat: Supertrend şu an "+(I.stDir===1?"AL":"SAT")+" tarafında, yani kısa vadeli trend bu "+(long?"alışın":"short'un")+" tersine. Stop'unuz daha sık tetiklenebilir."}));
+    // recommendation card
+    var sz=size(rec), cap=isNum(acct)&&isNum(sz.val)&&sz.val>acct;
+    var target=entry-dir*2*rec.dist;
+    var rc=el("div",{class:"sc-rec"},
+      el("div",null, el("div",{class:"eyebrow",text:"Önerilen stop"}), el("div",{class:"sc-big",text:scMoney(rec.stop)}),
+        el("div",{class:"small",text:(long?"−":"+")+"%"+fmtNum(rec.pct,1)+" · "+fmtNum(rec.atrs,1)+" ATR"+(rec.fam==="Oynaklık"? " (oynaklık stop'u)" : " · "+rec.name)})),
+      el("div",null, el("div",{class:"eyebrow",text:lev===1? "Kaç hisse" : lev+"x üründe tutar"}),
+        el("div",{class:"sc-big",text: !isNum(sz.val)? "—" : lev===1? fmtNum(cap? acct/entry : sz.sh, (cap? acct/entry : sz.sh)<10? 2 : 0)+" hisse" : fmtNum(cap? acct : sz.val,0)+" $"}),
+        el("div",{class:"small",text: !isNum(sz.val)? "Hesap ve risk yazın" : cap? "Hesabın tamamı ("+fmtNum(acct,0)+" $); risk %"+fmtNum(sz.prodPct,1)+" olur" : "≈ "+fmtNum(sz.val,0)+" $ · risk "+fmtNum(riskUSD,0)+" $ (%"+fmtNum(riskPct,1)+")"+(lev===1&&sz.sh<10? " · kesirli hisse yoksa "+Math.floor(sz.sh) : "")})),
+      el("div",null, el("div",{class:"eyebrow",text:"2R hedef"}), el("div",{class:"sc-big",text:scMoney(target)}),
+        el("div",{class:"small",text:(long?"+":"−")+"%"+fmtNum(rec.pct*2,1)+" · riskin 2 katı kazanç"})));
+    out.appendChild(rc);
+    var notes=[recWhy];
+    if(lev>1) notes.push(lev+"x üründe "+(long?"düşüş":"yükseliş")+" ≈ %"+fmtNum(rec.pct*lev,1)+" olur: ürünün stop fiyatı = ürünün giriş fiyatı × (1 "+(long?"−":"+")+" "+fmtNum(rec.pct*lev/100,3)+"). Kaldıraçlı ürünler günlük sıfırlandığı için birkaç günlük harekette bu yaklaşık bir hesaptır.");
+    if(cap) notes.push("Bu stop mesafesiyle %"+fmtNum(riskPct,1)+" risk için gereken pozisyon ("+fmtNum(sz.val,0)+" $) hesabınızdan büyük; tutar hesapla sınırlandı.");
+    out.appendChild(el("p",{class:"sc-why",text:notes.join(" ")}));
+    // table of all candidates
+    var tb=el("tbody");
+    C.forEach(function(c){
+      var z=size(c), zone=c.atrs<1? ["Çok yakın: gürültüde tetiklenir","bad"] : c.atrs<1.5? ["Yakın","mid"] : c.atrs<=4? ["Makul","ok"] : ["Uzak: pozisyon küçük kalır","far"];
+      var bar=el("span",{class:"sc-bar",title:fmtNum(c.atrs,2)+" ATR"}, el("i",{class:zone[1],style:"width:"+Math.min(100,c.atrs/6*100).toFixed(1)+"%"}));
+      tb.appendChild(el("tr",{class:c===rec? "rec" : null, title:c.why},
+        el("td",{class:"l"}, el("span",{text:c.name}), el("span",{class:"sc-fam",text:c.fam})),
+        el("td",{class:"num",text:scMoney(c.stop)}),
+        el("td",{class:"num",text:(long?"−":"+")+"%"+fmtNum(c.pct,1)}),
+        el("td",{class:"num"}, bar, " "+fmtNum(c.atrs,1)),
+        el("td",{class:"num",text: !isNum(z.val)? "—" : lev===1? fmtNum(Math.min(z.sh, isNum(acct)? acct/entry : z.sh), z.sh<10? 2 : 0)+" hisse" : fmtNum(Math.min(z.val, acct||z.val),0)+" $"}),
+        el("td",{class:"small "+zone[1]+"-t",text:zone[0]})));
+    });
+    out.appendChild(el("div",{class:"tbl-wrap"}, el("table",{class:"sc-table"},
+      el("thead",null, el("tr",null, el("th",{class:"l",text:"Yöntem"}), el("th",{text:"Stop"}), el("th",{text:"Uzaklık"}), el("th",{text:"ATR cinsinden"}), el("th",{text:lev===1? "Adet (%"+fmtNum(riskPct||0,1)+" risk)" : lev+"x tutar"}), el("th",{class:"l",text:"Değerlendirme"}))),
+      tb)));
+    out.appendChild(el("ul",{class:"sc-tips"},
+      el("li",{text:"Stop'u “stop-market” emriyle girin; “stop-limit” hızlı düşüşte hiç gerçekleşmeyebilir."}),
+      el("li",{text:"Gece gelen kötü haberle hisse stop'un çok "+(long?"altından":"üstünden")+" açılabilir; bilanço öncesi pozisyonu küçültmek daha güvenli."}),
+      el("li",{text:"Stop'u asla "+(long?"aşağı":"yukarı")+" çekmeyin. Kâra geçince önce başa başa, sonra “İz süren” satırındaki seviyeye taşıyın."}),
+      el("li",{text:"Seviyeler son taramanın verisidir (saatte bir, seans içinde); gün içinde fiyat değiştiyse giriş fiyatını kendiniz yazın."})));
+  }
+  (function(){
+    if(!$("scT")) return;
+    $("scSide").value=scPrefs.side; $("scAcct").value=scPrefs.acct; $("scRisk").value=scPrefs.risk; $("scK").value=scPrefs.k; $("scLev").value=scPrefs.lev; $("scT").value=scPrefs.t||"";
+    ["scT","scEntry","scAcct","scRisk","scAtr"].forEach(function(id){ $(id).addEventListener("input",function(){ if(id==="scT") $("scEntry").value=""; scSave(); scCalc(); }); });
+    ["scSide","scK","scLev"].forEach(function(id){ $(id).addEventListener("change",function(){ scSave(); scCalc(); }); });
+  })();
+  function scOpen(t){ var i=$("scT"); if(!i) return; i.value=t; $("scEntry").value=""; scSave(); scCalc(); var s=$("stop"); if(s) s.scrollIntoView({behavior:"smooth",block:"start"}); }
   var mvKey="dailyLosers", mvLimit=25, mvF={}, mvSort=null;
   try{ mvSort=JSON.parse(localStorage.getItem("mvSort")||"null"); }catch(e){ mvSort=null; }
   function indVal(r,k){
@@ -1483,7 +1646,7 @@ tr.mv-det td{background:var(--bg);white-space:normal;text-align:left}
     var ci={}; Sc.cols.forEach(function(c,i){ ci[c]=i; });
     var Ic=X.ind&&X.ind.cols, Ir=(X.ind&&X.ind.rows)||{};
     var mk=function(t){ var a=Ir[t]; if(!a||!Ic) return null; var o={}; Ic.forEach(function(c,i){ o[c]=a[i]; }); return o; };
-    return Sc.rows.map(function(r){ return {ind:mk(r[ci.t]),ticker:r[ci.t],name:r[ci.n],price:r[ci.p],d1Pct:r[ci.d1],w1Pct:r[ci.w1],dollarVolM:r[ci.dv],capB:r[ci.cap],pe:r[ci.pe],s30:r[ci.s30],s200:r[ci.s200],atr:r[ci.atr],idx:r[ci.idx]||"",tier:r[ci.tier]||"",lo52:ci.lo52!=null?r[ci.lo52]:null,hi52:ci.hi52!=null?r[ci.hi52]:null}; });
+    return Sc.rows.map(function(r){ return {ind:mk(r[ci.t]),ticker:r[ci.t],name:r[ci.n],price:r[ci.p],d1Pct:r[ci.d1],w1Pct:r[ci.w1],dollarVolM:r[ci.dv],capB:r[ci.cap],pe:r[ci.pe],s30:r[ci.s30],s200:r[ci.s200],atr:r[ci.atr],idx:r[ci.idx]||"",tier:r[ci.tier]||"",lo52:ci.lo52!=null?r[ci.lo52]:null,hi52:ci.hi52!=null?r[ci.hi52]:null,lo20:ci.lo20!=null?r[ci.lo20]:null,hi20:ci.hi20!=null?r[ci.hi20]:null}; });
   }
   function fInd(r,f){
     var keys=["iema","irsimin","irsimax","imacd","ivwap","ipoc","ibb","ist","isk","iich","iadxmin","iadxmax","idmi","iobv","ifib","iav","ipv"];
@@ -1623,7 +1786,8 @@ tr.mv-det td{background:var(--bg);white-space:normal;text-align:left}
     item("13 · Fibonacci (52 hafta)", fib, isNum(I.fib)? "Fiyat yükselişin %"+fmtNum(I.fib,1)+"'ini geri verdi (0 = zirvede, 100 = dipte)" : "");
     item("14 · Anchored VWAP", "52h zirveden "+n2(I.avH)+rel(I.avH)+" · 52h dipten "+n2(I.avL)+rel(I.avL), "Zirve ya da dip gününden beri alanların ortalama maliyeti");
     item("15 · Pivot (dünkü seansa göre)", "S2 "+n2(I.pvS2)+" · S1 "+n2(I.pvS1)+" · P "+n2(I.pvP)+" · R1 "+n2(I.pvR1)+" · R2 "+n2(I.pvR2), isNum(I.pvP)? "Fiyat pivotun "+(p>=I.pvP?"üstünde":"altında") : "");
-    return el("tr",{class:"mv-det"}, el("td",{colspan:String(ncols)}, r.ind? g : el("span",{class:"muted",text:"Bu hisse için indikatör verisi bir sonraki güncellemede gelecek."})));
+    var sb=el("button",{type:"button",class:"det-stop",text:"Bu hisse için stop hesapla →"}); sb.addEventListener("click",function(){ scOpen(r.ticker); });
+    return el("tr",{class:"mv-det"}, el("td",{colspan:String(ncols)}, r.ind? g : el("span",{class:"muted",text:"Bu hisse için indikatör verisi bir sonraki güncellemede gelecek."}), el("div",null,sb)));
   }
   function mvHead(){
     var hd=$("mvHead"); if(!hd) return; clear(hd); var tr=el("tr");
@@ -2152,7 +2316,7 @@ tr.mv-det td{background:var(--bg);white-space:normal;text-align:left}
   }
   function loadMovers(){
     fetch("movers.json?t="+Date.now(),{cache:"no-store"}).then(function(r){ if(!r.ok) throw 0; return r.json(); })
-      .then(function(x){ S.movers=x; }, function(){ S.movers=null; }).then(function(){ try{ renderMovers(); }catch(e){ console.error(e); } lsMaybe("movers"); });
+      .then(function(x){ S.movers=x; }, function(){ S.movers=null; }).then(function(){ try{ renderMovers(); }catch(e){ console.error(e); } try{ scList(); scCalc(); }catch(e){ console.error(e); } lsMaybe("movers"); });
   }
   loadLessons(); load(); loadExt(); loadNews(); loadEv(); loadSp(); loadMovers(); setInterval(load, 60000); setInterval(loadMovers, 300000); setInterval(loadExt, 60000); setInterval(loadNews, 300000);
 })();

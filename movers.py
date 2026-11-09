@@ -40,7 +40,7 @@ SKIP_NAME = re.compile(r"warrant|right|unit|preferred|notes? due|debenture|depos
 OWNER = "DavidMahmut"
 FUND = ROOT / "fundamentals.json"          # once a day: shares, EPS, market value (Yahoo screener) + index members
 CATEGORY = {}                             # Nasdaq market tier: Q Global Select, G Global Market, S Capital Market
-SCREEN_COLS = ["t", "n", "p", "d1", "w1", "dv", "cap", "pe", "s30", "s200", "atr", "idx", "tier", "lo52", "hi52"]
+SCREEN_COLS = ["t", "n", "p", "d1", "w1", "dv", "cap", "pe", "s30", "s200", "atr", "idx", "tier", "lo52", "hi52", "lo20", "hi20"]
 
 
 def nasdaq_symbols():
@@ -168,7 +168,8 @@ def cap_pe(t, price, F):
 
 def indicators(s):
     """30- and 200-day simple averages (with the latest price), the 14-day average true range of the completed
-    days before today in % of the previous close, and the 52-week (252 trading days, today included) low and high."""
+    days before today in % of the previous close, the 52-week (252 trading days, today included) low and high, and the
+    20-day low and high (today included; used by the dashboard's stop calculator for swing-low / chandelier stops)."""
     c = s["Close"].astype(float)
     s30 = float(c.tail(30).mean()) if len(c) >= 30 else None
     s200 = float(c.tail(200).mean()) if len(c) >= 200 else None
@@ -181,7 +182,10 @@ def indicators(s):
         atr = float(tr.mean() / prev * 100) if len(tr) and prev > 0 else None
     y = s.tail(252)
     lo52, hi52 = float(y["Low"].astype(float).min()), float(y["High"].astype(float).max())
-    return s30, s200, atr, (lo52 if lo52 > 0 else None), (hi52 if hi52 > 0 else None)
+    z = s.tail(20)
+    lo20, hi20 = float(z["Low"].astype(float).min()), float(z["High"].astype(float).max())
+    pos = lambda x: x if x > 0 and math.isfinite(x) else None
+    return s30, s200, atr, pos(lo52), pos(hi52), pos(lo20), pos(hi20)
 
 
 def fix_splits(s):
@@ -494,14 +498,17 @@ def main():
         if prev < MIN_PRICE or last < 1 or not math.isfinite(dv) or dv < MIN_DOLLAR_VOL:
             continue
         w = float(c.iloc[-6]) if len(c) >= 6 else float(c.iloc[0])
-        s30, s200, atr, lo52, hi52 = indicators(s)
+        s30, s200, atr, lo52, hi52, lo20, hi20 = indicators(s)
         if lo52 is not None and hi52 is not None:      # the latest price can sit outside a bar range by rounding
             lo52, hi52 = min(lo52, last), max(hi52, last)
+        if lo20 is not None and hi20 is not None:
+            lo20, hi20 = min(lo20, last), max(hi20, last)
         capb, pe = cap_pe(t, last, F)
         r2 = lambda x, d=2: round(x, d) if x is not None and math.isfinite(x) else None
         screen.append([t, names.get(t, t), r2(last), r2((last / prev - 1) * 100), r2((last / w - 1) * 100), r2(dv / 1e6, 1),
                        r2(capb), r2(pe, 1), r2(s30), r2(s200), r2(atr), ("N" if t in ndx else "") + ("S" if t in spx else ""),
-                       CATEGORY.get(t, ""), r2(lo52, 4 if lo52 and lo52 < 1 else 2), r2(hi52, 4 if hi52 and hi52 < 1 else 2)])
+                       CATEGORY.get(t, ""), r2(lo52, 4 if lo52 and lo52 < 1 else 2), r2(hi52, 4 if hi52 and hi52 < 1 else 2),
+                       r2(lo20, 4 if lo20 and lo20 < 1 else 2), r2(hi20, 4 if hi20 and hi20 < 1 else 2)])
         o, hi, lo = (float(s[k].iloc[-1]) for k in ("Open", "High", "Low"))
         gap = o / prev - 1 if o > 0 else 0.0
         if last >= REBOUND["minPrice"] and dv >= REBOUND["minDollarVolM"] * 1e6 and (capb or 0) >= REBOUND["minCapB"]:
