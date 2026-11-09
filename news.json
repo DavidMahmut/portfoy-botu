@@ -1,13 +1,21 @@
 {
- "asOf": "2026-11-09T12:28:39-05:00",
+ "asOf": "2026-11-09T13:36:23-05:00",
  "sections": [
   {
    "ticker": "QQQ",
    "name": "Invesco QQQ (Nasdaq 100)",
    "role": "long",
-   "dayChangePct": 3.34,
-   "unrealizedPct": -2.51,
+   "dayChangePct": 3.18,
+   "unrealizedPct": -2.66,
    "items": [
+    {
+     "title": "Exchange-Traded Funds Higher as US Equities Advance After Midday",
+     "summary": "Broad Market Indicators Broad-market exchange-traded funds IWM and IVV rose. Actively traded I",
+     "publisher": "MT Newswires",
+     "url": "https://finance.yahoo.com/markets/stocks/articles/exchange-traded-funds-higher-us-180817957.html",
+     "at": "2026-11-09T13:08-05:00",
+     "tags": []
+    },
     {
      "title": "Exchange-Traded Funds, Equity Futures Higher Pre-Bell Monday Amid Global Market Recovery",
      "summary": "The broad market exchange-traded fund SPDR S&P 500 ETF Trust (SPY) was up 1% and the actively traded",
@@ -35,14 +43,6 @@
      "tags": [
       "AI & chips"
      ]
-    },
-    {
-     "title": "ETFs Are Net Sellers of Cisco Systems (CSCO) on Nov. 5",
-     "summary": "ETFs sold a net $64.1 million of Cisco Systems (CSCO) on Nov. 5.",
-     "publisher": "GuruFocus.com",
-     "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-net-sellers-cisco-systems-110404484.html",
-     "at": "2026-11-09T06:04-05:00",
-     "tags": []
     }
    ]
   },
@@ -54,6 +54,37 @@
    "unrealizedPct": null,
    "items": [
     {
+     "title": "AMD Stock Rises On Google Cloud Deal, Wall Street Upgrade",
+     "summary": "AMD announced that its fifth-generation Epyc server processors will power Alphabet's Google Cloud TPU 8tx systems. AMD stock rose.",
+     "publisher": "Investor's Business Daily",
+     "url": "https://www.investors.com/news/technology/amd-stock-rises-on-google-cloud-deal-wall-street-upgrade/?src=A00220&yptr=yahoo",
+     "at": "2026-11-09T13:18-05:00",
+     "tags": [
+      "Analysts",
+      "Corporate"
+     ]
+    },
+    {
+     "title": "Alphabet Stocks Rise 3.16% as Google Unveils Two New TPU Systems",
+     "summary": "TPU 8tx targets confidential inference while TPU 8i Max doubles compute and memory bandwidth in the same rack space.",
+     "publisher": "GuruFocus.com",
+     "url": "https://finance.yahoo.com/technology/ai/articles/alphabet-stocks-rise-3-16-175806057.html",
+     "at": "2026-11-09T12:58-05:00",
+     "tags": []
+    },
+    {
+     "title": "AMD Stocks Jump 9.50% After Oppenheimer Upgrade Sets $600 Target",
+     "summary": "Oppenheimer moves to Outperform after a record quarter in which data center revenue nearly doubled to $8.5 billion.",
+     "publisher": "GuruFocus.com",
+     "url": "https://finance.yahoo.com/markets/stocks/articles/amd-stocks-jump-9-50-174557188.html",
+     "at": "2026-11-09T12:45-05:00",
+     "tags": [
+      "Earnings",
+      "Analysts",
+      "AI & chips"
+     ]
+    },
+    {
      "title": "AMD Stock Jumps as Google Taps Its Chips for a New AI System",
      "summary": "Google Is Turning to AMD for AI Security, and Investors Are Taking Notice",
      "publisher": "GuruFocus.com",
@@ -61,36 +92,6 @@
      "at": "2026-11-09T12:01-05:00",
      "tags": [
       "AI & chips"
-     ]
-    },
-    {
-     "title": "What's Moving Markets Today?",
-     "summary": "The Nasdaq composite led Monday morning's rally after days of bruising losses.",
-     "publisher": "The Wall Street Journal",
-     "url": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-11-09-2026/card/what-s-moving-markets-today--2m2p2ySL4tYaG5nFVaxn?siteid=yhoof2&yptr=yahoo",
-     "at": "2026-11-09T12:00-05:00",
-     "tags": []
-    },
-    {
-     "title": "Nvidia vs. AMD: Why Lisa Su's company is a great alternative for investors",
-     "summary": "Yahoo Finance Executive Editor Brian Sozzi looks back at his conversation with AMD (AMD) CEO Lisa Su to highlight viable alternatives for Nvidia (NVDA) investors to consider.",
-     "publisher": "Yahoo Finance Video",
-     "url": "https://finance.yahoo.com/video/nvidia-vs-amd-why-lisa-170000159.html",
-     "at": "2026-11-09T12:00-05:00",
-     "tags": [
-      "AI & chips",
-      "Corporate"
-     ]
-    },
-    {
-     "title": "Google Hands AMD Major Win in AI Chip Race",
-     "summary": "A powerful new partnership highlights an overlooked AI opportunity.",
-     "publisher": "GuruFocus.com",
-     "url": "https://finance.yahoo.com/technology/ai/articles/google-hands-amd-major-win-165949443.html",
-     "at": "2026-11-09T11:59-05:00",
-     "tags": [
-      "AI & chips",
-      "Corporate"
      ]
     }
    ]
@@ -102,6 +103,17 @@
    "dayChangePct": null,
    "unrealizedPct": null,
    "items": [
+    {
+     "title": "Bernstein Stays Cautious on CrowdStrike Despite AI Tailwind",
+     "summary": "Bernstein says AI could help CrowdStrike double its annual recurring revenue by fiscal 2029",
+     "publisher": "GuruFocus.com",
+     "url": "https://finance.yahoo.com/technology/ai/articles/bernstein-stays-cautious-crowdstrike-despite-173555937.html",
+     "at": "2026-11-09T12:35-05:00",
+     "tags": [
+      "Earnings",
+      "AI & chips"
+     ]
+    },
     {
      "title": "Can CrowdStrike's Latest AI Integrations Drive Security Growth?",
      "summary": "CRWD expands AI security through Anthropic, AWS and Lovable integrations, strengthening Falcon's reach across AI agents, cloud infrastructure and applications.",
@@ -131,6 +143,27 @@
      "tags": [
       "Earnings"
      ]
+    }
+   ]
+  },
+  {
+   "ticker": "PANW",
+   "name": "Palo Alto Networks",
+   "role": "watch-long",
+   "dayChangePct": null,
+   "unrealizedPct": null,
+   "items": [
+    {
+     "title": "Datadog Sinks 17% in a Week Despite “Strong Adoption Across Our Platform”",
+     "summary": "Key TakeawaysDatadog stock fell 17% in a week to $179, as a flat fourth-quarter revenue guide overshadowed 35% third-quarter growth. The guide assumes its largest AI customer pays only its contract minimum, while growth from everyone else is implied in the low…",
+     "publisher": "TIKR",
+     "url": "https://www.tikr.com/blog/datadog-sinks-17-in-a-week-despite-strong-adoption-across-our-platform?ref=yahoofinance&tlnk=yf-261109-m5wrv4h8",
+     "at": "2026-11-09T12:22-05:00",
+     "tags": [
+      "Earnings",
+      "AI & chips",
+      "Corporate"
+     ]
     },
     {
      "title": "Palo Alto Networks and CrowdStrike Sink 17% in a Week, Zscaler 18%: Time to Buy Before Earnings?",
@@ -142,16 +175,7 @@
       "Earnings",
       "AI & chips"
      ]
-    }
-   ]
-  },
-  {
-   "ticker": "PANW",
-   "name": "Palo Alto Networks",
-   "role": "watch-long",
-   "dayChangePct": null,
-   "unrealizedPct": null,
-   "items": [
+    },
     {
      "title": "What Is Palo Alto Networks (PANW) Signaling With A Seventh AI Security Deal?",
      "summary": "Palo Alto Networks (NasdaqGS: PANW) is in advanced talks to acquire Clutch Security, a specialist in securing AI agents. The potential deal would mark Palo Alto Networks' seventh acquisition in 2026, reflecting a faster M&A pace. Clutch Security focuses on pro…",
@@ -184,6 +208,14 @@
    "unrealizedPct": null,
    "items": [
     {
+     "title": "ConocoPhillips Trades at a Premium: Is It the Right Time to Buy?",
+     "summary": "COP's 54.4% stock rally, low-cost assets, LNG expansion and Willow project fuel optimism, but its premium valuation raises concerns for investors.",
+     "publisher": "Zacks",
+     "url": "https://finance.yahoo.com/energy/articles/conocophillips-trades-premium-time-buy-170300578.html",
+     "at": "2026-11-09T12:03-05:00",
+     "tags": []
+    },
+    {
      "title": "COP vs. WHD: Which Stock Is the Better Value Option?",
      "summary": "COP vs. WHD: Which Stock Is the Better Value Option?",
      "publisher": "Zacks",
@@ -208,16 +240,6 @@
      "url": "https://finance.yahoo.com/news/conocophillips-cop-stock-outpacing-oils-134003243.html",
      "at": "2026-11-09T08:40-05:00",
      "tags": []
-    },
-    {
-     "title": "What Mattered Most In Chevron's Latest Quarter?",
-     "summary": "For questions about this article or underlying research, email help@trefis.com.",
-     "publisher": "Trefis",
-     "url": "https://www.trefis.com/stock/cvx/articles/623636/what-mattered-most-in-chevrons-latest-quarter/2026-11-09",
-     "at": "2026-11-09T07:46-05:00",
-     "tags": [
-      "Earnings"
-     ]
     }
    ]
   },
@@ -271,6 +293,49 @@
  ],
  "market": [
   {
+   "title": "Update: US Equity Indexes Jump as Growth Sectors Rally Hard While Crude Oil Sinks",
+   "summary": "(Updates with index/price moves, macroeconomic data, and company/geopolitical news from the first pa",
+   "publisher": "MT Newswires",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/us-equity-indexes-jump-growth-182137318.html",
+   "at": "2026-11-09T13:21-05:00",
+   "tags": [
+    "Energy"
+   ]
+  },
+  {
+   "title": "Fox (FOX): A Low-Beta Stock With Record Revenue and a Big Streaming Bet",
+   "summary": "Fox (NASDAQ:FOX) ranks 10th on Forget the High-Beta Hype: 10 ‘Sleep Well at Night’ Stocks to Buy Now, the list we just put out. Yahoo Finance reported that the S&P 500 fell more than 4% on Thursday, November 5, its worst day since the April 2025 tariff crash, …",
+   "publisher": "Insider Monkey",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/fox-fox-low-beta-stock-181228081.html",
+   "at": "2026-11-09T13:12-05:00",
+   "tags": [
+    "Policy & politics",
+    "Earnings"
+   ]
+  },
+  {
+   "title": "Omnicom (OMC): A Top 10 Low-Beta Stock Trading at Just 7.57x Forward Earnings",
+   "summary": "Omnicom Group (NYSE:OMC) ranks 9th on our newly published list, Forget the High-Beta Hype: 10 ‘Sleep Well at Night’ Stocks to Buy Now. Yahoo Finance reported that the S&P 500 fell more than 4% on Thursday, November 5, its worst day since the April 2025 tariff …",
+   "publisher": "Insider Monkey",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/omnicom-omc-top-10-low-180850146.html",
+   "at": "2026-11-09T13:08-05:00",
+   "tags": [
+    "Policy & politics",
+    "Earnings"
+   ]
+  },
+  {
+   "title": "Oil falls almost 5% as Trump signals restraint on Iran",
+   "summary": "By Georgina McCartney LONDON, Nov 9 (Reuters) - Brent crude futures were down almost 5% on Monday after hitting their lowest since early September, after US President Donald Trump downplayed the",
+   "publisher": "Reuters",
+   "url": "https://finance.yahoo.com/news/oil-falls-open-trump-says-235002807.html",
+   "at": "2026-11-09T12:36-05:00",
+   "tags": [
+    "Policy & politics",
+    "Energy"
+   ]
+  },
+  {
    "title": "Update: US Equity Indexes Jump as Growth Sectors Stage Rally Amid Sliding Crude Oil",
    "summary": "(Updates with index/price moves and company/geopolitical news from the first paragraph.) US equit",
    "publisher": "MT Newswires",
@@ -289,62 +354,6 @@
    "tags": [
     "Energy",
     "AI & chips"
-   ]
-  },
-  {
-   "title": "European Stocks Close Higher in Monday Trading Amid Easing Bond Yields, Oil Prices",
-   "summary": "The European stock markets closed higher in Monday trading amid easing bond yields and oil prices, f",
-   "publisher": "MT Newswires",
-   "url": "https://finance.yahoo.com/markets/stocks/articles/european-stocks-close-higher-monday-165807604.html",
-   "at": "2026-11-09T11:58-05:00",
-   "tags": [
-    "Fed & rates",
-    "Energy"
-   ]
-  },
-  {
-   "title": "Stocks Climb as Buyers Step In Despite Nvidia Woes",
-   "summary": "A renewed wave of dip buying drove stocks toward their best day since April in the wake of a technology selloff that roiled Wall Street, with the market also gaining as oil prices fell. Lori Calvasina, Head of US Equity Strategy at RBC Capital Markets, discuss…",
-   "publisher": "Bloomberg",
-   "url": "https://finance.yahoo.com/video/stocks-climb-buyers-step-despite-164729067.html",
-   "at": "2026-11-09T11:47-05:00",
-   "tags": [
-    "Energy",
-    "AI & chips"
-   ]
-  },
-  {
-   "title": "Fitch affirms Iraq at ’B-’ with stable outlook as reserves offset oil shock",
-   "summary": "Investing.com -- Fitch Ratings affirmed Iraq’s Long-Term Foreign-Currency Issuer Default Rating at 'B-' with a stable outlook on Monday, balancing severe regional security headwinds against resilient external liquidity buffers. The affirmation underscores the …",
-   "publisher": "Investing.com",
-   "url": "https://finance.yahoo.com/economy/policy/articles/fitch-affirms-iraq-b-stable-163800921.html",
-   "at": "2026-11-09T11:38-05:00",
-   "tags": [
-    "Earnings",
-    "Analysts",
-    "Energy"
-   ]
-  },
-  {
-   "title": "Stock Market Today: Dow Rallies; Software Stock Clears Entry; Nvidia Off Lows Amid Huang Probe (Live Coverage)",
-   "summary": "The Dow Jones index rallies 500 points Monday as oil prices drop. Nvidia stock dives on the probe into CEO Jensen Huang.",
-   "publisher": "Investor's Business Daily",
-   "url": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-oil-prices-nvidia-stock-nvda-jensen-huang-probe/?src=A00220&yptr=yahoo",
-   "at": "2026-11-09T11:33-05:00",
-   "tags": [
-    "Energy",
-    "AI & chips",
-    "Corporate"
-   ]
-  },
-  {
-   "title": "Sable Offshore shares plunge 60% as crude sales disruption raises going-concern doubts",
-   "summary": "Sable Offshore Corp. (NYSE:SOC), the US oil and gas producer, saw shares plunge 60% to $0.77 on Monday after warning that its financial resources might be insufficient to meet obligations over the next 12 months. The warning followed the suspension of crude oi…",
-   "publisher": "Proactive",
-   "url": "https://www.proactiveinvestors.com/companies/news/1101443/sable-offshore-shares-plunge-60-as-crude-sales-disruption-raises-going-concern-doubts-1101443.html",
-   "at": "2026-11-09T10:55-05:00",
-   "tags": [
-    "Energy"
    ]
   },
   {
@@ -369,244 +378,253 @@
    ]
   },
   {
-   "title": "Stock market today: Nasdaq rallies despite Nvidia stock slide, Dow and S&P 500 rise as AI stocks rebound",
-   "summary": "All eyes will be on the artificial intelligence trade and Nvidia stock following a volatile post-election shake-up in markets and the revelation that Nvidia's board is opening an investigation into CEO Jensen Huang over his affair.",
-   "publisher": "Yahoo Finance",
-   "url": "https://finance.yahoo.com/markets/live/stock-market-today-monday-november-9-dow-sp-500-nasdaq-nvidia-090535419.html",
-   "at": "2026-11-09T04:05-05:00",
-   "tags": [
-    "Policy & politics",
-    "AI & chips",
-    "Corporate"
-   ]
-  },
-  {
-   "title": "Here’s Why Jefferies Upgraded Steven Madden (SHOO) Stock",
-   "summary": "We just published a list of the Don’t Miss Out: 10 Stocks Getting Major Upgrades From Top Analysts and Steven Madden (NASDAQ:SHOO) ranked 7th on this list. Wall Street ended a punishing week on Friday with a partial recovery. The Nasdaq Composite rose 1.09% to…",
+   "title": "Forget Share Price Hype: This Monthly Dividend Stock Fits Warren Buffett’s 10-Year Test",
+   "summary": "We just published our list of the 10 Stocks I Am Retiring On, and Realty Income Corporation (NYSE:O) ranked 8th on the list. A retirement portfolio needs businesses that can keep rewarding shareholders long after the current market narrative fades. Dividends s…",
    "publisher": "Insider Monkey",
-   "url": "https://finance.yahoo.com/markets/stocks/articles/why-jefferies-upgraded-steven-madden-171733975.html",
-   "at": "2026-11-09T12:17-05:00",
-   "tags": [
-    "Analysts"
-   ]
+   "url": "https://finance.yahoo.com/markets/stocks/articles/forget-share-price-hype-monthly-182715237.html",
+   "at": "2026-11-09T13:27-05:00",
+   "tags": []
   },
   {
-   "title": "401k balances depend on one move most investors never make",
-   "summary": "One market shift could have major implications for your 401(k) balance",
-   "publisher": "TheStreet",
-   "url": "https://www.thestreet.com/investing/sp-500-ai-concentration-401k-risk",
-   "at": "2026-11-09T12:17-05:00",
+   "title": "This is the Stock I’m Retiring On: It’s Already Up 64% Since 2022",
+   "summary": "We just published our list of the 10 Stocks I Am Retiring On, and Brookfield Asset Management Ltd. (NYSE:BAM) ranked 9th on the list. A retirement portfolio needs businesses that can keep rewarding shareholders long after the current market narrative fades. Di…",
+   "publisher": "Insider Monkey",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/stock-m-retiring-already-64-182432431.html",
+   "at": "2026-11-09T13:24-05:00",
+   "tags": []
+  },
+  {
+   "title": "This is the Stock I’m Retiring On: It’s Already Up 40% Since 2017",
+   "summary": "We just published our list of the 10 Stocks I Am Retiring On, and VICI Properties Inc. (NYSE:VICI) ranked 7th on the list. A retirement portfolio needs businesses that can keep rewarding shareholders long after the current market narrative fades. Dividends sho…",
+   "publisher": "Insider Monkey",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/stock-m-retiring-already-40-182310898.html",
+   "at": "2026-11-09T13:23-05:00",
+   "tags": []
+  },
+  {
+   "title": "This is the Stock I’m Retiring On: It’s Already Up 15% Since September",
+   "summary": "We just published our list of the 10 Stocks I Am Retiring On, and Waste Management Inc. (NYSE:WM) ranked 6th on the list. A retirement portfolio needs businesses that can keep rewarding shareholders long after the current market narrative fades. Dividends show…",
+   "publisher": "Insider Monkey",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/stock-m-retiring-already-15-182002394.html",
+   "at": "2026-11-09T13:20-05:00",
    "tags": []
   }
  ],
  "seekingAlpha": {
-  "asOf": "2026-11-09T12:28:39-05:00",
+  "asOf": "2026-11-09T13:36:23-05:00",
   "ok": true,
   "stale": false,
   "via": "seekingalpha.com RSS",
   "errors": [],
   "feedCounts": {
    "Piyasa haberleri": 7,
-   "Tüm yazılar": 18
+   "Tüm yazılar": 16
   },
   "market": [
    {
-    "title": "XLU Vs. UTES: Same Multiple, Faster Growth Forecast For UTES",
-    "url": "https://seekingalpha.com/article/4965149-xlu-vs-utes-same-multiple-faster-growth-forecast-for-utes",
-    "at": "2026-11-09T12:22-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "XLU",
-     "UTES"
-    ],
-    "author": null
-   },
-   {
-    "title": "KKR: Q3 Further Validates The Growth Thesis",
-    "url": "https://seekingalpha.com/article/4965148-kkr-q3-further-validates-the-growth-thesis",
-    "at": "2026-11-09T12:22-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "KKR"
-    ],
-    "author": null
-   },
-   {
-    "title": "Quanterix narrows 2026 revenue outlook to $142M-$146M as Florida Medicaid sets $484 LucentAD reimbursement",
-    "url": "https://seekingalpha.com/news/4669150-quanterix-narrows-2026-revenue-outlook-to-142m-146m-as-florida-medicaid-sets-484-lucentad",
-    "at": "2026-11-09T12:21-05:00",
+    "title": "Ferguson raises FY2026 net sales outlook to ~7% growth while guiding 9.6%-9.8% operating margin",
+    "url": "https://seekingalpha.com/news/4669170-ferguson-raises-fy2026-net-sales-outlook-to-7-percent-growth-while-guiding-9_6-percentminus",
+    "at": "2026-11-09T13:32-05:00",
     "kind": "news",
     "symbols": [],
     "author": null
    },
    {
-    "title": "Visa Inc. (V) Presents at Citi's 15th Annual FinTech Conference Transcript",
-    "url": "https://seekingalpha.com/article/4965110-visa-inc-v-presents-at-citis-15th-annual-fintech-conference-transcript",
-    "at": "2026-11-09T12:20-05:00",
+    "title": "PKW: Why High Buybacks Don't Always Equal High Returns",
+    "url": "https://seekingalpha.com/article/4965198-pkw-why-high-buybacks-dont-always-equal-high-returns",
+    "at": "2026-11-09T13:32-05:00",
     "kind": "analysis",
     "symbols": [
-     "V",
-     "VISA:CA",
-     "ZV:CA"
+     "IVV",
+     "DRB",
+     "WTV",
+     "DSTL",
+     "PKW"
     ],
     "author": null
    },
    {
-    "title": "Bathurst Resources Limited (BTURF) Q1 2027 Earnings Call Prepared Remarks Transcript",
-    "url": "https://seekingalpha.com/article/4965182-bathurst-resources-limited-bturf-q1-2027-earnings-call-prepared-remarks-transcript",
-    "at": "2026-11-09T12:20-05:00",
+    "title": "The Carlyle Group Inc. (CG) Presents at BMO Capital Markets 2026 Financials Conference Transcript",
+    "url": "https://seekingalpha.com/article/4965130-the-carlyle-group-inc-cg-presents-at-bmo-capital-markets-2026-financials-conference",
+    "at": "2026-11-09T13:31-05:00",
     "kind": "analysis",
     "symbols": [
-     "BTURF"
+     "CG"
     ],
     "author": null
    },
    {
-    "title": "CSQ: Discount Remains Appealing With Strong Monthly Distribution",
-    "url": "https://seekingalpha.com/article/4965147-csq-discount-remains-appealing-with-strong-monthly-distribution",
-    "at": "2026-11-09T12:20-05:00",
+    "title": "Nkarta, Inc. (NKTX) Discusses Initial NKX019 Clinical Data in Myositis and Systemic Sclerosis Transcript",
+    "url": "https://seekingalpha.com/article/4965197-nkarta-inc-nktx-discusses-initial-nkx019-clinical-data-in-myositis-and-systemic-sclerosis",
+    "at": "2026-11-09T13:31-05:00",
     "kind": "analysis",
     "symbols": [
-     "NVDA",
-     "AAPL",
+     "NKTX"
+    ],
+    "author": null
+   },
+   {
+    "title": "Nvidia: China Spy Saga Not Enough To Shake Me Off",
+    "url": "https://seekingalpha.com/article/4965187-nvidia-china-spy-saga-not-enough-to-shake-me-off",
+    "at": "2026-11-09T13:30-05:00",
+    "kind": "analysis",
+    "symbols": [
      "MSFT",
-     "SPY",
-     "AAPL:CA",
-     "MSFT:CA"
-    ],
-    "author": null
-   },
-   {
-    "title": "Airbus, Thales win $1.7B French military satellite contract",
-    "url": "https://seekingalpha.com/news/4669148-airbus-thales-win-1_7b-french-military-satellite-contract",
-    "at": "2026-11-09T12:19-05:00",
-    "kind": "news",
-    "symbols": [],
-    "author": null
-   },
-   {
-    "title": "Uber's Path To $150: What The Street Gets Wrong About Delivery And Robotaxis",
-    "url": "https://seekingalpha.com/article/4965146-ubers-path-to-150-what-the-street-gets-wrong-about-delivery-and-robotaxis",
-    "at": "2026-11-09T12:16-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "UBER"
-    ],
-    "author": null
-   },
-   {
-    "title": "Micron: The Robotic Play Most Investors Are Missing",
-    "url": "https://seekingalpha.com/article/4965145-micron-the-robotic-play-most-investors-are-missing",
-    "at": "2026-11-09T12:13-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "SSNLF",
-     "NVDA",
+     "SPCX",
      "NVDA:CA",
-     "ZNVD:CA",
-     "MU",
-     "MU:CA"
+     "NVDA",
+     "ZNVD:CA"
     ],
     "author": null
    },
    {
-    "title": "Oracle: A Turnaround Is Not Imminent (Downgrade)",
-    "url": "https://seekingalpha.com/article/4965144-oracle-turnaround-not-imminent-downgrade",
-    "at": "2026-11-09T12:13-05:00",
+    "title": "Neocloud Sell-Off Leaves Bitcoin Miners Oversold",
+    "url": "https://seekingalpha.com/article/4965191-neocloud-sell-off-leaves-bitcoin-miners-oversold",
+    "at": "2026-11-09T13:28-05:00",
     "kind": "analysis",
     "symbols": [
-     "MSFT",
-     "ORCL"
+     "CRWV",
+     "NBIS",
+     "BTDR",
+     "RIOT",
+     "WULF",
+     "CLSK"
     ],
     "author": null
    },
    {
-    "title": "J&J gets into psychedelic treatments with backing of Delix Therapeutics",
-    "url": "https://seekingalpha.com/news/4669139-johnson-johnsongets-into-psychedelic-treatments-backing-delix-therapeutics",
-    "at": "2026-11-09T12:12-05:00",
+    "title": "ABB, SoftBank weigh China carve-out to salvage robotics deal - Bloomberg",
+    "url": "https://seekingalpha.com/news/4669167-abb-softbank-weigh-china-carve-out-to-salvage-robotics-deal-bloomberg",
+    "at": "2026-11-09T13:27-05:00",
     "kind": "news",
     "symbols": [],
     "author": null
    },
    {
-    "title": "Bicara plans mid-2027 interim analysis as $442.3M cash runway extends into first half of 2029",
-    "url": "https://seekingalpha.com/news/4669146-bicara-plans-midminus-2027-interim-analysis-as-442_3m-cash-runway-extends-into-first-half-of",
-    "at": "2026-11-09T12:11-05:00",
+    "title": "Vanguard expands investor choice in proxy voting to all its U.S. equity index products",
+    "url": "https://seekingalpha.com/news/4669164-vanguard-expands-investor-choice-in-proxy-voting-to-all-its-us-equity-index-products",
+    "at": "2026-11-09T13:22-05:00",
     "kind": "news",
     "symbols": [],
     "author": null
    },
    {
-    "title": "What companies are saying about AI adoption, tokens, debt",
-    "url": "https://seekingalpha.com/news/4669132-what-companies-are-saying-about-ai-adoption-tokens-debt",
-    "at": "2026-11-09T12:05-05:00",
+    "title": "NRG outlines 2027 outlook with $5.75B adjusted EBITDA while planning $3B buybacks following $4B LS Power asset sale deal",
+    "url": "https://seekingalpha.com/news/4669168-nrg-outlines-2027-outlook-with-5_75b-adjusted-ebitda-while-planning-3b-buybacks-following-4b",
+    "at": "2026-11-09T13:21-05:00",
     "kind": "news",
     "symbols": [],
     "author": null
    },
    {
-    "title": "What to focus on after the U.S. midterms – Morgan Stanley",
-    "url": "https://seekingalpha.com/news/4669142-what-to-focus-on-after-the-u-s-midterms-morgan-stanley",
-    "at": "2026-11-09T12:03-05:00",
-    "kind": "news",
-    "symbols": [],
-    "author": null
-   },
-   {
-    "title": "Midday Pulse: S&P 500 top intraday losers",
-    "url": "https://seekingalpha.com/news/4669136-midday-pulse-s-and-p-500-top-intraday-losers",
-    "at": "2026-11-09T12:03-05:00",
-    "kind": "news",
-    "symbols": [],
-    "author": null
-   },
-   {
-    "title": "AMD: I'm Buying The Dip Again",
-    "url": "https://seekingalpha.com/article/4965132-amd-im-buying-the-dip-again",
-    "at": "2026-11-09T12:02-05:00",
+    "title": "Downgrading FXE On Civil Unrest",
+    "url": "https://seekingalpha.com/article/4965189-downgrading-fxe-on-civil-unrest",
+    "at": "2026-11-09T13:21-05:00",
     "kind": "analysis",
     "symbols": [
-     "OPENAI",
-     "AMD",
-     "AMD:CA",
-     "ZAMD:CA"
+     "FXE"
     ],
     "author": null
    },
    {
-    "title": "The Midterm Elections Are Not A Risk For Nvidia, But Huang's News Is",
-    "url": "https://seekingalpha.com/article/4965089-the-midterm-elections-are-not-a-risk-for-nvidia-but-huangs-news-is",
-    "at": "2026-11-09T12:00-05:00",
+    "title": "Bitcoin Struggles Below $75,000 As Institutional Selling Pressure Persists",
+    "url": "https://seekingalpha.com/article/4965216-bitcoin-struggles-below-75000-institutional-selling-pressure-persists",
+    "at": "2026-11-09T13:20-05:00",
     "kind": "analysis",
     "symbols": [
-     "GOOGL",
-     "GOOG",
-     "GOOG:CA",
-     "ZGOO:CA",
-     "META",
-     "META:CA"
+     "IBIT",
+     "BTC-USD",
+     "GBTC",
+     "BTG-USD",
+     "BCH-USD",
+     "BCHG"
     ],
     "author": null
    },
    {
-    "title": "Surrozen: The Wnt Science Is Compelling, But The Stock Prices In Too Much Success",
-    "url": "https://seekingalpha.com/article/4965128-surrozen-the-wnt-science-is-compelling-but-the-stock-prices-in-too-much-success",
-    "at": "2026-11-09T11:59-05:00",
+    "title": "QXO surges as preliminary revenue tops estimates, acquisitions fuel growth",
+    "url": "https://seekingalpha.com/news/4669153-qxo-surges-as-preliminary-revenue-tops-estimates-acquisitions-fuel-growth",
+    "at": "2026-11-09T13:17-05:00",
+    "kind": "news",
+    "symbols": [],
+    "author": null
+   },
+   {
+    "title": "Hidden In RSPA Is A Cash Flow That Could Be Tactical Ahead Of 2028",
+    "url": "https://seekingalpha.com/article/4965186-hidden-in-rspa-is-a-cash-flow-that-could-be-tactical-ahead-of-2028",
+    "at": "2026-11-09T13:17-05:00",
     "kind": "analysis",
     "symbols": [
-     "SRZN"
+     "RSP",
+     "RSPA"
     ],
     "author": null
    },
    {
-    "title": "AMD: The Party Is Ending",
-    "url": "https://seekingalpha.com/article/4965127-amd-the-party-is-ending",
-    "at": "2026-11-09T11:54-05:00",
+    "title": "Wall Street erases Election Day losses as tech rallies",
+    "url": "https://seekingalpha.com/news/4669009-wall-street-advances-despite-the-slide-from-the-tech-giant-nvidia",
+    "at": "2026-11-09T13:15-05:00",
+    "kind": "news",
+    "symbols": [],
+    "author": null
+   },
+   {
+    "title": "Why the ‘buy the dip’ mentality may fail investors, according to TS Lombard’s Dario Perkins",
+    "url": "https://seekingalpha.com/news/4669166-why-the-buy-the-dip-mentality-may-fail-investors-according-to-ts-lombard-s-dario-perkins",
+    "at": "2026-11-09T13:15-05:00",
+    "kind": "news",
+    "symbols": [],
+    "author": null
+   },
+   {
+    "title": "TOPT: Access America's Largest 20 Stocks In One Place",
+    "url": "https://seekingalpha.com/article/4965185-topt-access-americas-largest-20-stocks-in-one-place",
+    "at": "2026-11-09T13:11-05:00",
     "kind": "analysis",
     "symbols": [
-     "AMD",
-     "AMD:CA",
-     "ZAMD:CA"
+     "XLG",
+     "MAGS",
+     "TOPT"
+    ],
+    "author": null
+   },
+   {
+    "title": "Virtus Investment Partners: Secular Decline Is Largely Priced In",
+    "url": "https://seekingalpha.com/article/4965181-virtus-investment-partners-secular-decline-is-largely-priced-in",
+    "at": "2026-11-09T13:10-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "VRTS"
+    ],
+    "author": null
+   },
+   {
+    "title": "The Precious Metals Sector's Impressive Relative Breakout - And What It Portends",
+    "url": "https://seekingalpha.com/article/4965180-precious-metals-sector-impressive-relative-breakout-what-portends",
+    "at": "2026-11-09T13:09-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "GDX",
+     "GLD",
+     "IAU",
+     "GLDM",
+     "SGOL",
+     "BAR"
+    ],
+    "author": null
+   },
+   {
+    "title": "Utilities Don't Need Data Centers To Grow In 2027",
+    "url": "https://seekingalpha.com/article/4965179-utilities-dont-need-data-centers-to-grow-in-2027",
+    "at": "2026-11-09T13:06-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "DUK",
+     "NI",
+     "PPL",
+     "SO",
+     "ETR",
+     "XLU"
     ],
     "author": null
    }
@@ -616,6 +634,21 @@
     "ticker": "QQQ",
     "role": "long",
     "items": [
+     {
+      "title": "First AI Casualties Looking More Like Roadkill",
+      "url": "https://seekingalpha.com/article/4965168-first-ai-casualties-looking-more-like-roadkill",
+      "at": "2026-11-09T12:52-05:00",
+      "kind": "analysis",
+      "symbols": [
+       "CRWV",
+       "OPENAI",
+       "ORCL",
+       "NVDA",
+       "ANT",
+       "MSFT"
+      ],
+      "author": "Bret Jensen"
+     },
      {
       "title": "Nvidia CEO's Betrayal Is A Distraction From What Really Matters",
       "url": "https://seekingalpha.com/article/4965139-nvidia-ceos-betrayal-is-distraction-from-what-really-matters",
@@ -660,21 +693,6 @@
        "DJI"
       ],
       "author": "Manning & Napier"
-     },
-     {
-      "title": "Citi downgrades tech stocks and favors a defensive rotation",
-      "url": "https://seekingalpha.com/news/4669105",
-      "at": "2026-11-09T11:21-05:00",
-      "kind": "news",
-      "symbols": [
-       "QQQ",
-       "SPY",
-       "DIA",
-       "IVV",
-       "RSP",
-       "SH"
-      ],
-      "author": "Jason Capul"
      }
     ]
    }
@@ -684,81 +702,81 @@
    "url": "https://seekingalpha.com/market-news"
   },
   "note": "Yalnızca başlık ve bağlantı. Yazıların tamamı Seeking Alpha'da; bir kısmı abonelik ister. Yatırım tavsiyesi değildir.",
-  "lastGood": "2026-11-09T12:28:39-05:00"
+  "lastGood": "2026-11-09T13:36:23-05:00"
  },
  "digest": {
   "date": "2026-11-09",
   "title": "Daily brief — Monday, November 9, 2026",
-  "generatedAt": "2026-11-09T12:28-05:00",
+  "generatedAt": "2026-11-09T13:36-05:00",
   "bullets": [
    {
     "head": "Markets (latest session)",
-    "text": "S&P 500 +2.32%, Nasdaq 100 +3.29%, Dow +2.08%, Russell 2000 +2.80%. VIX 20.3; 10-yr yield 4.88% (+2 bp); WTI $87.88 (-3.25%); gold $4,114 (+0.96%). Tech led the market. Volatility is elevated (VIX above 20)."
+    "text": "S&P 500 +2.33%, Nasdaq 100 +3.24%, Dow +2.20%, Russell 2000 +3.14%. VIX 20.2; 10-yr yield 4.87% (+1 bp); WTI $87.74 (-3.40%); gold $4,113 (+0.93%). Tech led the market. Volatility is elevated (VIX above 20)."
    },
    {
     "head": "Trend filter",
-    "text": "The S&P 500 (SPY $752.38) is 3.0% above its 200-day average ($730.38). Basket rule: the momentum basket stays invested. Index sleeve (last daily decision 2026-11-09): long, target +0.78x Nasdaq 100 exposure (25% / 32.0% 20-day volatility, capped at 3x)."
+    "text": "The S&P 500 (SPY $752.43) is 3.0% above its 200-day average ($730.38). Basket rule: the momentum basket stays invested. Index sleeve (last daily decision 2026-11-09): long, target +0.78x Nasdaq 100 exposure (25% / 32.0% 20-day volatility, capped at 3x)."
    },
    {
     "head": "Our portfolio",
-    "text": "Net value $2,904.60 (+1.35% vs the previous close); cash $1,788.57; 1 positions, leverage 0.38x. Best holding today: QQQ +3.34%; weakest: QQQ +3.34%."
+    "text": "Net value $2,902.95 (+1.29% vs the previous close); cash $1,788.57; 1 positions, leverage 0.38x. Best holding today: QQQ +3.18%; weakest: QQQ +3.18%."
    },
    {
     "head": "Themes in today's headlines",
-    "text": "AI & chips (11), Energy (9), Corporate (4), Earnings (3)."
+    "text": "AI & chips (9), Earnings (6), Energy (6), Policy & politics (4)."
    }
   ],
   "headlines": [
    {
-    "title": "Update: US Equity Indexes Jump as Growth Sectors Stage Rally Amid Sliding Crude Oil",
-    "url": "https://finance.yahoo.com/markets/stocks/articles/us-equity-indexes-jump-growth-171855293.html",
+    "title": "Update: US Equity Indexes Jump as Growth Sectors Rally Hard While Crude Oil Sinks",
+    "url": "https://finance.yahoo.com/markets/stocks/articles/us-equity-indexes-jump-growth-182137318.html",
     "publisher": "MT Newswires",
-    "at": "2026-11-09T12:18-05:00",
-    "summary": "(Updates with index/price moves and company/geopolitical news from the first paragraph.) US equit",
+    "at": "2026-11-09T13:21-05:00",
+    "summary": "(Updates with index/price moves, macroeconomic data, and company/geopolitical news from the first pa",
     "tags": [
      "Energy"
     ]
    },
    {
-    "title": "Nvidia plunges but tech shares rebound, oil prices slump",
-    "url": "https://finance.yahoo.com/technology/articles/tech-firms-claw-back-losses-025428116.html",
-    "publisher": "AFP",
-    "at": "2026-11-09T12:01-05:00",
-    "summary": "Technology share prices clawed back last week's sharp losses on Monday, despite a plunge in Nvidia following a probe into its boss Jensen Huang over claims of an affair with an alleged Chinese spy.The…",
+    "title": "Fox (FOX): A Low-Beta Stock With Record Revenue and a Big Streaming Bet",
+    "url": "https://finance.yahoo.com/markets/stocks/articles/fox-fox-low-beta-stock-181228081.html",
+    "publisher": "Insider Monkey",
+    "at": "2026-11-09T13:12-05:00",
+    "summary": "Fox (NASDAQ:FOX) ranks 10th on Forget the High-Beta Hype: 10 ‘Sleep Well at Night’ Stocks to Buy Now, the list we just put out.",
     "tags": [
-     "Energy",
-     "AI & chips"
+     "Policy & politics",
+     "Earnings"
     ]
    },
    {
-    "title": "European Stocks Close Higher in Monday Trading Amid Easing Bond Yields, Oil Prices",
-    "url": "https://finance.yahoo.com/markets/stocks/articles/european-stocks-close-higher-monday-165807604.html",
-    "publisher": "MT Newswires",
-    "at": "2026-11-09T11:58-05:00",
-    "summary": "The European stock markets closed higher in Monday trading amid easing bond yields and oil prices, f",
+    "title": "Omnicom (OMC): A Top 10 Low-Beta Stock Trading at Just 7.57x Forward Earnings",
+    "url": "https://finance.yahoo.com/markets/stocks/articles/omnicom-omc-top-10-low-180850146.html",
+    "publisher": "Insider Monkey",
+    "at": "2026-11-09T13:08-05:00",
+    "summary": "Omnicom Group (NYSE:OMC) ranks 9th on our newly published list, Forget the High-Beta Hype: 10 ‘Sleep Well at Night’ Stocks to Buy Now.",
     "tags": [
-     "Fed & rates",
+     "Policy & politics",
+     "Earnings"
+    ]
+   },
+   {
+    "title": "Oil falls almost 5% as Trump signals restraint on Iran",
+    "url": "https://finance.yahoo.com/news/oil-falls-open-trump-says-235002807.html",
+    "publisher": "Reuters",
+    "at": "2026-11-09T12:36-05:00",
+    "summary": "By Georgina McCartney LONDON, Nov 9 (Reuters) - Brent crude futures were down almost 5% on Monday after hitting their lowest since early September, after US President Donald Trump downplayed the",
+    "tags": [
+     "Policy & politics",
      "Energy"
-    ]
-   },
-   {
-    "title": "Stocks Climb as Buyers Step In Despite Nvidia Woes",
-    "url": "https://finance.yahoo.com/video/stocks-climb-buyers-step-despite-164729067.html",
-    "publisher": "Bloomberg",
-    "at": "2026-11-09T11:47-05:00",
-    "summary": "A renewed wave of dip buying drove stocks toward their best day since April in the wake of a technology selloff that roiled Wall Street, with the market also gaining as oil prices fell.",
-    "tags": [
-     "Energy",
-     "AI & chips"
     ]
    }
   ],
   "movers": [
    {
     "ticker": "QQQ",
-    "changePct": 3.34,
-    "title": "Exchange-Traded Funds, Equity Futures Higher Pre-Bell Monday Amid Global Market Recovery",
-    "url": "https://finance.yahoo.com/markets/stocks/articles/exchange-traded-funds-equity-futures-141309144.html",
+    "changePct": 3.18,
+    "title": "Exchange-Traded Funds Higher as US Equities Advance After Midday",
+    "url": "https://finance.yahoo.com/markets/stocks/articles/exchange-traded-funds-higher-us-180817957.html",
     "publisher": "MT Newswires"
    }
   ],
