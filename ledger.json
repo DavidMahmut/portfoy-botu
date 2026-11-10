@@ -99,7 +99,7 @@
   }
  },
  "portfolio": {
-  "cash": 1788.57,
+  "cash": 1860.59,
   "positions": [
    {
     "stopMode": "managed",
@@ -111,16 +111,16 @@
     "shares": 1.6461,
     "avgCost": 695.4676,
     "costBasis": 1144.81,
-    "lastPrice": 673.4,
-    "lastPriceAt": "2026-11-10T09:30:01-05:00",
+    "lastPrice": 672.562,
+    "lastPriceAt": "2026-11-10T09:35:00-05:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (09:30 ET)",
+     "title": "Yahoo Finance 5 dk mum (09:35 ET)",
      "url": "https://finance.yahoo.com/quote/QQQ/"
     },
-    "marketValue": 1108.48,
-    "exposure": 1108.48,
-    "unrealized": -36.33,
-    "unrealizedPct": -3.17,
+    "marketValue": 1107.1,
+    "exposure": 1107.1,
+    "unrealized": -37.71,
+    "unrealizedPct": -3.29,
     "openedAt": "2026-11-02",
     "openedTs": "2026-11-02T09:50:00-05:00",
     "lastAddDate": "2026-11-02",
@@ -128,41 +128,88 @@
     "extremeSinceEntry": 695.1199951171875,
     "tookProfit": false,
     "thesis": "Endeks kolu, QQQ (1x): 0,00 $ → 1.396,50 $. Endeks kolu yönü YUKARI: SPY dünkü kapanış 755,72 $, 200 günlük ortalama 728,85 $ (+%3,69), 50 günlük ortalama 767,49 $. QQQ'nun 20 günlük oynaklığı yıllık %22,6; büyüklük %25 ÷ %22,6 = 1,10x. Hedef maruziyet +1,10x.",
-    "maintReq": 277.12,
+    "maintReq": 276.78,
     "taxBasisAdj": 8.79
+   },
+   {
+    "stopMode": "event",
+    "ticker": "OMH",
+    "name": "Ohmyhome Limited",
+    "kind": "Hisse",
+    "side": "short",
+    "lev": 1,
+    "shares": 2.94,
+    "avgCost": 24.623,
+    "costBasis": 72.39,
+    "lastPrice": 24.66,
+    "lastPriceAt": "2026-11-10T09:30:36-05:00",
+    "priceSource": {
+     "title": "Yahoo Finance 5 dk mum (09:30 ET)",
+     "url": "https://finance.yahoo.com/quote/OMH/"
+    },
+    "marketValue": -72.5,
+    "exposure": 72.5,
+    "unrealized": -0.11,
+    "unrealizedPct": -0.15,
+    "openedAt": "2026-11-10",
+    "openedTs": "2026-11-10T09:30:36-05:00",
+    "lastAddDate": "2026-11-10",
+    "stopPrice": 36.99,
+    "extremeSinceEntry": 24.65999984741211,
+    "tookProfit": false,
+    "thesis": "Sert yükseliş short'u: OMH (Ohmyhome Limited) 2026-11-09 günü +%251,09 yükseldi (7,36 $ → 25,84 $); bugün 24,66 $'dan (−%4,57) işlem görüyor. 2019–2026 testinde bu tür sıçramalar sonraki iki haftada genellikle geri verildi. Short açıldı: kolun %5'i, zarar-kes 36,99 $ (girişin %50 üstü), çıkış 2026-11-23 kapanışında. Ödünç ücreti yıllık %30 varsayıldı. Haber: “BC-Most Active Stocks” (Associated Press).",
+    "sleeve": "event",
+    "spike": true,
+    "exitDate": "2026-11-23",
+    "holdDays": 10,
+    "borrowRate": 0.3,
+    "slip": 0.0015,
+    "headline": {
+     "title": "BC-Most Active Stocks",
+     "url": "https://finance.yahoo.com/markets/stocks/articles/bc-most-active-stocks-153021165.html",
+     "publisher": "Associated Press",
+     "at": "2026-11-04T15:30:21+00:00"
+    },
+    "event": {
+     "spikeDate": "2026-11-09",
+     "spikePct": 251.09,
+     "prevClose": 7.36,
+     "close": 25.84
+    },
+    "maintReq": 21.75
    }
   ],
   "realizedPL": -63.71,
   "netDeposits": 3000.0,
   "costs": {
-   "slippage": 2.8783,
-   "commission": 5.6,
-   "fees": 0.16,
+   "slippage": 2.9871,
+   "commission": 5.95,
+   "fees": 0.18,
    "interest": 0.0,
    "borrow": 0.02,
    "dividendsPaid": 0.0,
    "dividendsReceived": 0.0
   },
-  "longValue": 1108.48,
-  "shortValue": 0.0,
-  "positionsValue": 1108.48,
-  "totalValue": 2897.05,
-  "grossExposure": 1108.48,
-  "netExposure": 1108.48,
-  "leverage": 0.383,
-  "maintenanceReq": 277.12,
-  "marginBuffer": 2619.93,
-  "regTInitialReq": 554.24,
-  "regTExcess": 2342.81,
-  "buyingPower": 4685.62,
+  "longValue": 1107.1,
+  "shortValue": 72.5,
+  "positionsValue": 1034.6,
+  "totalValue": 2895.19,
+  "grossExposure": 1179.6,
+  "netExposure": 1034.6,
+  "leverage": 0.407,
+  "maintenanceReq": 298.53,
+  "marginBuffer": 2596.66,
+  "regTInitialReq": 589.8,
+  "regTExcess": 2305.39,
+  "buyingPower": 4610.78,
   "marginEligible": true,
-  "totalPL": -102.95,
-  "totalPLPct": -3.43,
-  "twrPct": -3.43,
-  "asOf": "2026-11-10T09:30:31-05:00",
-  "benchmarkPrice": 748.11,
-  "benchmarkValue": 2987.22,
-  "benchmarkTwrPct": -0.43
+  "totalPL": -104.81,
+  "totalPLPct": -3.49,
+  "twrPct": -3.49,
+  "asOf": "2026-11-10T09:35:35-05:00",
+  "benchmarkPrice": 748.18,
+  "benchmarkValue": 2987.5,
+  "benchmarkTwrPct": -0.42
  },
  "meta": {
   "engine": "trend-event v6",
@@ -177,9 +224,9 @@
    "ath": 759.66,
    "athDate": "2026-10-06",
    "athChecked": "2026-11-09",
-   "price": 673.4,
-   "at": "2026-11-10T09:30:01-05:00",
-   "ddPct": -11.36,
+   "price": 672.56,
+   "at": "2026-11-10T09:35:00-05:00",
+   "ddPct": -11.47,
    "level": "correction",
    "triggerPrice": 607.73,
    "correctionPrice": 683.69
@@ -210,19 +257,81 @@
     "2026-11-10"
    ]
   },
-  "lastRunAt": "2026-11-10T09:30:31-05:00",
+  "lastRunAt": "2026-11-10T09:35:35-05:00",
   "lastError": null,
-  "spikeScanDate": "2026-11-09",
+  "spikeScanDate": "2026-11-10",
   "spikeScan": {
-   "date": "2026-11-09",
-   "at": "2026-11-09T09:35:33-05:00",
-   "spikeDate": "2026-11-06",
+   "date": "2026-11-10",
+   "at": "2026-11-10T09:35:35-05:00",
+   "spikeDate": "2026-11-09",
    "final": true,
-   "listAt": "2026-11-06T19:59-05:00",
-   "candidates": [],
-   "taken": [],
-   "skipped": [],
-   "rule": "2026-11-06 günü en az %30 yükselen Nasdaq hissesine açılışta short; zarar-kes girişin %50 üstü; 10. işlem günü kapanışta çıkış."
+   "listAt": "2026-11-09T22:48-05:00",
+   "candidates": [
+    "OMH",
+    "TANH",
+    "TLS",
+    "DCTH",
+    "IAM"
+   ],
+   "taken": [
+    {
+     "ticker": "OMH",
+     "name": "Ohmyhome Limited",
+     "d1Pct": 251.09,
+     "prevClose": 7.36,
+     "price": 25.84,
+     "dollarVolM": 84.8,
+     "amount": 72.39,
+     "entry": 24.66,
+     "stop": 36.99,
+     "exitDate": "2026-11-23",
+     "headline": {
+      "title": "BC-Most Active Stocks",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/bc-most-active-stocks-153021165.html",
+      "publisher": "Associated Press",
+      "at": "2026-11-04T15:30:21+00:00"
+     }
+    }
+   ],
+   "skipped": [
+    {
+     "ticker": "TANH",
+     "name": "Tantech Holdings Ltd.",
+     "d1Pct": 65.72,
+     "prevClose": 11.67,
+     "price": 19.34,
+     "dollarVolM": 4.0,
+     "why": "günlük işlem hacmi 50 milyon $'ın altında"
+    },
+    {
+     "ticker": "TLS",
+     "name": "Telos Corporation",
+     "d1Pct": 48.76,
+     "prevClose": 4.82,
+     "price": 7.17,
+     "dollarVolM": 4.0,
+     "why": "önceki kapanış 5 $'ın altında (çok küçük hisse)"
+    },
+    {
+     "ticker": "DCTH",
+     "name": "Delcath Systems, Inc.",
+     "d1Pct": 35.77,
+     "prevClose": 14.93,
+     "price": 20.27,
+     "dollarVolM": 4.9,
+     "why": "günlük işlem hacmi 50 milyon $'ın altında"
+    },
+    {
+     "ticker": "IAM",
+     "name": "Iambic Therapeutics, Inc.",
+     "d1Pct": 31.56,
+     "prevClose": 10.17,
+     "price": 13.38,
+     "dollarVolM": 14.5,
+     "why": "günlük işlem hacmi 50 milyon $'ın altında"
+    }
+   ],
+   "rule": "2026-11-09 günü en az %30 yükselen Nasdaq hissesine açılışta short; zarar-kes girişin %50 üstü; 10. işlem günü kapanışta çıkış."
   },
   "regime": {
    "name": "up",
@@ -883,6 +992,47 @@
    "realizedPL": -8.65,
    "holdingDays": 7,
    "taxTerm": "kısa vade"
+  },
+  {
+   "id": "t-20261110-01",
+   "ts": "2026-11-10T09:35:35-05:00",
+   "date": "2026-11-10",
+   "action": "SHORT",
+   "side": "short",
+   "ticker": "OMH",
+   "name": "OMH",
+   "kind": "Hisse",
+   "shares": 2.94,
+   "quotePrice": 24.66,
+   "quoteAt": "2026-11-10T09:30:36-05:00",
+   "slippagePct": 0.05,
+   "execPrice": 24.623,
+   "value": 72.39,
+   "commission": 0.35,
+   "fees": 0.02,
+   "priceSource": {
+    "title": "Yahoo Finance 5 dk mum (09:30 ET)",
+    "url": "https://finance.yahoo.com/quote/OMH/"
+   },
+   "reason": "Sert yükseliş short'u: OMH (Ohmyhome Limited) 2026-11-09 günü +%251,09 yükseldi (7,36 $ → 25,84 $); bugün 24,66 $'dan (−%4,57) işlem görüyor. 2019–2026 testinde bu tür sıçramalar sonraki iki haftada genellikle geri verildi. Short açıldı: kolun %5'i, zarar-kes 36,99 $ (girişin %50 üstü), çıkış 2026-11-23 kapanışında. Ödünç ücreti yıllık %30 varsayıldı. Haber: “BC-Most Active Stocks” (Associated Press).",
+   "rule": "sert yükseliş short",
+   "sources": [
+    {
+     "title": "BC-Most Active Stocks",
+     "url": "https://finance.yahoo.com/markets/stocks/articles/bc-most-active-stocks-153021165.html"
+    },
+    {
+     "title": "Yahoo Finance: OMH",
+     "url": "https://finance.yahoo.com/quote/OMH/"
+    },
+    {
+     "title": "yfinance (Yahoo Finance verileri)",
+     "url": "https://github.com/ranaroussi/yfinance"
+    }
+   ],
+   "runId": "2026-11-10",
+   "by": "bot",
+   "locate": "Zor ödünç (HTB) varsayımı: yıllık %30 ödünç ücreti"
   }
  ],
  "snapshots": [
@@ -1072,21 +1222,26 @@
   },
   {
    "date": "2026-11-10",
-   "at": "2026-11-10T09:30:31-05:00",
-   "totalValue": 2897.05,
-   "cash": 1788.57,
-   "positionsValue": 1108.48,
-   "plPct": -3.43,
-   "twrPct": -3.43,
+   "at": "2026-11-10T09:35:35-05:00",
+   "totalValue": 2895.19,
+   "cash": 1860.59,
+   "positionsValue": 1034.6,
+   "plPct": -3.49,
+   "twrPct": -3.49,
    "netDeposits": 3000.0,
-   "leverage": 0.383,
-   "benchmarkPrice": 748.11,
-   "benchmarkValue": 2987.22,
+   "leverage": 0.407,
+   "benchmarkPrice": 748.18,
+   "benchmarkValue": 2987.5,
    "holdings": [
     {
      "ticker": "QQQ",
      "side": "long",
-     "value": 1108.48
+     "value": 1107.1
+    },
+    {
+     "ticker": "OMH",
+     "side": "short",
+     "value": -72.5
     }
    ]
   }
@@ -14377,6 +14532,39 @@
     ],
     "actions": [],
     "note": "Normal: kaldıraç 0,38x, SPY −%0,61; işlem gerekmedi."
+   },
+   {
+    "at": "2026-11-10T09:35:35-05:00",
+    "kind": "spike",
+    "status": "normal",
+    "spyPrice": 748.18,
+    "spyChangePct": -0.6,
+    "totalValue": 2895.19,
+    "benchmarkValue": 2987.5,
+    "leverage": 0.407,
+    "marginBuffer": 2596.66,
+    "positions": [
+     {
+      "ticker": "QQQ",
+      "side": "long",
+      "price": 672.562,
+      "dayChangePct": -1.0,
+      "stopPrice": null,
+      "distancePct": null
+     },
+     {
+      "ticker": "OMH",
+      "side": "short",
+      "price": 24.66,
+      "dayChangePct": -4.57,
+      "stopPrice": 36.99,
+      "distancePct": 50.0
+     }
+    ],
+    "actions": [
+     "OMH short (72,39 $)"
+    ],
+    "note": "Sert yükseliş short'u: OMH 72,39 $ (2026-11-09 günü +%251,09)."
    }
   ]
  },
@@ -16131,7 +16319,7 @@
  ],
  "tax": {
   "2026": {
-   "commissions": 5.76,
+   "commissions": 6.13,
    "shortTermRealized": -63.71,
    "marginInterest": 0.0,
    "washDisallowed": 8.79
@@ -16283,7 +16471,7 @@
   "start": "2026-10-30",
   "startAt": "2026-10-30T15:50:43-04:00",
   "end": "2027-01-28",
-  "asOf": "2026-11-10T09:30:31-05:00",
+  "asOf": "2026-11-10T09:35:35-05:00",
   "strategy": "v6",
   "history": [
    {
@@ -16344,15 +16532,15 @@
     "daysElapsed": 5
    }
   ],
-  "daysElapsed": 7,
+  "daysElapsed": 8,
   "daysTotal": 61,
   "finished": false,
-  "returnPct": -3.43,
-  "spyReturnPct": -0.43,
-  "excessPct": -3.01,
+  "returnPct": -3.49,
+  "spyReturnPct": -0.42,
+  "excessPct": -3.08,
   "maxDrawdownPct": -5.37,
   "maxDrawdownAt": "2026-11-05T16:00:42-05:00",
-  "drawdownNowPct": -4.28,
+  "drawdownNowPct": -4.34,
   "trades": {
    "closed": 8,
    "wins": 2,
@@ -16371,14 +16559,14 @@
    },
    {
     "month": "2026-11",
-    "returnPct": -3.43,
-    "spyPct": -0.44,
-    "excessPct": -2.99
+    "returnPct": -3.49,
+    "spyPct": -0.43,
+    "excessPct": -3.06
    }
   ],
   "uptime": {
-   "due": 7,
-   "ran": 7,
+   "due": 8,
+   "ran": 8,
    "pct": 100.0
   },
   "errors": 0,
@@ -16392,7 +16580,7 @@
     "key": "spy",
     "label": "SPY'ı geçmek (masraflar düşülmüş)",
     "ok": false,
-    "value": -3.01,
+    "value": -3.08,
     "unit": "pct"
    },
    {
