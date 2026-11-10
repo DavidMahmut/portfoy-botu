@@ -99,7 +99,7 @@
   }
  },
  "portfolio": {
-  "cash": 1751.33,
+  "cash": 1467.66,
   "positions": [
    {
     "stopMode": "managed",
@@ -111,16 +111,16 @@
     "shares": 1.6461,
     "avgCost": 695.4676,
     "costBasis": 1144.81,
-    "lastPrice": 677.32,
-    "lastPriceAt": "2026-11-10T10:25:00-05:00",
+    "lastPrice": 676.69,
+    "lastPriceAt": "2026-11-10T10:30:00-05:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (10:25 ET)",
+     "title": "Yahoo Finance 5 dk mum (10:30 ET)",
      "url": "https://finance.yahoo.com/quote/QQQ/"
     },
-    "marketValue": 1114.94,
-    "exposure": 1114.94,
-    "unrealized": -29.87,
-    "unrealizedPct": -2.61,
+    "marketValue": 1113.9,
+    "exposure": 1113.9,
+    "unrealized": -30.91,
+    "unrealizedPct": -2.7,
     "openedAt": "2026-11-02",
     "openedTs": "2026-11-02T09:50:00-05:00",
     "lastAddDate": "2026-11-02",
@@ -128,41 +128,86 @@
     "extremeSinceEntry": 695.1199951171875,
     "tookProfit": false,
     "thesis": "Endeks kolu, QQQ (1x): 0,00 $ → 1.396,50 $. Endeks kolu yönü YUKARI: SPY dünkü kapanış 755,72 $, 200 günlük ortalama 728,85 $ (+%3,69), 50 günlük ortalama 767,49 $. QQQ'nun 20 günlük oynaklığı yıllık %22,6; büyüklük %25 ÷ %22,6 = 1,10x. Hedef maruziyet +1,10x.",
-    "maintReq": 278.73,
+    "maintReq": 278.47,
     "taxBasisAdj": 8.79
+   },
+   {
+    "stopMode": "event",
+    "ticker": "GEV",
+    "name": "GE Vernova",
+    "kind": "Hisse",
+    "side": "long",
+    "lev": 1,
+    "shares": 0.3612,
+    "avgCost": 784.372,
+    "costBasis": 283.32,
+    "lastPrice": 783.98,
+    "lastPriceAt": "2026-11-10T10:30:00-05:00",
+    "priceSource": {
+     "title": "Yahoo Finance 5 dk mum (10:30 ET)",
+     "url": "https://finance.yahoo.com/quote/GEV/"
+    },
+    "marketValue": 283.17,
+    "exposure": 283.17,
+    "unrealized": -0.15,
+    "unrealizedPct": -0.05,
+    "openedAt": "2026-11-10",
+    "openedTs": "2026-11-10T10:30:00-05:00",
+    "lastAddDate": "2026-11-10",
+    "stopPrice": 746.25,
+    "extremeSinceEntry": 783.97998046875,
+    "tookProfit": false,
+    "thesis": "Haber şoku: GEV önceki kapanışa (829,34 $) göre −%8,90 düşüşle açıldı, ilk saatte +%3,93 toparlandı: piyasa haberin ilk tepkisini abartılı buldu. Kural gereği long açıldı. Zarar-kes 746,25 $ (ilk saatin en düşüğünün hemen ötesi, risk %5,1); çıkış 2026-11-12 kapanışında. Büyüklük: haber kolunun %20'i, zarar-keste kaybı kolun yaklaşık %1'i. Haber: “Venture Global CEO Eyes New Growth Opportunity In Off-Grid Power For AI Data Centers – Firm Raises FY2026 Guidance After Record Q3 Earnings” (Stocktwits).",
+    "sleeve": "event",
+    "exitDate": "2026-11-12",
+    "event": {
+     "gapPct": -8.9,
+     "firstHourPct": 3.93,
+     "prevClose": 829.34,
+     "open": 755.53,
+     "h1High": 793.71,
+     "h1Low": 747.0
+    },
+    "headline": {
+     "title": "Venture Global CEO Eyes New Growth Opportunity In Off-Grid Power For AI Data Centers – Firm Raises FY2026 Guidance After Record Q3 Earnings",
+     "url": "https://stocktwits.com/news-articles/markets/equity/venture-global-ceo-eyes-new-growth-opportunity-off-grid-power-raises-fy2026-guidance-record-q3-earnings/cNGuSNYR9JG",
+     "publisher": "Stocktwits",
+     "at": "2026-11-10T13:33:49+00:00"
+    },
+    "maintReq": 70.79
    }
   ],
   "realizedPL": -100.58,
   "netDeposits": 3000.0,
   "costs": {
-   "slippage": 3.1503,
-   "commission": 6.3,
+   "slippage": 3.2919,
+   "commission": 6.65,
    "fees": 0.18,
    "interest": 0.0,
    "borrow": 0.02,
    "dividendsPaid": 0.0,
    "dividendsReceived": 0.0
   },
-  "longValue": 1114.94,
+  "longValue": 1397.07,
   "shortValue": 0.0,
-  "positionsValue": 1114.94,
-  "totalValue": 2866.27,
-  "grossExposure": 1114.94,
-  "netExposure": 1114.94,
-  "leverage": 0.389,
-  "maintenanceReq": 278.73,
-  "marginBuffer": 2587.54,
-  "regTInitialReq": 557.47,
-  "regTExcess": 2308.8,
-  "buyingPower": 4617.6,
+  "positionsValue": 1397.07,
+  "totalValue": 2864.73,
+  "grossExposure": 1397.07,
+  "netExposure": 1397.07,
+  "leverage": 0.488,
+  "maintenanceReq": 349.26,
+  "marginBuffer": 2515.47,
+  "regTInitialReq": 698.54,
+  "regTExcess": 2166.19,
+  "buyingPower": 4332.39,
   "marginEligible": true,
-  "totalPL": -133.73,
-  "totalPLPct": -4.46,
-  "twrPct": -4.46,
-  "asOf": "2026-11-10T10:26:15-05:00",
-  "benchmarkPrice": 750.09,
-  "benchmarkValue": 2995.13,
-  "benchmarkTwrPct": -0.16
+  "totalPL": -135.27,
+  "totalPLPct": -4.51,
+  "twrPct": -4.51,
+  "asOf": "2026-11-10T10:31:18-05:00",
+  "benchmarkPrice": 749.53,
+  "benchmarkValue": 2992.89,
+  "benchmarkTwrPct": -0.24
  },
  "meta": {
   "engine": "trend-event v6",
@@ -177,9 +222,9 @@
    "ath": 759.66,
    "athDate": "2026-10-06",
    "athChecked": "2026-11-10",
-   "price": 677.32,
-   "at": "2026-11-10T10:25:00-05:00",
-   "ddPct": -10.84,
+   "price": 676.69,
+   "at": "2026-11-10T10:30:00-05:00",
+   "ddPct": -10.92,
    "level": "correction",
    "triggerPrice": 607.73,
    "correctionPrice": 683.69
@@ -210,7 +255,7 @@
     "2026-11-10"
    ]
   },
-  "lastRunAt": "2026-11-10T10:26:15-05:00",
+  "lastRunAt": "2026-11-10T10:31:18-05:00",
   "lastError": null,
   "spikeScanDate": "2026-11-10",
   "spikeScan": {
@@ -301,13 +346,49 @@
    "now": 0.79,
    "date": "2026-11-10"
   },
-  "eventScanDate": "2026-11-09",
+  "eventScanDate": "2026-11-10",
   "eventScan": {
-   "date": "2026-11-09",
-   "at": "2026-11-09T10:31:01-05:00",
+   "date": "2026-11-10",
+   "at": "2026-11-10T10:31:18-05:00",
    "checked": 164,
-   "gaps": [],
-   "taken": [],
+   "gaps": [
+    {
+     "ticker": "GEV",
+     "name": "GE Vernova",
+     "gapPct": -8.9,
+     "firstHourPct": 3.93,
+     "prevClose": 829.34,
+     "open": 755.53,
+     "h1High": 793.71,
+     "h1Low": 747.0,
+     "h1Close": 785.22
+    }
+   ],
+   "taken": [
+    {
+     "ticker": "GEV",
+     "name": "GE Vernova",
+     "gapPct": -8.9,
+     "firstHourPct": 3.93,
+     "prevClose": 829.34,
+     "open": 755.53,
+     "h1High": 793.71,
+     "h1Low": 747.0,
+     "h1Close": 785.22,
+     "side": "long",
+     "ssr": false,
+     "stop": 746.25,
+     "amount": 283.35,
+     "price": 783.98,
+     "exitDate": "2026-11-12",
+     "headline": {
+      "title": "Venture Global CEO Eyes New Growth Opportunity In Off-Grid Power For AI Data Centers – Firm Raises FY2026 Guidance After Record Q3 Earnings",
+      "url": "https://stocktwits.com/news-articles/markets/equity/venture-global-ceo-eyes-new-growth-opportunity-off-grid-power-raises-fy2026-guidance-record-q3-earnings/cNGuSNYR9JG",
+      "publisher": "Stocktwits",
+      "at": "2026-11-10T13:33:49+00:00"
+     }
+    }
+   ],
    "skipped": [],
    "rule": "Açılış boşluğu en az %8; ilk saatte haberin tersine en az %0,5 dönüş; 2 işlem günü tut, zarar-kes ilk saatin öbür ucu."
   }
@@ -1025,6 +1106,46 @@
    "realizedPL": -36.87,
    "holdingDays": 0,
    "taxTerm": "kısa vade"
+  },
+  {
+   "id": "t-20261110-03",
+   "ts": "2026-11-10T10:31:18-05:00",
+   "date": "2026-11-10",
+   "action": "BUY",
+   "side": "long",
+   "ticker": "GEV",
+   "name": "GE Vernova",
+   "kind": "Hisse",
+   "shares": 0.3612,
+   "quotePrice": 783.98,
+   "quoteAt": "2026-11-10T10:30:00-05:00",
+   "slippagePct": 0.05,
+   "execPrice": 784.372,
+   "value": 283.32,
+   "commission": 0.35,
+   "fees": 0.0,
+   "priceSource": {
+    "title": "Yahoo Finance 5 dk mum (10:30 ET)",
+    "url": "https://finance.yahoo.com/quote/GEV/"
+   },
+   "reason": "Haber şoku: GEV önceki kapanışa (829,34 $) göre −%8,90 düşüşle açıldı, ilk saatte +%3,93 toparlandı: piyasa haberin ilk tepkisini abartılı buldu. Kural gereği long açıldı. Zarar-kes 746,25 $ (ilk saatin en düşüğünün hemen ötesi, risk %5,1); çıkış 2026-11-12 kapanışında. Büyüklük: haber kolunun %20'i, zarar-keste kaybı kolun yaklaşık %1'i. Haber: “Venture Global CEO Eyes New Growth Opportunity In Off-Grid Power For AI Data Centers – Firm Raises FY2026 Guidance After Record Q3 Earnings” (Stocktwits).",
+   "rule": "haber şoku",
+   "sources": [
+    {
+     "title": "Venture Global CEO Eyes New Growth Opportunity In Off-Grid Power For AI Data Centers – Firm Raises FY2026 Guidance After Record Q3 Earnings",
+     "url": "https://stocktwits.com/news-articles/markets/equity/venture-global-ceo-eyes-new-growth-opportunity-off-grid-power-raises-fy2026-guidance-record-q3-earnings/cNGuSNYR9JG"
+    },
+    {
+     "title": "Yahoo Finance: GEV",
+     "url": "https://finance.yahoo.com/quote/GEV/"
+    },
+    {
+     "title": "yfinance (Yahoo Finance verileri)",
+     "url": "https://github.com/ranaroussi/yfinance"
+    }
+   ],
+   "runId": "2026-11-10",
+   "by": "bot"
   }
  ],
  "snapshots": [
@@ -1214,21 +1335,26 @@
   },
   {
    "date": "2026-11-10",
-   "at": "2026-11-10T10:26:15-05:00",
-   "totalValue": 2866.27,
-   "cash": 1751.33,
-   "positionsValue": 1114.94,
-   "plPct": -4.46,
-   "twrPct": -4.46,
+   "at": "2026-11-10T10:31:18-05:00",
+   "totalValue": 2864.73,
+   "cash": 1467.66,
+   "positionsValue": 1397.07,
+   "plPct": -4.51,
+   "twrPct": -4.51,
    "netDeposits": 3000.0,
-   "leverage": 0.389,
-   "benchmarkPrice": 750.09,
-   "benchmarkValue": 2995.13,
+   "leverage": 0.488,
+   "benchmarkPrice": 749.53,
+   "benchmarkValue": 2992.89,
    "holdings": [
     {
      "ticker": "QQQ",
      "side": "long",
-     "value": 1114.94
+     "value": 1113.9
+    },
+    {
+     "ticker": "GEV",
+     "side": "long",
+     "value": 283.17
     }
    ]
   }
@@ -14839,6 +14965,38 @@
     ],
     "actions": [],
     "note": "Normal: kaldıraç 0,39x, SPY −%0,35; işlem gerekmedi."
+   },
+   {
+    "at": "2026-11-10T10:31:18-05:00",
+    "kind": "event",
+    "status": "normal",
+    "spyPrice": 749.53,
+    "spyChangePct": -0.42,
+    "totalValue": 2864.73,
+    "benchmarkValue": 2992.89,
+    "leverage": 0.488,
+    "marginBuffer": 2515.47,
+    "positions": [
+     {
+      "ticker": "QQQ",
+      "side": "long",
+      "price": 676.69,
+      "dayChangePct": -0.39,
+      "stopPrice": null,
+      "distancePct": null
+     },
+     {
+      "ticker": "GEV",
+      "side": "long",
+      "price": 783.98,
+      "dayChangePct": -5.47,
+      "stopPrice": 746.25,
+      "distancePct": 5.06
+     }
+    ],
+    "actions": [
+     "GEV long (283,32 $)"
+    ]
    }
   ]
  },
@@ -16496,7 +16654,7 @@
    "date": "2026-11-10",
    "at": "2026-11-10T10:00:54-05:00",
    "by": "bot",
-   "headline": "İşlem yok · Yön yukarı: endeks +0,71x, haber şoku kolu açık, kaldıraç 0,42x",
+   "headline": "1 haber şoku işlemi · İşlem yok · Yön yukarı: endeks +0,71x, haber şoku kolu açık, kaldıraç 0,42x",
    "marketSummary": "S&P 500 (SPY) −%0,14 · Nasdaq 100 (QQQ) +%0,13 · Russell 2000 (IWM) −%0,47. VIX korku endeksi 20,73 (+%4,07); WTI petrol 85,31 $ (−%1,77); ABD 10 yıllık faiz %4,99 (+13 baz puan). Endeks kolu yönü YUKARI: SPY dünkü kapanış 752,69 $, 200 günlük ortalama 730,70 $ (+%3,01), 50 günlük ortalama 765,35 $. QQQ'nun 20 günlük oynaklığı yıllık %35,3; büyüklük %25 ÷ %35,3 = 0,71x. Hedef maruziyet +0,71x. Piyasa trendi yukarı: SPY dünkü kapanış 752,69 $, 200 günlük ortalama 730,70 $ (+%3,01). (v6'da momentum sepeti kapalı; bu bilgi kayıt içindir.) Sonuç: net değer 2.890,53 $, nakit 1.860,59 $, kaldıraç 0,42x.",
    "regime": {
     "name": "up",
@@ -16565,7 +16723,8 @@
     "Endeks kolu yönü YUKARI: SPY dünkü kapanış 752,69 $, 200 günlük ortalama 730,70 $ (+%3,01), 50 günlük ortalama 765,35 $. QQQ'nun 20 günlük oynaklığı yıllık %35,3; büyüklük %25 ÷ %35,3 = 0,71x. Hedef maruziyet +0,71x.",
     "Piyasa trendi yukarı: SPY dünkü kapanış 752,69 $, 200 günlük ortalama 730,70 $ (+%3,01). (v6'da momentum sepeti kapalı; bu bilgi kayıt içindir.)",
     "Endeks kolu: hedef 0,71x, mevcut 0,79x; fark 0,3x'ten küçük olduğu için işlem yapılmadı.",
-    "Momentum sepeti v6'da kapalı: paranın yarısı endeks kolunda, yarısı haber şoku kolunda."
+    "Momentum sepeti v6'da kapalı: paranın yarısı endeks kolunda, yarısı haber şoku kolunda.",
+    "Haber şoku: GEV LONG 283,35 $ (boşluk −%8,90, ilk saat +%3,93)."
    ],
    "rejected": [],
    "watchlist": [
@@ -16655,7 +16814,52 @@
    "ranking": [],
    "shortRanking": [],
    "rankingNote": "Puan = 12-1 ay getirisi (son ay hariç 12 aylık getiri, %). Long için uygun: fiyat 200 günlük ortalamanın üstünde ve puan pozitif; sepet ilk 10'dan (sektör başına en fazla 3) oluşur, ilk 20'de kalan tutulur. Short listesi: fiyatı 200 günlük ortalamanın altında ve puanı negatif en zayıf hisseler (yalnızca izleme; v5'te sepet düşüşte nakde geçer).",
-   "nextSteps": "Endeks kolunun yönü ve büyüklüğü her gün 10:00'dan sonra, haber şoku taraması 10:30'dan sonra; haber işlemlerinin zarar-kesleri piyasa açıkken 5 dakikada bir kontrol ediliyor."
+   "nextSteps": "Endeks kolunun yönü ve büyüklüğü her gün 10:00'dan sonra, haber şoku taraması 10:30'dan sonra; haber işlemlerinin zarar-kesleri piyasa açıkken 5 dakikada bir kontrol ediliyor.",
+   "events": {
+    "date": "2026-11-10",
+    "at": "2026-11-10T10:31:18-05:00",
+    "checked": 164,
+    "gaps": [
+     {
+      "ticker": "GEV",
+      "name": "GE Vernova",
+      "gapPct": -8.9,
+      "firstHourPct": 3.93,
+      "prevClose": 829.34,
+      "open": 755.53,
+      "h1High": 793.71,
+      "h1Low": 747.0,
+      "h1Close": 785.22
+     }
+    ],
+    "taken": [
+     {
+      "ticker": "GEV",
+      "name": "GE Vernova",
+      "gapPct": -8.9,
+      "firstHourPct": 3.93,
+      "prevClose": 829.34,
+      "open": 755.53,
+      "h1High": 793.71,
+      "h1Low": 747.0,
+      "h1Close": 785.22,
+      "side": "long",
+      "ssr": false,
+      "stop": 746.25,
+      "amount": 283.35,
+      "price": 783.98,
+      "exitDate": "2026-11-12",
+      "headline": {
+       "title": "Venture Global CEO Eyes New Growth Opportunity In Off-Grid Power For AI Data Centers – Firm Raises FY2026 Guidance After Record Q3 Earnings",
+       "url": "https://stocktwits.com/news-articles/markets/equity/venture-global-ceo-eyes-new-growth-opportunity-off-grid-power-raises-fy2026-guidance-record-q3-earnings/cNGuSNYR9JG",
+       "publisher": "Stocktwits",
+       "at": "2026-11-10T13:33:49+00:00"
+      }
+     }
+    ],
+    "skipped": [],
+    "rule": "Açılış boşluğu en az %8; ilk saatte haberin tersine en az %0,5 dönüş; 2 işlem günü tut, zarar-kes ilk saatin öbür ucu."
+   }
   }
  ],
  "compliance": [
@@ -16758,7 +16962,7 @@
  ],
  "tax": {
   "2026": {
-   "commissions": 6.48,
+   "commissions": 6.83,
    "shortTermRealized": -100.58,
    "marginInterest": 0.0,
    "washDisallowed": 8.79
@@ -16910,7 +17114,7 @@
   "start": "2026-10-30",
   "startAt": "2026-10-30T15:50:43-04:00",
   "end": "2027-01-28",
-  "asOf": "2026-11-10T10:26:15-05:00",
+  "asOf": "2026-11-10T10:31:18-05:00",
   "strategy": "v6",
   "history": [
    {
@@ -16974,12 +17178,12 @@
   "daysElapsed": 8,
   "daysTotal": 61,
   "finished": false,
-  "returnPct": -4.46,
-  "spyReturnPct": -0.16,
-  "excessPct": -4.3,
+  "returnPct": -4.51,
+  "spyReturnPct": -0.24,
+  "excessPct": -4.27,
   "maxDrawdownPct": -5.37,
   "maxDrawdownAt": "2026-11-05T16:00:42-05:00",
-  "drawdownNowPct": -5.3,
+  "drawdownNowPct": -5.35,
   "trades": {
    "closed": 9,
    "wins": 2,
@@ -16998,9 +17202,9 @@
    },
    {
     "month": "2026-11",
-    "returnPct": -4.46,
-    "spyPct": -0.17,
-    "excessPct": -4.29
+    "returnPct": -4.51,
+    "spyPct": -0.25,
+    "excessPct": -4.26
    }
   ],
   "uptime": {
@@ -17019,7 +17223,7 @@
     "key": "spy",
     "label": "SPY'ı geçmek (masraflar düşülmüş)",
     "ok": false,
-    "value": -4.3,
+    "value": -4.27,
     "unit": "pct"
    },
    {
