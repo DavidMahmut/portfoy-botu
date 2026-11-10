@@ -1,12 +1,12 @@
 {
- "asOf": "2026-11-10T13:38:44-05:00",
+ "asOf": "2026-11-10T14:08:58-05:00",
  "sections": [
   {
    "ticker": "QQQ",
    "name": "Invesco QQQ (Nasdaq 100)",
    "role": "long",
-   "dayChangePct": -1.24,
-   "unrealizedPct": -3.53,
+   "dayChangePct": -1.17,
+   "unrealizedPct": -3.46,
    "items": [
     {
      "title": "Exchange-Traded Funds Lower as US Equities Decline After Midday",
@@ -52,8 +52,8 @@
    "ticker": "GEV",
    "name": "GE Vernova",
    "role": "long",
-   "dayChangePct": -6.6,
-   "unrealizedPct": -1.25,
+   "dayChangePct": -6.38,
+   "unrealizedPct": -1.01,
    "items": [
     {
      "title": "Sector Update: Energy Stocks Mixed Tuesday Afternoon",
@@ -154,6 +154,26 @@
    "unrealizedPct": null,
    "items": [
     {
+     "title": "Alphabet makes $10 billion bet on Anthropic's massive IPO",
+     "summary": "Amazon, Nvidia and AMD are also among the major technology companies tied to Anthropic as the startup prepares for a public listing.",
+     "publisher": "GuruFocus.com",
+     "url": "https://finance.yahoo.com/technology/ai/articles/alphabet-makes-10-billion-bet-185448045.html",
+     "at": "2026-11-10T13:54-05:00",
+     "tags": [
+      "AI & chips"
+     ]
+    },
+    {
+     "title": "Anthropic to Seek $1.3 Trillion Valuation in IPO",
+     "summary": "The Claude maker’s stock-market debut is seen as a litmus test for investors on edge over the AI trade.",
+     "publisher": "The Wall Street Journal",
+     "url": "https://www.wsj.com/finance/stocks/anthropic-ipo-valuation-8337b669?siteid=yhoof2&yptr=yahoo",
+     "at": "2026-11-10T13:41-05:00",
+     "tags": [
+      "AI & chips"
+     ]
+    },
+    {
      "title": "Google, Nvidia and Microsoft “Literally Feeding Themselves Money” with $26 Billion Anthropic IPO Buy",
      "summary": "Key TakeawaysAlphabet’s Google, Nvidia, Microsoft, Broadcom, AMD, Micron and TSMC will buy $26 billion of Anthropic’s shares at its IPO price, on top of an offering of up to $64. 4 billion.",
      "publisher": "TIKR",
@@ -170,27 +190,6 @@
      "url": "https://finance.yahoo.com/technology/ai/articles/anthropic-ipo-could-value-claude-182049858.html",
      "at": "2026-11-10T13:20-05:00",
      "tags": [
-      "AI & chips"
-     ]
-    },
-    {
-     "title": "Alphabet Stocks Rise 0.34% as Google Lines Up $10 Billion Anthropic Stake Purchase",
-     "summary": "Anthropic's amended IPO filing makes Google and Nvidia the largest buyers in a $26 billion private placement priced alongside the offering.",
-     "publisher": "GuruFocus.com",
-     "url": "https://finance.yahoo.com/markets/stocks/articles/alphabet-stocks-rise-0-34-180311251.html",
-     "at": "2026-11-10T13:03-05:00",
-     "tags": [
-      "AI & chips"
-     ]
-    },
-    {
-     "title": "Anthropic, Nvidia, CoreWeave, Take-Two, D-Wave, Securitize, and More That Explain Today’s Market",
-     "summary": "Nvidia declines and stocks fall after the consumer price index for October shows hotter-than-expected inflation.",
-     "publisher": "Barrons.com",
-     "url": "https://www.barrons.com/articles/stock-movers-9ff7ace7?siteid=yhoof2&yptr=yahoo",
-     "at": "2026-11-10T12:56-05:00",
-     "tags": [
-      "Fed & rates",
       "AI & chips"
      ]
     }
@@ -336,14 +335,75 @@
  ],
  "market": [
   {
-   "title": "Stock Market Today: Dow Dips On Hot Inflation Data, Rate Hike Calls; Rubio Says This On Iran (Live Coverage)",
-   "summary": "Stock Market Today: The Dow Jones index falls Tuesday on a hot inflation report. Anthropic prices its IPO range. Nvidia sells off.",
-   "publisher": "Investor's Business Daily",
-   "url": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-cpi-inflation-report-anthropic-ipo/?src=A00220&yptr=yahoo",
-   "at": "2026-11-10T13:04-05:00",
+   "title": "Update: Equities Fall Intraday, Yields Surge Following Inflation Report",
+   "summary": "(Updates with latest market prices and developments.) US stocks fell and bond yields surged intra",
+   "publisher": "MT Newswires",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/equities-fall-intraday-yields-surge-185510206.html",
+   "at": "2026-11-10T13:55-05:00",
    "tags": [
-    "Fed & rates",
-    "AI & chips"
+    "Fed & rates"
+   ]
+  },
+  {
+   "title": "Oil prices ease to two-month lows as US downplays further Iran strikes",
+   "summary": "By Scott DiSavino NEW YORK, Nov 10 (Reuters) - Oil prices eased to a two-month low on Tuesday after US officials downplayed the need for additional military action against Iran, easing fears of",
+   "publisher": "Reuters",
+   "url": "https://finance.yahoo.com/news/oil-falls-trump-downplays-prospect-014322571.html",
+   "at": "2026-11-10T13:43-05:00",
+   "tags": [
+    "Energy"
+   ]
+  },
+  {
+   "title": "Update: US Equity Indexes Drop as October's Inflation Print Boosts Fed Policy Tightening Odds",
+   "summary": "(Updates with index/price moves, macroeconomic data and company/geopolitical news from the first par",
+   "publisher": "MT Newswires",
+   "url": "https://finance.yahoo.com/economy/policy/articles/us-equity-indexes-drop-october-183806175.html",
+   "at": "2026-11-10T13:38-05:00",
+   "tags": [
+    "Fed & rates"
+   ]
+  },
+  {
+   "title": "The US Greenback Rises Against the Canadian Dollar as Higher US CPI Adds to Rate Hike Expectations",
+   "summary": "The US dollar strengthened against Canada's loonie Tuesday afternoon on expectations the Federal Res",
+   "publisher": "MT Newswires",
+   "url": "https://finance.yahoo.com/markets/currencies/articles/us-greenback-rises-against-canadian-183454439.html",
+   "at": "2026-11-10T13:34-05:00",
+   "tags": [
+    "Fed & rates"
+   ]
+  },
+  {
+   "title": "Oil Prices Just Fell to Their Lowest Since August as Trump Says the Iran War Is ‘Effectively Over’",
+   "summary": "Futures sank on words alone, with no signed deal and Iran denying any talks exist. Why did one oil fund crater while Exxon and Chevron barely flinched, and what number could reverse the slide?",
+   "publisher": "24/7 Wall St.",
+   "url": "https://247wallst.com/investing/2026/11/10/oil-prices-just-fell-to-their-lowest-since-august-as-trump-says-the-iran-war-is-effectively-over/",
+   "at": "2026-11-10T13:34-05:00",
+   "tags": [
+    "Policy & politics",
+    "Energy",
+    "Corporate"
+   ]
+  },
+  {
+   "title": "US oil output to reach record 13.9 million bpd in 2026",
+   "summary": "Investing.com -- US crude production is projected to reach 13.9 million barrels per day in 2026, marking the fourth consecutive year of record output, the Energy Information Administration said Tuesday.",
+   "publisher": "Investing.com",
+   "url": "https://finance.yahoo.com/energy/articles/us-oil-output-reach-record-183440109.html",
+   "at": "2026-11-10T13:34-05:00",
+   "tags": [
+    "Energy"
+   ]
+  },
+  {
+   "title": "U.S. 10-Year Treasury Tops 5% on Expectations of Higher Interest Rates",
+   "summary": "Treasury yields rose with the 10-year benchmark moving above 5%, as hotter-than-expected inflation added to hawkish comments by a Federal Reserve official to fuel bets on a steep interest-rate increase next month.",
+   "publisher": "The Wall Street Journal",
+   "url": "https://www.wsj.com/economy/central-banking/treasury-yields-edge-up-ahead-of-u-s-inflation-data-7a55db79?siteid=yhoof2&yptr=yahoo",
+   "at": "2026-11-10T13:07-05:00",
+   "tags": [
+    "Fed & rates"
    ]
   },
   {
@@ -355,59 +415,6 @@
    "tags": [
     "Earnings",
     "Energy"
-   ]
-  },
-  {
-   "title": "Is the S&P 500 Heading for a Correction?",
-   "summary": "The index could face a big test in December, as interest rates could be on the rise yet again.",
-   "publisher": "Motley Fool",
-   "url": "https://www.fool.com/investing/2026/11/10/is-the-s-and-p-500-heading-for-a-correction/",
-   "at": "2026-11-10T12:53-05:00",
-   "tags": [
-    "Fed & rates"
-   ]
-  },
-  {
-   "title": "European shares near record high as lower oil prices boost sentiment",
-   "summary": "By Anjana Jayakrishnan Nair, Johann M Cherian and Avinash P Nov 10 (Reuters) - Europe's benchmark STOXX 600 gained on Tuesday, hovering near a record high, as a sustained drop in oil prices and easing",
-   "publisher": "Reuters",
-   "url": "https://finance.yahoo.com/markets/world-indices/articles/european-shares-near-record-high-101156381.html",
-   "at": "2026-11-10T12:45-05:00",
-   "tags": [
-    "Energy"
-   ]
-  },
-  {
-   "title": "Stock Market Midday, Nov. 10: Stocks Slide on Hot Inflation Data",
-   "summary": "Growth and tech shares are leading the intraday slide as traders weigh a hotter-than-expected inflation report today, Nov. 10, 2026.",
-   "publisher": "Motley Fool",
-   "url": "https://www.fool.com/coverage/stock-market-today/2026/11/10/stock-market-midday-nov-10-stocks-slide-on-hot-inflation-data/",
-   "at": "2026-11-10T12:40-05:00",
-   "tags": [
-    "Fed & rates"
-   ]
-  },
-  {
-   "title": "3 Airline Stocks To Watch As Oil Prices Fall",
-   "summary": "Oil has quietly gone on sale, with Brent and WTI both down about 20% this month, and that moves the ground under global transportation and logistics stocks. Cheaper fuel, cooler inflation pressures and reduced geopolitical risk around a possible US Iran peace …",
-   "publisher": "Simply Wall St.",
-   "url": "https://finance.yahoo.com/markets/stocks/articles/3-airline-stocks-watch-oil-171836515.html",
-   "at": "2026-11-10T12:18-05:00",
-   "tags": [
-    "Fed & rates",
-    "Energy"
-   ]
-  },
-  {
-   "title": "Stocks mixed as investors eye AI outlook; oil drops",
-   "summary": "Asian and European stocks mostly gained while Wall Street slipped Tuesday after rallying from last week's tech-led rout, with AI titan Anthropic revealing staggering revenue growth ahead of an IPO that could come as soon as next week.Fears of a slower AI data …",
-   "publisher": "AFP",
-   "url": "https://finance.yahoo.com/markets/world-indices/articles/tech-leads-asian-stock-rally-023930562.html",
-   "at": "2026-11-10T12:00-05:00",
-   "tags": [
-    "Earnings",
-    "Energy",
-    "AI & chips"
    ]
   },
   {
@@ -453,84 +460,182 @@
     "Earnings",
     "AI & chips"
    ]
-  },
-  {
-   "title": "Pre-Markets Drop on Warmer CPI Numbers: +0.4% Month over Month",
-   "summary": "We see no Inflation Rate (CPI year over year) for October, as the government shutdown from 2025 caused the BLS to skip over October 2025.",
-   "publisher": "Zacks",
-   "url": "https://finance.yahoo.com/economy/policy/articles/pre-markets-drop-warmer-cpi-142000520.html",
-   "at": "2026-11-10T09:20-05:00",
-   "tags": [
-    "Fed & rates",
-    "Policy & politics"
-   ]
   }
  ],
  "seekingAlpha": {
-  "asOf": "2026-11-10T13:38:44-05:00",
+  "asOf": "2026-11-10T14:08:58-05:00",
   "ok": true,
   "stale": false,
   "via": "seekingalpha.com RSS",
   "errors": [],
   "feedCounts": {
    "Piyasa haberleri": 7,
-   "Tüm yazılar": 17
+   "Tüm yazılar": 14
   },
   "market": [
    {
-    "title": "Palladyne AI signals $25M-$27M 2026 revenue as SwarmOS earns top Army ratings and Fanuc channel expands",
-    "url": "https://seekingalpha.com/news/4670021-palladyne-ai-signals-25m-27m-2026-revenue-as-swarmos-earns-top-army-ratings-and-fanuc-channel",
-    "at": "2026-11-10T13:32-05:00",
+    "title": "Novartis releases long-term data for ianalumab in Sjögren’s disease",
+    "url": "https://seekingalpha.com/news/4670032-novartis-releases-long-term-data-ianalumab-sjogrens-disease",
+    "at": "2026-11-10T14:07-05:00",
     "kind": "news",
     "symbols": [],
     "author": null
    },
    {
-    "title": "Consolidated Water anticipates Hawaii construction start in first half 2027 with more than $150M backlog still unrecognized",
-    "url": "https://seekingalpha.com/news/4670017-consolidated-water-anticipates-hawaii-construction-start-in-first-half-2027-with-more-than",
-    "at": "2026-11-10T13:32-05:00",
+    "title": "S&P 500 And The Dollar: The Numbers Behind The Core CPI",
+    "url": "https://seekingalpha.com/article/4965944-sp-500-and-dollar-numbers-behind-core-cpi",
+    "at": "2026-11-10T14:06-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "CO1:COM",
+     "USO",
+     "USD:JPY",
+     "US10Y",
+     "US30Y",
+     "JPY:USD"
+    ],
+    "author": null
+   },
+   {
+    "title": "Casella outlines plan 303 targeting at least 26% adjusted EBITDA margin by 2029 while guiding 2027 organic revenue growth of approximately 5%",
+    "url": "https://seekingalpha.com/news/4670037-casella-outlines-plan-303-targeting-at-least-26-percent-adjusted-ebitda-margin-by-2029-while",
+    "at": "2026-11-10T14:03-05:00",
     "kind": "news",
     "symbols": [],
     "author": null
    },
    {
-    "title": "REFI outlines $0.015 per share quarterly distributable earnings lift per 25 bp hike while expecting Q4 2026 originations to slow",
-    "url": "https://seekingalpha.com/news/4670020-refi-outlines-0_015-per-share-quarterly-distributable-earnings-lift-per-25-bp-hike-while",
-    "at": "2026-11-10T13:32-05:00",
+    "title": "HighPeak outlines 2026 production of 44,500 to 45,500 BOE/d while advancing refinancing to cut debt to about $650M",
+    "url": "https://seekingalpha.com/news/4670035-highpeak-outlines-2026-production-of-44500-to-45500-boe-d-while-advancing-refinancing-to-cut",
+    "at": "2026-11-10T14:02-05:00",
     "kind": "news",
     "symbols": [],
     "author": null
    },
    {
-    "title": "Hemab expects cash to fund operations into 2029 while advancing ~75-patient SOLARA Phase III",
-    "url": "https://seekingalpha.com/news/4670018-hemab-expects-cash-to-fund-operations-into-2029-while-advancing-75-patient-solara-phase-iii",
-    "at": "2026-11-10T13:32-05:00",
+    "title": "ACCESS Newswire outlines $249-a-month SMB plan as it targets 1,300-1,350 subscribers by year-end",
+    "url": "https://seekingalpha.com/news/4670036-access-newswire-outlines-249-a-month-smb-plan-as-it-targets-1300minus-1350-subscribers-by",
+    "at": "2026-11-10T14:02-05:00",
     "kind": "news",
     "symbols": [],
     "author": null
    },
    {
-    "title": "Ondas advances attack drone production with new order; shares tumble",
-    "url": "https://seekingalpha.com/news/4670011-ondas-advances-attack-drone-production-with-new-order-shares-tumble",
-    "at": "2026-11-10T13:32-05:00",
+    "title": "Visa: Fairly Valued After Its Run Up (Rating Downgrade)",
+    "url": "https://seekingalpha.com/article/4965943-visa-fairly-valued-after-its-run-up",
+    "at": "2026-11-10T14:02-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "V"
+    ],
+    "author": null
+   },
+   {
+    "title": "Netcompany Group A/S (NTCYF) Shareholder/Analyst Call Transcript",
+    "url": "https://seekingalpha.com/article/4965717-netcompany-group-a-s-ntcyf-shareholder-analyst-call-transcript",
+    "at": "2026-11-10T14:01-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "NTCYF"
+    ],
+    "author": null
+   },
+   {
+    "title": "MasTec, Inc. (MTZ) Presents at Baird 2026 Global Industrial Conference 2026 Transcript",
+    "url": "https://seekingalpha.com/article/4965941-mastec-inc-mtz-presents-at-baird-2026-global-industrial-conference-2026-transcript",
+    "at": "2026-11-10T14:01-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "MTZ"
+    ],
+    "author": null
+   },
+   {
+    "title": "Service Stream Limited (SSMZF) Discusses Programmed Acquisition and Fully Underwritten Equity Raise Transcript",
+    "url": "https://seekingalpha.com/article/4965967-service-stream-limited-ssmzf-discusses-programmed-acquisition-and-fully-underwritten-equity",
+    "at": "2026-11-10T14:01-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "SSMZF"
+    ],
+    "author": null
+   },
+   {
+    "title": "The Trade Desk: Value Trap Becomes AI Road Kill (Rating Downgrade)",
+    "url": "https://seekingalpha.com/article/4965960-the-trade-desk-value-trap-becomes-ai-road-kill-rating-downgrade",
+    "at": "2026-11-10T14:00-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "TTD"
+    ],
+    "author": null
+   },
+   {
+    "title": "OMS Energy: Buying A Profitable Business Near Its Cash Value",
+    "url": "https://seekingalpha.com/article/4965937-oms-energy-buying-a-profitable-business-near-its-cash-value",
+    "at": "2026-11-10T13:59-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "OMSE"
+    ],
+    "author": null
+   },
+   {
+    "title": "Kansas City Fed's Schmid sees no major economic restriction from policy",
+    "url": "https://seekingalpha.com/news/4670010-kansas-city-feds-schmid-sees-no-major-economic-restriction-from-policy",
+    "at": "2026-11-10T13:58-05:00",
     "kind": "news",
     "symbols": [],
     "author": null
    },
    {
-    "title": "Oura acquires Counsel Health; sees revenue nearly double in FY26",
-    "url": "https://seekingalpha.com/news/4670002-oura-acquires-counsel-health-sees-revenue-nearly-double-in-fy26",
-    "at": "2026-11-10T13:32-05:00",
+    "title": "Wave Life Sciences: Reversing Stock Losses Tricky Despite Near-Term AATD Readout",
+    "url": "https://seekingalpha.com/article/4965935-wave-life-sciences-reversing-stock-losses-tricky-despite-near-term-aatd-readout",
+    "at": "2026-11-10T13:55-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "WVE"
+    ],
+    "author": null
+   },
+   {
+    "title": "MiNK Therapeutics Q3 2026 Earnings Preview",
+    "url": "https://seekingalpha.com/news/4670030-mink-therapeutics-q3-2026-earnings-preview",
+    "at": "2026-11-10T13:52-05:00",
     "kind": "news",
     "symbols": [],
     "author": null
    },
    {
-    "title": "Exagen reiterates $72M-$75M 2026 revenue outlook as myositis launch targets early 2027",
-    "url": "https://seekingalpha.com/news/4670019-exagen-reiterates-72m-75m-2026-revenue-outlook-as-myositis-launch-targets-early-2027",
-    "at": "2026-11-10T13:32-05:00",
+    "title": "Zeta Global shares gain after beat and raise results",
+    "url": "https://seekingalpha.com/news/4670029-zeta-global-shares-gain-after-beat-and-raise-results",
+    "at": "2026-11-10T13:51-05:00",
     "kind": "news",
     "symbols": [],
+    "author": null
+   },
+   {
+    "title": "Wall Street Lunch: When $1T Is A Disappointing Number",
+    "url": "https://seekingalpha.com/article/4965780-wall-street-lunch-when-1t-is-a-disappointing-number",
+    "at": "2026-11-10T13:45-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "ANT",
+     "QBTS",
+     "RKLB",
+     "SFTBY",
+     "NVDA"
+    ],
+    "author": null
+   },
+   {
+    "title": "Definium Q3 Earnings: Psychedelics Approval Beckons But Valuation Seems Inflated",
+    "url": "https://seekingalpha.com/article/4965926-definium-q3-earnings-psychedelics-approval-beckons-but-valuation-seems-inflated",
+    "at": "2026-11-10T13:34-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "DFTX"
+    ],
     "author": null
    },
    {
@@ -552,122 +657,6 @@
      "LII"
     ],
     "author": null
-   },
-   {
-    "title": "GRAIL, Inc. (GRAL) Presents at 2026 UBS Global Healthcare Conference Transcript",
-    "url": "https://seekingalpha.com/article/4965912-grail-inc-gral-presents-at-2026-ubs-global-healthcare-conference-transcript",
-    "at": "2026-11-10T13:31-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "GRAL"
-    ],
-    "author": null
-   },
-   {
-    "title": "Uranium Enrichment Finds Its Own Renaissance",
-    "url": "https://seekingalpha.com/article/4965947-uranium-enrichment-finds-its-own-renaissance",
-    "at": "2026-11-10T13:30-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "NUKZ",
-     "SILXY",
-     "SILXF",
-     "CCJ",
-     "LEU",
-     "UEC"
-    ],
-    "author": null
-   },
-   {
-    "title": "Upgrading DBA To A Strong Buy On A Scale-Down Basis",
-    "url": "https://seekingalpha.com/article/4965917-upgrading-dba-to-a-strong-buy-on-a-scale-down-basis",
-    "at": "2026-11-10T13:28-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "DBA"
-    ],
-    "author": null
-   },
-   {
-    "title": "Exelixis, Inc. (EXEL) Presents at 3rd Annual Guggenheim Healthcare Innovation Conference Transcript",
-    "url": "https://seekingalpha.com/article/4965838-exelixis-inc-exel-presents-at-3rd-annual-guggenheim-healthcare-innovation-conference",
-    "at": "2026-11-10T13:20-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "EXEL"
-    ],
-    "author": null
-   },
-   {
-    "title": "Aemetis: A Better Quarter Has Not Solved The Financing Risk",
-    "url": "https://seekingalpha.com/article/4965909-aemetis-a-better-quarter-has-not-solved-the-financing-risk",
-    "at": "2026-11-10T13:19-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "AMTX"
-    ],
-    "author": null
-   },
-   {
-    "title": "AMC Global Media: Lawsuit Dings Cash Flow, But The Business Is Still Solid",
-    "url": "https://seekingalpha.com/article/4965908-amc-global-media-lawsuit-dings-cash-flow-but-the-business-is-still-solid",
-    "at": "2026-11-10T13:15-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "AMCX"
-    ],
-    "author": null
-   },
-   {
-    "title": "ARTY: Up 51% Since My Buy Call, And I'm Still Bullish After Midterms",
-    "url": "https://seekingalpha.com/article/4965907-arty-up-51-percent-since-my-buy-call-and-im-still-bullish-after-midterms",
-    "at": "2026-11-10T13:15-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "AMD",
-     "NVDA",
-     "AVGO",
-     "ORCL",
-     "MU",
-     "MRVL"
-    ],
-    "author": null
-   },
-   {
-    "title": "Eagle Point Income: High-Yield Income And Buying Opportunity Ahead Of Q3 Earnings",
-    "url": "https://seekingalpha.com/article/4965906-eagle-point-income-high-yield-income-opportunity-ahead-of-q3-earnings",
-    "at": "2026-11-10T13:15-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "ECC",
-     "EIC"
-    ],
-    "author": null
-   },
-   {
-    "title": "Strong Earnings Have Powered The TSX - What Comes Next?",
-    "url": "https://seekingalpha.com/article/4965932-strong-earnings-have-powered-tsx-what-comes-next",
-    "at": "2026-11-10T13:15-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "EWC",
-     "FLCA",
-     "BBCA",
-     "VCE:CA",
-     "SPTSX"
-    ],
-    "author": null
-   },
-   {
-    "title": "The S&P 500 Dividend Yield Relative To The 10-Year Treasury Yield Ratio Inflections As A Signal Of Capital Rotation",
-    "url": "https://seekingalpha.com/article/4965905-the-s-and-p-500-dividend-yield-relative-to-the-10-year-treasury-yield-ratio-inflections-as-a-signal-of-capital-rotation",
-    "at": "2026-11-10T13:13-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "US10Y",
-     "SP500"
-    ],
-    "author": null
    }
   ],
   "tickers": [
@@ -675,6 +664,21 @@
     "ticker": "QQQ",
     "role": "long",
     "items": [
+     {
+      "title": "October CPI Caused An Overreaction",
+      "url": "https://seekingalpha.com/article/4965964-october-cpi-caused-an-overreaction",
+      "at": "2026-11-10T14:00-05:00",
+      "kind": "analysis",
+      "symbols": [
+       "AFMC",
+       "AFSM",
+       "ARKK",
+       "AVUV",
+       "BAPR",
+       "IVOO"
+      ],
+      "author": "Jack Bowman"
+     },
      {
       "title": "October CPI Report: Hot Inflation Likely Forces A December Hike",
       "url": "https://seekingalpha.com/article/4965930-october-cpi-report-hot-inflation-likely-forces-a-december-hike",
@@ -719,21 +723,6 @@
        "EWY"
       ],
       "author": "Jessica Kuruthukulangara"
-     },
-     {
-      "title": "The Hot October CPI Report May Mean Much Higher Rates And Lower Stocks",
-      "url": "https://seekingalpha.com/article/4965845-the-hot-october-cpi-report-may-mean-much-higher-rates-and-lower-stocks",
-      "at": "2026-11-10T11:30-05:00",
-      "kind": "analysis",
-      "symbols": [
-       "AFMC",
-       "AFSM",
-       "ARKK",
-       "AVUV",
-       "BAPR",
-       "IVOO"
-      ],
-      "author": "Mott Capital Management"
      }
     ]
    },
@@ -771,85 +760,83 @@
    "url": "https://seekingalpha.com/market-news"
   },
   "note": "Yalnızca başlık ve bağlantı. Yazıların tamamı Seeking Alpha'da; bir kısmı abonelik ister. Yatırım tavsiyesi değildir.",
-  "lastGood": "2026-11-10T13:38:44-05:00"
+  "lastGood": "2026-11-10T14:08:58-05:00"
  },
  "digest": {
   "date": "2026-11-10",
   "title": "Daily brief — Tuesday, November 10, 2026",
-  "generatedAt": "2026-11-10T13:38-05:00",
+  "generatedAt": "2026-11-10T14:08-05:00",
   "bullets": [
    {
     "head": "Markets (latest session)",
-    "text": "S&P 500 -0.74%, Nasdaq 100 -1.29%, Dow -0.54%, Russell 2000 -0.92%. VIX 20.8; 10-yr yield 5.01% (+14 bp); WTI $86.20 (-0.75%); gold $4,029 (-2.08%). Volatility is elevated (VIX above 20). Bond yields jumped, which usually weighs on growth stocks."
+    "text": "S&P 500 -0.55%, Nasdaq 100 -1.05%, Dow -0.38%, Russell 2000 -0.84%. VIX 20.3; 10-yr yield 5.00% (+14 bp); WTI $86.07 (-0.90%); gold $4,035 (-1.93%). Volatility is elevated (VIX above 20). Bond yields jumped, which usually weighs on growth stocks."
    },
    {
     "head": "Trend filter",
-    "text": "The S&P 500 (SPY $747.14) is 2.2% above its 200-day average ($730.70). Basket rule: the momentum basket stays invested. Index sleeve (last daily decision 2026-11-10): long, target +0.71x Nasdaq 100 exposure (25% / 35.3% 20-day volatility, capped at 3x)."
+    "text": "The S&P 500 (SPY $748.56) is 2.4% above its 200-day average ($730.70). Basket rule: the momentum basket stays invested. Index sleeve (last daily decision 2026-11-10): long, target +0.71x Nasdaq 100 exposure (25% / 35.3% 20-day volatility, capped at 3x)."
    },
    {
     "head": "Our portfolio",
-    "text": "Net value $2,851.81 (-1.86% vs the previous close); cash $1,467.66; 2 positions, leverage 0.48x. Best holding today: QQQ -1.24%; weakest: GEV -6.60%."
+    "text": "Net value $2,853.30 (-1.81% vs the previous close); cash $1,467.66; 2 positions, leverage 0.49x. Best holding today: QQQ -1.17%; weakest: GEV -6.38%."
    },
    {
     "head": "Themes in today's headlines",
-    "text": "AI & chips (16), Fed & rates (11), Earnings (9), Energy (5)."
+    "text": "AI & chips (14), Fed & rates (9), Earnings (8), Energy (5)."
    }
   ],
   "headlines": [
    {
-    "title": "Stock Market Today: Dow Dips On Hot Inflation Data, Rate Hike Calls; Rubio Says This On Iran (Live Coverage)",
-    "url": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-cpi-inflation-report-anthropic-ipo/?src=A00220&yptr=yahoo",
-    "publisher": "Investor's Business Daily",
-    "at": "2026-11-10T13:04-05:00",
-    "summary": "Stock Market Today: The Dow Jones index falls Tuesday on a hot inflation report.",
-    "tags": [
-     "Fed & rates",
-     "AI & chips"
-    ]
-   },
-   {
-    "title": "DHT Holdings (DHT) Q3 earnings: what to expect",
-    "url": "https://finance.yahoo.com/markets/stocks/articles/dht-holdings-dht-q3-earnings-175736572.html",
-    "publisher": "StockStory",
-    "at": "2026-11-10T12:57-05:00",
-    "summary": "Crude oil tanker operator DHT Holdings (NYSE:DHT) will be reporting earnings this Monday after market hours.",
-    "tags": [
-     "Earnings",
-     "Energy"
-    ]
-   },
-   {
-    "title": "Is the S&P 500 Heading for a Correction?",
-    "url": "https://www.fool.com/investing/2026/11/10/is-the-s-and-p-500-heading-for-a-correction/",
-    "publisher": "Motley Fool",
-    "at": "2026-11-10T12:53-05:00",
-    "summary": "The index could face a big test in December, as interest rates could be on the rise yet again.",
+    "title": "Update: Equities Fall Intraday, Yields Surge Following Inflation Report",
+    "url": "https://finance.yahoo.com/markets/stocks/articles/equities-fall-intraday-yields-surge-185510206.html",
+    "publisher": "MT Newswires",
+    "at": "2026-11-10T13:55-05:00",
+    "summary": "(Updates with latest market prices and developments.) US stocks fell and bond yields surged intra",
     "tags": [
      "Fed & rates"
     ]
    },
    {
-    "title": "European shares near record high as lower oil prices boost sentiment",
-    "url": "https://finance.yahoo.com/markets/world-indices/articles/european-shares-near-record-high-101156381.html",
+    "title": "Oil prices ease to two-month lows as US downplays further Iran strikes",
+    "url": "https://finance.yahoo.com/news/oil-falls-trump-downplays-prospect-014322571.html",
     "publisher": "Reuters",
-    "at": "2026-11-10T12:45-05:00",
-    "summary": "By Anjana Jayakrishnan Nair, Johann M Cherian and Avinash P Nov 10 (Reuters) - Europe's benchmark STOXX 600 gained on Tuesday, hovering near a record high, as a sustained drop in oil prices and easing",
+    "at": "2026-11-10T13:43-05:00",
+    "summary": "By Scott DiSavino NEW YORK, Nov 10 (Reuters) - Oil prices eased to a two-month low on Tuesday after US officials downplayed the need for additional military action against Iran, easing fears of",
     "tags": [
      "Energy"
+    ]
+   },
+   {
+    "title": "Update: US Equity Indexes Drop as October's Inflation Print Boosts Fed Policy Tightening Odds",
+    "url": "https://finance.yahoo.com/economy/policy/articles/us-equity-indexes-drop-october-183806175.html",
+    "publisher": "MT Newswires",
+    "at": "2026-11-10T13:38-05:00",
+    "summary": "(Updates with index/price moves, macroeconomic data and company/geopolitical news from the first par",
+    "tags": [
+     "Fed & rates"
+    ]
+   },
+   {
+    "title": "The US Greenback Rises Against the Canadian Dollar as Higher US CPI Adds to Rate Hike Expectations",
+    "url": "https://finance.yahoo.com/markets/currencies/articles/us-greenback-rises-against-canadian-183454439.html",
+    "publisher": "MT Newswires",
+    "at": "2026-11-10T13:34-05:00",
+    "summary": "The US dollar strengthened against Canada's loonie Tuesday afternoon on expectations the Federal Res",
+    "tags": [
+     "Fed & rates"
     ]
    }
   ],
   "movers": [
    {
     "ticker": "GEV",
-    "changePct": -6.6,
+    "changePct": -6.38,
     "title": "Sector Update: Energy Stocks Mixed Tuesday Afternoon",
     "url": "https://finance.yahoo.com/energy/articles/sector-energy-stocks-mixed-tuesday-182754599.html",
     "publisher": "MT Newswires"
    },
    {
     "ticker": "QQQ",
-    "changePct": -1.24,
+    "changePct": -1.17,
     "title": "Exchange-Traded Funds Lower as US Equities Decline After Midday",
     "url": "https://finance.yahoo.com/markets/articles/exchange-traded-funds-lower-us-181343803.html",
     "publisher": "MT Newswires"
