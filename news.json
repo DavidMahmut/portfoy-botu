@@ -1,12 +1,12 @@
 {
- "asOf": "2026-11-10T15:09:35-05:00",
+ "asOf": "2026-11-10T15:16:31-05:00",
  "sections": [
   {
    "ticker": "QQQ",
    "name": "Invesco QQQ (Nasdaq 100)",
    "role": "long",
-   "dayChangePct": -1.13,
-   "unrealizedPct": -3.43,
+   "dayChangePct": -0.96,
+   "unrealizedPct": -3.25,
    "items": [
     {
      "title": "Fed Official Warns Americans to Brace for Costlier Loans This Winter",
@@ -52,8 +52,8 @@
    "ticker": "GEV",
    "name": "GE Vernova",
    "role": "long",
-   "dayChangePct": -5.7,
-   "unrealizedPct": -0.3,
+   "dayChangePct": -5.4,
+   "unrealizedPct": 0.02,
    "items": [
     {
      "title": "Sector Update: Energy Stocks Mixed Tuesday Afternoon",
@@ -297,6 +297,16 @@
    "unrealizedPct": null,
    "items": [
     {
+     "title": "QBTS Stock Down on Q3 Earnings Miss, Revenues Surpass Estimates",
+     "summary": "D-Wave's Q3 revenues increase 21% and nine-month bookings surge 611%, while margin pressure and a widening adjusted EBITDA loss cloud its Q3 results.",
+     "publisher": "Zacks",
+     "url": "https://finance.yahoo.com/markets/stocks/articles/qbts-stock-down-q3-earnings-190300945.html",
+     "at": "2026-11-10T14:03-05:00",
+     "tags": [
+      "Earnings"
+     ]
+    },
+    {
      "title": "AI Boom Isn't Over: 4 Stocks to Buy the Dip Amid Tech Bloodbath",
      "summary": "ANET, FN, ADI and AMD offer potential buying opportunities as AI demand outpaces supply, valuations ease and data center investments continue.",
      "publisher": "Zacks",
@@ -323,22 +333,21 @@
      "tags": [
       "Earnings"
      ]
-    },
-    {
-     "title": "Arista Just Committed $11.4 Billion to Suppliers. Its $18.5 Billion 2027 Outlook Depends on It",
-     "summary": "Key TakeawaysArista Networks stock rose 7% Friday to $171, but it’s still 21% below its record after a broad AI hardware selloff. Purchase commitments climbed to $11.",
-     "publisher": "TIKR",
-     "url": "https://www.tikr.com/blog/arista-just-committed-11-4-billion-to-suppliers-its-18-5-billion-2027-outlook-depends-on-it?ref=yahoofinance&tlnk=yf-261109-2hfx6v8r",
-     "at": "2026-11-09T13:08-05:00",
-     "tags": [
-      "Earnings",
-      "AI & chips"
-     ]
     }
    ]
   }
  ],
  "market": [
+  {
+   "title": "Oil prices ease to two-month lows as US downplays further Iran strikes",
+   "summary": "By Scott DiSavino NEW YORK, Nov 10 (Reuters) - Oil prices eased to a two-month low on Tuesday, after US officials downplayed the need for additional military action against Iran, easing fears of",
+   "publisher": "Reuters",
+   "url": "https://finance.yahoo.com/news/oil-falls-trump-downplays-prospect-014322571.html",
+   "at": "2026-11-10T15:10-05:00",
+   "tags": [
+    "Energy"
+   ]
+  },
   {
    "title": "BC-OILS",
    "summary": "NEW YORK (AP) — Futures trading on the New York Mercantile Exchange Tuesday:Open High Low Settle Chg.'s open int 1,929,570 down 20,382 HEATING OIL 42,000 gal, cents per gal Dec 26 418.",
@@ -390,16 +399,6 @@
    "at": "2026-11-10T13:55-05:00",
    "tags": [
     "Earnings",
-    "Energy"
-   ]
-  },
-  {
-   "title": "Oil prices ease to two-month lows as US downplays further Iran strikes",
-   "summary": "By Scott DiSavino NEW YORK, Nov 10 (Reuters) - Oil prices eased to a two-month low on Tuesday after US officials downplayed the need for additional military action against Iran, easing fears of",
-   "publisher": "Reuters",
-   "url": "https://finance.yahoo.com/news/oil-falls-trump-downplays-prospect-014322571.html",
-   "at": "2026-11-10T13:43-05:00",
-   "tags": [
     "Energy"
    ]
   },
@@ -470,16 +469,43 @@
   }
  ],
  "seekingAlpha": {
-  "asOf": "2026-11-10T15:09:35-05:00",
+  "asOf": "2026-11-10T15:16:31-05:00",
   "ok": true,
   "stale": false,
   "via": "seekingalpha.com RSS",
   "errors": [],
   "feedCounts": {
    "Piyasa haberleri": 7,
-   "Tüm yazılar": 15
+   "Tüm yazılar": 14
   },
   "market": [
+   {
+    "title": "TransDigm outlines FY 2027 guidance with $12.05B revenue midpoint and $47.51 adjusted EPS",
+    "url": "https://seekingalpha.com/news/4670072-transdigm-outlines-fy-2027-guidance-with-12_05b-revenue-midpoint-and-47_51-adjusted-eps",
+    "at": "2026-11-10T15:12-05:00",
+    "kind": "news",
+    "symbols": [],
+    "author": null
+   },
+   {
+    "title": "Tech sector extends historic lag as Nvidia hits fresh lows",
+    "url": "https://seekingalpha.com/news/4670071-tech-sector-extends-historic-lag-as-nvidia-hits-fresh-lows",
+    "at": "2026-11-10T15:10-05:00",
+    "kind": "news",
+    "symbols": [],
+    "author": null
+   },
+   {
+    "title": "Sandisk: This Is Only Fear; Panic And Capitulation Are Still To Come",
+    "url": "https://seekingalpha.com/article/4966003-sandisk-this-is-only-fear-panic-and-capitulation-are-still-to-come",
+    "at": "2026-11-10T15:10-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "SNDK",
+     "SNDK:CA"
+    ],
+    "author": null
+   },
    {
     "title": "A Steadier Economy Ahead: 3 Calls For China",
     "url": "https://seekingalpha.com/article/4965980-steadier-economy-ahead-3-calls-china",
@@ -551,14 +577,6 @@
     "author": null
    },
    {
-    "title": "Protalix sees $3.2B Fabry market by 2031 while targeting PRX-115 Phase II top-line results in H2 next year",
-    "url": "https://seekingalpha.com/news/4670065-protalix-sees-3_2b-fabry-market-by-2031-while-targeting-prxminus-115-phase-ii-top-line",
-    "at": "2026-11-10T15:02-05:00",
-    "kind": "news",
-    "symbols": [],
-    "author": null
-   },
-   {
     "title": "Dover Corporation (DOV) Presents at Baird 2026 Global Industrial Conference 2026 Transcript",
     "url": "https://seekingalpha.com/article/4966005-dover-corporation-dov-presents-at-baird-2026-global-industrial-conference-2026-transcript",
     "at": "2026-11-10T15:00-05:00",
@@ -615,14 +633,6 @@
     "author": null
    },
    {
-    "title": "Mobix Labs reports Preliminary Q4 results",
-    "url": "https://seekingalpha.com/news/4670064-mobix-labs-reports-preliminary-q4-results",
-    "at": "2026-11-10T14:54-05:00",
-    "kind": "news",
-    "symbols": [],
-    "author": null
-   },
-   {
     "title": "Crispr Therapeutics: The Recent 40% Drop In Short Interest Indicates Deteriorating Bearish Sentiment",
     "url": "https://seekingalpha.com/article/4965969-crispr-therapeutics-recent-drop-in-short-interest-indicates-deteriorating-bearish-sentiment",
     "at": "2026-11-10T14:54-05:00",
@@ -665,16 +675,6 @@
     "symbols": [
      "CLPBF",
      "CLPBY"
-    ],
-    "author": null
-   },
-   {
-    "title": "Lazard, Inc. (LAZ) Presents at BMO Capital Markets 2026 Financials Conference Transcript",
-    "url": "https://seekingalpha.com/article/4965869-lazard-inc-laz-presents-at-bmo-capital-markets-2026-financials-conference-transcript",
-    "at": "2026-11-10T14:31-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "LAZ"
     ],
     "author": null
    }
@@ -780,31 +780,41 @@
    "url": "https://seekingalpha.com/market-news"
   },
   "note": "Yalnızca başlık ve bağlantı. Yazıların tamamı Seeking Alpha'da; bir kısmı abonelik ister. Yatırım tavsiyesi değildir.",
-  "lastGood": "2026-11-10T15:09:35-05:00"
+  "lastGood": "2026-11-10T15:16:31-05:00"
  },
  "digest": {
   "date": "2026-11-10",
   "title": "Daily brief — Tuesday, November 10, 2026",
-  "generatedAt": "2026-11-10T15:09-05:00",
+  "generatedAt": "2026-11-10T15:16-05:00",
   "bullets": [
    {
     "head": "Markets (latest session)",
-    "text": "S&P 500 -0.56%, Nasdaq 100 -1.04%, Dow -0.37%, Russell 2000 -0.95%. VIX 19.9; 10-yr yield 4.98% (+12 bp); WTI $86.26 (-0.68%); gold $4,038 (-1.87%). Bond yields jumped, which usually weighs on growth stocks."
+    "text": "S&P 500 -0.52%, Nasdaq 100 -0.95%, Dow -0.38%, Russell 2000 -0.86%. VIX 20.1; 10-yr yield 4.98% (+12 bp); WTI $86.33 (-0.60%); gold $4,035 (-1.93%). Volatility is elevated (VIX above 20). Bond yields jumped, which usually weighs on growth stocks."
    },
    {
     "head": "Trend filter",
-    "text": "The S&P 500 (SPY $748.46) is 2.4% above its 200-day average ($730.70). Basket rule: the momentum basket stays invested. Index sleeve (last daily decision 2026-11-10): long, target +0.71x Nasdaq 100 exposure (25% / 35.3% 20-day volatility, capped at 3x)."
+    "text": "The S&P 500 (SPY $748.80) is 2.5% above its 200-day average ($730.70). Basket rule: the momentum basket stays invested. Index sleeve (last daily decision 2026-11-10): long, target +0.71x Nasdaq 100 exposure (25% / 35.3% 20-day volatility, capped at 3x)."
    },
    {
     "head": "Our portfolio",
-    "text": "Net value $2,855.75 (-1.73% vs the previous close); cash $1,467.66; 2 positions, leverage 0.49x. Best holding today: QQQ -1.13%; weakest: GEV -5.70%."
+    "text": "Net value $2,858.59 (-1.63% vs the previous close); cash $1,467.66; 2 positions, leverage 0.49x. Best holding today: QQQ -0.96%; weakest: GEV -5.40%."
    },
    {
     "head": "Themes in today's headlines",
-    "text": "AI & chips (13), Fed & rates (9), Earnings (9), Energy (7)."
+    "text": "AI & chips (13), Earnings (10), Fed & rates (9), Energy (7)."
    }
   ],
   "headlines": [
+   {
+    "title": "Oil prices ease to two-month lows as US downplays further Iran strikes",
+    "url": "https://finance.yahoo.com/news/oil-falls-trump-downplays-prospect-014322571.html",
+    "publisher": "Reuters",
+    "at": "2026-11-10T15:10-05:00",
+    "summary": "By Scott DiSavino NEW YORK, Nov 10 (Reuters) - Oil prices eased to a two-month low on Tuesday, after US officials downplayed the need for additional military action against Iran, easing fears of",
+    "tags": [
+     "Energy"
+    ]
+   },
    {
     "title": "BC-OILS",
     "url": "https://finance.yahoo.com/markets/commodities/articles/bc-oils-200018413.html",
@@ -836,30 +846,19 @@
      "Fed & rates",
      "Energy"
     ]
-   },
-   {
-    "title": "Chip stocks' slide nears $5 trillion as Nvidia hits most extreme selling level since 2019",
-    "url": "https://finance.yahoo.com/markets/article/chip-stocks-slide-nears-5-trillion-as-nvidia-hits-most-extreme-selling-level-since-2019-191532559.html",
-    "publisher": "Yahoo Finance",
-    "at": "2026-11-10T14:15-05:00",
-    "summary": "Nvidia and memory stocks are dragging chips lower again after a hot inflation report, even as most S&P 500 stocks hold up.",
-    "tags": [
-     "Fed & rates",
-     "AI & chips"
-    ]
    }
   ],
   "movers": [
    {
     "ticker": "GEV",
-    "changePct": -5.7,
+    "changePct": -5.4,
     "title": "Sector Update: Energy Stocks Mixed Tuesday Afternoon",
     "url": "https://finance.yahoo.com/energy/articles/sector-energy-stocks-mixed-tuesday-182754599.html",
     "publisher": "MT Newswires"
    },
    {
     "ticker": "QQQ",
-    "changePct": -1.13,
+    "changePct": -0.96,
     "title": "Fed Official Warns Americans to Brace for Costlier Loans This Winter",
     "url": "https://finance.yahoo.com/economy/policy/articles/fed-official-warns-americans-brace-192348284.html",
     "publisher": "GuruFocus.com"
