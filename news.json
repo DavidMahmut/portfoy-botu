@@ -1,13 +1,23 @@
 {
- "asOf": "2026-11-10T14:08:58-05:00",
+ "asOf": "2026-11-10T14:39:15-05:00",
  "sections": [
   {
    "ticker": "QQQ",
    "name": "Invesco QQQ (Nasdaq 100)",
    "role": "long",
-   "dayChangePct": -1.17,
-   "unrealizedPct": -3.46,
+   "dayChangePct": -1.06,
+   "unrealizedPct": -3.35,
    "items": [
+    {
+     "title": "Fed Official Warns Americans to Brace for Costlier Loans This Winter",
+     "summary": "Wall Street faces an uncomfortable shift in monetary policy expectations.",
+     "publisher": "GuruFocus.com",
+     "url": "https://finance.yahoo.com/economy/policy/articles/fed-official-warns-americans-brace-192348284.html",
+     "at": "2026-11-10T14:23-05:00",
+     "tags": [
+      "Fed & rates"
+     ]
+    },
     {
      "title": "Exchange-Traded Funds Lower as US Equities Decline After Midday",
      "summary": "Broad Market Indicators Broad-market exchange-traded funds IWM and IVV fell. Actively traded I",
@@ -35,16 +45,6 @@
      "tags": [
       "Earnings"
      ]
-    },
-    {
-     "title": "Hedge Funds Dumped Tech at a Near-Record Pace Right Before Chip Stocks Jumped 7%",
-     "summary": "Hedge funds slashed leverage at a pace not seen since the Covid crash, then chip stocks ripped higher in a single session. Was it a verdict on AI demand, or just a forced scramble that strategists still can't agree on?",
-     "publisher": "24/7 Wall St.",
-     "url": "https://247wallst.com/investing/2026/11/10/hedge-funds-dumped-tech-at-a-near-record-pace-right-before-chip-stocks-jumped-7/",
-     "at": "2026-11-10T09:54-05:00",
-     "tags": [
-      "AI & chips"
-     ]
     }
    ]
   },
@@ -52,8 +52,8 @@
    "ticker": "GEV",
    "name": "GE Vernova",
    "role": "long",
-   "dayChangePct": -6.38,
-   "unrealizedPct": -1.01,
+   "dayChangePct": -6.01,
+   "unrealizedPct": -0.62,
    "items": [
     {
      "title": "Sector Update: Energy Stocks Mixed Tuesday Afternoon",
@@ -154,6 +154,18 @@
    "unrealizedPct": null,
    "items": [
     {
+     "title": "Rackspace (RXT) Q3 2026 Earnings Call Transcript",
+     "summary": "Guidance rises as $610 million in AI deals reshape the outlook.",
+     "publisher": "Motley Fool",
+     "url": "https://www.fool.com/earnings/call-transcripts/2026/11/10/rackspace-rxt-q3-2026-earnings-call-transcript/",
+     "at": "2026-11-10T14:14-05:00",
+     "tags": [
+      "Earnings",
+      "AI & chips",
+      "Corporate"
+     ]
+    },
+    {
      "title": "Alphabet makes $10 billion bet on Anthropic's massive IPO",
      "summary": "Amazon, Nvidia and AMD are also among the major technology companies tied to Anthropic as the startup prepares for a public listing.",
      "publisher": "GuruFocus.com",
@@ -179,16 +191,6 @@
      "publisher": "TIKR",
      "url": "https://www.tikr.com/blog/google-nvidia-and-microsoft-literally-feeding-themselves-money-with-26-billion-anthropic-ipo-buy?ref=yahoofinance&tlnk=yf-261110-4fh7rrpp",
      "at": "2026-11-10T13:21-05:00",
-     "tags": [
-      "AI & chips"
-     ]
-    },
-    {
-     "title": "Anthropic IPO Could Value Claude Maker at $1.4 Trillion",
-     "summary": "Nvidia, Microsoft, Google and four other companies are buying $26 billion of stock in a private placement",
-     "publisher": "GuruFocus.com",
-     "url": "https://finance.yahoo.com/technology/ai/articles/anthropic-ipo-could-value-claude-182049858.html",
-     "at": "2026-11-10T13:20-05:00",
      "tags": [
       "AI & chips"
      ]
@@ -335,13 +337,25 @@
  ],
  "market": [
   {
-   "title": "Update: Equities Fall Intraday, Yields Surge Following Inflation Report",
-   "summary": "(Updates with latest market prices and developments.) US stocks fell and bond yields surged intra",
-   "publisher": "MT Newswires",
-   "url": "https://finance.yahoo.com/markets/stocks/articles/equities-fall-intraday-yields-surge-185510206.html",
-   "at": "2026-11-10T13:55-05:00",
+   "title": "Bank of Canada signals more rate hikes may come despite uncertainty",
+   "summary": "Investing.com -- Bank of Canada officials indicated that uncertainties from higher oil prices and the trade war with the United States will not necessarily prevent additional interest rate increases, according to deliberations from their October meeting releas…",
+   "publisher": "Investing.com",
+   "url": "https://finance.yahoo.com/economy/policy/articles/bank-canada-signals-more-rate-193131395.html",
+   "at": "2026-11-10T14:31-05:00",
    "tags": [
-    "Fed & rates"
+    "Fed & rates",
+    "Energy"
+   ]
+  },
+  {
+   "title": "Chip stocks' slide nears $5 trillion as Nvidia hits most extreme selling level since 2019",
+   "summary": "Nvidia and memory stocks are dragging chips lower again after a hot inflation report, even as most S&P 500 stocks hold up.",
+   "publisher": "Yahoo Finance",
+   "url": "https://finance.yahoo.com/markets/article/chip-stocks-slide-nears-5-trillion-as-nvidia-hits-most-extreme-selling-level-since-2019-191532559.html",
+   "at": "2026-11-10T14:15-05:00",
+   "tags": [
+    "Fed & rates",
+    "AI & chips"
    ]
   },
   {
@@ -352,16 +366,6 @@
    "at": "2026-11-10T13:43-05:00",
    "tags": [
     "Energy"
-   ]
-  },
-  {
-   "title": "Update: US Equity Indexes Drop as October's Inflation Print Boosts Fed Policy Tightening Odds",
-   "summary": "(Updates with index/price moves, macroeconomic data and company/geopolitical news from the first par",
-   "publisher": "MT Newswires",
-   "url": "https://finance.yahoo.com/economy/policy/articles/us-equity-indexes-drop-october-183806175.html",
-   "at": "2026-11-10T13:38-05:00",
-   "tags": [
-    "Fed & rates"
    ]
   },
   {
@@ -393,27 +397,6 @@
    "url": "https://finance.yahoo.com/energy/articles/us-oil-output-reach-record-183440109.html",
    "at": "2026-11-10T13:34-05:00",
    "tags": [
-    "Energy"
-   ]
-  },
-  {
-   "title": "U.S. 10-Year Treasury Tops 5% on Expectations of Higher Interest Rates",
-   "summary": "Treasury yields rose with the 10-year benchmark moving above 5%, as hotter-than-expected inflation added to hawkish comments by a Federal Reserve official to fuel bets on a steep interest-rate increase next month.",
-   "publisher": "The Wall Street Journal",
-   "url": "https://www.wsj.com/economy/central-banking/treasury-yields-edge-up-ahead-of-u-s-inflation-data-7a55db79?siteid=yhoof2&yptr=yahoo",
-   "at": "2026-11-10T13:07-05:00",
-   "tags": [
-    "Fed & rates"
-   ]
-  },
-  {
-   "title": "DHT Holdings (DHT) Q3 earnings: what to expect",
-   "summary": "Crude oil tanker operator DHT Holdings (NYSE:DHT) will be reporting earnings this Monday after market hours. Here’s what investors should know.",
-   "publisher": "StockStory",
-   "url": "https://finance.yahoo.com/markets/stocks/articles/dht-holdings-dht-q3-earnings-175736572.html",
-   "at": "2026-11-10T12:57-05:00",
-   "tags": [
-    "Earnings",
     "Energy"
    ]
   },
@@ -460,10 +443,31 @@
     "Earnings",
     "AI & chips"
    ]
+  },
+  {
+   "title": "Pre-Markets Drop on Warmer CPI Numbers: +0.4% Month over Month",
+   "summary": "We see no Inflation Rate (CPI year over year) for October, as the government shutdown from 2025 caused the BLS to skip over October 2025.",
+   "publisher": "Zacks",
+   "url": "https://finance.yahoo.com/economy/policy/articles/pre-markets-drop-warmer-cpi-142000520.html",
+   "at": "2026-11-10T09:20-05:00",
+   "tags": [
+    "Fed & rates",
+    "Policy & politics"
+   ]
+  },
+  {
+   "title": "Exchange-Traded Funds, Equity Futures Mixed Pre-Bell Tuesday Amid October Consumer Inflation Report",
+   "summary": "The broad market exchange-traded fund SPDR S&P 500 ETF Trust (SPY) was up 0.1%, while the actively t",
+   "publisher": "MT Newswires",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/exchange-traded-funds-equity-futures-141241479.html",
+   "at": "2026-11-10T09:12-05:00",
+   "tags": [
+    "Fed & rates"
+   ]
   }
  ],
  "seekingAlpha": {
-  "asOf": "2026-11-10T14:08:58-05:00",
+  "asOf": "2026-11-10T14:39:15-05:00",
   "ok": true,
   "stale": false,
   "via": "seekingalpha.com RSS",
@@ -474,11 +478,144 @@
   },
   "market": [
    {
-    "title": "Novartis releases long-term data for ianalumab in Sjögren’s disease",
-    "url": "https://seekingalpha.com/news/4670032-novartis-releases-long-term-data-ianalumab-sjogrens-disease",
-    "at": "2026-11-10T14:07-05:00",
+    "title": "Beyond Air Q2 Earnings Preview",
+    "url": "https://seekingalpha.com/news/4670057-beyond-air-q2-earnings-preview",
+    "at": "2026-11-10T14:38-05:00",
     "kind": "news",
     "symbols": [],
+    "author": null
+   },
+   {
+    "title": "Reed's Q3 Earnings Preview",
+    "url": "https://seekingalpha.com/news/4670055-reeds-q3-earnings-preview",
+    "at": "2026-11-10T14:34-05:00",
+    "kind": "news",
+    "symbols": [],
+    "author": null
+   },
+   {
+    "title": "Nvidia hires law firm Wachtell Lipton and former US prosecutor to investigate CEO probe",
+    "url": "https://seekingalpha.com/news/4670049-nvidia-hires-law-firm-wachtell-lipton-and-former-us-prosecutor-to-investigate-ceo-probe",
+    "at": "2026-11-10T14:32-05:00",
+    "kind": "news",
+    "symbols": [],
+    "author": null
+   },
+   {
+    "title": "FreightCar America reaffirms 2026 adjusted EBITDA of $15M-$19M as aftermarket revenue rises 65%",
+    "url": "https://seekingalpha.com/news/4670054-freightcar-america-reaffirms-2026-adjusted-ebitda-of-15m-19m-as-aftermarket-revenue-rises-65",
+    "at": "2026-11-10T14:32-05:00",
+    "kind": "news",
+    "symbols": [],
+    "author": null
+   },
+   {
+    "title": "Autolus expects full-year 2026 AUCATZYL net product revenue at or above $150M, as BOBCAT data shifts to October 2027",
+    "url": "https://seekingalpha.com/news/4670053-autolus-expects-full-year-2026-aucatzyl-net-product-revenue-at-or-above-150m-as-bobcat-data",
+    "at": "2026-11-10T14:32-05:00",
+    "kind": "news",
+    "symbols": [],
+    "author": null
+   },
+   {
+    "title": "Ranger targets 24 contracted ECHO rigs by end of 2027 while expecting >$10M of 2027 adjusted EBITDA from STEP coiled tubing assets",
+    "url": "https://seekingalpha.com/news/4670052-ranger-targets-24-contracted-echo-rigs-by-end-of-2027-while-expecting-10m-of-2027-adjusted",
+    "at": "2026-11-10T14:32-05:00",
+    "kind": "news",
+    "symbols": [],
+    "author": null
+   },
+   {
+    "title": "PepGen climbs 100% as BofA upgrades on new mid-stage trial data for lead asset",
+    "url": "https://seekingalpha.com/news/4669695-pepgen-updates-trial-data-muscle-disorder-therapy",
+    "at": "2026-11-10T14:31-05:00",
+    "kind": "news",
+    "symbols": [],
+    "author": null
+   },
+   {
+    "title": "Lazard, Inc. (LAZ) Presents at BMO Capital Markets 2026 Financials Conference Transcript",
+    "url": "https://seekingalpha.com/article/4965869-lazard-inc-laz-presents-at-bmo-capital-markets-2026-financials-conference-transcript",
+    "at": "2026-11-10T14:31-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "LAZ"
+    ],
+    "author": null
+   },
+   {
+    "title": "RTX Corporation (RTX) Presents at Baird 2026 Global Industrial Conference 2026 Transcript",
+    "url": "https://seekingalpha.com/article/4965991-rtx-corporation-rtx-presents-at-baird-2026-global-industrial-conference-2026-transcript",
+    "at": "2026-11-10T14:30-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "RTX",
+     "RTX:CA"
+    ],
+    "author": null
+   },
+   {
+    "title": "Sunrun's Fundamentals Improve, But Weak Sales Make It Tough To Recommend (Rating Upgrade)",
+    "url": "https://seekingalpha.com/article/4965952-sunruns-fundamentals-improve-but-weak-sales-make-it-tough-to-recommend-upgrade",
+    "at": "2026-11-10T14:28-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "RUN"
+    ],
+    "author": null
+   },
+   {
+    "title": "Vodafone: The German Impairment Supports My Earlier Caution And 'Hold'",
+    "url": "https://seekingalpha.com/article/4965951-vodafone-the-german-impairment-supports-my-earlier-caution-and-hold",
+    "at": "2026-11-10T14:28-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "VOD",
+     "VODPF"
+    ],
+    "author": null
+   },
+   {
+    "title": "I Underestimated Dillard's (Rating Upgrade)",
+    "url": "https://seekingalpha.com/article/4965948-i-underestimated-dillards-upgrade",
+    "at": "2026-11-10T14:14-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "DDS"
+    ],
+    "author": null
+   },
+   {
+    "title": "Synchrony Financial (SYF) Presents at KBW Fintech Ecosystem Conference 2026 Transcript",
+    "url": "https://seekingalpha.com/article/4965927-synchrony-financial-syf-presents-at-kbw-fintech-ecosystem-conference-2026-transcript",
+    "at": "2026-11-10T14:11-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "SYF",
+     "SYF.PR.A",
+     "SYF.PR.B"
+    ],
+    "author": null
+   },
+   {
+    "title": "BILL Holdings, Inc. (BILL) Presents at Citi's 15th Annual FinTech Conference Transcript",
+    "url": "https://seekingalpha.com/article/4965888-bill-holdings-inc-bill-presents-at-citis-15th-annual-fintech-conference-transcript",
+    "at": "2026-11-10T14:11-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "BILL"
+    ],
+    "author": null
+   },
+   {
+    "title": "Gilead Sciences, Inc. (GILD) Presents at 8th Annual Wolfe Research Healthcare Conference Transcript",
+    "url": "https://seekingalpha.com/article/4965923-gilead-sciences-inc-gild-presents-at-8th-annual-wolfe-research-healthcare-conference",
+    "at": "2026-11-10T14:11-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "GILD",
+     "GILD:CA"
+    ],
     "author": null
    },
    {
@@ -494,30 +631,6 @@
      "US30Y",
      "JPY:USD"
     ],
-    "author": null
-   },
-   {
-    "title": "Casella outlines plan 303 targeting at least 26% adjusted EBITDA margin by 2029 while guiding 2027 organic revenue growth of approximately 5%",
-    "url": "https://seekingalpha.com/news/4670037-casella-outlines-plan-303-targeting-at-least-26-percent-adjusted-ebitda-margin-by-2029-while",
-    "at": "2026-11-10T14:03-05:00",
-    "kind": "news",
-    "symbols": [],
-    "author": null
-   },
-   {
-    "title": "HighPeak outlines 2026 production of 44,500 to 45,500 BOE/d while advancing refinancing to cut debt to about $650M",
-    "url": "https://seekingalpha.com/news/4670035-highpeak-outlines-2026-production-of-44500-to-45500-boe-d-while-advancing-refinancing-to-cut",
-    "at": "2026-11-10T14:02-05:00",
-    "kind": "news",
-    "symbols": [],
-    "author": null
-   },
-   {
-    "title": "ACCESS Newswire outlines $249-a-month SMB plan as it targets 1,300-1,350 subscribers by year-end",
-    "url": "https://seekingalpha.com/news/4670036-access-newswire-outlines-249-a-month-smb-plan-as-it-targets-1300minus-1350-subscribers-by",
-    "at": "2026-11-10T14:02-05:00",
-    "kind": "news",
-    "symbols": [],
     "author": null
    },
    {
@@ -547,114 +660,6 @@
     "kind": "analysis",
     "symbols": [
      "MTZ"
-    ],
-    "author": null
-   },
-   {
-    "title": "Service Stream Limited (SSMZF) Discusses Programmed Acquisition and Fully Underwritten Equity Raise Transcript",
-    "url": "https://seekingalpha.com/article/4965967-service-stream-limited-ssmzf-discusses-programmed-acquisition-and-fully-underwritten-equity",
-    "at": "2026-11-10T14:01-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "SSMZF"
-    ],
-    "author": null
-   },
-   {
-    "title": "The Trade Desk: Value Trap Becomes AI Road Kill (Rating Downgrade)",
-    "url": "https://seekingalpha.com/article/4965960-the-trade-desk-value-trap-becomes-ai-road-kill-rating-downgrade",
-    "at": "2026-11-10T14:00-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "TTD"
-    ],
-    "author": null
-   },
-   {
-    "title": "OMS Energy: Buying A Profitable Business Near Its Cash Value",
-    "url": "https://seekingalpha.com/article/4965937-oms-energy-buying-a-profitable-business-near-its-cash-value",
-    "at": "2026-11-10T13:59-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "OMSE"
-    ],
-    "author": null
-   },
-   {
-    "title": "Kansas City Fed's Schmid sees no major economic restriction from policy",
-    "url": "https://seekingalpha.com/news/4670010-kansas-city-feds-schmid-sees-no-major-economic-restriction-from-policy",
-    "at": "2026-11-10T13:58-05:00",
-    "kind": "news",
-    "symbols": [],
-    "author": null
-   },
-   {
-    "title": "Wave Life Sciences: Reversing Stock Losses Tricky Despite Near-Term AATD Readout",
-    "url": "https://seekingalpha.com/article/4965935-wave-life-sciences-reversing-stock-losses-tricky-despite-near-term-aatd-readout",
-    "at": "2026-11-10T13:55-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "WVE"
-    ],
-    "author": null
-   },
-   {
-    "title": "MiNK Therapeutics Q3 2026 Earnings Preview",
-    "url": "https://seekingalpha.com/news/4670030-mink-therapeutics-q3-2026-earnings-preview",
-    "at": "2026-11-10T13:52-05:00",
-    "kind": "news",
-    "symbols": [],
-    "author": null
-   },
-   {
-    "title": "Zeta Global shares gain after beat and raise results",
-    "url": "https://seekingalpha.com/news/4670029-zeta-global-shares-gain-after-beat-and-raise-results",
-    "at": "2026-11-10T13:51-05:00",
-    "kind": "news",
-    "symbols": [],
-    "author": null
-   },
-   {
-    "title": "Wall Street Lunch: When $1T Is A Disappointing Number",
-    "url": "https://seekingalpha.com/article/4965780-wall-street-lunch-when-1t-is-a-disappointing-number",
-    "at": "2026-11-10T13:45-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "ANT",
-     "QBTS",
-     "RKLB",
-     "SFTBY",
-     "NVDA"
-    ],
-    "author": null
-   },
-   {
-    "title": "Definium Q3 Earnings: Psychedelics Approval Beckons But Valuation Seems Inflated",
-    "url": "https://seekingalpha.com/article/4965926-definium-q3-earnings-psychedelics-approval-beckons-but-valuation-seems-inflated",
-    "at": "2026-11-10T13:34-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "DFTX"
-    ],
-    "author": null
-   },
-   {
-    "title": "ITT Inc. (ITT) Presents at Baird 2026 Global Industrial Conference 2026 Transcript",
-    "url": "https://seekingalpha.com/article/4965897-itt-inc-itt-presents-at-baird-2026-global-industrial-conference-2026-transcript",
-    "at": "2026-11-10T13:31-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "ITT"
-    ],
-    "author": null
-   },
-   {
-    "title": "Lennox International Inc. (LII) Presents at Baird 2026 Global Industrial Conference 2026 Transcript",
-    "url": "https://seekingalpha.com/article/4965939-lennox-international-inc-lii-presents-at-baird-2026-global-industrial-conference-2026",
-    "at": "2026-11-10T13:31-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "LII"
     ],
     "author": null
    }
@@ -760,39 +765,51 @@
    "url": "https://seekingalpha.com/market-news"
   },
   "note": "Yalnızca başlık ve bağlantı. Yazıların tamamı Seeking Alpha'da; bir kısmı abonelik ister. Yatırım tavsiyesi değildir.",
-  "lastGood": "2026-11-10T14:08:58-05:00"
+  "lastGood": "2026-11-10T14:39:15-05:00"
  },
  "digest": {
   "date": "2026-11-10",
   "title": "Daily brief — Tuesday, November 10, 2026",
-  "generatedAt": "2026-11-10T14:08-05:00",
+  "generatedAt": "2026-11-10T14:39-05:00",
   "bullets": [
    {
     "head": "Markets (latest session)",
-    "text": "S&P 500 -0.55%, Nasdaq 100 -1.05%, Dow -0.38%, Russell 2000 -0.84%. VIX 20.3; 10-yr yield 5.00% (+14 bp); WTI $86.07 (-0.90%); gold $4,035 (-1.93%). Volatility is elevated (VIX above 20). Bond yields jumped, which usually weighs on growth stocks."
+    "text": "S&P 500 -0.56%, Nasdaq 100 -1.11%, Dow -0.33%, Russell 2000 -0.87%. VIX 20.0; 10-yr yield 4.99% (+13 bp); WTI $86.07 (-0.90%); gold $4,039 (-1.84%). Volatility is elevated (VIX above 20). Bond yields jumped, which usually weighs on growth stocks."
    },
    {
     "head": "Trend filter",
-    "text": "The S&P 500 (SPY $748.56) is 2.4% above its 200-day average ($730.70). Basket rule: the momentum basket stays invested. Index sleeve (last daily decision 2026-11-10): long, target +0.71x Nasdaq 100 exposure (25% / 35.3% 20-day volatility, capped at 3x)."
+    "text": "The S&P 500 (SPY $748.51) is 2.4% above its 200-day average ($730.70). Basket rule: the momentum basket stays invested. Index sleeve (last daily decision 2026-11-10): long, target +0.71x Nasdaq 100 exposure (25% / 35.3% 20-day volatility, capped at 3x)."
    },
    {
     "head": "Our portfolio",
-    "text": "Net value $2,853.30 (-1.81% vs the previous close); cash $1,467.66; 2 positions, leverage 0.49x. Best holding today: QQQ -1.17%; weakest: GEV -6.38%."
+    "text": "Net value $2,855.67 (-1.73% vs the previous close); cash $1,467.66; 2 positions, leverage 0.49x. Best holding today: QQQ -1.06%; weakest: GEV -6.01%."
    },
    {
     "head": "Themes in today's headlines",
-    "text": "AI & chips (14), Fed & rates (9), Earnings (8), Energy (5)."
+    "text": "AI & chips (14), Fed & rates (11), Earnings (8), Energy (5)."
    }
   ],
   "headlines": [
    {
-    "title": "Update: Equities Fall Intraday, Yields Surge Following Inflation Report",
-    "url": "https://finance.yahoo.com/markets/stocks/articles/equities-fall-intraday-yields-surge-185510206.html",
-    "publisher": "MT Newswires",
-    "at": "2026-11-10T13:55-05:00",
-    "summary": "(Updates with latest market prices and developments.) US stocks fell and bond yields surged intra",
+    "title": "Bank of Canada signals more rate hikes may come despite uncertainty",
+    "url": "https://finance.yahoo.com/economy/policy/articles/bank-canada-signals-more-rate-193131395.html",
+    "publisher": "Investing.com",
+    "at": "2026-11-10T14:31-05:00",
+    "summary": "Investing.com -- Bank of Canada officials indicated that uncertainties from higher oil prices and the trade war with the United States will not necessarily prevent additional interest rate increases, …",
     "tags": [
-     "Fed & rates"
+     "Fed & rates",
+     "Energy"
+    ]
+   },
+   {
+    "title": "Chip stocks' slide nears $5 trillion as Nvidia hits most extreme selling level since 2019",
+    "url": "https://finance.yahoo.com/markets/article/chip-stocks-slide-nears-5-trillion-as-nvidia-hits-most-extreme-selling-level-since-2019-191532559.html",
+    "publisher": "Yahoo Finance",
+    "at": "2026-11-10T14:15-05:00",
+    "summary": "Nvidia and memory stocks are dragging chips lower again after a hot inflation report, even as most S&P 500 stocks hold up.",
+    "tags": [
+     "Fed & rates",
+     "AI & chips"
     ]
    },
    {
@@ -803,16 +820,6 @@
     "summary": "By Scott DiSavino NEW YORK, Nov 10 (Reuters) - Oil prices eased to a two-month low on Tuesday after US officials downplayed the need for additional military action against Iran, easing fears of",
     "tags": [
      "Energy"
-    ]
-   },
-   {
-    "title": "Update: US Equity Indexes Drop as October's Inflation Print Boosts Fed Policy Tightening Odds",
-    "url": "https://finance.yahoo.com/economy/policy/articles/us-equity-indexes-drop-october-183806175.html",
-    "publisher": "MT Newswires",
-    "at": "2026-11-10T13:38-05:00",
-    "summary": "(Updates with index/price moves, macroeconomic data and company/geopolitical news from the first par",
-    "tags": [
-     "Fed & rates"
     ]
    },
    {
@@ -829,17 +836,17 @@
   "movers": [
    {
     "ticker": "GEV",
-    "changePct": -6.38,
+    "changePct": -6.01,
     "title": "Sector Update: Energy Stocks Mixed Tuesday Afternoon",
     "url": "https://finance.yahoo.com/energy/articles/sector-energy-stocks-mixed-tuesday-182754599.html",
     "publisher": "MT Newswires"
    },
    {
     "ticker": "QQQ",
-    "changePct": -1.17,
-    "title": "Exchange-Traded Funds Lower as US Equities Decline After Midday",
-    "url": "https://finance.yahoo.com/markets/articles/exchange-traded-funds-lower-us-181343803.html",
-    "publisher": "MT Newswires"
+    "changePct": -1.06,
+    "title": "Fed Official Warns Americans to Brace for Costlier Loans This Winter",
+    "url": "https://finance.yahoo.com/economy/policy/articles/fed-official-warns-americans-brace-192348284.html",
+    "publisher": "GuruFocus.com"
    }
   ],
   "note": "Generated automatically from market data, the bot's ledger and the headline feeds (rule-based, no AI). Not investment advice."
