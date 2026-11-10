@@ -111,16 +111,16 @@
     "shares": 1.6461,
     "avgCost": 695.4676,
     "costBasis": 1144.81,
-    "lastPrice": 673.61,
-    "lastPriceAt": "2026-11-10T15:45:00-05:00",
+    "lastPrice": 675.14,
+    "lastPriceAt": "2026-11-10T15:55:00-05:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (15:45 ET)",
+     "title": "Yahoo Finance 5 dk mum (15:55 ET)",
      "url": "https://finance.yahoo.com/quote/QQQ/"
     },
-    "marketValue": 1108.83,
-    "exposure": 1108.83,
-    "unrealized": -35.98,
-    "unrealizedPct": -3.14,
+    "marketValue": 1111.35,
+    "exposure": 1111.35,
+    "unrealized": -33.46,
+    "unrealizedPct": -2.92,
     "openedAt": "2026-11-02",
     "openedTs": "2026-11-02T09:50:00-05:00",
     "lastAddDate": "2026-11-02",
@@ -128,7 +128,7 @@
     "extremeSinceEntry": 695.1199951171875,
     "tookProfit": false,
     "thesis": "Endeks kolu, QQQ (1x): 0,00 $ → 1.396,50 $. Endeks kolu yönü YUKARI: SPY dünkü kapanış 755,72 $, 200 günlük ortalama 728,85 $ (+%3,69), 50 günlük ortalama 767,49 $. QQQ'nun 20 günlük oynaklığı yıllık %22,6; büyüklük %25 ÷ %22,6 = 1,10x. Hedef maruziyet +1,10x.",
-    "maintReq": 277.21,
+    "maintReq": 277.84,
     "taxBasisAdj": 8.79
    },
    {
@@ -141,21 +141,21 @@
     "shares": 0.3612,
     "avgCost": 784.372,
     "costBasis": 283.32,
-    "lastPrice": 787.555,
-    "lastPriceAt": "2026-11-10T15:45:00-05:00",
+    "lastPrice": 794.645,
+    "lastPriceAt": "2026-11-10T15:55:00-05:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (15:45 ET)",
+     "title": "Yahoo Finance 5 dk mum (15:55 ET)",
      "url": "https://finance.yahoo.com/quote/GEV/"
     },
-    "marketValue": 284.46,
-    "exposure": 284.46,
-    "unrealized": 1.14,
-    "unrealizedPct": 0.4,
+    "marketValue": 287.03,
+    "exposure": 287.03,
+    "unrealized": 3.71,
+    "unrealizedPct": 1.31,
     "openedAt": "2026-11-10",
     "openedTs": "2026-11-10T10:30:00-05:00",
     "lastAddDate": "2026-11-10",
     "stopPrice": 746.25,
-    "extremeSinceEntry": 788.635,
+    "extremeSinceEntry": 795.23,
     "tookProfit": false,
     "thesis": "Haber şoku: GEV önceki kapanışa (829,34 $) göre −%8,90 düşüşle açıldı, ilk saatte +%3,93 toparlandı: piyasa haberin ilk tepkisini abartılı buldu. Kural gereği long açıldı. Zarar-kes 746,25 $ (ilk saatin en düşüğünün hemen ötesi, risk %5,1); çıkış 2026-11-12 kapanışında. Büyüklük: haber kolunun %20'i, zarar-keste kaybı kolun yaklaşık %1'i. Haber: “Venture Global CEO Eyes New Growth Opportunity In Off-Grid Power For AI Data Centers – Firm Raises FY2026 Guidance After Record Q3 Earnings” (Stocktwits).",
     "sleeve": "event",
@@ -174,8 +174,8 @@
      "publisher": "Stocktwits",
      "at": "2026-11-10T13:33:49+00:00"
     },
-    "maintReq": 71.12,
-    "lastBarTs": "2026-11-10T15:45:00-05:00"
+    "maintReq": 71.76,
+    "lastBarTs": "2026-11-10T15:55:00-05:00"
    }
   ],
   "realizedPL": -100.58,
@@ -189,26 +189,26 @@
    "dividendsPaid": 0.0,
    "dividendsReceived": 0.0
   },
-  "longValue": 1393.29,
+  "longValue": 1398.37,
   "shortValue": 0.0,
-  "positionsValue": 1393.29,
-  "totalValue": 2860.95,
-  "grossExposure": 1393.29,
-  "netExposure": 1393.29,
-  "leverage": 0.487,
-  "maintenanceReq": 348.33,
-  "marginBuffer": 2512.62,
-  "regTInitialReq": 696.65,
-  "regTExcess": 2164.3,
-  "buyingPower": 4328.61,
+  "positionsValue": 1398.37,
+  "totalValue": 2866.03,
+  "grossExposure": 1398.37,
+  "netExposure": 1398.37,
+  "leverage": 0.488,
+  "maintenanceReq": 349.6,
+  "marginBuffer": 2516.43,
+  "regTInitialReq": 699.19,
+  "regTExcess": 2166.84,
+  "buyingPower": 4333.69,
   "marginEligible": true,
-  "totalPL": -139.05,
-  "totalPLPct": -4.64,
-  "twrPct": -4.64,
-  "asOf": "2026-11-10T15:46:20-05:00",
-  "benchmarkPrice": 749.56,
-  "benchmarkValue": 2993.01,
-  "benchmarkTwrPct": -0.23
+  "totalPL": -133.97,
+  "totalPLPct": -4.47,
+  "twrPct": -4.47,
+  "asOf": "2026-11-10T15:56:24-05:00",
+  "benchmarkPrice": 750.25,
+  "benchmarkValue": 2995.77,
+  "benchmarkTwrPct": -0.14
  },
  "meta": {
   "engine": "trend-event v6",
@@ -223,9 +223,9 @@
    "ath": 759.66,
    "athDate": "2026-10-06",
    "athChecked": "2026-11-10",
-   "price": 673.61,
-   "at": "2026-11-10T15:45:00-05:00",
-   "ddPct": -11.33,
+   "price": 675.14,
+   "at": "2026-11-10T15:55:00-05:00",
+   "ddPct": -11.13,
    "level": "correction",
    "triggerPrice": 607.73,
    "correctionPrice": 683.69
@@ -256,7 +256,7 @@
     "2026-11-10"
    ]
   },
-  "lastRunAt": "2026-11-10T15:46:20-05:00",
+  "lastRunAt": "2026-11-10T15:56:24-05:00",
   "lastError": null,
   "spikeScanDate": "2026-11-10",
   "spikeScan": {
@@ -1336,26 +1336,26 @@
   },
   {
    "date": "2026-11-10",
-   "at": "2026-11-10T15:46:20-05:00",
-   "totalValue": 2860.95,
+   "at": "2026-11-10T15:56:24-05:00",
+   "totalValue": 2866.03,
    "cash": 1467.66,
-   "positionsValue": 1393.29,
-   "plPct": -4.64,
-   "twrPct": -4.64,
+   "positionsValue": 1398.37,
+   "plPct": -4.47,
+   "twrPct": -4.47,
    "netDeposits": 3000.0,
-   "leverage": 0.487,
-   "benchmarkPrice": 749.56,
-   "benchmarkValue": 2993.01,
+   "leverage": 0.488,
+   "benchmarkPrice": 750.25,
+   "benchmarkValue": 2995.77,
    "holdings": [
     {
      "ticker": "QQQ",
      "side": "long",
-     "value": 1108.83
+     "value": 1111.35
     },
     {
      "ticker": "GEV",
      "side": "long",
-     "value": 284.46
+     "value": 287.03
     }
    ]
   }
@@ -16951,6 +16951,68 @@
     ],
     "actions": [],
     "note": "Normal: pozisyonlar zarar-kese %5,5–%5,5 uzakta, kaldıraç 0,49x, SPY −%0,42; işlem gerekmedi."
+   },
+   {
+    "at": "2026-11-10T15:51:23-05:00",
+    "kind": "guard",
+    "status": "normal",
+    "spyPrice": 751.08,
+    "spyChangePct": -0.21,
+    "totalValue": 2866.94,
+    "benchmarkValue": 2999.08,
+    "leverage": 0.488,
+    "marginBuffer": 2517.12,
+    "positions": [
+     {
+      "ticker": "QQQ",
+      "side": "long",
+      "price": 675.76,
+      "dayChangePct": -0.53,
+      "stopPrice": null,
+      "distancePct": null
+     },
+     {
+      "ticker": "GEV",
+      "side": "long",
+      "price": 794.33,
+      "dayChangePct": -4.22,
+      "stopPrice": 746.25,
+      "distancePct": 6.44
+     }
+    ],
+    "actions": [],
+    "note": "Normal: pozisyonlar zarar-kese %6,4–%6,4 uzakta, kaldıraç 0,49x, SPY −%0,21; işlem gerekmedi."
+   },
+   {
+    "at": "2026-11-10T15:56:24-05:00",
+    "kind": "guard",
+    "status": "normal",
+    "spyPrice": 750.25,
+    "spyChangePct": -0.32,
+    "totalValue": 2866.03,
+    "benchmarkValue": 2995.77,
+    "leverage": 0.488,
+    "marginBuffer": 2516.43,
+    "positions": [
+     {
+      "ticker": "QQQ",
+      "side": "long",
+      "price": 675.14,
+      "dayChangePct": -0.62,
+      "stopPrice": null,
+      "distancePct": null
+     },
+     {
+      "ticker": "GEV",
+      "side": "long",
+      "price": 794.645,
+      "dayChangePct": -4.18,
+      "stopPrice": 746.25,
+      "distancePct": 6.49
+     }
+    ],
+    "actions": [],
+    "note": "Normal: pozisyonlar zarar-kese %6,5–%6,5 uzakta, kaldıraç 0,49x, SPY −%0,32; işlem gerekmedi."
    }
   ]
  },
@@ -19068,7 +19130,7 @@
   "start": "2026-10-30",
   "startAt": "2026-10-30T15:50:43-04:00",
   "end": "2027-01-28",
-  "asOf": "2026-11-10T15:46:20-05:00",
+  "asOf": "2026-11-10T15:56:24-05:00",
   "strategy": "v6",
   "history": [
    {
@@ -19132,12 +19194,12 @@
   "daysElapsed": 8,
   "daysTotal": 61,
   "finished": false,
-  "returnPct": -4.64,
-  "spyReturnPct": -0.23,
-  "excessPct": -4.4,
+  "returnPct": -4.47,
+  "spyReturnPct": -0.14,
+  "excessPct": -4.32,
   "maxDrawdownPct": -6.03,
   "maxDrawdownAt": "2026-11-10T12:42:52-05:00",
-  "drawdownNowPct": -5.48,
+  "drawdownNowPct": -5.31,
   "trades": {
    "closed": 9,
    "wins": 2,
@@ -19156,9 +19218,9 @@
    },
    {
     "month": "2026-11",
-    "returnPct": -4.64,
-    "spyPct": -0.24,
-    "excessPct": -4.4
+    "returnPct": -4.47,
+    "spyPct": -0.15,
+    "excessPct": -4.32
    }
   ],
   "uptime": {
@@ -19177,7 +19239,7 @@
     "key": "spy",
     "label": "SPY'ı geçmek (masraflar düşülmüş)",
     "ok": false,
-    "value": -4.4,
+    "value": -4.32,
     "unit": "pct"
    },
    {
