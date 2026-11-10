@@ -1,12 +1,12 @@
 {
- "asOf": "2026-11-10T11:19:19-05:00",
+ "asOf": "2026-11-10T11:37:35-05:00",
  "sections": [
   {
    "ticker": "QQQ",
    "name": "Invesco QQQ (Nasdaq 100)",
    "role": "long",
-   "dayChangePct": -0.83,
-   "unrealizedPct": -3.13,
+   "dayChangePct": -0.91,
+   "unrealizedPct": -3.2,
    "items": [
     {
      "title": "Stock Market Today: Dow Dips On Hot Inflation Data; Nvidia Falls Again, Anthropic Sets IPO Range (Live Coverage)",
@@ -58,9 +58,21 @@
    "ticker": "GEV",
    "name": "GE Vernova",
    "role": "long",
-   "dayChangePct": -6.61,
-   "unrealizedPct": -1.26,
+   "dayChangePct": -6.58,
+   "unrealizedPct": -1.23,
    "items": [
+    {
+     "title": "GE Vernova, Vertiv, and Bloom Energy Just Lost 10% to 24% in a Week. Here's What Set Off the AI Power Sell-off.",
+     "summary": "GE Vernova, Vertiv, and Bloom Energy slid on inflation and AI financing worries, yet each posted strong third-quarter results. See how they compare.",
+     "publisher": "Motley Fool",
+     "url": "https://www.fool.com/investing/2026/11/10/ge-vernova-vertiv-and-bloom-energy-just-lost-10-to/",
+     "at": "2026-11-10T11:20-05:00",
+     "tags": [
+      "Fed & rates",
+      "Earnings",
+      "AI & chips"
+     ]
+    },
     {
      "title": "Venture Global CEO Eyes New Growth Opportunity In Off-Grid Power For AI Data Centers – Firm Raises FY2026 Guidance After Record Q3 Earnings",
      "summary": "Venture Global’s Q3 revenue surged 43%, while EPS exceeded consensus estimates of $0.52.",
@@ -92,14 +104,6 @@
      "tags": [
       "AI & chips"
      ]
-    },
-    {
-     "title": "Energy Transition Today - Cleantech Innovation Fuels Economic Growth and Competitiveness",
-     "summary": "Foresight Canada has announced the 2026 Foresight 50 Honorees, highlighting a group of high-growth cleantech companies that are driving the energy transition with their innovative solutions. These companies, selected by an independent panel of climate investor…",
-     "publisher": "Simply Wall St.",
-     "url": "https://finance.yahoo.com/energy/articles/energy-transition-today-cleantech-innovation-113727984.html",
-     "at": "2026-11-10T06:37-05:00",
-     "tags": []
     }
    ]
   },
@@ -196,11 +200,11 @@
      ]
     },
     {
-     "title": "Nvidia is the Only Chip Stock in the Red",
-     "summary": "Nvidia Slides on the Jensen Huang Probe. AMD, Broadcom, and Taiwan Semiconductor Move Higher",
-     "publisher": "GuruFocus.com",
-     "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-only-chip-stock-red-141821143.html",
-     "at": "2026-11-10T09:18-05:00",
+     "title": "Anthropic targets valuation around $1T in blockbuster AI IPO, below initial expectation",
+     "summary": "Anthropic's IPO targets up to $1.02 trillion, falling well short of the $1.5 trillion valuation previously discussed as Wall Street reassesses AI costs.",
+     "publisher": "Fox Business",
+     "url": "https://www.foxbusiness.com/markets/anthropic-targets-valuation-around-1t-blockbuster-ai-ipo-below-initial-expectation",
+     "at": "2026-11-10T09:24-05:00",
      "tags": [
       "AI & chips"
      ]
@@ -261,6 +265,14 @@
    "unrealizedPct": null,
    "items": [
     {
+     "title": "Palo Alto Networks (PANW) Following Clutch Security Talks Has Its Valuation Back In Focus",
+     "summary": "Palo Alto Networks (PANW) is back in focus after reports surfaced that the cybersecurity provider is in talks to buy Clutch Security for about US$500 million, a potential move that could reshape investor expectations. The share price tells a mixed story. Palo …",
+     "publisher": "Simply Wall St.",
+     "url": "https://finance.yahoo.com/markets/stocks/articles/palo-alto-networks-panw-following-160814643.html",
+     "at": "2026-11-10T11:08-05:00",
+     "tags": []
+    },
+    {
      "title": "ETFs Bought $59.4 Million of Palo Alto Networks (PANW) on Nov. 6",
      "summary": "57 ETFs bought shares of Palo Alto Networks versus 19 that sold on Friday.",
      "publisher": "GuruFocus.com",
@@ -284,18 +296,6 @@
      "at": "2026-11-09T13:07-05:00",
      "tags": [
       "Earnings"
-     ]
-    },
-    {
-     "title": "Datadog Sinks 17% in a Week Despite “Strong Adoption Across Our Platform”",
-     "summary": "Key TakeawaysDatadog stock fell 17% in a week to $179, as a flat fourth-quarter revenue guide overshadowed 35% third-quarter growth. The guide assumes its largest AI customer pays only its contract minimum, while growth from everyone else is implied in the low…",
-     "publisher": "TIKR",
-     "url": "https://www.tikr.com/blog/datadog-sinks-17-in-a-week-despite-strong-adoption-across-our-platform?ref=yahoofinance&tlnk=yf-261109-m5wrv4h8",
-     "at": "2026-11-09T12:22-05:00",
-     "tags": [
-      "Earnings",
-      "AI & chips",
-      "Corporate"
      ]
     }
    ]
@@ -350,6 +350,16 @@
   }
  ],
  "market": [
+  {
+   "title": "Oil prices hit two-month lows as US downplays further Iran strikes",
+   "summary": "By Scott DiSavino NEW YORK, Nov 10 (Reuters) - Oil prices slid about 2% to fresh two-month lows on Tuesday after US officials downplayed the need for additional military action against Iran, easing",
+   "publisher": "Reuters",
+   "url": "https://finance.yahoo.com/news/oil-falls-trump-downplays-prospect-014322571.html",
+   "at": "2026-11-10T11:15-05:00",
+   "tags": [
+    "Energy"
+   ]
+  },
   {
    "title": "Fed’s Goolsbee Says AI Data Centers Look Like ‘Old-Fashioned Overheating’",
    "summary": "Stocks surged while short-term bonds quietly flashed the opposite signal. One Fed official's warning about AI spending suggests the market may be reading the same data in two very different ways, and retirement portfolios sit in the middle.",
@@ -464,84 +474,123 @@
    "tags": [
     "Fed & rates"
    ]
-  },
-  {
-   "title": "Tech stocks rally as Nvidia stock and oil prices fall: AlphaCheck",
-   "summary": "Tech rallied as Nvidia shares dropped on Monday.",
-   "publisher": "Yahoo Finance",
-   "url": "https://finance.yahoo.com/markets/article/tech-stocks-rally-as-nvidia-stock-and-oil-prices-fall-alphacheck-152208023.html",
-   "at": "2026-11-09T10:22-05:00",
-   "tags": [
-    "Energy",
-    "AI & chips"
-   ]
   }
  ],
  "seekingAlpha": {
-  "asOf": "2026-11-10T11:19:19-05:00",
+  "asOf": "2026-11-10T11:37:35-05:00",
   "ok": true,
   "stale": false,
   "via": "seekingalpha.com RSS",
   "errors": [],
   "feedCounts": {
    "Piyasa haberleri": 7,
-   "Tüm yazılar": 19
+   "Tüm yazılar": 16
   },
   "market": [
    {
-    "title": "MARA Holdings advances 11% after Q3 results and buyback plan",
-    "url": "https://seekingalpha.com/news/4669874-mara-holdings-advances-11-after-q3-results-and-buyback-plan",
-    "at": "2026-11-10T11:16-05:00",
+    "title": "Enerpac Tool Group Corp. (EPAC) Presents at Baird 2026 Global Industrial Conference 2026 - Slideshow",
+    "url": "https://seekingalpha.com/article/4965871-enerpac-tool-group-corp-epac-presents-at-baird-2026-global-industrial-conference-2026",
+    "at": "2026-11-10T11:35-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "EPAC"
+    ],
+    "author": null
+   },
+   {
+    "title": "GMR narrows 2026 revenue outlook to $5.9B-$6.05B while maintaining adjusted EBITDA of $1.135B-$1.195B",
+    "url": "https://seekingalpha.com/news/4669963-gmr-narrows-2026-revenue-outlook-to-5_9b-6_05b-while-maintaining-adjusted-ebitda-of-1_135b",
+    "at": "2026-11-10T11:32-05:00",
     "kind": "news",
     "symbols": [],
     "author": null
    },
    {
-    "title": "McEwen tumbles 18% after third-quarter revenue miss",
-    "url": "https://seekingalpha.com/news/4669879-mcewen-tumbles-18-after-third-quarter-revenue-miss",
-    "at": "2026-11-10T11:16-05:00",
+    "title": "Greystone Housing impact Investors signals portfolio rotation progress following $23.6M Loveland sale proceeds",
+    "url": "https://seekingalpha.com/news/4669964-greystone-housing-impact-investors-signals-portfolio-rotation-progress-following-23_6m",
+    "at": "2026-11-10T11:32-05:00",
     "kind": "news",
     "symbols": [],
     "author": null
    },
    {
-    "title": "Ukrainian drone strikes are said to disrupt 30% of Russia's oil refining",
-    "url": "https://seekingalpha.com/news/4669957-ukrainian-drone-strikes-are-said-to-disrupt-30-percent-of-russias-oil-refining",
-    "at": "2026-11-10T11:15-05:00",
+    "title": "Ampco-Pittsburgh signals debt paydown ahead of $8M-$10M 2026 target as backlog rises to $379.5M",
+    "url": "https://seekingalpha.com/news/4669962-ampco-pittsburgh-signals-debt-paydown-ahead-of-8m-10m-2026-target-as-backlog-rises-to-379_5m",
+    "at": "2026-11-10T11:32-05:00",
     "kind": "news",
     "symbols": [],
     "author": null
    },
    {
-    "title": "Alta outlines 2026 adjusted EBITDA of $165M-$170M as material handling deliveries shift into early 2027",
-    "url": "https://seekingalpha.com/news/4669956-alta-outlines-2026-adjusted-ebitda-of-165m-170m-as-material-handling-deliveries-shift-into",
-    "at": "2026-11-10T11:12-05:00",
+    "title": "Alliance Laundry signals 2026 adjusted EBITDA growth of ~10% while maintaining 6%-7% revenue growth outlook",
+    "url": "https://seekingalpha.com/news/4669961-alliance-laundry-signals-2026-adjusted-ebitda-growth-of-10-percent-while-maintaining-6",
+    "at": "2026-11-10T11:32-05:00",
     "kind": "news",
     "symbols": [],
     "author": null
    },
    {
-    "title": "Lineage expects $1.25B-$1.27B 2026 adjusted EBITDA while targeting 5.0x-5.5x leverage",
-    "url": "https://seekingalpha.com/news/4669954-lineage-expects-1_25b-1_27b-2026-adjusted-ebitda-while-targeting-5_0xminus-5_5x-leverage",
-    "at": "2026-11-10T11:12-05:00",
+    "title": "Small businesses plan price hikes at highest rate since July 2022 - NFIB survey",
+    "url": "https://seekingalpha.com/news/4669960-small-businesses-plan-price-hikes-at-highest-rate-since-july-2022---nfib-survey",
+    "at": "2026-11-10T11:32-05:00",
     "kind": "news",
     "symbols": [],
     "author": null
    },
    {
-    "title": "InfuSystem reaffirms 2026 pro forma revenue growth of 6% to 8% while scaling wound care",
-    "url": "https://seekingalpha.com/news/4669955-infusystem-reaffirms-2026-pro-forma-revenue-growth-of-6-percent-to-8-percent-while-scaling",
-    "at": "2026-11-10T11:12-05:00",
+    "title": "ING's Latest Views On The Major Central Banks",
+    "url": "https://seekingalpha.com/article/4965851-ings-latest-views-on-major-central-banks",
+    "at": "2026-11-10T11:30-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "TLT",
+     "TLH",
+     "EDV",
+     "SPTL",
+     "ZROZ",
+     "VGLT"
+    ],
+    "author": null
+   },
+   {
+    "title": "As Good As It Gets For The Dollar: 3 Calls For FX",
+    "url": "https://seekingalpha.com/article/4965818-as-good-as-it-gets-dollar-3-calls-fx",
+    "at": "2026-11-10T11:29-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "DXY",
+     "USDU",
+     "UUP",
+     "UDN",
+     "EUR:USD",
+     "USD:JPY"
+    ],
+    "author": null
+   },
+   {
+    "title": "Harrow stock jumps as eye-care products deliver record Q3 sales",
+    "url": "https://seekingalpha.com/news/4669816-harrow-stock-jumps-as-eye-care-products-deliver-record-q3-sales",
+    "at": "2026-11-10T11:22-05:00",
     "kind": "news",
     "symbols": [],
     "author": null
    },
    {
-    "title": "Lucid Group climbs 13% on Q3 results and liquidity update",
-    "url": "https://seekingalpha.com/news/4669873-lucid-group-climbs-13-on-q3-results-and-liquidity-update",
-    "at": "2026-11-10T11:11-05:00",
+    "title": "Rackspace targets 20 to 22 megawatts of AI compute by end of 2027 as it raises 2026 revenue outlook to $2.51B-$2.56B",
+    "url": "https://seekingalpha.com/news/4669959-rackspace-targets-20-to-22-megawatts-of-ai-compute-by-end-of-2027-as-it-raises-2026-revenue",
+    "at": "2026-11-10T11:22-05:00",
     "kind": "news",
     "symbols": [],
+    "author": null
+   },
+   {
+    "title": "Nexstar Media: Political Windfalls Build With Potential TEGNA Upside",
+    "url": "https://seekingalpha.com/article/4965817-nexstar-media-political-windfalls-build-with-potential-tegna-upside",
+    "at": "2026-11-10T11:22-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "NXST"
+    ],
     "author": null
    },
    {
@@ -629,50 +678,6 @@
      "OPFI"
     ],
     "author": null
-   },
-   {
-    "title": "ADX: Buy The Dip Because The Distributions Are Already Paid For",
-    "url": "https://seekingalpha.com/article/4965778-adx-buy-the-dip-because-the-distributions-are-already-paid-for",
-    "at": "2026-11-10T10:45-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "QQQI",
-     "SCHD",
-     "ADX"
-    ],
-    "author": null
-   },
-   {
-    "title": "COMT: Why High Oil Backwardation Supports A Buy Rating",
-    "url": "https://seekingalpha.com/article/4965777-comt-why-high-oil-backwardation-supports-a-buy-rating",
-    "at": "2026-11-10T10:42-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "COMT"
-    ],
-    "author": null
-   },
-   {
-    "title": "KULR Technology Group, Inc. (KULR) Q3 2026 Earnings Call Prepared Remarks Transcript",
-    "url": "https://seekingalpha.com/article/4965829-kulr-technology-group-inc-kulr-q3-2026-earnings-call-prepared-remarks-transcript",
-    "at": "2026-11-10T10:41-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "KULR"
-    ],
-    "author": null
-   },
-   {
-    "title": "MADE Vs. WELD: The Best ETF For America's Factory Boom",
-    "url": "https://seekingalpha.com/article/4965766-made-vs-weld-the-best-etf-for-americas-factory-boom",
-    "at": "2026-11-10T10:39-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "XLI",
-     "MADE",
-     "WELD"
-    ],
-    "author": null
    }
   ],
   "tickers": [
@@ -680,6 +685,21 @@
     "ticker": "QQQ",
     "role": "long",
     "items": [
+     {
+      "title": "The Hot October CPI Report May Mean Much Higher Rates And Lower Stocks",
+      "url": "https://seekingalpha.com/article/4965845-the-hot-october-cpi-report-may-mean-much-higher-rates-and-lower-stocks",
+      "at": "2026-11-10T11:30-05:00",
+      "kind": "analysis",
+      "symbols": [
+       "AFMC",
+       "AFSM",
+       "ARKK",
+       "AVUV",
+       "BAPR",
+       "IVOO"
+      ],
+      "author": "Mott Capital Management"
+     },
      {
       "title": "Hotter U.S. Inflation Strengthens The Case For A December Fed Hike",
       "url": "https://seekingalpha.com/article/4965815-hotter-us-inflation-strengthens-case-december-fed-hike",
@@ -724,21 +744,6 @@
        "IVOO"
       ],
       "author": "Bashar Issa"
-     },
-     {
-      "title": "The market is seeing a reset, not a bubble – Oppenheimer",
-      "url": "https://seekingalpha.com/news/4669859",
-      "at": "2026-11-10T10:17-05:00",
-      "kind": "news",
-      "symbols": [
-       "QQQ",
-       "QLD",
-       "QID",
-       "TQQQ",
-       "SQQQ",
-       "QQQM"
-      ],
-      "author": "Monica L. Correa"
      }
     ]
    },
@@ -776,31 +781,41 @@
    "url": "https://seekingalpha.com/market-news"
   },
   "note": "Yalnızca başlık ve bağlantı. Yazıların tamamı Seeking Alpha'da; bir kısmı abonelik ister. Yatırım tavsiyesi değildir.",
-  "lastGood": "2026-11-10T11:19:19-05:00"
+  "lastGood": "2026-11-10T11:37:35-05:00"
  },
  "digest": {
   "date": "2026-11-10",
   "title": "Daily brief — Tuesday, November 10, 2026",
-  "generatedAt": "2026-11-10T11:19-05:00",
+  "generatedAt": "2026-11-10T11:37-05:00",
   "bullets": [
    {
     "head": "Markets (latest session)",
-    "text": "S&P 500 -0.68%, Nasdaq 100 -0.80%, Dow -0.65%, Russell 2000 -1.31%. VIX 20.6; 10-yr yield 4.99% (+12 bp); WTI $85.72 (-1.30%); gold $4,050 (-1.57%). Volatility is elevated (VIX above 20). Bond yields jumped, which usually weighs on growth stocks."
+    "text": "S&P 500 -0.73%, Nasdaq 100 -1.03%, Dow -0.67%, Russell 2000 -1.30%. VIX 20.7; 10-yr yield 5.00% (+13 bp); WTI $86.65 (-0.23%); gold $4,033 (-1.98%). Volatility is elevated (VIX above 20). Bond yields jumped, which usually weighs on growth stocks."
    },
    {
     "head": "Trend filter",
-    "text": "The S&P 500 (SPY $747.60) is 2.3% above its 200-day average ($730.70). Basket rule: the momentum basket stays invested. Index sleeve (last daily decision 2026-11-10): long, target +0.71x Nasdaq 100 exposure (25% / 35.3% 20-day volatility, capped at 3x)."
+    "text": "The S&P 500 (SPY $747.21) is 2.3% above its 200-day average ($730.70). Basket rule: the momentum basket stays invested. Index sleeve (last daily decision 2026-11-10): long, target +0.71x Nasdaq 100 exposure (25% / 35.3% 20-day volatility, capped at 3x)."
    },
    {
     "head": "Our portfolio",
-    "text": "Net value $2,856.40 (-1.70% vs the previous close); cash $1,467.66; 2 positions, leverage 0.49x. Best holding today: QQQ -0.83%; weakest: GEV -6.61%."
+    "text": "Net value $2,855.66 (-1.73% vs the previous close); cash $1,467.66; 2 positions, leverage 0.49x. Best holding today: QQQ -0.91%; weakest: GEV -6.58%."
    },
    {
     "head": "Themes in today's headlines",
-    "text": "AI & chips (16), Fed & rates (9), Earnings (6), Energy (5)."
+    "text": "AI & chips (17), Fed & rates (10), Earnings (7), Energy (6)."
    }
   ],
   "headlines": [
+   {
+    "title": "Oil prices hit two-month lows as US downplays further Iran strikes",
+    "url": "https://finance.yahoo.com/news/oil-falls-trump-downplays-prospect-014322571.html",
+    "publisher": "Reuters",
+    "at": "2026-11-10T11:15-05:00",
+    "summary": "By Scott DiSavino NEW YORK, Nov 10 (Reuters) - Oil prices slid about 2% to fresh two-month lows on Tuesday after US officials downplayed the need for additional military action against Iran, easing",
+    "tags": [
+     "Energy"
+    ]
+   },
    {
     "title": "Fed’s Goolsbee Says AI Data Centers Look Like ‘Old-Fashioned Overheating’",
     "url": "https://247wallst.com/investing/2026/11/10/feds-goolsbee-says-ai-data-centers-look-like-old-fashioned-overheating/",
@@ -832,29 +847,19 @@
      "Fed & rates",
      "AI & chips"
     ]
-   },
-   {
-    "title": "U.S. Gas Prices Fall Below Key Threshold For The First Time Since July as Oil Keeps Dropping",
-    "url": "https://www.ibtimes.com/us-gas-prices-fall-below-four-dollars-3809604",
-    "publisher": "International Business Times",
-    "at": "2026-11-10T10:18-05:00",
-    "summary": "Seasonal factors including the end of summer driving and Daylight Saving Time also played a role in the decrease.",
-    "tags": [
-     "Energy"
-    ]
    }
   ],
   "movers": [
    {
     "ticker": "GEV",
-    "changePct": -6.61,
-    "title": "Venture Global CEO Eyes New Growth Opportunity In Off-Grid Power For AI Data Centers – Firm Raises FY2026 Guidance After Record Q3 Earnings",
-    "url": "https://stocktwits.com/news-articles/markets/equity/venture-global-ceo-eyes-new-growth-opportunity-off-grid-power-raises-fy2026-guidance-record-q3-earnings/cNGuSNYR9JG",
-    "publisher": "Stocktwits"
+    "changePct": -6.58,
+    "title": "GE Vernova, Vertiv, and Bloom Energy Just Lost 10% to 24% in a Week. Here's What Set Off the AI Power Sell-off.",
+    "url": "https://www.fool.com/investing/2026/11/10/ge-vernova-vertiv-and-bloom-energy-just-lost-10-to/",
+    "publisher": "Motley Fool"
    },
    {
     "ticker": "QQQ",
-    "changePct": -0.83,
+    "changePct": -0.91,
     "title": "Stock Market Today: Dow Dips On Hot Inflation Data; Nvidia Falls Again, Anthropic Sets IPO Range (Live Coverage)",
     "url": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-cpi-inflation-report-anthropic-ipo/?src=A00220&yptr=yahoo",
     "publisher": "Investor's Business Daily"
