@@ -1,12 +1,12 @@
 {
- "asOf": "2026-11-10T10:11:32-05:00",
+ "asOf": "2026-11-10T10:42:01-05:00",
  "sections": [
   {
    "ticker": "QQQ",
    "name": "Invesco QQQ (Nasdaq 100)",
    "role": "long",
-   "dayChangePct": 0.09,
-   "unrealizedPct": -2.23,
+   "dayChangePct": -0.63,
+   "unrealizedPct": -2.93,
    "items": [
     {
      "title": "Hedge Funds Dumped Tech at a Near-Record Pace Right Before Chip Stocks Jumped 7%",
@@ -42,24 +42,66 @@
      ]
     },
     {
-     "title": "Exchange-Traded Funds, Equity Futures Mixed Pre-Bell Tuesday Amid October Consumer Inflation Report",
-     "summary": "The broad market exchange-traded fund SPDR S&P 500 ETF Trust (SPY) was up 0.1%, while the actively t",
-     "publisher": "MT Newswires",
-     "url": "https://finance.yahoo.com/markets/stocks/articles/exchange-traded-funds-equity-futures-141241479.html",
-     "at": "2026-11-10T09:12-05:00",
+     "title": "Pre-Markets Drop on Warmer CPI Numbers: +0.4% Month over Month",
+     "summary": "We see no Inflation Rate (CPI year over year) for October, as the government shutdown from 2025 caused the BLS to skip over October 2025.",
+     "publisher": "Zacks",
+     "url": "https://finance.yahoo.com/economy/policy/articles/pre-markets-drop-warmer-cpi-142000520.html",
+     "at": "2026-11-10T09:20-05:00",
      "tags": [
-      "Fed & rates"
+      "Fed & rates",
+      "Policy & politics"
      ]
     }
    ]
   },
   {
-   "ticker": "OMH",
-   "name": "Ohmyhome Limited",
-   "role": "short",
-   "dayChangePct": 30.26,
-   "unrealizedPct": -36.7,
-   "items": []
+   "ticker": "GEV",
+   "name": "GE Vernova",
+   "role": "long",
+   "dayChangePct": -6.94,
+   "unrealizedPct": -1.6,
+   "items": [
+    {
+     "title": "Venture Global CEO Eyes New Growth Opportunity In Off-Grid Power For AI Data Centers – Firm Raises FY2026 Guidance After Record Q3 Earnings",
+     "summary": "Venture Global’s Q3 revenue surged 43%, while EPS exceeded consensus estimates of $0.52.",
+     "publisher": "Stocktwits",
+     "url": "https://stocktwits.com/news-articles/markets/equity/venture-global-ceo-eyes-new-growth-opportunity-off-grid-power-raises-fy2026-guidance-record-q3-earnings/cNGuSNYR9JG",
+     "at": "2026-11-10T08:33-05:00",
+     "tags": [
+      "Earnings",
+      "AI & chips",
+      "Corporate"
+     ]
+    },
+    {
+     "title": "2 Stocks Sidestep the Data Center Backlash",
+     "summary": "Voters in 40 of 41 local ballot measures turned against data centers, yet one LNG exporter and one cooling and power supplier are pivoting on the fallout. Which one has an actual customer, and which one is still selling a pitch?",
+     "publisher": "24/7 Wall St.",
+     "url": "https://247wallst.com/investing/2026/11/10/2-stocks-sidestep-the-data-center-backlash/",
+     "at": "2026-11-10T08:14-05:00",
+     "tags": [
+      "AI & chips"
+     ]
+    },
+    {
+     "title": "LNG Giant Venture Global Looks to Become a Vertically Integrated AI Utility",
+     "summary": "Venture Global stock rises as the LNG company announces plans to become a fully integrated AI utility provider.",
+     "publisher": "Barrons.com",
+     "url": "https://www.barrons.com/articles/venture-global-earnings-stock-price-fab7ea0d?siteid=yhoof2&yptr=yahoo",
+     "at": "2026-11-10T08:10-05:00",
+     "tags": [
+      "AI & chips"
+     ]
+    },
+    {
+     "title": "Energy Transition Today - Cleantech Innovation Fuels Economic Growth and Competitiveness",
+     "summary": "Foresight Canada has announced the 2026 Foresight 50 Honorees, highlighting a group of high-growth cleantech companies that are driving the energy transition with their innovative solutions. These companies, selected by an independent panel of climate investor…",
+     "publisher": "Simply Wall St.",
+     "url": "https://finance.yahoo.com/energy/articles/energy-transition-today-cleantech-innovation-113727984.html",
+     "at": "2026-11-10T06:37-05:00",
+     "tags": []
+    }
+   ]
   },
   {
    "ticker": "DELL",
@@ -122,6 +164,16 @@
    "unrealizedPct": null,
    "items": [
     {
+     "title": "Anthropic targets valuation of up to $1.4 trillion",
+     "summary": "Anthropic plans to raise up to $64 billion in its upcoming initial public offering, the artificial intelligence giant said in a filing Tuesday, in a listing that could value the company at up to $1.4 trillion.Even at the top of its price range, the offering wo…",
+     "publisher": "AFP",
+     "url": "https://finance.yahoo.com/technology/ai/articles/anthropic-targets-valuation-1-4-150619973.html",
+     "at": "2026-11-10T10:06-05:00",
+     "tags": [
+      "AI & chips"
+     ]
+    },
+    {
      "title": "NVIDIA Falls 4% as Board Probe of Jensen Huang Weighs on Shares; AMD and Broadcom Gain 3%",
      "summary": "NVIDIA is posting record growth, yet its stock keeps sliding while rivals climb. A board investigation into its CEO has split the chip sector, and one upcoming event could decide which side of the divide investors land on.",
      "publisher": "24/7 Wall St.",
@@ -143,22 +195,13 @@
      ]
     },
     {
-     "title": "AMD vs. Intel: Which Is the Better Artificial Intelligence (AI) Chip Stock to Buy Right Now?",
-     "summary": "Both companies have been experiencing solid growth in their data center businesses, but one of them seems like the better bet.",
-     "publisher": "Motley Fool",
-     "url": "https://www.fool.com/investing/2026/11/10/amd-vs-intel-which-is-the-better-artificial-intelligence-ai-chip-stock-to-buy-right-now/",
-     "at": "2026-11-10T09:12-05:00",
+     "title": "INTC vs. TSM: Which Semiconductor Stock Has More Upside Now?",
+     "summary": "Intel leads in stock gains and valuation, but TSM's stronger AI demand, advanced chipmaking leadership and earnings outlook make it the more compelling pick.",
+     "publisher": "Zacks",
+     "url": "https://finance.yahoo.com/technology/articles/intc-vs-tsm-semiconductor-stock-141600378.html",
+     "at": "2026-11-10T09:16-05:00",
      "tags": [
-      "AI & chips"
-     ]
-    },
-    {
-     "title": "Here's what we learned in Anthropic's amended filing",
-     "summary": "An amended Anthropic (ANTH.PVT) IPO filing reveals a target share price range of $70 to $78, a $26 billion private placement backed by tech partners like AMD (AMD) and Broadcom (AVGO), and nearly $900 billion in data center compute commitments that contributed…",
-     "publisher": "Yahoo Finance Video",
-     "url": "https://finance.yahoo.com/video/heres-what-we-learned-in-anthropics-amended-filing-140522266.html",
-     "at": "2026-11-10T09:05-05:00",
-     "tags": [
+      "Earnings",
       "AI & chips"
      ]
     }
@@ -171,6 +214,16 @@
    "dayChangePct": null,
    "unrealizedPct": null,
    "items": [
+    {
+     "title": "CrowdStrike Sinks 10% Two Days After a $495 Million Bet on Policing AI Agents",
+     "summary": "Key TakeawaysCrowdStrike shares fell 9. 9% on November 5, two days after it launched an AI Kill Switch and agreed to buy Fiddler AI and Dreadnode.",
+     "publisher": "TIKR",
+     "url": "https://www.tikr.com/blog/crowdstrike-sinks-10-two-days-after-a-495-million-bet-on-policing-ai-agents?ref=yahoofinance&tlnk=yf-261110-6wp5f5x5",
+     "at": "2026-11-10T08:53-05:00",
+     "tags": [
+      "AI & chips"
+     ]
+    },
     {
      "title": "Will Fortinet's Cash Flow Profile Support the Stock Amid Higher Capex?",
      "summary": "FTNT's surging free cash flow and strong liquidity provide a cushion against rising infrastructure spending, though near-term margin pressures remain.",
@@ -196,17 +249,6 @@
      "tags": [
       "Earnings",
       "Analysts"
-     ]
-    },
-    {
-     "title": "3 High Growth Stocks With At Least 33% Earnings Growth",
-     "summary": "Federal Reserve officials are again talking about higher interest rates, which keeps pressure on weaker balance sheets and rewards companies that can grow earnings without leaning heavily on cheap debt. That sets the stage for investors who want businesses exp…",
-     "publisher": "Simply Wall St.",
-     "url": "https://finance.yahoo.com/markets/stocks/articles/3-high-growth-stocks-least-231740234.html",
-     "at": "2026-11-09T18:17-05:00",
-     "tags": [
-      "Fed & rates",
-      "Earnings"
      ]
     }
    ]
@@ -309,6 +351,26 @@
  ],
  "market": [
   {
+   "title": "US consumer prices increase strongly for third straight month in October",
+   "summary": "By Lucia Mutikani WASHINGTON, Nov 10 (Reuters) - US consumer prices increased more than expected in October, driven by higher costs for food and accommodation, leaving the Federal Reserve on course to",
+   "publisher": "Reuters",
+   "url": "https://finance.yahoo.com/economy/policy/articles/us-consumer-prices-rise-above-135851287.html",
+   "at": "2026-11-10T10:32-05:00",
+   "tags": [
+    "Fed & rates"
+   ]
+  },
+  {
+   "title": "U.S. Gas Prices Fall Below Key Threshold For The First Time Since July as Oil Keeps Dropping",
+   "summary": "Seasonal factors including the end of summer driving and Daylight Saving Time also played a role in the decrease.",
+   "publisher": "International Business Times",
+   "url": "https://www.ibtimes.com/us-gas-prices-fall-below-four-dollars-3809604",
+   "at": "2026-11-10T10:18-05:00",
+   "tags": [
+    "Energy"
+   ]
+  },
+  {
    "title": "BC-Crude Oil Futures",
    "summary": "NEW YORK (AP) — Prices as of 10:00:00 AM Tuesday, November 10.Light Sweet Crude (NYMX)1,000 bbl.",
    "publisher": "Associated Press",
@@ -372,40 +434,17 @@
    ]
   },
   {
-   "title": "COP Q3 2026 deep dive: capital discipline and portfolio efficiency offset production decline",
-   "summary": "Oil and gas producer ConocoPhillips (NYSE:COP) reported revenue ahead of Wall Street’s expectations in Q3 2026, with sales up 29.2% year on year to $20.06 billion. Its non-GAAP profit of $3.27 per share was 7.3% above analysts’ consensus estimates.",
-   "publisher": "StockStory",
-   "url": "https://finance.yahoo.com/energy/articles/cop-q3-2026-deep-dive-141336870.html",
-   "at": "2026-11-10T09:13-05:00",
-   "tags": [
-    "Earnings",
-    "Analysts",
-    "Energy"
-   ]
-  },
-  {
-   "title": "Wall Street Futures Decline as Higher-Than-Expected October Inflation Raises Fed Rate Concerns: Dow Jones, S&P, Nasdaq",
-   "summary": "U. S. stock index futures pointed to a lower opening on Tuesday after October consumer price data exceeded economists’ expectations, raising concerns about the Federal Reserve’s interest rate outlook following a rally in the previous session.",
-   "publisher": "InvestorsHub",
-   "url": "https://investorshub.advfn.com/market-news/article/39652/wall-street-futures-decline-as-higher-than-expected-october-inflation-raises-fed-rate-concerns-dow-jones-sp-nasdaq",
-   "at": "2026-11-10T09:08-05:00",
-   "tags": [
-    "Fed & rates",
-    "Earnings"
-   ]
-  },
-  {
-   "title": "Stocks cut gains, dollar and yields up as US CPI cements December rate hike bets",
-   "summary": "By Shashwat Chauhan Nov 10 (Reuters) - US stocks were set for a lower open on Tuesday and European shares pared gains after a hotter-than-anticipated inflation reading bolstered the case for a US",
-   "publisher": "Reuters",
-   "url": "https://finance.yahoo.com/markets/stocks/articles/asian-stocks-climb-sliding-oil-022321980.html",
-   "at": "2026-11-10T08:58-05:00",
+   "title": "Exchange-Traded Funds, Equity Futures Mixed Pre-Bell Tuesday Amid October Consumer Inflation Report",
+   "summary": "The broad market exchange-traded fund SPDR S&P 500 ETF Trust (SPY) was up 0.1%, while the actively t",
+   "publisher": "MT Newswires",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/exchange-traded-funds-equity-futures-141241479.html",
+   "at": "2026-11-10T09:12-05:00",
    "tags": [
     "Fed & rates"
    ]
   },
   {
-   "title": "Stock market today: Dow, S&P 500 sink after CPI data raises Fed rate-hike bets",
+   "title": "Stock market today: Dow, S&P 500 slip after CPI data raises Fed rate-hike bets",
    "summary": "Investors awaited a key inflation report that could sway the Federal Reserve's interest rate decision next month.",
    "publisher": "Yahoo Finance",
    "url": "https://finance.yahoo.com/markets/article/stock-market-today-tuesday-november-10-dow-sp-500-nasdaq-inflation-data-cpi-090627830.html",
@@ -426,18 +465,16 @@
    ]
   },
   {
-   "title": "ConocoPhillips Just Raised Its Dividend 10.7%. Does Its Free Cash Flow Cover the 2.5% Yield?",
-   "summary": "Key TakeawaysConocoPhillips raised its quarterly dividend 10. 7% to $0.",
-   "publisher": "TIKR",
-   "url": "https://www.tikr.com/blog/conocophillips-just-raised-its-dividend-10-7-does-its-free-cash-flow-cover-the-2-5-yield?ref=yahoofinancedividend&tlnk=yf-261110-98mmhc98",
-   "at": "2026-11-10T09:58-05:00",
-   "tags": [
-    "Earnings"
-   ]
+   "title": "How Ralph Lauren Stock Is Engineered To Make Money For You",
+   "summary": "For questions about this article or underlying research, email help@trefis.com.",
+   "publisher": "Trefis",
+   "url": "https://www.trefis.com/stock/rl/articles/623984/how-ralph-lauren-stock-is-engineered-to-make-money-for-you/2026-11-10",
+   "at": "2026-11-10T10:18-05:00",
+   "tags": []
   }
  ],
  "seekingAlpha": {
-  "asOf": "2026-11-10T10:11:32-05:00",
+  "asOf": "2026-11-10T10:42:01-05:00",
   "ok": true,
   "stale": false,
   "via": "seekingalpha.com RSS",
@@ -448,9 +485,121 @@
   },
   "market": [
    {
-    "title": "October CPI: Wall Street Is Playing With Fire",
-    "url": "https://seekingalpha.com/article/4965791-october-cpi-wall-street-is-playing-with-fire",
-    "at": "2026-11-10T10:10-05:00",
+    "title": "MADE Vs. WELD: The Best ETF For America's Factory Boom",
+    "url": "https://seekingalpha.com/article/4965766-made-vs-weld-the-best-etf-for-americas-factory-boom",
+    "at": "2026-11-10T10:39-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "XLI",
+     "MADE",
+     "WELD"
+    ],
+    "author": null
+   },
+   {
+    "title": "KKR Could Be A Brilliant Value Play",
+    "url": "https://seekingalpha.com/article/4965765-kkr-could-be-a-brilliant-value-play",
+    "at": "2026-11-10T10:38-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "KKR",
+     "KKR:CA"
+    ],
+    "author": null
+   },
+   {
+    "title": "Zeta Global: Strong Q3 Revenue Growth And A Bullish Guide, Hiking My Target",
+    "url": "https://seekingalpha.com/article/4965764-zeta-global-strong-q3-revenue-growth-and-a-bullish-guide-hiking-my-target",
+    "at": "2026-11-10T10:38-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "ZETA"
+    ],
+    "author": null
+   },
+   {
+    "title": "Inflation goes broad: 76.3% of CPI basket rising faster than 2% pace",
+    "url": "https://seekingalpha.com/news/4669863-inflation-goes-broad-763-of-cpi-basket-rising-faster-than-2-pace",
+    "at": "2026-11-10T10:35-05:00",
+    "kind": "news",
+    "symbols": [],
+    "author": null
+   },
+   {
+    "title": "Impeachment articles ‘a farce, and a stunt,’ says Pete Hegseth",
+    "url": "https://seekingalpha.com/news/4669868-impeachment-articles-a-farce-and-a-stunt-says-pete-hegseth",
+    "at": "2026-11-10T10:34-05:00",
+    "kind": "news",
+    "symbols": [],
+    "author": null
+   },
+   {
+    "title": "Regeneron Pharmaceuticals, Inc. (REGN) Discusses Genetic Center and CIDEB siRNA Development for MASH - Slideshow",
+    "url": "https://seekingalpha.com/article/4965826-regeneron-pharmaceuticals-inc-regn-discusses-genetic-center-and-cideb-sirna-development-for",
+    "at": "2026-11-10T10:34-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "REGN"
+    ],
+    "author": null
+   },
+   {
+    "title": "AppLovin Vs. Unity: Room For Two, But I Prefer Unity",
+    "url": "https://seekingalpha.com/article/4965763-applovin-vs-unity-room-for-two-but-i-prefer-unity",
+    "at": "2026-11-10T10:34-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "APP",
+     "U",
+     "APPS:CA"
+    ],
+    "author": null
+   },
+   {
+    "title": "EVgo posts mixed Q3 results, lowers 2026 guidance",
+    "url": "https://seekingalpha.com/news/4669788-evgo-posts-mixed-q3-results-lowers-2026-guidance",
+    "at": "2026-11-10T10:33-05:00",
+    "kind": "news",
+    "symbols": [],
+    "author": null
+   },
+   {
+    "title": "Senseonics hits 52-week high as Raymond James upgrades on Q3 beat and raise",
+    "url": "https://seekingalpha.com/news/4669840-senseonics-stock-upgraded-raymond-james-q3",
+    "at": "2026-11-10T10:33-05:00",
+    "kind": "news",
+    "symbols": [],
+    "author": null
+   },
+   {
+    "title": "Watches of Switzerland Group PLC (WOSGF) Q2 2027 Sales/Trading Call Transcript",
+    "url": "https://seekingalpha.com/article/4965824-watches-of-switzerland-group-plc-wosgf-q2-2027-sales-trading-call-transcript",
+    "at": "2026-11-10T10:31-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "WOSGF"
+    ],
+    "author": null
+   },
+   {
+    "title": "Strathcona Resources: Greenfire Acquisition Adds Another Growth Platform",
+    "url": "https://seekingalpha.com/article/4965628-strathcona-resources-greenfire-acquisition-adds-another-growth-platform",
+    "at": "2026-11-10T10:30-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "SCR:CA",
+     "STHRF",
+     "GFR",
+     "GFR:CA",
+     "GFR.RT",
+     "GFRWF"
+    ],
+    "author": null
+   },
+   {
+    "title": "Another Year Of Resilience: 3 Calls For The Global Economy In 2027",
+    "url": "https://seekingalpha.com/article/4965814-another-year-of-resilience-3-calls-for-global-economy-in-2027",
+    "at": "2026-11-10T10:30-05:00",
     "kind": "analysis",
     "symbols": [
      "AFMC",
@@ -463,19 +612,50 @@
     "author": null
    },
    {
-    "title": "Cohen & Steers' real estate fund acquires New Hampshire shopping center with DLC",
-    "url": "https://seekingalpha.com/news/4669844-cohen-and-steers-real-estate-fund-acquires-new-hampshire-shopping-center-with-dlc",
-    "at": "2026-11-10T10:06-05:00",
+    "title": "Anthropic could hit $685B in revenue by 2030, Goldman Sachs says: report",
+    "url": "https://seekingalpha.com/news/4669857-anthropic-could-hit-685b-in-revenue-by-2030-goldman-sachs-says-report",
+    "at": "2026-11-10T10:27-05:00",
     "kind": "news",
     "symbols": [],
     "author": null
    },
    {
-    "title": "CrowdStrike, Elastic have positive setups going into earnings: Piper Sandler",
-    "url": "https://seekingalpha.com/news/4669845-crowdstrike-elastic-have-positive-setups-going-into-earnings-piper-sandler",
-    "at": "2026-11-10T10:06-05:00",
+    "title": "Kratos partners with Seagate Space for offshore defense launches",
+    "url": "https://seekingalpha.com/news/4669860-kratos-partners-with-seagate-space-for-offshore-defense-launches",
+    "at": "2026-11-10T10:23-05:00",
     "kind": "news",
     "symbols": [],
+    "author": null
+   },
+   {
+    "title": "LiveOne sees H1 fiscal 2027 revenue of $37.3M",
+    "url": "https://seekingalpha.com/news/4669849-liveone-sees-h1-fiscal-2027-revenue-of-373m",
+    "at": "2026-11-10T10:20-05:00",
+    "kind": "news",
+    "symbols": [],
+    "author": null
+   },
+   {
+    "title": "Morgan Stanley Direct Lending: Contrarian Value With A 13% Yield",
+    "url": "https://seekingalpha.com/article/4965748-morgan-stanley-direct-lending-stock-contrarian-value-13-percent-yield",
+    "at": "2026-11-10T10:19-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "BXSL",
+     "ARCC",
+     "OBDC",
+     "MSDL"
+    ],
+    "author": null
+   },
+   {
+    "title": "21% Yield Is Schrödinger's Distribution From TriplePoint Venture Growth",
+    "url": "https://seekingalpha.com/article/4965746-21-percent-yield-schrodingers-distribution-triplepoint-venture-growth",
+    "at": "2026-11-10T10:17-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "TPVG"
+    ],
     "author": null
    },
    {
@@ -492,154 +672,12 @@
     "author": null
    },
    {
-    "title": "NovoCure denied FDA approval of Optune Mya for brain metastases",
-    "url": "https://seekingalpha.com/news/4669817-novocure-denied-fda-approval-optune-mya-brain-metastases",
-    "at": "2026-11-10T10:03-05:00",
-    "kind": "news",
-    "symbols": [],
-    "author": null
-   },
-   {
-    "title": "Anthropic embraces ‘Super Intelligence’ in updated IPO filing",
-    "url": "https://seekingalpha.com/news/4669838-anthropic-embraces-super-intelligence-in-updated-ipo-filing",
-    "at": "2026-11-10T10:02-05:00",
-    "kind": "news",
-    "symbols": [],
-    "author": null
-   },
-   {
-    "title": "Vireo projects Q4 2026 revenue of $250M-$265M as Fluent deal closes",
-    "url": "https://seekingalpha.com/news/4669843-vireo-projects-q4-2026-revenue-of-250m-265m-as-fluent-deal-closes",
-    "at": "2026-11-10T10:02-05:00",
-    "kind": "news",
-    "symbols": [],
-    "author": null
-   },
-   {
-    "title": "Here are the major earnings after the close Tuesday",
-    "url": "https://seekingalpha.com/news/4668914-here-are-the-major-earnings-after-the-close-tuesday",
-    "at": "2026-11-10T10:00-05:00",
-    "kind": "news",
-    "symbols": [],
-    "author": null
-   },
-   {
-    "title": "Microsoft urges US to reconsider potential import ban on Chinese optical transceivers: report",
-    "url": "https://seekingalpha.com/news/4669808-microsoft-urges-us-to-reconsider-potential-import-ban-on-chinese-optical-transceivers-report",
-    "at": "2026-11-10T09:59-05:00",
-    "kind": "news",
-    "symbols": [],
-    "author": null
-   },
-   {
     "title": "Goodyear: From Sell To Strong Buy After A 34% Plunge",
     "url": "https://seekingalpha.com/article/4965733-goodyear-from-sell-to-strong-buy-after-a-34-percent-plunge",
     "at": "2026-11-10T09:59-05:00",
     "kind": "analysis",
     "symbols": [
      "GT"
-    ],
-    "author": null
-   },
-   {
-    "title": "5 Risks For The Global Economy In 2027",
-    "url": "https://seekingalpha.com/article/4965731-5-risks-global-economy-2027",
-    "at": "2026-11-10T09:58-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "AFMC",
-     "AFSM",
-     "ARKK",
-     "AVUV",
-     "BAPR",
-     "IVOO"
-    ],
-    "author": null
-   },
-   {
-    "title": "Rhythm Pharmaceuticals: Bull Case Intact, But The Market Is Pricing In A Lot",
-    "url": "https://seekingalpha.com/article/4965730-rhythm-pharmaceuticals-bull-case-intact-but-the-market-is-pricing-in-a-lot",
-    "at": "2026-11-10T09:56-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "RYTM"
-    ],
-    "author": null
-   },
-   {
-    "title": "Douglas Elliman Inc. (DOUG) Q3 2026 Earnings Call Prepared Remarks Transcript",
-    "url": "https://seekingalpha.com/article/4965740-douglas-elliman-inc-doug-q3-2026-earnings-call-prepared-remarks-transcript",
-    "at": "2026-11-10T09:51-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "DOUG"
-    ],
-    "author": null
-   },
-   {
-    "title": "Skydance: Earnings Numbers Are Meaningless, But New Initiatives Are Transformative",
-    "url": "https://seekingalpha.com/article/4965729-skydance-earnings-numbers-are-meaningless-but-new-initiatives-are-transformative",
-    "at": "2026-11-10T09:51-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "DIS",
-     "CHTR",
-     "CMCSA",
-     "DIS:CA",
-     "ZDIS:CA",
-     "SKYD"
-    ],
-    "author": null
-   },
-   {
-    "title": "Mayr-Melnhof Karton AG (MNHFF) Discusses Majority Sale of Packaging Business and Planned Special Distribution Transcript",
-    "url": "https://seekingalpha.com/article/4965661-mayr-melnhof-karton-ag-mnhff-discusses-majority-sale-of-packaging-business-and-planned",
-    "at": "2026-11-10T09:50-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "MNHFF"
-    ],
-    "author": null
-   },
-   {
-    "title": "Fortuna Mining: Bambadji Strengthens An Already Promising Gold Pivot",
-    "url": "https://seekingalpha.com/article/4965728-fortuna-mining-bambadji-strengthens-already-promising-gold-pivot",
-    "at": "2026-11-10T09:50-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "FSM",
-     "FVI:CA"
-    ],
-    "author": null
-   },
-   {
-    "title": "argenx: Unnatural Products Deal Changes Risk Profile",
-    "url": "https://seekingalpha.com/article/4965727-argenx-unnatural-products-deal-changes-risk-profile",
-    "at": "2026-11-10T09:49-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "ARGX",
-     "ARGNF"
-    ],
-    "author": null
-   },
-   {
-    "title": "Heron Therapeutics, Inc. (HRTX) M&A Call Transcript",
-    "url": "https://seekingalpha.com/article/4965319-heron-therapeutics-inc-hrtx-m-and-a-call-transcript",
-    "at": "2026-11-10T09:41-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "HRTX"
-    ],
-    "author": null
-   },
-   {
-    "title": "Nebius: The First Domino In The AI Collapse",
-    "url": "https://seekingalpha.com/article/4965657-nebius-the-first-domino-in-the-ai-collapse",
-    "at": "2026-11-10T09:37-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "NBIS"
     ],
     "author": null
    }
@@ -649,6 +687,36 @@
     "ticker": "QQQ",
     "role": "long",
     "items": [
+     {
+      "title": "The market is seeing a reset, not a bubble – Oppenheimer",
+      "url": "https://seekingalpha.com/news/4669859",
+      "at": "2026-11-10T10:17-05:00",
+      "kind": "news",
+      "symbols": [
+       "QQQ",
+       "QLD",
+       "QID",
+       "TQQQ",
+       "SQQQ",
+       "QQQM"
+      ],
+      "author": "Monica L. Correa"
+     },
+     {
+      "title": "October CPI: Wall Street Is Playing With Fire",
+      "url": "https://seekingalpha.com/article/4965791-october-cpi-wall-street-is-playing-with-fire",
+      "at": "2026-11-10T10:10-05:00",
+      "kind": "analysis",
+      "symbols": [
+       "AFMC",
+       "AFSM",
+       "ARKK",
+       "AVUV",
+       "BAPR",
+       "IVOO"
+      ],
+      "author": "Agar Capital"
+     },
      {
       "title": "A 50-basis point December rate hike now looks to be on the table after CPI data",
       "url": "https://seekingalpha.com/news/4669833",
@@ -678,43 +746,36 @@
        "RTY"
       ],
       "author": "ING Economic and Financial Analysis"
-     },
-     {
-      "title": "Why The Blue Tsunami Won't Kill AI Growth",
-      "url": "https://seekingalpha.com/article/4965723-why-blue-tsunami-wont-kill-ai-growth",
-      "at": "2026-11-10T09:34-05:00",
-      "kind": "analysis",
-      "symbols": [
-       "SPY",
-       "SPX",
-       "SP500",
-       "IVV",
-       "VOO",
-       "QQQ"
-      ],
-      "author": "Victor Dergunov"
-     },
-     {
-      "title": "Hot October CPI Prompts Chatter Of A Jumbo December Fed Rate Hike",
-      "url": "https://seekingalpha.com/article/4965747-hot-october-cpi-prompts-chatter-of-a-jumbo-december-fed-rate-hike",
-      "at": "2026-11-10T09:30-05:00",
-      "kind": "analysis",
-      "symbols": [
-       "AFMC",
-       "AFSM",
-       "ARKK",
-       "AVUV",
-       "BAPR",
-       "IVOO"
-      ],
-      "author": "Mike Zaccardi, CFA, CMT"
      }
     ]
    },
    {
-    "ticker": "OMH",
-    "role": "short",
-    "items": []
+    "ticker": "GEV",
+    "role": "long",
+    "items": [
+     {
+      "title": "GE Vernova falls nearly 10% after SoftBank revises AI data center plans",
+      "url": "https://seekingalpha.com/news/4669839",
+      "at": "2026-11-10T09:57-05:00",
+      "kind": "news",
+      "symbols": [
+       "GEV",
+       "SFTBF",
+       "SFTBY"
+      ],
+      "author": "Rob Williams"
+     },
+     {
+      "title": "GE Vernova to supply three wind turbines for German wind farm",
+      "url": "https://seekingalpha.com/news/4669006",
+      "at": "2026-11-09T09:51-05:00",
+      "kind": "news",
+      "symbols": [
+       "GEV"
+      ],
+      "author": "Carl Surran"
+     }
+    ]
    }
   ],
   "source": {
@@ -722,31 +783,51 @@
    "url": "https://seekingalpha.com/market-news"
   },
   "note": "Yalnızca başlık ve bağlantı. Yazıların tamamı Seeking Alpha'da; bir kısmı abonelik ister. Yatırım tavsiyesi değildir.",
-  "lastGood": "2026-11-10T10:11:32-05:00"
+  "lastGood": "2026-11-10T10:42:01-05:00"
  },
  "digest": {
   "date": "2026-11-10",
   "title": "Daily brief — Tuesday, November 10, 2026",
-  "generatedAt": "2026-11-10T10:11-05:00",
+  "generatedAt": "2026-11-10T10:42-05:00",
   "bullets": [
    {
     "head": "Markets (latest session)",
-    "text": "S&P 500 -0.16%, Nasdaq 100 +0.02%, Dow -0.34%, Russell 2000 -0.57%. VIX 20.5; 10-yr yield 4.99% (+12 bp); WTI $85.49 (-1.57%); gold $4,056 (-1.41%). Volatility is elevated (VIX above 20). Bond yields jumped, which usually weighs on growth stocks."
+    "text": "S&P 500 -0.52%, Nasdaq 100 -0.58%, Dow -0.51%, Russell 2000 -1.20%. VIX 20.2; 10-yr yield 4.99% (+13 bp); WTI $85.29 (-1.80%); gold $4,060 (-1.33%). Volatility is elevated (VIX above 20). Bond yields jumped, which usually weighs on growth stocks."
    },
    {
     "head": "Trend filter",
-    "text": "The S&P 500 (SPY $751.48) is 2.8% above its 200-day average ($730.70). Basket rule: the momentum basket stays invested. Index sleeve (last daily decision 2026-11-10): long, target +0.71x Nasdaq 100 exposure (25% / 35.3% 20-day volatility, capped at 3x)."
+    "text": "The S&P 500 (SPY $748.78) is 2.5% above its 200-day average ($730.70). Basket rule: the momentum basket stays invested. Index sleeve (last daily decision 2026-11-10): long, target +0.71x Nasdaq 100 exposure (25% / 35.3% 20-day volatility, capped at 3x)."
    },
    {
     "head": "Our portfolio",
-    "text": "Net value $2,880.93 (-0.86% vs the previous close); cash $1,860.59; 2 positions, leverage 0.42x. Best holding today: OMH +30.26%; weakest: QQQ +0.09%."
+    "text": "Net value $2,857.69 (-1.66% vs the previous close); cash $1,467.66; 2 positions, leverage 0.49x. Best holding today: QQQ -0.63%; weakest: GEV -6.94%."
    },
    {
     "head": "Themes in today's headlines",
-    "text": "AI & chips (10), Fed & rates (8), Earnings (7), Energy (5)."
+    "text": "AI & chips (14), Fed & rates (8), Earnings (6), Energy (5)."
    }
   ],
   "headlines": [
+   {
+    "title": "US consumer prices increase strongly for third straight month in October",
+    "url": "https://finance.yahoo.com/economy/policy/articles/us-consumer-prices-rise-above-135851287.html",
+    "publisher": "Reuters",
+    "at": "2026-11-10T10:32-05:00",
+    "summary": "By Lucia Mutikani WASHINGTON, Nov 10 (Reuters) - US consumer prices increased more than expected in October, driven by higher costs for food and accommodation, leaving the Federal Reserve on course to",
+    "tags": [
+     "Fed & rates"
+    ]
+   },
+   {
+    "title": "U.S. Gas Prices Fall Below Key Threshold For The First Time Since July as Oil Keeps Dropping",
+    "url": "https://www.ibtimes.com/us-gas-prices-fall-below-four-dollars-3809604",
+    "publisher": "International Business Times",
+    "at": "2026-11-10T10:18-05:00",
+    "summary": "Seasonal factors including the end of summer driving and Daylight Saving Time also played a role in the decrease.",
+    "tags": [
+     "Energy"
+    ]
+   },
    {
     "title": "BC-Crude Oil Futures",
     "url": "https://finance.yahoo.com/markets/commodities/articles/bc-crude-oil-futures-150026468.html",
@@ -766,42 +847,19 @@
     "tags": [
      "Energy"
     ]
-   },
-   {
-    "title": "Stocks mixed as investors eye AI outlook; oil drops",
-    "url": "https://finance.yahoo.com/markets/world-indices/articles/tech-leads-asian-stock-rally-023930562.html",
-    "publisher": "AFP",
-    "at": "2026-11-10T09:58-05:00",
-    "summary": "Asian and European stocks gained while Wall Street slipped Tuesday after rallying from last week's tech-led rout, with AI titan Anthropic revealing staggering revenue growth ahead of an IPO that could…",
-    "tags": [
-     "Earnings",
-     "Energy",
-     "AI & chips"
-    ]
-   },
-   {
-    "title": "Gas prices fall below $4 for the first time since July",
-    "url": "https://finance.yahoo.com/video/gas-prices-fall-below-4-for-the-first-time-since-july-145333135.html",
-    "publisher": "Yahoo Finance Video",
-    "at": "2026-11-10T09:53-05:00",
-    "summary": "U.S.",
-    "tags": [
-     "Analysts",
-     "Energy"
-    ]
    }
   ],
   "movers": [
    {
-    "ticker": "OMH",
-    "changePct": 30.26,
-    "title": null,
-    "url": null,
-    "publisher": null
+    "ticker": "GEV",
+    "changePct": -6.94,
+    "title": "Venture Global CEO Eyes New Growth Opportunity In Off-Grid Power For AI Data Centers – Firm Raises FY2026 Guidance After Record Q3 Earnings",
+    "url": "https://stocktwits.com/news-articles/markets/equity/venture-global-ceo-eyes-new-growth-opportunity-off-grid-power-raises-fy2026-guidance-record-q3-earnings/cNGuSNYR9JG",
+    "publisher": "Stocktwits"
    },
    {
     "ticker": "QQQ",
-    "changePct": 0.09,
+    "changePct": -0.63,
     "title": "Hedge Funds Dumped Tech at a Near-Record Pace Right Before Chip Stocks Jumped 7%",
     "url": "https://247wallst.com/investing/2026/11/10/hedge-funds-dumped-tech-at-a-near-record-pace-right-before-chip-stocks-jumped-7/",
     "publisher": "24/7 Wall St."
