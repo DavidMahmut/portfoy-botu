@@ -1,13 +1,21 @@
 {
- "asOf": "2026-11-11T13:08:30-05:00",
+ "asOf": "2026-11-11T13:38:41-05:00",
  "sections": [
   {
    "ticker": "QQQ",
    "name": "Invesco QQQ (Nasdaq 100)",
    "role": "long",
-   "dayChangePct": 2.78,
-   "unrealizedPct": -0.28,
+   "dayChangePct": 3.01,
+   "unrealizedPct": -0.06,
    "items": [
+    {
+     "title": "Exchange-Traded Funds Higher as US Equities Advance After Midday",
+     "summary": "Broad Market Indicators Broad-market exchange-traded funds IWM and IVV rose. Actively traded I",
+     "publisher": "MT Newswires",
+     "url": "https://finance.yahoo.com/markets/stocks/articles/exchange-traded-funds-higher-us-181134424.html",
+     "at": "2026-11-11T13:11-05:00",
+     "tags": []
+    },
     {
      "title": "Nokia’s Rebound Faces One Big Test Before the End of 2026",
      "summary": "Nokia clawed back from a brutal November slide, yet one price floor stands between the stock and a year-end revival. Record AI orders and a credit upgrade fuel the bulls, but a single close could unravel the whole call.",
@@ -38,14 +46,6 @@
      "tags": [
       "AI & chips"
      ]
-    },
-    {
-     "title": "Micron draws $554 million in ETF buying after steep selloff",
-     "summary": "Major exchange-traded funds increased their Micron holdings Nov. 9, reversing two sessions of net selling.",
-     "publisher": "GuruFocus.com",
-     "url": "https://finance.yahoo.com/markets/stocks/articles/micron-draws-554-million-etf-114345334.html",
-     "at": "2026-11-11T06:43-05:00",
-     "tags": []
     }
    ]
   },
@@ -53,8 +53,8 @@
    "ticker": "GEV",
    "name": "GE Vernova",
    "role": "long",
-   "dayChangePct": 2.92,
-   "unrealizedPct": 4.58,
+   "dayChangePct": 2.6,
+   "unrealizedPct": 4.26,
    "items": [
     {
      "title": "AI Stocks, Neoclouds Rebound From SoftBank Bump, Get CoreWeave Lift",
@@ -110,6 +110,28 @@
    "unrealizedPct": null,
    "items": [
     {
+     "title": "Super Micro Computer (SMCI) Unveils H15 Servers As Export Scrutiny Draws Focus",
+     "summary": "Super Micro Computer (NasdaqGS:SMCI) launched its new H15 server portfolio built around 6th Gen AMD EPYC processors for AI and cloud workloads. The H15 line is designed to support higher core density and next generation GPUs aimed at advanced AI inference and …",
+     "publisher": "Simply Wall St.",
+     "url": "https://finance.yahoo.com/technology/ai/articles/super-micro-computer-smci-unveils-181419192.html",
+     "at": "2026-11-11T13:14-05:00",
+     "tags": [
+      "AI & chips"
+     ]
+    },
+    {
+     "title": "BofA Raised Its Earnings Estimates but Cut Its Target on AMD (AMD), Here’s Why",
+     "summary": "We just published a list of the Analysts Just Slashed Their Price Targets on These 10 Stocks and Advanced Micro Devices (NASDAQ:AMD) ranked 8th on this list. Wall Street had its worst day in 19 months last Thursday, with chip stocks leading the selloff. The Na…",
+     "publisher": "Insider Monkey",
+     "url": "https://finance.yahoo.com/markets/stocks/articles/bofa-raised-earnings-estimates-cut-180202870.html",
+     "at": "2026-11-11T13:02-05:00",
+     "tags": [
+      "Earnings",
+      "Analysts",
+      "AI & chips"
+     ]
+    },
+    {
      "title": "Why Advanced Micro Devices Stock Popped Today",
      "summary": "It's more than just CoreWeave's earnings beat that's lifting AMD stock today.",
      "publisher": "Motley Fool",
@@ -127,27 +149,6 @@
      "at": "2026-11-11T12:45-05:00",
      "tags": [
       "Policy & politics",
-      "Earnings",
-      "AI & chips"
-     ]
-    },
-    {
-     "title": "Why Is Dell Technologies (DELL) Talking Up 157 PB Storage And AI Racks?",
-     "summary": "Dell Technologies (NYSE:DELL) and KIOXIA introduced an industry first 157 PB single rack object storage solution for data heavy workloads. Dell OEM Solutions also launched the AMD Instinct Coder 355 platform, powered by Dell PowerEdge servers, for turnkey AI c…",
-     "publisher": "Simply Wall St.",
-     "url": "https://finance.yahoo.com/technology/ai/articles/why-dell-technologies-dell-talking-171557642.html",
-     "at": "2026-11-11T12:15-05:00",
-     "tags": [
-      "AI & chips"
-     ]
-    },
-    {
-     "title": "CoreWeave results lift AI infrastructure stocks as demand for computing power surges",
-     "summary": "AI infrastructure stocks rallied on Wednesday after better-than-expected results from CoreWeave reinforced expectations that demand for computing power is continuing to outpace available supply. CoreWeave (NASDAQ:CRWV)) shares jumped 26%, while fellow AI cloud…",
-     "publisher": "Proactive",
-     "url": "https://www.proactiveinvestors.com/companies/news/1101611/coreweave-results-lift-ai-infrastructure-stocks-as-demand-for-computing-power-surges-1101611.html",
-     "at": "2026-11-11T12:12-05:00",
-     "tags": [
       "Earnings",
       "AI & chips"
      ]
@@ -303,6 +304,16 @@
    "unrealizedPct": null,
    "items": [
     {
+     "title": "Ciena's $116M Free Cash Flow: Can Cash Generation Improve in FY27?",
+     "summary": "CIEN generates $116M in Q3 free cash flow despite rising working capital needs. Can strong revenue growth and expanding margins boost future cash generation?",
+     "publisher": "Zacks",
+     "url": "https://finance.yahoo.com/markets/stocks/articles/cienas-116m-free-cash-flow-172900157.html",
+     "at": "2026-11-11T12:29-05:00",
+     "tags": [
+      "Earnings"
+     ]
+    },
+    {
      "title": "The Zacks Analyst Blog Highlights Arista Networks, Fabrinet, Analog Devices, Advanced Micro Devices and NVIDIA",
      "summary": "ANET, FN, ADI and AMD stand out as AI stocks with strong earnings growth prospects, as market pullbacks create potential entry points.",
      "publisher": "Zacks",
@@ -333,22 +344,55 @@
      "tags": [
       "Analysts"
      ]
-    },
-    {
-     "title": "Should You Buy, Sell, or Hold Cisco Systems Stock Before Q1 Earnings?",
-     "summary": "CSCO's Q1 results are likely to benefit from robust AI infrastructure demand, hyperscaler investments and networking growth, despite rising costs and competition.",
-     "publisher": "Zacks",
-     "url": "https://finance.yahoo.com/markets/stocks/articles/buy-sell-hold-cisco-systems-192200624.html",
-     "at": "2026-11-10T14:22-05:00",
-     "tags": [
-      "Earnings",
-      "AI & chips"
-     ]
     }
    ]
   }
  ],
  "market": [
+  {
+   "title": "Government Shutdown, Continued Oil Price Drop Could Prevent December Fed Rate Hike, Macquarie Says",
+   "summary": "A potential US government shutdown and a further decline in oil prices are among the factors that co",
+   "publisher": "MT Newswires",
+   "url": "https://finance.yahoo.com/economy/policy/articles/government-shutdown-continued-oil-price-182153985.html",
+   "at": "2026-11-11T13:21-05:00",
+   "tags": [
+    "Fed & rates",
+    "Policy & politics",
+    "Energy"
+   ]
+  },
+  {
+   "title": "US Dollar Strengthens Against The Loonie on Rate Hike Expectations",
+   "summary": "The US dollar strengthened against Canada's currency Wednesday afternoon as oil prices climbed and o",
+   "publisher": "MT Newswires",
+   "url": "https://finance.yahoo.com/markets/currencies/articles/us-dollar-strengthens-against-loonie-182054060.html",
+   "at": "2026-11-11T13:20-05:00",
+   "tags": [
+    "Fed & rates",
+    "Energy"
+   ]
+  },
+  {
+   "title": "Saudi Arabia Keeps Increasing Its Oil Production. OPEC+'s Output is Now Near Pre-Iran War Levels.",
+   "summary": "The latest figure amounts to 97% of pre-war levels.",
+   "publisher": "International Business Times",
+   "url": "https://www.ibtimes.com/opec-plus-oil-output-nears-prewar-levels-3809654",
+   "at": "2026-11-11T13:13-05:00",
+   "tags": [
+    "Energy"
+   ]
+  },
+  {
+   "title": "ExxonMobil (XOM) Stock May Be 24% Undervalued Despite Venezuela Oil Deal",
+   "summary": "ExxonMobil Holdings has delivered a powerful share price run over the past few years, yet the recent pullback and busy deal slate raise a sharper question about whether the current market value lines up with the cash the business can generate. With investors w…",
+   "publisher": "Simply Wall St.",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/exxonmobil-xom-stock-may-24-181015023.html",
+   "at": "2026-11-11T13:10-05:00",
+   "tags": [
+    "Energy",
+    "Corporate"
+   ]
+  },
   {
    "title": "Analysts Just Slashed Their Price Targets on These 5 Stocks",
    "summary": "Wall Street had its worst day in 19 months last Thursday, with chip stocks leading the selloff. The Nasdaq Composite fell 5.52% to 24,315.00, its biggest one-day drop since the April 2025 tariff announcement. The S&P 500 fell 4.36% to 7,353.73, erasing about $…",
@@ -381,36 +425,6 @@
     "Earnings",
     "Energy",
     "Corporate"
-   ]
-  },
-  {
-   "title": "Brent Jumps Nearly 3% as Iran Denies Any Talks With Washington",
-   "summary": "Brent rose more than 3% to above $94 as Iran denied talks with the U.S., while Saudi output neared pre-war levels and Hormuz ship attacks continued.",
-   "publisher": "Oilprice.com",
-   "url": "https://finance.yahoo.com/energy/articles/brent-jumps-nearly-3-iran-163000485.html",
-   "at": "2026-11-11T11:30-05:00",
-   "tags": [
-    "Energy"
-   ]
-  },
-  {
-   "title": "Dollar Rises to 19-Month High on Fed Rate-Hike Bets",
-   "summary": "The dollar strengthened against rival currencies as markets increasingly bet on the possibility of more aggressive interest-rate hikes by the Federal Reserve.",
-   "publisher": "The Wall Street Journal",
-   "url": "https://www.wsj.com/economy/central-banking/euro-falls-to-18-month-low-against-dollar-on-fed-rate-hike-bets-02d386c5?siteid=yhoof2&yptr=yahoo",
-   "at": "2026-11-11T11:28-05:00",
-   "tags": [
-    "Fed & rates"
-   ]
-  },
-  {
-   "title": "Two-Year Gilt Yields Rise as Oil Prices Accelerate",
-   "summary": "U.S. bond markets were closed due to Veterans Day. In the U.K., yields on two-year gilts climbed to a two-week high.",
-   "publisher": "The Wall Street Journal",
-   "url": "https://www.wsj.com/finance/scope-for-treasury-yields-to-continue-rising-14cf0544?siteid=yhoof2&yptr=yahoo",
-   "at": "2026-11-11T11:00-05:00",
-   "tags": [
-    "Energy"
    ]
   },
   {
@@ -466,18 +480,10 @@
     "Energy",
     "AI & chips"
    ]
-  },
-  {
-   "title": "Stocks gain as CoreWeave eases worries; dollar strengthens",
-   "summary": "By Caroline Valetkevitch and Danilo Masoni NEW YORK/MILAN, Nov 11 (Reuters) - Major stock indexes rose on Wednesday, led by gains in technology shares after an upbeat report from CoreWeave lifted",
-   "publisher": "Reuters",
-   "url": "https://finance.yahoo.com/economy/policy/articles/bonds-reel-hot-inflation-fuels-020451336.html",
-   "at": "2026-11-11T12:50-05:00",
-   "tags": []
   }
  ],
  "seekingAlpha": {
-  "asOf": "2026-11-11T13:08:30-05:00",
+  "asOf": "2026-11-11T13:38:41-05:00",
   "ok": true,
   "stale": false,
   "via": "seekingalpha.com RSS",
@@ -487,6 +493,136 @@
    "Tüm yazılar": 12
   },
   "market": [
+   {
+    "title": "Anterix signals 16 active opportunities as it stresses $107.5M cash flexibility and spectrum scarcity",
+    "url": "https://seekingalpha.com/news/4670911-anterix-signals-16-active-opportunities-as-it-stresses-107_5m-cash-flexibility-and-spectrum",
+    "at": "2026-11-11T13:30-05:00",
+    "kind": "news",
+    "symbols": [],
+    "author": null
+   },
+   {
+    "title": "Nvidia's Biggest Threat Is AI That Needs Fewer Chips",
+    "url": "https://seekingalpha.com/article/4966588-nvidias-biggest-threat-is-ai-that-needs-fewer-chips",
+    "at": "2026-11-11T13:27-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "NVDA",
+     "NVDA:CA",
+     "ZNVD:CA"
+    ],
+    "author": null
+   },
+   {
+    "title": "Don't Fight The Momentum: Roivant Has Big Expectations, But Real Pipeline Momentum",
+    "url": "https://seekingalpha.com/article/4966587-dont-fight-the-momentum-roivant-has-big-expectations-but-real-pipeline-momentum",
+    "at": "2026-11-11T13:27-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "IMVT",
+     "ROIV"
+    ],
+    "author": null
+   },
+   {
+    "title": "NextEra Energy: Forgotten AI Winner After Democratic Sweep",
+    "url": "https://seekingalpha.com/article/4966586-nextera-energy-forgotten-ai-winner-after-democratic-sweep",
+    "at": "2026-11-11T13:26-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "NEE"
+    ],
+    "author": null
+   },
+   {
+    "title": "Amprius targets $145M 2026 revenue as it plans 12 million annual U.S. pouch-cell capacity by early 2028",
+    "url": "https://seekingalpha.com/news/4670908-amprius-targets-145m-2026-revenue-as-it-plans-12-million-annual-u-s-pouch-cell-capacity-by",
+    "at": "2026-11-11T13:20-05:00",
+    "kind": "news",
+    "symbols": [],
+    "author": null
+   },
+   {
+    "title": "Viavi Solutions Inc. (VIAV) Shareholder/Analyst Call Prepared Remarks Transcript",
+    "url": "https://seekingalpha.com/article/4966595-viavi-solutions-inc-viav-shareholder-analyst-call-prepared-remarks-transcript",
+    "at": "2026-11-11T13:19-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "VIAV"
+    ],
+    "author": null
+   },
+   {
+    "title": "DraftKings: Too Challenging Given The Economics Of Prediction Markets",
+    "url": "https://seekingalpha.com/article/4966583-draftkings-too-challenging-given-the-economics-of-prediction-markets",
+    "at": "2026-11-11T13:18-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "DKNG"
+    ],
+    "author": null
+   },
+   {
+    "title": "2 ETFs To Enhance Investor Income Via Options And Deliver Long-Term Returns",
+    "url": "https://seekingalpha.com/article/4966579-2-etfs-to-enhance-investor-income-via-options-and-deliver-long-term-returns",
+    "at": "2026-11-11T13:09-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "IYRI",
+     "IYR",
+     "OVL",
+     "VOO",
+     "SPYI"
+    ],
+    "author": null
+   },
+   {
+    "title": "Nationwide Strategic Income Fund Q3 2026 Commentary",
+    "url": "https://seekingalpha.com/article/4966582-nationwide-strategic-income-fund-q3-2026-commentary",
+    "at": "2026-11-11T13:09-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "NWXEX",
+     "NWXGX",
+     "NWXHX"
+    ],
+    "author": null
+   },
+   {
+    "title": "Taylor Wimpey plc (TWODY) Q3 2026 Sales/Trading Call Transcript",
+    "url": "https://seekingalpha.com/article/4966609-taylor-wimpey-plc-twody-q3-2026-sales-trading-call-transcript",
+    "at": "2026-11-11T13:09-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "TWODY",
+     "TWODF"
+    ],
+    "author": null
+   },
+   {
+    "title": "Apple iPhone 18 Pro wait times near zero: UBS data",
+    "url": "https://seekingalpha.com/news/4670897-apple-iphone-18-pro-wait-times-near-zero-ubs-data",
+    "at": "2026-11-11T13:07-05:00",
+    "kind": "news",
+    "symbols": [],
+    "author": null
+   },
+   {
+    "title": "Tech rally takes Dell Technologies higher by 14%",
+    "url": "https://seekingalpha.com/news/4670856-tech-rally-takes-dell-technologies-higher-by-14",
+    "at": "2026-11-11T13:06-05:00",
+    "kind": "news",
+    "symbols": [],
+    "author": null
+   },
+   {
+    "title": "GAMCO Global Gold, Natural Resources & Income Trust declares $0.035 dividend",
+    "url": "https://seekingalpha.com/news/4670906-gamco-global-gold-natural-resources-and-income-trust-declares-0_035-dividend",
+    "at": "2026-11-11T13:06-05:00",
+    "kind": "news",
+    "symbols": [],
+    "author": null
+   },
    {
     "title": "Gabelli Convertible & Income Securities Fund Inc declares $0.12 dividend",
     "url": "https://seekingalpha.com/news/4670905-gabelli-convertible-and-income-securities-fund-inc-declares-0_12-dividend",
@@ -499,46 +635,6 @@
     "title": "Gabelli Equity Trust Inc declares $0.15 dividend",
     "url": "https://seekingalpha.com/news/4670904-gabelli-equity-trust-inc-declares-0_15-dividend",
     "at": "2026-11-11T13:02-05:00",
-    "kind": "news",
-    "symbols": [],
-    "author": null
-   },
-   {
-    "title": "Cinclus outlines HEEALING1 top line results expected this quarter after 523 patients randomized",
-    "url": "https://seekingalpha.com/news/4670903-cinclus-outlines-heealing1-top-line-results-expected-this-quarter-after-523-patients",
-    "at": "2026-11-11T13:02-05:00",
-    "kind": "news",
-    "symbols": [],
-    "author": null
-   },
-   {
-    "title": "Gabelli Utility Trust declares $0.05 dividend",
-    "url": "https://seekingalpha.com/news/4670902-gabelli-utility-trust-declares-0_05-dividend",
-    "at": "2026-11-11T13:01-05:00",
-    "kind": "news",
-    "symbols": [],
-    "author": null
-   },
-   {
-    "title": "Ellsworth Growth and Income Fund declares $1.01 dividend",
-    "url": "https://seekingalpha.com/news/4670901-ellsworth-growth-and-income-fund-declares-1_01-dividend",
-    "at": "2026-11-11T13:01-05:00",
-    "kind": "news",
-    "symbols": [],
-    "author": null
-   },
-   {
-    "title": "Conifex outlines $30M tariff loan with no principal payments until September 2028 as it targets January 2027 restart",
-    "url": "https://seekingalpha.com/news/4670900-conifex-outlines-30m-tariff-loan-with-no-principal-payments-until-september-2028-as-it",
-    "at": "2026-11-11T13:00-05:00",
-    "kind": "news",
-    "symbols": [],
-    "author": null
-   },
-   {
-    "title": "Stran outlines capital structure simplification as 5.7M warrants are set to expire by December 10",
-    "url": "https://seekingalpha.com/news/4670899-stran-outlines-capital-structure-simplification-as-5_7m-warrants-are-set-to-expire-by",
-    "at": "2026-11-11T13:00-05:00",
     "kind": "news",
     "symbols": [],
     "author": null
@@ -584,97 +680,6 @@
      "IRDM",
      "RKLB",
      "RKLB:CA"
-    ],
-    "author": null
-   },
-   {
-    "title": "When And How To Buy The Dip",
-    "url": "https://seekingalpha.com/article/4966591-when-how-to-buy-the-dip",
-    "at": "2026-11-11T12:40-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "AFMC",
-     "AFSM",
-     "ARKK",
-     "AVUV",
-     "BAPR",
-     "IVOO"
-    ],
-    "author": null
-   },
-   {
-    "title": "Exasol AG (EXLGF) Nine Months 2026 Sales/ Trading Statement Call - Slideshow",
-    "url": "https://seekingalpha.com/article/4966590-exasol-ag-exlgf-nine-months-2026-sales-trading-statement-call-slideshow",
-    "at": "2026-11-11T12:30-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "EXLGF"
-    ],
-    "author": null
-   },
-   {
-    "title": "Exasol AG (EXLGF) Q3 2026 Sales/Trading Call Transcript",
-    "url": "https://seekingalpha.com/article/4966493-exasol-ag-exlgf-q3-2026-sales-trading-call-transcript",
-    "at": "2026-11-11T12:29-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "EXLGF"
-    ],
-    "author": null
-   },
-   {
-    "title": "International Paper Company (IP) Presents at Baird 2026 Global Industrial Conference 2026 Transcript",
-    "url": "https://seekingalpha.com/article/4966546-international-paper-company-ip-presents-at-baird-2026-global-industrial-conference-2026",
-    "at": "2026-11-11T12:29-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "IP",
-     "INPAP"
-    ],
-    "author": null
-   },
-   {
-    "title": "WEX Inc. (WEX) Presents at KBW Fintech Ecosystem Conference 2026 Transcript",
-    "url": "https://seekingalpha.com/article/4966541-wex-inc-wex-presents-at-kbw-fintech-ecosystem-conference-2026-transcript",
-    "at": "2026-11-11T12:28-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "WEX"
-    ],
-    "author": null
-   },
-   {
-    "title": "ESAB - A Sigh Of Relief",
-    "url": "https://seekingalpha.com/article/4966560-esab-a-sigh-of-relief",
-    "at": "2026-11-11T12:27-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "ESAB"
-    ],
-    "author": null
-   },
-   {
-    "title": "Wall Street Lunch: Cancer Could Become History Thanks To AI, Says Anthropic CEO",
-    "url": "https://seekingalpha.com/article/4966572-wall-street-lunch-cancer-could-become-history-thanks-to-ai-says-anthropic-ceo",
-    "at": "2026-11-11T12:27-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "ANT",
-     "APLD",
-     "CORZ",
-     "RGTI",
-     "FUN",
-     "RIVN"
-    ],
-    "author": null
-   },
-   {
-    "title": "Smith-Midland's Troubles Are Temporary, But That Doesn't Mean To Upgrade It Yet",
-    "url": "https://seekingalpha.com/article/4966559-smith-midlands-troubles-are-temporary-but-that-doesnt-mean-to-upgrade-it-yet",
-    "at": "2026-11-11T12:21-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "SMID"
     ],
     "author": null
    }
@@ -780,90 +785,90 @@
    "url": "https://seekingalpha.com/market-news"
   },
   "note": "Yalnızca başlık ve bağlantı. Yazıların tamamı Seeking Alpha'da; bir kısmı abonelik ister. Yatırım tavsiyesi değildir.",
-  "lastGood": "2026-11-11T13:08:30-05:00"
+  "lastGood": "2026-11-11T13:38:41-05:00"
  },
  "digest": {
   "date": "2026-11-11",
   "title": "Daily brief — Wednesday, November 11, 2026",
-  "generatedAt": "2026-11-11T13:08-05:00",
+  "generatedAt": "2026-11-11T13:38-05:00",
   "bullets": [
    {
     "head": "Markets (latest session)",
-    "text": "S&P 500 +1.47%, Nasdaq 100 +2.79%, Dow +0.35%, Russell 2000 +0.97%. VIX 17.6; 10-yr yield 5.00% (+2 bp); WTI $87.00 (+1.12%); gold $4,001 (-0.73%). Tech led the market."
+    "text": "S&P 500 +1.59%, Nasdaq 100 +2.96%, Dow +0.48%, Russell 2000 +0.98%. VIX 17.4; 10-yr yield 5.00% (+2 bp); WTI $87.09 (+1.22%); gold $3,999 (-0.76%). Tech led the market."
    },
    {
     "head": "Trend filter",
-    "text": "The S&P 500 (SPY $760.95) is 4.1% above its 200-day average ($730.99). Basket rule: the momentum basket stays invested. Index sleeve (last daily decision 2026-11-11): long, target +0.71x Nasdaq 100 exposure (25% / 35.3% 20-day volatility, capped at 3x)."
+    "text": "The S&P 500 (SPY $761.81) is 4.2% above its 200-day average ($730.99). Basket rule: the momentum basket stays invested. Index sleeve (last daily decision 2026-11-11): long, target +0.71x Nasdaq 100 exposure (25% / 35.3% 20-day volatility, capped at 3x)."
    },
    {
     "head": "Our portfolio",
-    "text": "Net value $2,905.60 (+1.37% vs the previous close); cash $1,467.66; 2 positions, leverage 0.49x. Best holding today: GEV +2.92%; weakest: QQQ +2.78%."
+    "text": "Net value $2,907.20 (+1.43% vs the previous close); cash $1,467.66; 2 positions, leverage 0.49x. Best holding today: QQQ +3.01%; weakest: GEV +2.60%."
    },
    {
     "head": "Themes in today's headlines",
-    "text": "AI & chips (15), Earnings (12), Analysts (7), Energy (6)."
+    "text": "AI & chips (15), Earnings (13), Analysts (8), Energy (8)."
    }
   ],
   "headlines": [
    {
-    "title": "Analysts Just Slashed Their Price Targets on These 5 Stocks",
-    "url": "https://finance.yahoo.com/markets/stocks/articles/analysts-just-slashed-price-targets-175854284.html",
-    "publisher": "Insider Monkey",
-    "at": "2026-11-11T12:58-05:00",
-    "summary": "Wall Street had its worst day in 19 months last Thursday, with chip stocks leading the selloff.",
+    "title": "Government Shutdown, Continued Oil Price Drop Could Prevent December Fed Rate Hike, Macquarie Says",
+    "url": "https://finance.yahoo.com/economy/policy/articles/government-shutdown-continued-oil-price-182153985.html",
+    "publisher": "MT Newswires",
+    "at": "2026-11-11T13:21-05:00",
+    "summary": "A potential US government shutdown and a further decline in oil prices are among the factors that co",
     "tags": [
+     "Fed & rates",
      "Policy & politics",
-     "Analysts",
-     "AI & chips"
+     "Energy"
     ]
    },
    {
-    "title": "Oil up 2% as Iran official says country will keep enriched nuclear material",
-    "url": "https://finance.yahoo.com/energy/articles/oil-rebounds-hormuz-shipping-attacks-045504059.html",
-    "publisher": "Reuters",
-    "at": "2026-11-11T12:30-05:00",
-    "summary": "By Nicole Jao NEW YORK, Nov 11 (Reuters) - Oil prices rose about 2% on Wednesday after Iran's security chief said Tehran would not allow any enriched nuclear material to leave the country, feeding",
+    "title": "US Dollar Strengthens Against The Loonie on Rate Hike Expectations",
+    "url": "https://finance.yahoo.com/markets/currencies/articles/us-dollar-strengthens-against-loonie-182054060.html",
+    "publisher": "MT Newswires",
+    "at": "2026-11-11T13:20-05:00",
+    "summary": "The US dollar strengthened against Canada's currency Wednesday afternoon as oil prices climbed and o",
+    "tags": [
+     "Fed & rates",
+     "Energy"
+    ]
+   },
+   {
+    "title": "Saudi Arabia Keeps Increasing Its Oil Production. OPEC+'s Output is Now Near Pre-Iran War Levels.",
+    "url": "https://www.ibtimes.com/opec-plus-oil-output-nears-prewar-levels-3809654",
+    "publisher": "International Business Times",
+    "at": "2026-11-11T13:13-05:00",
+    "summary": "The latest figure amounts to 97% of pre-war levels.",
     "tags": [
      "Energy"
     ]
    },
    {
-    "title": "EOG’s 8% Dividend Raise Is a Bet on Surviving Any Oil Cycle",
-    "url": "https://247wallst.com/investing/2026/11/11/eogs-8-dividend-raise-is-a-bet-on-surviving-any-oil-cycle/",
-    "publisher": "24/7 Wall St.",
-    "at": "2026-11-11T12:17-05:00",
-    "summary": "EOG just raised its dividend while oil trades near $100, and the CEO says it can survive any cycle.",
+    "title": "ExxonMobil (XOM) Stock May Be 24% Undervalued Despite Venezuela Oil Deal",
+    "url": "https://finance.yahoo.com/markets/stocks/articles/exxonmobil-xom-stock-may-24-181015023.html",
+    "publisher": "Simply Wall St.",
+    "at": "2026-11-11T13:10-05:00",
+    "summary": "ExxonMobil Holdings has delivered a powerful share price run over the past few years, yet the recent pullback and busy deal slate raise a sharper question about whether the current market value lines …",
     "tags": [
-     "Earnings",
      "Energy",
      "Corporate"
-    ]
-   },
-   {
-    "title": "Brent Jumps Nearly 3% as Iran Denies Any Talks With Washington",
-    "url": "https://finance.yahoo.com/energy/articles/brent-jumps-nearly-3-iran-163000485.html",
-    "publisher": "Oilprice.com",
-    "at": "2026-11-11T11:30-05:00",
-    "summary": "Brent rose more than 3% to above $94 as Iran denied talks with the U.S., while Saudi output neared pre-war levels and Hormuz ship attacks continued.",
-    "tags": [
-     "Energy"
     ]
    }
   ],
   "movers": [
    {
+    "ticker": "QQQ",
+    "changePct": 3.01,
+    "title": "Exchange-Traded Funds Higher as US Equities Advance After Midday",
+    "url": "https://finance.yahoo.com/markets/stocks/articles/exchange-traded-funds-higher-us-181134424.html",
+    "publisher": "MT Newswires"
+   },
+   {
     "ticker": "GEV",
-    "changePct": 2.92,
+    "changePct": 2.6,
     "title": "AI Stocks, Neoclouds Rebound From SoftBank Bump, Get CoreWeave Lift",
     "url": "https://www.investors.com/news/softbank-coreweave-earnings-ai-neocloud-rally-demand-fears-ai-stocks/?src=A00220&yptr=yahoo",
     "publisher": "Investor's Business Daily"
-   },
-   {
-    "ticker": "QQQ",
-    "changePct": 2.78,
-    "title": "Nokia’s Rebound Faces One Big Test Before the End of 2026",
-    "url": "https://247wallst.com/investing/2026/11/11/nokias-rebound-faces-one-big-test-before-the-end-of-2026/",
-    "publisher": "24/7 Wall St."
    }
   ],
   "note": "Generated automatically from market data, the bot's ledger and the headline feeds (rule-based, no AI). Not investment advice."
