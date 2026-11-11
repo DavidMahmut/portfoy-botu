@@ -1,12 +1,12 @@
 {
- "asOf": "2026-11-11T10:42:12-05:00",
+ "asOf": "2026-11-11T10:59:08-05:00",
  "sections": [
   {
    "ticker": "QQQ",
    "name": "Invesco QQQ (Nasdaq 100)",
    "role": "long",
-   "dayChangePct": 2.04,
-   "unrealizedPct": -1.0,
+   "dayChangePct": 2.41,
+   "unrealizedPct": -0.64,
    "items": [
     {
      "title": "Exchange-Traded Funds, Equity Futures Higher Pre-Bell Wednesday as Nvidia Stock Recovers",
@@ -50,9 +50,20 @@
    "ticker": "GEV",
    "name": "GE Vernova",
    "role": "long",
-   "dayChangePct": 2.88,
-   "unrealizedPct": 4.54,
+   "dayChangePct": 3.1,
+   "unrealizedPct": 4.76,
    "items": [
+    {
+     "title": "JPMorgan grows wary on AI-exposed industrials, lowers price targets",
+     "summary": "Investing.com -- JPMorgan said it has become far more cautious on industrial stocks tied to AI data center spending, with the bank starting Eaton (NYSE:ETN), Johnson Controls (NYSE:JCI) and Vertiv (NYSE:VRT) at Neutral and lowering the price targets on most of…",
+     "publisher": "Investing.com",
+     "url": "https://finance.yahoo.com/markets/stocks/articles/jpmorgan-grows-wary-ai-exposed-153040434.html",
+     "at": "2026-11-11T10:30-05:00",
+     "tags": [
+      "Analysts",
+      "AI & chips"
+     ]
+    },
     {
      "title": "Oklo Rises 4% as DOE Clears Groves-1 Reactor for Unrestricted Operations: “Reset the Nuclear Industry’s Expectations”",
      "summary": "Key TakeawaysOklo shares jumped 4% today after the Department of Energy cleared its Groves-1 test reactor for unrestricted operations. Groves-1 shows Oklo can build fast, but it still needs a cost for its first Aurora powerhouse and a binding customer.",
@@ -81,14 +92,6 @@
      "tags": [
       "Earnings"
      ]
-    },
-    {
-     "title": "State Street Industrial Select Sector SPDR (XLI) Adds GE and CAT on Nov. 9",
-     "summary": "The $30.67 billion fund bought $236.3 million of stock on Monday, Nov. 9, lifting all 83 of its positions and selling nothing.",
-     "publisher": "GuruFocus.com",
-     "url": "https://finance.yahoo.com/markets/stocks/articles/state-street-industrial-select-sector-110410356.html",
-     "at": "2026-11-11T06:04-05:00",
-     "tags": []
     }
    ]
   },
@@ -99,6 +102,17 @@
    "dayChangePct": null,
    "unrealizedPct": null,
    "items": [
+    {
+     "title": "Nvidia is Now Down More Than 25% In 30 Days: This Wall Street Desk Predicts 205% Returns",
+     "summary": "NVIDIA posted a record quarter and still lost a quarter of its value in a month, while earnings estimates kept climbing. A swelling balance sheet and one looming report may explain why investors are bailing.",
+     "publisher": "24/7 Wall St.",
+     "url": "https://247wallst.com/investing/2026/11/11/nvidia-is-now-down-more-than-25-in-30-days-this-wall-street-desk-predicts-205-returns/",
+     "at": "2026-11-11T10:45-05:00",
+     "tags": [
+      "Earnings",
+      "AI & chips"
+     ]
+    },
     {
      "title": "Supermicro Begins Shipping New AMD-Powered AI Servers — Claims Up To 1.8x Higher AI Throughput",
      "summary": "The company is also expanding its AMD-based rack-scale offerings with the Helios and Helion platforms, though it didn’t disclose shipment volumes, orders, or expected revenue.",
@@ -129,16 +143,6 @@
      "at": "2026-11-11T10:21-05:00",
      "tags": [
       "Earnings",
-      "AI & chips"
-     ]
-    },
-    {
-     "title": "State of the tech trade and reasons for optimism in the market",
-     "summary": "Yahoo Finance Executive Editor dives deep into the state of the tech trade with detailed looks at Nvidia, CoreWeave, Anthropic, and OpenAI, and why reasons for optimism continue for the sector. Sozzi goes 1-on-1 with Baird, Managing Director and Tech Strategis…",
-     "publisher": "Yahoo Finance Video",
-     "url": "https://finance.yahoo.com/video/state-of-the-tech-trade-and-reasons-for-optimism-in-the-market-150741331.html",
-     "at": "2026-11-11T10:07-05:00",
-     "tags": [
       "AI & chips"
      ]
     }
@@ -338,6 +342,17 @@
  ],
  "market": [
   {
+   "title": "Prediction: A Bear Market Is Coming: 3 Ways to Stay Ahead",
+   "summary": "The AI-led Trump boom may be on its last legs.",
+   "publisher": "Motley Fool",
+   "url": "https://www.fool.com/investing/2026/11/11/prediction-a-bear-market-is-coming-3-ways-to-stay/",
+   "at": "2026-11-11T10:50-05:00",
+   "tags": [
+    "Policy & politics",
+    "AI & chips"
+   ]
+  },
+  {
    "title": "Inflation Report Doesn't Warrant 50 Bps Fed Rate Hike, David Rosenberg Says",
    "summary": "Rosenberg Research founder and President David Rosenberg says a 50 basis-point rate hike by the Federal Reserve in December is on the table but not firmly.",
    "publisher": "Bloomberg",
@@ -355,28 +370,6 @@
    "at": "2026-11-11T10:07-05:00",
    "tags": [
     "Fed & rates"
-   ]
-  },
-  {
-   "title": "BC-Crude Oil Futures",
-   "summary": "NEW YORK (AP) — Prices as of 10:00:00 AM Wednesday, November 11.Light Sweet Crude (NYMX)1,000 bbl.",
-   "publisher": "Associated Press",
-   "url": "https://finance.yahoo.com/markets/commodities/articles/bc-crude-oil-futures-150015017.html",
-   "at": "2026-11-11T10:00-05:00",
-   "tags": [
-    "Energy"
-   ]
-  },
-  {
-   "title": "CoreWeave Earnings Reignite AI Trade, Sending Stocks Higher",
-   "summary": "Bond yields can’t get in the way of a stock market rebound today.",
-   "publisher": "Barrons.com",
-   "url": "https://www.barrons.com/livecoverage/stock-market-news-today-111126/card/coreweave-earnings-reignites-ai-trade-sending-stocks-higher-FOQJ5DfmTzY2TPve2k5Q?siteid=yhoof2&yptr=yahoo",
-   "at": "2026-11-11T09:31-05:00",
-   "tags": [
-    "Fed & rates",
-    "Earnings",
-    "AI & chips"
    ]
   },
   {
@@ -434,6 +427,30 @@
    ]
   },
   {
+   "title": "Walmart Poised for Continued Growth Amid Market Share Gains, BofA Says",
+   "summary": "Walmart (WMT) is poised to continue gaining market share across its grocery and general merchandise",
+   "publisher": "MT Newswires",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/walmart-poised-continued-growth-amid-154605164.html",
+   "at": "2026-11-11T10:46-05:00",
+   "tags": []
+  },
+  {
+   "title": "What Will Decide Vertex Stock Over The Next Six Months?",
+   "summary": "For questions about this article or underlying research, email help@trefis.com.",
+   "publisher": "Trefis",
+   "url": "https://www.trefis.com/stock/vrtx/articles/624402/what-will-decide-vertex-stock-over-the-next-six-months/2026-11-11",
+   "at": "2026-11-11T10:38-05:00",
+   "tags": []
+  },
+  {
+   "title": "3 Consumer Stocks to Buy in November and Hold for the Next 20 Years",
+   "summary": "Planning 20 years out for anything is difficult, but Monster, Freshpet, and Costco have business traits that make them built to last.",
+   "publisher": "Motley Fool",
+   "url": "https://www.fool.com/investing/2026/11/11/3-consumer-stocks-to-buy-in-november-and-hold-for/",
+   "at": "2026-11-11T10:35-05:00",
+   "tags": []
+  },
+  {
    "title": "Tech rises as CoreWeave results reignite AI trade: AlphaCheck",
    "summary": "Tech stocks led the market higher on Wednesday.",
    "publisher": "Yahoo Finance",
@@ -443,53 +460,143 @@
     "Earnings",
     "AI & chips"
    ]
-  },
-  {
-   "title": "Poland’s Orlen Cancels Qatar LNG Supply Deal After Months of Force Majeure",
-   "summary": "The termination of the long-term LNG supply contract with QatarEnergy marks the first-known cancellation of an agreement with the exporter since the Iran war began.",
-   "publisher": "The Wall Street Journal",
-   "url": "https://www.wsj.com/finance/commodities-futures/polands-orlen-cancels-qatar-lng-supply-deal-after-months-of-force-majeure-88f37e7b?siteid=yhoof2&yptr=yahoo",
-   "at": "2026-11-11T10:23-05:00",
-   "tags": [
-    "Corporate"
-   ]
-  },
-  {
-   "title": "Eastern Q3 Earnings Call Highlights",
-   "summary": "Eastern (NASDAQ:EML) reported a 36% increase in third-quarter sales as truck-related shipments rebounded and its recently acquired aerospace and defense businesses contributed their first full quarter of revenue. Net sales rose to $75 million from $55.3 millio…",
-   "publisher": "MarketBeat",
-   "url": "https://www.marketbeat.com/instant-alerts/transcript-eastern-q3-earnings-call-highlights-2026-11-11/?utm_source=yahoofinance&utm_medium=yahoofinance",
-   "at": "2026-11-11T10:15-05:00",
-   "tags": [
-    "Earnings",
-    "Corporate"
-   ]
   }
  ],
  "seekingAlpha": {
-  "asOf": "2026-11-11T10:42:12-05:00",
+  "asOf": "2026-11-11T10:59:08-05:00",
   "ok": true,
   "stale": false,
   "via": "seekingalpha.com RSS",
   "errors": [],
   "feedCounts": {
    "Piyasa haberleri": 7,
-   "Tüm yazılar": 24
+   "Tüm yazılar": 25
   },
   "market": [
+   {
+    "title": "Westwater Resources Q3 2026 Earnings Preview",
+    "url": "https://seekingalpha.com/news/4670709-westwater-resources-q3-2026-earnings-preview",
+    "at": "2026-11-11T10:58-05:00",
+    "kind": "news",
+    "symbols": [],
+    "author": null
+   },
+   {
+    "title": "McCormick's Progress Doesn't Justify An Upgrade As Its Merger Nears",
+    "url": "https://seekingalpha.com/article/4966494-mccormicks-progress-doesnt-justify-an-upgrade-as-its-merger-nears",
+    "at": "2026-11-11T10:51-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "UL",
+     "MKC"
+    ],
+    "author": null
+   },
+   {
+    "title": "AMG TimesSquare International Small Cap Fund Q3 2026 Commentary",
+    "url": "https://seekingalpha.com/article/4966495-amg-timessquare-international-small-cap-fund-q3-2026-commentary",
+    "at": "2026-11-11T10:51-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "TCMPX",
+     "TQTIX",
+     "TCMIX"
+    ],
+    "author": null
+   },
+   {
+    "title": "Data I/O Q3 2026 Earnings Preview",
+    "url": "https://seekingalpha.com/news/4670693-data-i-o-q3-2026-earnings-preview",
+    "at": "2026-11-11T10:50-05:00",
+    "kind": "news",
+    "symbols": [],
+    "author": null
+   },
+   {
+    "title": "Anthropic's IPO is poised for a historic retail debut, analysis suggests",
+    "url": "https://seekingalpha.com/news/4670688-anthropics-ipo-is-poised-for-a-historic-retail-debut-analysis-suggests",
+    "at": "2026-11-11T10:50-05:00",
+    "kind": "news",
+    "symbols": [],
+    "author": null
+   },
+   {
+    "title": "Inflation Fears Push Treasury Yields Further Above Fair Value",
+    "url": "https://seekingalpha.com/article/4966543-inflation-fears-push-treasury-yields-further-above-fair-value",
+    "at": "2026-11-11T10:50-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "TLT",
+     "SPTL",
+     "VGLT",
+     "VLGSX",
+     "VUSTX",
+     "PRULX"
+    ],
+    "author": null
+   },
+   {
+    "title": "MediWound Q3 2026 Earnings Preview",
+    "url": "https://seekingalpha.com/news/4670692-mediwound-q3-2026-earnings-preview",
+    "at": "2026-11-11T10:48-05:00",
+    "kind": "news",
+    "symbols": [],
+    "author": null
+   },
+   {
+    "title": "Conduit Holdings Limited (CNDHF) Q3 2026 Sales/Trading Call Transcript",
+    "url": "https://seekingalpha.com/article/4966429-conduit-holdings-limited-cndhf-q3-2026-sales-trading-call-transcript",
+    "at": "2026-11-11T10:48-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "CNDHF"
+    ],
+    "author": null
+   },
+   {
+    "title": "National Vision Holdings Q3 2026 Earnings Preview",
+    "url": "https://seekingalpha.com/news/4670691-national-vision-holdings-q3-2026-earnings-preview",
+    "at": "2026-11-11T10:47-05:00",
+    "kind": "news",
+    "symbols": [],
+    "author": null
+   },
+   {
+    "title": "Hyperion DeFi, Inc. Q3 Earnings Preview",
+    "url": "https://seekingalpha.com/news/4670690-hyperion-defi-inc-q3-earnings-preview",
+    "at": "2026-11-11T10:47-05:00",
+    "kind": "news",
+    "symbols": [],
+    "author": null
+   },
+   {
+    "title": "Liquidia extends gains as Raymond James upgrades on Yutrepia launch",
+    "url": "https://seekingalpha.com/news/4670685-liquidia-stock-upgraded-raymond-james",
+    "at": "2026-11-11T10:46-05:00",
+    "kind": "news",
+    "symbols": [],
+    "author": null
+   },
+   {
+    "title": "CoreWeave: The Debt Question Finally Got An Answer",
+    "url": "https://seekingalpha.com/article/4966506-coreweave-the-debt-question-finally-got-an-answer",
+    "at": "2026-11-11T10:45-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "NBIS",
+     "APLD",
+     "CORZ",
+     "IREN",
+     "CRWV",
+     "CRWV:CA"
+    ],
+    "author": null
+   },
    {
     "title": "Polaris International Composite Q3 2026 Commentary",
     "url": "https://seekingalpha.com/article/4966537-polaris-international-composite-q3-2026-commentary",
     "at": "2026-11-11T10:40-05:00",
     "kind": "analysis",
-    "symbols": [],
-    "author": null
-   },
-   {
-    "title": "Vestas shares tumble as German wind project costs weigh on quarterly profit",
-    "url": "https://seekingalpha.com/news/4670679-vestas-shares-tumble-as-german-wind-project-costs-weigh-on-quarterly-profit",
-    "at": "2026-11-11T10:38-05:00",
-    "kind": "news",
     "symbols": [],
     "author": null
    },
@@ -514,14 +621,6 @@
     "author": null
    },
    {
-    "title": "VeriSign ticks up as it unveils timeline for .web domain launch",
-    "url": "https://seekingalpha.com/news/4670675-verisign-ticks-up-as-it-unveils-timeline-for-web-domain-launch",
-    "at": "2026-11-11T10:36-05:00",
-    "kind": "news",
-    "symbols": [],
-    "author": null
-   },
-   {
     "title": "Elite Dividend Growth Machines On Sale (Up To 7% Yields)",
     "url": "https://seekingalpha.com/article/4966478-elite-dividend-growth-machines-on-sale-7-percent-yields",
     "at": "2026-11-11T10:36-05:00",
@@ -537,14 +636,6 @@
     "author": null
    },
    {
-    "title": "Tecogen Q3 2026 Earnings Preview",
-    "url": "https://seekingalpha.com/news/4670678-tecogen-q3-2026-earnings-preview",
-    "at": "2026-11-11T10:35-05:00",
-    "kind": "news",
-    "symbols": [],
-    "author": null
-   },
-   {
     "title": "Flex Ltd. (FLEX) Innovation Day: Flex and Axiom Technology Showcase - Slideshow",
     "url": "https://seekingalpha.com/article/4966536-flex-ltd-flex-innovation-day-flex-and-axiom-technology-showcase-slideshow",
     "at": "2026-11-11T10:35-05:00",
@@ -552,14 +643,6 @@
     "symbols": [
      "FLEX"
     ],
-    "author": null
-   },
-   {
-    "title": "DarioHealth Q3 2026 Earnings Preview",
-    "url": "https://seekingalpha.com/news/4670676-dariohealth-q3-2026-earnings-preview",
-    "at": "2026-11-11T10:34-05:00",
-    "kind": "news",
-    "symbols": [],
     "author": null
    },
    {
@@ -580,82 +663,6 @@
     "symbols": [
      "ZETA"
     ],
-    "author": null
-   },
-   {
-    "title": "Canadian National Railway: A Fresh View From New Highs (Rating Downgrade)",
-    "url": "https://seekingalpha.com/article/4966474-canadian-national-railway-a-fresh-view-from-new-highs-rating-downgrade",
-    "at": "2026-11-11T10:29-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "CNI",
-     "CNR:CA"
-    ],
-    "author": null
-   },
-   {
-    "title": "CVS Health Corporation (CVS) Presents at 8th Annual Wolfe Research Healthcare Conference Transcript",
-    "url": "https://seekingalpha.com/article/4966525-cvs-health-corporation-cvs-presents-at-8th-annual-wolfe-research-healthcare-conference",
-    "at": "2026-11-11T10:29-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "CVS",
-     "CVS:CA"
-    ],
-    "author": null
-   },
-   {
-    "title": "Focus Media Network Seeks U.S. IPO For Network Growth Plan",
-    "url": "https://seekingalpha.com/article/4966467-focus-media-network-seeks-us-ipo-for-network-growth-plan",
-    "at": "2026-11-11T10:28-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "FMSN"
-    ],
-    "author": null
-   },
-   {
-    "title": "HighPeak Energy: Oil Cut Rebounds In Q3 2026 (Rating Upgrade)",
-    "url": "https://seekingalpha.com/article/4966466-highpeak-energy-oil-cut-rebounds-in-q3-2026",
-    "at": "2026-11-11T10:27-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "HPK"
-    ],
-    "author": null
-   },
-   {
-    "title": "Only these four industrial stocks have sustained Strong Buy Quant ratings",
-    "url": "https://seekingalpha.com/news/4670672-only-these-four-industrial-stocks-have-sustained-strong-buy-quant-ratings",
-    "at": "2026-11-11T10:25-05:00",
-    "kind": "news",
-    "symbols": [],
-    "author": null
-   },
-   {
-    "title": "Broadcom: Cheaper To Own One Of The Best Stories On The Market",
-    "url": "https://seekingalpha.com/article/4966465-broadcom-cheaper-to-own-one-of-the-best-stories-on-the-market",
-    "at": "2026-11-11T10:25-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "AVGO"
-    ],
-    "author": null
-   },
-   {
-    "title": "Nebius Q3 Preview: Compute demand, contracts, and financing plans in focus",
-    "url": "https://seekingalpha.com/news/4670674-nebius-q3-preview-compute-demand-contracts-and-financing-plans-in-focus",
-    "at": "2026-11-11T10:23-05:00",
-    "kind": "news",
-    "symbols": [],
-    "author": null
-   },
-   {
-    "title": "Wall Street rebounds on a quieter day as the bond market is closed",
-    "url": "https://seekingalpha.com/news/4670670-wall-street-rebounds-on-a-quieter-day-as-the-bond-market-is-closed",
-    "at": "2026-11-11T10:21-05:00",
-    "kind": "news",
-    "symbols": [],
     "author": null
    }
   ],
@@ -760,31 +767,42 @@
    "url": "https://seekingalpha.com/market-news"
   },
   "note": "Yalnızca başlık ve bağlantı. Yazıların tamamı Seeking Alpha'da; bir kısmı abonelik ister. Yatırım tavsiyesi değildir.",
-  "lastGood": "2026-11-11T10:42:12-05:00"
+  "lastGood": "2026-11-11T10:59:08-05:00"
  },
  "digest": {
   "date": "2026-11-11",
   "title": "Daily brief — Wednesday, November 11, 2026",
-  "generatedAt": "2026-11-11T10:42-05:00",
+  "generatedAt": "2026-11-11T10:59-05:00",
   "bullets": [
    {
     "head": "Markets (latest session)",
-    "text": "S&P 500 +0.99%, Nasdaq 100 +2.08%, Dow -0.12%, Russell 2000 +0.60%. VIX 18.0; 10-yr yield 5.00% (+2 bp); WTI $88.48 (+2.84%); gold $4,009 (-0.53%). Tech led the market."
+    "text": "S&P 500 +1.16%, Nasdaq 100 +2.54%, Dow -0.11%, Russell 2000 +0.73%. VIX 17.7; 10-yr yield 5.00% (+2 bp); WTI $88.28 (+2.60%); gold $4,011 (-0.48%). Tech led the market."
    },
    {
     "head": "Trend filter",
-    "text": "The S&P 500 (SPY $757.35) is 3.6% above its 200-day average ($730.99). Basket rule: the momentum basket stays invested. Index sleeve (last daily decision 2026-11-11): long, target +0.71x Nasdaq 100 exposure (25% / 35.3% 20-day volatility, capped at 3x)."
+    "text": "The S&P 500 (SPY $758.60) is 3.8% above its 200-day average ($730.99). Basket rule: the momentum basket stays invested. Index sleeve (last daily decision 2026-11-11): long, target +0.71x Nasdaq 100 exposure (25% / 35.3% 20-day volatility, capped at 3x)."
    },
    {
     "head": "Our portfolio",
-    "text": "Net value $2,897.21 (+1.08% vs the previous close); cash $1,467.66; 2 positions, leverage 0.49x. Best holding today: GEV +2.88%; weakest: QQQ +2.04%."
+    "text": "Net value $2,901.97 (+1.25% vs the previous close); cash $1,467.66; 2 positions, leverage 0.49x. Best holding today: GEV +3.10%; weakest: QQQ +2.41%."
    },
    {
     "head": "Themes in today's headlines",
-    "text": "AI & chips (11), Earnings (9), Fed & rates (5), Analysts (3)."
+    "text": "AI & chips (12), Earnings (8), Analysts (4), Fed & rates (4)."
    }
   ],
   "headlines": [
+   {
+    "title": "Prediction: A Bear Market Is Coming: 3 Ways to Stay Ahead",
+    "url": "https://www.fool.com/investing/2026/11/11/prediction-a-bear-market-is-coming-3-ways-to-stay/",
+    "publisher": "Motley Fool",
+    "at": "2026-11-11T10:50-05:00",
+    "summary": "The AI-led Trump boom may be on its last legs.",
+    "tags": [
+     "Policy & politics",
+     "AI & chips"
+    ]
+   },
    {
     "title": "Inflation Report Doesn't Warrant 50 Bps Fed Rate Hike, David Rosenberg Says",
     "url": "https://finance.yahoo.com/video/inflation-report-doesnt-warrant-50-151828574.html",
@@ -806,21 +824,11 @@
     ]
    },
    {
-    "title": "BC-Crude Oil Futures",
-    "url": "https://finance.yahoo.com/markets/commodities/articles/bc-crude-oil-futures-150015017.html",
-    "publisher": "Associated Press",
-    "at": "2026-11-11T10:00-05:00",
-    "summary": "NEW YORK (AP) — Prices as of 10:00:00 AM Wednesday, November 11.Light Sweet Crude (NYMX)1,000 bbl.",
-    "tags": [
-     "Energy"
-    ]
-   },
-   {
-    "title": "CoreWeave Earnings Reignite AI Trade, Sending Stocks Higher",
-    "url": "https://www.barrons.com/livecoverage/stock-market-news-today-111126/card/coreweave-earnings-reignites-ai-trade-sending-stocks-higher-FOQJ5DfmTzY2TPve2k5Q?siteid=yhoof2&yptr=yahoo",
-    "publisher": "Barrons.com",
-    "at": "2026-11-11T09:31-05:00",
-    "summary": "Bond yields can’t get in the way of a stock market rebound today.",
+    "title": "Stock market today: S&P 500, Nasdaq rise as Nvidia stock recovers, chip stocks rally after CoreWeave earnings",
+    "url": "https://finance.yahoo.com/markets/live/stock-market-today-wednesday-november-11-dow-sp-500-nasdaq-nvidia-treasurys-veterans-day-140638547.html",
+    "publisher": "Yahoo Finance",
+    "at": "2026-11-11T07:34-05:00",
+    "summary": "Nvidia and other chip stocks crept higher, investors shifted their bets on a Fed rate hike next month, and cryptocurrencies fell.",
     "tags": [
      "Fed & rates",
      "Earnings",
@@ -831,14 +839,14 @@
   "movers": [
    {
     "ticker": "GEV",
-    "changePct": 2.88,
-    "title": "Oklo Rises 4% as DOE Clears Groves-1 Reactor for Unrestricted Operations: “Reset the Nuclear Industry’s Expectations”",
-    "url": "https://www.tikr.com/blog/oklo-rises-4-as-doe-clears-groves-1-reactor-for-unrestricted-operations-reset-the-nuclear-industrys-expectations?ref=yahoofinance&tlnk=yf-261111-qr699cg7",
-    "publisher": "TIKR"
+    "changePct": 3.1,
+    "title": "JPMorgan grows wary on AI-exposed industrials, lowers price targets",
+    "url": "https://finance.yahoo.com/markets/stocks/articles/jpmorgan-grows-wary-ai-exposed-153040434.html",
+    "publisher": "Investing.com"
    },
    {
     "ticker": "QQQ",
-    "changePct": 2.04,
+    "changePct": 2.41,
     "title": "Exchange-Traded Funds, Equity Futures Higher Pre-Bell Wednesday as Nvidia Stock Recovers",
     "url": "https://finance.yahoo.com/markets/stocks/articles/exchange-traded-funds-equity-futures-141131269.html",
     "publisher": "MT Newswires"
