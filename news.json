@@ -1,21 +1,31 @@
 {
- "asOf": "2026-11-12T10:11:13-05:00",
+ "asOf": "2026-11-12T10:41:53-05:00",
  "sections": [
   {
    "ticker": "QQQ",
    "name": "Invesco QQQ (Nasdaq 100)",
    "role": "long",
-   "dayChangePct": -0.95,
-   "unrealizedPct": -1.68,
+   "dayChangePct": -0.43,
+   "unrealizedPct": -1.16,
    "items": [
     {
-     "title": "Stock Market Today: Dow Wavers On Trump Remarks; Nvidia Plunges As Jensen Huang Resigns (Live Coverage)",
-     "summary": "The Dow wavers Thursday on Trump's Iran comments as Nvidia stock plunges 10% on the resignation of Jensen Huang.",
-     "publisher": "Investor's Business Daily",
-     "url": "https://www.investors.com/market-trend/stock-market-today/stock-market-today-nvidia-stock-nvda-jensen-huang/?src=A00220&yptr=yahoo",
-     "at": "2026-11-12T09:44-05:00",
+     "title": "NVIDIA’s Leadership Crisis Is Dragging the S&P 500 Lower. Here’s What Else Is Moving",
+     "summary": "The sudden leadership crisis at NVIDIA (NASDAQ:NVDA) is pulling Wall Street lower in early trading. Around 10:00 a.m. ET, the SPDR S&P 500 ETF Trust (NYSEARCA:SPY) was down 0.3%. NVIDIA shares fell 7% to about $161 after Jensen Huang resigned as CEO. The Wall …",
+     "publisher": "24/7 Wall St.",
+     "url": "https://247wallst.com/investing/2026/11/12/nvidias-leadership-crisis-is-dragging-the-sp-500-lower-heres-what-else-is-moving/",
+     "at": "2026-11-12T10:38-05:00",
      "tags": [
-      "Policy & politics",
+      "AI & chips",
+      "Corporate"
+     ]
+    },
+    {
+     "title": "Jensen Huang Resigns from NVIDIA, Shares -10%",
+     "summary": "The tech world -- not to mention the great stock market -- grapples with the concept of a Jensen Huang-less NVIDIA (NVDA).",
+     "publisher": "Zacks",
+     "url": "https://finance.yahoo.com/markets/stocks/articles/jensen-huang-resigns-nvidia-shares-141200158.html",
+     "at": "2026-11-12T09:12-05:00",
+     "tags": [
       "AI & chips"
      ]
     },
@@ -38,14 +48,6 @@
      "tags": [
       "AI & chips"
      ]
-    },
-    {
-     "title": "45 ETFs Add to Amgen (AMGN) Holdings on Tuesday",
-     "summary": "ETFs bought a net $66.8 million of Amgen stock on Tuesday, Nov. 10.",
-     "publisher": "GuruFocus.com",
-     "url": "https://finance.yahoo.com/markets/stocks/articles/45-etfs-add-amgen-amgn-110201664.html",
-     "at": "2026-11-12T06:02-05:00",
-     "tags": []
     }
    ]
   },
@@ -53,9 +55,19 @@
    "ticker": "GEV",
    "name": "GE Vernova",
    "role": "long",
-   "dayChangePct": 0.5,
-   "unrealizedPct": 3.55,
+   "dayChangePct": 1.96,
+   "unrealizedPct": 5.06,
    "items": [
+    {
+     "title": "67% Upside for GE Vernova? Morgan Stanley Thinks So, and Here’s How",
+     "summary": "Key TakeawaysMorgan Stanley kept its Buy rating and $1,350 price target on GE Vernova on Nov. 12.",
+     "publisher": "TIKR",
+     "url": "https://www.tikr.com/blog/67-upside-for-ge-vernova-morgan-stanley-thinks-so-and-heres-how?ref=yahoofinance&tlnk=yf-261112-hhmf23rf",
+     "at": "2026-11-12T10:12-05:00",
+     "tags": [
+      "Analysts"
+     ]
+    },
     {
      "title": "Energy Transition Update - Holu Hou Energy Revolutionizes MDU Solar Adoption",
      "summary": "Holu Hou Energy has launched the HoluPower 3.0, a solar energy storage system designed for its \"EnergyCluster\" platform, which targets multi-dwelling unit (MDU) housing. This development aims to overcome historical barriers to solar adoption in the MDU segment…",
@@ -79,26 +91,90 @@
      "url": "https://stocktwits.com/news-articles/markets/equity/ge-vernova-s-ontario-nuclear-plant-is-facing-delays-and-rising-costs/cNGx5Z4R99I",
      "at": "2026-11-11T18:26-05:00",
      "tags": []
+    }
+   ]
+  },
+  {
+   "ticker": "NVDA",
+   "name": "NVIDIA",
+   "role": "long",
+   "dayChangePct": -4.86,
+   "unrealizedPct": 0.53,
+   "items": [
+    {
+     "title": "SoFi chief market Strategist on an Nvidia without Jensen Huang: 'What happens without the visionary?'",
+     "summary": "Industry analysts say that Nvidia's shakeup may be creating buying opportunities and show what's next for AI.",
+     "publisher": "Yahoo Finance",
+     "url": "https://finance.yahoo.com/markets/article/sofi-chief-market-strategist-on-an-nvidia-without-jensen-huang-what-happens-without-the-visionary-154048480.html",
+     "at": "2026-11-12T10:40-05:00",
+     "tags": [
+      "Analysts",
+      "AI & chips"
+     ]
     },
     {
-     "title": "GE Vernova Fell 25% on Data Center Fears. Only About 20% of Its Gas Turbine Customers Are Data Centers. Time to Buy?",
-     "summary": "Investors may be viewing this company's future as being more dependent on the AI industry than it actually is.",
-     "publisher": "Motley Fool",
-     "url": "https://www.fool.com/investing/2026/11/11/ge-vernova-fell-25-on-data-center-fears-only-about/",
-     "at": "2026-11-11T17:25-05:00",
+     "title": "Jensen Huang's exit puts Nvidia's $530 billion web of AI deals under the microscope",
+     "summary": "Jensen Huang's resignation puts a spotlight on the deals Nvidia used to fund the AI boom.",
+     "publisher": "Yahoo Finance",
+     "url": "https://finance.yahoo.com/markets/article/jensen-huangs-exit-puts-nvidias-530-billion-web-of-ai-deals-under-the-microscope-153142269.html",
+     "at": "2026-11-12T10:31-05:00",
      "tags": [
-      "AI & chips"
+      "AI & chips",
+      "Corporate"
+     ]
+    },
+    {
+     "title": "Who is Colette Kress, Nvidia's new interim CEO?",
+     "summary": "Nvidia CFO Colette Kress will serve as interim CEO following Jensen Huang's ouster.",
+     "publisher": "Yahoo Finance",
+     "url": "https://finance.yahoo.com/technology/article/who-is-colette-kress-nvidias-new-interim-ceo-150856209.html",
+     "at": "2026-11-12T10:08-05:00",
+     "tags": [
+      "AI & chips",
+      "Corporate"
+     ]
+    },
+    {
+     "title": "Jensen Huang vs. Steve Jobs: Can Nvidia also thrive without its visionary?",
+     "summary": "Longtime Nvidia (NVDA) CEO Jensen Huang has resigned as chief executive following a string of personal controversies. Yahoo Finance's Julie Hyman chats with SoFi (SOFI) chief market strategist Liz Thomas and Moor Insights &amp; Strategy founder Patrick Moorhea…",
+     "publisher": "Yahoo Finance Video",
+     "url": "https://finance.yahoo.com/video/jensen-huang-vs-steve-jobs-can-nvidia-also-thrive-without-its-visionary-144638496.html",
+     "at": "2026-11-12T09:46-05:00",
+     "tags": [
+      "AI & chips",
+      "Corporate"
      ]
     }
    ]
   },
   {
-   "ticker": "DELL",
-   "name": "Dell Technologies",
-   "role": "watch-long",
-   "dayChangePct": null,
-   "unrealizedPct": null,
+   "ticker": "SMCI",
+   "name": "Super Micro Computer",
+   "role": "long",
+   "dayChangePct": -7.57,
+   "unrealizedPct": 0.63,
    "items": [
+    {
+     "title": "Nvidia, AMD, CoreWeave, Nebius, Tesla, Strategy, and More Stocks That Explain Today’s Market",
+     "summary": "Nvidia stock tumbles after CEO Jensen Huang resigns.",
+     "publisher": "Barrons.com",
+     "url": "https://www.barrons.com/articles/stock-movers-cd2d0ebf?siteid=yhoof2&yptr=yahoo",
+     "at": "2026-11-12T10:12-05:00",
+     "tags": [
+      "AI & chips",
+      "Corporate"
+     ]
+    },
+    {
+     "title": "CoreWeave and These Other Stocks Are in the Nvidia Danger Zone",
+     "summary": "Shares of companies with ties to the $4 trillion chip maker are dropping as investors wonder what will happen next.",
+     "publisher": "Barrons.com",
+     "url": "https://www.barrons.com/articles/coreweave-stock-drops-nvidia-huang-ai-3b3bbc9b?siteid=yhoof2&yptr=yahoo",
+     "at": "2026-11-12T10:04-05:00",
+     "tags": [
+      "AI & chips"
+     ]
+    },
     {
      "title": "Prediction: One AI Trend Could Send Dell Stock Higher",
      "summary": "Dell shares have plunged roughly 40% in a month, yet the company just posted record AI orders and a massive backlog. Why does one shift in who buys AI hardware make this selloff look like a mispricing, and what could still derail it?",
@@ -108,14 +184,6 @@
      "tags": [
       "AI & chips"
      ]
-    },
-    {
-     "title": "Was The Run In Dell Stock Hiding In Plain Sight?",
-     "summary": "For questions about this article or underlying research, email help@trefis.com.",
-     "publisher": "Trefis",
-     "url": "https://www.trefis.com/stock/dell/articles/624598/was-the-run-in-dell-stock-hiding-in-plain-sight/2026-11-12",
-     "at": "2026-11-12T09:19-05:00",
-     "tags": []
     },
     {
      "title": "Nvidia Sinks 11% on Report Board Will Oust Jensen Huang; Bernstein Downgrades: “We’ve Had Enough”",
@@ -128,6 +196,23 @@
       "AI & chips",
       "Corporate"
      ]
+    }
+   ]
+  },
+  {
+   "ticker": "DELL",
+   "name": "Dell Technologies",
+   "role": "long",
+   "dayChangePct": -3.95,
+   "unrealizedPct": 0.74,
+   "items": [
+    {
+     "title": "Was The Run In Dell Stock Hiding In Plain Sight?",
+     "summary": "For questions about this article or underlying research, email help@trefis.com.",
+     "publisher": "Trefis",
+     "url": "https://www.trefis.com/stock/dell/articles/624598/was-the-run-in-dell-stock-hiding-in-plain-sight/2026-11-12",
+     "at": "2026-11-12T09:19-05:00",
+     "tags": []
     },
     {
      "title": "Can HPE Sustain Growth Amid Evolving AI Market Dynamics?",
@@ -135,6 +220,24 @@
      "publisher": "Zacks",
      "url": "https://finance.yahoo.com/technology/ai/articles/hpe-sustain-growth-amid-evolving-135600296.html",
      "at": "2026-11-12T08:56-05:00",
+     "tags": [
+      "AI & chips"
+     ]
+    },
+    {
+     "title": "Is Advanced Energy Industries (AEIS) Stock Outpacing Its Computer and Technology Peers This Year?",
+     "summary": "Here is how Advanced Energy Industries (AEIS) and Dell Technologies (DELL) have performed compared to their sector so far this year.",
+     "publisher": "Zacks",
+     "url": "https://finance.yahoo.com/markets/stocks/articles/advanced-energy-industries-aeis-stock-134003930.html",
+     "at": "2026-11-12T08:40-05:00",
+     "tags": []
+    },
+    {
+     "title": "Nebul Picks NetApp Novus: Why It Matters for NTAP's AI Growth",
+     "summary": "NetApp strengthens its AI infrastructure presence as Nebul adopts its new Novus architecture, targeting faster data access and sovereign AI needs.",
+     "publisher": "Zacks",
+     "url": "https://finance.yahoo.com/technology/ai/articles/nebul-picks-netapp-novus-why-121100773.html",
+     "at": "2026-11-12T07:11-05:00",
      "tags": [
       "AI & chips"
      ]
@@ -198,48 +301,43 @@
    "unrealizedPct": null,
    "items": [
     {
-     "title": "AMD Bounced 10% but Is Still Down 32% in a Month. Wedbush Sees $600",
-     "summary": "AMD posted a record quarter, then watched a brutal AI selloff erase a third of its value in weeks. Free cash flow is collapsing and inventory is piling up, so can the Helios ramp justify a premium multiple?",
-     "publisher": "24/7 Wall St.",
-     "url": "https://247wallst.com/investing/2026/11/12/amd-bounced-10-but-is-still-down-32-in-a-month-wedbush-sees-600/",
-     "at": "2026-11-12T10:03-05:00",
+     "title": "AMD CEO Dr. Lisa Su reflects on her biggest lessons of 2026",
+     "summary": "CEO of the Year winner, AMD (AMD) chair and CEO Dr. Lisa Su joins Yahoo Finance Executive Editor Brian Sozzi at Yahoo Finance's 2026 Invest conference to reflect on lessons learned in 2026.",
+     "publisher": "Yahoo Finance Video",
+     "url": "https://finance.yahoo.com/video/amd-ceo-dr-lisa-su-reflects-on-her-biggest-lessons-of-2026-153656562.html",
+     "at": "2026-11-12T10:36-05:00",
      "tags": [
-      "Earnings",
-      "AI & chips"
+      "Corporate"
      ]
     },
     {
-     "title": "Nvidia Stock Hammered As CEO Resigns In Disgrace",
-     "summary": "Nvidia stock received another round of downgrades and price-target cuts on Wall Street in the wake of the latest CEO revelations.",
-     "publisher": "Investor's Business Daily",
-     "url": "https://www.investors.com/news/technology/nvidia-stock-hammered-ceo-jensen-huang-future-in-doubt/?src=A00220&yptr=yahoo",
-     "at": "2026-11-12T09:58-05:00",
+     "title": "AMD CEO Dr. Lisa Su continues making the 'right, big bets'",
+     "summary": "CEO of the Year winner, AMD (AMD) chair and CEO Dr. Lisa Su joins Yahoo Finance Executive Editor Brian Sozzi at Yahoo Finance's 2026 Invest conference to discuss what has led to her success over the last 5 years.",
+     "publisher": "Yahoo Finance Video",
+     "url": "https://finance.yahoo.com/video/amd-ceo-dr-lisa-su-continues-making-the-right-big-bets-152305265.html",
+     "at": "2026-11-12T10:23-05:00",
      "tags": [
-      "Analysts",
+      "Corporate"
+     ]
+    },
+    {
+     "title": "Jensen Huang Just Resigned From Nvidia. If You Have $5,000, These Are the 3 Tech Stocks to Buy",
+     "summary": "Jensen Huang resigned as Nvidia's CEO on Thursday; CFO Colette Kress is interim CEO and Harvey C. Jones is the board's first chair. Eric Bleeker's three picks for $5,000: Broadcom at $363.98, AMD at $577.47 and Anthropic, which is expected to list November 19,…",
+     "publisher": "24/7 Wall St.",
+     "url": "https://247wallst.com/investing/2026/11/12/if-you-have-5000-these-are-the-3-tech-stocks-to-buy-if-nvidia-removes-ceo-jensen-huang/",
+     "at": "2026-11-12T10:17-05:00",
+     "tags": [
       "AI & chips",
       "Corporate"
      ]
     },
     {
-     "title": "Nvidia downgraded, AMD upgraded: Wall Street's top analyst calls",
-     "summary": "Nvidia downgraded, AMD upgraded: Wall Street's top analyst calls",
-     "publisher": "The Fly",
-     "url": "https://finance.yahoo.com/news/amd-under-armour-downgraded-wall-133533194.html",
-     "at": "2026-11-12T09:44-05:00",
-     "tags": [
-      "Analysts",
-      "AI & chips"
-     ]
-    },
-    {
-     "title": "Nvidia vs. AMD: Which Is the Better Artificial Intelligence (AI) Stock for 2027 After the Tech Sell-Off?",
-     "summary": "Investors have an easy choice to make if they are looking to buy one of these two semiconductor stocks right now.",
-     "publisher": "Motley Fool",
-     "url": "https://www.fool.com/investing/2026/11/12/nvidia-vs-amd-which-is-the-better-artificial-intelligence-ai-stock-for-2027-after-the-tech-sell-off/",
-     "at": "2026-11-12T09:29-05:00",
-     "tags": [
-      "AI & chips"
-     ]
+     "title": "How Much Should One Number Worry Qualcomm Stock Holders?",
+     "summary": "For questions about this article or underlying research, email help@trefis.com.",
+     "publisher": "Trefis",
+     "url": "https://www.trefis.com/stock/qcom/articles/624743/how-much-should-one-number-worry-qualcomm-stock-holders/2026-11-12",
+     "at": "2026-11-12T10:13-05:00",
+     "tags": []
     }
    ]
   },
@@ -250,6 +348,27 @@
    "dayChangePct": null,
    "unrealizedPct": null,
    "items": [
+    {
+     "title": "Jim Cramer Is Bullish on These 10 Stocks",
+     "summary": "After years of unconditionally backing Jensen Huang and Nvidia (NASDAQ), Jim Cramer’s confidence in the chipmaker has been shaken by the controversy surrounding its chief executive. And the reasons are understandable. Cramer’s investment thesis on Nvidia has a…",
+     "publisher": "Insider Monkey",
+     "url": "https://finance.yahoo.com/markets/stocks/articles/jim-cramer-bullish-10-stocks-151203492.html",
+     "at": "2026-11-12T10:12-05:00",
+     "tags": [
+      "AI & chips"
+     ]
+    },
+    {
+     "title": "Is CrowdStrike Holdings (CRWD) Redefining AI Security With Its New Agent Tools?",
+     "summary": "CrowdStrike Holdings (NasdaqGS:CRWD) announced new generative AI and agent security products focused on autonomous AI protection. The company introduced Agentic Adversary Emulation powered by SafeMind plus Agent Insider Threat Detection and an AI Kill Switch c…",
+     "publisher": "Simply Wall St.",
+     "url": "https://finance.yahoo.com/technology/ai/articles/crowdstrike-holdings-crwd-redefining-ai-150947872.html",
+     "at": "2026-11-12T10:09-05:00",
+     "tags": [
+      "AI & chips",
+      "Corporate"
+     ]
+    },
     {
      "title": "$1,000 Split Across These 3 Cybersecurity Stocks Could Be Worth This Much in 5 Years",
      "summary": "AI is making hackers faster and more dangerous, but Fortinet, Cloudflare, and CrowdStrike have shown investors how they plan to win as the technology advances.",
@@ -269,24 +388,6 @@
      "tags": [
       "Earnings"
      ]
-    },
-    {
-     "title": "What Are Datadog Investors Betting On?",
-     "summary": "For questions about this article or underlying research, email help@trefis.com.",
-     "publisher": "Trefis",
-     "url": "https://www.trefis.com/stock/ddog/articles/624343/what-are-datadog-investors-betting-on/2026-11-11",
-     "at": "2026-11-11T19:26-05:00",
-     "tags": []
-    },
-    {
-     "title": "Mercedes-Benz F1 co-owner Kurtz on betting on Kimi Antonelli: 'Lights out'",
-     "summary": "Mercedes-Benz F1 co-owner and CrowdStrike (CRWD) founder and CEO George Kurtz joins Yahoo Finance Executive Editor Brian Sozzi at Yahoo Finance's 2026 Invest conference to discuss the success of F1's 20-year-old breakout star Kimi Antonelli.",
-     "publisher": "Yahoo Finance Video",
-     "url": "https://finance.yahoo.com/video/mercedes-benz-f1-co-owner-kurtz-on-betting-on-kimi-antonelli-lights-out-224801417.html",
-     "at": "2026-11-11T17:48-05:00",
-     "tags": [
-      "Corporate"
-     ]
     }
    ]
   },
@@ -297,6 +398,24 @@
    "dayChangePct": null,
    "unrealizedPct": null,
    "items": [
+    {
+     "title": "What Did Cloudflare Stock Investors Miss Before The Run?",
+     "summary": "For questions about this article or underlying research, email help@trefis.com.",
+     "publisher": "Trefis",
+     "url": "https://www.trefis.com/stock/net/articles/624622/what-did-cloudflare-stock-investors-miss-before-the-run/2026-11-12",
+     "at": "2026-11-12T10:13-05:00",
+     "tags": []
+    },
+    {
+     "title": "Palo Alto Networks Heads 3 Top Cybersecurity Stocks To Watch",
+     "summary": "Cybersecurity quietly became front-page business news when AI firms started hiring former intelligence officers to guard against espionage and data theft. That shift highlights how protecting critical information is moving from a technical concern to a boardro…",
+     "publisher": "Simply Wall St.",
+     "url": "https://finance.yahoo.com/technology/articles/palo-alto-networks-heads-3-151123464.html",
+     "at": "2026-11-12T10:11-05:00",
+     "tags": [
+      "AI & chips"
+     ]
+    },
     {
      "title": "Palo Alto Networks (PANW) Stock Looks Reasonably Priced Despite AI Deal Talk",
      "summary": "Palo Alto Networks has delivered a powerful run over the past few years, yet a double digit pullback in recent weeks and fresh AI security headlines now put a sharper spotlight on a simple question for you as a shareholder. Is the current share price properly …",
@@ -318,27 +437,22 @@
       "Earnings",
       "AI & chips"
      ]
-    },
-    {
-     "title": "How Big Could Cloudflare Stock's Next Fall Be?",
-     "summary": "For questions about this article or underlying research, email help@trefis.com.",
-     "publisher": "Trefis",
-     "url": "https://www.trefis.com/stock/net/articles/624233/how-big-could-cloudflare-stocks-next-fall-be/2026-11-11",
-     "at": "2026-11-11T17:05-05:00",
-     "tags": []
-    },
-    {
-     "title": "Citi Sees Powerful Upside for Palo Alto Network Stock",
-     "summary": "A premium valuation is testing Wall Street's growing optimism.",
-     "publisher": "GuruFocus.com",
-     "url": "https://finance.yahoo.com/markets/stocks/articles/citi-sees-powerful-upside-palo-174544657.html",
-     "at": "2026-11-11T12:45-05:00",
-     "tags": []
     }
    ]
   }
  ],
  "market": [
+  {
+   "title": "Stock Market Today: Dow Slips As Nvidia's Huang Steps Down; Nebius Nosedives (Live Coverage)",
+   "summary": "The Dow wavers Thursday on Trump's Iran comments as Nvidia stock plunges 10% on the resignation of Jensen Huang.",
+   "publisher": "Investor's Business Daily",
+   "url": "https://www.investors.com/market-trend/stock-market-today/stock-market-today-nvidia-stock-nvda-jensen-huang/?src=A00220&yptr=yahoo",
+   "at": "2026-11-12T10:15-05:00",
+   "tags": [
+    "Policy & politics",
+    "AI & chips"
+   ]
+  },
   {
    "title": "Full-Year Revenue Guidance and Strong Quarter Drove Twist Bioscience Corporation (TWST) Higher in Q3",
    "summary": "Artisan Partners, an investment management company, released its third-quarter 2026 investor letter for the “Artisan U.S. Small-Cap Growth Strategy”. The letter can be downloaded here. Global equities reached new highs despite elevated oil prices and rising in…",
@@ -384,7 +498,7 @@
   },
   {
    "title": "Treasury Selloff Accelerates, European Bonds Follow Suit",
-   "summary": "The selloff in Treasurys accelerated in early U.S. trade on Thursday after President Trump dashed hopes for an Iran peace deal.",
+   "summary": "The selloff in Treasurys accelerated after President Trump dashed hopes for an Iran peace deal.",
    "publisher": "The Wall Street Journal",
    "url": "https://www.wsj.com/economy/central-banking/treasury-yields-rise-as-fed-rate-hike-expectations-remain-strong-401fed89",
    "at": "2026-11-12T09:35-05:00",
@@ -392,6 +506,18 @@
     "Fed & rates",
     "Policy & politics",
     "Corporate"
+   ]
+  },
+  {
+   "title": "The Stock Market Has More Than Just Nvidia to Contend With",
+   "summary": "As Nvidia investors grapple with a sharp drop in the wake of Jensen Huang’s resignation, the rest of the market must also contend with bond yields and oil prices.",
+   "publisher": "Barrons.com",
+   "url": "https://www.barrons.com/livecoverage/stock-market-news-today-111226/card/nasdaq-tumbles-with-nvidia-iran-in-focus-KQOrvsCdrRpzh86yMeBJ?siteid=yhoof2&yptr=yahoo",
+   "at": "2026-11-12T09:34-05:00",
+   "tags": [
+    "Fed & rates",
+    "Energy",
+    "AI & chips"
    ]
   },
   {
@@ -403,26 +529,6 @@
    "tags": [
     "Policy & politics",
     "Energy"
-   ]
-  },
-  {
-   "title": "Diesel 101: Why Truck Stop Diesel Is Still Above $6 a Gallon as Crude Falls",
-   "summary": "Truck stop diesel hit $6.23/gal on Nov. 9, up 65% YoY, even as Brent fell 21%. SONAR's Diesel 101 sitrep explains the crack spread and what comes next. The post Diesel 101: Why Truck Stop Diesel Is Still Above $6 a Gallon as Crude Falls appeared first on Freig…",
-   "publisher": "FreightWaves",
-   "url": "https://finance.yahoo.com/energy/articles/diesel-101-why-truck-stop-142400953.html",
-   "at": "2026-11-12T09:24-05:00",
-   "tags": [
-    "Energy"
-   ]
-  },
-  {
-   "title": "Bitcoin Gained 7% in September, but NEAR and Arbitrum Reportedly Surged 187% and 137%",
-   "summary": "Bitcoin posted a solid September gain while stocks stumbled and gold sank, yet a handful of smaller coins left it completely in the dust. The forces behind that surprise rotation could either spark a lasting altcoin season or collapse the moment the Fed steps …",
-   "publisher": "24/7 Wall St.",
-   "url": "https://247wallst.com/investing/cryptocurrency/2026/11/12/bitcoin-gained-7-in-september-but-near-and-arbitrum-reportedly-surged-187-and-137/",
-   "at": "2026-11-12T09:19-05:00",
-   "tags": [
-    "Fed & rates"
    ]
   },
   {
@@ -446,238 +552,211 @@
    ]
   },
   {
-   "title": "Tech stocks rally as Nvidia stock and oil prices fall: AlphaCheck",
-   "summary": "Tech rallied as Nvidia shares dropped on Monday.",
-   "publisher": "Yahoo Finance",
-   "url": "https://finance.yahoo.com/markets/article/tech-stocks-rally-as-nvidia-stock-and-oil-prices-fall-alphacheck-152208023.html",
-   "at": "2026-11-09T10:22-05:00",
-   "tags": [
-    "Energy",
-    "AI & chips"
-   ]
+   "title": "Stock Market Crash: What History Says Comes Next After the Market's Big Single-Day Dip.",
+   "summary": "History indicates this is a great time to invest in stocks.",
+   "publisher": "Motley Fool",
+   "url": "https://www.fool.com/investing/2026/11/12/stock-market-crash-what-history-says-comes-next-after-market-s-big-single-day-dip/",
+   "at": "2026-11-12T10:23-05:00",
+   "tags": []
   },
   {
-   "title": "Nvidia shares tumble as Jensen Huang steps down as CEO",
-   "summary": "US stocks fell at the open, led by tech shares, as investors weighed what Jensen Huang’s resignation as CEO could mean for Nvidia and the wider AI industry.View on euronews",
-   "publisher": "Euronews",
-   "url": "https://www.euronews.com/2026/11/12/nvidia-shares-fall-on-reports-board-may-oust-ceo-jensen-huang",
-   "at": "2026-11-12T10:02-05:00",
-   "tags": [
-    "AI & chips",
-    "Corporate"
-   ]
+   "title": "How Has Booking Holdings' Story Changed?",
+   "summary": "For questions about this article or underlying research, email help@trefis.com.",
+   "publisher": "Trefis",
+   "url": "https://www.trefis.com/stock/bkng/articles/624762/how-has-booking-holdings-story-changed/2026-11-12",
+   "at": "2026-11-12T10:13-05:00",
+   "tags": []
   }
  ],
  "seekingAlpha": {
-  "asOf": "2026-11-12T10:11:13-05:00",
+  "asOf": "2026-11-12T10:41:53-05:00",
   "ok": true,
   "stale": false,
   "via": "seekingalpha.com RSS",
   "errors": [],
   "feedCounts": {
    "Piyasa haberleri": 7,
-   "Tüm yazılar": 23
+   "Tüm yazılar": 20
   },
   "market": [
    {
-    "title": "After Nvidia, what's next for Jensen Huang? Prediction markets weigh in",
-    "url": "https://seekingalpha.com/news/4671514-after-nvidia-whats-next-for-jensen-huang-prediction-markets-weigh-in",
-    "at": "2026-11-12T10:05-05:00",
+    "title": "Credo's Upcoming Earnings Should Change The Game (Preview)",
+    "url": "https://seekingalpha.com/article/4966958-credos-upcoming-earnings-should-change-the-game-preview",
+    "at": "2026-11-12T10:40-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "CRDO"
+    ],
+    "author": null
+   },
+   {
+    "title": "Nomura Global Bond Fund Q3 2026 Commentary",
+    "url": "https://seekingalpha.com/article/4967121-nomura-global-bond-fund-q3-2026-commentary",
+    "at": "2026-11-12T10:40-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "IVSIX",
+     "IVSAX",
+     "IVSCX",
+     "IYGOX",
+     "IVBDX",
+     "IVSYX"
+    ],
+    "author": null
+   },
+   {
+    "title": "Vertiv: Good Quarter, Crushed Chart. Waiting For $150 Entry",
+    "url": "https://seekingalpha.com/article/4967048-vertiv-good-quarter-crushed-chart-waiting-for-150-entry",
+    "at": "2026-11-12T10:39-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "VRT",
+     "VRT:CA"
+    ],
+    "author": null
+   },
+   {
+    "title": "Mettler-Toledo International Inc. (MTD) Presents at Stifel 2026 Healthcare Conference 2026 Transcript",
+    "url": "https://seekingalpha.com/article/4967108-mettler-toledo-international-inc-mtd-presents-at-stifel-2026-healthcare-conference-2026",
+    "at": "2026-11-12T10:38-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "MTD"
+    ],
+    "author": null
+   },
+   {
+    "title": "Salesforce: Pay For Consensus Growth, Get Anthropic And Databricks For Free",
+    "url": "https://seekingalpha.com/article/4967039-salesforce-pay-for-consensus-growth-get-anthropic-and-databricks-for-free",
+    "at": "2026-11-12T10:35-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "CRM",
+     "CRM:CA",
+     "ZCRM:CA"
+    ],
+    "author": null
+   },
+   {
+    "title": "El Pollo Loco: Still Cooking, Despite The Hangover",
+    "url": "https://seekingalpha.com/article/4967037-el-pollo-loco-q3-still-cooking-despite-the-hangover",
+    "at": "2026-11-12T10:34-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "LOCO"
+    ],
+    "author": null
+   },
+   {
+    "title": "Figma: Deep Value With Blistering Growth Rates",
+    "url": "https://seekingalpha.com/article/4967036-figma-deep-value-with-blistering-growth-rates",
+    "at": "2026-11-12T10:33-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "FIG"
+    ],
+    "author": null
+   },
+   {
+    "title": "Healthpeak Properties' Scavenger Mentality",
+    "url": "https://seekingalpha.com/article/4967035-healthpeak-properties-scavenger-mentality",
+    "at": "2026-11-12T10:33-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "ARE",
+     "DOC"
+    ],
+    "author": null
+   },
+   {
+    "title": "Chinese AI firms scramble for Nvidia chips amid fears of tighter US curbs: report",
+    "url": "https://seekingalpha.com/news/4671527-chinese-ai-firms-scramble-for-nvidia-chips-amid-fears-of-tighter-us-curbs-report",
+    "at": "2026-11-12T10:32-05:00",
     "kind": "news",
     "symbols": [],
     "author": null
    },
    {
-    "title": "The Nightview Fund exits Autodesk and Las Vegas Sands in Q3, adds Microsoft and Hyatt",
-    "url": "https://seekingalpha.com/news/4671375-the-nightview-fund-exits-autodesk-and-las-vegas-sands-in-q3-adds-microsoft-and-hyatt",
-    "at": "2026-11-12T10:05-05:00",
+    "title": "Merck KGaA raises 2026 outlook as Bio-Techne deal nears completion",
+    "url": "https://seekingalpha.com/news/4671547-merck-kgaa-raises-2026-outlook-bio-techne-deal",
+    "at": "2026-11-12T10:31-05:00",
     "kind": "news",
     "symbols": [],
     "author": null
    },
    {
-    "title": "CEZ, a. s. reports 9M results",
-    "url": "https://seekingalpha.com/news/4671531-cez-a-s-reports-results",
-    "at": "2026-11-12T10:05-05:00",
+    "title": "AXT slumps 9%, giving back some recent gains",
+    "url": "https://seekingalpha.com/news/4671534-axt-slumps-9-giving-back-some-recent-gains",
+    "at": "2026-11-12T10:31-05:00",
     "kind": "news",
     "symbols": [],
     "author": null
    },
    {
-    "title": "Evolution PowerX Q3 GAAP EPS of $0.01, revenue of $10.29M",
-    "url": "https://seekingalpha.com/news/4671526-evolution-powerx-q3-gaap-eps-of-001-revenue-of-1029m",
-    "at": "2026-11-12T10:04-05:00",
+    "title": "FMI Focused Global Equity Q3 2026 Review",
+    "url": "https://seekingalpha.com/article/4967033-fmi-focused-global-equity-q3-2026-review",
+    "at": "2026-11-12T10:31-05:00",
+    "kind": "analysis",
+    "symbols": [],
+    "author": null
+   },
+   {
+    "title": "Leather jackets, GPUs, and a $T empire: Jensen Huang’s Nvidia story",
+    "url": "https://seekingalpha.com/news/4671443-leather-jackets-gpus-and-a-t-empire-jensen-huang-s-nvidia-story",
+    "at": "2026-11-12T10:29-05:00",
     "kind": "news",
     "symbols": [],
     "author": null
    },
    {
-    "title": "Alibaba Q2 Preview: Cash Flow Pressures Will Continue To Weigh On AI Cloud Potential",
-    "url": "https://seekingalpha.com/article/4967012-alibaba-q2-preview-cash-flow-pressures-weigh-on-ai-cloud-potential",
-    "at": "2026-11-12T10:04-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "FXI",
-     "BABA",
-     "BABAF",
-     "BBAAY"
-    ],
-    "author": null
-   },
-   {
-    "title": "Existing home sales fall more than expected in October",
-    "url": "https://seekingalpha.com/news/4671505-existing-home-sales-fall-more-than-expected-in-october",
-    "at": "2026-11-12T10:03-05:00",
+    "title": "New brands feed Pattern's growth engine -- Jefferies",
+    "url": "https://seekingalpha.com/news/4671508-new-brands-feed-patterns-growth-engine---jefferies",
+    "at": "2026-11-12T10:27-05:00",
     "kind": "news",
     "symbols": [],
     "author": null
    },
    {
-    "title": "Anterix upgraded to buy at B. Riley on spectrum deal prospects",
-    "url": "https://seekingalpha.com/news/4671502-anterix-upgraded-to-buy-at-b-riley-on-spectrum-deal-prospects",
-    "at": "2026-11-12T10:02-05:00",
+    "title": "A few 'superstar' AI firms could increase income inequality in U.S., Fed's Barr",
+    "url": "https://seekingalpha.com/news/4671518-a-few-superstar-ai-firms-could-increase-income-inequality-in-us-feds-barr",
+    "at": "2026-11-12T10:27-05:00",
     "kind": "news",
     "symbols": [],
     "author": null
    },
    {
-    "title": "Bridgemarq Real Estate Services Q3 non-GAAP EPS of $0.07, revenue of $107.7M",
-    "url": "https://seekingalpha.com/news/4671521-bridgemarq-real-estate-services-q3-non-gaap-eps-of-007-revenue-of-1077m",
-    "at": "2026-11-12T10:01-05:00",
+    "title": "Metalla Royalty & Streaming Q3 GAAP EPS of $0.02, revenue of $4.94M",
+    "url": "https://seekingalpha.com/news/4671545-metalla-royalty-streaming-q3-gaap-eps-of-002-revenue-of-494m",
+    "at": "2026-11-12T10:26-05:00",
     "kind": "news",
     "symbols": [],
     "author": null
    },
    {
-    "title": "Jensen Out As Nvidia CEO: What The Charts Say Ahead Of Earnings",
-    "url": "https://seekingalpha.com/article/4967032-jensen-out-as-nvidia-ceo-what-the-charts-say-ahead-of-earnings",
-    "at": "2026-11-12T10:00-05:00",
+    "title": "Factor Investing Across Changing Regimes",
+    "url": "https://seekingalpha.com/article/4967023-factor-investing-across-changing-regimes",
+    "at": "2026-11-12T10:20-05:00",
+    "kind": "analysis",
+    "symbols": [],
+    "author": null
+   },
+   {
+    "title": "Fossil Group Q3: Strong Results, But The Rally Already Prices It In",
+    "url": "https://seekingalpha.com/article/4967013-fossil-group-q3-strong-results-but-rally-already-prices-it-in-maintain-hold",
+    "at": "2026-11-12T10:15-05:00",
     "kind": "analysis",
     "symbols": [
-     "AVGO",
-     "AVGO:CA",
-     "ZAVG:CA",
-     "AMD",
-     "AMD:CA",
-     "ZAMD:CA"
+     "FOSL"
     ],
     "author": null
    },
    {
-    "title": "FS KKR Capital: Don't Fall For The Special Dividend",
-    "url": "https://seekingalpha.com/article/4966969-fs-kkr-capital-do-not-fall-for-special-dividend",
-    "at": "2026-11-12T10:00-05:00",
+    "title": "Stratasys Q3 Review: Progressing, But Still Not Good Enough",
+    "url": "https://seekingalpha.com/article/4967014-stratasys-q3-review-progressing-but-still-not-good-enough",
+    "at": "2026-11-12T10:08-05:00",
     "kind": "analysis",
     "symbols": [
-     "FSK"
-    ],
-    "author": null
-   },
-   {
-    "title": "Veracyte: Solid Profits, Slowing Tests, And A Stock In Limbo",
-    "url": "https://seekingalpha.com/article/4967005-veracyte-solid-profits-slowing-tests-and-a-stock-in-limbo",
-    "at": "2026-11-12T09:57-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "VCYT"
-    ],
-    "author": null
-   },
-   {
-    "title": "Revolution Medicines: RASONQUE Is Off To A Strong Start, But Expectations Are High",
-    "url": "https://seekingalpha.com/article/4967004-revolution-medicines-rasonque-is-off-to-a-strong-start-but-expectations-are-high",
-    "at": "2026-11-12T09:53-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "RVMD"
-    ],
-    "author": null
-   },
-   {
-    "title": "TowneBank: Acquisitions Continue To Drive Growth",
-    "url": "https://seekingalpha.com/article/4967003-townebank-q3-acquisitions-continue-to-drive-growth",
-    "at": "2026-11-12T09:51-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "TOWN"
-    ],
-    "author": null
-   },
-   {
-    "title": "Alphabet: Punished For Its Cash Flow, Not Its Business",
-    "url": "https://seekingalpha.com/article/4967002-alphabet-punished-for-its-cash-flow-not-its-business",
-    "at": "2026-11-12T09:51-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "GOOG",
-     "ANT",
-     "MSFT",
-     "META",
-     "META:CA",
-     "ZMET:CA"
-    ],
-    "author": null
-   },
-   {
-    "title": "Meren Energy: Activity To Start And Bring Potential Growth For Years",
-    "url": "https://seekingalpha.com/article/4966946-meren-energy-activity-to-start-and-bring-potential-growth-for-years",
-    "at": "2026-11-12T09:50-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "MRNFF",
-     "MER:CA"
-    ],
-    "author": null
-   },
-   {
-    "title": "Aeries Technology, Inc (AERT) Q2 2027 Earnings Call Prepared Remarks Transcript",
-    "url": "https://seekingalpha.com/article/4967007-aeries-technology-inc-aert-q2-2027-earnings-call-prepared-remarks-transcript",
-    "at": "2026-11-12T09:49-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "AERT",
-     "AERTW"
-    ],
-    "author": null
-   },
-   {
-    "title": "Walmart Earnings Preview: Q3 Has To Justify The High Valuation",
-    "url": "https://seekingalpha.com/article/4966999-walmart-earnings-preview-q3-has-to-justify-the-high-valuation",
-    "at": "2026-11-12T09:45-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "COST",
-     "TGT",
-     "WMT",
-     "WMT:CA",
-     "ZWMT:CA"
-    ],
-    "author": null
-   },
-   {
-    "title": "Jensen Is Replaceable, But Nvidia Isn't",
-    "url": "https://seekingalpha.com/article/4967017-jensen-is-replaceable-but-nvidia-isnt",
-    "at": "2026-11-12T09:45-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "NVDA",
-     "NVDA:CA",
-     "ZNVD:CA"
-    ],
-    "author": null
-   },
-   {
-    "title": "The Bond Rally Faces A Reality Check",
-    "url": "https://seekingalpha.com/article/4966998-bond-rally-faces-reality-check",
-    "at": "2026-11-12T09:44-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "TLT",
-     "TLH",
-     "EDV",
-     "SPTL",
-     "ZROZ",
-     "VGLT"
+     "SSYS"
     ],
     "author": null
    }
@@ -776,6 +855,147 @@
       "author": "Carl Surran"
      }
     ]
+   },
+   {
+    "ticker": "NVDA",
+    "role": "long",
+    "items": [
+     {
+      "title": "Leather jackets, GPUs, and a $T empire: Jensen Huang’s Nvidia story",
+      "url": "https://seekingalpha.com/news/4671443",
+      "at": "2026-11-12T10:29-05:00",
+      "kind": "news",
+      "symbols": [
+       "NVDA"
+      ],
+      "author": "Sinchita Mitra"
+     },
+     {
+      "title": "Washington weighs in on Huang's resignation from Nvidia",
+      "url": "https://seekingalpha.com/news/4671511",
+      "at": "2026-11-12T10:12-05:00",
+      "kind": "news",
+      "symbols": [
+       "NVDA"
+      ],
+      "author": "Chris Ciaccia"
+     },
+     {
+      "title": "Nvidia’s earnings won’t be impacted by Huang’s scandal – Wolfe Research’s Chris Caso",
+      "url": "https://seekingalpha.com/news/4671537",
+      "at": "2026-11-12T10:10-05:00",
+      "kind": "news",
+      "symbols": [
+       "NVDA"
+      ],
+      "author": "Monica L. Correa"
+     },
+     {
+      "title": "After Nvidia, what's next for Jensen Huang? Prediction markets weigh in",
+      "url": "https://seekingalpha.com/news/4671514",
+      "at": "2026-11-12T10:05-05:00",
+      "kind": "news",
+      "symbols": [
+       "NVDA",
+       "SPCX",
+       "AAPL",
+       "AMD",
+       "INTC",
+       "TSLA"
+      ],
+      "author": "Nilanjana Basu"
+     }
+    ]
+   },
+   {
+    "ticker": "SMCI",
+    "role": "long",
+    "items": [
+     {
+      "title": "Supermicro begins shipping H15 servers with 6th Gen AMD EPYC 9006 processors",
+      "url": "https://seekingalpha.com/news/4670647",
+      "at": "2026-11-11T09:25-05:00",
+      "kind": "news",
+      "symbols": [
+       "SMCI",
+       "SMCI:CA",
+       "ZSMC:CA",
+       "SMCIP"
+      ],
+      "author": "Harsh Shukla"
+     },
+     {
+      "title": "Chip, memory stocks rally after CoreWeave results ease AI demand worries",
+      "url": "https://seekingalpha.com/news/4670625",
+      "at": "2026-11-11T08:54-05:00",
+      "kind": "news",
+      "symbols": [
+       "AMD",
+       "STX",
+       "GLW",
+       "WDC",
+       "NVDA",
+       "MU"
+      ],
+      "author": "Pratyush Thakur"
+     },
+     {
+      "title": "Super Micro Computer: The Story Is Getting Better And Better (Rating Upgrade)",
+      "url": "https://seekingalpha.com/article/4966256-super-micro-computer-stock-story-getting-better-and-better-rating-upgrade",
+      "at": "2026-11-10T23:26-05:00",
+      "kind": "analysis",
+      "symbols": [
+       "SPCX",
+       "DELL",
+       "HPE",
+       "SMCI",
+       "SMCI:CA",
+       "ZSMC:CA"
+      ],
+      "author": "Louis Gerard"
+     },
+     {
+      "title": "Super Micro Q1 Earnings: Large Working Capital Requirements And Negative Cash Flow",
+      "url": "https://seekingalpha.com/article/4965844-super-micro-q1-earnings-large-working-capital-requirements-negative-cash-flow",
+      "at": "2026-11-10T12:06-05:00",
+      "kind": "analysis",
+      "symbols": [
+       "SMCI",
+       "SMCI:CA",
+       "ZSMC:CA"
+      ],
+      "author": "Envision Research"
+     }
+    ]
+   },
+   {
+    "ticker": "DELL",
+    "role": "long",
+    "items": [
+     {
+      "title": "Post-Memory Sell-Off, Hewlett Packard Enterprise Is More Compelling Than Dell",
+      "url": "https://seekingalpha.com/article/4966601-post-memory-sell-off-hewlett-packard-enterprise-is-more-compelling-than-dell",
+      "at": "2026-11-11T14:01-05:00",
+      "kind": "analysis",
+      "symbols": [
+       "HPE",
+       "DELL",
+       "DELL:CA",
+       "HPE.PR.C"
+      ],
+      "author": "Benjamin C. Barry"
+     },
+     {
+      "title": "Tech rally takes Dell Technologies higher by 14%",
+      "url": "https://seekingalpha.com/news/4670856",
+      "at": "2026-11-11T13:06-05:00",
+      "kind": "news",
+      "symbols": [
+       "DELL"
+      ],
+      "author": "SA News"
+     }
+    ]
    }
   ],
   "source": {
@@ -783,31 +1003,46 @@
    "url": "https://seekingalpha.com/market-news"
   },
   "note": "Yalnızca başlık ve bağlantı. Yazıların tamamı Seeking Alpha'da; bir kısmı abonelik ister. Yatırım tavsiyesi değildir.",
-  "lastGood": "2026-11-12T10:11:13-05:00"
+  "lastGood": "2026-11-12T10:41:53-05:00"
  },
  "digest": {
   "date": "2026-11-12",
   "title": "Daily brief — Thursday, November 12, 2026",
-  "generatedAt": "2026-11-12T10:11-05:00",
+  "generatedAt": "2026-11-12T10:41-05:00",
   "bullets": [
    {
     "head": "Markets (latest session)",
-    "text": "S&P 500 -0.43%, Nasdaq 100 -0.87%, Dow -0.05%, Russell 2000 -1.25%. VIX 18.2; 10-yr yield 5.06% (+6 bp); WTI $86.75 (+0.25%); gold $3,874 (-3.16%). "
+    "text": "S&P 500 -0.19%, Nasdaq 100 -0.44%, Dow +0.04%, Russell 2000 -1.04%. VIX 18.4; 10-yr yield 5.07% (+7 bp); WTI $86.78 (+0.29%); gold $3,868 (-3.32%). "
    },
    {
     "head": "Trend filter",
-    "text": "The S&P 500 (SPY $756.52) is 3.4% above its 200-day average ($731.31). Basket rule: the momentum basket stays invested. Index sleeve (last daily decision 2026-11-12): long, target +0.69x Nasdaq 100 exposure (25% / 36.2% 20-day volatility, capped at 3x)."
+    "text": "The S&P 500 (SPY $758.37) is 3.7% above its 200-day average ($731.31). Basket rule: the momentum basket stays invested. Index sleeve (last daily decision 2026-11-12): long, target +0.69x Nasdaq 100 exposure (25% / 36.2% 20-day volatility, capped at 3x)."
    },
    {
     "head": "Our portfolio",
-    "text": "Net value $2,886.67 (-0.32% vs the previous close); cash $1,467.66; 2 positions, leverage 0.49x. Best holding today: GEV +0.50%; weakest: QQQ -0.95%."
+    "text": "Net value $2,900.51 (+0.16% vs the previous close); cash $735.35; 5 positions, leverage 0.75x. Best holding today: GEV +1.96%; weakest: SMCI -7.57%."
    },
    {
     "head": "Themes in today's headlines",
-    "text": "AI & chips (16), Corporate (6), Earnings (6), Energy (6)."
+    "text": "AI & chips (25), Corporate (13), Energy (6), Earnings (5)."
+   },
+   {
+    "head": "Upcoming earnings (next 3 weeks)",
+    "text": "NVDA (Nov 17), DELL (Nov 24)."
    }
   ],
   "headlines": [
+   {
+    "title": "Stock Market Today: Dow Slips As Nvidia's Huang Steps Down; Nebius Nosedives (Live Coverage)",
+    "url": "https://www.investors.com/market-trend/stock-market-today/stock-market-today-nvidia-stock-nvda-jensen-huang/?src=A00220&yptr=yahoo",
+    "publisher": "Investor's Business Daily",
+    "at": "2026-11-12T10:15-05:00",
+    "summary": "The Dow wavers Thursday on Trump's Iran comments as Nvidia stock plunges 10% on the resignation of Jensen Huang.",
+    "tags": [
+     "Policy & politics",
+     "AI & chips"
+    ]
+   },
    {
     "title": "Full-Year Revenue Guidance and Strong Quarter Drove Twist Bioscience Corporation (TWST) Higher in Q3",
     "url": "https://finance.yahoo.com/healthcare/articles/full-revenue-guidance-strong-quarter-150737117.html",
@@ -838,34 +1073,29 @@
     "tags": [
      "Energy"
     ]
-   },
-   {
-    "title": "Trump Says No Iran Deal Needed; Oil Prices Jump",
-    "url": "https://www.investors.com/news/trump-iran-war-hormuz-jd-vance-oil-prices-gas-diesel/?src=A00220&yptr=yahoo",
-    "publisher": "Investor's Business Daily",
-    "at": "2026-11-12T09:47-05:00",
-    "summary": "Oil futures shot up on Thursday after President Donald Trump said the U.S.",
-    "tags": [
-     "Policy & politics",
-     "Energy",
-     "Corporate"
-    ]
    }
   ],
   "movers": [
    {
-    "ticker": "QQQ",
-    "changePct": -0.95,
-    "title": "Stock Market Today: Dow Wavers On Trump Remarks; Nvidia Plunges As Jensen Huang Resigns (Live Coverage)",
-    "url": "https://www.investors.com/market-trend/stock-market-today/stock-market-today-nvidia-stock-nvda-jensen-huang/?src=A00220&yptr=yahoo",
-    "publisher": "Investor's Business Daily"
+    "ticker": "SMCI",
+    "changePct": -7.57,
+    "title": "Nvidia, AMD, CoreWeave, Nebius, Tesla, Strategy, and More Stocks That Explain Today’s Market",
+    "url": "https://www.barrons.com/articles/stock-movers-cd2d0ebf?siteid=yhoof2&yptr=yahoo",
+    "publisher": "Barrons.com"
    },
    {
-    "ticker": "GEV",
-    "changePct": 0.5,
-    "title": "Energy Transition Update - Holu Hou Energy Revolutionizes MDU Solar Adoption",
-    "url": "https://finance.yahoo.com/energy/articles/energy-transition-holu-hou-energy-113732760.html",
-    "publisher": "Simply Wall St."
+    "ticker": "NVDA",
+    "changePct": -4.86,
+    "title": "SoFi chief market Strategist on an Nvidia without Jensen Huang: 'What happens without the visionary?'",
+    "url": "https://finance.yahoo.com/markets/article/sofi-chief-market-strategist-on-an-nvidia-without-jensen-huang-what-happens-without-the-visionary-154048480.html",
+    "publisher": "Yahoo Finance"
+   },
+   {
+    "ticker": "DELL",
+    "changePct": -3.95,
+    "title": "Was The Run In Dell Stock Hiding In Plain Sight?",
+    "url": "https://www.trefis.com/stock/dell/articles/624598/was-the-run-in-dell-stock-hiding-in-plain-sight/2026-11-12",
+    "publisher": "Trefis"
    }
   ],
   "note": "Generated automatically from market data, the bot's ledger and the headline feeds (rule-based, no AI). Not investment advice."
