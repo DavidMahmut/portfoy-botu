@@ -99,7 +99,7 @@
   }
  },
  "portfolio": {
-  "cash": 1467.66,
+  "cash": 735.35,
   "positions": [
    {
     "stopMode": "managed",
@@ -111,16 +111,16 @@
     "shares": 1.6461,
     "avgCost": 695.4676,
     "costBasis": 1144.81,
-    "lastPrice": 685.26,
-    "lastPriceAt": "2026-11-12T10:20:00-05:00",
+    "lastPrice": 685.67,
+    "lastPriceAt": "2026-11-12T10:30:00-05:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (10:20 ET)",
+     "title": "Yahoo Finance 5 dk mum (10:30 ET)",
      "url": "https://finance.yahoo.com/quote/QQQ/"
     },
-    "marketValue": 1128.01,
-    "exposure": 1128.01,
-    "unrealized": -16.8,
-    "unrealizedPct": -1.47,
+    "marketValue": 1128.68,
+    "exposure": 1128.68,
+    "unrealized": -16.13,
+    "unrealizedPct": -1.41,
     "openedAt": "2026-11-02",
     "openedTs": "2026-11-02T09:50:00-05:00",
     "lastAddDate": "2026-11-02",
@@ -128,7 +128,7 @@
     "extremeSinceEntry": 695.1199951171875,
     "tookProfit": false,
     "thesis": "Endeks kolu, QQQ (1x): 0,00 $ → 1.396,50 $. Endeks kolu yönü YUKARI: SPY dünkü kapanış 755,72 $, 200 günlük ortalama 728,85 $ (+%3,69), 50 günlük ortalama 767,49 $. QQQ'nun 20 günlük oynaklığı yıllık %22,6; büyüklük %25 ÷ %22,6 = 1,10x. Hedef maruziyet +1,10x.",
-    "maintReq": 282.0,
+    "maintReq": 282.17,
     "taxBasisAdj": 8.79
    },
    {
@@ -141,16 +141,16 @@
     "shares": 0.3612,
     "avgCost": 784.372,
     "costBasis": 283.32,
-    "lastPrice": 819.4351,
-    "lastPriceAt": "2026-11-12T10:20:00-05:00",
+    "lastPrice": 820.22,
+    "lastPriceAt": "2026-11-12T10:30:00-05:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (10:20 ET)",
+     "title": "Yahoo Finance 5 dk mum (10:30 ET)",
      "url": "https://finance.yahoo.com/quote/GEV/"
     },
-    "marketValue": 295.98,
-    "exposure": 295.98,
-    "unrealized": 12.66,
-    "unrealizedPct": 4.47,
+    "marketValue": 296.26,
+    "exposure": 296.26,
+    "unrealized": 12.94,
+    "unrealizedPct": 4.57,
     "openedAt": "2026-11-10",
     "openedTs": "2026-11-10T10:30:00-05:00",
     "lastAddDate": "2026-11-10",
@@ -174,41 +174,176 @@
      "publisher": "Stocktwits",
      "at": "2026-11-10T13:33:49+00:00"
     },
-    "maintReq": 73.99,
-    "lastBarTs": "2026-11-12T10:20:00-05:00"
+    "maintReq": 74.07,
+    "lastBarTs": "2026-11-12T10:30:00-05:00"
+   },
+   {
+    "stopMode": "event",
+    "ticker": "NVDA",
+    "name": "NVIDIA",
+    "kind": "Hisse",
+    "side": "long",
+    "lev": 1,
+    "shares": 0.8619,
+    "avgCost": 164.4196,
+    "costBasis": 141.71,
+    "lastPrice": 164.3374,
+    "lastPriceAt": "2026-11-12T10:30:00-05:00",
+    "priceSource": {
+     "title": "Yahoo Finance 5 dk mum (10:30 ET)",
+     "url": "https://finance.yahoo.com/quote/NVDA/"
+    },
+    "marketValue": 141.64,
+    "exposure": 141.64,
+    "unrealized": -0.07,
+    "unrealizedPct": -0.05,
+    "openedAt": "2026-11-12",
+    "openedTs": "2026-11-12T10:30:00-05:00",
+    "lastAddDate": "2026-11-12",
+    "stopPrice": 149.12,
+    "extremeSinceEntry": 164.33740234375,
+    "tookProfit": false,
+    "thesis": "Haber şoku: NVDA önceki kapanışa (173,73 $) göre −%14,07 düşüşle açıldı, ilk saatte +%10,57 toparlandı: piyasa haberin ilk tepkisini abartılı buldu. Kural gereği long açıldı. Zarar-kes 149,12 $ (ilk saatin en düşüğünün hemen ötesi, risk %10,2); çıkış 2026-11-16 kapanışında. Büyüklük: haber kolunun %10'i, zarar-keste kaybı kolun yaklaşık %1'i. Haber: “Who is Colette Kress, Nvidia's new interim CEO?” (Yahoo Finance).",
+    "sleeve": "event",
+    "exitDate": "2026-11-16",
+    "event": {
+     "gapPct": -14.07,
+     "firstHourPct": 10.57,
+     "prevClose": 173.73,
+     "open": 149.29,
+     "h1High": 166.0,
+     "h1Low": 149.27
+    },
+    "headline": {
+     "title": "Who is Colette Kress, Nvidia's new interim CEO?",
+     "url": "https://finance.yahoo.com/technology/article/who-is-colette-kress-nvidias-new-interim-ceo-150856209.html",
+     "publisher": "Yahoo Finance",
+     "at": "2026-11-12T15:08:56+00:00"
+    },
+    "maintReq": 35.41
+   },
+   {
+    "stopMode": "event",
+    "ticker": "SMCI",
+    "name": "Super Micro Computer",
+    "kind": "Hisse",
+    "side": "long",
+    "lev": 1,
+    "shares": 12.9369,
+    "avgCost": 27.949,
+    "costBasis": 361.57,
+    "lastPrice": 27.935,
+    "lastPriceAt": "2026-11-12T10:30:00-05:00",
+    "priceSource": {
+     "title": "Yahoo Finance 5 dk mum (10:30 ET)",
+     "url": "https://finance.yahoo.com/quote/SMCI/"
+    },
+    "marketValue": 361.39,
+    "exposure": 361.39,
+    "unrealized": -0.18,
+    "unrealizedPct": -0.05,
+    "openedAt": "2026-11-12",
+    "openedTs": "2026-11-12T10:30:00-05:00",
+    "lastAddDate": "2026-11-12",
+    "stopPrice": 26.93,
+    "extremeSinceEntry": 27.934999465942383,
+    "tookProfit": false,
+    "thesis": "Haber şoku: SMCI önceki kapanışa (30,43 $) göre −%10,65 düşüşle açıldı, ilk saatte +%3,33 toparlandı: piyasa haberin ilk tepkisini abartılı buldu. Kural gereği long açıldı. Zarar-kes 26,93 $ (ilk saatin en düşüğünün hemen ötesi, risk %3,7); çıkış 2026-11-16 kapanışında. Büyüklük: haber kolunun %25'i, zarar-keste kaybı kolun yaklaşık %1'i. Haber: “Nvidia, AMD, CoreWeave, Nebius, Tesla, Strategy, and More Stocks That Explain Today’s Market” (Barrons.com).",
+    "sleeve": "event",
+    "exitDate": "2026-11-16",
+    "event": {
+     "gapPct": -10.65,
+     "firstHourPct": 3.33,
+     "prevClose": 30.43,
+     "open": 27.19,
+     "h1High": 28.35,
+     "h1Low": 26.96
+    },
+    "headline": {
+     "title": "Nvidia, AMD, CoreWeave, Nebius, Tesla, Strategy, and More Stocks That Explain Today’s Market",
+     "url": "https://www.barrons.com/articles/stock-movers-cd2d0ebf?siteid=yhoof2&yptr=yahoo",
+     "publisher": "Barrons.com",
+     "at": "2026-11-12T15:12:00+00:00"
+    },
+    "maintReq": 90.35
+   },
+   {
+    "stopMode": "event",
+    "ticker": "DELL",
+    "name": "Dell Technologies",
+    "kind": "Hisse",
+    "side": "long",
+    "lev": 1,
+    "shares": 0.6399,
+    "avgCost": 356.2781,
+    "costBasis": 227.98,
+    "lastPrice": 356.1,
+    "lastPriceAt": "2026-11-12T10:30:00-05:00",
+    "priceSource": {
+     "title": "Yahoo Finance 5 dk mum (10:30 ET)",
+     "url": "https://finance.yahoo.com/quote/DELL/"
+    },
+    "marketValue": 227.87,
+    "exposure": 227.87,
+    "unrealized": -0.11,
+    "unrealizedPct": -0.05,
+    "openedAt": "2026-11-12",
+    "openedTs": "2026-11-12T10:30:00-05:00",
+    "lastAddDate": "2026-11-12",
+    "stopPrice": 334.86,
+    "extremeSinceEntry": 356.1000061035156,
+    "tookProfit": false,
+    "thesis": "Haber şoku: DELL önceki kapanışa (373,68 $) göre −%10,06 düşüşle açıldı, ilk saatte +%6,57 toparlandı: piyasa haberin ilk tepkisini abartılı buldu. Kural gereği long açıldı. Zarar-kes 334,86 $ (ilk saatin en düşüğünün hemen ötesi, risk %6,3); çıkış 2026-11-16 kapanışında. Büyüklük: haber kolunun %16'i, zarar-keste kaybı kolun yaklaşık %1'i. Haber: “Nvidia, AMD, CoreWeave, Nebius, Tesla, Strategy, and More Stocks That Explain Today’s Market” (Barrons.com).",
+    "sleeve": "event",
+    "exitDate": "2026-11-16",
+    "event": {
+     "gapPct": -10.06,
+     "firstHourPct": 6.57,
+     "prevClose": 373.68,
+     "open": 336.08,
+     "h1High": 366.65,
+     "h1Low": 335.2
+    },
+    "headline": {
+     "title": "Nvidia, AMD, CoreWeave, Nebius, Tesla, Strategy, and More Stocks That Explain Today’s Market",
+     "url": "https://www.barrons.com/articles/stock-movers-cd2d0ebf?siteid=yhoof2&yptr=yahoo",
+     "publisher": "Barrons.com",
+     "at": "2026-11-12T15:12:00+00:00"
+    },
+    "maintReq": 56.97
    }
   ],
   "realizedPL": -100.58,
   "netDeposits": 3000.0,
   "costs": {
-   "slippage": 3.2919,
-   "commission": 6.65,
+   "slippage": 3.6578,
+   "commission": 7.7,
    "fees": 0.18,
    "interest": 0.0,
    "borrow": 0.02,
    "dividendsPaid": 0.0,
    "dividendsReceived": 0.0
   },
-  "longValue": 1423.99,
+  "longValue": 2155.85,
   "shortValue": 0.0,
-  "positionsValue": 1423.99,
-  "totalValue": 2891.65,
-  "grossExposure": 1423.99,
-  "netExposure": 1423.99,
-  "leverage": 0.492,
-  "maintenanceReq": 355.99,
-  "marginBuffer": 2535.66,
-  "regTInitialReq": 711.99,
-  "regTExcess": 2179.66,
-  "buyingPower": 4359.31,
+  "positionsValue": 2155.85,
+  "totalValue": 2891.2,
+  "grossExposure": 2155.85,
+  "netExposure": 2155.85,
+  "leverage": 0.746,
+  "maintenanceReq": 538.97,
+  "marginBuffer": 2352.23,
+  "regTInitialReq": 1077.92,
+  "regTExcess": 1813.28,
+  "buyingPower": 3626.55,
   "marginEligible": true,
-  "totalPL": -108.35,
-  "totalPLPct": -3.61,
-  "twrPct": -3.61,
-  "asOf": "2026-11-12T10:20:59-05:00",
-  "benchmarkPrice": 756.34,
-  "benchmarkValue": 3020.09,
-  "benchmarkTwrPct": 0.67
+  "totalPL": -108.8,
+  "totalPLPct": -3.63,
+  "twrPct": -3.63,
+  "asOf": "2026-11-12T10:31:03-05:00",
+  "benchmarkPrice": 757.43,
+  "benchmarkValue": 3024.44,
+  "benchmarkTwrPct": 0.81
  },
  "meta": {
   "engine": "trend-event v6",
@@ -223,9 +358,9 @@
    "ath": 759.66,
    "athDate": "2026-10-06",
    "athChecked": "2026-11-12",
-   "price": 685.26,
-   "at": "2026-11-12T10:20:00-05:00",
-   "ddPct": -9.79,
+   "price": 685.67,
+   "at": "2026-11-12T10:30:00-05:00",
+   "ddPct": -9.74,
    "level": "normal",
    "triggerPrice": 607.73,
    "correctionPrice": 683.69
@@ -258,7 +393,7 @@
     "2026-11-12"
    ]
   },
-  "lastRunAt": "2026-11-12T10:20:59-05:00",
+  "lastRunAt": "2026-11-12T10:31:03-05:00",
   "lastError": null,
   "spikeScanDate": "2026-11-12",
   "spikeScan": {
@@ -299,62 +434,118 @@
    "now": 0.8,
    "date": "2026-11-12"
   },
-  "eventScanDate": "2026-11-11",
+  "eventScanDate": "2026-11-12",
   "eventScan": {
-   "date": "2026-11-11",
-   "at": "2026-11-11T10:31:30-05:00",
+   "date": "2026-11-12",
+   "at": "2026-11-12T10:31:03-05:00",
    "checked": 164,
    "gaps": [
     {
-     "ticker": "CIEN",
-     "name": "Ciena",
-     "gapPct": 8.5,
-     "firstHourPct": 0.55,
-     "prevClose": 272.1,
-     "open": 295.21,
-     "h1High": 300.0,
-     "h1Low": 286.0,
-     "h1Close": 296.83
+     "ticker": "DELL",
+     "name": "Dell Technologies",
+     "gapPct": -10.06,
+     "firstHourPct": 6.57,
+     "prevClose": 373.68,
+     "open": 336.08,
+     "h1High": 366.65,
+     "h1Low": 335.2,
+     "h1Close": 358.17
     },
     {
-     "ticker": "MRVL",
-     "name": "Marvell Technology",
-     "gapPct": 8.09,
-     "firstHourPct": 1.16,
-     "prevClose": 154.39,
-     "open": 166.88,
-     "h1High": 168.82,
-     "h1Low": 162.5,
-     "h1Close": 168.82
-    }
-   ],
-   "taken": [],
-   "skipped": [
-    {
-     "ticker": "CIEN",
-     "name": "Ciena",
-     "gapPct": 8.5,
-     "firstHourPct": 0.55,
-     "prevClose": 272.1,
-     "open": 295.21,
-     "h1High": 300.0,
-     "h1Low": 286.0,
-     "h1Close": 296.83,
-     "why": "ilk saatte haberin yönünde devam etti; testte bu durum zarar ettirdi"
+     "ticker": "NVDA",
+     "name": "NVIDIA",
+     "gapPct": -14.07,
+     "firstHourPct": 10.57,
+     "prevClose": 173.73,
+     "open": 149.29,
+     "h1High": 166.0,
+     "h1Low": 149.27,
+     "h1Close": 165.07
     },
     {
-     "ticker": "MRVL",
-     "name": "Marvell Technology",
-     "gapPct": 8.09,
-     "firstHourPct": 1.16,
-     "prevClose": 154.39,
-     "open": 166.88,
-     "h1High": 168.82,
-     "h1Low": 162.5,
-     "h1Close": 168.82,
-     "why": "ilk saatte haberin yönünde devam etti; testte bu durum zarar ettirdi"
+     "ticker": "SMCI",
+     "name": "Super Micro Computer",
+     "gapPct": -10.65,
+     "firstHourPct": 3.33,
+     "prevClose": 30.43,
+     "open": 27.19,
+     "h1High": 28.35,
+     "h1Low": 26.96,
+     "h1Close": 28.09
     }
    ],
+   "taken": [
+    {
+     "ticker": "NVDA",
+     "name": "NVIDIA",
+     "gapPct": -14.07,
+     "firstHourPct": 10.57,
+     "prevClose": 173.73,
+     "open": 149.29,
+     "h1High": 166.0,
+     "h1Low": 149.27,
+     "h1Close": 165.07,
+     "side": "long",
+     "ssr": true,
+     "stop": 149.12,
+     "amount": 141.73,
+     "price": 164.34,
+     "exitDate": "2026-11-16",
+     "headline": {
+      "title": "Who is Colette Kress, Nvidia's new interim CEO?",
+      "url": "https://finance.yahoo.com/technology/article/who-is-colette-kress-nvidias-new-interim-ceo-150856209.html",
+      "publisher": "Yahoo Finance",
+      "at": "2026-11-12T15:08:56+00:00"
+     }
+    },
+    {
+     "ticker": "SMCI",
+     "name": "Super Micro Computer",
+     "gapPct": -10.65,
+     "firstHourPct": 3.33,
+     "prevClose": 30.43,
+     "open": 27.19,
+     "h1High": 28.35,
+     "h1Low": 26.96,
+     "h1Close": 28.09,
+     "side": "long",
+     "ssr": true,
+     "stop": 26.93,
+     "amount": 361.57,
+     "price": 27.93,
+     "exitDate": "2026-11-16",
+     "headline": {
+      "title": "Nvidia, AMD, CoreWeave, Nebius, Tesla, Strategy, and More Stocks That Explain Today’s Market",
+      "url": "https://www.barrons.com/articles/stock-movers-cd2d0ebf?siteid=yhoof2&yptr=yahoo",
+      "publisher": "Barrons.com",
+      "at": "2026-11-12T15:12:00+00:00"
+     }
+    },
+    {
+     "ticker": "DELL",
+     "name": "Dell Technologies",
+     "gapPct": -10.06,
+     "firstHourPct": 6.57,
+     "prevClose": 373.68,
+     "open": 336.08,
+     "h1High": 366.65,
+     "h1Low": 335.2,
+     "h1Close": 358.17,
+     "side": "long",
+     "ssr": true,
+     "stop": 334.86,
+     "amount": 228.02,
+     "price": 356.1,
+     "exitDate": "2026-11-16",
+     "headline": {
+      "title": "Nvidia, AMD, CoreWeave, Nebius, Tesla, Strategy, and More Stocks That Explain Today’s Market",
+      "url": "https://www.barrons.com/articles/stock-movers-cd2d0ebf?siteid=yhoof2&yptr=yahoo",
+      "publisher": "Barrons.com",
+      "at": "2026-11-12T15:12:00+00:00"
+     }
+    }
+   ],
+   "skipped": [],
    "rule": "Açılış boşluğu en az %8; ilk saatte haberin tersine en az %0,5 dönüş; 2 işlem günü tut, zarar-kes ilk saatin öbür ucu."
   }
  },
@@ -1111,6 +1302,126 @@
    ],
    "runId": "2026-11-10",
    "by": "bot"
+  },
+  {
+   "id": "t-20261112-01",
+   "ts": "2026-11-12T10:31:03-05:00",
+   "date": "2026-11-12",
+   "action": "BUY",
+   "side": "long",
+   "ticker": "NVDA",
+   "name": "NVIDIA",
+   "kind": "Hisse",
+   "shares": 0.8619,
+   "quotePrice": 164.3374,
+   "quoteAt": "2026-11-12T10:30:00-05:00",
+   "slippagePct": 0.05,
+   "execPrice": 164.4196,
+   "value": 141.71,
+   "commission": 0.35,
+   "fees": 0.0,
+   "priceSource": {
+    "title": "Yahoo Finance 5 dk mum (10:30 ET)",
+    "url": "https://finance.yahoo.com/quote/NVDA/"
+   },
+   "reason": "Haber şoku: NVDA önceki kapanışa (173,73 $) göre −%14,07 düşüşle açıldı, ilk saatte +%10,57 toparlandı: piyasa haberin ilk tepkisini abartılı buldu. Kural gereği long açıldı. Zarar-kes 149,12 $ (ilk saatin en düşüğünün hemen ötesi, risk %10,2); çıkış 2026-11-16 kapanışında. Büyüklük: haber kolunun %10'i, zarar-keste kaybı kolun yaklaşık %1'i. Haber: “Who is Colette Kress, Nvidia's new interim CEO?” (Yahoo Finance).",
+   "rule": "haber şoku",
+   "sources": [
+    {
+     "title": "Who is Colette Kress, Nvidia's new interim CEO?",
+     "url": "https://finance.yahoo.com/technology/article/who-is-colette-kress-nvidias-new-interim-ceo-150856209.html"
+    },
+    {
+     "title": "Yahoo Finance: NVDA",
+     "url": "https://finance.yahoo.com/quote/NVDA/"
+    },
+    {
+     "title": "yfinance (Yahoo Finance verileri)",
+     "url": "https://github.com/ranaroussi/yfinance"
+    }
+   ],
+   "runId": "2026-11-12",
+   "by": "bot"
+  },
+  {
+   "id": "t-20261112-02",
+   "ts": "2026-11-12T10:31:03-05:00",
+   "date": "2026-11-12",
+   "action": "BUY",
+   "side": "long",
+   "ticker": "SMCI",
+   "name": "Super Micro Computer",
+   "kind": "Hisse",
+   "shares": 12.9369,
+   "quotePrice": 27.935,
+   "quoteAt": "2026-11-12T10:30:00-05:00",
+   "slippagePct": 0.05,
+   "execPrice": 27.949,
+   "value": 361.57,
+   "commission": 0.35,
+   "fees": 0.0,
+   "priceSource": {
+    "title": "Yahoo Finance 5 dk mum (10:30 ET)",
+    "url": "https://finance.yahoo.com/quote/SMCI/"
+   },
+   "reason": "Haber şoku: SMCI önceki kapanışa (30,43 $) göre −%10,65 düşüşle açıldı, ilk saatte +%3,33 toparlandı: piyasa haberin ilk tepkisini abartılı buldu. Kural gereği long açıldı. Zarar-kes 26,93 $ (ilk saatin en düşüğünün hemen ötesi, risk %3,7); çıkış 2026-11-16 kapanışında. Büyüklük: haber kolunun %25'i, zarar-keste kaybı kolun yaklaşık %1'i. Haber: “Nvidia, AMD, CoreWeave, Nebius, Tesla, Strategy, and More Stocks That Explain Today’s Market” (Barrons.com).",
+   "rule": "haber şoku",
+   "sources": [
+    {
+     "title": "Nvidia, AMD, CoreWeave, Nebius, Tesla, Strategy, and More Stocks That Explain Today’s Market",
+     "url": "https://www.barrons.com/articles/stock-movers-cd2d0ebf?siteid=yhoof2&yptr=yahoo"
+    },
+    {
+     "title": "Yahoo Finance: SMCI",
+     "url": "https://finance.yahoo.com/quote/SMCI/"
+    },
+    {
+     "title": "yfinance (Yahoo Finance verileri)",
+     "url": "https://github.com/ranaroussi/yfinance"
+    }
+   ],
+   "runId": "2026-11-12",
+   "by": "bot"
+  },
+  {
+   "id": "t-20261112-03",
+   "ts": "2026-11-12T10:31:03-05:00",
+   "date": "2026-11-12",
+   "action": "BUY",
+   "side": "long",
+   "ticker": "DELL",
+   "name": "Dell Technologies",
+   "kind": "Hisse",
+   "shares": 0.6399,
+   "quotePrice": 356.1,
+   "quoteAt": "2026-11-12T10:30:00-05:00",
+   "slippagePct": 0.05,
+   "execPrice": 356.2781,
+   "value": 227.98,
+   "commission": 0.35,
+   "fees": 0.0,
+   "priceSource": {
+    "title": "Yahoo Finance 5 dk mum (10:30 ET)",
+    "url": "https://finance.yahoo.com/quote/DELL/"
+   },
+   "reason": "Haber şoku: DELL önceki kapanışa (373,68 $) göre −%10,06 düşüşle açıldı, ilk saatte +%6,57 toparlandı: piyasa haberin ilk tepkisini abartılı buldu. Kural gereği long açıldı. Zarar-kes 334,86 $ (ilk saatin en düşüğünün hemen ötesi, risk %6,3); çıkış 2026-11-16 kapanışında. Büyüklük: haber kolunun %16'i, zarar-keste kaybı kolun yaklaşık %1'i. Haber: “Nvidia, AMD, CoreWeave, Nebius, Tesla, Strategy, and More Stocks That Explain Today’s Market” (Barrons.com).",
+   "rule": "haber şoku",
+   "sources": [
+    {
+     "title": "Nvidia, AMD, CoreWeave, Nebius, Tesla, Strategy, and More Stocks That Explain Today’s Market",
+     "url": "https://www.barrons.com/articles/stock-movers-cd2d0ebf?siteid=yhoof2&yptr=yahoo"
+    },
+    {
+     "title": "Yahoo Finance: DELL",
+     "url": "https://finance.yahoo.com/quote/DELL/"
+    },
+    {
+     "title": "yfinance (Yahoo Finance verileri)",
+     "url": "https://github.com/ranaroussi/yfinance"
+    }
+   ],
+   "runId": "2026-11-12",
+   "by": "bot"
   }
  ],
  "snapshots": [
@@ -1350,26 +1661,41 @@
   },
   {
    "date": "2026-11-12",
-   "at": "2026-11-12T10:20:59-05:00",
-   "totalValue": 2891.65,
-   "cash": 1467.66,
-   "positionsValue": 1423.99,
-   "plPct": -3.61,
-   "twrPct": -3.61,
+   "at": "2026-11-12T10:31:03-05:00",
+   "totalValue": 2891.2,
+   "cash": 735.35,
+   "positionsValue": 2155.85,
+   "plPct": -3.63,
+   "twrPct": -3.63,
    "netDeposits": 3000.0,
-   "leverage": 0.492,
-   "benchmarkPrice": 756.34,
-   "benchmarkValue": 3020.09,
+   "leverage": 0.746,
+   "benchmarkPrice": 757.43,
+   "benchmarkValue": 3024.44,
    "holdings": [
     {
      "ticker": "QQQ",
      "side": "long",
-     "value": 1128.01
+     "value": 1128.68
     },
     {
      "ticker": "GEV",
      "side": "long",
-     "value": 295.98
+     "value": 296.26
+    },
+    {
+     "ticker": "NVDA",
+     "side": "long",
+     "value": 141.64
+    },
+    {
+     "ticker": "SMCI",
+     "side": "long",
+     "value": 361.39
+    },
+    {
+     "ticker": "DELL",
+     "side": "long",
+     "value": 227.87
     }
    ]
   }
@@ -11795,6 +12121,95 @@
     ],
     "actions": [],
     "note": "Normal: pozisyonlar zarar-kese %9,8–%9,8 uzakta, kaldıraç 0,49x, SPY −%0,46; işlem gerekmedi."
+   },
+   {
+    "at": "2026-11-12T10:26:02-05:00",
+    "kind": "guard",
+    "status": "normal",
+    "spyPrice": 756.92,
+    "spyChangePct": -0.38,
+    "totalValue": 2894.18,
+    "benchmarkValue": 3022.4,
+    "leverage": 0.493,
+    "marginBuffer": 2537.55,
+    "positions": [
+     {
+      "ticker": "QQQ",
+      "side": "long",
+      "price": 686.4,
+      "dayChangePct": -0.58,
+      "stopPrice": null,
+      "distancePct": null
+     },
+     {
+      "ticker": "GEV",
+      "side": "long",
+      "price": 821.265,
+      "dayChangePct": 1.61,
+      "stopPrice": 746.25,
+      "distancePct": 10.05
+     }
+    ],
+    "actions": [],
+    "note": "Normal: pozisyonlar zarar-kese %10,1–%10,1 uzakta, kaldıraç 0,49x, SPY −%0,38; işlem gerekmedi."
+   },
+   {
+    "at": "2026-11-12T10:31:03-05:00",
+    "kind": "event",
+    "status": "normal",
+    "spyPrice": 757.43,
+    "spyChangePct": -0.31,
+    "totalValue": 2891.2,
+    "benchmarkValue": 3024.44,
+    "leverage": 0.746,
+    "marginBuffer": 2352.23,
+    "positions": [
+     {
+      "ticker": "QQQ",
+      "side": "long",
+      "price": 685.67,
+      "dayChangePct": -0.68,
+      "stopPrice": null,
+      "distancePct": null
+     },
+     {
+      "ticker": "GEV",
+      "side": "long",
+      "price": 820.22,
+      "dayChangePct": 1.48,
+      "stopPrice": 746.25,
+      "distancePct": 9.91
+     },
+     {
+      "ticker": "NVDA",
+      "side": "long",
+      "price": 164.3374,
+      "dayChangePct": -5.41,
+      "stopPrice": 149.12,
+      "distancePct": 10.2
+     },
+     {
+      "ticker": "SMCI",
+      "side": "long",
+      "price": 27.935,
+      "dayChangePct": -8.2,
+      "stopPrice": 26.93,
+      "distancePct": 3.73
+     },
+     {
+      "ticker": "DELL",
+      "side": "long",
+      "price": 356.1,
+      "dayChangePct": -4.7,
+      "stopPrice": 334.86,
+      "distancePct": 6.34
+     }
+    ],
+    "actions": [
+     "NVDA long (141,71 $)",
+     "SMCI long (361,57 $)",
+     "DELL long (227,98 $)"
+    ]
    }
   ]
  },
@@ -13886,7 +14301,7 @@
    "date": "2026-11-12",
    "at": "2026-11-12T10:00:41-05:00",
    "by": "bot",
-   "headline": "İşlem yok · Yön yukarı: endeks +0,69x, haber şoku kolu açık, kaldıraç 0,49x",
+   "headline": "3 haber şoku işlemi · İşlem yok · Yön yukarı: endeks +0,69x, haber şoku kolu açık, kaldıraç 0,49x",
    "marketSummary": "S&P 500 (SPY) −%0,35 · Nasdaq 100 (QQQ) −%0,52 · Russell 2000 (IWM) −%1,18. VIX korku endeksi 18,31 (+%4,69); WTI petrol 86,50 $ (−%0,03); ABD 10 yıllık faiz %5,05 (+5 baz puan). Endeks kolu yönü YUKARI: SPY dünkü kapanış 759,81 $, 200 günlük ortalama 731,31 $ (+%3,90), 50 günlük ortalama 764,96 $. QQQ'nun 20 günlük oynaklığı yıllık %36,2; büyüklük %25 ÷ %36,2 = 0,69x. Hedef maruziyet +0,69x. Piyasa trendi yukarı: SPY dünkü kapanış 759,81 $, 200 günlük ortalama 731,31 $ (+%3,90). (v6'da momentum sepeti kapalı; bu bilgi kayıt içindir.) Sonuç: net değer 2.892,33 $, nakit 1.467,66 $, kaldıraç 0,49x.",
    "regime": {
     "name": "up",
@@ -13955,7 +14370,10 @@
     "Endeks kolu yönü YUKARI: SPY dünkü kapanış 759,81 $, 200 günlük ortalama 731,31 $ (+%3,90), 50 günlük ortalama 764,96 $. QQQ'nun 20 günlük oynaklığı yıllık %36,2; büyüklük %25 ÷ %36,2 = 0,69x. Hedef maruziyet +0,69x.",
     "Piyasa trendi yukarı: SPY dünkü kapanış 759,81 $, 200 günlük ortalama 731,31 $ (+%3,90). (v6'da momentum sepeti kapalı; bu bilgi kayıt içindir.)",
     "Endeks kolu: hedef 0,69x, mevcut 0,80x; fark 0,3x'ten küçük olduğu için işlem yapılmadı.",
-    "Momentum sepeti v6'da kapalı: paranın yarısı endeks kolunda, yarısı haber şoku kolunda."
+    "Momentum sepeti v6'da kapalı: paranın yarısı endeks kolunda, yarısı haber şoku kolunda.",
+    "Haber şoku: NVDA LONG 141,73 $ (boşluk −%14,07, ilk saat +%10,57).",
+    "Haber şoku: SMCI LONG 361,57 $ (boşluk −%10,65, ilk saat +%3,33).",
+    "Haber şoku: DELL LONG 228,02 $ (boşluk −%10,06, ilk saat +%6,57)."
    ],
    "rejected": [],
    "watchlist": [
@@ -14045,7 +14463,120 @@
    "ranking": [],
    "shortRanking": [],
    "rankingNote": "Puan = 12-1 ay getirisi (son ay hariç 12 aylık getiri, %). Long için uygun: fiyat 200 günlük ortalamanın üstünde ve puan pozitif; sepet ilk 10'dan (sektör başına en fazla 3) oluşur, ilk 20'de kalan tutulur. Short listesi: fiyatı 200 günlük ortalamanın altında ve puanı negatif en zayıf hisseler (yalnızca izleme; v5'te sepet düşüşte nakde geçer).",
-   "nextSteps": "Endeks kolunun yönü ve büyüklüğü her gün 10:00'dan sonra, haber şoku taraması 10:30'dan sonra; haber işlemlerinin zarar-kesleri piyasa açıkken 5 dakikada bir kontrol ediliyor."
+   "nextSteps": "Endeks kolunun yönü ve büyüklüğü her gün 10:00'dan sonra, haber şoku taraması 10:30'dan sonra; haber işlemlerinin zarar-kesleri piyasa açıkken 5 dakikada bir kontrol ediliyor.",
+   "events": {
+    "date": "2026-11-12",
+    "at": "2026-11-12T10:31:03-05:00",
+    "checked": 164,
+    "gaps": [
+     {
+      "ticker": "DELL",
+      "name": "Dell Technologies",
+      "gapPct": -10.06,
+      "firstHourPct": 6.57,
+      "prevClose": 373.68,
+      "open": 336.08,
+      "h1High": 366.65,
+      "h1Low": 335.2,
+      "h1Close": 358.17
+     },
+     {
+      "ticker": "NVDA",
+      "name": "NVIDIA",
+      "gapPct": -14.07,
+      "firstHourPct": 10.57,
+      "prevClose": 173.73,
+      "open": 149.29,
+      "h1High": 166.0,
+      "h1Low": 149.27,
+      "h1Close": 165.07
+     },
+     {
+      "ticker": "SMCI",
+      "name": "Super Micro Computer",
+      "gapPct": -10.65,
+      "firstHourPct": 3.33,
+      "prevClose": 30.43,
+      "open": 27.19,
+      "h1High": 28.35,
+      "h1Low": 26.96,
+      "h1Close": 28.09
+     }
+    ],
+    "taken": [
+     {
+      "ticker": "NVDA",
+      "name": "NVIDIA",
+      "gapPct": -14.07,
+      "firstHourPct": 10.57,
+      "prevClose": 173.73,
+      "open": 149.29,
+      "h1High": 166.0,
+      "h1Low": 149.27,
+      "h1Close": 165.07,
+      "side": "long",
+      "ssr": true,
+      "stop": 149.12,
+      "amount": 141.73,
+      "price": 164.34,
+      "exitDate": "2026-11-16",
+      "headline": {
+       "title": "Who is Colette Kress, Nvidia's new interim CEO?",
+       "url": "https://finance.yahoo.com/technology/article/who-is-colette-kress-nvidias-new-interim-ceo-150856209.html",
+       "publisher": "Yahoo Finance",
+       "at": "2026-11-12T15:08:56+00:00"
+      }
+     },
+     {
+      "ticker": "SMCI",
+      "name": "Super Micro Computer",
+      "gapPct": -10.65,
+      "firstHourPct": 3.33,
+      "prevClose": 30.43,
+      "open": 27.19,
+      "h1High": 28.35,
+      "h1Low": 26.96,
+      "h1Close": 28.09,
+      "side": "long",
+      "ssr": true,
+      "stop": 26.93,
+      "amount": 361.57,
+      "price": 27.93,
+      "exitDate": "2026-11-16",
+      "headline": {
+       "title": "Nvidia, AMD, CoreWeave, Nebius, Tesla, Strategy, and More Stocks That Explain Today’s Market",
+       "url": "https://www.barrons.com/articles/stock-movers-cd2d0ebf?siteid=yhoof2&yptr=yahoo",
+       "publisher": "Barrons.com",
+       "at": "2026-11-12T15:12:00+00:00"
+      }
+     },
+     {
+      "ticker": "DELL",
+      "name": "Dell Technologies",
+      "gapPct": -10.06,
+      "firstHourPct": 6.57,
+      "prevClose": 373.68,
+      "open": 336.08,
+      "h1High": 366.65,
+      "h1Low": 335.2,
+      "h1Close": 358.17,
+      "side": "long",
+      "ssr": true,
+      "stop": 334.86,
+      "amount": 228.02,
+      "price": 356.1,
+      "exitDate": "2026-11-16",
+      "headline": {
+       "title": "Nvidia, AMD, CoreWeave, Nebius, Tesla, Strategy, and More Stocks That Explain Today’s Market",
+       "url": "https://www.barrons.com/articles/stock-movers-cd2d0ebf?siteid=yhoof2&yptr=yahoo",
+       "publisher": "Barrons.com",
+       "at": "2026-11-12T15:12:00+00:00"
+      }
+     }
+    ],
+    "skipped": [],
+    "rule": "Açılış boşluğu en az %8; ilk saatte haberin tersine en az %0,5 dönüş; 2 işlem günü tut, zarar-kes ilk saatin öbür ucu."
+   }
   }
  ],
  "compliance": [
@@ -14148,7 +14679,7 @@
  ],
  "tax": {
   "2026": {
-   "commissions": 6.83,
+   "commissions": 7.88,
    "shortTermRealized": -100.58,
    "marginInterest": 0.0,
    "washDisallowed": 8.79
@@ -14300,7 +14831,7 @@
   "start": "2026-10-30",
   "startAt": "2026-10-30T15:50:43-04:00",
   "end": "2027-01-28",
-  "asOf": "2026-11-12T10:20:59-05:00",
+  "asOf": "2026-11-12T10:31:03-05:00",
   "strategy": "v6",
   "history": [
    {
@@ -14364,12 +14895,12 @@
   "daysElapsed": 10,
   "daysTotal": 61,
   "finished": false,
-  "returnPct": -3.61,
-  "spyReturnPct": 0.67,
-  "excessPct": -4.28,
+  "returnPct": -3.63,
+  "spyReturnPct": 0.81,
+  "excessPct": -4.44,
   "maxDrawdownPct": -6.03,
   "maxDrawdownAt": "2026-11-10T12:42:52-05:00",
-  "drawdownNowPct": -4.46,
+  "drawdownNowPct": -4.48,
   "trades": {
    "closed": 9,
    "wins": 2,
@@ -14388,9 +14919,9 @@
    },
    {
     "month": "2026-11",
-    "returnPct": -3.61,
-    "spyPct": 0.66,
-    "excessPct": -4.27
+    "returnPct": -3.63,
+    "spyPct": 0.81,
+    "excessPct": -4.44
    }
   ],
   "uptime": {
@@ -14409,7 +14940,7 @@
     "key": "spy",
     "label": "SPY'ı geçmek (masraflar düşülmüş)",
     "ok": false,
-    "value": -4.28,
+    "value": -4.44,
     "unit": "pct"
    },
    {
