@@ -1,9 +1,9 @@
 {
- "asOf": "2026-11-12T17:11:30-05:00",
+ "asOf": "2026-11-12T17:41:38-05:00",
  "session": "post",
  "sessionLabel": "Piyasa sonrası (16:00–20:00 ET)",
  "equity": 2891.68,
- "totalImpact": 2.62,
+ "totalImpact": 2.64,
  "totalImpactPct": 0.09,
  "items": [
   {
@@ -15,10 +15,10 @@
    "stopPrice": null,
    "refClose": 688.21,
    "refAt": "2026-11-12T15:55:00-05:00",
-   "price": 688.32,
-   "at": "2026-11-12T17:10:30-05:00",
-   "changePct": 0.02,
-   "impact": 0.18,
+   "price": 688.27,
+   "at": "2026-11-12T17:41:36-05:00",
+   "changePct": 0.01,
+   "impact": 0.1,
    "beyondStop": false
   },
   {
@@ -30,10 +30,10 @@
    "stopPrice": 149.12,
    "refClose": 166.04,
    "refAt": "2026-11-12T15:55:00-05:00",
-   "price": 166.6374,
-   "at": "2026-11-12T17:10:00-05:00",
-   "changePct": 0.36,
-   "impact": 0.51,
+   "price": 167.02,
+   "at": "2026-11-12T17:40:00-05:00",
+   "changePct": 0.59,
+   "impact": 0.84,
    "beyondStop": false
   },
   {
@@ -45,10 +45,10 @@
    "stopPrice": 334.86,
    "refClose": 371.35,
    "refAt": "2026-11-12T15:55:00-05:00",
-   "price": 374.35,
-   "at": "2026-11-12T17:05:00-05:00",
-   "changePct": 0.81,
-   "impact": 1.92,
+   "price": 374.0,
+   "at": "2026-11-12T17:35:00-05:00",
+   "changePct": 0.71,
+   "impact": 1.7,
    "beyondStop": false
   }
  ],
@@ -57,17 +57,17 @@
    "ticker": "SPY",
    "label": "S&P 500 (SPY)",
    "refClose": 757.2,
-   "price": 757.54,
-   "at": "2026-11-12T17:05:00-05:00",
-   "changePct": 0.04
+   "price": 757.4,
+   "at": "2026-11-12T17:40:57-05:00",
+   "changePct": 0.03
   },
   {
    "ticker": "QQQ",
    "label": "Nasdaq 100 (QQQ)",
    "refClose": 688.21,
-   "price": 688.32,
-   "at": "2026-11-12T17:10:30-05:00",
-   "changePct": 0.02
+   "price": 688.27,
+   "at": "2026-11-12T17:41:36-05:00",
+   "changePct": 0.01
   }
  ],
  "note": "Yalnızca izleme: bot bu saatlerde işlem yapmaz, zarar-kes emirleri normal seansta işler. Seans dışında işlem hacmi düşüktür, fiyatlar sert oynayabilir ve ertesi açılış farklı olabilir.",
