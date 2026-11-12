@@ -99,7 +99,7 @@
   }
  },
  "portfolio": {
-  "cash": 735.35,
+  "cash": 1083.2,
   "positions": [
    {
     "stopMode": "managed",
@@ -111,16 +111,16 @@
     "shares": 1.6461,
     "avgCost": 695.4676,
     "costBasis": 1144.81,
-    "lastPrice": 694.1,
-    "lastPriceAt": "2026-11-12T11:20:00-05:00",
+    "lastPrice": 692.13,
+    "lastPriceAt": "2026-11-12T11:30:00-05:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (11:20 ET)",
+     "title": "Yahoo Finance 5 dk mum (11:30 ET)",
      "url": "https://finance.yahoo.com/quote/QQQ/"
     },
-    "marketValue": 1142.56,
-    "exposure": 1142.56,
-    "unrealized": -2.25,
-    "unrealizedPct": -0.2,
+    "marketValue": 1139.32,
+    "exposure": 1139.32,
+    "unrealized": -5.49,
+    "unrealizedPct": -0.48,
     "openedAt": "2026-11-02",
     "openedTs": "2026-11-02T09:50:00-05:00",
     "lastAddDate": "2026-11-02",
@@ -128,7 +128,7 @@
     "extremeSinceEntry": 695.1199951171875,
     "tookProfit": false,
     "thesis": "Endeks kolu, QQQ (1x): 0,00 $ → 1.396,50 $. Endeks kolu yönü YUKARI: SPY dünkü kapanış 755,72 $, 200 günlük ortalama 728,85 $ (+%3,69), 50 günlük ortalama 767,49 $. QQQ'nun 20 günlük oynaklığı yıllık %22,6; büyüklük %25 ÷ %22,6 = 1,10x. Hedef maruziyet +1,10x.",
-    "maintReq": 285.64,
+    "maintReq": 284.83,
     "taxBasisAdj": 8.79
    },
    {
@@ -141,16 +141,16 @@
     "shares": 0.3612,
     "avgCost": 784.372,
     "costBasis": 283.32,
-    "lastPrice": 840.2415,
-    "lastPriceAt": "2026-11-12T11:20:00-05:00",
+    "lastPrice": 832.18,
+    "lastPriceAt": "2026-11-12T11:30:00-05:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (11:20 ET)",
+     "title": "Yahoo Finance 5 dk mum (11:30 ET)",
      "url": "https://finance.yahoo.com/quote/GEV/"
     },
-    "marketValue": 303.5,
-    "exposure": 303.5,
-    "unrealized": 20.18,
-    "unrealizedPct": 7.12,
+    "marketValue": 300.58,
+    "exposure": 300.58,
+    "unrealized": 17.26,
+    "unrealizedPct": 6.09,
     "openedAt": "2026-11-10",
     "openedTs": "2026-11-10T10:30:00-05:00",
     "lastAddDate": "2026-11-10",
@@ -174,8 +174,8 @@
      "publisher": "Stocktwits",
      "at": "2026-11-10T13:33:49+00:00"
     },
-    "maintReq": 75.87,
-    "lastBarTs": "2026-11-12T11:20:00-05:00"
+    "maintReq": 75.15,
+    "lastBarTs": "2026-11-12T11:30:00-05:00"
    },
    {
     "stopMode": "event",
@@ -187,16 +187,16 @@
     "shares": 0.8619,
     "avgCost": 164.4196,
     "costBasis": 141.71,
-    "lastPrice": 166.45,
-    "lastPriceAt": "2026-11-12T11:20:00-05:00",
+    "lastPrice": 165.4,
+    "lastPriceAt": "2026-11-12T11:30:00-05:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (11:20 ET)",
+     "title": "Yahoo Finance 5 dk mum (11:30 ET)",
      "url": "https://finance.yahoo.com/quote/NVDA/"
     },
-    "marketValue": 143.46,
-    "exposure": 143.46,
-    "unrealized": 1.75,
-    "unrealizedPct": 1.23,
+    "marketValue": 142.56,
+    "exposure": 142.56,
+    "unrealized": 0.85,
+    "unrealizedPct": 0.6,
     "openedAt": "2026-11-12",
     "openedTs": "2026-11-12T10:30:00-05:00",
     "lastAddDate": "2026-11-12",
@@ -220,54 +220,8 @@
      "publisher": "Yahoo Finance",
      "at": "2026-11-12T15:08:56+00:00"
     },
-    "maintReq": 35.87,
-    "lastBarTs": "2026-11-12T11:20:00-05:00"
-   },
-   {
-    "stopMode": "event",
-    "ticker": "SMCI",
-    "name": "Super Micro Computer",
-    "kind": "Hisse",
-    "side": "long",
-    "lev": 1,
-    "shares": 12.9369,
-    "avgCost": 27.949,
-    "costBasis": 361.57,
-    "lastPrice": 28.83,
-    "lastPriceAt": "2026-11-12T11:20:00-05:00",
-    "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (11:20 ET)",
-     "url": "https://finance.yahoo.com/quote/SMCI/"
-    },
-    "marketValue": 372.97,
-    "exposure": 372.97,
-    "unrealized": 11.4,
-    "unrealizedPct": 3.15,
-    "openedAt": "2026-11-12",
-    "openedTs": "2026-11-12T10:30:00-05:00",
-    "lastAddDate": "2026-11-12",
-    "stopPrice": 26.93,
-    "extremeSinceEntry": 28.995,
-    "tookProfit": false,
-    "thesis": "Haber şoku: SMCI önceki kapanışa (30,43 $) göre −%10,65 düşüşle açıldı, ilk saatte +%3,33 toparlandı: piyasa haberin ilk tepkisini abartılı buldu. Kural gereği long açıldı. Zarar-kes 26,93 $ (ilk saatin en düşüğünün hemen ötesi, risk %3,7); çıkış 2026-11-16 kapanışında. Büyüklük: haber kolunun %25'i, zarar-keste kaybı kolun yaklaşık %1'i. Haber: “Nvidia, AMD, CoreWeave, Nebius, Tesla, Strategy, and More Stocks That Explain Today’s Market” (Barrons.com).",
-    "sleeve": "event",
-    "exitDate": "2026-11-16",
-    "event": {
-     "gapPct": -10.65,
-     "firstHourPct": 3.33,
-     "prevClose": 30.43,
-     "open": 27.19,
-     "h1High": 28.35,
-     "h1Low": 26.96
-    },
-    "headline": {
-     "title": "Nvidia, AMD, CoreWeave, Nebius, Tesla, Strategy, and More Stocks That Explain Today’s Market",
-     "url": "https://www.barrons.com/articles/stock-movers-cd2d0ebf?siteid=yhoof2&yptr=yahoo",
-     "publisher": "Barrons.com",
-     "at": "2026-11-12T15:12:00+00:00"
-    },
-    "maintReq": 93.24,
-    "lastBarTs": "2026-11-12T11:20:00-05:00"
+    "maintReq": 35.64,
+    "lastBarTs": "2026-11-12T11:30:00-05:00"
    },
    {
     "stopMode": "event",
@@ -279,21 +233,21 @@
     "shares": 0.6399,
     "avgCost": 356.2781,
     "costBasis": 227.98,
-    "lastPrice": 367.08,
-    "lastPriceAt": "2026-11-12T11:20:00-05:00",
+    "lastPrice": 370.0,
+    "lastPriceAt": "2026-11-12T11:30:00-05:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (11:20 ET)",
+     "title": "Yahoo Finance 5 dk mum (11:30 ET)",
      "url": "https://finance.yahoo.com/quote/DELL/"
     },
-    "marketValue": 234.89,
-    "exposure": 234.89,
-    "unrealized": 6.91,
-    "unrealizedPct": 3.03,
+    "marketValue": 236.76,
+    "exposure": 236.76,
+    "unrealized": 8.78,
+    "unrealizedPct": 3.85,
     "openedAt": "2026-11-12",
     "openedTs": "2026-11-12T10:30:00-05:00",
     "lastAddDate": "2026-11-12",
     "stopPrice": 334.86,
-    "extremeSinceEntry": 367.8,
+    "extremeSinceEntry": 372.63,
     "tookProfit": false,
     "thesis": "Haber şoku: DELL önceki kapanışa (373,68 $) göre −%10,06 düşüşle açıldı, ilk saatte +%6,57 toparlandı: piyasa haberin ilk tepkisini abartılı buldu. Kural gereği long açıldı. Zarar-kes 334,86 $ (ilk saatin en düşüğünün hemen ötesi, risk %6,3); çıkış 2026-11-16 kapanışında. Büyüklük: haber kolunun %16'i, zarar-keste kaybı kolun yaklaşık %1'i. Haber: “Nvidia, AMD, CoreWeave, Nebius, Tesla, Strategy, and More Stocks That Explain Today’s Market” (Barrons.com).",
     "sleeve": "event",
@@ -312,41 +266,41 @@
      "publisher": "Barrons.com",
      "at": "2026-11-12T15:12:00+00:00"
     },
-    "maintReq": 58.72,
-    "lastBarTs": "2026-11-12T11:20:00-05:00"
+    "maintReq": 59.19,
+    "lastBarTs": "2026-11-12T11:30:00-05:00"
    }
   ],
-  "realizedPL": -100.58,
+  "realizedPL": -114.31,
   "netDeposits": 3000.0,
   "costs": {
-   "slippage": 3.6578,
-   "commission": 7.7,
-   "fees": 0.18,
+   "slippage": 3.8324,
+   "commission": 8.05,
+   "fees": 0.2,
    "interest": 0.0,
    "borrow": 0.02,
    "dividendsPaid": 0.0,
    "dividendsReceived": 0.0
   },
-  "longValue": 2197.38,
+  "longValue": 1819.22,
   "shortValue": 0.0,
-  "positionsValue": 2197.38,
-  "totalValue": 2932.73,
-  "grossExposure": 2197.38,
-  "netExposure": 2197.38,
-  "leverage": 0.749,
-  "maintenanceReq": 549.34,
-  "marginBuffer": 2383.39,
-  "regTInitialReq": 1098.69,
-  "regTExcess": 1834.04,
-  "buyingPower": 3668.08,
+  "positionsValue": 1819.22,
+  "totalValue": 2902.42,
+  "grossExposure": 1819.22,
+  "netExposure": 1819.22,
+  "leverage": 0.627,
+  "maintenanceReq": 454.81,
+  "marginBuffer": 2447.61,
+  "regTInitialReq": 909.61,
+  "regTExcess": 1992.81,
+  "buyingPower": 3985.62,
   "marginEligible": true,
-  "totalPL": -67.27,
-  "totalPLPct": -2.24,
-  "twrPct": -2.24,
-  "asOf": "2026-11-12T11:21:45-05:00",
-  "benchmarkPrice": 762.69,
-  "benchmarkValue": 3045.44,
-  "benchmarkTwrPct": 1.51
+  "totalPL": -97.58,
+  "totalPLPct": -3.25,
+  "twrPct": -3.25,
+  "asOf": "2026-11-12T11:31:50-05:00",
+  "benchmarkPrice": 761.33,
+  "benchmarkValue": 3039.99,
+  "benchmarkTwrPct": 1.33
  },
  "meta": {
   "engine": "trend-event v6",
@@ -361,9 +315,9 @@
    "ath": 759.66,
    "athDate": "2026-10-06",
    "athChecked": "2026-11-12",
-   "price": 694.1,
-   "at": "2026-11-12T11:20:00-05:00",
-   "ddPct": -8.63,
+   "price": 692.13,
+   "at": "2026-11-12T11:30:00-05:00",
+   "ddPct": -8.89,
    "level": "normal",
    "triggerPrice": 607.73,
    "correctionPrice": 683.69
@@ -396,7 +350,7 @@
     "2026-11-12"
    ]
   },
-  "lastRunAt": "2026-11-12T11:21:45-05:00",
+  "lastRunAt": "2026-11-12T11:31:50-05:00",
   "lastError": null,
   "spikeScanDate": "2026-11-12",
   "spikeScan": {
@@ -1425,6 +1379,45 @@
    ],
    "runId": "2026-11-12",
    "by": "bot"
+  },
+  {
+   "id": "t-20261112-04",
+   "ts": "2026-11-12T11:31:50-05:00",
+   "date": "2026-11-12",
+   "action": "SELL",
+   "side": "long",
+   "ticker": "SMCI",
+   "name": "Super Micro Computer",
+   "kind": "Hisse",
+   "shares": 12.9369,
+   "quotePrice": 26.93,
+   "quoteAt": "2026-11-12T11:25:00-05:00",
+   "slippagePct": 0.05,
+   "execPrice": 26.9165,
+   "value": 348.22,
+   "commission": 0.35,
+   "fees": 0.02,
+   "priceSource": {
+    "title": "Yahoo Finance 5 dk mum (11:25 ET)",
+    "url": "https://finance.yahoo.com/quote/SMCI/"
+   },
+   "reason": "Haber şoku zarar-kesi (ilk saatin en düşük seviyesinin ötesi) tetiklendi: 11:25 ET mumunda fiyat 26,68 $'a indi, zarar-kes seviyesi 26,93 $. Emir 26,93 $'dan gerçekleşti.",
+   "rule": "haber şoku zarar-kesi",
+   "sources": [
+    {
+     "title": "Yahoo Finance: SMCI",
+     "url": "https://finance.yahoo.com/quote/SMCI/"
+    },
+    {
+     "title": "yfinance (Yahoo Finance verileri)",
+     "url": "https://github.com/ranaroussi/yfinance"
+    }
+   ],
+   "runId": "2026-11-12",
+   "by": "bot",
+   "realizedPL": -13.73,
+   "holdingDays": 0,
+   "taxTerm": "kısa vade"
   }
  ],
  "snapshots": [
@@ -1664,41 +1657,36 @@
   },
   {
    "date": "2026-11-12",
-   "at": "2026-11-12T11:21:45-05:00",
-   "totalValue": 2932.73,
-   "cash": 735.35,
-   "positionsValue": 2197.38,
-   "plPct": -2.24,
-   "twrPct": -2.24,
+   "at": "2026-11-12T11:31:50-05:00",
+   "totalValue": 2902.42,
+   "cash": 1083.2,
+   "positionsValue": 1819.22,
+   "plPct": -3.25,
+   "twrPct": -3.25,
    "netDeposits": 3000.0,
-   "leverage": 0.749,
-   "benchmarkPrice": 762.69,
-   "benchmarkValue": 3045.44,
+   "leverage": 0.627,
+   "benchmarkPrice": 761.33,
+   "benchmarkValue": 3039.99,
    "holdings": [
     {
      "ticker": "QQQ",
      "side": "long",
-     "value": 1142.56
+     "value": 1139.32
     },
     {
      "ticker": "GEV",
      "side": "long",
-     "value": 303.5
+     "value": 300.58
     },
     {
      "ticker": "NVDA",
      "side": "long",
-     "value": 143.46
-    },
-    {
-     "ticker": "SMCI",
-     "side": "long",
-     "value": 372.97
+     "value": 142.56
     },
     {
      "ticker": "DELL",
      "side": "long",
-     "value": 234.89
+     "value": 236.76
     }
    ]
   }
@@ -12763,6 +12751,109 @@
     ],
     "actions": [],
     "note": "Normal: pozisyonlar zarar-kese %7,1–%12,6 uzakta, kaldıraç 0,75x, SPY +%0,38; işlem gerekmedi."
+   },
+   {
+    "at": "2026-11-12T11:26:49-05:00",
+    "kind": "guard",
+    "status": "uyari",
+    "spyPrice": 761.53,
+    "spyChangePct": 0.23,
+    "totalValue": 2905.13,
+    "benchmarkValue": 3040.81,
+    "leverage": 0.747,
+    "marginBuffer": 2362.68,
+    "positions": [
+     {
+      "ticker": "QQQ",
+      "side": "long",
+      "price": 692.17,
+      "dayChangePct": 0.26,
+      "stopPrice": null,
+      "distancePct": null
+     },
+     {
+      "ticker": "GEV",
+      "side": "long",
+      "price": 834.565,
+      "dayChangePct": 3.26,
+      "stopPrice": 746.25,
+      "distancePct": 11.83
+     },
+     {
+      "ticker": "NVDA",
+      "side": "long",
+      "price": 164.7337,
+      "dayChangePct": -5.18,
+      "stopPrice": 149.12,
+      "distancePct": 10.47
+     },
+     {
+      "ticker": "SMCI",
+      "side": "long",
+      "price": 27.365,
+      "dayChangePct": -10.07,
+      "stopPrice": 26.93,
+      "distancePct": 1.62
+     },
+     {
+      "ticker": "DELL",
+      "side": "long",
+      "price": 364.04,
+      "dayChangePct": -2.58,
+      "stopPrice": 334.86,
+      "distancePct": 8.71
+     }
+    ],
+    "actions": [],
+    "note": "SMCI zarar-kes seviyesine %3'ten yakın"
+   },
+   {
+    "at": "2026-11-12T11:31:50-05:00",
+    "kind": "guard",
+    "status": "alarm",
+    "spyPrice": 761.33,
+    "spyChangePct": 0.2,
+    "totalValue": 2902.42,
+    "benchmarkValue": 3039.99,
+    "leverage": 0.627,
+    "marginBuffer": 2447.61,
+    "positions": [
+     {
+      "ticker": "QQQ",
+      "side": "long",
+      "price": 692.13,
+      "dayChangePct": 0.25,
+      "stopPrice": null,
+      "distancePct": null
+     },
+     {
+      "ticker": "GEV",
+      "side": "long",
+      "price": 832.18,
+      "dayChangePct": 2.96,
+      "stopPrice": 746.25,
+      "distancePct": 11.51
+     },
+     {
+      "ticker": "NVDA",
+      "side": "long",
+      "price": 165.4,
+      "dayChangePct": -4.79,
+      "stopPrice": 149.12,
+      "distancePct": 10.92
+     },
+     {
+      "ticker": "DELL",
+      "side": "long",
+      "price": 370.0,
+      "dayChangePct": -0.98,
+      "stopPrice": 334.86,
+      "distancePct": 10.49
+     }
+    ],
+    "actions": [
+     "SMCI long kapatıldı (348,22 $)"
+    ]
    }
   ]
  },
@@ -15232,8 +15323,8 @@
  ],
  "tax": {
   "2026": {
-   "commissions": 7.88,
-   "shortTermRealized": -100.58,
+   "commissions": 8.25,
+   "shortTermRealized": -114.31,
    "marginInterest": 0.0,
    "washDisallowed": 8.79
   }
@@ -15384,7 +15475,7 @@
   "start": "2026-10-30",
   "startAt": "2026-10-30T15:50:43-04:00",
   "end": "2027-01-28",
-  "asOf": "2026-11-12T11:21:45-05:00",
+  "asOf": "2026-11-12T11:31:50-05:00",
   "strategy": "v6",
   "history": [
    {
@@ -15448,20 +15539,20 @@
   "daysElapsed": 10,
   "daysTotal": 61,
   "finished": false,
-  "returnPct": -2.24,
-  "spyReturnPct": 1.51,
-  "excessPct": -3.76,
+  "returnPct": -3.25,
+  "spyReturnPct": 1.33,
+  "excessPct": -4.59,
   "maxDrawdownPct": -6.03,
   "maxDrawdownAt": "2026-11-10T12:42:52-05:00",
-  "drawdownNowPct": -3.1,
+  "drawdownNowPct": -4.11,
   "trades": {
-   "closed": 9,
+   "closed": 10,
    "wins": 2,
-   "winRatePct": 22.2,
+   "winRatePct": 20.0,
    "avgWin": 3.01,
-   "avgLoss": -15.23,
-   "profitFactor": 0.06,
-   "realizedPL": -100.58
+   "avgLoss": -15.04,
+   "profitFactor": 0.05,
+   "realizedPL": -114.31
   },
   "monthly": [
    {
@@ -15472,9 +15563,9 @@
    },
    {
     "month": "2026-11",
-    "returnPct": -2.24,
-    "spyPct": 1.51,
-    "excessPct": -3.75
+    "returnPct": -3.25,
+    "spyPct": 1.32,
+    "excessPct": -4.57
    }
   ],
   "uptime": {
@@ -15493,7 +15584,7 @@
     "key": "spy",
     "label": "SPY'ı geçmek (masraflar düşülmüş)",
     "ok": false,
-    "value": -3.76,
+    "value": -4.59,
     "unit": "pct"
    },
    {
