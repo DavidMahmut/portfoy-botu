@@ -1,10 +1,10 @@
 {
- "asOf": "2026-11-12T19:42:08-05:00",
+ "asOf": "2026-11-13T16:12:06-05:00",
  "session": "post",
  "sessionLabel": "Piyasa sonrası (16:00–20:00 ET)",
- "equity": 2891.68,
- "totalImpact": 7.69,
- "totalImpactPct": 0.27,
+ "equity": 2851.39,
+ "totalImpact": -4.1,
+ "totalImpactPct": -0.14,
  "items": [
   {
    "ticker": "QQQ",
@@ -13,12 +13,12 @@
    "lev": 1,
    "shares": 1.6461,
    "stopPrice": null,
-   "refClose": 688.21,
-   "refAt": "2026-11-12T15:55:00-05:00",
-   "price": 690.24,
-   "at": "2026-11-12T19:42:00-05:00",
-   "changePct": 0.29,
-   "impact": 3.34,
+   "refClose": 679.9,
+   "refAt": "2026-11-13T15:55:00-05:00",
+   "price": 677.74,
+   "at": "2026-11-13T16:10:00-05:00",
+   "changePct": -0.32,
+   "impact": -3.56,
    "beyondStop": false
   },
   {
@@ -28,27 +28,12 @@
    "lev": 1,
    "shares": 0.8619,
    "stopPrice": 149.12,
-   "refClose": 166.04,
-   "refAt": "2026-11-12T15:55:00-05:00",
-   "price": 167.1876,
-   "at": "2026-11-12T19:40:00-05:00",
-   "changePct": 0.69,
-   "impact": 0.99,
-   "beyondStop": false
-  },
-  {
-   "ticker": "DELL",
-   "name": "Dell Technologies",
-   "side": "long",
-   "lev": 1,
-   "shares": 0.6399,
-   "stopPrice": 334.86,
-   "refClose": 371.35,
-   "refAt": "2026-11-12T15:55:00-05:00",
-   "price": 376.6,
-   "at": "2026-11-12T19:41:54-05:00",
-   "changePct": 1.41,
-   "impact": 3.36,
+   "refClose": 162.8201,
+   "refAt": "2026-11-13T15:55:00-05:00",
+   "price": 162.1881,
+   "at": "2026-11-13T16:10:00-05:00",
+   "changePct": -0.39,
+   "impact": -0.54,
    "beyondStop": false
   }
  ],
@@ -56,18 +41,18 @@
   {
    "ticker": "SPY",
    "label": "S&P 500 (SPY)",
-   "refClose": 757.2,
-   "price": 758.85,
-   "at": "2026-11-12T19:41:06-05:00",
-   "changePct": 0.22
+   "refClose": 754.25,
+   "price": 752.46,
+   "at": "2026-11-13T16:10:00-05:00",
+   "changePct": -0.24
   },
   {
    "ticker": "QQQ",
    "label": "Nasdaq 100 (QQQ)",
-   "refClose": 688.21,
-   "price": 690.24,
-   "at": "2026-11-12T19:42:00-05:00",
-   "changePct": 0.29
+   "refClose": 679.9,
+   "price": 677.74,
+   "at": "2026-11-13T16:10:00-05:00",
+   "changePct": -0.32
   }
  ],
  "note": "Yalnızca izleme: bot bu saatlerde işlem yapmaz, zarar-kes emirleri normal seansta işler. Seans dışında işlem hacmi düşüktür, fiyatlar sert oynayabilir ve ertesi açılış farklı olabilir.",
