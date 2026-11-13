@@ -1,13 +1,23 @@
 {
- "asOf": "2026-11-13T13:38:07-05:00",
+ "asOf": "2026-11-13T14:08:03-05:00",
  "sections": [
   {
    "ticker": "QQQ",
    "name": "Invesco QQQ (Nasdaq 100)",
    "role": "long",
-   "dayChangePct": -1.47,
-   "unrealizedPct": -2.51,
+   "dayChangePct": -1.24,
+   "unrealizedPct": -2.27,
    "items": [
+    {
+     "title": "The Stock Market's Early Rally Fades as Wholesale Inflation Hits 6.5%",
+     "summary": "A cooler monthly reading offers little relief for rate fears.",
+     "publisher": "GuruFocus.com",
+     "url": "https://finance.yahoo.com/markets/stocks/articles/stock-markets-early-rally-fades-185155071.html",
+     "at": "2026-11-13T13:51-05:00",
+     "tags": [
+      "Fed & rates"
+     ]
+    },
     {
      "title": "Exchange-Traded Funds Lower as US Equities Drop After Midday",
      "summary": "Broad Market Indicators Broad-market exchange-traded funds IWM and IVV fell. Actively traded I",
@@ -33,18 +43,6 @@
      "url": "https://finance.yahoo.com/economy/articles/ppi-6-5-yoy-highest-142200557.html",
      "at": "2026-11-13T09:22-05:00",
      "tags": []
-    },
-    {
-     "title": "Stock Market Today: Nvidia Rebounds After Huang’s Exit as Treasury Yields Top 5%",
-     "summary": "Nvidia is bouncing back after its CEO's shocking exit, but a bond market flashing a number not seen in years and one inflation report due Friday could still wreck Wall Street's best week in months.",
-     "publisher": "24/7 Wall St.",
-     "url": "https://247wallst.com/investing/2026/11/13/stock-market-today-nvidia-rebounds-after-huangs-exit-as-treasury-yields-top-5/",
-     "at": "2026-11-13T09:15-05:00",
-     "tags": [
-      "Fed & rates",
-      "AI & chips",
-      "Corporate"
-     ]
     }
    ]
   },
@@ -52,9 +50,20 @@
    "ticker": "NVDA",
    "name": "NVIDIA",
    "role": "long",
-   "dayChangePct": -2.62,
-   "unrealizedPct": -1.57,
+   "dayChangePct": -2.27,
+   "unrealizedPct": -1.21,
    "items": [
+    {
+     "title": "Why Nvidia’s leadership shift could reshape its competitive edge",
+     "summary": "Kelly Intelligence Founder, CEO, and CCO Kevin Kelly and his panel of experts weigh in on how Nvidia's (NVDA) leadership change will affect the company. Today's panel consists of Yahoo Finance Julie Hyman, Wall Street Veteran and \"The Buy Side\" Author Turney D…",
+     "publisher": "Yahoo Finance Video",
+     "url": "https://finance.yahoo.com/video/why-nvidias-leadership-shift-could-reshape-its-competitive-edge-190152777.html",
+     "at": "2026-11-13T14:01-05:00",
+     "tags": [
+      "AI & chips",
+      "Corporate"
+     ]
+    },
     {
      "title": "How Nvidia's stock decline could impact your 401(k) and portfolio",
      "summary": "You don't need to own a single share of Nvidia to feel the impact.",
@@ -86,16 +95,6 @@
       "Policy & politics",
       "AI & chips",
       "Corporate"
-     ]
-    },
-    {
-     "title": "The biggest AI bubble risk: investing in celebrity founders over fundamentals",
-     "summary": "Tusk Venture Partners Managing Partner &amp; Co-Founder Bradley Tusk joins Yahoo Finance Executive Editor Brian Sozzi to discuss potential AI bubble risk amid Nvidia (NVDA) crisis and the one question he'd ask leaders before investing.",
-     "publisher": "Yahoo Finance Video",
-     "url": "https://finance.yahoo.com/video/the-biggest-ai-bubble-risk-investing-in-celebrity-founders-over-fundamentals-164516432.html",
-     "at": "2026-11-13T11:45-05:00",
-     "tags": [
-      "AI & chips"
      ]
     }
    ]
@@ -159,43 +158,42 @@
    "unrealizedPct": null,
    "items": [
     {
+     "title": "Tom Lee Says Huang Return Would Be ‘Shocking’: Trump Reportedly Urged Him To Fight For His Job",
+     "summary": "Fundstrat’s Tom Lee listed “China hawks,” frontier labs, Nvidia competitors, “anti-AI people,” and short sellers among the groups that could potentially want Huang removed.",
+     "publisher": "Stocktwits",
+     "url": "https://stocktwits.com/news-articles/markets/equity/tom-lee-says-huang-return-would-be-shocking-trump-urged-him-to-fight-for-his-job/cNbRfHmR9fz",
+     "at": "2026-11-13T14:02-05:00",
+     "tags": [
+      "Policy & politics",
+      "AI & chips"
+     ]
+    },
+    {
+     "title": "AMD or Intel: 1 Chip Stock Is the Clear Winner",
+     "summary": "It's really not close.",
+     "publisher": "Motley Fool",
+     "url": "https://www.fool.com/investing/2026/11/13/amd-or-intel-1-chip-stock-is-the-clear-winner/",
+     "at": "2026-11-13T13:50-05:00",
+     "tags": [
+      "AI & chips"
+     ]
+    },
+    {
+     "title": "Why Advanced Micro Devices Stock Is Down Today",
+     "summary": "AMD stock is sinking as the chip sector sells off amid the Nvidia scandal, giving back part of the gains it picked up when Jensen Huang resigned. I think the fallout could last longer than many investors hope.",
+     "publisher": "Motley Fool",
+     "url": "https://www.fool.com/investing/2026/11/13/why-advanced-micro-devices-is-down-today/",
+     "at": "2026-11-13T13:45-05:00",
+     "tags": [
+      "AI & chips"
+     ]
+    },
+    {
      "title": "Stocks fall with tech, Nvidia concerns; US dollar climbs",
      "summary": "By Caroline Valetkevitch and Elizabeth Howcroft NEW YORK/PARIS, Nov 13 (Reuters) - Stock indexes were mostly lower on Friday as technology shares sold off amid fresh concerns about US chipmaker Nvidia",
      "publisher": "Reuters",
      "url": "https://finance.yahoo.com/markets/stocks/articles/stocks-recover-nvidia-whiplash-dollar-015858641.html",
      "at": "2026-11-13T13:20-05:00",
-     "tags": [
-      "AI & chips"
-     ]
-    },
-    {
-     "title": "CBRG 2X Cerebras ETF Surges 16% as Cerebras Jumps 8% on Microsoft Deal and Raised Guidance",
-     "summary": "A leveraged Cerebras fund that lost more than half its value in a month is suddenly ripping higher while NVIDIA and AMD sink. A new hyperscaler customer explains the move, but one unresolved OpenAI problem could still turn it ugly.",
-     "publisher": "24/7 Wall St.",
-     "url": "https://247wallst.com/investing/2026/11/13/cbrg-2x-cerebras-etf-surges-16-as-cerebras-jumps-8-on-microsoft-deal-and-raised-guidance/",
-     "at": "2026-11-13T13:03-05:00",
-     "tags": [
-      "Earnings",
-      "AI & chips",
-      "Corporate"
-     ]
-    },
-    {
-     "title": "Marvell Is Still Up 81% This Year. Can MRVL Stock Hit $300 by 2029?",
-     "summary": "Marvell has shrugged off a brutal chip selloff better than most, and one executive's remark about 2029 has bulls dreaming big. But a rival's confident boast about its moat gives the bears real ammunition.",
-     "publisher": "24/7 Wall St.",
-     "url": "https://247wallst.com/investing/2026/11/13/marvell-is-still-up-81-this-year-can-mrvl-stock-hit-300-by-2029/",
-     "at": "2026-11-13T12:54-05:00",
-     "tags": [
-      "AI & chips"
-     ]
-    },
-    {
-     "title": "‘Liquidity, Concentration, Leverage Are Three Things You Can’t Put Together’: Bobby Jain as a 3x Chip ETF Falls 50% in a Month",
-     "summary": "A hedge fund veteran warned that three risks should never share a portfolio. Retail investors had already stacked all three into one wildly popular fund, and the fallout arrived faster than anyone expected.",
-     "publisher": "24/7 Wall St.",
-     "url": "https://247wallst.com/investing/etf/2026/11/13/liquidity-concentration-leverage-are-three-things-you-cant-put-together-bobby-jain-as-a-3x-chip-etf-falls-50-in-a-month/",
-     "at": "2026-11-13T12:46-05:00",
      "tags": [
       "AI & chips"
      ]
@@ -345,6 +343,36 @@
  ],
  "market": [
   {
+   "title": "Oil prices set for second straight weekly decline on growing signs of supply surplus",
+   "summary": "By Erwin Seba HOUSTON, Nov 13 (Reuters) - Oil prices sagged on Friday, set for a second straight weekly decline, as signs of a growing global supply surplus weighed on the market and Washington's",
+   "publisher": "Reuters",
+   "url": "https://finance.yahoo.com/energy/articles/oil-prices-set-second-weekly-054237957.html",
+   "at": "2026-11-13T13:40-05:00",
+   "tags": [
+    "Energy"
+   ]
+  },
+  {
+   "title": "US Dollar Edges Higher Against The Loonie; Treasury Yields Top 5%",
+   "summary": "The US dollar climbed slightly against Canada's currency Friday afternoon as Treasury yields rose an",
+   "publisher": "MT Newswires",
+   "url": "https://finance.yahoo.com/markets/currencies/articles/us-dollar-edges-higher-against-183801855.html",
+   "at": "2026-11-13T13:38-05:00",
+   "tags": [
+    "Fed & rates"
+   ]
+  },
+  {
+   "title": "Why Bitcoin Is Falling Today",
+   "summary": "Bitcoin dropped below $70,000 overnight, to its lowest level since August, after a hotter-than-expected inflation report pushed up rate hike expectations and a wave of leveraged positions was liquidated.",
+   "publisher": "Motley Fool",
+   "url": "https://www.fool.com/investing/2026/11/13/why-bitcoin-is-falling-today/",
+   "at": "2026-11-13T13:35-05:00",
+   "tags": [
+    "Fed & rates"
+   ]
+  },
+  {
    "title": "Stock Market Today: Nasdaq In Red As Nvidia Wipes Out $650 Billion; Applied Materials Sinks (Live Coverage)",
    "summary": "The Dow Jones index fell Friday despite cooler-than-expected inflation data. AI giant Nvidia continued to fall.",
    "publisher": "Investor's Business Daily",
@@ -363,48 +391,6 @@
    "at": "2026-11-13T13:08-05:00",
    "tags": [
     "Energy"
-   ]
-  },
-  {
-   "title": "Chevron Bets $7B on Venezuela While Exxon Mobil Plays It Safe: One Has a Distinct Edge Now",
-   "summary": "Oil near $97 made both supermajors look brilliant this quarter, yet one is pouring billions into a country that has seized foreign assets before while the other says it is in no rush. Which bet fits an income investor?",
-   "publisher": "24/7 Wall St.",
-   "url": "https://247wallst.com/investing/2026/11/13/chevron-bets-7b-on-venezuela-while-exxon-mobil-plays-it-safe-one-has-a-distinct-edge-now/",
-   "at": "2026-11-13T12:45-05:00",
-   "tags": [
-    "Earnings",
-    "Energy"
-   ]
-  },
-  {
-   "title": "Stock Market Midday, Nov. 13: Nasdaq Plunges as Nvidia Turmoil Deepens and Treasury Yields Hit 5%",
-   "summary": "Markets came under renewed pressure Friday as rising Treasury yields and uncertainty surrounding the AI industry sparked a rotation out of technology stocks and into defensive sectors.",
-   "publisher": "Motley Fool",
-   "url": "https://www.fool.com/coverage/stock-market-today/2026/11/13/stock-market-midday-nov-13-nasdaq-plunges-as-nvidia-turmoil-deepens-and-treasury-yields-hit-5/",
-   "at": "2026-11-13T12:35-05:00",
-   "tags": [
-    "Fed & rates",
-    "AI & chips"
-   ]
-  },
-  {
-   "title": "Energy & Utilities Roundup: Market Talk",
-   "summary": "Find insight on oil futures, Korea Electric Power and more in the latest Market Talks covering energy and utilities.",
-   "publisher": "The Wall Street Journal",
-   "url": "https://www.wsj.com/business/energy-utilities-roundup-market-talk-723bb970?siteid=yhoof2&yptr=yahoo",
-   "at": "2026-11-13T12:28-05:00",
-   "tags": [
-    "Energy"
-   ]
-  },
-  {
-   "title": "QURE Stock Rallies 17.5% in a Month: What Should Investors Do Now?",
-   "summary": "uniQure shares rally 17.5% as FDA grants Priority Review to its Huntington's disease gene therapy, but it remains to be seen if clinical and regulatory progress can sustain momentum.",
-   "publisher": "Zacks",
-   "url": "https://finance.yahoo.com/healthcare/articles/qure-stock-rallies-17-5-171600347.html",
-   "at": "2026-11-13T12:16-05:00",
-   "tags": [
-    "Policy & politics"
    ]
   },
   {
@@ -441,6 +427,18 @@
    ]
   },
   {
+   "title": "Stock Market Today: Nvidia Rebounds After Huang’s Exit as Treasury Yields Top 5%",
+   "summary": "Nvidia is bouncing back after its CEO's shocking exit, but a bond market flashing a number not seen in years and one inflation report due Friday could still wreck Wall Street's best week in months.",
+   "publisher": "24/7 Wall St.",
+   "url": "https://247wallst.com/investing/2026/11/13/stock-market-today-nvidia-rebounds-after-huangs-exit-as-treasury-yields-top-5/",
+   "at": "2026-11-13T09:15-05:00",
+   "tags": [
+    "Fed & rates",
+    "AI & chips",
+    "Corporate"
+   ]
+  },
+  {
    "title": "Exchange-Traded Funds, Equity Futures Higher Pre-Bell Friday as Producer Inflation Trails Forecasts",
    "summary": "The broad market exchange-traded fund SPDR S&P 500 ETF Trust (SPY) was up 0.4% and the actively trad",
    "publisher": "MT Newswires",
@@ -464,34 +462,153 @@
    ]
   },
   {
-   "title": "Korea Electric Power Stocks Fall 9.79% After Third-Quarter Net Profit Drops 78%",
-   "summary": "Rising coal costs and weaker power sales cut operating profit 70.9%, renewing pressure on the state utility's finances.",
-   "publisher": "GuruFocus.com",
-   "url": "https://finance.yahoo.com/markets/stocks/articles/korea-electric-power-stocks-fall-182909756.html",
-   "at": "2026-11-13T13:29-05:00",
+   "title": "Goldman Sachs sees upside for S&P 500 in 2027 — even as earnings growth slows",
+   "summary": "Here's what to know about Oppenheimer's the equity bull market predicitions.",
+   "publisher": "Yahoo Finance",
+   "url": "https://finance.yahoo.com/markets/article/goldman-sachs-sees-upside-for-sp-500-in-2027--even-as-earnings-growth-slows-185627269.html",
+   "at": "2026-11-13T13:56-05:00",
    "tags": [
-    "Earnings",
-    "Analysts"
+    "Earnings"
    ]
   }
  ],
  "seekingAlpha": {
-  "asOf": "2026-11-13T13:38:07-05:00",
+  "asOf": "2026-11-13T14:08:03-05:00",
   "ok": true,
   "stale": false,
   "via": "seekingalpha.com RSS",
   "errors": [],
   "feedCounts": {
    "Piyasa haberleri": 7,
-   "Tüm yazılar": 20
+   "Tüm yazılar": 10
   },
   "market": [
    {
-    "title": "Zhengye Biotechnology GAAP EPS of -$0.06, revenue of $7.51M",
-    "url": "https://seekingalpha.com/news/4672576-zhengye-biotechnology-gaap-eps-of-0_06-revenue-of-7_51m",
-    "at": "2026-11-13T13:34-05:00",
+    "title": "The Trade Desk: A Short Squeeze In The Making",
+    "url": "https://seekingalpha.com/article/4967943-the-trade-desk-short-squeeze-in-the-making",
+    "at": "2026-11-13T14:05-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "TTD"
+    ],
+    "author": null
+   },
+   {
+    "title": "AI Compute: A Tale Of Two Markets",
+    "url": "https://seekingalpha.com/article/4967962-ai-compute-tale-of-two-markets",
+    "at": "2026-11-13T14:05-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "WTAI",
+     "THNQ",
+     "LRNZ",
+     "AIQ",
+     "UBOT",
+     "ARTY"
+    ],
+    "author": null
+   },
+   {
+    "title": "Accelevation expects $905M-$915M 2026 revenue and $155M-$165M adjusted EBITDA as SkyBridge ramps",
+    "url": "https://seekingalpha.com/news/4672590-accelevation-expects-905m-915m-2026-revenue-and-155m-165m-adjusted-ebitda-as-skybridge-ramps",
+    "at": "2026-11-13T14:01-05:00",
     "kind": "news",
     "symbols": [],
+    "author": null
+   },
+   {
+    "title": "VolitionRx targets operating cash burn below $1M per month in 2027 as it pushes France sepsis rollout",
+    "url": "https://seekingalpha.com/news/4672589-volitionrx-targets-operating-cash-burn-below-1m-per-month-in-2027-as-it-pushes-france-sepsis",
+    "at": "2026-11-13T14:00-05:00",
+    "kind": "news",
+    "symbols": [],
+    "author": null
+   },
+   {
+    "title": "SoftBank Q2: A Cheap, Leveraged Bet On OpenAI",
+    "url": "https://seekingalpha.com/article/4967941-softbank-q2-a-cheap-leveraged-bet-on-openai",
+    "at": "2026-11-13T14:00-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "OPENAI",
+     "SFTBY",
+     "SFTBF",
+     "SFTB:CA"
+    ],
+    "author": null
+   },
+   {
+    "title": "PyroGenesis Inc. (PYR:CA) Q3 2026 Earnings Call Prepared Remarks Transcript",
+    "url": "https://seekingalpha.com/article/4967916-pyrogenesis-inc-pyr-ca-q3-2026-earnings-call-prepared-remarks-transcript",
+    "at": "2026-11-13T13:59-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "PYR:CA",
+     "PYRGF"
+    ],
+    "author": null
+   },
+   {
+    "title": "Scorpio Gold Corporation GAAP EPS of -$0.01",
+    "url": "https://seekingalpha.com/news/4672588-scorpio-gold-corporation-gaap-eps-of-0_01",
+    "at": "2026-11-13T13:57-05:00",
+    "kind": "news",
+    "symbols": [],
+    "author": null
+   },
+   {
+    "title": "Blue Moon Metals Inc. GAAP EPS of -$0.24",
+    "url": "https://seekingalpha.com/news/4672587-blue-moon-metals-inc-gaap-eps-of-0_24",
+    "at": "2026-11-13T13:55-05:00",
+    "kind": "news",
+    "symbols": [],
+    "author": null
+   },
+   {
+    "title": "SEC plans to amend employee compensation disclosure rules",
+    "url": "https://seekingalpha.com/news/4672574-sec-plans-to-amend-employee-compensation-disclosure-rules",
+    "at": "2026-11-13T13:53-05:00",
+    "kind": "news",
+    "symbols": [],
+    "author": null
+   },
+   {
+    "title": "Qualys: Faster Billings Make The Post-Earnings Selloff A Buying Opportunity",
+    "url": "https://seekingalpha.com/article/4967937-qualys-faster-billings-make-the-post-earnings-selloff-a-buying-opportunity",
+    "at": "2026-11-13T13:53-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "QLYS"
+    ],
+    "author": null
+   },
+   {
+    "title": "NoCopi Technologies GAAP EPS of $0.12, revenue of $3.33M",
+    "url": "https://seekingalpha.com/news/4672586-nocopi-technologies-gaap-eps-of-0_12-revenue-of-3_33m",
+    "at": "2026-11-13T13:52-05:00",
+    "kind": "news",
+    "symbols": [],
+    "author": null
+   },
+   {
+    "title": "Wendy's emerges as stalking horse bidder for franchisee assets",
+    "url": "https://seekingalpha.com/news/4672569-wendys-emerges-as-stalking-horse-bidder-for-franchisee-assets",
+    "at": "2026-11-13T13:51-05:00",
+    "kind": "news",
+    "symbols": [],
+    "author": null
+   },
+   {
+    "title": "Arcos Dorados Q3: Same Golden Arches, A Fraction Of The Price",
+    "url": "https://seekingalpha.com/article/4967933-arcos-dorados-q3-same-golden-arches-a-fraction-of-the-price",
+    "at": "2026-11-13T13:35-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "MCD",
+     "MCD:CA",
+     "BRL:USD",
+     "ARCO"
+    ],
     "author": null
    },
    {
@@ -502,22 +619,6 @@
     "symbols": [
      "RLI"
     ],
-    "author": null
-   },
-   {
-    "title": "Stevanato Group Non-GAAP EPS of €0.16, revenue of €326.1M",
-    "url": "https://seekingalpha.com/news/4672575-stevanato-group-non-gaap-eps-of-016-revenue-of-3261m",
-    "at": "2026-11-13T13:29-05:00",
-    "kind": "news",
-    "symbols": [],
-    "author": null
-   },
-   {
-    "title": "NextEra Energy stock struggles: Oversold bounce or another leg lower?",
-    "url": "https://seekingalpha.com/news/4672572-nextera-energy-stock-struggles-oversold-bounce-or-another-leg-lower",
-    "at": "2026-11-13T13:27-05:00",
-    "kind": "news",
-    "symbols": [],
     "author": null
    },
    {
@@ -547,144 +648,6 @@
      "WMT:CA",
      "ZWMT:CA",
      "BJ"
-    ],
-    "author": null
-   },
-   {
-    "title": "Eledon Pharmaceuticals GAAP EPS of -$0.03 beats by $0.14",
-    "url": "https://seekingalpha.com/news/4672573-eledon-pharmaceuticals-gaap-eps-of-0_03-beats-by-0_14",
-    "at": "2026-11-13T13:20-05:00",
-    "kind": "news",
-    "symbols": [],
-    "author": null
-   },
-   {
-    "title": "Lumos Diagnostics Holdings Limited (LDXHF) Shareholder/Analyst Call Transcript",
-    "url": "https://seekingalpha.com/article/4967948-lumos-diagnostics-holdings-limited-ldxhf-shareholder-analyst-call-transcript",
-    "at": "2026-11-13T13:18-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "LDXHF"
-    ],
-    "author": null
-   },
-   {
-    "title": "CEPI: Weekly Income Can't Fix An Options Book With No Upside",
-    "url": "https://seekingalpha.com/article/4967922-cepi-weekly-income-cant-fix-an-options-book-with-no-upside",
-    "at": "2026-11-13T13:18-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "BTC-USD",
-     "NVDA",
-     "MA",
-     "V",
-     "TSM",
-     "AMD"
-    ],
-    "author": null
-   },
-   {
-    "title": "Don't see lot of displacement from AI, but see less need to hire more: San Francisco Fed's Daly",
-    "url": "https://seekingalpha.com/news/4672529-dont-see-lot-of-displacement-from-ai-but-see-less-need-to-hire-more-san-francisco-feds-daly",
-    "at": "2026-11-13T13:17-05:00",
-    "kind": "news",
-    "symbols": [],
-    "author": null
-   },
-   {
-    "title": "Quantum BioPharma Non-GAAP EPS of -$0.06",
-    "url": "https://seekingalpha.com/news/4672571-quantum-biopharma-non-gaap-eps-of-0_06",
-    "at": "2026-11-13T13:17-05:00",
-    "kind": "news",
-    "symbols": [],
-    "author": null
-   },
-   {
-    "title": "York Space Systems downgraded at Jefferies, citing delayed path to positive EBITDA",
-    "url": "https://seekingalpha.com/news/4672557-york-space-systems-downgraded-at-jefferies-citing-delayed-path-to-positive-ebitda",
-    "at": "2026-11-13T13:17-05:00",
-    "kind": "news",
-    "symbols": [],
-    "author": null
-   },
-   {
-    "title": "AMD: The AI Trade Just Entered Another Phase",
-    "url": "https://seekingalpha.com/article/4967921-amd-ai-trade-just-entered-another-phase",
-    "at": "2026-11-13T13:14-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "AMD",
-     "AMD:CA",
-     "ZAMD:CA"
-    ],
-    "author": null
-   },
-   {
-    "title": "StubHub: Now A Value Stock That Is Deleveraging A Heavy Balance Sheet (Rating Upgrade)",
-    "url": "https://seekingalpha.com/article/4967920-stubhub-now-a-value-stock-that-is-deleveraging-a-heavy-balance-sheet-upgrade",
-    "at": "2026-11-13T13:11-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "STUB"
-    ],
-    "author": null
-   },
-   {
-    "title": "Aveanna Healthcare: Q3 Beat And Higher Guidance Back Strong Buy Rating",
-    "url": "https://seekingalpha.com/article/4967919-aveanna-healthcare-q3-beat-and-higher-guidance-back-strong-buy-rating",
-    "at": "2026-11-13T13:09-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "AVAH"
-    ],
-    "author": null
-   },
-   {
-    "title": "Bloom Energy: Why I See Value After Its Third Quarter Results",
-    "url": "https://seekingalpha.com/article/4967915-bloom-energy-why-i-see-value-after-its-third-quarter-results",
-    "at": "2026-11-13T13:03-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "BE"
-    ],
-    "author": null
-   },
-   {
-    "title": "As Microsoft Goes Dark, Palo Alto Networks Jumps Ahead Of Its Q1 Earnings Report",
-    "url": "https://seekingalpha.com/article/4967913-as-microsoft-goes-dark-palo-alto-networks-jumps-ahead-of-its-q1-earnings-report",
-    "at": "2026-11-13T13:00-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "MSFT",
-     "MSFT:CA",
-     "ZMSF:CA",
-     "PANW",
-     "PANW:CA"
-    ],
-    "author": null
-   },
-   {
-    "title": "My Top 10 High-Yield Picks For November 2026: One Yields 11%+",
-    "url": "https://seekingalpha.com/article/4966699-my-top-10-high-yield-picks-for-november-2026-one-yields-11-percent-plus",
-    "at": "2026-11-13T13:00-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "VZ",
-     "T",
-     "ALIZF",
-     "PEP",
-     "VICI",
-     "AFG"
-    ],
-    "author": null
-   },
-   {
-    "title": "F5: 4 Years Of EPS Growth And A Critical Role In The AI Era",
-    "url": "https://seekingalpha.com/article/4967909-f5-4-years-of-eps-growth-and-a-critical-role-in-ai-era",
-    "at": "2026-11-13T12:54-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "FFIV"
     ],
     "author": null
    }
@@ -823,28 +786,28 @@
    "url": "https://seekingalpha.com/market-news"
   },
   "note": "Yalnızca başlık ve bağlantı. Yazıların tamamı Seeking Alpha'da; bir kısmı abonelik ister. Yatırım tavsiyesi değildir.",
-  "lastGood": "2026-11-13T13:38:07-05:00"
+  "lastGood": "2026-11-13T14:08:03-05:00"
  },
  "digest": {
   "date": "2026-11-13",
   "title": "Daily brief — Friday, November 13, 2026",
-  "generatedAt": "2026-11-13T13:38-05:00",
+  "generatedAt": "2026-11-13T14:08-05:00",
   "bullets": [
    {
     "head": "Markets (latest session)",
-    "text": "S&P 500 -0.60%, Nasdaq 100 -1.43%, Dow -0.03%, Russell 2000 -0.55%. VIX 19.8; 10-yr yield 5.14% (+3 bp); WTI $88.64 (-0.11%); gold $3,889 (+0.10%). Tech lagged the Dow: money rotated out of technology."
+    "text": "S&P 500 -0.47%, Nasdaq 100 -1.21%, Dow +0.04%, Russell 2000 -0.45%. VIX 19.2; 10-yr yield 5.14% (+4 bp); WTI $88.77 (+0.03%); gold $3,885 (-0.01%). Tech lagged the Dow: money rotated out of technology."
    },
    {
     "head": "Trend filter",
-    "text": "The S&P 500 (SPY $752.54) is 2.9% above its 200-day average ($731.62). Basket rule: the momentum basket stays invested. Index sleeve (last daily decision 2026-11-13): long, target +0.69x Nasdaq 100 exposure (25% / 36.2% 20-day volatility, capped at 3x)."
+    "text": "The S&P 500 (SPY $753.56) is 3.0% above its 200-day average ($731.62). Basket rule: the momentum basket stays invested. Index sleeve (last daily decision 2026-11-13): long, target +0.69x Nasdaq 100 exposure (25% / 36.2% 20-day volatility, capped at 3x)."
    },
    {
     "head": "Our portfolio",
-    "text": "Net value $2,847.46 (-1.53% vs the previous close); cash $1,591.87; 2 positions, leverage 0.44x. Best holding today: QQQ -1.47%; weakest: NVDA -2.62%."
+    "text": "Net value $2,850.63 (-1.42% vs the previous close); cash $1,591.87; 2 positions, leverage 0.44x. Best holding today: QQQ -1.24%; weakest: NVDA -2.27%."
    },
    {
     "head": "Themes in today's headlines",
-    "text": "AI & chips (18), Fed & rates (9), Earnings (8), Corporate (6)."
+    "text": "AI & chips (17), Fed & rates (11), Corporate (6), Earnings (6)."
    },
    {
     "head": "Upcoming earnings (next 3 weeks)",
@@ -852,6 +815,36 @@
    }
   ],
   "headlines": [
+   {
+    "title": "Oil prices set for second straight weekly decline on growing signs of supply surplus",
+    "url": "https://finance.yahoo.com/energy/articles/oil-prices-set-second-weekly-054237957.html",
+    "publisher": "Reuters",
+    "at": "2026-11-13T13:40-05:00",
+    "summary": "By Erwin Seba HOUSTON, Nov 13 (Reuters) - Oil prices sagged on Friday, set for a second straight weekly decline, as signs of a growing global supply surplus weighed on the market and Washington's",
+    "tags": [
+     "Energy"
+    ]
+   },
+   {
+    "title": "US Dollar Edges Higher Against The Loonie; Treasury Yields Top 5%",
+    "url": "https://finance.yahoo.com/markets/currencies/articles/us-dollar-edges-higher-against-183801855.html",
+    "publisher": "MT Newswires",
+    "at": "2026-11-13T13:38-05:00",
+    "summary": "The US dollar climbed slightly against Canada's currency Friday afternoon as Treasury yields rose an",
+    "tags": [
+     "Fed & rates"
+    ]
+   },
+   {
+    "title": "Why Bitcoin Is Falling Today",
+    "url": "https://www.fool.com/investing/2026/11/13/why-bitcoin-is-falling-today/",
+    "publisher": "Motley Fool",
+    "at": "2026-11-13T13:35-05:00",
+    "summary": "Bitcoin dropped below $70,000 overnight, to its lowest level since August, after a hotter-than-expected inflation report pushed up rate hike expectations and a wave of leveraged positions was liquidat…",
+    "tags": [
+     "Fed & rates"
+    ]
+   },
    {
     "title": "Stock Market Today: Nasdaq In Red As Nvidia Wipes Out $650 Billion; Applied Materials Sinks (Live Coverage)",
     "url": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-ppi-inflation-data-cerebras-earnings/?src=A00220&yptr=yahoo",
@@ -862,54 +855,22 @@
      "Fed & rates",
      "AI & chips"
     ]
-   },
-   {
-    "title": "3 Airline Stocks To Watch As Lower Jet Fuel Costs Lift Margins",
-    "url": "https://finance.yahoo.com/markets/stocks/articles/3-airline-stocks-watch-lower-180845222.html",
-    "publisher": "Simply Wall St.",
-    "at": "2026-11-13T13:08-05:00",
-    "summary": "Oil markets have quietly shifted from scarcity worries to surplus signals, and that change in the jet-fuel equation suddenly matters a lot more for airlines and air cargo carriers.",
-    "tags": [
-     "Energy"
-    ]
-   },
-   {
-    "title": "Chevron Bets $7B on Venezuela While Exxon Mobil Plays It Safe: One Has a Distinct Edge Now",
-    "url": "https://247wallst.com/investing/2026/11/13/chevron-bets-7b-on-venezuela-while-exxon-mobil-plays-it-safe-one-has-a-distinct-edge-now/",
-    "publisher": "24/7 Wall St.",
-    "at": "2026-11-13T12:45-05:00",
-    "summary": "Oil near $97 made both supermajors look brilliant this quarter, yet one is pouring billions into a country that has seized foreign assets before while the other says it is in no rush.",
-    "tags": [
-     "Earnings",
-     "Energy"
-    ]
-   },
-   {
-    "title": "Stock Market Midday, Nov. 13: Nasdaq Plunges as Nvidia Turmoil Deepens and Treasury Yields Hit 5%",
-    "url": "https://www.fool.com/coverage/stock-market-today/2026/11/13/stock-market-midday-nov-13-nasdaq-plunges-as-nvidia-turmoil-deepens-and-treasury-yields-hit-5/",
-    "publisher": "Motley Fool",
-    "at": "2026-11-13T12:35-05:00",
-    "summary": "Markets came under renewed pressure Friday as rising Treasury yields and uncertainty surrounding the AI industry sparked a rotation out of technology stocks and into defensive sectors.",
-    "tags": [
-     "Fed & rates",
-     "AI & chips"
-    ]
    }
   ],
   "movers": [
    {
     "ticker": "NVDA",
-    "changePct": -2.62,
-    "title": "How Nvidia's stock decline could impact your 401(k) and portfolio",
-    "url": "https://finance.yahoo.com/markets/article/how-nvidias-stock-decline-could-impact-your-401k-and-portfolio-181913465.html",
-    "publisher": "Yahoo Finance"
+    "changePct": -2.27,
+    "title": "Why Nvidia’s leadership shift could reshape its competitive edge",
+    "url": "https://finance.yahoo.com/video/why-nvidias-leadership-shift-could-reshape-its-competitive-edge-190152777.html",
+    "publisher": "Yahoo Finance Video"
    },
    {
     "ticker": "QQQ",
-    "changePct": -1.47,
-    "title": "Exchange-Traded Funds Lower as US Equities Drop After Midday",
-    "url": "https://finance.yahoo.com/markets/articles/exchange-traded-funds-lower-us-181215784.html",
-    "publisher": "MT Newswires"
+    "changePct": -1.24,
+    "title": "The Stock Market's Early Rally Fades as Wholesale Inflation Hits 6.5%",
+    "url": "https://finance.yahoo.com/markets/stocks/articles/stock-markets-early-rally-fades-185155071.html",
+    "publisher": "GuruFocus.com"
    }
   ],
   "note": "Generated automatically from market data, the bot's ledger and the headline feeds (rule-based, no AI). Not investment advice."
