@@ -1,10 +1,10 @@
 {
- "asOf": "2026-11-12T18:41:53-05:00",
+ "asOf": "2026-11-12T19:12:00-05:00",
  "session": "post",
  "sessionLabel": "Piyasa sonrası (16:00–20:00 ET)",
  "equity": 2891.68,
- "totalImpact": 14.03,
- "totalImpactPct": 0.49,
+ "totalImpact": 15.79,
+ "totalImpactPct": 0.55,
  "items": [
   {
    "ticker": "QQQ",
@@ -15,10 +15,10 @@
    "stopPrice": null,
    "refClose": 688.21,
    "refAt": "2026-11-12T15:55:00-05:00",
-   "price": 692.4,
-   "at": "2026-11-12T18:40:00-05:00",
-   "changePct": 0.61,
-   "impact": 6.9,
+   "price": 692.5,
+   "at": "2026-11-12T19:10:00-05:00",
+   "changePct": 0.62,
+   "impact": 7.06,
    "beyondStop": false
   },
   {
@@ -30,10 +30,10 @@
    "stopPrice": 149.12,
    "refClose": 166.04,
    "refAt": "2026-11-12T15:55:00-05:00",
-   "price": 168.15,
-   "at": "2026-11-12T18:40:00-05:00",
-   "changePct": 1.27,
-   "impact": 1.82,
+   "price": 168.26,
+   "at": "2026-11-12T19:10:00-05:00",
+   "changePct": 1.34,
+   "impact": 1.91,
    "beyondStop": false
   },
   {
@@ -45,10 +45,10 @@
    "stopPrice": 334.86,
    "refClose": 371.35,
    "refAt": "2026-11-12T15:55:00-05:00",
-   "price": 379.65,
-   "at": "2026-11-12T18:40:00-05:00",
-   "changePct": 2.24,
-   "impact": 5.31,
+   "price": 382.0,
+   "at": "2026-11-12T19:11:51-05:00",
+   "changePct": 2.87,
+   "impact": 6.81,
    "beyondStop": false
   }
  ],
@@ -57,17 +57,17 @@
    "ticker": "SPY",
    "label": "S&P 500 (SPY)",
    "refClose": 757.2,
-   "price": 759.65,
-   "at": "2026-11-12T18:40:00-05:00",
-   "changePct": 0.32
+   "price": 760.03,
+   "at": "2026-11-12T19:10:00-05:00",
+   "changePct": 0.37
   },
   {
    "ticker": "QQQ",
    "label": "Nasdaq 100 (QQQ)",
    "refClose": 688.21,
-   "price": 692.4,
-   "at": "2026-11-12T18:40:00-05:00",
-   "changePct": 0.61
+   "price": 692.5,
+   "at": "2026-11-12T19:10:00-05:00",
+   "changePct": 0.62
   }
  ],
  "note": "Yalnızca izleme: bot bu saatlerde işlem yapmaz, zarar-kes emirleri normal seansta işler. Seans dışında işlem hacmi düşüktür, fiyatlar sert oynayabilir ve ertesi açılış farklı olabilir.",
