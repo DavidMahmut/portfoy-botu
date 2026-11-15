@@ -59,6 +59,7 @@ jobs:
           git config user.email "portfoy-bot@users.noreply.github.com"
           save() {
             git add ledger.json
+            git add archive 2>/dev/null || true     # a finished (reset or bust) account is archived by the engine
             if git diff --cached --quiet; then return 1; fi
             git commit -q -m "Bot: $(TZ=America/New_York date '+%Y-%m-%d %H:%M') ET"
             for i in 1 2 3; do
