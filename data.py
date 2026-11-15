@@ -86,3 +86,37 @@ def extended(tickers):
     """5-minute bars of the last few days including pre-market (04:00-09:30) and after-hours (16:00-20:00)."""
     tickers = sorted(set(tickers))
     return _split(_download(tickers, period="5d", interval="5m", prepost=True), tickers, False)
+
+
+def screen_movers(min_pct=4.0, min_price=5.0, size=120):
+    """Today's biggest movers among all US-listed stocks (Nasdaq, NYSE, NYSE American) from Yahoo's screener:
+    one request for the risers and one for the fallers. Returns a list of dicts
+    {ticker, name, price, pct, dvM (3-month average volume x price, M$), capB, ex, volume}."""
+    import yfinance as yf
+    from yfinance import EquityQuery as Q
+
+    ex_code = {"NMS": "Q", "NGM": "Q", "NCM": "Q", "NYQ": "N", "ASE": "A"}
+    base = [Q("eq", ["region", "us"]), Q("is-in", ["exchange"] + list(ex_code)),
+            Q("gte", ["intradayprice", min_price]), Q("gt", ["avgdailyvol3m", 200000])]
+    out = {}
+    for up in (True, False):
+        q = Q("and", base + [Q("gt", ["percentchange", min_pct]) if up else Q("lt", ["percentchange", -min_pct])])
+        res = None
+        for attempt in range(3):
+            try:
+                res = yf.screen(q, size=size, sortField="percentchange", sortAsc=not up)
+                break
+            except Exception as e:  # rate limits, network hiccups
+                print("screen failed:", e)
+                time.sleep(4 * (attempt + 1))
+        for x in (res or {}).get("quotes") or []:
+            t = x.get("symbol")
+            price, pct = x.get("regularMarketPrice"), x.get("regularMarketChangePercent")
+            if not t or price is None or pct is None or x.get("quoteType") not in (None, "EQUITY"):
+                continue
+            vol3m, cap = x.get("averageDailyVolume3Month"), x.get("marketCap")
+            out[t] = {"ticker": t, "name": x.get("shortName") or x.get("longName") or t, "price": float(price),
+                      "pct": float(pct), "dvM": round(vol3m * price / 1e6, 1) if vol3m else None,
+                      "capB": round(cap / 1e9, 2) if cap else None, "ex": ex_code.get(x.get("exchange")),
+                      "volume": x.get("regularMarketVolume")}
+    return list(out.values())
