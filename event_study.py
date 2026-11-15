@@ -142,14 +142,20 @@ def portfolio(tr, risk=0.01, cap=0.25, slots=4, start=3000.0):
                 break
             w = min(cap, risk / max(x["riskPct"], 0.002))
             eq += eq * w * x["ret"]
+            if eq <= 0:                          # with x10 sizing one gap through a stop can take the whole account
+                eq = 0.0
+                break
             exit_day = (pd.Timestamp(d) + pd.tseries.offsets.BDay(x["hold"])).date().isoformat()
             open_until.append(exit_day if x["hold"] else d + "~")
         peak = max(peak, eq)
         mdd = min(mdd, eq / peak - 1)
         curve.append((d, round(eq, 2)))
+        if eq <= 0:
+            break
     yrs = max((pd.Timestamp(curve[-1][0]) - pd.Timestamp(curve[0][0])).days / 365.25, 0.5) if curve else 1
     return {"endValue": round(eq, 2), "returnPct": round((eq / start - 1) * 100, 2),
-            "cagrPct": round(((eq / start) ** (1 / yrs) - 1) * 100, 2), "maxDrawdownPct": round(mdd * 100, 2),
+            "cagrPct": round(((eq / start) ** (1 / yrs) - 1) * 100, 2) if eq > 0 else -100.0,
+            "maxDrawdownPct": round(mdd * 100, 2), "ruinedOn": curve[-1][0] if eq <= 0 and curve else None,
             "curve": curve[-260:]}
 
 
@@ -241,6 +247,14 @@ def main_wide():
                 big = [x for x in legal if buckets["cap2Bplus_dv50"](x)]
                 item["sleeveV6"] = {k: v for k, v in portfolio(big).items() if k != "curve"}
                 item["sleeveX10"] = {k: v for k, v in portfolio(big, risk=0.03, cap=1.5, slots=6).items() if k != "curve"}
+                item["sizings"] = {f"r{int(r_ * 1000)}_c{int(c_ * 100)}_s{sl}": {k: v for k, v in portfolio(big, risk=r_, cap=c_, slots=sl).items()
+                                                                                     if k in ("returnPct", "cagrPct", "maxDrawdownPct", "ruinedOn")}
+                                   for r_, c_, sl in ((0.01, 0.25, 4), (0.01, 0.50, 6), (0.02, 0.50, 6), (0.02, 1.0, 6),
+                                                      (0.03, 1.0, 6), (0.03, 1.5, 6), (0.05, 1.5, 6))}
+                item["riskBuckets"] = {name: {**summarize([x for x in big if f(x)])}
+                                       for name, f in (("stopUnder1", lambda x: x["riskPct"] < 0.01),
+                                                       ("stop1to3", lambda x: 0.01 <= x["riskPct"] < 0.03),
+                                                       ("stop3plus", lambda x: x["riskPct"] >= 0.03))}
                 res.append(item)
                 print(g, mode, hold, item["all"].get("trades"), item["all"].get("avgPct"),
                       item["cap2Bplus_dv50"].get("trades"), item["cap2Bplus_dv50"].get("avgPct"),
