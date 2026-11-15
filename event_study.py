@@ -198,5 +198,63 @@ def main():
     return 0
 
 
+def main_wide():
+    """Same test on the whole liquid US market (Nasdaq, NYSE, NYSE American; 20 M $+ traded a day), split by company
+    size, for the x10 account's market-wide scan. Size and liquidity are today's values (a rough, forward-looking
+    filter). Writes event_results_wide.json."""
+    mv = json.loads((ROOT / "movers.json").read_text(encoding="utf-8"))
+    cols = mv["screen"]["cols"]
+    rows = [dict(zip(cols, r)) for r in mv["screen"]["rows"]]
+    uni = {r["t"]: r for r in rows if (r.get("dv") or 0) >= 20 and (r.get("p") or 0) >= 5}
+    data = load(sorted(uni))
+    print("loaded", len(data), "of", len(uni))
+    allrows = []
+    for t, b in data.items():
+        try:
+            for x in events_for(t, b):
+                x["cap"] = uni[t].get("cap")
+                x["dv"] = uni[t].get("dv")
+                allrows.append(x)
+        except Exception as e:
+            print("skip", t, e)
+    dates = sorted({x["d"] for x in allrows})
+    mid = dates[len(dates) // 2] if dates else "2025-10-30"
+    buckets = {"all": lambda x: True,
+               "capUnder2B": lambda x: x["cap"] is not None and x["cap"] < 2,
+               "cap2to10B": lambda x: x["cap"] is not None and 2 <= x["cap"] < 10,
+               "cap10Bplus": lambda x: x["cap"] is not None and x["cap"] >= 10,
+               "cap2Bplus_dv50": lambda x: x["cap"] is not None and x["cap"] >= 2 and (x["dv"] or 0) >= 50,
+               "gapDown": lambda x: x["gap"] < 0, "gapUp": lambda x: x["gap"] > 0}
+    res = []
+    for g in GAPS + (0.12,):
+        for mode in MODES:
+            for hold in HOLDS:
+                sel = [x for x in allrows if abs(x["gap"]) >= g and x["hold"] == hold
+                       and (mode == "follow" or (mode == "cont") == x["cont"])]
+                legal = [x for x in sel if not (x["side"] < 0 and x["ssr"])]
+                item = {"gap": g, "mode": mode, "hold": hold, "blockedBySSR": len(sel) - len(legal)}
+                for name, f in buckets.items():
+                    part = [x for x in legal if f(x)]
+                    item[name] = {**summarize(part),
+                                  "firstHalfAvgPct": summarize([x for x in part if x["d"] < mid]).get("avgPct"),
+                                  "secondHalfAvgPct": summarize([x for x in part if x["d"] >= mid]).get("avgPct")}
+                big = [x for x in legal if buckets["cap2Bplus_dv50"](x)]
+                item["sleeveV6"] = {k: v for k, v in portfolio(big).items() if k != "curve"}
+                item["sleeveX10"] = {k: v for k, v in portfolio(big, risk=0.03, cap=1.5, slots=6).items() if k != "curve"}
+                res.append(item)
+                print(g, mode, hold, item["all"].get("trades"), item["all"].get("avgPct"),
+                      item["cap2Bplus_dv50"].get("trades"), item["cap2Bplus_dv50"].get("avgPct"),
+                      item["sleeveX10"]["returnPct"], item["sleeveX10"]["maxDrawdownPct"])
+    out = {"asOf": datetime.utcnow().isoformat(timespec="seconds") + "Z", "tickers": len(data),
+           "from": dates[0] if dates else None, "to": dates[-1] if dates else None, "split": mid,
+           "eventsRaw": len({(x["t"], x["d"]) for x in allrows}), "variants": res,
+           "notes": "Saatlik Yahoo Finance verisi; Nasdaq, NYSE ve NYSE American'da günde 20 milyon $+ işlem gören hisseler "
+                    "(bugünkü hacim ve piyasa değerine göre seçildi: geçmişe bakarken hafif bir ileri bakış yanlılığı var). "
+                    "sleeveX10: işlem başına hesabın %3'ü riskte, tek işlem en fazla hesabın 1,5 katı, 6 açık işlem."}
+    (ROOT / "event_results_wide.json").write_text(json.dumps(out, ensure_ascii=False, indent=1, default=float), encoding="utf-8")
+    return 0
+
+
 if __name__ == "__main__":
-    sys.exit(main())
+    import os
+    sys.exit(main_wide() if os.environ.get("EVENT_WIDE") == "1" else main())
