@@ -1,0 +1,43 @@
+name: Haftalık takvim ve piyasa şeridi
+
+on:
+  workflow_dispatch:
+    inputs:
+      probe:
+        description: "Ham veri örneğini de yaz (tanılama)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: agenda
+  cancel-in-progress: false
+
+jobs:
+  agenda:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Takvimi ve fiyatları al
+        env:
+          AGENDA_PROBE: ${{ inputs.probe && '1' || '0' }}
+        run: python agenda.py
+      - name: Kaydet
+        run: |
+          git config user.name "portfoy-bot"
+          git config user.email "portfoy-bot@users.noreply.github.com"
+          git add agenda.json
+          git commit -q -m "Takvim ve piyasa şeridi: $(TZ=America/New_York date '+%Y-%m-%d %H:%M') ET" || exit 0
+          for i in 1 2 3; do
+            if git pull -q --rebase && git push -q; then exit 0; fi
+            sleep 10
+          done
+          echo "::warning::Takvim gönderilemedi"
