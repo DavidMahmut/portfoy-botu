@@ -1,5 +1,5 @@
 {
- "asOf": "2026-11-15T17:06-05:00",
+ "asOf": "2026-11-15T17:37-05:00",
  "week": {
   "start": "2026-11-16",
   "end": "2026-11-20",
@@ -200,14 +200,13 @@
    "unit": "",
    "dec": 2,
    "why": "Güçlü dolar, emtiayı ve ABD şirketlerinin yurt dışı gelirini baskılar.",
-   "price": 103.41,
-   "prev": 103.17,
-   "date": "2026-11-13",
-   "d1": 0.23,
-   "w1": 1.09,
+   "price": 103.411,
+   "prev": 103.41,
+   "date": "2026-11-15",
+   "d1": 0.0,
+   "w1": 1.73,
    "chgUnit": "%",
    "spark": [
-    101.96,
     102.32,
     102.19,
     102.04,
@@ -221,7 +220,8 @@
     102.23,
     102.91,
     103.17,
-    103.41
+    103.41,
+    103.411
    ]
   },
   {
@@ -386,11 +386,11 @@
    "unit": "$",
    "dec": 0,
    "why": "Risk iştahının göstergesi; kripto hisselerini (COIN, MSTR) sürükler.",
-   "price": 65067.3398,
+   "price": 65176.4805,
    "prev": 64128.0508,
    "date": "2026-11-15",
-   "d1": 1.46,
-   "w1": -11.74,
+   "d1": 1.63,
+   "w1": -11.59,
    "chgUnit": "%",
    "spark": [
     78248.4531,
@@ -407,7 +407,7 @@
     71342.9688,
     68249.2734,
     64128.0508,
-    65067.3398
+    65176.4805
    ]
   },
   {
@@ -417,11 +417,11 @@
    "unit": "",
    "dec": 4,
    "why": "Doların avroya karşı değeri.",
-   "price": 1.1035,
+   "price": 1.1028,
    "prev": 1.105,
    "date": "2026-11-15",
-   "d1": -0.14,
-   "w1": -1.01,
+   "d1": -0.2,
+   "w1": -1.07,
    "chgUnit": "%",
    "spark": [
     1.1174,
@@ -438,7 +438,7 @@
     1.1169,
     1.1095,
     1.105,
-    1.1035
+    1.1028
    ]
   },
   {
@@ -448,11 +448,11 @@
    "unit": "₺",
    "dec": 2,
    "why": "Doların Türk lirası karşılığı.",
-   "price": 50.3653,
+   "price": 50.3508,
    "prev": 50.2819,
    "date": "2026-11-15",
-   "d1": 0.17,
-   "w1": 0.48,
+   "d1": 0.14,
+   "w1": 0.45,
    "chgUnit": "%",
    "spark": [
     49.7809,
@@ -469,47 +469,38 @@
     50.2096,
     50.2539,
     50.2819,
-    50.3653
+    50.3508
    ]
   }
  ],
- "marketsAt": "2026-11-15T17:06-05:00",
+ "marketsAt": "2026-11-15T17:37-05:00",
  "econ": [
   {
    "at": "2026-11-16T08:30-05:00",
    "day": "2026-11-16",
-   "name": "NY Fed Manufacturing*",
+   "name": "NY Fed Manufacturing",
    "tr": "Bölgesel Fed imalat endeksi",
    "imp": 1,
    "period": "Nov",
    "actual": null,
    "expected": null,
    "last": 25.5,
-   "why": null
+   "unit": "",
+   "why": null,
+   "more": []
   },
   {
    "at": "2026-11-16T12:00-05:00",
    "day": "2026-11-16",
-   "name": "NOPA-Soy Crush*",
+   "name": "NOPA-Soy Crush",
    "tr": null,
    "imp": 0,
    "period": "Oct",
    "actual": null,
    "expected": null,
    "last": 196.3,
-   "why": null
-  },
-  {
-   "at": "2026-11-17T08:30-05:00",
-   "day": "2026-11-17",
-   "name": "Retail Sales Ex-Autos MM",
-   "tr": "Perakende satışlar",
-   "imp": 3,
-   "period": "Oct",
-   "actual": null,
-   "expected": null,
-   "last": 0.9,
-   "why": "Tüketici harcamasının gücü; ABD ekonomisinin üçte ikisi tüketimdir."
+   "unit": "",
+   "more": []
   },
   {
    "at": "2026-11-17T08:30-05:00",
@@ -521,19 +512,17 @@
    "actual": null,
    "expected": null,
    "last": 0.8,
-   "why": "Tüketici harcamasının gücü; ABD ekonomisinin üçte ikisi tüketimdir."
-  },
-  {
-   "at": "2026-11-17T08:30-05:00",
-   "day": "2026-11-17",
-   "name": "Export Prices MM",
-   "tr": "İthalat / ihracat fiyatları",
-   "imp": 1,
-   "period": "Oct",
-   "actual": null,
-   "expected": null,
-   "last": 2.2,
-   "why": null
+   "unit": "%",
+   "why": "Tüketici harcamasının gücü; ABD ekonomisinin üçte ikisi tüketimdir.",
+   "more": [
+    {
+     "name": "Retail Sales Ex-Autos MM",
+     "actual": null,
+     "expected": null,
+     "last": 0.9,
+     "unit": "%"
+    }
+   ]
   },
   {
    "at": "2026-11-17T08:30-05:00",
@@ -545,7 +534,17 @@
    "actual": null,
    "expected": null,
    "last": 1.1,
-   "why": null
+   "unit": "%",
+   "why": null,
+   "more": [
+    {
+     "name": "Export Prices MM",
+     "actual": null,
+     "expected": null,
+     "last": 2.2,
+     "unit": "%"
+    }
+   ]
   },
   {
    "at": "2026-11-17T08:30-05:00",
@@ -557,7 +556,8 @@
    "actual": null,
    "expected": null,
    "last": 0.1,
-   "why": null
+   "unit": "",
+   "more": []
   },
   {
    "at": "2026-11-17T08:30-05:00",
@@ -569,55 +569,56 @@
    "actual": null,
    "expected": null,
    "last": 0.2,
-   "why": null
+   "unit": "",
+   "more": []
   },
   {
    "at": "2026-11-17T08:55-05:00",
    "day": "2026-11-17",
-   "name": "Redbook YY *",
+   "name": "Redbook YY",
    "tr": null,
    "imp": 0,
    "period": null,
    "actual": null,
    "expected": null,
    "last": 10.1,
-   "why": null
+   "unit": "%",
+   "more": []
   },
   {
    "at": "2026-11-17T09:15-05:00",
    "day": "2026-11-17",
-   "name": "Capacity Utilization SA*",
-   "tr": "Sanayi üretimi",
-   "imp": 1,
-   "period": "Oct",
-   "actual": null,
-   "expected": null,
-   "last": 76.9,
-   "why": null
-  },
-  {
-   "at": "2026-11-17T09:15-05:00",
-   "day": "2026-11-17",
-   "name": "Industrial Production MM*",
+   "name": "Industrial Production MM",
    "tr": "Sanayi üretimi",
    "imp": 1,
    "period": "Oct",
    "actual": null,
    "expected": null,
    "last": 0.7,
-   "why": null
+   "unit": "%",
+   "why": null,
+   "more": [
+    {
+     "name": "Capacity Utilization SA",
+     "actual": null,
+     "expected": null,
+     "last": 76.9,
+     "unit": ""
+    }
+   ]
   },
   {
    "at": "2026-11-17T09:15-05:00",
    "day": "2026-11-17",
-   "name": "Manuf Output MM*",
+   "name": "Manuf Output MM",
    "tr": null,
    "imp": 0,
    "period": "Oct",
    "actual": null,
    "expected": null,
    "last": 0.3,
-   "why": null
+   "unit": "%",
+   "more": []
   },
   {
    "at": "2026-11-17T10:00-05:00",
@@ -629,7 +630,9 @@
    "actual": null,
    "expected": null,
    "last": 0.4,
-   "why": null
+   "unit": "%",
+   "why": null,
+   "more": []
   },
   {
    "at": "2026-11-17T10:00-05:00",
@@ -641,7 +644,8 @@
    "actual": null,
    "expected": null,
    "last": 29.0,
-   "why": null
+   "unit": "",
+   "more": []
   },
   {
    "at": "2026-11-18T07:00-05:00",
@@ -653,7 +657,8 @@
    "actual": null,
    "expected": null,
    "last": 7.21,
-   "why": null
+   "unit": "",
+   "more": []
   },
   {
    "at": "2026-11-18T07:00-05:00",
@@ -665,7 +670,8 @@
    "actual": null,
    "expected": null,
    "last": 141.2,
-   "why": null
+   "unit": "",
+   "more": []
   },
   {
    "at": "2026-11-18T07:00-05:00",
@@ -677,7 +683,8 @@
    "actual": null,
    "expected": null,
    "last": 204.6,
-   "why": null
+   "unit": "",
+   "more": []
   },
   {
    "at": "2026-11-18T07:00-05:00",
@@ -689,31 +696,8 @@
    "actual": null,
    "expected": null,
    "last": 540.7,
-   "why": null
-  },
-  {
-   "at": "2026-11-18T08:30-05:00",
-   "day": "2026-11-18",
-   "name": "Build Permits: Change MM",
-   "tr": "Konut başlangıçları / inşaat izinleri",
-   "imp": 1,
-   "period": "Oct",
-   "actual": null,
-   "expected": null,
-   "last": -0.4,
-   "why": null
-  },
-  {
-   "at": "2026-11-18T08:30-05:00",
-   "day": "2026-11-18",
-   "name": "Building Permits: Number",
-   "tr": "Konut başlangıçları / inşaat izinleri",
-   "imp": 1,
-   "period": "Oct",
-   "actual": null,
-   "expected": null,
-   "last": 1.4,
-   "why": null
+   "unit": "",
+   "more": []
   },
   {
    "at": "2026-11-18T08:30-05:00",
@@ -725,7 +709,24 @@
    "actual": null,
    "expected": null,
    "last": 1.22,
-   "why": null
+   "unit": "",
+   "why": null,
+   "more": [
+    {
+     "name": "Building Permits: Number",
+     "actual": null,
+     "expected": null,
+     "last": 1.4,
+     "unit": ""
+    },
+    {
+     "name": "Build Permits: Change MM",
+     "actual": null,
+     "expected": null,
+     "last": -0.4,
+     "unit": "%"
+    }
+   ]
   },
   {
    "at": "2026-11-18T08:30-05:00",
@@ -737,7 +738,8 @@
    "actual": null,
    "expected": null,
    "last": -5.2,
-   "why": null
+   "unit": "%",
+   "more": []
   },
   {
    "at": "2026-11-18T10:00-05:00",
@@ -749,7 +751,9 @@
    "actual": null,
    "expected": null,
    "last": 66.0,
-   "why": null
+   "unit": "",
+   "why": null,
+   "more": []
   },
   {
    "at": "2026-11-18T10:00-05:00",
@@ -761,151 +765,130 @@
    "actual": null,
    "expected": null,
    "last": -7.3,
-   "why": null
+   "unit": "%",
+   "more": []
   },
   {
    "at": "2026-11-18T10:30-05:00",
    "day": "2026-11-18",
-   "name": "EIA Weekly Crude Imports*",
-   "tr": "Ham petrol stokları",
-   "imp": 1,
-   "period": null,
-   "actual": null,
-   "expected": null,
-   "last": 0.54,
-   "why": null
-  },
-  {
-   "at": "2026-11-18T10:30-05:00",
-   "day": "2026-11-18",
-   "name": "EIA Weekly Crude Runs*",
-   "tr": "Ham petrol stokları",
-   "imp": 1,
-   "period": null,
-   "actual": null,
-   "expected": null,
-   "last": 0.32,
-   "why": null
-  },
-  {
-   "at": "2026-11-18T10:30-05:00",
-   "day": "2026-11-18",
-   "name": "EIA Wkly Crude Cushing*",
-   "tr": "Ham petrol stokları",
-   "imp": 1,
-   "period": null,
-   "actual": null,
-   "expected": null,
-   "last": 0.11,
-   "why": null
-  },
-  {
-   "at": "2026-11-18T10:30-05:00",
-   "day": "2026-11-18",
-   "name": "EIA Wkly Crude Stk*",
+   "name": "EIA Wkly Crude Stk",
    "tr": "Ham petrol stokları",
    "imp": 1,
    "period": null,
    "actual": null,
    "expected": null,
    "last": 4.66,
-   "why": null
+   "unit": "",
+   "why": null,
+   "more": [
+    {
+     "name": "EIA Weekly Crude Imports",
+     "actual": null,
+     "expected": null,
+     "last": 0.54,
+     "unit": ""
+    },
+    {
+     "name": "EIA Weekly Crude Runs",
+     "actual": null,
+     "expected": null,
+     "last": 0.32,
+     "unit": ""
+    },
+    {
+     "name": "EIA Wkly Crude Cushing",
+     "actual": null,
+     "expected": null,
+     "last": 0.11,
+     "unit": ""
+    },
+    {
+     "name": "EIA Wkly Dist. Stk",
+     "actual": null,
+     "expected": null,
+     "last": 4.07,
+     "unit": ""
+    },
+    {
+     "name": "EIA Wkly Gsln Stk",
+     "actual": null,
+     "expected": null,
+     "last": 1.8,
+     "unit": ""
+    },
+    {
+     "name": "EIA Wkly Refn Util",
+     "actual": null,
+     "expected": null,
+     "last": 0.7,
+     "unit": ""
+    }
+   ]
   },
   {
    "at": "2026-11-18T10:30-05:00",
    "day": "2026-11-18",
-   "name": "EIA Wkly Dist. Stk*",
-   "tr": "Ham petrol stokları",
-   "imp": 1,
-   "period": null,
-   "actual": null,
-   "expected": null,
-   "last": 4.07,
-   "why": null
-  },
-  {
-   "at": "2026-11-18T10:30-05:00",
-   "day": "2026-11-18",
-   "name": "EIA Wkly Gsln Stk*",
-   "tr": "Ham petrol stokları",
-   "imp": 1,
-   "period": null,
-   "actual": null,
-   "expected": null,
-   "last": 1.8,
-   "why": null
-  },
-  {
-   "at": "2026-11-18T10:30-05:00",
-   "day": "2026-11-18",
-   "name": "EIA Wkly Refn Util*",
-   "tr": "Ham petrol stokları",
-   "imp": 1,
-   "period": null,
-   "actual": null,
-   "expected": null,
-   "last": 0.7,
-   "why": null
-  },
-  {
-   "at": "2026-11-18T10:30-05:00",
-   "day": "2026-11-18",
-   "name": "EIA Weekly Dist Output*",
+   "name": "EIA Weekly Dist Output",
    "tr": null,
    "imp": 0,
    "period": null,
    "actual": null,
    "expected": null,
    "last": -0.06,
-   "why": null
+   "unit": "",
+   "more": []
   },
   {
    "at": "2026-11-18T10:30-05:00",
    "day": "2026-11-18",
-   "name": "EIA Weekly Gasoline O/P*",
+   "name": "EIA Weekly Gasoline O/P",
    "tr": null,
    "imp": 0,
    "period": null,
    "actual": null,
    "expected": null,
    "last": -0.08,
-   "why": null
+   "unit": "",
+   "more": []
   },
   {
    "at": "2026-11-18T10:30-05:00",
    "day": "2026-11-18",
-   "name": "EIA Weekly Heatoil Stock*",
+   "name": "EIA Weekly Heatoil Stock",
    "tr": null,
    "imp": 0,
    "period": null,
    "actual": null,
    "expected": null,
    "last": 0.34,
-   "why": null
+   "unit": "",
+   "more": []
   },
   {
    "at": "2026-11-18T10:30-05:00",
    "day": "2026-11-18",
-   "name": "EIA Weekly Prods Imports*",
+   "name": "EIA Weekly Prods Imports",
    "tr": null,
    "imp": 0,
    "period": null,
    "actual": null,
    "expected": null,
    "last": -0.25,
-   "why": null
+   "unit": "",
+   "more": []
   },
   {
    "at": "2026-11-18T10:30-05:00",
    "day": "2026-11-18",
-   "name": "EIA Weekly Rfg Stocks*",
+   "name": "EIA Weekly Rfg Stocks",
    "tr": null,
    "imp": 0,
    "period": null,
    "actual": null,
    "expected": null,
    "last": null,
-   "why": null
+   "unit": "",
+   "more": []
   },
   {
    "at": "2026-11-18T16:00-05:00",
@@ -917,7 +900,8 @@
    "actual": null,
    "expected": null,
    "last": 108.9,
-   "why": null
+   "unit": "",
+   "more": []
   },
   {
    "at": "2026-11-18T16:00-05:00",
@@ -929,7 +913,8 @@
    "actual": null,
    "expected": null,
    "last": 279.2,
-   "why": null
+   "unit": "",
+   "more": []
   },
   {
    "at": "2026-11-18T16:00-05:00",
@@ -941,7 +926,8 @@
    "actual": null,
    "expected": null,
    "last": 279.2,
-   "why": null
+   "unit": "",
+   "more": []
   },
   {
    "at": "2026-11-18T16:00-05:00",
@@ -953,115 +939,87 @@
    "actual": null,
    "expected": null,
    "last": 199.8,
-   "why": null
+   "unit": "",
+   "more": []
   },
   {
    "at": "2026-11-19T08:30-05:00",
    "day": "2026-11-19",
-   "name": "Cont Jobless Clm *",
-   "tr": "Haftalık işsizlik başvuruları",
-   "imp": 2,
-   "period": null,
-   "actual": null,
-   "expected": null,
-   "last": 1.7,
-   "why": "İş piyasasının en güncel göstergesi; her perşembe 08:30."
-  },
-  {
-   "at": "2026-11-19T08:30-05:00",
-   "day": "2026-11-19",
-   "name": "Initial Jobless Clm *",
+   "name": "Initial Jobless Clm",
    "tr": "Haftalık işsizlik başvuruları",
    "imp": 2,
    "period": null,
    "actual": null,
    "expected": null,
    "last": 200.0,
-   "why": "İş piyasasının en güncel göstergesi; her perşembe 08:30."
+   "unit": "",
+   "why": "İş piyasasının en güncel göstergesi; her perşembe 08:30.",
+   "more": [
+    {
+     "name": "Cont Jobless Clm",
+     "actual": null,
+     "expected": null,
+     "last": 1.7,
+     "unit": ""
+    },
+    {
+     "name": "Jobless Clm 4Wk Avg",
+     "actual": null,
+     "expected": null,
+     "last": 195.25,
+     "unit": ""
+    }
+   ]
   },
   {
    "at": "2026-11-19T08:30-05:00",
    "day": "2026-11-19",
-   "name": "Jobless Clm 4Wk Avg *",
-   "tr": "Haftalık işsizlik başvuruları",
-   "imp": 2,
-   "period": null,
-   "actual": null,
-   "expected": null,
-   "last": 195.25,
-   "why": "İş piyasasının en güncel göstergesi; her perşembe 08:30."
-  },
-  {
-   "at": "2026-11-19T08:30-05:00",
-   "day": "2026-11-19",
-   "name": "Philly Fed 6M Index*",
-   "tr": "Bölgesel Fed imalat endeksi",
-   "imp": 1,
-   "period": "Nov",
-   "actual": null,
-   "expected": null,
-   "last": 33.0,
-   "why": null
-  },
-  {
-   "at": "2026-11-19T08:30-05:00",
-   "day": "2026-11-19",
-   "name": "Philly Fed Business Indx*",
+   "name": "Philly Fed Business Indx",
    "tr": "Bölgesel Fed imalat endeksi",
    "imp": 1,
    "period": "Nov",
    "actual": null,
    "expected": null,
    "last": 20.9,
-   "why": null
-  },
-  {
-   "at": "2026-11-19T08:30-05:00",
-   "day": "2026-11-19",
-   "name": "Philly Fed Capex Index*",
-   "tr": "Bölgesel Fed imalat endeksi",
-   "imp": 1,
-   "period": "Nov",
-   "actual": null,
-   "expected": null,
-   "last": 34.9,
-   "why": null
-  },
-  {
-   "at": "2026-11-19T08:30-05:00",
-   "day": "2026-11-19",
-   "name": "Philly Fed Employment*",
-   "tr": "Bölgesel Fed imalat endeksi",
-   "imp": 1,
-   "period": "Nov",
-   "actual": null,
-   "expected": null,
-   "last": 9.1,
-   "why": null
-  },
-  {
-   "at": "2026-11-19T08:30-05:00",
-   "day": "2026-11-19",
-   "name": "Philly Fed New Orders*",
-   "tr": "Bölgesel Fed imalat endeksi",
-   "imp": 1,
-   "period": "Nov",
-   "actual": null,
-   "expected": null,
-   "last": 4.3,
-   "why": null
-  },
-  {
-   "at": "2026-11-19T08:30-05:00",
-   "day": "2026-11-19",
-   "name": "Philly Fed Prices Paid*",
-   "tr": "Bölgesel Fed imalat endeksi",
-   "imp": 1,
-   "period": "Nov",
-   "actual": null,
-   "expected": null,
-   "last": 43.2,
-   "why": null
+   "unit": "",
+   "why": null,
+   "more": [
+    {
+     "name": "Philly Fed 6M Index",
+     "actual": null,
+     "expected": null,
+     "last": 33.0,
+     "unit": ""
+    },
+    {
+     "name": "Philly Fed Capex Index",
+     "actual": null,
+     "expected": null,
+     "last": 34.9,
+     "unit": ""
+    },
+    {
+     "name": "Philly Fed Employment",
+     "actual": null,
+     "expected": null,
+     "last": 9.1,
+     "unit": ""
+    },
+    {
+     "name": "Philly Fed New Orders",
+     "actual": null,
+     "expected": null,
+     "last": 4.3,
+     "unit": ""
+    },
+    {
+     "name": "Philly Fed Prices Paid",
+     "actual": null,
+     "expected": null,
+     "last": 43.2,
+     "unit": ""
+    }
+   ]
   },
   {
    "at": "2026-11-19T10:00-05:00",
@@ -1073,152 +1031,174 @@
    "actual": null,
    "expected": null,
    "last": null,
-   "why": null
+   "unit": "%",
+   "more": []
   },
   {
    "at": "2026-11-19T10:30-05:00",
    "day": "2026-11-19",
-   "name": "EIA-Nat Gas Chg Bcf*",
+   "name": "EIA-Nat Gas Chg Bcf",
    "tr": null,
    "imp": 0,
    "period": null,
    "actual": null,
    "expected": null,
    "last": 61.0,
-   "why": null
+   "unit": "",
+   "more": []
   },
   {
    "at": "2026-11-19T11:00-05:00",
    "day": "2026-11-19",
-   "name": "KC Fed Composite Index*",
+   "name": "KC Fed Composite Index",
    "tr": null,
    "imp": 0,
    "period": "Nov",
    "actual": null,
    "expected": null,
    "last": 11.0,
-   "why": null
+   "unit": "",
+   "more": []
   },
   {
    "at": "2026-11-19T11:00-05:00",
    "day": "2026-11-19",
-   "name": "KC Fed Manufacturing*",
+   "name": "KC Fed Manufacturing",
    "tr": null,
    "imp": 0,
    "period": "Nov",
    "actual": null,
    "expected": null,
    "last": 16.0,
-   "why": null
+   "unit": "",
+   "more": []
   },
   {
    "at": "2026-11-20T10:00-05:00",
    "day": "2026-11-20",
-   "name": "U Mich 1Yr Inf Final*",
-   "tr": "Tüketici güveni",
-   "imp": 2,
-   "period": "Nov",
-   "actual": null,
-   "expected": null,
-   "last": 4.3,
-   "why": null
-  },
-  {
-   "at": "2026-11-20T10:00-05:00",
-   "day": "2026-11-20",
-   "name": "U Mich 5-Yr Inf Final*",
-   "tr": "Tüketici güveni",
-   "imp": 2,
-   "period": "Nov",
-   "actual": null,
-   "expected": null,
-   "last": 3.4,
-   "why": null
-  },
-  {
-   "at": "2026-11-20T10:00-05:00",
-   "day": "2026-11-20",
-   "name": "U Mich Conditions Final*",
+   "name": "U Mich Sentiment Final",
    "tr": "Tüketici güveni",
    "imp": 2,
    "period": "Nov",
    "actual": null,
    "expected": null,
    "last": 51.0,
-   "why": null
-  },
-  {
-   "at": "2026-11-20T10:00-05:00",
-   "day": "2026-11-20",
-   "name": "U Mich Expectations Final*",
-   "tr": "Tüketici güveni",
-   "imp": 2,
-   "period": "Nov",
-   "actual": null,
-   "expected": null,
-   "last": 50.9,
-   "why": null
-  },
-  {
-   "at": "2026-11-20T10:00-05:00",
-   "day": "2026-11-20",
-   "name": "U Mich Sentiment Final*",
-   "tr": "Tüketici güveni",
-   "imp": 2,
-   "period": "Nov",
-   "actual": null,
-   "expected": null,
-   "last": 51.0,
-   "why": null
+   "unit": "",
+   "why": null,
+   "more": [
+    {
+     "name": "U Mich 1Yr Inf Final",
+     "actual": null,
+     "expected": null,
+     "last": 4.3,
+     "unit": ""
+    },
+    {
+     "name": "U Mich 5-Yr Inf Final",
+     "actual": null,
+     "expected": null,
+     "last": 3.4,
+     "unit": ""
+    },
+    {
+     "name": "U Mich Conditions Final",
+     "actual": null,
+     "expected": null,
+     "last": 51.0,
+     "unit": ""
+    },
+    {
+     "name": "U Mich Expectations Final",
+     "actual": null,
+     "expected": null,
+     "last": 50.9,
+     "unit": ""
+    }
+   ]
   },
   {
    "at": "2026-11-20T15:00-05:00",
    "day": "2026-11-20",
-   "name": "USDA-Cattle Marketed*",
+   "name": "USDA-Cattle Marketed",
    "tr": null,
    "imp": 0,
    "period": "Oct",
    "actual": null,
    "expected": null,
    "last": 93.0,
-   "why": null
+   "unit": "",
+   "more": []
   },
   {
    "at": "2026-11-20T15:00-05:00",
    "day": "2026-11-20",
-   "name": "USDA-Cattle On Feed*",
+   "name": "USDA-Cattle On Feed",
    "tr": null,
    "imp": 0,
    "period": "Nov",
    "actual": null,
    "expected": null,
    "last": 100.0,
-   "why": null
+   "unit": "",
+   "more": []
   },
   {
    "at": "2026-11-20T15:00-05:00",
    "day": "2026-11-20",
-   "name": "USDA-Cattle Placed On Fd*",
+   "name": "USDA-Cattle Placed On Fd",
    "tr": null,
    "imp": 0,
    "period": "Oct",
    "actual": null,
    "expected": null,
    "last": 88.0,
-   "why": null
+   "unit": "",
+   "more": []
   }
  ],
- "econAt": "2026-11-15T17:06-05:00",
+ "econAt": "2026-11-15T17:37-05:00",
  "earnings": [
   {
-   "t": "BKHPF",
-   "name": "Bank Hapoalim B.M.",
-   "capB": 34.8,
+   "t": "BIDU",
+   "name": "Baidu, Inc.",
+   "capB": 26.6,
    "day": "2026-11-16",
-   "at": "2026-11-16T16:00-05:00",
-   "when": "kapanıştan sonra",
+   "when": "açılıştan önce",
    "event": "Q3 2026 Earnings Announcement",
-   "epsEst": 1.95,
+   "epsEst": 6.16,
+   "epsActual": null,
+   "surprisePct": null
+  },
+  {
+   "t": "TSN",
+   "name": "Tyson Foods, Inc.",
+   "capB": 20.7,
+   "day": "2026-11-16",
+   "when": "açılıştan önce",
+   "event": "Q4 2026 Earnings Announcement",
+   "epsEst": 0.6,
+   "epsActual": null,
+   "surprisePct": null
+  },
+  {
+   "t": "BEKE",
+   "name": "KE Holdings Inc.",
+   "capB": 19.6,
+   "day": "2026-11-16",
+   "when": "açılıştan önce",
+   "event": "Q3 2026 Earnings Announcement",
+   "epsEst": 1.71,
+   "epsActual": null,
+   "surprisePct": null
+  },
+  {
+   "t": "HTHT",
+   "name": "H World Group Limited",
+   "capB": 15.9,
+   "day": "2026-11-16",
+   "when": "açılıştan önce",
+   "event": "Q3 2026 Earnings Announcement",
+   "epsEst": 5.6,
    "epsActual": null,
    "surprisePct": null
   },
@@ -1227,7 +1207,6 @@
    "name": "NVIDIA Corporation",
    "capB": 3932.3,
    "day": "2026-11-17",
-   "at": "2026-11-17T16:00-05:00",
    "when": "kapanıştan sonra",
    "event": "Q3 2027 Earnings Announcement",
    "epsEst": 2.47,
@@ -1239,7 +1218,6 @@
    "name": "The Home Depot, Inc.",
    "capB": 347.9,
    "day": "2026-11-17",
-   "at": "2026-11-17T08:30-05:00",
    "when": "açılıştan önce",
    "event": "Q3 2026 Earnings Announcement",
    "epsEst": 3.83,
@@ -1251,7 +1229,6 @@
    "name": "The Walt Disney Company",
    "capB": 205.4,
    "day": "2026-11-17",
-   "at": "2026-11-17T08:30-05:00",
    "when": "açılıştan önce",
    "event": "Q4 2026 Earnings Announcement",
    "epsEst": 1.68,
@@ -1263,22 +1240,9 @@
    "name": "Viking Holdings Ltd",
    "capB": 40.1,
    "day": "2026-11-17",
-   "at": "2026-11-17T08:30-05:00",
    "when": "açılıştan önce",
    "event": "Q3 2026 Earnings Announcement",
    "epsEst": 1.27,
-   "epsActual": null,
-   "surprisePct": null
-  },
-  {
-   "t": "JDCMF",
-   "name": "JD.com, Inc.",
-   "capB": 38.3,
-   "day": "2026-11-17",
-   "at": "2026-11-17T16:00-05:00",
-   "when": "kapanıştan sonra",
-   "event": "Q3 2026 Earnings Announcement",
-   "epsEst": 3.39,
    "epsActual": null,
    "surprisePct": null
   },
@@ -1287,7 +1251,6 @@
    "name": "JD.com, Inc.",
    "capB": 37.7,
    "day": "2026-11-17",
-   "at": "2026-11-17T08:30-05:00",
    "when": "açılıştan önce",
    "event": "Q3 2026 Earnings Announcement",
    "epsEst": 5.88,
@@ -1295,38 +1258,35 @@
    "surprisePct": null
   },
   {
-   "t": "BLMIF",
-   "name": "Bank Leumi le-Israel B.M.",
-   "capB": 34.1,
+   "t": "ESLT",
+   "name": "Elbit Systems Ltd.",
+   "capB": 33.1,
    "day": "2026-11-17",
-   "at": "2026-11-17T16:00-05:00",
-   "when": "kapanıştan sonra",
-   "event": "Q3 2026 Earnings Announcement",
-   "epsEst": 1.51,
-   "epsActual": null,
-   "surprisePct": null
-  },
-  {
-   "t": "TCEHY",
-   "name": "Tencent Holdings Limited",
-   "capB": 447.9,
-   "day": "2026-11-18",
-   "at": "2026-11-18T08:30-05:00",
    "when": "açılıştan önce",
    "event": "Q3 2026 Earnings Announcement",
-   "epsEst": 5.81,
+   "epsEst": 3.94,
    "epsActual": null,
    "surprisePct": null
   },
   {
-   "t": "TCTZF",
-   "name": "Tencent Holdings Limited",
-   "capB": 441.5,
-   "day": "2026-11-18",
-   "at": "2026-11-18T16:00-05:00",
+   "t": "AS",
+   "name": "Amer Sports, Inc.",
+   "capB": 17.4,
+   "day": "2026-11-17",
+   "when": "açılıştan önce",
+   "event": "Q3 2026 Earnings Announcement",
+   "epsEst": 0.35,
+   "epsActual": null,
+   "surprisePct": null
+  },
+  {
+   "t": "SQM",
+   "name": "Sociedad Química y Minera de Chile S.A.",
+   "capB": 15.3,
+   "day": "2026-11-17",
    "when": "kapanıştan sonra",
    "event": "Q3 2026 Earnings Announcement",
-   "epsEst": 7.21,
+   "epsEst": 2.08,
    "epsActual": null,
    "surprisePct": null
   },
@@ -1335,7 +1295,6 @@
    "name": "Palo Alto Networks, Inc.",
    "capB": 263.8,
    "day": "2026-11-18",
-   "at": "2026-11-18T16:00-05:00",
    "when": "kapanıştan sonra",
    "event": "Q1 2027 Earnings Announcement",
    "epsEst": 0.97,
@@ -1345,9 +1304,8 @@
   {
    "t": "TJX",
    "name": "The TJX Companies, Inc.",
-   "capB": 147.8,
+   "capB": 148.4,
    "day": "2026-11-18",
-   "at": "2026-11-18T08:30-05:00",
    "when": "açılıştan önce",
    "event": "Q3 2027 Earnings Announcement",
    "epsEst": 1.33,
@@ -1359,7 +1317,6 @@
    "name": "Lowe's Companies, Inc.",
    "capB": 127.8,
    "day": "2026-11-18",
-   "at": "2026-11-18T08:30-05:00",
    "when": "açılıştan önce",
    "event": "Q3 2026 Earnings Announcement",
    "epsEst": 2.95,
@@ -1371,22 +1328,9 @@
    "name": "Target Corporation",
    "capB": 73.3,
    "day": "2026-11-18",
-   "at": "2026-11-18T08:30-05:00",
    "when": "açılıştan önce",
    "event": "Q3 2026 Earnings Announcement",
    "epsEst": 1.71,
-   "epsActual": null,
-   "surprisePct": null
-  },
-  {
-   "t": "SSEZF",
-   "name": "SSE plc",
-   "capB": 44.6,
-   "day": "2026-11-18",
-   "at": "2026-11-18T16:00-05:00",
-   "when": "kapanıştan sonra",
-   "event": "H1 2027 Earnings Announcement",
-   "epsEst": null,
    "epsActual": null,
    "surprisePct": null
   },
@@ -1395,7 +1339,6 @@
    "name": "Everpure, Inc.",
    "capB": 36.0,
    "day": "2026-11-18",
-   "at": "2026-11-18T16:00-05:00",
    "when": "kapanıştan sonra",
    "event": "Q3 2027 Earnings Announcement",
    "epsEst": 0.77,
@@ -1403,23 +1346,21 @@
    "surprisePct": null
   },
   {
-   "t": "EXPGF",
-   "name": "Experian plc",
-   "capB": 34.2,
+   "t": "WWD",
+   "name": "Woodward, Inc.",
+   "capB": 19.5,
    "day": "2026-11-18",
-   "at": "2026-11-18T16:00-05:00",
    "when": "kapanıştan sonra",
-   "event": "H1 2027 Earnings Announcement",
-   "epsEst": null,
+   "event": "Q4 2026 Earnings Announcement",
+   "epsEst": 2.52,
    "epsActual": null,
    "surprisePct": null
   },
   {
    "t": "WMT",
    "name": "Walmart Inc.",
-   "capB": 1019.4,
+   "capB": 1016.2,
    "day": "2026-11-19",
-   "at": "2026-11-19T08:30-05:00",
    "when": "açılıştan önce",
    "event": "Q3 2027 Earnings Announcement",
    "epsEst": 0.64,
@@ -1431,22 +1372,9 @@
    "name": "Alibaba Group Holding Limited",
    "capB": 234.8,
    "day": "2026-11-19",
-   "at": "2026-11-19T08:30-05:00",
    "when": "açılıştan önce",
    "event": "Q2 2027 Earnings Announcement",
    "epsEst": 11.03,
-   "epsActual": null,
-   "surprisePct": null
-  },
-  {
-   "t": "BABAF",
-   "name": "Alibaba Group Holding Limited",
-   "capB": 230.5,
-   "day": "2026-11-19",
-   "at": "2026-11-19T16:00-05:00",
-   "when": "kapanıştan sonra",
-   "event": "Q2 2027 Earnings Announcement",
-   "epsEst": 1.39,
    "epsActual": null,
    "surprisePct": null
   },
@@ -1455,34 +1383,9 @@
    "name": "PDD Holdings Inc.",
    "capB": 112.4,
    "day": "2026-11-19",
-   "at": "2026-11-19T08:30-05:00",
    "when": "açılıştan önce",
    "event": "Q3 2026 Earnings Announcement",
    "epsEst": 18.84,
-   "epsActual": null,
-   "surprisePct": null
-  },
-  {
-   "t": "TKOMY",
-   "name": "Tokio Marine Holdings, Inc.",
-   "capB": 105.5,
-   "day": "2026-11-19",
-   "at": "2026-11-19T16:00-05:00",
-   "when": "kapanıştan sonra",
-   "event": "Q2 2026 Earnings Announcement",
-   "epsEst": null,
-   "epsActual": null,
-   "surprisePct": null
-  },
-  {
-   "t": "TKOMF",
-   "name": "Tokio Marine Holdings, Inc.",
-   "capB": 104.9,
-   "day": "2026-11-19",
-   "at": "2026-11-19T16:00-05:00",
-   "when": "kapanıştan sonra",
-   "event": "Q2 2026 Earnings Announcement",
-   "epsEst": null,
    "epsActual": null,
    "surprisePct": null
   },
@@ -1491,7 +1394,6 @@
    "name": "Intuit Inc.",
    "capB": 91.3,
    "day": "2026-11-19",
-   "at": "2026-11-19T16:00-05:00",
    "when": "kapanıştan sonra",
    "event": "Q1 2027 Earnings Announcement",
    "epsEst": 2.64,
@@ -1503,7 +1405,6 @@
    "name": "NetEase, Inc.",
    "capB": 78.2,
    "day": "2026-11-19",
-   "at": "2026-11-19T08:30-05:00",
    "when": "açılıştan önce",
    "event": "Q3 2026 Earnings Announcement",
    "epsEst": 16.13,
@@ -1513,24 +1414,11 @@
   {
    "t": "ROST",
    "name": "Ross Stores, Inc.",
-   "capB": 74.3,
+   "capB": 74.0,
    "day": "2026-11-19",
-   "at": "2026-11-19T16:00-05:00",
    "when": "kapanıştan sonra",
    "event": "Q3 2026 Earnings Announcement",
    "epsEst": 1.42,
-   "epsActual": null,
-   "surprisePct": null
-  },
-  {
-   "t": "LBLCF",
-   "name": "Loblaw Companies Limited",
-   "capB": 56.7,
-   "day": "2026-11-19",
-   "at": "2026-11-19T08:30-05:00",
-   "when": "açılıştan önce",
-   "event": "Q3 2026 Earnings Announcement",
-   "epsEst": 0.74,
    "epsActual": null,
    "surprisePct": null
   },
@@ -1539,7 +1427,6 @@
    "name": "Keysight Technologies, Inc.",
    "capB": 50.7,
    "day": "2026-11-19",
-   "at": "2026-11-19T16:00-05:00",
    "when": "kapanıştan sonra",
    "event": "Q4 2026 Earnings Announcement",
    "epsEst": 3.38,
@@ -1547,62 +1434,70 @@
    "surprisePct": null
   },
   {
-   "t": "MSADF",
-   "name": "MS&AD Insurance Group Holdings, Inc.",
-   "capB": 47.8,
+   "t": "WSM",
+   "name": "Williams-Sonoma, Inc.",
+   "capB": 29.9,
    "day": "2026-11-19",
-   "at": "2026-11-19T16:00-05:00",
-   "when": "kapanıştan sonra",
-   "event": "Q2 2026 Earnings Announcement",
-   "epsEst": null,
+   "when": "açılıştan önce",
+   "event": "Q3 2026 Earnings Announcement",
+   "epsEst": 1.87,
    "epsActual": null,
    "surprisePct": null
   },
   {
-   "t": "NHOLF",
-   "name": "Sompo Holdings, Inc.",
-   "capB": 40.3,
+   "t": "CPRT",
+   "name": "Copart, Inc.",
+   "capB": 29.5,
    "day": "2026-11-19",
-   "at": "2026-11-19T16:00-05:00",
    "when": "kapanıştan sonra",
-   "event": "Q2 2026 Earnings Announcement",
-   "epsEst": 591.7,
+   "event": "Q1 2027 Earnings Announcement",
+   "epsEst": 0.4,
+   "epsActual": null,
+   "surprisePct": null
+  },
+  {
+   "t": "TCOM",
+   "name": "Trip.com Group Limited",
+   "capB": 27.4,
+   "day": "2026-11-19",
+   "when": "kapanıştan sonra",
+   "event": "Q3 2026 Earnings Announcement",
+   "epsEst": 8.22,
+   "epsActual": null,
+   "surprisePct": null
+  },
+  {
+   "t": "WMG",
+   "name": "Warner Music Group Corp.",
+   "capB": 16.9,
+   "day": "2026-11-19",
+   "when": "açılıştan önce",
+   "event": "Q4 2026 Earnings Announcement",
+   "epsEst": 0.43,
+   "epsActual": null,
+   "surprisePct": null
+  },
+  {
+   "t": "BSP",
+   "name": "Bending Spoons S.p.A.",
+   "capB": 27.0,
+   "day": "2026-11-20",
+   "when": "açılıştan önce",
+   "event": "Q3 2026 Earnings Announcement",
+   "epsEst": 0.3,
    "epsActual": null,
    "surprisePct": null
   }
  ],
- "earningsAt": "2026-11-15T17:06-05:00",
+ "earningsAt": "2026-11-15T17:37-05:00",
  "ipos": [
   {
    "t": "BRRK",
-   "name": "Bluerock Acquisition Corp. II Class A Ordinary Shares",
+   "name": "Bluerock Acquisition Corp. II",
    "ex": "Nasdaq",
    "day": "2026-11-16",
-   "status": null,
-   "priceFrom": null,
-   "priceTo": null,
-   "price": null,
-   "shares": null,
-   "sizeM": null
-  },
-  {
-   "t": "BRRKW",
-   "name": "Bluerock Acquisition Corp. II Warrants",
-   "ex": "Nasdaq",
-   "day": "2026-11-16",
-   "status": null,
-   "priceFrom": null,
-   "priceTo": null,
-   "price": null,
-   "shares": null,
-   "sizeM": null
-  },
-  {
-   "t": "HCOP",
-   "name": "Hartford Hybrid and Credit Opportunities ETF",
-   "ex": "Nasdaq",
-   "day": "2026-11-16",
-   "status": null,
+   "status": "bekleniyor",
+   "spac": true,
    "priceFrom": null,
    "priceTo": null,
    "price": null,
@@ -1614,7 +1509,8 @@
    "name": "Southport Acquisition Corp. II",
    "ex": "NYSE",
    "day": "2026-11-16",
-   "status": null,
+   "status": "bekleniyor",
+   "spac": true,
    "priceFrom": null,
    "priceTo": null,
    "price": null,
@@ -1626,7 +1522,8 @@
    "name": "Torex Resources Inc.",
    "ex": "NYSE",
    "day": "2026-11-17",
-   "status": null,
+   "status": "bekleniyor",
+   "spac": false,
    "priceFrom": null,
    "priceTo": null,
    "price": null,
@@ -1638,7 +1535,8 @@
    "name": "Anthropic, PBC",
    "ex": "Nasdaq",
    "day": "2026-11-19",
-   "status": null,
+   "status": "bekleniyor",
+   "spac": false,
    "priceFrom": null,
    "priceTo": null,
    "price": null,
@@ -1646,8 +1544,16 @@
    "sizeM": null
   }
  ],
- "iposAt": "2026-11-15T17:06-05:00",
+ "iposAt": "2026-11-15T17:37-05:00",
  "special": [
+  {
+   "day": "2026-11-18",
+   "kind": "fed",
+   "time": "14:00",
+   "imp": 3,
+   "text": "Fed toplantı tutanakları (14:00)",
+   "why": "Fed üyelerinin faiz konusundaki görüş ayrılıkları buradan okunur."
+  },
   {
    "day": "2026-11-20",
    "kind": "opex",
@@ -1659,259 +1565,5 @@
   "title": "Yahoo Finance (yfinance): fiyatlar ve takvimler",
   "url": "https://finance.yahoo.com/calendar/"
  },
- "note": "Saatler New York saatidir. Beklenti ve önceki değerler Yahoo Finance takviminden; açıklanan değer veri yayımlandıktan sonraki ilk güncellemede görünür. Fiyatlar 30 dakikada bir yenilenir. Yatırım tavsiyesi değildir.",
- "debug": {
-  "econCols": [
-   "Region",
-   "Event Time",
-   "For",
-   "Actual",
-   "Expected",
-   "Last",
-   "Revised"
-  ],
-  "econSample": [
-   {
-    "Event": "FDI (YTD)*",
-    "Region": "CN",
-    "Event Time": "2026-11-21T00:00:00.000Z",
-    "For": "Oct",
-    "Actual": null,
-    "Expected": null,
-    "Last": -4.3,
-    "Revised": null
-   },
-   {
-    "Event": "C/A Balance EUR*",
-    "Region": "SK",
-    "Event Time": "2026-11-21T00:00:00.000Z",
-    "For": "Sep",
-    "Actual": null,
-    "Expected": null,
-    "Last": -845.0,
-    "Revised": null
-   },
-   {
-    "Event": "Unemployment Rate*",
-    "Region": "SK",
-    "Event Time": "2026-11-21T00:00:00.000Z",
-    "For": "Oct",
-    "Actual": null,
-    "Expected": null,
-    "Last": 5.2,
-    "Revised": null
-   },
-   {
-    "Event": "PPI YY*",
-    "Region": "GH",
-    "Event Time": "2026-11-21T00:00:00.000Z",
-    "For": "Oct",
-    "Actual": null,
-    "Expected": null,
-    "Last": 4.8,
-    "Revised": null
-   }
-  ],
-  "earnCols": [
-   "Company",
-   "Marketcap",
-   "Event Name",
-   "Event Start Date",
-   "Timing",
-   "EPS Estimate",
-   "Reported EPS",
-   "Surprise(%)"
-  ],
-  "earnSample": [
-   {
-    "Symbol": "AIPUY",
-    "Company": "Airports of Thailand Public Company Limited",
-    "Marketcap": 25514261071.92993,
-    "Event Name": "Q4 2026 Earnings Announcement",
-    "Event Start Date": "2026-11-20T21:00:00.000Z",
-    "Timing": "TNS",
-    "EPS Estimate": null,
-    "Reported EPS": null,
-    "Surprise(%)": null
-   },
-   {
-    "Symbol": "BSP",
-    "Company": "Bending Spoons S.p.A.",
-    "Marketcap": 26978845689.92531,
-    "Event Name": "Q3 2026 Earnings Announcement",
-    "Event Start Date": "2026-11-20T13:30:00.000Z",
-    "Timing": "BMO",
-    "EPS Estimate": 0.3,
-    "Reported EPS": null,
-    "Surprise(%)": null
-   },
-   {
-    "Symbol": "KEYS",
-    "Company": "Keysight Technologies, Inc.",
-    "Marketcap": 50678454444.69025,
-    "Event Name": "Q4 2026 Earnings Announcement",
-    "Event Start Date": "2026-11-19T21:00:00.000Z",
-    "Timing": "AMC",
-    "EPS Estimate": 3.38,
-    "Reported EPS": null,
-    "Surprise(%)": null
-   }
-  ],
-  "ipoCols": [
-   "Company",
-   "Exchange",
-   "Filing Date",
-   "Date",
-   "Amended Date",
-   "Price From",
-   "Price To",
-   "Price",
-   "Currency",
-   "Shares",
-   "Action"
-  ],
-  "ipoSample": [
-   {
-    "Symbol": "ANT",
-    "Company": "Anthropic, PBC",
-    "Exchange": "Nasdaq",
-    "Filing Date": null,
-    "Date": "2026-11-19T05:00:00.000Z",
-    "Amended Date": null,
-    "Price From": null,
-    "Price To": null,
-    "Price": null,
-    "Currency": "",
-    "Shares": null,
-    "Action": "Expected"
-   },
-   {
-    "Symbol": "SIMI",
-    "Company": "American Beacon Select Funds",
-    "Exchange": null,
-    "Filing Date": null,
-    "Date": "2026-11-17T05:00:00.000Z",
-    "Amended Date": null,
-    "Price From": null,
-    "Price To": null,
-    "Price": null,
-    "Currency": "",
-    "Shares": null,
-    "Action": "Expected"
-   },
-   {
-    "Symbol": "TXR",
-    "Company": "Torex Resources Inc.",
-    "Exchange": "NYSE",
-    "Filing Date": null,
-    "Date": "2026-11-17T05:00:00.000Z",
-    "Amended Date": null,
-    "Price From": null,
-    "Price To": null,
-    "Price": null,
-    "Currency": "",
-    "Shares": null,
-    "Action": "Expected"
-   },
-   {
-    "Symbol": "VEN",
-    "Company": "Listed Funds Trust",
-    "Exchange": null,
-    "Filing Date": null,
-    "Date": "2026-11-17T05:00:00.000Z",
-    "Amended Date": null,
-    "Price From": null,
-    "Price To": null,
-    "Price": null,
-    "Currency": "",
-    "Shares": null,
-    "Action": "Expected"
-   }
-  ],
-  "screener": {
-   "n": 208,
-   "sample": [
-    {
-     "ticker": "FCUV",
-     "name": "Focus Universal Inc.",
-     "price": 7.08,
-     "pct": 128.3871,
-     "dvM": 13.9,
-     "capB": 0.01,
-     "ex": "Q",
-     "volume": 117440767
-    },
-    {
-     "ticker": "WWB",
-     "name": "WINDWARD BIO GROUP AG",
-     "price": 28.5,
-     "pct": 67.64706,
-     "dvM": 36.5,
-     "capB": 1.65,
-     "ex": "Q",
-     "volume": 1282682
-    },
-    {
-     "ticker": "SBC",
-     "name": "SBC Medical Group Holdings Inco",
-     "price": 7.35,
-     "pct": 37.64044,
-     "dvM": 1.7,
-     "capB": 0.75,
-     "ex": "Q",
-     "volume": 1711397
-    },
-    {
-     "ticker": "RMIX",
-     "name": "Suncrete, Inc.",
-     "price": 5.08,
-     "pct": -37.438423,
-     "dvM": 2.8,
-     "capB": 0.38,
-     "ex": "Q",
-     "volume": 2857416
-    },
-    {
-     "ticker": "NPCE",
-     "name": "Neuropace, Inc.",
-     "price": 7.56,
-     "pct": -37.104828,
-     "dvM": 1.7,
-     "capB": 0.26,
-     "ex": "Q",
-     "volume": 6113158
-    },
-    {
-     "ticker": "NMAX",
-     "name": "Newsmax, Inc.",
-     "price": 9.58,
-     "pct": 31.4129,
-     "dvM": 9.9,
-     "capB": 1.24,
-     "ex": "N",
-     "volume": 5069192
-    },
-    {
-     "ticker": "LFTO",
-     "name": "Liftoff Mobile, Inc.",
-     "price": 24.44,
-     "pct": 30.625343,
-     "dvM": 22.4,
-     "capB": 4.14,
-     "ex": "Q",
-     "volume": 9561767
-    },
-    {
-     "ticker": "MOD",
-     "name": "Modine Manufacturing Company",
-     "price": 135.66,
-     "pct": 27.8605,
-     "dvM": 237.4,
-     "capB": 7.22,
-     "ex": "N",
-     "volume": 8416155
-    }
-   ]
-  }
- }
+ "note": "Saatler New York saatidir. Beklenti ve önceki değerler Yahoo Finance takviminden; açıklanan değer veri yayımlandıktan sonraki ilk güncellemede görünür. Fiyatlar 30 dakikada bir yenilenir. Yatırım tavsiyesi değildir."
 }
