@@ -97,6 +97,10 @@ WHY = {
     "Üretici fiyatları (ÜFE)": "Şirketlerin maliyet enflasyonu; TÜFE'nin öncü göstergesi sayılır.",
 }
 EARN_MIN_CAP, EARN_TOP = 15e9, 30
+# Fed (FOMC) decision days: the statement comes at 14:00 New York time, the press conference at 14:30; the minutes
+# follow three weeks later at 14:00. Source: federalreserve.gov/monetarypolicy/fomccalendars.htm (2026 schedule).
+# Yahoo's calendar does not always carry these, so they are added from this table; extend it when a new year is published.
+FOMC_DECISIONS = ("2026-01-28", "2026-03-18", "2026-04-29", "2026-06-17", "2026-07-29", "2026-09-16", "2026-10-28", "2026-12-09")
 MONTHS_TR = ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"]
 
 
@@ -158,6 +162,18 @@ def econ_label(name):
     return None, 0
 
 
+# the line that stands for a group of sub-series published together (first match wins)
+PRIMARY = [r"^retail sales mm", r"initial jobless", r"business indx", r"ny fed manuf|empire", r"sentiment", r"crude stk|crude inventor",
+           r"housing starts number", r"building permits: number", r"\bcpi yy", r"\bcpi mm", r"core pce.*yy", r"pce.*yy",
+           r"non-?farm payrolls", r"gdp", r"ppi.*yy", r"ppi.*mm", r"industrial production", r"pending homes index",
+           r"existing home sales$|new home sales", r"import prices"]
+PRIMARY_RX = [re.compile(x, re.I) for x in PRIMARY]
+
+
+def _unit(name):
+    return "%" if re.search(r"\b(MM|YY|QQ)\b|\brate\b|change", name) else ""
+
+
 def economic(cal, start, end, debug):
     rows, off = [], 0
     while off < 800:
@@ -173,26 +189,50 @@ def economic(cal, start, end, debug):
         if len(df) < 100:
             break
         off += 100
-    out, seen = [], set()
+    flat, seen = [], set()
     for name, r in rows:
-        region = str(r.get("Region") or "").upper()
-        if region not in ("US", "USA", "UNITED STATES"):
+        if str(r.get("Region") or "").upper() not in ("US", "USA", "UNITED STATES"):
             continue
         at = _ny(r.get("Event Time"))
         if at is None or not (start <= at.date() <= end):
             continue
-        tr, imp = econ_label(name)
+        name = name.replace("*", "").strip()
         key = (name, at.isoformat())
         if key in seen:
             continue
         seen.add(key)
-        period = r.get("For") if "For" in r else r.get("Period")
-        out.append({"at": at.isoformat(timespec="minutes"), "day": at.date().isoformat(), "name": name, "tr": tr, "imp": imp,
-                    "period": None if period is None or (isinstance(period, float) and math.isnan(period)) else str(period),
-                    "actual": num(r.get("Actual")), "expected": num(r.get("Expected")), "last": num(r.get("Last")),
-                    "why": WHY.get(tr)})
+        tr, imp = econ_label(name)
+        period = r.get("For")
+        flat.append({"at": at.isoformat(timespec="minutes"), "day": at.date().isoformat(), "name": name, "tr": tr, "imp": imp,
+                     "period": None if period is None or (isinstance(period, float) and math.isnan(period)) else str(period),
+                     "actual": num(r.get("Actual")), "expected": num(r.get("Expected")), "last": num(r.get("Last")),
+                     "unit": _unit(name)})
+    groups, out = {}, []
+    for x in flat:
+        if not x["tr"]:
+            out.append({**x, "more": []})
+            continue
+        groups.setdefault((x["at"], x["tr"]), []).append(x)
+    for (at, tr), items in groups.items():
+        def rank(x):
+            for i, rx in enumerate(PRIMARY_RX):
+                if rx.search(x["name"]):
+                    return i
+            return len(PRIMARY_RX)
+        items.sort(key=lambda x: (rank(x), x["name"]))
+        head = items[0]
+        out.append({**head, "why": WHY.get(tr),
+                    "more": [{k: y[k] for k in ("name", "actual", "expected", "last", "unit")} for y in items[1:8]]})
     out.sort(key=lambda x: (x["at"], -x["imp"], x["name"]))
     return out
+
+
+def _us_listed():
+    """Tickers listed on Nasdaq, NYSE and NYSE American (from the daily fundamentals file), to drop foreign OTC lines."""
+    try:
+        return set((json.loads((ROOT / "fundamentals.json").read_text(encoding="utf-8")).get("rows") or {}).keys())
+    except Exception:
+        return set()
 
 
 def earnings(cal, start, end, debug):
@@ -201,18 +241,22 @@ def earnings(cal, start, end, debug):
     if df is None or df.empty:
         return []
     debug["earnCols"] = [str(c) for c in df.columns]
-    debug["earnSample"] = json.loads(df.head(3).reset_index().to_json(orient="records", date_format="iso"))
+    listed = _us_listed()
     out, seen = [], set()
     for sym, r in df.iterrows():
+        sym = str(sym)
         at = _ny(r.get("Event Start Date"))
         if at is None or not (start <= at.date() <= end) or sym in seen:
             continue
+        # foreign shares quoted over the counter (five letters ending in F or Y) repeat the US listing
+        if (listed and sym not in listed) or (not listed and len(sym) == 5 and sym[-1] in "FY"):
+            continue
         seen.add(sym)
         timing = str(r.get("Timing") or "").upper()
-        out.append({"t": str(sym), "name": r.get("Company"), "capB": round(num(r.get("Marketcap")) / 1e9, 1) if num(r.get("Marketcap")) else None,
-                    "day": at.date().isoformat(), "at": at.isoformat(timespec="minutes"),
-                    "when": "açılıştan önce" if timing in ("BMO",) or (timing not in ("AMC", "TAS", "TNS") and at.hour < 9 and at.hour > 0)
-                            else "kapanıştan sonra" if timing in ("AMC",) or at.hour >= 16 else None,
+        cap = num(r.get("Marketcap"))
+        out.append({"t": sym, "name": r.get("Company"), "capB": round(cap / 1e9, 1) if cap else None,
+                    "day": at.date().isoformat(),
+                    "when": "açılıştan önce" if timing == "BMO" else "kapanıştan sonra" if timing == "AMC" else None,
                     "event": r.get("Event Name"), "epsEst": num(r.get("EPS Estimate")), "epsActual": num(r.get("Reported EPS")),
                     "surprisePct": num(r.get("Surprise(%)"))})
     out.sort(key=lambda x: -(x["capB"] or 0))
@@ -226,26 +270,37 @@ def ipos(cal, start, end, debug):
     if df is None or df.empty:
         return []
     debug["ipoCols"] = [str(c) for c in df.columns]
-    debug["ipoSample"] = json.loads(df.head(4).reset_index().to_json(orient="records", date_format="iso"))
     out = []
     for sym, r in df.iterrows():
         at = _ny(r.get("Date"))
         ex = str(r.get("Exchange") or "")
+        name = str(r.get("Company") or "")
         if at is None or not (start <= at.date() <= end):
             continue
-        if not re.search(r"nasdaq|nyse|ngm|nms|ncm|nyq|ase|amex|cboe|bats", ex, re.I):
+        if not re.search(r"nasdaq|nyse|amex|cboe", ex, re.I):
+            continue                       # funds and foreign listings come without a US exchange
+        if re.search(r"\bETF\b|\bFunds?\b|\bTrust\b|Warrants?|\bUnits?\b|\bRights?\b|Notes due|Preferred|Depositary", name, re.I):
             continue
-        deal = str(r.get("Deal Type") or "")
-        if re.search(r"withdraw|postpon", deal, re.I):
+        action = str(r.get("Action") or "")
+        if re.search(r"withdraw|postpon", action, re.I):
             continue
         lo, hi, px, sh = num(r.get("Price From")), num(r.get("Price To")), num(r.get("Price")), num(r.get("Shares"))
         mid = px or ((lo + hi) / 2 if lo and hi else lo or hi)
-        name = r.get("Company Name") if "Company Name" in r else r.get("Company")
-        out.append({"t": str(sym) if sym and str(sym) != "nan" else None, "name": name, "ex": ex, "day": at.date().isoformat(),
-                    "status": deal or None, "priceFrom": lo, "priceTo": hi, "price": px, "shares": sh,
+        out.append({"t": str(sym) if sym and str(sym) != "nan" else None,
+                    "name": re.sub(r"\s+(Class [A-Z] )?(Ordinary Shares|Common Stock|Common Shares)$", "", name).strip(),
+                    "ex": ex, "day": at.date().isoformat(),
+                    "status": {"expected": "bekleniyor", "priced": "fiyatlandı", "filed": "başvuru yapıldı"}.get(action.lower(), action or None),
+                    "spac": bool(re.search(r"acquisition corp|acquisition co\b|blank check", name, re.I)),
+                    "priceFrom": lo, "priceTo": hi, "price": px, "shares": sh,
                     "sizeM": round(mid * sh / 1e6, 1) if mid and sh else None})
-    out.sort(key=lambda x: (x["day"], -(x["sizeM"] or 0)))
-    return out[:25]
+    out.sort(key=lambda x: (x["day"], x["spac"], -(x["sizeM"] or 0)))
+    seen, uniq = set(), []
+    for x in out:                          # the same listing can come twice (share classes, repeated rows)
+        key = (x["t"] or x["name"], x["day"])
+        if key not in seen:
+            seen.add(key)
+            uniq.append(x)
+    return uniq[:25]
 
 
 def special(start, end):
@@ -270,6 +325,13 @@ def special(start, end):
             out.append({"day": s, "kind": "holiday", "text": f"Borsa kapalı: {names.get(s[5:], 'resmî tatil')}"})
         elif s in early:
             out.append({"day": s, "kind": "early", "text": early[s]})
+        if s in FOMC_DECISIONS:
+            out.append({"day": s, "kind": "fed", "time": "14:00", "imp": 3,
+                        "text": "Fed faiz kararı (14:00) ve başkanın basın toplantısı (14:30)",
+                        "why": WHY["Fed faiz kararı"]})
+        if (d - timedelta(days=21)).isoformat() in FOMC_DECISIONS:
+            out.append({"day": s, "kind": "fed", "time": "14:00", "imp": 3, "text": "Fed toplantı tutanakları (14:00)",
+                        "why": WHY["Fed toplantı tutanakları"]})
         if d.weekday() == 4 and 15 <= d.day <= 21:
             out.append({"day": s, "kind": "opex", "text": ("Üçlü vade günü: endeks vadeli işlemleri ve opsiyonların vadesi birlikte dolar; "
                                                              "kapanışa doğru hacim ve oynaklık artar" if d.month in (3, 6, 9, 12) else
@@ -320,6 +382,10 @@ def main():
     out["source"] = {"title": "Yahoo Finance (yfinance): fiyatlar ve takvimler", "url": "https://finance.yahoo.com/calendar/"}
     out["note"] = ("Saatler New York saatidir. Beklenti ve önceki değerler Yahoo Finance takviminden; açıklanan değer veri "
                    "yayımlandıktan sonraki ilk güncellemede görünür. Fiyatlar 30 dakikada bir yenilenir. Yatırım tavsiyesi değildir.")
+    # the releases Yahoo already lists are not repeated from the Fed table
+    have = {(e["day"], e["tr"]) for e in out.get("econ", [])}
+    out["special"] = [x for x in out["special"] if not (x["kind"] == "fed" and (
+        (x["day"], "Fed faiz kararı") in have and "kararı" in x["text"] or (x["day"], "Fed toplantı tutanakları") in have and "tutanak" in x["text"]))]
     if probe:
         try:
             import data

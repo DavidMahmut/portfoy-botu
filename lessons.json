@@ -156,7 +156,7 @@
    ],
    "watch": "Çarpan (3) büyüdükçe daha az ama daha geç, küçüldükçe daha çok ama daha fazla yanlış sinyal verir. Yatay piyasada sık sık yön değiştirir.",
    "test": "“Supertrend AL'a döndü” (12.898 işlem, 20 gün) rastgele alımdan %0,09 kötü sonuç verdi. SAT dönüşünde short açan versiyon da güvenilir bir avantaj göstermedi.",
-   "bot": "Bot Supertrend kullanmaz. Haber kolundaki zarar-kes sabit bir seviyedir (ilk saatin en düşük ya da en yüksek seviyesinin hemen ötesi) ve iz sürmez.",
+   "bot": "Bot Supertrend kullanmaz. Fırsat işlemlerindeki zarar-kes sabit bir seviyedir (haber devamında ilk saatin en düşüğünün hemen altı, haber takibinde günün öbür ucu) ve iz sürmez.",
    "where": "İndikatörler görünümünde Supertrend sütunu (AL/SAT ve kaç gündür); filtre 7 · Supertrend.",
    "chart": "st",
    "note": "Yeşil çizgi AL, kırmızı çizgi SAT dönemi; noktalar yön değişimleri.",
@@ -178,7 +178,7 @@
    ],
    "watch": "ATR yön söylemez: yükselişte de düşüşte de artar. Bilanço günü gibi tek seferlik sıçramalar ATR'yi birkaç hafta yüksek tutar.",
    "test": "ATR bir al/sat sinyali değil, risk ölçüsüdür; tek başına test edilmedi.",
-   "bot": "Botun endeks kolu aynı fikri kullanır: QQQ'nun son 20 günlük oynaklığı yüksekse pozisyonu küçültür, düşükse büyütür (yıllık %25 oynaklık hedefi, en fazla 3x). Haber kolu da her işlemde kolun yaklaşık %1'ini riske atacak büyüklükte girer.",
+   "bot": "Botun endeks kolu aynı fikri kullanır: QQQ'nun son 20 günlük oynaklığı yüksekse pozisyonu küçültür, düşükse büyütür (yıllık %50 oynaklık hedefi, en fazla 10x). Fırsat işlemleri de zarar-kes çalışırsa hesabın belirli bir payı (haber devamında %3, haber takibinde %1) gidecek büyüklükte açılır.",
    "where": "Hareketliler tablosunda ATR sütunu ve “Filtreler” altında ATR (fiyatın yüzdesi).",
    "chart": "atr",
    "note": "Alt panelde ATR. Sert düşüş döneminde ATR'nin nasıl yükseldiğine, sakin dönemde nasıl azaldığına bakın.",
@@ -391,7 +391,7 @@
    "lead": "Endeksin günlük hareketinin 3 katını (ya da tersinin 3 katını) vermeye çalışan fonlar.",
    "body": "TQQQ, Nasdaq 100'ün günlük getirisinin 3 katını; SQQQ ise günlük getirisinin −3 katını hedefler. Hedef “günlük” olduğu için birkaç günü aşan dönemlerde sonuç 3 kat olmaz: dalgalı piyasada fon değer kaybeder (oynaklık erimesi).",
    "ex": "Endeks bir gün %10 düşüp ertesi gün %11,1 yükselirse başladığı yere döner. TQQQ ise önce %30 düşer, sonra %33,3 yükselir: 100 → 70 → 93,3; endeks yerinde sayarken fon %6,7 kaybetmiştir.",
-   "bot": "Endeks kolu 1x'in üstünde kaldıraç gerektiğinde TQQQ, aşağı yönde SQQQ kullanır; bu yüzden oynaklık arttıkça pozisyonu küçültür.",
+   "bot": "x10 hesabında endeks kolu kaldıraçlı fon kullanmaz: QQQ'nun kendisini krediyle alır (short'ta açığa satar). Böylece kaldıraçlı fonların günlük sıfırlama kaybı yoktur, ama kredi faizi ve zorunlu tasfiye riski vardır.",
    "watch": "Kaldıraçlı ETF'ler uzun süre tutmak için tasarlanmamıştır; 2000–2002 gibi bir çöküşte 3x bir fon neredeyse sıfırlanır."
   },
   {
@@ -426,7 +426,7 @@
    "lead": "Aracı kurumdan borç alarak parasının üstünde işlem yapmaya izin veren hesap.",
    "body": "ABD'de Federal Reserve'ün Regulation T (Reg T) kuralına göre kredili hesapta hisse alırken bedelin en az %50'sini kendi paranızla ödemeniz gerekir; kalanını aracı kurum faizle borç verir. Short satışta ise satış tutarının %150'si (satıştan gelen %100 + sizin %50'niz) teminat olarak tutulur. FINRA kurallarına göre kredili işlem ve short için hesapta en az 2.000 $ özsermaye bulunmalıdır.",
    "ex": "5.000 $ ile kredili hesapta 10.000 $'lık hisse alabilirsiniz. Borcun faizi IBKR'de 2026 Eylül itibarıyla 100 bin doların altı için yıllık yaklaşık %5,4'tür.",
-   "bot": "Hesap özetindeki “Alım gücü (Reg T)”, “Başlangıç teminatı” ve “Kredi ve short yetkisi” kutuları bu kuralları hesaplar; bot 2.000 $ asgari özsermayenin altına düşerse short açamaz."
+   "bot": "x10 hesabı bir simülasyondur ve bu kuralları bilerek uygulamaz: %50 yerine %10 teminatla 10x'e kadar açar. Gerçek bir ABD hesabında aynı parayla en fazla 2x (gün içinde 4x) alınabilirdi; aradaki farkı “Kaldıraç ve batış” bölümündeki test gösterir."
   },
   {
    "kind": "term",
@@ -437,7 +437,7 @@
    "lead": "Kredili hesapta zarar büyürse aracı kurum ek para ister ya da pozisyonları kendisi kapatır.",
    "body": "Pozisyon açıldıktan sonra da hesapta asgari bir özsermaye oranı korunmalıdır (bakım teminatı). FINRA'nın asgarisi long pozisyonlarda pozisyon değerinin %25'i, 5 $'ın üstündeki hisselerin short'larında %30'u ya da hisse başına 5 $'dır (hangisi büyükse); aracı kurumlar daha yüksek isteyebilir. Özsermaye bu sınırın altına inerse “margin call” gelir.",
    "ex": "10.000 $'lık hisseyi 5.000 $ kendi paranız + 5.000 $ borçla aldınız. Hisseler 6.600 $'a düşerse özsermayeniz 1.600 $ olur, bu da pozisyonun yaklaşık %24'üdür: %25 sınırının altına indiğiniz için ek teminat istenir.",
-   "bot": "Hesap özetindeki “Bakım teminatı tamponu”, margin call'a ne kadar uzak olduğumuzu dolar olarak gösterir."
+   "bot": "Hesap özetindeki “Zorunlu tasfiyeye uzaklık” kutusu, pozisyonlar toplamda yüzde kaç aleyhe giderse aracı kurumun pozisyonları zorla kapatacağını gösterir. x10 hesabında bu seviye maruziyetin %5'idir; 10x kaldıraçta yaklaşık %5'lik bir düşüş yeter."
   },
   {
    "kind": "term",
@@ -448,7 +448,7 @@
    "lead": "Paranızdan daha büyük bir pozisyon taşımak; kazancı da zararı da aynı oranda büyütür.",
    "body": "Kaldıraç, pozisyonun büyüklüğünün özsermayeye oranıdır. 2x kaldıraçta piyasa %10 yükselirse %20 kazanırsınız, %10 düşerse %20 kaybedersiniz. Borç faizi ve kaldıraçlı ETF'lerin oynaklık erimesi de maliyete eklenir.",
    "ex": "3.000 $'lık hesapla 9.000 $'lık Nasdaq pozisyonu taşımak 3x kaldıraçtır. Nasdaq %5 düşerse hesap yaklaşık %15 (450 $) kaybeder.",
-   "bot": "Botun “Ekonomik kaldıraç” kutusu tüm pozisyonların toplam etkisini gösterir; kural gereği hiçbir zaman 3x'i geçmez ve oynaklık yükseldikçe kendiliğinden düşer."
+   "bot": "Botun “Kaldıraç (toplam maruziyet)” kutusu tüm pozisyonların toplam etkisini gösterir; x10 hesabında 10x'i geçemez ve oynaklık yükseldikçe kendiliğinden düşer. 1999–2026 testinde sürekli 10x tutmak hesabı defalarca batırdı; “Kaldıraç ve batış” bölümüne bakın."
   },
   {
    "kind": "term",
@@ -470,7 +470,7 @@
    "lead": "Kaybı sınırlamak için önceden belirlenen çıkış fiyatı.",
    "body": "Zarar-kes (stop-loss) emri, fiyat belirlenen seviyeye gelince pozisyonu kapatır. İz süren stop (trailing stop) ise fiyat lehinize gittikçe yukarı (short'ta aşağı) taşınır, böylece kazancın bir kısmını korur. Stop seviyesi, hissenin normal günlük dalgalanmasından (bkz. ATR) daha uzağa konmazsa sık sık boşuna tetiklenir.",
    "ex": "100 $'dan alınan hisse için %8 stop: 92 $. Hisse 120 $'a çıktıysa %12 iz süren stop 105,60 $'a taşınır; fiyat oraya düşerse pozisyon %5,6 kârla kapanır.",
-   "bot": "Endeks kolunda fiyat stop'u yoktur; büyüklük her gün oynaklığa göre ayarlanır. Haber kolunda zarar-kes ilk saatin en düşük (long) ya da en yüksek (short) seviyesinin hemen ötesidir; sert yükseliş short'unda girişin %50 üstü. Risk kontrolü panelindeki çubuklar zarar-kese ne kadar uzak olduğumuzu gösterir.",
+   "bot": "Endeks kolunda fiyat stop'u yoktur; büyüklük her gün oynaklığa göre ayarlanır. Haber devamı işlemlerinde zarar-kes ilk saatin en düşüğünün hemen altıdır; haber takibinde günün öbür ucu (girişe %2–8 uzaklıkta); sert yükseliş short'unda girişin %50 üstü. Risk kontrolü panelindeki çubuklar zarar-kese ne kadar uzak olduğumuzu gösterir.",
    "watch": "Gece açılan bir boşlukta (gap) fiyat stop'un çok altından açılabilir; stop bu durumda zararı sınırlamaz."
   },
   {
@@ -541,7 +541,7 @@
    "lead": "Şirketler her çeyrek sonuçlarını açıklar; fiyatı belirleyen, sonuçların beklentiye göre nasıl çıktığıdır.",
    "body": "ABD şirketleri çeyrek sonuçlarını (gelir, kâr, EPS) yılda dört kez açıklar ve çoğu zaman gelecek çeyrek için bir beklenti (guidance) verir. Analistlerin ortalama tahmini “konsensüs” denir. Sonuç konsensüsü aşsa bile şirket gelecek beklentisini düşürürse hisse sert düşebilir.",
    "ex": "Konsensüs EPS 1,00 $ iken şirket 1,10 $ açıklarsa “beklentiyi aştı” (beat) denir. Ama yöneticiler gelecek çeyrek için zayıf bir tablo çizerse hisse ertesi sabah %15 düşük açılabilir.",
-   "bot": "Haber şoku kolu tam bu anlara bakar: açılışta önceki kapanışa göre en az %8'lik boşluk ve ilk saatte boşluğun tersine en az %0,5'lik dönüş. Haberler bölümü bilanço başlıklarını “Earnings” etiketiyle işaretler."
+   "bot": "Fırsat taraması tam bu anlara bakar: önceki kapanışın en az %8 üstünde açılan ve ilk saatte yükselmeye devam eden büyük şirketleri alır (haber devamı). Sayfanın üstündeki “Bu hafta” takvimi hangi şirketin hangi gün bilanço açıklayacağını gösterir."
   },
   {
    "kind": "term",
@@ -585,7 +585,7 @@
    "lead": "Hissenin bir önceki kapanıştan belirgin şekilde farklı bir fiyattan açılması.",
    "body": "Gece gelen bir haber (bilanço, satın alma, dava) yüzünden hisse ertesi sabah önceki kapanışın çok üstünden ya da altından açılabilir. Grafikte iki mum arasında boşluk kalır. Bazı boşluklar gün içinde kapanır (fiyat önceki kapanışa döner), bazıları trendin başlangıcı olur.",
    "ex": "Dün 50 $'dan kapanan hisse bugün 44 $'dan açılırsa %12'lik aşağı boşluk vardır. Fiyat gün içinde 47 $'a dönerse boşluğun yarısı kapanmış olur.",
-   "bot": "Haber şoku kolu en az %8'lik boşluklara bakar ve ilk saatte boşluğun tersine en az %0,5 dönen hisseye o yönde girer: düşüşle açılıp toparlanana long, yükselişle açılıp sönene short. 2 işlem günü sonra kapanışta çıkar."
+   "bot": "Bot en az %8'lik yukarı boşluklara bakar ve ilk saatte en az %0,5 daha yükselen büyük şirketleri alır (haber devamı); 2 işlem günü sonra kapanışta çıkar. Eski kural bunun tersini yapıyordu (ilk saatte boşluğun aksine dönene girmek); 1.966 hisselik testte zarar ettirdiği için bırakıldı."
   },
   {
    "kind": "term",
@@ -608,7 +608,7 @@
    "lead": "Fiyatın ne kadar sert dalgalandığının ölçüsü; VIX buna “korku endeksi” der.",
    "body": "Volatilite genellikle günlük getirilerin standart sapmasının yıllığa çevrilmesiyle ölçülür. VIX, S&P 500 opsiyon fiyatlarından hesaplanan, önümüzdeki 30 gün için beklenen yıllık oynaklıktır. Uzun dönem ortalaması 20 civarındadır; 30'un üstü korku, 15'in altı sakinlik olarak okunur.",
    "ex": "VIX 20 ise piyasa önümüzdeki ay için yıllık %20, yani aylık yaklaşık %5,8'lik (20 ÷ √12) tipik bir hareket bekliyor demektir.",
-   "bot": "Endeks kolu QQQ'nun son 20 günlük oynaklığını ölçer ve pozisyonu yıllık %25 oynaklık hedefine göre ayarlar: oynaklık %40'a çıkarsa pozisyon yaklaşık 0,6x'e iner."
+   "bot": "Endeks kolu QQQ'nun son 20 günlük oynaklığını ölçer ve pozisyonu yıllık %50 oynaklık hedefine göre ayarlar: oynaklık %10 iken 5x, %25 iken 2x, %50'ye çıkarsa 1x."
   },
   {
    "kind": "term",
@@ -619,7 +619,7 @@
    "lead": "Bir hissenin piyasaya göre ne kadar sert hareket ettiğini gösteren katsayı.",
    "body": "Beta 1 ise hisse ortalamada piyasa kadar oynar. 1,5 ise piyasa %1 yükseldiğinde ortalama %1,5 yükselir, düştüğünde %1,5 düşer. 1'in altındaki betalar daha sakin, savunmacı hisseleri gösterir. Negatif beta, piyasanın tersine hareket eden varlıklarda görülür.",
    "ex": "Beta'sı 2 olan bir yarı iletken hissesi, Nasdaq'ın %5 düştüğü bir haftada ortalama %10 düşmeye adaydır.",
-   "bot": "Bot beta kullanmaz ama endeks kolundaki 3x pozisyon kabaca “beta 3” gibi davranır."
+   "bot": "Bot beta kullanmaz ama endeks kolundaki 5x'lik bir QQQ pozisyonu kabaca “beta 5” gibi davranır: endeks %1 düşerse hesap yaklaşık %5 düşer."
   },
   {
    "kind": "term",
@@ -696,7 +696,7 @@
    "lead": "Riski birbirinden bağımsız hareket eden varlıklara yaymak.",
    "body": "Tek bir hissede şirkete özel risk çok büyüktür: bir dava ya da kötü bir bilanço değeri yarıya indirebilir. Birbirine az bağlı birçok varlık taşımak bu tür riski azaltır ama piyasanın tamamının düştüğü dönemleri ortadan kaldırmaz. Geniş bir endeks fonu tek başına iyi bir çeşitlendirme sağlar.",
    "ex": "Tek bir hissenin bir günde %30 düşmesi sık görülür; 100 hisselik bir endeksin bir günde %30 düşmesi ise neredeyse hiç görülmez.",
-   "bot": "Botun parasının çoğu, zaten 100 şirkete yayılmış olan Nasdaq 100 fonlarında durur; tek hisse işlemleri (haber kolu, sert yükseliş short'u) küçük paylarla sınırlıdır."
+   "bot": "Botun maruziyetinin büyük kısmı, zaten 100 şirkete yayılmış olan Nasdaq 100 fonunda (QQQ) durur; tek hisse işlemleri (haber devamı, haber takibi, sert yükseliş short'u) işlem başına en fazla hesabın 1 katı, toplamda en fazla 6 katıyla sınırlıdır."
   },
   {
    "kind": "term",
@@ -707,7 +707,7 @@
    "lead": "Ne alacağınız kadar önemli: ne kadar alacağınız.",
    "body": "Yaygın bir kural, tek işlemde hesabın küçük bir yüzdesinden (ör. %1–2) fazlasını riske atmamaktır. Risk = pozisyon büyüklüğü × zarar-kes mesafesi. Stop uzaktaysa pozisyon küçülür, yakındaysa büyüyebilir; böylece her işlemin olası kaybı aynı kalır.",
    "ex": "10.000 $'lık hesapta işlem başına %1 risk = 100 $. Stop %5 uzaktaysa pozisyon 2.000 $, %10 uzaktaysa 1.000 $ olur.",
-   "bot": "Haber kolu her işlemde kolun yaklaşık %1'ini riske atar ve tek işleme kolun %25'inden fazlasını ayırmaz; sert yükseliş short'u her işlemde haber kolunun %5'ini kullanır ve aynı anda en fazla 6 işlem açık tutar."
+   "bot": "Haber devamı her işlemde hesabın %3'ünü riske atar (tek işlem en fazla hesabın 1 katı, en fazla 6 işlem); sınanamayan haber takibi %1'ini (en fazla hesabın yarısı, 4 işlem); sert yükseliş short'u her işlemde hesabın %10'unu kullanır ve aynı anda en fazla 6 işlem açık tutar."
   },
   {
    "kind": "term",
@@ -817,7 +817,7 @@
    "lead": "Short'çuların zararını kesmek için hep birlikte geri alım yapmasıyla fiyatın patlaması.",
    "body": "Bir hissede çok fazla short pozisyon varsa ve fiyat yükselmeye başlarsa, short'çular zararlarını sınırlamak için hisseyi geri almak zorunda kalır. Bu alımlar fiyatı daha da yükseltir ve diğer short'çuları da zorlar. Ödünç ücreti ve margin call'lar süreci hızlandırır.",
    "ex": "Ocak 2021'de GameStop hissesi birkaç hafta içinde yaklaşık 20 $'dan 480 $'ın üstüne çıktı; yüksek short oranı ve bireysel yatırımcı alımları büyük bir sıkışma yarattı.",
-   "bot": "Sert yükseliş short'u kuralı bu riske karşı her işlemde haber kolunun yalnızca %5'ini kullanır ve fiyat girişin %50 üstüne çıkarsa pozisyonu kapatır."
+   "bot": "Sert yükseliş short'u kuralı bu riske karşı her işlemde hesabın %10'unu kullanır, 300 milyon $'dan küçük şirketlere girmez ve fiyat girişin %50 üstüne çıkarsa pozisyonu kapatır."
   },
   {
    "kind": "term",

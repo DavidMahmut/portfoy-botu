@@ -9,7 +9,28 @@ Sanal bir **ABD kredili hesabında iki yönlü (long ya da short) işlem yapan**
 - **Zamanlama:** Piyasa açılınca başlayan bir GitHub Actions döngüsü kapanışa kadar 5 dakikada bir çalışır (`.github/workflows/bot.yml`); cron-job.org ve yedek zamanlayıcılar döngüyü başlatır.
 - **Kayıt:** Tüm durum `ledger.json` dosyasında (`compliance`: mevzuat günlüğü, `tax`: yıllık vergi görünümü). Sermaye eklemeleri `deposits.json` dosyasından okunur.
 
-## Uygulanan gerçek kurallar
+## x10 simülasyonu (v7, 16 Kasım 2026'dan itibaren)
+
+v6 hesabı 2.851,39 $ ile (−%4,95; aynı dönemde SPY +%0,39) kapatılıp arşivlendi (`archive/`) ve yerine yeni bir 3.000 $ hesap açıldı. Amaç artık "gerçek bir hesabı taklit etmek" değil, **yüksek kaldıracın ve haber odaklı işlemlerin nasıl davrandığını izleyip öğrenmek**. Gerçek ABD aracı kurumları küçük bir hesaba hissede 10x kaldıraç vermez; bu yüzden Reg T ve FINRA 4210 teminat kuralları bu hesapta uygulanmaz. Piyasa kuralları (SEC Rule 201), ABD yaptırım listesi ve gerçek masraflar (komisyon, SEC/FINRA ücretleri, kredi faizi, ödünç ücreti, fiyat kayması) uygulanır.
+
+- **Hesap modeli:** her pozisyon için %10 teminat, toplam maruziyet en fazla hesabın 10 katı. Hesap değeri açık maruziyetin %5'inin altına inerse zorunlu tasfiye çalışır. Hesap 300 $'ın altına inerse **batmış** sayılır: her şey kapatılır, hesap arşivlenir, ertesi işlem günü yeni 3.000 $ ile yeniden başlar; batışlar sayfada nedenleriyle listelenir.
+- **Endeks kolu:** S&P 500 trendinin yönünde QQQ (long'da krediyle, short'ta açığa satış). Büyüklük = %50 ÷ QQQ'nun 20 günlük oynaklığı; long'da en fazla 10x, short'ta en fazla 3x. `lev_study.py` (1999–2026): %25 hedefle yıllık %13,7 ve en kötü düşüş −%46; **%50 hedefle %16,1 ve −%81**; %100 hedefle %5,6 ve −%99; yön uygun oldukça hep 10x tutmak hesabı 12 kez, QQQ'yu sürekli 10x tutmak 39 kez batırdı. Yani %50, büyümenin düşmeye başlamadığı en yüksek risk düzeyi; 10x tavanının kendisi kâr eklemiyor (kural 9x üstüne günlerin %0,1'inde çıkıyor).
+- **Fırsat taraması:** günde dört kez (10:30, 12:00, 13:30, 15:00 ET) Nasdaq, NYSE ve NYSE American'daki bütün hisselerden o gün en az %4 hareket edenlere bakılır (Yahoo tarayıcısı; fiyat ≥ 5 $, günde ≥ 20 milyon $ işlem, piyasa değeri ≥ 300 milyon $). En büyük hareketlerin başlıkları `catalyst.py` ile **kurallarla** sınıflandırılır (dolandırıcılık iddiası, soruşturma, açığa satış raporu, beklenti değişikliği, FDA kararı, satın alma, söylenti, analist notu...). Yapay zekâ kullanılmaz; anahtar kelime kuralları yanlış okuyabilir.
+  - **Haber devamı (test edildi):** önceki kapanışın en az %8 üstünde açılan ve ilk saatte en az %0,5 daha yükselen, 2 milyar $+ ve günde 50 milyon $+ işlem gören hisse alınır; zarar-kes ilk saatin en düşüğünün altı, çıkış 2 işlem günü sonra. `event_study.py` (`EVENT_WIDE=1`, 1.966 hisse, Aralık 2023–Kasım 2026): 1.403 işlem, işlem başına +%0,97, kazanç/kayıp oranı 1,36, dönemin iki yarısı da artıda. Büyüklük (zarar-keste hesabın %3'ü, tek işlem en fazla 1x, 6 işlem) aynı testin büyüklük tablosundan seçildi: daha fazlası büyümeyi neredeyse artırmadan düşüşü derinleştiriyor.
+  - **Eski haber şoku kuralı kaldırıldı:** ilk saatte boşluğun tersine dönen hisseye girmek aynı geniş testte işlem başına −%0,17 getirdi (v6'da canlıda da çoğu işlem zarar-kesle kapandı).
+  - **Haber takibi (deneysel):** sert bir şirket haberiyle en az %5 hareket eden ve günün aralığının haber yönündeki ucunda kalan hissede haber yönünde işlem (olumsuzda short). Geçmiş başlık arşivi olmadığı için sınanamadı; bu yüzden küçük tutulur (zarar-keste hesabın %1'i, en fazla hesabın yarısı, 4 işlem) ve sonucu sayfadaki kural karnesinde ayrı izlenir.
+  - **Sert yükseliş short'u:** kural aynı, ama artık 300 milyon $'dan küçük şirketlere girilmiyor (v6'da 50 milyon $'lık OMH short'u bir günde zarar-kese gitti; bu büyüklükte ödünç hisse gerçekte çoğu zaman bulunmaz). `spike_study.py`: 300 milyon $+ şirketlerde 399 işlem, işlem başına +%4,9.
+- **Sınırlar:** fırsat işlemlerinin toplamı en fazla hesabın 6 katı, hepsi birlikte en fazla 10 katı; satın alma haberleri, söylentiler, zayıf haberler ve habersiz hareketlerde işlem açılmaz.
+- **Geçmiş testlerin sınırı:** bugünkü şirket listesiyle yapıldı (borsadan çıkanlar yok), şirket büyüklüğü bugünkü değerle süzüldü, en iyi görünen ayar geçmişe uydurulmuş olabilir. Kâr garantisi yoktur.
+
+### Bu hafta takvimi ve piyasa göstergeleri
+
+`agenda.py` (haber işiyle birlikte yarım saatte bir, ayrıca pazar akşamı) `agenda.json` dosyasını yazar; sayfanın en üstünde gösterilir: S&P 500, Nasdaq 100, Dow, Russell 2000, VIX, 10 yıllık faiz, dolar endeksi, petrol (WTI ve Brent), doğal gaz, altın, bakır, Bitcoin, euro/dolar ve dolar/TL'nin güncel fiyatı ile günlük ve haftalık değişimi; haftanın ABD ekonomik verileri (enflasyon, istihdam, Fed kararı ve tutanakları, perakende satışlar... önceki, beklenti ve açıklanan değerle), büyük şirket bilançoları, halka arzlar, tatiller ve opsiyon vadeleri. Kaynak: Yahoo Finance takvimleri (yfinance).
+
+## v6'ya kadar uygulanan gerçek hesap kuralları
+
+Aşağıdaki tablo ve v6 bölümleri önceki hesapları anlatır. x10 simülasyonunda Reg T ve FINRA teminat kuralları uygulanmaz; SEC Rule 201, ücretler, faiz, ödünç ve vergi görünümü aynen geçerlidir.
+
 
 | Kural | Ne yapar | Kaynak |
 |---|---|---|
