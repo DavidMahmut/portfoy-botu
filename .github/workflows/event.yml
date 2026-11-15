@@ -2,6 +2,11 @@ name: Haber şoku testi
 
 on:
   workflow_dispatch:
+    inputs:
+      wide:
+        description: "Tüm likit ABD hisseleri (Nasdaq + NYSE), şirket büyüklüğüne göre"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -9,7 +14,7 @@ permissions:
 jobs:
   event:
     runs-on: ubuntu-latest
-    timeout-minutes: 40
+    timeout-minutes: 150
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -18,12 +23,14 @@ jobs:
           cache: pip
       - run: pip install -r requirements.txt
       - name: Testi çalıştır
+        env:
+          EVENT_WIDE: ${{ inputs.wide && '1' || '0' }}
         run: python event_study.py
       - name: Sonucu kaydet
         run: |
           git config user.name "portfoy-bot"
           git config user.email "portfoy-bot@users.noreply.github.com"
-          git add event_results.json
+          git add event_results.json event_results_wide.json 2>/dev/null || git add event_results.json
           git commit -q -m "Haber şoku testi sonucu" || exit 0
           for i in 1 2 3; do
             if git pull -q --rebase && git push -q; then exit 0; fi
