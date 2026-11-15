@@ -39,10 +39,13 @@ LIVE = "fadeUp|r5_dv50|t30|s50|h10"     # the rule the trader uses (sert yüksel
 LOOK = max(HOLDS) + 3
 
 
-def collect(data):
-    """One record per 20 % day with the next LOOK daily bars."""
+def collect(data, shares=None):
+    """One record per 20 % day with the next LOOK daily bars. `shares` (ticker -> shares outstanding today) gives a rough
+    market value on the day before the spike: today's share count x the split-adjusted price then."""
     out = []
+    shares = shares or {}
     for t, s in data.items():
+        sh = shares.get(t)
         try:
             o, h, l, c, v = (s[k].astype(float).values for k in ("Open", "High", "Low", "Close", "Volume"))
         except Exception:
@@ -73,6 +76,7 @@ def collect(data):
             d0 = pd.Timestamp(idx[i])
             out.append({"t": t, "d": idx[i], "move": float(mv), "prev": float(prev), "prevRaw": float(prev * after[i - 1]),
                         "dv": float(dv[i - 1]), "c0": float(c[i]),
+                        "capM": float(sh * prev / 1e6) if sh else None,
                         "gapOpen": float(o[i] / prev - 1) if o[i] > 0 else 0.0,
                         "rsBefore": any(0 <= (d0 - pd.Timestamp(x)).days <= 365 for x in rs_days),
                         "buyout": bool(mv > 0 and rng < 0.03 and o[i] / prev - 1 > 0.15),   # flat after a gap: a takeover price
@@ -211,7 +215,11 @@ def brief(tr):
 def main():
     names = MV.nasdaq_symbols()
     data = MV.download(sorted(names), start="2018-06-01", interval="1d", actions=True)
-    ev = collect(data)
+    try:
+        F = json.loads((ROOT / "fundamentals.json").read_text(encoding="utf-8")).get("rows") or {}
+    except Exception:
+        F = {}
+    ev = collect(data, {t: v.get("sh") for t, v in F.items() if v.get("sh")})
     print("tickers", len(data), "events", len(ev))
     grid = []
     plans = [("fadeUp", -1, "open1"), ("fadeUp", -1, "close"), ("crashShort", -1, "open2")]
@@ -252,7 +260,12 @@ def main():
                                    "gapUp10": by(lambda e: e["gapOpen"] >= 0.10), "intradayRun": by(lambda e: e["gapOpen"] < 0.10),
                                    "price5to20": by(lambda e: e["prevRaw"] < 20), "price20plus": by(lambda e: e["prevRaw"] >= 20),
                                    "dv50plus": by(lambda e: e["dv"] >= 50e6), "move30to50": by(lambda e: e["move"] < 0.5),
-                                   "move50plus": by(lambda e: e["move"] >= 0.5)}
+                                   "move50plus": by(lambda e: e["move"] >= 0.5),
+                                   # realism: tiny companies are usually impossible or very dear to borrow
+                                   "capUnder300M": by(lambda e: e["capM"] is not None and e["capM"] < 300),
+                                   "cap300Mplus": by(lambda e: e["capM"] is not None and e["capM"] >= 300),
+                                   "cap1Bplus": by(lambda e: e["capM"] is not None and e["capM"] >= 1000),
+                                   "capUnknown": by(lambda e: e["capM"] is None)}
                     c["curve"] = portfolio(tr, 0.05, 6)["curve"]
                     c["examples"] = [{k: (round(x[k] * 100, 2) if k in ("ret", "gross", "mae") else x[k])
                                       for k in ("t", "d", "out", "ret", "gross", "mae", "why")}
