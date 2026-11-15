@@ -188,6 +188,7 @@ h4.mini{margin:0 0 8px;font-size:12px;text-transform:uppercase;letter-spacing:.0
 .side.lev{background:var(--warn-soft);color:var(--warn);margin-left:4px}
 .exp-cap{display:flex;justify-content:space-between;gap:8px;font-family:var(--f-mono);font-size:12px;color:var(--muted);margin-top:6px}
 .errbar{padding:10px 14px;border-radius:8px;background:var(--loss-soft);color:var(--loss);font-size:13px}
+.errbar.info{background:var(--accent-soft);color:var(--ink)}
 .rule{font-family:var(--f-mono);font-size:11px;padding:2px 8px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
 .rank-table{min-width:620px}
 .rank-table td.l{text-align:left;font-family:var(--f-body)}
@@ -631,6 +632,7 @@ tr.mv-det td{background:var(--bg);white-space:normal;text-align:left}
       </div>
     </div>
     <div class="errbar" id="errBar" hidden></div>
+    <div class="errbar info" id="migBar" hidden></div>
     <div class="panel risk" id="riskPanel">
       <div class="sec-head">
         <h3>Risk kontrolü</h3>
@@ -983,7 +985,8 @@ tr.mv-det td{background:var(--bg);white-space:normal;text-align:left}
     var rate=isNum(bm.marginRate)?" · faiz yıllık %"+fmtNum(bm.marginRate*100,2):"";
     if(p.cash<0) setKpi("k-cash","Kredi borcu",usd(-p.cash),"Aracı kurumdan borç"+rate,"down");
     else setKpi("k-cash","Nakit",usd(p.cash),"Short satış gelirleri dahil",null);
-    var X=c.x10||null;
+    var X=c.x10||null, mb=$("migBar");
+    mb.hidden=!!X; if(!X) mb.textContent="Yeni x10 hesabı bir sonraki işlem gününün açılışında (09:32 ET) başlar: bot o çalışmada eski hesabı arşivler ve 3.000 $ ile yeniden açar. O zamana kadar bu bölümdeki rakamlar ve pozisyonlar kapanmakta olan eski hesaba aittir.";
     setKpi("k-inv",X?"Kaldıraç (toplam maruziyet)":"Ekonomik kaldıraç",isNum(p.leverage)?fmtNum(p.leverage,2)+"x":"—","Üst sınır "+(X&&isNum(X.maxGross)?fmtNum(X.maxGross,0)+"x":isNum(c.maxLeverage)?fmtNum(c.maxLeverage,0)+"x":"3x")+(reg.label?" · "+reg.label:""),null);
     var co=p.costs||{}, ct=(co.slippage||0)+(co.commission||0)+(co.fees||0)+(co.interest||0)+(co.borrow||0)+(co.dividendsPaid||0);
     setKpi("k-real","Toplam işlem maliyeti",usd(ct),"Komisyon "+usd(co.commission||0)+" · SEC/FINRA "+usd(co.fees||0)+" · kayma "+usd(co.slippage||0)+" · faiz "+usd(co.interest||0)+" · ödünç "+usd(co.borrow||0),null);
@@ -2130,7 +2133,7 @@ tr.mv-det td{background:var(--bg);white-space:normal;text-align:left}
   function hlLink(h){ return /^https:\/\//i.test(h.url||"")? el("a",{href:h.url,target:"_blank",rel:"noopener noreferrer",text:h.title}) : el("span",{text:h.title}); }
   function renderEvents(){
     var M=S.meta||{}, P=S.portfolio||{}, c=S.config||{}, X=c.x10||{}, plays=X.plays||{};
-    $("evRule").textContent=c.oppRule||"Kural yükleniyor…";
+    $("evRule").textContent=c.oppRule||"Fırsat taraması yeni x10 hesabıyla birlikte, bir sonraki işlem günü başlar: günde dört kez (10:30, 12:00, 13:30, 15:00 ET) ABD'deki bütün hisselerin en çok hareket edenlerine ve haberlerine bakılır.";
     var scans=(M.oppScans||[]).slice().sort(function(a,b){return (a.slot||0)-(b.slot||0);});
     if(!scans.length&&M.oppScan) scans=[M.oppScan];
     var last=scans[scans.length-1]||null;
