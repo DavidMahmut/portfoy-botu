@@ -1,10 +1,10 @@
 {
- "asOf": "2026-11-16T18:12:35-05:00",
+ "asOf": "2026-11-16T18:42:42-05:00",
  "session": "post",
  "sessionLabel": "Piyasa sonrası (16:00–20:00 ET)",
  "equity": 2954.83,
- "totalImpact": -0.51,
- "totalImpactPct": -0.02,
+ "totalImpact": -12.95,
+ "totalImpactPct": -0.44,
  "items": [
   {
    "ticker": "QQQ",
@@ -15,10 +15,10 @@
    "stopPrice": null,
    "refClose": 661.85,
    "refAt": "2026-11-16T15:55:00-05:00",
-   "price": 662.61,
-   "at": "2026-11-16T18:05:00-05:00",
-   "changePct": 0.11,
-   "impact": 4.83,
+   "price": 659.9001,
+   "at": "2026-11-16T18:40:00-05:00",
+   "changePct": -0.29,
+   "impact": -12.38,
    "beyondStop": false
   },
   {
@@ -45,10 +45,10 @@
    "stopPrice": 12.49,
    "refClose": 13.41,
    "refAt": "2026-11-16T15:55:00-05:00",
-   "price": 13.25,
-   "at": "2026-11-16T17:35:00-05:00",
-   "changePct": -1.19,
-   "impact": -4.02,
+   "price": 13.44,
+   "at": "2026-11-16T18:15:00-05:00",
+   "changePct": 0.22,
+   "impact": 0.75,
    "beyondStop": false
   },
   {
@@ -72,17 +72,17 @@
    "ticker": "SPY",
    "label": "S&P 500 (SPY)",
    "refClose": 740.05,
-   "price": 740.85,
-   "at": "2026-11-16T18:10:00-05:00",
-   "changePct": 0.11
+   "price": 739.27,
+   "at": "2026-11-16T18:40:00-05:00",
+   "changePct": -0.11
   },
   {
    "ticker": "QQQ",
    "label": "Nasdaq 100 (QQQ)",
    "refClose": 661.85,
-   "price": 662.61,
-   "at": "2026-11-16T18:05:00-05:00",
-   "changePct": 0.11
+   "price": 659.9,
+   "at": "2026-11-16T18:40:00-05:00",
+   "changePct": -0.29
   }
  ],
  "note": "Yalnızca izleme: bot bu saatlerde işlem yapmaz, zarar-kes emirleri normal seansta işler. Seans dışında işlem hacmi düşüktür, fiyatlar sert oynayabilir ve ertesi açılış farklı olabilir.",
