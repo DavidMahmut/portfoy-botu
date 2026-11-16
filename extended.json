@@ -1,10 +1,10 @@
 {
- "asOf": "2026-11-16T16:12:01-05:00",
+ "asOf": "2026-11-16T16:42:11-05:00",
  "session": "post",
  "sessionLabel": "Piyasa sonrası (16:00–20:00 ET)",
  "equity": 2954.83,
- "totalImpact": 0.71,
- "totalImpactPct": 0.02,
+ "totalImpact": -2.32,
+ "totalImpactPct": -0.08,
  "items": [
   {
    "ticker": "QQQ",
@@ -15,10 +15,10 @@
    "stopPrice": null,
    "refClose": 661.85,
    "refAt": "2026-11-16T15:55:00-05:00",
-   "price": 662.081,
-   "at": "2026-11-16T16:10:00-05:00",
-   "changePct": 0.03,
-   "impact": 1.47,
+   "price": 661.93,
+   "at": "2026-11-16T16:40:00-05:00",
+   "changePct": 0.01,
+   "impact": 0.51,
    "beyondStop": false
   },
   {
@@ -29,7 +29,12 @@
    "shares": 7.6986,
    "stopPrice": 52.03,
    "refClose": 54.91,
-   "refAt": "2026-11-16T15:55:00-05:00"
+   "refAt": "2026-11-16T15:55:00-05:00",
+   "price": 54.88,
+   "at": "2026-11-16T16:00:00-05:00",
+   "changePct": -0.05,
+   "impact": -0.23,
+   "beyondStop": false
   },
   {
    "ticker": "AVEX",
@@ -38,12 +43,12 @@
    "lev": 1,
    "shares": 25.1249,
    "stopPrice": 12.49,
-   "refClose": 13.4,
+   "refClose": 13.41,
    "refAt": "2026-11-16T15:55:00-05:00",
-   "price": 13.37,
-   "at": "2026-11-16T16:00:00-05:00",
-   "changePct": -0.22,
-   "impact": -0.75,
+   "price": 13.35,
+   "at": "2026-11-16T16:40:05-05:00",
+   "changePct": -0.45,
+   "impact": -1.51,
    "beyondStop": false
   },
   {
@@ -54,25 +59,30 @@
    "shares": 7.7581,
    "stopPrice": 158.39,
    "refClose": 155.15,
-   "refAt": "2026-11-16T15:55:00-05:00"
+   "refAt": "2026-11-16T15:55:00-05:00",
+   "price": 155.29,
+   "at": "2026-11-16T16:00:00-05:00",
+   "changePct": 0.09,
+   "impact": -1.09,
+   "beyondStop": false
   }
  ],
  "market": [
   {
    "ticker": "SPY",
    "label": "S&P 500 (SPY)",
-   "refClose": 740.06,
-   "price": 739.95,
-   "at": "2026-11-16T16:10:00-05:00",
-   "changePct": -0.01
+   "refClose": 740.05,
+   "price": 740.08,
+   "at": "2026-11-16T16:40:00-05:00",
+   "changePct": 0.0
   },
   {
    "ticker": "QQQ",
    "label": "Nasdaq 100 (QQQ)",
    "refClose": 661.85,
-   "price": 662.08,
-   "at": "2026-11-16T16:10:00-05:00",
-   "changePct": 0.03
+   "price": 661.93,
+   "at": "2026-11-16T16:40:00-05:00",
+   "changePct": 0.01
   }
  ],
  "note": "Yalnızca izleme: bot bu saatlerde işlem yapmaz, zarar-kes emirleri normal seansta işler. Seans dışında işlem hacmi düşüktür, fiyatlar sert oynayabilir ve ertesi açılış farklı olabilir.",
