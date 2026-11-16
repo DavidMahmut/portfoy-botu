@@ -163,10 +163,10 @@
   "totalPL": 0.0,
   "totalPLPct": 0.0,
   "twrPct": 0.0,
-  "asOf": "2026-11-16T09:40:38-05:00",
-  "benchmarkPrice": 747.53,
-  "benchmarkValue": 3002.47,
-  "benchmarkTwrPct": 0.08
+  "asOf": "2026-11-16T09:50:45-05:00",
+  "benchmarkPrice": 748.66,
+  "benchmarkValue": 3007.03,
+  "benchmarkTwrPct": 0.23
  },
  "meta": {
   "engine": "x10 v7",
@@ -181,9 +181,9 @@
    "ath": 759.66,
    "athDate": "2026-10-06",
    "athChecked": "2026-11-13",
-   "price": 669.12,
-   "at": "2026-11-16T09:40:00-05:00",
-   "ddPct": -11.92,
+   "price": 670.45,
+   "at": "2026-11-16T09:50:00-05:00",
+   "ddPct": -11.74,
    "level": "correction",
    "triggerPrice": 607.73,
    "correctionPrice": 683.69
@@ -207,7 +207,7 @@
     "2026-11-16"
    ]
   },
-  "lastRunAt": "2026-11-16T09:40:38-05:00",
+  "lastRunAt": "2026-11-16T09:50:45-05:00",
   "lastError": null,
   "spikeScanDate": "2026-11-16",
   "spikeScan": {
@@ -226,7 +226,7 @@
  "snapshots": [
   {
    "date": "2026-11-16",
-   "at": "2026-11-16T09:40:38-05:00",
+   "at": "2026-11-16T09:50:45-05:00",
    "totalValue": 3000.0,
    "cash": 3000.0,
    "positionsValue": 0.0,
@@ -234,8 +234,8 @@
    "twrPct": 0.0,
    "netDeposits": 3000.0,
    "leverage": 0.0,
-   "benchmarkPrice": 747.53,
-   "benchmarkValue": 3002.47,
+   "benchmarkPrice": 748.66,
+   "benchmarkValue": 3007.03,
    "holdings": []
   }
  ],
@@ -282,6 +282,34 @@
     "positions": [],
     "actions": [],
     "note": "Normal: SPY −%0,91; işlem gerekmedi."
+   },
+   {
+    "at": "2026-11-16T09:45:44-05:00",
+    "kind": "guard",
+    "status": "normal",
+    "spyPrice": 749.02,
+    "spyChangePct": -0.71,
+    "totalValue": 3000.0,
+    "benchmarkValue": 3008.45,
+    "leverage": 0.0,
+    "marginBuffer": 3000.0,
+    "positions": [],
+    "actions": [],
+    "note": "Normal: SPY −%0,71; işlem gerekmedi."
+   },
+   {
+    "at": "2026-11-16T09:50:45-05:00",
+    "kind": "guard",
+    "status": "normal",
+    "spyPrice": 748.66,
+    "spyChangePct": -0.76,
+    "totalValue": 3000.0,
+    "benchmarkValue": 3007.03,
+    "leverage": 0.0,
+    "marginBuffer": 3000.0,
+    "positions": [],
+    "actions": [],
+    "note": "Normal: SPY −%0,76; işlem gerekmedi."
    }
   ]
  },
@@ -493,7 +521,7 @@
   "start": "2026-11-16",
   "startAt": "2026-11-16T09:30:32-05:00",
   "end": "2027-02-16",
-  "asOf": "2026-11-16T09:40:38-05:00",
+  "asOf": "2026-11-16T09:50:45-05:00",
   "strategy": "v7",
   "history": [
    {
@@ -577,8 +605,8 @@
   "daysTotal": 62,
   "finished": false,
   "returnPct": 0.0,
-  "spyReturnPct": 0.08,
-  "excessPct": -0.08,
+  "spyReturnPct": 0.23,
+  "excessPct": -0.23,
   "maxDrawdownPct": 0.0,
   "maxDrawdownAt": "2026-11-16T09:30:32-05:00",
   "drawdownNowPct": 0.0,
@@ -595,8 +623,8 @@
    {
     "month": "2026-11",
     "returnPct": 0.0,
-    "spyPct": 0.08,
-    "excessPct": -0.08
+    "spyPct": 0.23,
+    "excessPct": -0.23
    }
   ],
   "uptime": {
@@ -612,7 +640,7 @@
     "key": "spy",
     "label": "SPY'ı geçmek (masraflar düşülmüş)",
     "ok": false,
-    "value": -0.08,
+    "value": -0.23,
     "unit": "pct"
    },
    {
