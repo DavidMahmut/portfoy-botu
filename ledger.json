@@ -83,9 +83,9 @@
   },
   "benchmark": {
    "ticker": "SPY",
-   "startPrice": null,
-   "startAt": null,
-   "shares": 0.0
+   "startPrice": 746.91,
+   "startAt": "2026-11-16T09:35:00-05:00",
+   "shares": 4.016548
   },
   "oppRule": "Fırsat taraması günde dört kez (10:30, 12:00, 13:30, 15:00 ET) Nasdaq, NYSE ve NYSE American'daki bütün hisselerden o gün en az %4 hareket edenlere bakar (fiyat ≥ 5 $, günde ≥ 20 milyon $ işlem, piyasa değeri ≥ 300 milyon $). En büyük hareketlerin haber başlıkları kurallarla sınıflandırılır ve iki kural uygulanır: haber devamı (test edildi) ve haber takibi (deneysel). Satın alma haberleri, söylentiler, zayıf haberler, habersiz hareketler ve ilk saatte tersine dönen açılış boşlukları kaydedilir ama işlem açılmaz.",
   "notApplied": "Bu hesap bir simülasyondur: gerçek ABD kredili hesap kuralları (Reg T %50 başlangıç teminatı, FINRA 4210 bakım teminatı ve 2.000 $ asgari özsermaye, kaldıraçlı ETF teminatı) uygulanmaz. Piyasa kuralları (SEC Rule 201), ABD yaptırım listesi ve gerçek masraflar uygulanır.",
@@ -163,7 +163,10 @@
   "totalPL": 0.0,
   "totalPLPct": 0.0,
   "twrPct": 0.0,
-  "asOf": "2026-11-16T09:30:32-05:00"
+  "asOf": "2026-11-16T09:40:38-05:00",
+  "benchmarkPrice": 747.53,
+  "benchmarkValue": 3002.47,
+  "benchmarkTwrPct": 0.08
  },
  "meta": {
   "engine": "x10 v7",
@@ -178,9 +181,9 @@
    "ath": 759.66,
    "athDate": "2026-10-06",
    "athChecked": "2026-11-13",
-   "price": 679.9,
-   "at": "2026-11-13T15:55:00-05:00",
-   "ddPct": -10.5,
+   "price": 669.12,
+   "at": "2026-11-16T09:40:00-05:00",
+   "ddPct": -11.92,
    "level": "correction",
    "triggerPrice": 607.73,
    "correctionPrice": 683.69
@@ -192,13 +195,50 @@
    "start": "2026-11-16",
    "end": "2027-02-16",
    "startTs": "2026-11-16T09:30:32-05:00",
-   "strategy": "v7"
+   "strategy": "v7",
+   "startAt": "2026-11-16T09:30:32-05:00",
+   "navStart": 1.0,
+   "spyStart": 746.9099731445312,
+   "peak": 1.0,
+   "maxDD": 0.0,
+   "maxDDAt": "2026-11-16T09:30:32-05:00",
+   "errors": 0,
+   "runDays": [
+    "2026-11-16"
+   ]
   },
-  "lastRunAt": "2026-11-16T09:30:32-05:00",
-  "lastError": null
+  "lastRunAt": "2026-11-16T09:40:38-05:00",
+  "lastError": null,
+  "spikeScanDate": "2026-11-16",
+  "spikeScan": {
+   "date": "2026-11-16",
+   "at": "2026-11-16T09:35:37-05:00",
+   "spikeDate": "2026-11-13",
+   "final": true,
+   "listAt": "2026-11-13T20:44-05:00",
+   "candidates": [],
+   "taken": [],
+   "skipped": [],
+   "rule": "2026-11-13 günü en az %30 yükselen Nasdaq hissesine açılışta short; zarar-kes girişin %50 üstü; 10. işlem günü kapanışta çıkış."
+  }
  },
  "trades": [],
- "snapshots": [],
+ "snapshots": [
+  {
+   "date": "2026-11-16",
+   "at": "2026-11-16T09:40:38-05:00",
+   "totalValue": 3000.0,
+   "cash": 3000.0,
+   "positionsValue": 0.0,
+   "plPct": 0.0,
+   "twrPct": 0.0,
+   "netDeposits": 3000.0,
+   "leverage": 0.0,
+   "benchmarkPrice": 747.53,
+   "benchmarkValue": 3002.47,
+   "holdings": []
+  }
+ ],
  "checks": {
   "2026-11-16": [
    {
@@ -214,6 +254,34 @@
     "positions": [],
     "actions": [],
     "note": "v7: yeni x10 hesabı; SPY: güncel veri alınamadı; SPY verisi alınamadı; bu çalışmada işlem yapılmadı"
+   },
+   {
+    "at": "2026-11-16T09:35:37-05:00",
+    "kind": "spike",
+    "status": "normal",
+    "spyPrice": 746.91,
+    "spyChangePct": -0.99,
+    "totalValue": 3000.0,
+    "benchmarkValue": 3000.0,
+    "leverage": 0.0,
+    "marginBuffer": 3000.0,
+    "positions": [],
+    "actions": [],
+    "note": "Sert yükseliş short'u: 2026-11-13 günü %30+ yükselen uygun Nasdaq hissesi yok."
+   },
+   {
+    "at": "2026-11-16T09:40:38-05:00",
+    "kind": "guard",
+    "status": "normal",
+    "spyPrice": 747.53,
+    "spyChangePct": -0.91,
+    "totalValue": 3000.0,
+    "benchmarkValue": 3002.47,
+    "leverage": 0.0,
+    "marginBuffer": 3000.0,
+    "positions": [],
+    "actions": [],
+    "note": "Normal: SPY −%0,91; işlem gerekmedi."
    }
   ]
  },
@@ -420,5 +488,161 @@
   }
  ],
  "busts": [],
- "playStats": {}
+ "playStats": {},
+ "scorecard": {
+  "start": "2026-11-16",
+  "startAt": "2026-11-16T09:30:32-05:00",
+  "end": "2027-02-16",
+  "asOf": "2026-11-16T09:40:38-05:00",
+  "strategy": "v7",
+  "history": [
+   {
+    "strategy": "v3: kaldıraçlı long/short momentum",
+    "start": "2026-10-12",
+    "end": "2026-10-15",
+    "returnPct": -9.48,
+    "spyReturnPct": -1.05,
+    "excessPct": -8.43,
+    "maxDrawdownPct": -11.15,
+    "trades": {
+     "closed": 5,
+     "wins": 0,
+     "winRatePct": 0.0,
+     "avgWin": null,
+     "avgLoss": -67.51,
+     "profitFactor": 0.0,
+     "realizedPL": -337.57
+    },
+    "daysElapsed": 4
+   },
+   {
+    "strategy": "v4: kaldıraçsız QQQ + momentum sepeti",
+    "start": "2026-10-15",
+    "end": "2026-10-26",
+    "returnPct": -1.05,
+    "spyReturnPct": -1.25,
+    "excessPct": 0.2,
+    "maxDrawdownPct": -3.66,
+    "trades": {
+     "closed": 0,
+     "wins": 0,
+     "winRatePct": null,
+     "avgWin": null,
+     "avgLoss": null,
+     "profitFactor": null,
+     "realizedPL": 0
+    },
+    "daysElapsed": 7
+   },
+   {
+    "strategy": "v5: iki yönlü endeks + momentum sepeti",
+    "start": "2026-10-26",
+    "end": "2026-10-30",
+    "returnPct": -4.95,
+    "spyReturnPct": -1.39,
+    "excessPct": -3.56,
+    "maxDrawdownPct": -9.19,
+    "trades": {
+     "closed": 2,
+     "wins": 0,
+     "winRatePct": 0.0,
+     "avgWin": null,
+     "avgLoss": -21.02,
+     "profitFactor": 0.0,
+     "realizedPL": -42.03
+    },
+    "daysElapsed": 5
+   },
+   {
+    "strategy": "v6: endeks kolu + haber şoku kolu (gerçek hesap kuralları)",
+    "start": "2026-10-30",
+    "end": "2026-11-16",
+    "returnPct": -4.95,
+    "spyReturnPct": 0.39,
+    "excessPct": -5.34,
+    "maxDrawdownPct": -6.33,
+    "trades": {
+     "closed": 12,
+     "wins": 3,
+     "winRatePct": 25.0,
+     "avgWin": 5.85,
+     "avgLoss": -14.94,
+     "profitFactor": 0.13,
+     "realizedPL": -116.94
+    },
+    "daysElapsed": 11
+   }
+  ],
+  "daysElapsed": 1,
+  "daysTotal": 62,
+  "finished": false,
+  "returnPct": 0.0,
+  "spyReturnPct": 0.08,
+  "excessPct": -0.08,
+  "maxDrawdownPct": 0.0,
+  "maxDrawdownAt": "2026-11-16T09:30:32-05:00",
+  "drawdownNowPct": 0.0,
+  "trades": {
+   "closed": 0,
+   "wins": 0,
+   "winRatePct": null,
+   "avgWin": null,
+   "avgLoss": null,
+   "profitFactor": null,
+   "realizedPL": 0
+  },
+  "monthly": [
+   {
+    "month": "2026-11",
+    "returnPct": 0.0,
+    "spyPct": 0.08,
+    "excessPct": -0.08
+   }
+  ],
+  "uptime": {
+   "due": 1,
+   "ran": 1,
+   "pct": 100.0
+  },
+  "errors": 0,
+  "marginCalls": 0,
+  "compliance": {},
+  "criteria": [
+   {
+    "key": "spy",
+    "label": "SPY'ı geçmek (masraflar düşülmüş)",
+    "ok": false,
+    "value": -0.08,
+    "unit": "pct"
+   },
+   {
+    "key": "dd",
+    "label": "En büyük düşüş %20'den az",
+    "ok": true,
+    "value": 0.0,
+    "unit": "pct"
+   },
+   {
+    "key": "margin",
+    "label": "Zorunlu tasfiye yok",
+    "ok": true,
+    "value": 0,
+    "unit": "count"
+   },
+   {
+    "key": "bust",
+    "label": "Hesap hiç batmadı",
+    "ok": true,
+    "value": 0,
+    "unit": "count"
+   },
+   {
+    "key": "uptime",
+    "label": "Bot işlem günlerinin en az %95'inde çalıştı",
+    "ok": true,
+    "value": 100.0,
+    "unit": "pctPlain"
+   }
+  ]
+ }
 }
