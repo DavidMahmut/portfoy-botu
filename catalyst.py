@@ -78,11 +78,11 @@ RULES = [
      r"award)|partnership with|partners with|strategic (investment|partnership|collaboration|alliance)|to supply|supply "
      r"(deal|agreement)|(invests?|investing|to invest|takes? (a )?stake) .{0,30}(in|billion|million)"),
     ("buyback", "Geri alım / temettü", 1, "soft", 2,
-     r"buyback|share repurchase|repurchase (program|plan|authorization)|special dividend|(raises?|hikes?|boosts?|"
+     r"buy ?backs?|buy(s|ing)? back|share repurchase|repurchase (program|plan|authorization)|special dividend|(raises?|hikes?|boosts?|"
      r"increases?) .{0,20}dividend|stock split"),
     ("upgrade", "Not yükseltme", 1, "soft", 2,
-     r"upgrad|raises? (rating|price target|target|pt)\b|price target (raised|hike|boost|lifted)|to (buy|overweight|"
-     r"outperform|strong buy)\b|initiat(es|ed) .{0,30}(buy|overweight|outperform)|bullish (call|note)|top pick"),
+     r"upgrad|raises? (rating|price target|target|pt)\b|price target (raised|hike|boost|lifted)|(raised|raises|lifted|lifts|"
+     r"moved|moves|boosted|boosts) .{0,40}\bto (buy|overweight|outperform|strong buy)\b|initiat(es|ed) .{0,30}(buy|overweight|outperform)|bullish (call|note)|top pick"),
     ("index", "Endekse giriş", 1, "soft", 3,
      r"(join|joins|joining|added to|inclusion in|to be added to|will enter|enters?|replace .{0,25} in) .{0,25}(s&p 500|"
      r"nasdaq[- ]100|dow jones|russell (1000|2000)|s&p midcap|s&p smallcap)"),
@@ -91,7 +91,12 @@ RULES = [
      r"buying|buys) .{0,60}(for|in) (about |roughly |nearly |approximately |a )?\$ ?\d|buyout (deal|offer|agreement)"
      r"|take[- ]private (deal|offer|agreement)|takeover (bid|offer|deal)|merger agreement|definitive (merger |"
      r"acquisition )?agreement|agrees? to (merge|sell itself|be sold)|all-cash (deal|offer|transaction)|tender offer"
-     r"|go(ing)? private in"),
+     r"|go(ing)? private in"
+     # an offer on the table (not yet agreed) pins the price just the same: "Quebecor Makes Bid for Telus"
+     r"|(makes?|made|launch(es|ed)?|submits?|submitted|unveils?|tables?) (a |an |its )?(\$ ?[\d.,]+ ?(billion|bn|million|mn)? )?"
+     r"((all-cash|cash|hostile|unsolicited|rival|takeover|buyout|formal|binding|improved|sweetened) )*(bid|offer|proposal) "
+     r"(for|to (buy(?! ?back)|acquire|take over))|\b(bid|offer) to (buy(?! ?back)|acquire|take over)"
+     r"|\$ ?[\d.,]+ ?(billion|bn) (takeover|buyout) (bid|offer)"),
     ("rumor", "Söylenti / spekülasyon", 0, "rumor", 2,
      r"reportedly|rumou?r|\bsaid to\b|sources? (say|said|familiar|tell|told)|people familiar|in (advanced |early |"
      r"preliminary )?talks|explor(es|ing) (a |its )?(sale|options|strategic|potential)|(consider|weigh|mull)(s|ing) (a |an )?"
