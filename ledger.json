@@ -142,16 +142,16 @@
     "shares": 6.3501,
     "avgCost": 666.1229,
     "costBasis": 4229.95,
-    "lastPrice": 667.54,
-    "lastPriceAt": "2026-11-16T12:00:00-05:00",
+    "lastPrice": 667.2395,
+    "lastPriceAt": "2026-11-16T12:10:00-05:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (12:00 ET)",
+     "title": "Yahoo Finance 5 dk mum (12:10 ET)",
      "url": "https://finance.yahoo.com/quote/QQQ/"
     },
-    "marketValue": 4238.95,
-    "exposure": 4238.95,
-    "unrealized": 9.0,
-    "unrealizedPct": 0.21,
+    "marketValue": 4237.04,
+    "exposure": 4237.04,
+    "unrealized": 7.09,
+    "unrealizedPct": 0.17,
     "openedAt": "2026-11-16",
     "openedTs": "2026-11-16T10:00:00-05:00",
     "lastAddDate": "2026-11-16",
@@ -159,7 +159,7 @@
     "extremeSinceEntry": 665.7899780273438,
     "tookProfit": false,
     "thesis": "Endeks kolu, QQQ long (krediyle): 0,00 $ → 4.230,00 $ (hesabın 1,41 katı). Endeks kolu yönü YUKARI: SPY dünkü kapanış 754,37 $, 200 günlük ortalama 731,92 $ (+%3,07), 50 günlük ortalama 764,43 $. QQQ'nun 20 günlük oynaklığı yıllık %35,4; büyüklük %50 ÷ %35,4 = 1,41x. Hedef maruziyet +1,41x.",
-    "maintReq": 211.95
+    "maintReq": 211.85
    },
    {
     "stopMode": "event",
@@ -171,21 +171,21 @@
     "shares": 7.6986,
     "avgCost": 55.7078,
     "costBasis": 428.87,
-    "lastPrice": 55.68,
-    "lastPriceAt": "2026-11-16T12:00:00-05:00",
+    "lastPrice": 55.585,
+    "lastPriceAt": "2026-11-16T12:10:00-05:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (12:00 ET)",
+     "title": "Yahoo Finance 5 dk mum (12:10 ET)",
      "url": "https://finance.yahoo.com/quote/HTHT/"
     },
-    "marketValue": 428.66,
-    "exposure": 428.66,
-    "unrealized": -0.21,
-    "unrealizedPct": -0.05,
+    "marketValue": 427.93,
+    "exposure": 427.93,
+    "unrealized": -0.94,
+    "unrealizedPct": -0.22,
     "openedAt": "2026-11-16",
     "openedTs": "2026-11-16T12:00:00-05:00",
     "lastAddDate": "2026-11-16",
     "stopPrice": 52.03,
-    "extremeSinceEntry": 55.68000030517578,
+    "extremeSinceEntry": 55.71,
     "tookProfit": false,
     "thesis": "Haber takibi (deneysel kural): HTHT (H World Group Limited) bugün +%10,50. Haber türü: Beklenti yükseltildi / güçlü bilanço (sert, olumlu). “What H World Group (HTHT) Said on Its Q3 Earnings Call” (MarketBeat). Fiyat günün aralığının üst kısmında, yani piyasa haberi geri almıyor; haber yönünde long açıldı. Zarar-kes 52,03 $ (risk %7,0); çıkış 2026-11-19 kapanışında. Büyüklük: hesabın %14'i (428,88 $); zarar-kes çalışırsa kayıp hesabın yaklaşık %1,0'i. Bu kural geçmiş veride sınanamadı (geçmiş haber arşivi yok); sonucu kural karnesinde izlenir.",
     "sleeve": "event",
@@ -212,7 +212,8 @@
      "movePct": 10.5,
      "prevClose": 50.39
     },
-    "maintReq": 21.43
+    "maintReq": 21.4,
+    "lastBarTs": "2026-11-16T12:10:00-05:00"
    },
    {
     "stopMode": "event",
@@ -225,9 +226,9 @@
     "avgCost": 13.5968,
     "costBasis": 341.62,
     "lastPrice": 13.59,
-    "lastPriceAt": "2026-11-16T12:00:00-05:00",
+    "lastPriceAt": "2026-11-16T12:10:00-05:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (12:00 ET)",
+     "title": "Yahoo Finance 5 dk mum (12:10 ET)",
      "url": "https://finance.yahoo.com/quote/AVEX/"
     },
     "marketValue": 341.45,
@@ -238,7 +239,7 @@
     "openedTs": "2026-11-16T12:00:00-05:00",
     "lastAddDate": "2026-11-16",
     "stopPrice": 12.49,
-    "extremeSinceEntry": 13.59000015258789,
+    "extremeSinceEntry": 13.59,
     "tookProfit": false,
     "thesis": "Haber takibi (deneysel kural): AVEX (AEVEX Corp.) bugün +%8,55. Haber türü: Beklenti yükseltildi / güçlü bilanço (sert, olumlu). “AEVEX (AVEX) Stock Could Be Undervalued On Raised 2026 Guidance” (Simply Wall St.). Fiyat günün aralığının üst kısmında, yani piyasa haberi geri almıyor; haber yönünde long açıldı. Zarar-kes 12,49 $ (risk %8,8); çıkış 2026-11-19 kapanışında. Büyüklük: hesabın %11'i (341,62 $); zarar-kes çalışırsa kayıp hesabın yaklaşık %1,0'i. Bu kural geçmiş veride sınanamadı (geçmiş haber arşivi yok); sonucu kural karnesinde izlenir.",
     "sleeve": "event",
@@ -265,7 +266,8 @@
      "movePct": 8.55,
      "prevClose": 12.51
     },
-    "maintReq": 17.07
+    "maintReq": 17.07,
+    "lastBarTs": "2026-11-16T12:10:00-05:00"
    },
    {
     "stopMode": "event",
@@ -277,21 +279,21 @@
     "shares": 7.7581,
     "avgCost": 154.4327,
     "costBasis": 1198.1,
-    "lastPrice": 154.51,
-    "lastPriceAt": "2026-11-16T11:55:00-05:00",
+    "lastPrice": 154.36,
+    "lastPriceAt": "2026-11-16T12:10:00-05:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (11:55 ET)",
+     "title": "Yahoo Finance 5 dk mum (12:10 ET)",
      "url": "https://finance.yahoo.com/quote/NSIT/"
     },
-    "marketValue": -1198.7,
-    "exposure": 1198.7,
-    "unrealized": -0.6,
-    "unrealizedPct": -0.05,
+    "marketValue": -1197.54,
+    "exposure": 1197.54,
+    "unrealized": 0.56,
+    "unrealizedPct": 0.05,
     "openedAt": "2026-11-16",
     "openedTs": "2026-11-16T11:55:00-05:00",
     "lastAddDate": "2026-11-16",
     "stopPrice": 158.39,
-    "extremeSinceEntry": 154.50999450683594,
+    "extremeSinceEntry": 153.88,
     "tookProfit": false,
     "thesis": "Haber takibi (deneysel kural): NSIT (Insight Enterprises, Inc.) bugün −%8,44. Haber türü: Finansal sıkıntı / sulandırma (sert, olumsuz). “Insight Enterprises Plans $650 Million Convertible Notes Offering” (MT Newswires). Fiyat günün aralığının alt kısmında, yani piyasa haberi geri almıyor; haber yönünde short açıldı. Zarar-kes 158,39 $ (risk %2,5); çıkış 2026-11-19 kapanışında. Büyüklük: hesabın %40'i (1.198,11 $); zarar-kes çalışırsa kayıp hesabın yaklaşık %1,0'i. Bu kural geçmiş veride sınanamadı (geçmiş haber arşivi yok); sonucu kural karnesinde izlenir.",
     "sleeve": "event",
@@ -318,7 +320,8 @@
      "movePct": -8.44,
      "prevClose": 168.76
     },
-    "maintReq": 59.94
+    "maintReq": 59.88,
+    "lastBarTs": "2026-11-16T12:10:00-05:00"
    }
   ],
   "realizedPL": 0.0,
@@ -332,30 +335,30 @@
    "dividendsPaid": 0.0,
    "dividendsReceived": 0.0
   },
-  "longValue": 5009.05,
-  "shortValue": 1198.7,
-  "positionsValue": 3810.35,
-  "totalValue": 3006.57,
-  "grossExposure": 6207.76,
-  "netExposure": 3810.35,
-  "leverage": 2.065,
-  "maintenanceReq": 310.39,
-  "marginBuffer": 2696.18,
-  "regTInitialReq": 620.78,
-  "regTExcess": 2385.79,
-  "buyingPower": 23857.94,
+  "longValue": 5006.41,
+  "shortValue": 1197.54,
+  "positionsValue": 3808.87,
+  "totalValue": 3005.09,
+  "grossExposure": 6203.95,
+  "netExposure": 3808.87,
+  "leverage": 2.064,
+  "maintenanceReq": 310.2,
+  "marginBuffer": 2694.89,
+  "regTInitialReq": 620.4,
+  "regTExcess": 2384.69,
+  "buyingPower": 23846.95,
   "marginEligible": true,
-  "closeoutMovePct": 43.43,
+  "closeoutMovePct": 43.44,
   "bustCount": 0,
   "paidInTotal": 3000.0,
   "lostToBusts": 0,
-  "totalPL": 6.57,
-  "totalPLPct": 0.22,
-  "twrPct": 0.22,
-  "asOf": "2026-11-16T12:02:02-05:00",
-  "benchmarkPrice": 745.02,
-  "benchmarkValue": 2992.41,
-  "benchmarkTwrPct": -0.25
+  "totalPL": 5.09,
+  "totalPLPct": 0.17,
+  "twrPct": 0.17,
+  "asOf": "2026-11-16T12:12:17-05:00",
+  "benchmarkPrice": 744.82,
+  "benchmarkValue": 2991.61,
+  "benchmarkTwrPct": -0.28
  },
  "meta": {
   "engine": "x10 v7",
@@ -370,9 +373,9 @@
    "ath": 759.66,
    "athDate": "2026-10-06",
    "athChecked": "2026-11-16",
-   "price": 667.54,
-   "at": "2026-11-16T12:00:00-05:00",
-   "ddPct": -12.13,
+   "price": 667.24,
+   "at": "2026-11-16T12:10:00-05:00",
+   "ddPct": -12.17,
    "level": "correction",
    "triggerPrice": 607.73,
    "correctionPrice": 683.69
@@ -396,7 +399,7 @@
     "2026-11-16"
    ]
   },
-  "lastRunAt": "2026-11-16T12:02:02-05:00",
+  "lastRunAt": "2026-11-16T12:12:17-05:00",
   "lastError": null,
   "spikeScanDate": "2026-11-16",
   "spikeScan": {
@@ -2989,26 +2992,26 @@
  "snapshots": [
   {
    "date": "2026-11-16",
-   "at": "2026-11-16T12:02:02-05:00",
-   "totalValue": 3006.57,
+   "at": "2026-11-16T12:12:17-05:00",
+   "totalValue": 3005.09,
    "cash": -803.78,
-   "positionsValue": 3810.35,
-   "plPct": 0.22,
-   "twrPct": 0.22,
+   "positionsValue": 3808.87,
+   "plPct": 0.17,
+   "twrPct": 0.17,
    "netDeposits": 3000.0,
-   "leverage": 2.065,
-   "benchmarkPrice": 745.02,
-   "benchmarkValue": 2992.41,
+   "leverage": 2.064,
+   "benchmarkPrice": 744.82,
+   "benchmarkValue": 2991.61,
    "holdings": [
     {
      "ticker": "QQQ",
      "side": "long",
-     "value": 4238.95
+     "value": 4237.04
     },
     {
      "ticker": "HTHT",
      "side": "long",
-     "value": 428.66
+     "value": 427.93
     },
     {
      "ticker": "AVEX",
@@ -3018,7 +3021,7 @@
     {
      "ticker": "NSIT",
      "side": "short",
-     "value": -1198.7
+     "value": -1197.54
     }
    ]
   }
@@ -3712,6 +3715,100 @@
      "NSIT short (1.198,10 $)"
     ],
     "note": "NSIT zarar-kes seviyesine %3'ten yakın"
+   },
+   {
+    "at": "2026-11-16T12:07:15-05:00",
+    "kind": "guard",
+    "status": "uyari",
+    "spyPrice": 744.78,
+    "spyChangePct": -1.27,
+    "totalValue": 3004.04,
+    "benchmarkValue": 2991.44,
+    "leverage": 2.066,
+    "marginBuffer": 2693.73,
+    "positions": [
+     {
+      "ticker": "QQQ",
+      "side": "long",
+      "price": 667.36,
+      "dayChangePct": -1.84,
+      "stopPrice": null,
+      "distancePct": null
+     },
+     {
+      "ticker": "HTHT",
+      "side": "long",
+      "price": 55.61,
+      "dayChangePct": 10.36,
+      "stopPrice": 52.03,
+      "distancePct": 6.88
+     },
+     {
+      "ticker": "AVEX",
+      "side": "long",
+      "price": 13.575,
+      "dayChangePct": 8.51,
+      "stopPrice": 12.49,
+      "distancePct": 8.69
+     },
+     {
+      "ticker": "NSIT",
+      "side": "short",
+      "price": 154.57,
+      "dayChangePct": -8.41,
+      "stopPrice": 158.39,
+      "distancePct": 2.47
+     }
+    ],
+    "actions": [],
+    "note": "NSIT zarar-kes seviyesine %3'ten yakın"
+   },
+   {
+    "at": "2026-11-16T12:12:17-05:00",
+    "kind": "guard",
+    "status": "uyari",
+    "spyPrice": 744.82,
+    "spyChangePct": -1.27,
+    "totalValue": 3005.09,
+    "benchmarkValue": 2991.61,
+    "leverage": 2.064,
+    "marginBuffer": 2694.89,
+    "positions": [
+     {
+      "ticker": "QQQ",
+      "side": "long",
+      "price": 667.2395,
+      "dayChangePct": -1.86,
+      "stopPrice": null,
+      "distancePct": null
+     },
+     {
+      "ticker": "HTHT",
+      "side": "long",
+      "price": 55.585,
+      "dayChangePct": 10.31,
+      "stopPrice": 52.03,
+      "distancePct": 6.83
+     },
+     {
+      "ticker": "AVEX",
+      "side": "long",
+      "price": 13.59,
+      "dayChangePct": 8.63,
+      "stopPrice": 12.49,
+      "distancePct": 8.81
+     },
+     {
+      "ticker": "NSIT",
+      "side": "short",
+      "price": 154.36,
+      "dayChangePct": -8.53,
+      "stopPrice": 158.39,
+      "distancePct": 2.61
+     }
+    ],
+    "actions": [],
+    "note": "NSIT zarar-kes seviyesine %3'ten yakın"
    }
   ]
  },
@@ -4181,7 +4278,7 @@
   "start": "2026-11-16",
   "startAt": "2026-11-16T09:30:32-05:00",
   "end": "2027-02-16",
-  "asOf": "2026-11-16T12:02:02-05:00",
+  "asOf": "2026-11-16T12:12:17-05:00",
   "strategy": "v7",
   "history": [
    {
@@ -4264,12 +4361,12 @@
   "daysElapsed": 1,
   "daysTotal": 62,
   "finished": false,
-  "returnPct": 0.22,
-  "spyReturnPct": -0.25,
-  "excessPct": 0.47,
+  "returnPct": 0.17,
+  "spyReturnPct": -0.28,
+  "excessPct": 0.45,
   "maxDrawdownPct": -0.63,
   "maxDrawdownAt": "2026-11-16T10:26:10-05:00",
-  "drawdownNowPct": -0.5,
+  "drawdownNowPct": -0.55,
   "trades": {
    "closed": 0,
    "wins": 0,
@@ -4282,9 +4379,9 @@
   "monthly": [
    {
     "month": "2026-11",
-    "returnPct": 0.22,
-    "spyPct": -0.25,
-    "excessPct": 0.47
+    "returnPct": 0.17,
+    "spyPct": -0.28,
+    "excessPct": 0.45
    }
   ],
   "uptime": {
@@ -4302,7 +4399,7 @@
     "key": "spy",
     "label": "SPY'ı geçmek (masraflar düşülmüş)",
     "ok": true,
-    "value": 0.47,
+    "value": 0.45,
     "unit": "pct"
    },
    {
