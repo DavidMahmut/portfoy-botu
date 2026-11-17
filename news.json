@@ -1,19 +1,19 @@
 {
- "asOf": "2026-11-17T09:40:58-05:00",
+ "asOf": "2026-11-17T10:11:09-05:00",
  "sections": [
   {
    "ticker": "QQQ",
    "name": "Invesco QQQ (Nasdaq 100)",
    "role": "long",
-   "dayChangePct": -0.1,
-   "unrealizedPct": -0.76,
+   "dayChangePct": -0.48,
+   "unrealizedPct": -1.13,
    "items": [
     {
      "title": "Stock Market Today: Dow Slides After Surprise Retail Sales; Nvidia Rises With Earnings On Tap (Live Coverage)",
      "summary": "The Dow Jones index dropped Tuesday after surprise retail sales data. Nvidia stock bounced before its earnings report.",
      "publisher": "Investor's Business Daily",
      "url": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-retail-sales-nvidia-earnings-nvda-stock/?src=A00220&yptr=yahoo",
-     "at": "2026-11-17T09:18-05:00",
+     "at": "2026-11-17T09:43-05:00",
      "tags": [
       "Earnings",
       "AI & chips"
@@ -57,8 +57,8 @@
    "ticker": "HTHT",
    "name": "H World Group Limited",
    "role": "long",
-   "dayChangePct": -0.76,
-   "unrealizedPct": -2.23,
+   "dayChangePct": -0.59,
+   "unrealizedPct": -2.07,
    "items": [
     {
      "title": "H World Group (HTHT) Stock May Be 17% Undervalued On Raised 2026 Outlook",
@@ -104,8 +104,8 @@
    "ticker": "AVEX",
    "name": "AEVEX Corp.",
    "role": "long",
-   "dayChangePct": 1.27,
-   "unrealizedPct": -0.2,
+   "dayChangePct": 0.0,
+   "unrealizedPct": -1.45,
    "items": [
     {
      "title": "AEVEX (AVEX) Stock Could Be Undervalued On Raised 2026 Guidance",
@@ -135,8 +135,8 @@
    "ticker": "NSIT",
    "name": "Insight Enterprises, Inc.",
    "role": "short",
-   "dayChangePct": -0.67,
-   "unrealizedPct": 0.12,
+   "dayChangePct": 0.35,
+   "unrealizedPct": -0.9,
    "items": [
     {
      "title": "Update: Insight Enterprises Shares Fall After $650 Million Convertible Notes Offering",
@@ -165,100 +165,6 @@
    ]
   },
   {
-   "ticker": "MU",
-   "name": "Micron Technology",
-   "role": "watch-long",
-   "dayChangePct": null,
-   "unrealizedPct": null,
-   "items": [
-    {
-     "title": "Should You Buy Micron Stock Before Dec. 9?",
-     "summary": "Micron is allowed to begin buying back stock on Dec. 9.",
-     "publisher": "Motley Fool",
-     "url": "https://www.fool.com/investing/2026/11/17/should-you-buy-micron-stock-before-dec-9/",
-     "at": "2026-11-17T09:20-05:00",
-     "tags": []
-    },
-    {
-     "title": "Chip Stocks Are Having Their Worst Two Months Since 2008",
-     "summary": "Nvidia reports earnings Tuesday with no permanent CEO, a new export rule hanging over the sector, and a 2008 comparison that hinges on one number. Where the SOX finishes November could decide whether this selloff is over.",
-     "publisher": "24/7 Wall St.",
-     "url": "https://247wallst.com/investing/2026/11/17/chip-stocks-are-having-their-worst-two-months-since-2008/",
-     "at": "2026-11-17T09:04-05:00",
-     "tags": [
-      "Earnings",
-      "AI & chips",
-      "Corporate"
-     ]
-    },
-    {
-     "title": "There are 8 Reasons I’m Buying SanDisk Now at This Deep Discount",
-     "summary": "SanDisk stock just lost more than a third of its value in a month, yet the business behind it keeps posting numbers that look almost impossible. One investor explains why he treats the panic as a buying window and what he fears most.",
-     "publisher": "24/7 Wall St.",
-     "url": "https://247wallst.com/investing/2026/11/17/there-are-8-reasons-im-buying-sandisk-now-at-this-deep-discount/",
-     "at": "2026-11-17T08:45-05:00",
-     "tags": []
-    },
-    {
-     "title": "Prediction: This Memory Stock Will Be 2027's Best-Performing AI Stock",
-     "summary": "Micron's AI memory demand, supply constraints, and low forward valuation could make it a standout AI stock in 2027, but cyclical risks remain.",
-     "publisher": "Motley Fool",
-     "url": "https://www.fool.com/investing/2026/11/17/prediction-this-memory-stock-will-be-2027s-best-pe/",
-     "at": "2026-11-17T08:25-05:00",
-     "tags": [
-      "AI & chips"
-     ]
-    }
-   ]
-  },
-  {
-   "ticker": "DELL",
-   "name": "Dell Technologies",
-   "role": "watch-long",
-   "dayChangePct": null,
-   "unrealizedPct": null,
-   "items": [
-    {
-     "title": "Cisco Is Cheaper, Arista Is The Better Business",
-     "summary": "Today's big story: Could Nvidia Stock Fall 50%? Follow The Cash.",
-     "publisher": "Trefis",
-     "url": "https://www.trefis.com/stock/csco/articles/625629/cisco-is-cheaper-arista-is-the-better-business/2026-11-17",
-     "at": "2026-11-17T09:13-05:00",
-     "tags": [
-      "AI & chips"
-     ]
-    },
-    {
-     "title": "What Comes Next For Dell Technologies After A 164% Gain",
-     "summary": "If Dell Technologies was on your watchlist rather than in your portfolio, the recent move may feel expensive in hindsight. Holding Dell Technologies over the past year would have returned 164.5%, including dividends. That outcome arrived after a year packed wi…",
-     "publisher": "Simply Wall St.",
-     "url": "https://finance.yahoo.com/markets/stocks/articles/comes-next-dell-technologies-164-131006412.html",
-     "at": "2026-11-17T08:10-05:00",
-     "tags": []
-    },
-    {
-     "title": "What Are Apple Investors Betting On?",
-     "summary": "Today's big story: Could Nvidia Stock Fall 50%? Follow The Cash.",
-     "publisher": "Trefis",
-     "url": "https://www.trefis.com/stock/aapl/articles/625738/what-are-apple-investors-betting-on/2026-11-17",
-     "at": "2026-11-17T07:28-05:00",
-     "tags": [
-      "AI & chips"
-     ]
-    },
-    {
-     "title": "What Was Seagate Telling You Before Its Stock Ran?",
-     "summary": "Today's big story: Could Nvidia Stock Fall 50%? Follow The Cash.",
-     "publisher": "Trefis",
-     "url": "https://www.trefis.com/stock/stx/articles/625553/what-was-seagate-telling-you-before-its-stock-ran-2/2026-11-17",
-     "at": "2026-11-17T06:29-05:00",
-     "tags": [
-      "AI & chips"
-     ]
-    }
-   ]
-  },
-  {
    "ticker": "AMD",
    "name": "Advanced Micro Devices",
    "role": "watch-long",
@@ -266,47 +172,43 @@
    "unrealizedPct": null,
    "items": [
     {
-     "title": "Can Qualcomm Stock Jump 40%?",
+     "title": "What Is Behind Joby Aviation Stock's 7% Slide?",
      "summary": "Today's big story: Could Nvidia Stock Fall 50%? Follow The Cash.",
      "publisher": "Trefis",
-     "url": "https://www.trefis.com/stock/qcom/articles/625730/can-qualcomm-stock-jump-40/2026-11-17",
-     "at": "2026-11-17T09:13-05:00",
+     "url": "https://www.trefis.com/stock/joby/articles/625797/why-did-joby-aviation-stock-fall-7/2026-11-17",
+     "at": "2026-11-17T09:40-05:00",
      "tags": [
       "AI & chips"
      ]
     },
     {
-     "title": "Why Is Everybody Paying A Premium For AMD Stock?",
+     "title": "Roblox Stock Fell Nearly 8%. What Happened?",
      "summary": "Today's big story: Could Nvidia Stock Fall 50%? Follow The Cash.",
      "publisher": "Trefis",
-     "url": "https://www.trefis.com/stock/amd/articles/625705/why-is-everybody-paying-a-premium-for-amd-stock/2026-11-17",
-     "at": "2026-11-17T09:13-05:00",
+     "url": "https://www.trefis.com/stock/rblx/articles/625794/why-did-roblox-stock-fall-nearly-8/2026-11-17",
+     "at": "2026-11-17T09:40-05:00",
      "tags": [
       "AI & chips"
      ]
     },
     {
-     "title": "AMD Could Be Closing the Gap With Nvidia. Here’s Where I See the Stock in 2028",
-     "summary": "AMD just posted the biggest quarter in its history, yet its stock whipsaws like a small cap while Nvidia scrambles for a CEO. One bold multiple-based argument shows what would have to go right, and what could derail it.",
-     "publisher": "24/7 Wall St.",
-     "url": "https://247wallst.com/investing/2026/11/17/amd-could-be-closing-the-gap-with-nvidia-heres-where-i-see-the-stock-in-2028/",
-     "at": "2026-11-17T08:47-05:00",
+     "title": "What Is Behind AMD Stock's Nearly 6% Slide?",
+     "summary": "Today's big story: Could Nvidia Stock Fall 50%? Follow The Cash.",
+     "publisher": "Trefis",
+     "url": "https://www.trefis.com/stock/amd/articles/625816/why-did-amd-stock-fall-nearly-6/2026-11-17",
+     "at": "2026-11-17T09:40-05:00",
      "tags": [
-      "Earnings",
-      "AI & chips",
-      "Corporate"
+      "AI & chips"
      ]
     },
     {
-     "title": "52 Analysts See This Much Upside for Nvidia Stock. Here’s My Take",
-     "summary": "Nvidia's CEO just resigned, the stock has sunk 30% in a month, and yet record orders keep pouring in. One analyst camp sees a far bigger rebound than the model does, so which side has the better read on the damage?",
-     "publisher": "24/7 Wall St.",
-     "url": "https://247wallst.com/investing/2026/11/17/52-analysts-see-this-much-upside-for-nvidia-stock-heres-my-take/",
-     "at": "2026-11-17T08:04-05:00",
+     "title": "What Sent Marvell Stock Down Over 7%?",
+     "summary": "Today's big story: Could Nvidia Stock Fall 50%? Follow The Cash.",
+     "publisher": "Trefis",
+     "url": "https://www.trefis.com/stock/mrvl/articles/625792/why-did-marvell-stock-fall-over-7/2026-11-17",
+     "at": "2026-11-17T09:40-05:00",
      "tags": [
-      "Analysts",
-      "AI & chips",
-      "Corporate"
+      "AI & chips"
      ]
     }
    ]
@@ -379,6 +281,16 @@
      ]
     },
     {
+     "title": "Cisco Is Cheaper, Arista Is The Better Business",
+     "summary": "Today's big story: Could Nvidia Stock Fall 50%? Follow The Cash.",
+     "publisher": "Trefis",
+     "url": "https://www.trefis.com/stock/csco/articles/625629/cisco-is-cheaper-arista-is-the-better-business/2026-11-17",
+     "at": "2026-11-17T09:13-05:00",
+     "tags": [
+      "AI & chips"
+     ]
+    },
+    {
      "title": "“The Single Best Replacement for Jensen”: Palo Alto CEO Nikesh Arora. There’s Only One Problem",
      "summary": "Key TakeawaysSequoia’s Shaun Maguire and 20VC’s Harry Stebbings have named Palo Alto Networks CEO Nikesh Arora as their pick to replace Jensen Huang at Nvidia, which is searching for a new CEO. The louder the case for Arora gets, the more key-man risk Palo Alt…",
      "publisher": "TIKR",
@@ -399,22 +311,125 @@
       "Earnings",
       "AI & chips"
      ]
-    },
+    }
+   ]
+  },
+  {
+   "ticker": "COP",
+   "name": "ConocoPhillips",
+   "role": "watch-long",
+   "dayChangePct": null,
+   "unrealizedPct": null,
+   "items": [
     {
-     "title": "Earnings to watch: NVIDIA, Walmart, Home Depot and more report this week",
-     "summary": "Investing.com -- This week’s calendar pairs the consumer (Home Depot, Lowe’s, Target, TJX, Walmart) with the AI trade (NVIDIA). Data is from the earnings calendar as of Mon, Nov 16, 2026 at 3:17 PM EST. Estimates are consensus and can shift.",
-     "publisher": "Investing.com",
-     "url": "https://finance.yahoo.com/markets/stocks/articles/earnings-watch-nvidia-walmart-home-205309775.html",
-     "at": "2026-11-16T15:53-05:00",
+     "title": "What Occidental's Debt Cut Means For Its Stock",
+     "summary": "Today's big story: Could Nvidia Stock Fall 50%? Follow The Cash.",
+     "publisher": "Trefis",
+     "url": "https://www.trefis.com/stock/oxy/articles/625684/what-occidentals-debt-cut-means-for-its-stock/2026-11-17",
+     "at": "2026-11-17T09:13-05:00",
      "tags": [
-      "Earnings",
       "AI & chips"
      ]
+    },
+    {
+     "title": "Is Chevron Stock Overpriced Versus Its Oil Rivals?",
+     "summary": "Today's big story: Could Nvidia Stock Fall 50%? Follow The Cash.",
+     "publisher": "Trefis",
+     "url": "https://www.trefis.com/stock/cvx/articles/625664/is-chevron-stock-overpriced-versus-its-oil-rivals/2026-11-17",
+     "at": "2026-11-17T09:13-05:00",
+     "tags": [
+      "Energy",
+      "AI & chips"
+     ]
+    },
+    {
+     "title": "Why Pay More For Exxon Mobil Stock Than Chevron?",
+     "summary": "Today's big story: Could Nvidia Stock Fall 50%? Follow The Cash.",
+     "publisher": "Trefis",
+     "url": "https://www.trefis.com/stock/xom/articles/625652/why-pay-more-for-exxon-mobil-stock-than-chevron/2026-11-17",
+     "at": "2026-11-17T09:13-05:00",
+     "tags": [
+      "AI & chips"
+     ]
+    },
+    {
+     "title": "Could Occidental Petroleum Be The Value Stock For Your Portfolio?",
+     "summary": "For questions about this article or underlying research, email help@trefis.com.",
+     "publisher": "Trefis",
+     "url": "https://www.trefis.com/stock/oxy/articles/625150/could-occidental-petroleum-be-the-value-stock-for-your-portfolio/2026-11-16",
+     "at": "2026-11-16T15:55-05:00",
+     "tags": []
+    }
+   ]
+  },
+  {
+   "ticker": "XOM",
+   "name": "Exxon Mobil",
+   "role": "watch-long",
+   "dayChangePct": null,
+   "unrealizedPct": null,
+   "items": [
+    {
+     "title": "How Boomers Can Turn $150,000 Into Passive Income With These 4 Energy Dividend Stocks",
+     "summary": "Social Security rarely stretches as far as a paycheck did, and selling shares to cover bills drains the nest egg. Four pipeline and oil giants offer another route, though one of them carries a tax quirk that can trip up IRA holders.",
+     "publisher": "24/7 Wall St.",
+     "url": "https://247wallst.com/investing/2026/11/17/how-boomers-can-turn-150000-into-passive-income-with-these-4-energy-dividend-stocks/",
+     "at": "2026-11-17T07:45-05:00",
+     "tags": [
+      "Energy"
+     ]
+    },
+    {
+     "title": "ExxonMobil Is Up 40% in a Year. Barclays Sees Another 23%",
+     "summary": "Key TakeawaysBarclays raised its ExxonMobil price target to $206 from $200 and kept its Overweight rating. The new target is 23% above the stock price, after a 40% gain in a year.",
+     "publisher": "TIKR",
+     "url": "https://www.tikr.com/blog/exxonmobil-is-up-40-in-a-year-barclays-sees-another-23?ref=yahoofinance&tlnk=yf-261117-gcvw35w5",
+     "at": "2026-11-17T07:45-05:00",
+     "tags": [
+      "Analysts"
+     ]
+    },
+    {
+     "title": "What iShares S&P 500 Value ETF (IVE) Sold: Apple Leads on Nov. 13",
+     "summary": "The fund sold $84.8 million of stock across 429 positions and bought nothing on Friday.",
+     "publisher": "GuruFocus.com",
+     "url": "https://finance.yahoo.com/markets/stocks/articles/ishares-p-500-value-etf-110506472.html",
+     "at": "2026-11-17T06:05-05:00",
+     "tags": []
+    },
+    {
+     "title": "iShares Core Dividend Growth (DGRO) Buys $4.2 Million More Apple on Nov. 13",
+     "summary": "The fund added $106.8 million across 377 positions, with Apple, Microsoft, AbbVie, ExxonMobil and Johnson & Johnson leading the buys.",
+     "publisher": "GuruFocus.com",
+     "url": "https://finance.yahoo.com/markets/stocks/articles/ishares-core-dividend-growth-dgro-110451386.html",
+     "at": "2026-11-17T06:04-05:00",
+     "tags": []
     }
    ]
   }
  ],
  "market": [
+  {
+   "title": "BC-Crude Oil Futures",
+   "summary": "NEW YORK (AP) — Prices as of 10:00:00 AM Tuesday, November 17.Light Sweet Crude (NYMX)1,000 bbl.",
+   "publisher": "Associated Press",
+   "url": "https://finance.yahoo.com/markets/commodities/articles/bc-crude-oil-futures-150015428.html",
+   "at": "2026-11-17T10:00-05:00",
+   "tags": [
+    "Energy"
+   ]
+  },
+  {
+   "title": "Merck Stock's $1.3 Billion China Problem Goes Quiet",
+   "summary": "Today's big story: Could Nvidia Stock Fall 50%? Follow The Cash.",
+   "publisher": "Trefis",
+   "url": "https://www.trefis.com/stock/mrk/articles/625733/merck-stocks-1-3-billion-china-problem-goes-quiet/2026-11-17",
+   "at": "2026-11-17T09:40-05:00",
+   "tags": [
+    "Policy & politics",
+    "AI & chips"
+   ]
+  },
   {
    "title": "Phillips 66 and Valero Are Turning Strong Refining Margins Into Bigger Dividends",
    "summary": "Refiners are sitting on a windfall that has nothing to do with the price of oil. Two of them are sharing it with shareholders, but only one dividend looks built to survive a weak year with room to spare.",
@@ -436,311 +451,289 @@
    ]
   },
   {
-   "title": "Chevron Reportedly Nears $5 Billion Deal to Acquire Majority Stake in Beacon Offshore Energy",
-   "summary": "Chevron Corp (NYSE:CVX) is reportedly close to reaching an agreement to acquire a majority stake in Beacon Offshore Energy in a transaction valued at approximately $5 billion, according to a Financial Times report published on Monday. The US oil producer has m…",
-   "publisher": "InvestorsHub",
-   "url": "https://investorshub.advfn.com/market-news/article/40180/chevron-reportedly-nears-5-billion-deal-to-acquire-majority-stake-in-beacon-offshore-energy",
-   "at": "2026-11-17T06:21-05:00",
-   "tags": [
-    "Energy",
-    "Corporate"
-   ]
-  },
-  {
-   "title": "Microsoft Corporation (MSFT) Climbs Amid Broad-Based Growth Drivers",
-   "summary": "Baron Capital, an investment management company, released its Q3 2026 investor letter for the “Baron Durable Advantage Fund”. The letter can be downloaded here. In the quarter, the fund returned 2.2%, in line with the S&P 500’s 2.3%. Year to date, the fund is …",
-   "publisher": "Insider Monkey",
-   "url": "https://finance.yahoo.com/markets/stocks/articles/microsoft-corporation-msft-climbs-amid-142912051.html",
-   "at": "2026-11-17T09:29-05:00",
-   "tags": [
-    "Earnings"
-   ]
-  },
-  {
-   "title": "Sector Update: Energy Stocks Advance Premarket Tuesday",
-   "summary": "Energy stocks were advancing premarket Tuesday, with the State Street Energy Select Sector SPDR ETF",
-   "publisher": "MT Newswires",
-   "url": "https://finance.yahoo.com/energy/articles/sector-energy-stocks-advance-premarket-142445991.html",
-   "at": "2026-11-17T09:24-05:00",
-   "tags": []
-  },
-  {
-   "title": "Goldman Sachs is looking for a big year for stocks in 2027",
-   "summary": "Goldman Sachs is backing up the truck on stocks for 2027.",
-   "publisher": "Yahoo Finance",
-   "url": "https://finance.yahoo.com/markets/article/goldman-sachs-is-looking-for-a-big-year-for-stocks-in-2027-142151047.html",
-   "at": "2026-11-17T09:21-05:00",
-   "tags": []
-  },
-  {
-   "title": "Has McDonald's Stock Become A Different Bet?",
-   "summary": "Today's big story: Could Nvidia Stock Fall 50%? Follow The Cash.",
-   "publisher": "Trefis",
-   "url": "https://www.trefis.com/stock/mcd/articles/625736/has-mcdonalds-stock-become-a-different-bet/2026-11-17",
-   "at": "2026-11-17T09:13-05:00",
-   "tags": [
-    "AI & chips"
-   ]
-  },
-  {
-   "title": "Should You Buy And Hold Airbnb Stock Now?",
-   "summary": "Today's big story: Could Nvidia Stock Fall 50%? Follow The Cash.",
-   "publisher": "Trefis",
-   "url": "https://www.trefis.com/stock/abnb/articles/625708/should-you-buy-and-hold-airbnb-stock-now/2026-11-17",
-   "at": "2026-11-17T09:13-05:00",
-   "tags": [
-    "AI & chips"
-   ]
-  },
-  {
-   "title": "One Reason Lululemon Stock Looks Better Than Its Price",
-   "summary": "Today's big story: Could Nvidia Stock Fall 50%? Follow The Cash.",
-   "publisher": "Trefis",
-   "url": "https://www.trefis.com/stock/lulu/articles/625725/one-reason-lululemon-stock-looks-better-than-its-price/2026-11-17",
-   "at": "2026-11-17T09:13-05:00",
-   "tags": [
-    "AI & chips"
-   ]
-  },
-  {
-   "title": "What Could Lift T-Mobile Stock?",
-   "summary": "Today's big story: Could Nvidia Stock Fall 50%? Follow The Cash.",
-   "publisher": "Trefis",
-   "url": "https://www.trefis.com/stock/tmus/articles/625698/what-could-lift-t-mobile-stock/2026-11-17",
-   "at": "2026-11-17T09:13-05:00",
-   "tags": [
-    "AI & chips"
-   ]
-  },
-  {
-   "title": "TSX futures edge lower ahead of Nvidia earnings poised to test AI trade",
-   "summary": "Investing.com - Futures linked to Canada’s main stock index pointed lower on Tuesday, as investors awaited key earnings from chip giant Nvidia that could sway sentiment around the artificial intelligence trade.",
-   "publisher": "Investing.com",
-   "url": "https://finance.yahoo.com/markets/stocks/articles/tsx-futures-edge-lower-ahead-140609784.html",
+   "title": "Treasury Yields Rise Amid Resilient U.S. Sales, Prices",
+   "summary": "Treasury yields rose, gaining momentum as October retail sales surprised on the upside and import prices rose more than expected.",
+   "publisher": "The Wall Street Journal",
+   "url": "https://www.wsj.com/finance/jgbs-rise-tracking-gains-in-u-s-treasurys-79322f27?siteid=yhoof2&yptr=yahoo",
    "at": "2026-11-17T09:06-05:00",
+   "tags": [
+    "Fed & rates"
+   ]
+  },
+  {
+   "title": "PBR Q3 Earnings Call Highlights Output Growth and Pricing Scrutiny",
+   "summary": "Petrobras raises 2026 production, capital spending and cash flow outlooks as stronger oil prices boost growth plans amid scrutiny of its fuel-pricing strategy.",
+   "publisher": "Zacks",
+   "url": "https://finance.yahoo.com/energy/articles/pbr-q3-earnings-call-highlights-140000868.html",
+   "at": "2026-11-17T09:00-05:00",
+   "tags": [
+    "Earnings",
+    "Energy"
+   ]
+  },
+  {
+   "title": "Oil Prices Rebound as Middle East Shipping Risks Persist",
+   "summary": "Oil prices recovered from initial losses as traders weighed continued threats to Middle Eastern oil shipments against expectations of a global supply surplus.",
+   "publisher": "The Wall Street Journal",
+   "url": "https://www.wsj.com/finance/commodities-futures/oil-prices-continue-to-fall-as-global-supply-surplus-weighs-7b54e93b?siteid=yhoof2&yptr=yahoo",
+   "at": "2026-11-17T08:17-05:00",
+   "tags": [
+    "Energy"
+   ]
+  },
+  {
+   "title": "Stocks slip ahead of Nvidia earnings, Home Depot shares slide: AlphaCheck",
+   "summary": "Stocks slipped on Tuesday ahead of Nvidia's quarterly results.",
+   "publisher": "Yahoo Finance",
+   "url": "https://finance.yahoo.com/markets/article/copy-copy-tech-rises-coreweave-results-reignite-ai-trade-alphacheck-145755423.html",
+   "at": "2026-11-17T09:57-05:00",
    "tags": [
     "Earnings",
     "AI & chips"
    ]
   },
   {
-   "title": "Cathie Wood and Jim Cramer Agree on These 10 Stocks: Latest 13F",
-   "summary": "Jim Cramer and Cathie Wood are two of the most closely followed voices on Wall Street, and we regularly cover the stocks they like. Once a Wall Street darling, Cathie Wood has struggled to replicate her success from the pandemic days as shifting market dynamic…",
+   "title": "Baron Fund’s Insights on NVIDIA Corporation (NVDA)",
+   "summary": "Baron Capital, an investment management company, released its Q3 2026 investor letter for the “Baron Durable Advantage Fund”. The letter can be downloaded here. In the quarter, the fund returned 2.2%, in line with the S&P 500’s 2.3%. Year to date, the fund is …",
    "publisher": "Insider Monkey",
-   "url": "https://finance.yahoo.com/markets/stocks/articles/cathie-wood-jim-cramer-agree-132819758.html",
-   "at": "2026-11-17T08:28-05:00",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/baron-fund-insights-nvidia-corporation-144919257.html",
+   "at": "2026-11-17T09:49-05:00",
+   "tags": [
+    "Earnings",
+    "AI & chips"
+   ]
+  },
+  {
+   "title": "Prediction: Dec. 9 Will Mark a Turning Point for the S&P 500",
+   "summary": "The markets have been looking shaky recently, and things could get even worse next month.",
+   "publisher": "Motley Fool",
+   "url": "https://www.fool.com/investing/2026/11/17/prediction-dec-9-will-mark-a-turning-point-for-the-s-and-p-500/",
+   "at": "2026-11-17T09:47-05:00",
    "tags": []
+  },
+  {
+   "title": "Meta Platforms (META) Surges as AI Ranking Models Accelerate U.S. Ad Revenue Growth to 31%",
+   "summary": "Baron Capital, an investment management company, released its Q3 2026 investor letter for the “Baron Durable Advantage Fund”. The letter can be downloaded here. In the quarter, the fund returned 2.2%, in line with the S&P 500’s 2.3%. Year to date, the fund is …",
+   "publisher": "Insider Monkey",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/meta-platforms-meta-surges-ai-144644684.html",
+   "at": "2026-11-17T09:46-05:00",
+   "tags": [
+    "Earnings",
+    "AI & chips"
+   ]
+  },
+  {
+   "title": "Netflix Stock Down 47%: Too Early To Buy?",
+   "summary": "Today's big story: Could Nvidia Stock Fall 50%? Follow The Cash.",
+   "publisher": "Trefis",
+   "url": "https://www.trefis.com/stock/nflx/articles/625752/netflix-stock-down-47-too-early-to-buy/2026-11-17",
+   "at": "2026-11-17T09:40-05:00",
+   "tags": [
+    "AI & chips"
+   ]
   }
  ],
  "seekingAlpha": {
-  "asOf": "2026-11-17T09:40:58-05:00",
+  "asOf": "2026-11-17T10:11:09-05:00",
   "ok": true,
   "stale": false,
   "via": "seekingalpha.com RSS",
   "errors": [],
   "feedCounts": {
    "Piyasa haberleri": 7,
-   "Tüm yazılar": 25
+   "Tüm yazılar": 26
   },
   "market": [
    {
-    "title": "The Elephant In The Room",
-    "url": "https://seekingalpha.com/article/4969066-the-elephant-in-the-room",
-    "at": "2026-11-17T09:39-05:00",
+    "title": "Is The Inflation Shock Starting To Lose Momentum?",
+    "url": "https://seekingalpha.com/article/4969079-is-inflation-shock-starting-lose-momentum",
+    "at": "2026-11-17T10:10-05:00",
     "kind": "analysis",
     "symbols": [
+     "SPX",
+     "SP500",
+     "SPY",
+     "NDX",
+     "DJI",
+     "RTY"
+    ],
+    "author": null
+   },
+   {
+    "title": "Warsh Must Choose Between Hiking Into An Energy Shock And Trusting AI Disinflation",
+    "url": "https://seekingalpha.com/article/4969108-warsh-must-choose-between-hiking-into-an-energy-shock-and-trusting-ai-disinflation",
+    "at": "2026-11-17T10:10-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "TLT",
+     "TLH",
+     "EDV",
+     "SPTL",
+     "ZROZ",
+     "VGLT"
+    ],
+    "author": null
+   },
+   {
+    "title": "HawkEye 360: A Buy As Space Intelligence Demand Surges",
+    "url": "https://seekingalpha.com/article/4969078-hawkeye-360-buy-as-space-intelligence-demand-surges",
+    "at": "2026-11-17T10:08-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "HAWK"
+    ],
+    "author": null
+   },
+   {
+    "title": "Phillips 66: Priced For A War Premium The Futures Say Won't Last",
+    "url": "https://seekingalpha.com/article/4969074-phillips-66-priced-for-a-war-premium-the-futures-say-wont-last",
+    "at": "2026-11-17T10:06-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "PSX"
+    ],
+    "author": null
+   },
+   {
+    "title": "Business inventories rise in line with consensus; retail inventory growth increases,",
+    "url": "https://seekingalpha.com/news/4673693-business-inventories-rise-in-line-with-consensus-retail-inventory-growth-increases",
+    "at": "2026-11-17T10:05-05:00",
+    "kind": "news",
+    "symbols": [],
+    "author": null
+   },
+   {
+    "title": "Nebius: Everyone Is Selling, Here's Why I'm Buying",
+    "url": "https://seekingalpha.com/article/4969073-nebius-everyone-is-selling-heres-why-im-buying",
+    "at": "2026-11-17T10:04-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "NBIS"
+    ],
+    "author": null
+   },
+   {
+    "title": "Homebuilder sentiment falls in November on affordability concerns",
+    "url": "https://seekingalpha.com/news/4673685-homebuilder-sentiment-falls-in-november-on-affordability-concerns",
+    "at": "2026-11-17T10:02-05:00",
+    "kind": "news",
+    "symbols": [],
+    "author": null
+   },
+   {
+    "title": "T. Rowe Price: The Dividend Is Attractive, But The Turnaround Is Still Missing",
+    "url": "https://seekingalpha.com/article/4969072-t-rowe-price-the-dividend-is-attractive-but-the-turnaround-is-still-missing",
+    "at": "2026-11-17T10:01-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "TROW"
+    ],
+    "author": null
+   },
+   {
+    "title": "Nebius: A $45 Billion AI Reckoning Is Coming",
+    "url": "https://seekingalpha.com/article/4969071-nebius-a-45-billion-ai-reckoning-is-coming",
+    "at": "2026-11-17T10:01-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "MSFT",
      "NVDA",
-     "MU",
-     "ZNVD:CA",
-     "NVDA:CA",
-     "MU:CA",
-     "COST"
+     "ORCL",
+     "META",
+     "CRWV",
+     "CRWV:CA"
     ],
     "author": null
    },
    {
-    "title": "PetroTal Q3 GAAP EPS of -$0.01, revenue of $66.39M",
-    "url": "https://seekingalpha.com/news/4673680-petrotal-q3-gaap-eps-of--001-revenue-of-6639m",
-    "at": "2026-11-17T09:35-05:00",
+    "title": "Nike maps out new growth strategy, sets 2031 financial targets",
+    "url": "https://seekingalpha.com/news/4673678-nike-maps-out-new-growth-strategy-sets-2031-financial-targets",
+    "at": "2026-11-17T10:00-05:00",
     "kind": "news",
     "symbols": [],
     "author": null
    },
    {
-    "title": "MiniMed Group: An Improving Proposition",
-    "url": "https://seekingalpha.com/article/4969015-minimed-group-an-improving-proposition",
-    "at": "2026-11-17T09:35-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "MMED"
-    ],
-    "author": null
-   },
-   {
-    "title": "Tokenization is changing the nature of competition in payments, says Fed's Waller",
-    "url": "https://seekingalpha.com/news/4673607-tokenization-is-changing-the-nature-of-competition-in-payments-says-feds-waller",
-    "at": "2026-11-17T09:34-05:00",
+    "title": "Here are the major earnings after the close Tuesday",
+    "url": "https://seekingalpha.com/news/4672998-here-are-the-major-earnings-after-the-close-tuesday",
+    "at": "2026-11-17T10:00-05:00",
     "kind": "news",
     "symbols": [],
     "author": null
    },
    {
-    "title": "MDU Resources lifts five-year capital plan to $3.5B; Bakken East could add as much as $3.1B",
-    "url": "https://seekingalpha.com/news/4673672-mdu-resources-lifts-five-year-capital-plan-to-3_5b-bakken-east-could-add-as-much-as-3_1b",
-    "at": "2026-11-17T09:33-05:00",
+    "title": "Griffon rises 8% on earnings beat, higher buyback and dividend",
+    "url": "https://seekingalpha.com/news/4673690-griffon-rises-8-percent-on-earnings-beat-higher-buyback-and-dividend",
+    "at": "2026-11-17T09:58-05:00",
     "kind": "news",
     "symbols": [],
     "author": null
    },
    {
-    "title": "Hon Hai agrees to buy Sony Semiconductor's automotive camera unit for $45.5M",
-    "url": "https://seekingalpha.com/news/4673606-hon-hai-agrees-to-buy-sony-semiconductors-automotive-camera-unit-for-45_5m",
-    "at": "2026-11-17T09:32-05:00",
+    "title": "Stocks to watch on Tuesday: DIS, HD, TME & more",
+    "url": "https://seekingalpha.com/news/4673689-stocks-to-watch-on-tuesday-dis-hd-tme-more",
+    "at": "2026-11-17T09:57-05:00",
     "kind": "news",
     "symbols": [],
     "author": null
    },
    {
-    "title": "Hyperfine Q3 GAAP EPS of -$0.06 beats by $0.02; revenue of $5.96M misses by $0.75M",
-    "url": "https://seekingalpha.com/news/4673677-hyperfine-q3-gaap-eps-of--006-beats-by-002-revenue-of-596m-misses-by-075m",
-    "at": "2026-11-17T09:32-05:00",
+    "title": "United Natural Foods rises 8% on Goldman upgrade",
+    "url": "https://seekingalpha.com/news/4673686-united-natural-foods-rises-8-on-goldman-upgrade",
+    "at": "2026-11-17T09:57-05:00",
     "kind": "news",
     "symbols": [],
     "author": null
    },
    {
-    "title": "Capri falls as CEO sells 2.38M shares",
-    "url": "https://seekingalpha.com/news/4673675-capri-falls-as-ceo-sells-238m-shares",
-    "at": "2026-11-17T09:31-05:00",
-    "kind": "news",
+    "title": "Vukile Property Fund Limited (VKPPF) M&A Call Transcript",
+    "url": "https://seekingalpha.com/article/4968987-vukile-property-fund-limited-vkppf-m-and-a-call-transcript",
+    "at": "2026-11-17T09:52-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "VKPPF"
+    ],
+    "author": null
+   },
+   {
+    "title": "Virtus KAR Small-Cap Value Fund Q3 2026 Commentary",
+    "url": "https://seekingalpha.com/article/4969069-virtus-kar-small-cap-value-fund-q3-2026-commentary",
+    "at": "2026-11-17T09:48-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "PQSAX",
+     "PQSCX",
+     "PXQSX",
+     "VQSRX"
+    ],
+    "author": null
+   },
+   {
+    "title": "Illumina, Inc. (ILMN) Presents at Jefferies Global Healthcare Conference 2026 Transcript",
+    "url": "https://seekingalpha.com/article/4969014-illumina-inc-ilmn-presents-at-jefferies-global-healthcare-conference-2026-transcript",
+    "at": "2026-11-17T09:43-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "ILMN"
+    ],
+    "author": null
+   },
+   {
+    "title": "MannKind Corporation (MNKD) Presents at UBS Global Biopharma Conference 2026 Transcript",
+    "url": "https://seekingalpha.com/article/4969044-mannkind-corporation-mnkd-presents-at-ubs-global-biopharma-conference-2026-transcript",
+    "at": "2026-11-17T09:42-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "MNKD"
+    ],
+    "author": null
+   },
+   {
+    "title": "The Changing Calculus Of Diversification",
+    "url": "https://seekingalpha.com/article/4969067-changing-calculus-diversification",
+    "at": "2026-11-17T09:41-05:00",
+    "kind": "analysis",
     "symbols": [],
-    "author": null
-   },
-   {
-    "title": "YYForce approves 1-for-50 reverse stock split",
-    "url": "https://seekingalpha.com/news/4673655-yyforce-approves-1-for-50-reverse-stock-split",
-    "at": "2026-11-17T09:29-05:00",
-    "kind": "news",
-    "symbols": [],
-    "author": null
-   },
-   {
-    "title": "DRAM: AI Bubble Burst Could Take Down The Memory Trade (Rating Downgrade)",
-    "url": "https://seekingalpha.com/article/4968984-dram-ai-bubble-burst-could-take-down-the-memory-trade-downgrade",
-    "at": "2026-11-17T09:23-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "NVDA",
-     "SKHY",
-     "SSNLF",
-     "MU",
-     "SNDK",
-     "STX"
-    ],
-    "author": null
-   },
-   {
-    "title": "Ocular Therapeutix, Inc. (OCUL) Presents at UBS Global Biopharma Conference 2026 Transcript",
-    "url": "https://seekingalpha.com/article/4969054-ocular-therapeutix-inc-ocul-presents-at-ubs-global-biopharma-conference-2026-transcript",
-    "at": "2026-11-17T09:22-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "OCUL"
-    ],
-    "author": null
-   },
-   {
-    "title": "Ascendis Pharma A/S (ASND) Presents at Jefferies Global Healthcare Conference 2026 Transcript",
-    "url": "https://seekingalpha.com/article/4969039-ascendis-pharma-a-s-asnd-presents-at-jefferies-global-healthcare-conference-2026-transcript",
-    "at": "2026-11-17T09:22-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "ASND"
-    ],
-    "author": null
-   },
-   {
-    "title": "Damora Therapeutics, Inc. (DMRA) Presents at UBS Global Biopharma Conference 2026 Transcript",
-    "url": "https://seekingalpha.com/article/4968996-damora-therapeutics-inc-dmra-presents-at-ubs-global-biopharma-conference-2026-transcript",
-    "at": "2026-11-17T09:22-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "DMRA"
-    ],
-    "author": null
-   },
-   {
-    "title": "Energy Recovery: The Market Is Too Short-Sighted Now",
-    "url": "https://seekingalpha.com/article/4969056-energy-recovery-the-market-is-too-short-sighted-now",
-    "at": "2026-11-17T09:17-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "ERII"
-    ],
-    "author": null
-   },
-   {
-    "title": "Firefly Aerospace: Benefiting From The Launch Crunch",
-    "url": "https://seekingalpha.com/article/4969038-firefly-aerospace-benefitting-from-the-launch-crunch",
-    "at": "2026-11-17T09:10-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "FLY"
-    ],
-    "author": null
-   },
-   {
-    "title": "ValuEngine Weekly Market Commentary With Strategy Notes",
-    "url": "https://seekingalpha.com/article/4969065-valuengine-weekly-market-commentary-with-strategy-notes",
-    "at": "2026-11-17T09:05-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "XLB",
-     "XLC",
-     "XLE",
-     "XLF",
-     "XLI",
-     "XLK"
-    ],
-    "author": null
-   },
-   {
-    "title": "Monte Rosa Therapeutics: The Market Is Punishing NEK7 For IL-6's Failure",
-    "url": "https://seekingalpha.com/article/4969049-monte-rosa-therapeutics-the-market-is-punishing-nek7-for-il-6s-failure",
-    "at": "2026-11-17T09:03-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "GLUE"
-    ],
-    "author": null
-   },
-   {
-    "title": "India Gold Market Update: Gold Demand Gets Festive Boost",
-    "url": "https://seekingalpha.com/article/4969048-india-gold-market-update-gold-demand-gets-festive-boost",
-    "at": "2026-11-17T09:00-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "GLD",
-     "IAU",
-     "GLDM",
-     "SGOL",
-     "BAR",
-     "IAUM"
-    ],
-    "author": null
-   },
-   {
-    "title": "Legend Biotech: The Market Is Missing The Bigger Picture",
-    "url": "https://seekingalpha.com/article/4969045-legend-biotech-the-market-is-missing-the-bigger-picture",
-    "at": "2026-11-17T08:53-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "GILD",
-     "GILD:CA",
-     "JNJ:CA",
-     "JNJ",
-     "LEGN"
-    ],
     "author": null
    }
   ],
@@ -749,6 +742,36 @@
     "ticker": "QQQ",
     "role": "long",
     "items": [
+     {
+      "title": "Wells Fargo sets 2027 S&P 500 year-end target at 8,200",
+      "url": "https://seekingalpha.com/news/4673681",
+      "at": "2026-11-17T09:41-05:00",
+      "kind": "news",
+      "symbols": [
+       "QQQ",
+       "SPY",
+       "DIA",
+       "IVV",
+       "RSP",
+       "SH"
+      ],
+      "author": "Jason Capul"
+     },
+     {
+      "title": "The Elephant In The Room",
+      "url": "https://seekingalpha.com/article/4969066-the-elephant-in-the-room",
+      "at": "2026-11-17T09:39-05:00",
+      "kind": "analysis",
+      "symbols": [
+       "NVDA",
+       "MU",
+       "ZNVD:CA",
+       "NVDA:CA",
+       "MU:CA",
+       "COST"
+      ],
+      "author": "Kenio Fontes"
+     },
      {
       "title": "Stocks To Buy While AI Is Plunging",
       "url": "https://seekingalpha.com/article/4969060-stocks-to-buy-while-ai-is-plunging",
@@ -778,36 +801,6 @@
        "SMH"
       ],
       "author": "Damir Tokic"
-     },
-     {
-      "title": "Has The AI Bubble Popped?",
-      "url": "https://seekingalpha.com/article/4969051-has-the-ai-bubble-popped",
-      "at": "2026-11-17T09:11-05:00",
-      "kind": "analysis",
-      "symbols": [
-       "NVDA",
-       "AMD",
-       "AVGO",
-       "AMZN",
-       "ALAB",
-       "SITM"
-      ],
-      "author": "Amrita Roy"
-     },
-     {
-      "title": "Keep Your Eye On The Ball",
-      "url": "https://seekingalpha.com/article/4969046-keep-your-eye-on-ball",
-      "at": "2026-11-17T08:54-05:00",
-      "kind": "analysis",
-      "symbols": [
-       "GOOG",
-       "META",
-       "RSP",
-       "SPY",
-       "SPX",
-       "SP500"
-      ],
-      "author": "Lawrence Fuller"
      }
     ]
    },
@@ -875,31 +868,52 @@
    "url": "https://seekingalpha.com/market-news"
   },
   "note": "Yalnızca başlık ve bağlantı. Yazıların tamamı Seeking Alpha'da; bir kısmı abonelik ister. Yatırım tavsiyesi değildir.",
-  "lastGood": "2026-11-17T09:40:58-05:00"
+  "lastGood": "2026-11-17T10:11:09-05:00"
  },
  "digest": {
   "date": "2026-11-17",
   "title": "Daily brief — Tuesday, November 17, 2026",
-  "generatedAt": "2026-11-17T09:40-05:00",
+  "generatedAt": "2026-11-17T10:11-05:00",
   "bullets": [
    {
     "head": "Markets (latest session)",
-    "text": "S&P 500 -0.18%, Nasdaq 100 +0.05%, Dow -0.60%, Russell 2000 -0.18%. VIX 22.8; 10-yr yield 5.15% (+3 bp); WTI $87.23 (+1.76%); gold $3,865 (+0.31%). Volatility is elevated (VIX above 20)."
+    "text": "S&P 500 -0.45%, Nasdaq 100 -0.43%, Dow -0.73%, Russell 2000 -0.53%. VIX 22.7; 10-yr yield 5.15% (+3 bp); WTI $86.89 (+1.36%); gold $3,860 (+0.19%). Volatility is elevated (VIX above 20)."
    },
    {
     "head": "Trend filter",
-    "text": "The S&P 500 (SPY $738.60) is 0.9% above its 200-day average ($732.16). Basket rule: the momentum basket stays invested. Index sleeve (last daily decision 2026-11-16): long, target +1.41x Nasdaq 100 exposure (25% / 35.4% 20-day volatility, capped at 3x)."
+    "text": "The S&P 500 (SPY $736.59) is 0.6% above its 200-day average ($732.16). Basket rule: the momentum basket stays invested. Index sleeve (last daily decision 2026-11-17): long, target +1.39x Nasdaq 100 exposure (25% / 36.0% 20-day volatility, capped at 3x)."
    },
    {
     "head": "Our portfolio",
-    "text": "Net value $2,957.65 (+0.10% vs the previous close); cash $-803.93; 4 positions, leverage 2.08x. Best holding today: AVEX +1.27%; weakest: HTHT -0.76%."
+    "text": "Net value $2,925.97 (-0.98% vs the previous close); cash $-803.93; 4 positions, leverage 2.10x. Best holding today: NSIT +0.35%; weakest: HTHT -0.59%."
    },
    {
     "head": "Themes in today's headlines",
-    "text": "AI & chips (19), Earnings (6), Corporate (5), Energy (3)."
+    "text": "AI & chips (18), Energy (7), Earnings (6), Analysts (2)."
    }
   ],
   "headlines": [
+   {
+    "title": "BC-Crude Oil Futures",
+    "url": "https://finance.yahoo.com/markets/commodities/articles/bc-crude-oil-futures-150015428.html",
+    "publisher": "Associated Press",
+    "at": "2026-11-17T10:00-05:00",
+    "summary": "NEW YORK (AP) — Prices as of 10:00:00 AM Tuesday, November 17.Light Sweet Crude (NYMX)1,000 bbl.",
+    "tags": [
+     "Energy"
+    ]
+   },
+   {
+    "title": "Merck Stock's $1.3 Billion China Problem Goes Quiet",
+    "url": "https://www.trefis.com/stock/mrk/articles/625733/merck-stocks-1-3-billion-china-problem-goes-quiet/2026-11-17",
+    "publisher": "Trefis",
+    "at": "2026-11-17T09:40-05:00",
+    "summary": "Today's big story: Could Nvidia Stock Fall 50%?",
+    "tags": [
+     "Policy & politics",
+     "AI & chips"
+    ]
+   },
    {
     "title": "Phillips 66 and Valero Are Turning Strong Refining Margins Into Bigger Dividends",
     "url": "https://247wallst.com/investing/2026/11/17/phillips-66-and-valero-are-turning-strong-refining-margins-into-bigger-dividends/",
@@ -919,37 +933,26 @@
     "tags": [
      "Energy"
     ]
-   },
-   {
-    "title": "Chevron Reportedly Nears $5 Billion Deal to Acquire Majority Stake in Beacon Offshore Energy",
-    "url": "https://investorshub.advfn.com/market-news/article/40180/chevron-reportedly-nears-5-billion-deal-to-acquire-majority-stake-in-beacon-offshore-energy",
-    "publisher": "InvestorsHub",
-    "at": "2026-11-17T06:21-05:00",
-    "summary": "Chevron Corp (NYSE:CVX) is reportedly close to reaching an agreement to acquire a majority stake in Beacon Offshore Energy in a transaction valued at approximately $5 billion, according to a Financial…",
-    "tags": [
-     "Energy",
-     "Corporate"
-    ]
    }
   ],
   "movers": [
    {
-    "ticker": "AVEX",
-    "changePct": 1.27,
-    "title": "AEVEX (AVEX) Stock Could Be Undervalued On Raised 2026 Guidance",
-    "url": "https://finance.yahoo.com/markets/stocks/articles/aevex-avex-stock-could-undervalued-031124963.html",
-    "publisher": "Simply Wall St."
-   },
-   {
     "ticker": "HTHT",
-    "changePct": -0.76,
+    "changePct": -0.59,
     "title": "H World Group (HTHT) Stock May Be 17% Undervalued On Raised 2026 Outlook",
     "url": "https://finance.yahoo.com/markets/stocks/articles/h-world-group-htht-stock-002143520.html",
     "publisher": "Simply Wall St."
    },
    {
+    "ticker": "QQQ",
+    "changePct": -0.48,
+    "title": "Stock Market Today: Dow Slides After Surprise Retail Sales; Nvidia Rises With Earnings On Tap (Live Coverage)",
+    "url": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-retail-sales-nvidia-earnings-nvda-stock/?src=A00220&yptr=yahoo",
+    "publisher": "Investor's Business Daily"
+   },
+   {
     "ticker": "NSIT",
-    "changePct": -0.67,
+    "changePct": 0.35,
     "title": "Update: Insight Enterprises Shares Fall After $650 Million Convertible Notes Offering",
     "url": "https://finance.yahoo.com/markets/stocks/articles/insight-enterprises-shares-fall-650-200340715.html",
     "publisher": "MT Newswires"
