@@ -1,10 +1,10 @@
 {
- "asOf": "2026-11-17T17:41:48-05:00",
+ "asOf": "2026-11-17T18:11:59-05:00",
  "session": "post",
  "sessionLabel": "Piyasa sonrası (16:00–20:00 ET)",
  "equity": 2891.07,
- "totalImpact": 42.98,
- "totalImpactPct": 1.49,
+ "totalImpact": 75.37,
+ "totalImpactPct": 2.61,
  "items": [
   {
    "ticker": "QQQ",
@@ -15,10 +15,10 @@
    "stopPrice": null,
    "refClose": 657.03,
    "refAt": "2026-11-17T15:55:00-05:00",
-   "price": 663.99,
-   "at": "2026-11-17T17:40:00-05:00",
-   "changePct": 1.06,
-   "impact": 44.2,
+   "price": 669.07,
+   "at": "2026-11-17T18:10:00-05:00",
+   "changePct": 1.83,
+   "impact": 76.46,
    "beyondStop": false
   },
   {
@@ -31,7 +31,7 @@
    "refClose": 53.6101,
    "refAt": "2026-11-17T15:55:00-05:00",
    "price": 53.65,
-   "at": "2026-11-17T17:31:03-05:00",
+   "at": "2026-11-17T17:30:00-05:00",
    "changePct": 0.07,
    "impact": 0.31,
    "beyondStop": false
@@ -45,10 +45,10 @@
    "stopPrice": 12.49,
    "refClose": 13.61,
    "refAt": "2026-11-17T15:55:00-05:00",
-   "price": 13.53,
-   "at": "2026-11-17T17:00:00-05:00",
-   "changePct": -0.59,
-   "impact": -2.01,
+   "price": 13.5352,
+   "at": "2026-11-17T17:45:00-05:00",
+   "changePct": -0.55,
+   "impact": -1.88,
    "beyondStop": false
   },
   {
@@ -61,7 +61,7 @@
    "refClose": 156.33,
    "refAt": "2026-11-17T15:55:00-05:00",
    "price": 156.32,
-   "at": "2026-11-17T16:35:00-05:00",
+   "at": "2026-11-17T17:25:00-05:00",
    "changePct": -0.01,
    "impact": 0.08,
    "beyondStop": false
@@ -87,17 +87,17 @@
    "ticker": "SPY",
    "label": "S&P 500 (SPY)",
    "refClose": 732.39,
-   "price": 732.44,
-   "at": "2026-11-17T17:40:00-05:00",
-   "changePct": 0.01
+   "price": 739.49,
+   "at": "2026-11-17T18:10:00-05:00",
+   "changePct": 0.97
   },
   {
    "ticker": "QQQ",
    "label": "Nasdaq 100 (QQQ)",
    "refClose": 657.03,
-   "price": 663.99,
-   "at": "2026-11-17T17:40:00-05:00",
-   "changePct": 1.06
+   "price": 669.07,
+   "at": "2026-11-17T18:10:00-05:00",
+   "changePct": 1.83
   }
  ],
  "note": "Yalnızca izleme: bot bu saatlerde işlem yapmaz, zarar-kes emirleri normal seansta işler. Seans dışında işlem hacmi düşüktür, fiyatlar sert oynayabilir ve ertesi açılış farklı olabilir.",
