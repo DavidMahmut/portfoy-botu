@@ -1,21 +1,22 @@
 {
- "asOf": "2026-11-17T10:11:09-05:00",
+ "asOf": "2026-11-17T10:41:41-05:00",
  "sections": [
   {
    "ticker": "QQQ",
    "name": "Invesco QQQ (Nasdaq 100)",
    "role": "long",
-   "dayChangePct": -0.48,
-   "unrealizedPct": -1.13,
+   "dayChangePct": -1.28,
+   "unrealizedPct": -1.93,
    "items": [
     {
-     "title": "Stock Market Today: Dow Slides After Surprise Retail Sales; Nvidia Rises With Earnings On Tap (Live Coverage)",
+     "title": "Stock Market Today: Dow Dips As Retail Sales Do This; Oil Plays Rise But The Software Sector Lags (Live Coverage)",
      "summary": "The Dow Jones index dropped Tuesday after surprise retail sales data. Nvidia stock bounced before its earnings report.",
      "publisher": "Investor's Business Daily",
      "url": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-retail-sales-nvidia-earnings-nvda-stock/?src=A00220&yptr=yahoo",
-     "at": "2026-11-17T09:43-05:00",
+     "at": "2026-11-17T10:24-05:00",
      "tags": [
       "Earnings",
+      "Energy",
       "AI & chips"
      ]
     },
@@ -57,8 +58,8 @@
    "ticker": "HTHT",
    "name": "H World Group Limited",
    "role": "long",
-   "dayChangePct": -0.59,
-   "unrealizedPct": -2.07,
+   "dayChangePct": -0.84,
+   "unrealizedPct": -2.31,
    "items": [
     {
      "title": "H World Group (HTHT) Stock May Be 17% Undervalued On Raised 2026 Outlook",
@@ -104,8 +105,8 @@
    "ticker": "AVEX",
    "name": "AEVEX Corp.",
    "role": "long",
-   "dayChangePct": 0.0,
-   "unrealizedPct": -1.45,
+   "dayChangePct": -0.78,
+   "unrealizedPct": -2.22,
    "items": [
     {
      "title": "AEVEX (AVEX) Stock Could Be Undervalued On Raised 2026 Guidance",
@@ -135,8 +136,8 @@
    "ticker": "NSIT",
    "name": "Insight Enterprises, Inc.",
    "role": "short",
-   "dayChangePct": 0.35,
-   "unrealizedPct": -0.9,
+   "dayChangePct": -0.09,
+   "unrealizedPct": -0.47,
    "items": [
     {
      "title": "Update: Insight Enterprises Shares Fall After $650 Million Convertible Notes Offering",
@@ -165,12 +166,70 @@
    ]
   },
   {
+   "ticker": "AS",
+   "name": "Amer Sports, Inc.",
+   "role": "long",
+   "dayChangePct": 8.2,
+   "unrealizedPct": -0.4,
+   "items": [
+    {
+     "title": "Amer Sports (AS) Raised Guidance And Launched A $1b Buyback, Is It Fully Priced?",
+     "summary": "Amer Sports (AS) just packed several updates into a single day, pairing its third quarter 2026 earnings release with higher full year guidance and a fresh US$1b share repurchase program. For investors watching the tape, Amer Sports tells a slightly different s…",
+     "publisher": "Simply Wall St.",
+     "url": "https://finance.yahoo.com/markets/stocks/articles/amer-sports-raised-guidance-launched-151442448.html",
+     "at": "2026-11-17T10:14-05:00",
+     "tags": [
+      "Earnings",
+      "Corporate"
+     ]
+    },
+    {
+     "title": "Amer Sports raises 2026 guidance after third-quarter revenue and earnings beat",
+     "summary": "Amer Sports Inc (NYSE:AS), the owner of Arc'teryx, Salomon and Wilson, raised its full-year 2026 guidance after third-quarter revenue increased 24% and adjusted earnings exceeded its previous expectations. Revenue rose to $2.17 billion from a year earlier, or …",
+     "publisher": "Proactive",
+     "url": "https://www.proactiveinvestors.com/companies/news/1101936/amer-sports-raises-2026-guidance-after-third-quarter-revenue-and-earnings-beat-1101936.html",
+     "at": "2026-11-17T09:46-05:00",
+     "tags": [
+      "Earnings"
+     ]
+    },
+    {
+     "title": "Amer Sports Is Firing on All Cylinders After Strong Q3",
+     "summary": "The company, and its Arc'teryx and Salomon brands, continues to show growth momentum.",
+     "publisher": "Footwear News",
+     "url": "https://wwd.com/footwear-news/shoe-industry-news/amer-sports-q3-earnings-salomon-arcteryx-brands-footwear-1239420125/",
+     "at": "2026-11-17T08:57-05:00",
+     "tags": []
+    },
+    {
+     "title": "Amer Sports, Inc. (AS) Q3 Earnings: Taking a Look at Key Metrics Versus Estimates",
+     "summary": "Although the revenue and EPS for Amer Sports, Inc. (AS) give a sense of how its business performed in the quarter ended September 2026, it might be worth considering how some key metrics compare with Wall Street estimates and the year-ago numbers.",
+     "publisher": "Zacks",
+     "url": "https://finance.yahoo.com/markets/stocks/articles/amer-sports-inc-q3-earnings-133003898.html",
+     "at": "2026-11-17T08:30-05:00",
+     "tags": [
+      "Earnings"
+     ]
+    }
+   ]
+  },
+  {
    "ticker": "AMD",
    "name": "Advanced Micro Devices",
    "role": "watch-long",
    "dayChangePct": null,
    "unrealizedPct": null,
    "items": [
+    {
+     "title": "TSMC Fell 7.7% in Two Days. Joseph Carlson Thinks Its Business Is More Durable Than Nvidia’s",
+     "summary": "YouTube investor Joseph Carlson is considering buying shares of Taiwan Semiconductor Manufacturing Co. (NYSE:TSM), which fell more than 7% over two trading sessions in Taipei. Carlson said Monday that TSMC likely has \"a more durable business model than the lik…",
+     "publisher": "Benzinga Prediction Markets",
+     "url": "https://www.benzinga.com/markets/prediction-markets/26/11/63343723/tsmc-joseph-carlson?utm_source=yahooFinance&utm_campaign=partner_feed&utm_medium=referral",
+     "at": "2026-11-17T10:02-05:00",
+     "tags": [
+      "AI & chips"
+     ]
+    },
     {
      "title": "What Is Behind Joby Aviation Stock's 7% Slide?",
      "summary": "Today's big story: Could Nvidia Stock Fall 50%? Follow The Cash.",
@@ -200,16 +259,6 @@
      "tags": [
       "AI & chips"
      ]
-    },
-    {
-     "title": "What Sent Marvell Stock Down Over 7%?",
-     "summary": "Today's big story: Could Nvidia Stock Fall 50%? Follow The Cash.",
-     "publisher": "Trefis",
-     "url": "https://www.trefis.com/stock/mrvl/articles/625792/why-did-marvell-stock-fall-over-7/2026-11-17",
-     "at": "2026-11-17T09:40-05:00",
-     "tags": [
-      "AI & chips"
-     ]
     }
    ]
   },
@@ -220,6 +269,16 @@
    "dayChangePct": null,
    "unrealizedPct": null,
    "items": [
+    {
+     "title": "Is FTNT's SecOps Segment Emerging as a Key Swing Factor for the Stock?",
+     "summary": "Fortinet's AI-driven SecOps growth is slowing despite expanding AI capabilities, making a potential rebound crucial to service growth and stock momentum in 2027.",
+     "publisher": "Zacks",
+     "url": "https://finance.yahoo.com/markets/stocks/articles/ftnts-secops-segment-emerging-key-142000164.html",
+     "at": "2026-11-17T09:20-05:00",
+     "tags": [
+      "AI & chips"
+     ]
+    },
     {
      "title": "ServiceNow's Cash Yield Trails The 10-Year Treasury",
      "summary": "Today's big story: Could Nvidia Stock Fall 50%? Follow The Cash.",
@@ -245,17 +304,6 @@
      "publisher": "TIKR",
      "url": "https://www.tikr.com/blog/jim-cramer-anthropics-next-100-billion-in-revenue-might-be-cybersecurity-crowdstrike-should-worry?ref=yahoofinance&tlnk=yf-261116-p9ccm24m",
      "at": "2026-11-15T21:22-05:00",
-     "tags": [
-      "Earnings",
-      "AI & chips"
-     ]
-    },
-    {
-     "title": "Palo Alto Networks Sank Nearly 10% in a Day. Arora Still Sees AI as “Durable Tailwinds”",
-     "summary": "Key TakeawaysPalo Alto Networks reports fiscal first-quarter results on November 18, after a software selloff sent its shares down nearly 10% on November 5. Fortinet’s product revenue growth slowed to 37% from 52%, while Palo Alto’s product revenue grew 28.",
-     "publisher": "TIKR",
-     "url": "https://www.tikr.com/blog/palo-alto-networks-sank-nearly-10-in-a-day-arora-still-sees-ai-as-durable-tailwinds?ref=yahoofinance&tlnk=yf-261114-cmh3q2hx",
-     "at": "2026-11-14T12:05-05:00",
      "tags": [
       "Earnings",
       "AI & chips"
@@ -420,17 +468,6 @@
    ]
   },
   {
-   "title": "Merck Stock's $1.3 Billion China Problem Goes Quiet",
-   "summary": "Today's big story: Could Nvidia Stock Fall 50%? Follow The Cash.",
-   "publisher": "Trefis",
-   "url": "https://www.trefis.com/stock/mrk/articles/625733/merck-stocks-1-3-billion-china-problem-goes-quiet/2026-11-17",
-   "at": "2026-11-17T09:40-05:00",
-   "tags": [
-    "Policy & politics",
-    "AI & chips"
-   ]
-  },
-  {
    "title": "Phillips 66 and Valero Are Turning Strong Refining Margins Into Bigger Dividends",
    "summary": "Refiners are sitting on a windfall that has nothing to do with the price of oil. Two of them are sharing it with shareholders, but only one dividend looks built to survive a weak year with room to spare.",
    "publisher": "24/7 Wall St.",
@@ -461,24 +498,70 @@
    ]
   },
   {
-   "title": "PBR Q3 Earnings Call Highlights Output Growth and Pricing Scrutiny",
-   "summary": "Petrobras raises 2026 production, capital spending and cash flow outlooks as stronger oil prices boost growth plans amid scrutiny of its fuel-pricing strategy.",
-   "publisher": "Zacks",
-   "url": "https://finance.yahoo.com/energy/articles/pbr-q3-earnings-call-highlights-140000868.html",
-   "at": "2026-11-17T09:00-05:00",
+   "title": "The Stock Market Is Doing Something for Only the Second Time in 155 Years. Here's What History Says Could Come Next.",
+   "summary": "Should the S&P 500's valuation worry you?",
+   "publisher": "Motley Fool",
+   "url": "https://www.fool.com/investing/2026/11/17/the-stock-market-is-doing-something-for-only-the-second-time-in-155-years-here-s-what-history-says-could-come-next/",
+   "at": "2026-11-17T10:35-05:00",
+   "tags": []
+  },
+  {
+   "title": "JPMorgan CFO Jeremy Barnum to step down as Jamie Dimon's succession plans take shape",
+   "summary": "JPMorgan Chase said Tuesday that longtime chief financial officer Jeremy Barnum will step down next year, in the latest change among the country's largest bank's top ranks as it prepares for CEO Jamie Dimon's eventual succession.",
+   "publisher": "Yahoo Finance",
+   "url": "https://finance.yahoo.com/markets/article/jpmorgan-cfo-jeremy-barnum-to-step-down-as-jamie-dimons-succession-plans-take-shape-153110270.html",
+   "at": "2026-11-17T10:31-05:00",
    "tags": [
-    "Earnings",
-    "Energy"
+    "Corporate"
    ]
   },
   {
-   "title": "Oil Prices Rebound as Middle East Shipping Risks Persist",
-   "summary": "Oil prices recovered from initial losses as traders weighed continued threats to Middle Eastern oil shipments against expectations of a global supply surplus.",
-   "publisher": "The Wall Street Journal",
-   "url": "https://www.wsj.com/finance/commodities-futures/oil-prices-continue-to-fall-as-global-supply-surplus-weighs-7b54e93b?siteid=yhoof2&yptr=yahoo",
-   "at": "2026-11-17T08:17-05:00",
+   "title": "What Is Driving The Move In Super Micro Computer Stock?",
+   "summary": "For questions about this article or underlying research, email help@trefis.com.",
+   "publisher": "Trefis",
+   "url": "https://www.trefis.com/stock/smci/articles/625665/what-is-driving-the-move-in-super-micro-computer-stock/2026-11-17",
+   "at": "2026-11-17T10:20-05:00",
+   "tags": []
+  },
+  {
+   "title": "Stock market outlook for 2027: 5 key predictions for investors",
+   "summary": "Investing.com -- The S&P 500 was at 7,400.06 as of Nov 17, 2026, 9:37 AM EST. It is up about 7.6% year to date and roughly 5% below its 52-week high of 7,844.52. Strategists have shown little sign of flinching. A Bloomberg survey put the average 2026 year-end …",
+   "publisher": "Investing.com",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/stock-market-outlook-2027-5-151326962.html",
+   "at": "2026-11-17T10:13-05:00",
    "tags": [
-    "Energy"
+    "Earnings"
+   ]
+  },
+  {
+   "title": "Why The Fund Remains Bullish on Aerospace Aftermarket Leader TransDigm Group (DG)",
+   "summary": "Baron Capital, an investment management company, released its Q3 2026 investor letter for the “Baron Durable Advantage Fund”. The letter can be downloaded here. In the quarter, the fund returned 2.2%, in line with the S&P 500’s 2.3%. Year to date, the fund is …",
+   "publisher": "Insider Monkey",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/why-fund-remains-bullish-aerospace-151134994.html",
+   "at": "2026-11-17T10:11-05:00",
+   "tags": [
+    "Earnings"
+   ]
+  },
+  {
+   "title": "Investors cut tech exposure by the most since 2006: BofA survey",
+   "summary": "Bank of America's (BAC) Fund Managers Survey shows that net tech overweight fell from 37% to 12% — the largest monthly reduction in 20 years. \"The 8:30\" hosts Julie Hyman, Pras Subramanian, and Jake Conley discuss the details.",
+   "publisher": "Yahoo Finance Video",
+   "url": "https://finance.yahoo.com/video/investors-cut-tech-exposure-by-the-most-since-2006-bofa-survey-150954736.html",
+   "at": "2026-11-17T10:09-05:00",
+   "tags": [
+    "Analysts"
+   ]
+  },
+  {
+   "title": "Quanta Services (PWR) is Positioned to Benefit from AI Data Center Expansion and Surging Electricity Demand",
+   "summary": "Baron Capital, an investment management company, released its Q3 2026 investor letter for the “Baron Durable Advantage Fund”. The letter can be downloaded here. In the quarter, the fund returned 2.2%, in line with the S&P 500’s 2.3%. Year to date, the fund is …",
+   "publisher": "Insider Monkey",
+   "url": "https://finance.yahoo.com/technology/ai/articles/quanta-services-pwr-positioned-benefit-150431315.html",
+   "at": "2026-11-17T10:04-05:00",
+   "tags": [
+    "Earnings",
+    "AI & chips"
    ]
   },
   {
@@ -491,71 +574,188 @@
     "Earnings",
     "AI & chips"
    ]
-  },
-  {
-   "title": "Baron Fund’s Insights on NVIDIA Corporation (NVDA)",
-   "summary": "Baron Capital, an investment management company, released its Q3 2026 investor letter for the “Baron Durable Advantage Fund”. The letter can be downloaded here. In the quarter, the fund returned 2.2%, in line with the S&P 500’s 2.3%. Year to date, the fund is …",
-   "publisher": "Insider Monkey",
-   "url": "https://finance.yahoo.com/markets/stocks/articles/baron-fund-insights-nvidia-corporation-144919257.html",
-   "at": "2026-11-17T09:49-05:00",
-   "tags": [
-    "Earnings",
-    "AI & chips"
-   ]
-  },
-  {
-   "title": "Prediction: Dec. 9 Will Mark a Turning Point for the S&P 500",
-   "summary": "The markets have been looking shaky recently, and things could get even worse next month.",
-   "publisher": "Motley Fool",
-   "url": "https://www.fool.com/investing/2026/11/17/prediction-dec-9-will-mark-a-turning-point-for-the-s-and-p-500/",
-   "at": "2026-11-17T09:47-05:00",
-   "tags": []
-  },
-  {
-   "title": "Meta Platforms (META) Surges as AI Ranking Models Accelerate U.S. Ad Revenue Growth to 31%",
-   "summary": "Baron Capital, an investment management company, released its Q3 2026 investor letter for the “Baron Durable Advantage Fund”. The letter can be downloaded here. In the quarter, the fund returned 2.2%, in line with the S&P 500’s 2.3%. Year to date, the fund is …",
-   "publisher": "Insider Monkey",
-   "url": "https://finance.yahoo.com/markets/stocks/articles/meta-platforms-meta-surges-ai-144644684.html",
-   "at": "2026-11-17T09:46-05:00",
-   "tags": [
-    "Earnings",
-    "AI & chips"
-   ]
-  },
-  {
-   "title": "Netflix Stock Down 47%: Too Early To Buy?",
-   "summary": "Today's big story: Could Nvidia Stock Fall 50%? Follow The Cash.",
-   "publisher": "Trefis",
-   "url": "https://www.trefis.com/stock/nflx/articles/625752/netflix-stock-down-47-too-early-to-buy/2026-11-17",
-   "at": "2026-11-17T09:40-05:00",
-   "tags": [
-    "AI & chips"
-   ]
   }
  ],
  "seekingAlpha": {
-  "asOf": "2026-11-17T10:11:09-05:00",
+  "asOf": "2026-11-17T10:41:41-05:00",
   "ok": true,
   "stale": false,
   "via": "seekingalpha.com RSS",
   "errors": [],
   "feedCounts": {
    "Piyasa haberleri": 7,
-   "Tüm yazılar": 26
+   "Tüm yazılar": 24
   },
   "market": [
    {
-    "title": "Is The Inflation Shock Starting To Lose Momentum?",
-    "url": "https://seekingalpha.com/article/4969079-is-inflation-shock-starting-lose-momentum",
-    "at": "2026-11-17T10:10-05:00",
+    "title": "Amneal: Buy More After Impressive Q3 Results, As Active Drug Pipeline Keeps Growing",
+    "url": "https://seekingalpha.com/article/4969092-amneal-buy-more-after-impressive-q3-results-as-active-drug-pipeline-keeps-growing",
+    "at": "2026-11-17T10:38-05:00",
     "kind": "analysis",
     "symbols": [
-     "SPX",
-     "SP500",
-     "SPY",
-     "NDX",
-     "DJI",
-     "RTY"
+     "AMRX"
+    ],
+    "author": null
+   },
+   {
+    "title": "GEA Group Aktiengesellschaft reports Q3 results",
+    "url": "https://seekingalpha.com/news/4673717-gea-group-aktiengesellschaft-reports-q3-results",
+    "at": "2026-11-17T10:35-05:00",
+    "kind": "news",
+    "symbols": [],
+    "author": null
+   },
+   {
+    "title": "Cub Energy Non-GAAP EPS of $0.05, revenue of $135.5M beats by $2.12M",
+    "url": "https://seekingalpha.com/news/4673718-cub-energy-non-gaap-eps-of-0_05-revenue-of-135_5m-beats-by-2_12m",
+    "at": "2026-11-17T10:34-05:00",
+    "kind": "news",
+    "symbols": [],
+    "author": null
+   },
+   {
+    "title": "BioMarin Pharmaceutical Inc. (BMRN) Presents at Jefferies Global Healthcare Conference 2026 Transcript",
+    "url": "https://seekingalpha.com/article/4969127-biomarin-pharmaceutical-inc-bmrn-presents-at-jefferies-global-healthcare-conference-2026",
+    "at": "2026-11-17T10:32-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "BMRN"
+    ],
+    "author": null
+   },
+   {
+    "title": "Unilever: More Than Just A Defensive Dividend Stock",
+    "url": "https://seekingalpha.com/article/4969087-unilever-more-than-just-a-defensive-dividend-stock",
+    "at": "2026-11-17T10:30-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "UL",
+     "UNLYF"
+    ],
+    "author": null
+   },
+   {
+    "title": "Hartford Floating Rate Fund Q3 2026 Commentary",
+    "url": "https://seekingalpha.com/article/4969132-hartford-floating-rate-fund-q3-2026-commentary",
+    "at": "2026-11-17T10:30-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "HFLAX",
+     "HFLCX",
+     "HFLFX",
+     "HFLIX",
+     "HFLRX",
+     "HFLSX"
+    ],
+    "author": null
+   },
+   {
+    "title": "Hadron Energy GAAP EPS of -$0.08 beats by $0.01",
+    "url": "https://seekingalpha.com/news/4673716-hadron-energy-gaap-eps-of-0_08-beats-by-0_01",
+    "at": "2026-11-17T10:29-05:00",
+    "kind": "news",
+    "symbols": [],
+    "author": null
+   },
+   {
+    "title": "TimesSquare Global Concentrated Small Cap Q3 2026 Portfolio Activity",
+    "url": "https://seekingalpha.com/article/4969086-timessquare-global-concentrated-small-cap-q3-2026-portfolio-activity",
+    "at": "2026-11-17T10:29-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "EHC",
+     "FKKFY",
+     "GNCGF",
+     "RRX",
+     "MYRG",
+     "VVV"
+    ],
+    "author": null
+   },
+   {
+    "title": "Target Q3 earnings on deck: What to expect",
+    "url": "https://seekingalpha.com/news/4673679-target-q3-earnings-on-deck-what-to-expect",
+    "at": "2026-11-17T10:28-05:00",
+    "kind": "news",
+    "symbols": [],
+    "author": null
+   },
+   {
+    "title": "Cleveland Fed's Hammack proposes guidelines for Treasury market interventions",
+    "url": "https://seekingalpha.com/news/4673687-cleveland-feds-hammack-proposes-guidelines-for-treasury-market-interventions",
+    "at": "2026-11-17T10:28-05:00",
+    "kind": "news",
+    "symbols": [],
+    "author": null
+   },
+   {
+    "title": "Verde AgriTech Limited GAAP EPS of -C$0.05, revenue of C$3.5M",
+    "url": "https://seekingalpha.com/news/4673715-verde-agritech-limited-gaap-eps-of-c005-revenue-of-c35m",
+    "at": "2026-11-17T10:27-05:00",
+    "kind": "news",
+    "symbols": [],
+    "author": null
+   },
+   {
+    "title": "Amazon looks to take a bigger bite out of the food delivery market",
+    "url": "https://seekingalpha.com/news/4673669-amazon-looks-to-take-a-bigger-bite-out-of-the-food-delivery-market",
+    "at": "2026-11-17T10:27-05:00",
+    "kind": "news",
+    "symbols": [],
+    "author": null
+   },
+   {
+    "title": "Janux Therapeutics: Potential JANX007 Comeback mCRPC And Initial JANX011 Data",
+    "url": "https://seekingalpha.com/article/4969085-janux-therapeutics-potential-janx007-comeback-mcrpc-initial-janx011-data",
+    "at": "2026-11-17T10:23-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "BAYRY",
+     "CGEM",
+     "RHHBY",
+     "BAYZF",
+     "RHHBF",
+     "RHHVF"
+    ],
+    "author": null
+   },
+   {
+    "title": "UPS: A Strong Q3 Sets Up A Strong 2027, Raising My Price Target",
+    "url": "https://seekingalpha.com/article/4969083-ups-a-strong-q3-sets-up-a-strong-2027-raising-my-price-target",
+    "at": "2026-11-17T10:23-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "UPS",
+     "UPS:CA"
+    ],
+    "author": null
+   },
+   {
+    "title": "TimesSquare Global Concentrated Small Cap Q3 2026 Commentary",
+    "url": "https://seekingalpha.com/article/4969082-timessquare-global-concentrated-small-cap-q3-2026-commentary",
+    "at": "2026-11-17T10:22-05:00",
+    "kind": "analysis",
+    "symbols": [],
+    "author": null
+   },
+   {
+    "title": "Enel: The Grid Business Keeps Delivering, And We Remain Buyers",
+    "url": "https://seekingalpha.com/article/4969081-enel-the-grid-business-keeps-delivering-and-we-remain-buyers",
+    "at": "2026-11-17T10:21-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "ENLAY",
+     "ESOCF"
+    ],
+    "author": null
+   },
+   {
+    "title": "Immunome: De-Risked With The FDA, With An Admirably Deep Clinical Bench",
+    "url": "https://seekingalpha.com/article/4969080-immunome-de-risked-with-the-fda-with-an-admirably-deep-clinical-bench",
+    "at": "2026-11-17T10:12-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "IMNM"
     ],
     "author": null
    },
@@ -583,158 +783,6 @@
      "HAWK"
     ],
     "author": null
-   },
-   {
-    "title": "Phillips 66: Priced For A War Premium The Futures Say Won't Last",
-    "url": "https://seekingalpha.com/article/4969074-phillips-66-priced-for-a-war-premium-the-futures-say-wont-last",
-    "at": "2026-11-17T10:06-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "PSX"
-    ],
-    "author": null
-   },
-   {
-    "title": "Business inventories rise in line with consensus; retail inventory growth increases,",
-    "url": "https://seekingalpha.com/news/4673693-business-inventories-rise-in-line-with-consensus-retail-inventory-growth-increases",
-    "at": "2026-11-17T10:05-05:00",
-    "kind": "news",
-    "symbols": [],
-    "author": null
-   },
-   {
-    "title": "Nebius: Everyone Is Selling, Here's Why I'm Buying",
-    "url": "https://seekingalpha.com/article/4969073-nebius-everyone-is-selling-heres-why-im-buying",
-    "at": "2026-11-17T10:04-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "NBIS"
-    ],
-    "author": null
-   },
-   {
-    "title": "Homebuilder sentiment falls in November on affordability concerns",
-    "url": "https://seekingalpha.com/news/4673685-homebuilder-sentiment-falls-in-november-on-affordability-concerns",
-    "at": "2026-11-17T10:02-05:00",
-    "kind": "news",
-    "symbols": [],
-    "author": null
-   },
-   {
-    "title": "T. Rowe Price: The Dividend Is Attractive, But The Turnaround Is Still Missing",
-    "url": "https://seekingalpha.com/article/4969072-t-rowe-price-the-dividend-is-attractive-but-the-turnaround-is-still-missing",
-    "at": "2026-11-17T10:01-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "TROW"
-    ],
-    "author": null
-   },
-   {
-    "title": "Nebius: A $45 Billion AI Reckoning Is Coming",
-    "url": "https://seekingalpha.com/article/4969071-nebius-a-45-billion-ai-reckoning-is-coming",
-    "at": "2026-11-17T10:01-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "MSFT",
-     "NVDA",
-     "ORCL",
-     "META",
-     "CRWV",
-     "CRWV:CA"
-    ],
-    "author": null
-   },
-   {
-    "title": "Nike maps out new growth strategy, sets 2031 financial targets",
-    "url": "https://seekingalpha.com/news/4673678-nike-maps-out-new-growth-strategy-sets-2031-financial-targets",
-    "at": "2026-11-17T10:00-05:00",
-    "kind": "news",
-    "symbols": [],
-    "author": null
-   },
-   {
-    "title": "Here are the major earnings after the close Tuesday",
-    "url": "https://seekingalpha.com/news/4672998-here-are-the-major-earnings-after-the-close-tuesday",
-    "at": "2026-11-17T10:00-05:00",
-    "kind": "news",
-    "symbols": [],
-    "author": null
-   },
-   {
-    "title": "Griffon rises 8% on earnings beat, higher buyback and dividend",
-    "url": "https://seekingalpha.com/news/4673690-griffon-rises-8-percent-on-earnings-beat-higher-buyback-and-dividend",
-    "at": "2026-11-17T09:58-05:00",
-    "kind": "news",
-    "symbols": [],
-    "author": null
-   },
-   {
-    "title": "Stocks to watch on Tuesday: DIS, HD, TME & more",
-    "url": "https://seekingalpha.com/news/4673689-stocks-to-watch-on-tuesday-dis-hd-tme-more",
-    "at": "2026-11-17T09:57-05:00",
-    "kind": "news",
-    "symbols": [],
-    "author": null
-   },
-   {
-    "title": "United Natural Foods rises 8% on Goldman upgrade",
-    "url": "https://seekingalpha.com/news/4673686-united-natural-foods-rises-8-on-goldman-upgrade",
-    "at": "2026-11-17T09:57-05:00",
-    "kind": "news",
-    "symbols": [],
-    "author": null
-   },
-   {
-    "title": "Vukile Property Fund Limited (VKPPF) M&A Call Transcript",
-    "url": "https://seekingalpha.com/article/4968987-vukile-property-fund-limited-vkppf-m-and-a-call-transcript",
-    "at": "2026-11-17T09:52-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "VKPPF"
-    ],
-    "author": null
-   },
-   {
-    "title": "Virtus KAR Small-Cap Value Fund Q3 2026 Commentary",
-    "url": "https://seekingalpha.com/article/4969069-virtus-kar-small-cap-value-fund-q3-2026-commentary",
-    "at": "2026-11-17T09:48-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "PQSAX",
-     "PQSCX",
-     "PXQSX",
-     "VQSRX"
-    ],
-    "author": null
-   },
-   {
-    "title": "Illumina, Inc. (ILMN) Presents at Jefferies Global Healthcare Conference 2026 Transcript",
-    "url": "https://seekingalpha.com/article/4969014-illumina-inc-ilmn-presents-at-jefferies-global-healthcare-conference-2026-transcript",
-    "at": "2026-11-17T09:43-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "ILMN"
-    ],
-    "author": null
-   },
-   {
-    "title": "MannKind Corporation (MNKD) Presents at UBS Global Biopharma Conference 2026 Transcript",
-    "url": "https://seekingalpha.com/article/4969044-mannkind-corporation-mnkd-presents-at-ubs-global-biopharma-conference-2026-transcript",
-    "at": "2026-11-17T09:42-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "MNKD"
-    ],
-    "author": null
-   },
-   {
-    "title": "The Changing Calculus Of Diversification",
-    "url": "https://seekingalpha.com/article/4969067-changing-calculus-diversification",
-    "at": "2026-11-17T09:41-05:00",
-    "kind": "analysis",
-    "symbols": [],
-    "author": null
    }
   ],
   "tickers": [
@@ -742,6 +790,21 @@
     "ticker": "QQQ",
     "role": "long",
     "items": [
+     {
+      "title": "Is The Inflation Shock Starting To Lose Momentum?",
+      "url": "https://seekingalpha.com/article/4969079-is-inflation-shock-starting-lose-momentum",
+      "at": "2026-11-17T10:10-05:00",
+      "kind": "analysis",
+      "symbols": [
+       "SPX",
+       "SP500",
+       "SPY",
+       "NDX",
+       "DJI",
+       "RTY"
+      ],
+      "author": "James Picerno"
+     },
      {
       "title": "Wells Fargo sets 2027 S&P 500 year-end target at 8,200",
       "url": "https://seekingalpha.com/news/4673681",
@@ -786,21 +849,6 @@
        "LLY"
       ],
       "author": "Julia Ostian"
-     },
-     {
-      "title": "The Rotation Trade: Chasing Another Bubble",
-      "url": "https://seekingalpha.com/article/4969057-rotation-trade-chasing-another-bubble",
-      "at": "2026-11-17T09:21-05:00",
-      "kind": "analysis",
-      "symbols": [
-       "XLK",
-       "XLI",
-       "XLC",
-       "XLV",
-       "XLP",
-       "SMH"
-      ],
-      "author": "Damir Tokic"
      }
     ]
    },
@@ -861,6 +909,32 @@
       "author": "SA News"
      }
     ]
+   },
+   {
+    "ticker": "AS",
+    "role": "long",
+    "items": [
+     {
+      "title": "Amer Sports beats top-line and bottom-line estimates; raises FY26 outlook",
+      "url": "https://seekingalpha.com/news/4673543",
+      "at": "2026-11-17T06:05-05:00",
+      "kind": "news",
+      "symbols": [
+       "AS"
+      ],
+      "author": "Meghavi Singh"
+     },
+     {
+      "title": "Amer Sports Q3 2026 Earnings Preview",
+      "url": "https://seekingalpha.com/news/4673047",
+      "at": "2026-11-16T09:26-05:00",
+      "kind": "news",
+      "symbols": [
+       "AS"
+      ],
+      "author": "Jay Mehta"
+     }
+    ]
    }
   ],
   "source": {
@@ -868,28 +942,32 @@
    "url": "https://seekingalpha.com/market-news"
   },
   "note": "Yalnızca başlık ve bağlantı. Yazıların tamamı Seeking Alpha'da; bir kısmı abonelik ister. Yatırım tavsiyesi değildir.",
-  "lastGood": "2026-11-17T10:11:09-05:00"
+  "lastGood": "2026-11-17T10:41:41-05:00"
  },
  "digest": {
   "date": "2026-11-17",
   "title": "Daily brief — Tuesday, November 17, 2026",
-  "generatedAt": "2026-11-17T10:11-05:00",
+  "generatedAt": "2026-11-17T10:41-05:00",
   "bullets": [
    {
     "head": "Markets (latest session)",
-    "text": "S&P 500 -0.45%, Nasdaq 100 -0.43%, Dow -0.73%, Russell 2000 -0.53%. VIX 22.7; 10-yr yield 5.15% (+3 bp); WTI $86.89 (+1.36%); gold $3,860 (+0.19%). Volatility is elevated (VIX above 20)."
+    "text": "S&P 500 -1.11%, Nasdaq 100 -1.46%, Dow -1.20%, Russell 2000 -1.06%. VIX 22.9; 10-yr yield 5.14% (+2 bp); WTI $86.45 (+0.85%); gold $3,871 (+0.47%). Volatility is elevated (VIX above 20)."
    },
    {
     "head": "Trend filter",
-    "text": "The S&P 500 (SPY $736.59) is 0.6% above its 200-day average ($732.16). Basket rule: the momentum basket stays invested. Index sleeve (last daily decision 2026-11-17): long, target +1.39x Nasdaq 100 exposure (25% / 36.0% 20-day volatility, capped at 3x)."
+    "text": "The S&P 500 (SPY $731.70) is 0.1% below its 200-day average ($732.16). Basket rule: the momentum basket waits in cash until SPY is back above the average. Index sleeve (last daily decision 2026-11-17): long, target +1.39x Nasdaq 100 exposure (25% / 36.0% 20-day volatility, capped at 3x)."
    },
    {
     "head": "Our portfolio",
-    "text": "Net value $2,925.97 (-0.98% vs the previous close); cash $-803.93; 4 positions, leverage 2.10x. Best holding today: NSIT +0.35%; weakest: HTHT -0.59%."
+    "text": "Net value $2,891.76 (-2.13% vs the previous close); cash $-1,238.36; 5 positions, leverage 2.26x. Best holding today: AS +8.20%; weakest: QQQ -1.28%."
    },
    {
     "head": "Themes in today's headlines",
-    "text": "AI & chips (18), Energy (7), Earnings (6), Analysts (2)."
+    "text": "AI & chips (16), Earnings (9), Energy (6), Analysts (3)."
+   },
+   {
+    "head": "Upcoming earnings (next 3 weeks)",
+    "text": "AS (Nov 17)."
    }
   ],
   "headlines": [
@@ -901,17 +979,6 @@
     "summary": "NEW YORK (AP) — Prices as of 10:00:00 AM Tuesday, November 17.Light Sweet Crude (NYMX)1,000 bbl.",
     "tags": [
      "Energy"
-    ]
-   },
-   {
-    "title": "Merck Stock's $1.3 Billion China Problem Goes Quiet",
-    "url": "https://www.trefis.com/stock/mrk/articles/625733/merck-stocks-1-3-billion-china-problem-goes-quiet/2026-11-17",
-    "publisher": "Trefis",
-    "at": "2026-11-17T09:40-05:00",
-    "summary": "Today's big story: Could Nvidia Stock Fall 50%?",
-    "tags": [
-     "Policy & politics",
-     "AI & chips"
     ]
    },
    {
@@ -933,29 +1000,39 @@
     "tags": [
      "Energy"
     ]
+   },
+   {
+    "title": "Treasury Yields Rise Amid Resilient U.S. Sales, Prices",
+    "url": "https://www.wsj.com/finance/jgbs-rise-tracking-gains-in-u-s-treasurys-79322f27?siteid=yhoof2&yptr=yahoo",
+    "publisher": "The Wall Street Journal",
+    "at": "2026-11-17T09:06-05:00",
+    "summary": "Treasury yields rose, gaining momentum as October retail sales surprised on the upside and import prices rose more than expected.",
+    "tags": [
+     "Fed & rates"
+    ]
    }
   ],
   "movers": [
    {
-    "ticker": "HTHT",
-    "changePct": -0.59,
-    "title": "H World Group (HTHT) Stock May Be 17% Undervalued On Raised 2026 Outlook",
-    "url": "https://finance.yahoo.com/markets/stocks/articles/h-world-group-htht-stock-002143520.html",
+    "ticker": "AS",
+    "changePct": 8.2,
+    "title": "Amer Sports (AS) Raised Guidance And Launched A $1b Buyback, Is It Fully Priced?",
+    "url": "https://finance.yahoo.com/markets/stocks/articles/amer-sports-raised-guidance-launched-151442448.html",
     "publisher": "Simply Wall St."
    },
    {
     "ticker": "QQQ",
-    "changePct": -0.48,
-    "title": "Stock Market Today: Dow Slides After Surprise Retail Sales; Nvidia Rises With Earnings On Tap (Live Coverage)",
+    "changePct": -1.28,
+    "title": "Stock Market Today: Dow Dips As Retail Sales Do This; Oil Plays Rise But The Software Sector Lags (Live Coverage)",
     "url": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-retail-sales-nvidia-earnings-nvda-stock/?src=A00220&yptr=yahoo",
     "publisher": "Investor's Business Daily"
    },
    {
-    "ticker": "NSIT",
-    "changePct": 0.35,
-    "title": "Update: Insight Enterprises Shares Fall After $650 Million Convertible Notes Offering",
-    "url": "https://finance.yahoo.com/markets/stocks/articles/insight-enterprises-shares-fall-650-200340715.html",
-    "publisher": "MT Newswires"
+    "ticker": "HTHT",
+    "changePct": -0.84,
+    "title": "H World Group (HTHT) Stock May Be 17% Undervalued On Raised 2026 Outlook",
+    "url": "https://finance.yahoo.com/markets/stocks/articles/h-world-group-htht-stock-002143520.html",
+    "publisher": "Simply Wall St."
    }
   ],
   "note": "Generated automatically from market data, the bot's ledger and the headline feeds (rule-based, no AI). Not investment advice."
