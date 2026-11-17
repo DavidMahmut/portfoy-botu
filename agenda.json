@@ -1,5 +1,5 @@
 {
- "asOf": "2026-11-17T17:11-05:00",
+ "asOf": "2026-11-17T17:41-05:00",
  "week": {
   "start": "2026-11-16",
   "end": "2026-11-20",
@@ -200,11 +200,11 @@
    "unit": "",
    "dec": 2,
    "why": "Güçlü dolar, emtiayı ve ABD şirketlerinin yurt dışı gelirini baskılar.",
-   "price": 103.552,
+   "price": 103.561,
    "prev": 103.55,
    "date": "2026-11-17",
-   "d1": 0.0,
-   "w1": 1.29,
+   "d1": 0.01,
+   "w1": 1.3,
    "chgUnit": "%",
    "spark": [
     102.19,
@@ -221,7 +221,7 @@
     103.17,
     103.41,
     103.55,
-    103.552
+    103.561
    ]
   },
   {
@@ -386,11 +386,11 @@
    "unit": "$",
    "dec": 0,
    "why": "Risk iştahının göstergesi; kripto hisselerini (COIN, MSTR) sürükler.",
-   "price": 64402.8711,
+   "price": 64737.4414,
    "prev": 64855.8438,
    "date": "2026-11-17",
-   "d1": -0.7,
-   "w1": -9.73,
+   "d1": -0.18,
+   "w1": -9.26,
    "chgUnit": "%",
    "spark": [
     77345.0469,
@@ -407,7 +407,7 @@
     64128.0508,
     65305.0625,
     64855.8438,
-    64402.8711
+    64737.4414
    ]
   },
   {
@@ -417,11 +417,11 @@
    "unit": "",
    "dec": 4,
    "why": "Doların avroya karşı değeri.",
-   "price": 1.1004,
+   "price": 1.1001,
    "prev": 1.1025,
    "date": "2026-11-17",
-   "d1": -0.19,
-   "w1": -1.95,
+   "d1": -0.22,
+   "w1": -1.97,
    "chgUnit": "%",
    "spark": [
     1.113,
@@ -438,7 +438,7 @@
     1.1095,
     1.105,
     1.1025,
-    1.1004
+    1.1001
    ]
   },
   {
@@ -448,11 +448,11 @@
    "unit": "₺",
    "dec": 2,
    "why": "Doların Türk lirası karşılığı.",
-   "price": 50.4321,
+   "price": 50.436,
    "prev": 50.3403,
    "date": "2026-11-17",
-   "d1": 0.18,
-   "w1": 0.43,
+   "d1": 0.19,
+   "w1": 0.44,
    "chgUnit": "%",
    "spark": [
     49.7992,
@@ -469,11 +469,11 @@
     50.2539,
     50.2819,
     50.3403,
-    50.4321
+    50.436
    ]
   }
  ],
- "marketsAt": "2026-11-17T17:11-05:00",
+ "marketsAt": "2026-11-17T17:41-05:00",
  "econ": [
   {
    "at": "2026-11-16T08:30-05:00",
@@ -1156,7 +1156,7 @@
    "more": []
   }
  ],
- "econAt": "2026-11-17T17:11-05:00",
+ "econAt": "2026-11-17T17:41-05:00",
  "earnings": [
   {
    "t": "BIDU",
@@ -1201,17 +1201,6 @@
    "epsEst": 5.6,
    "epsActual": 6.23,
    "surprisePct": 11.3
-  },
-  {
-   "t": "NVDA",
-   "name": "NVIDIA Corporation",
-   "capB": 3753.9,
-   "day": "2026-11-17",
-   "when": "kapanıştan sonra",
-   "event": "Q3 2027 Earnings Announcement",
-   "epsEst": 2.47,
-   "epsActual": null,
-   "surprisePct": null
   },
   {
    "t": "HD",
@@ -1289,17 +1278,6 @@
    "epsEst": 1.5,
    "epsActual": 1.55,
    "surprisePct": 3.04
-  },
-  {
-   "t": "ZTO",
-   "name": "ZTO Express (Cayman) Inc.",
-   "capB": 15.3,
-   "day": "2026-11-17",
-   "when": "kapanıştan sonra",
-   "event": "Q3 2026 Earnings Announcement",
-   "epsEst": 3.13,
-   "epsActual": null,
-   "surprisePct": null
   },
   {
    "t": "PANW",
@@ -1489,7 +1467,7 @@
    "surprisePct": null
   }
  ],
- "earningsAt": "2026-11-17T17:11-05:00",
+ "earningsAt": "2026-11-17T17:41-05:00",
  "ipos": [
   {
    "t": "BRRK",
@@ -1596,7 +1574,7 @@
    "sizeM": null
   }
  ],
- "iposAt": "2026-11-17T17:11-05:00",
+ "iposAt": "2026-11-17T17:41-05:00",
  "special": [
   {
    "day": "2026-11-18",
