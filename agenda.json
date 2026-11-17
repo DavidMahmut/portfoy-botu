@@ -1,11 +1,11 @@
 {
- "asOf": "2026-11-16T19:43-05:00",
+ "asOf": "2026-11-17T09:41-05:00",
  "week": {
   "start": "2026-11-16",
   "end": "2026-11-20",
   "label": "16 Kasım – 20 Kasım 2026"
  },
- "today": "2026-11-16",
+ "today": "2026-11-17",
  "markets": [
   {
    "t": "^GSPC",
@@ -14,14 +14,13 @@
    "unit": "",
    "dec": 0,
    "why": "ABD'nin en büyük 500 şirketi; piyasanın genel yönü.",
-   "price": 7416.5898,
-   "prev": 7561.6699,
-   "date": "2026-11-16",
-   "d1": -1.92,
-   "w1": -1.77,
+   "price": 7404.27,
+   "prev": 7416.5898,
+   "date": "2026-11-17",
+   "d1": -0.17,
+   "w1": -1.55,
    "chgUnit": "%",
    "spark": [
-    7722.6001,
     7743.98,
     7720.3901,
     7580.0698,
@@ -35,7 +34,8 @@
     7619.3799,
     7592.3999,
     7561.6699,
-    7416.5898
+    7416.5898,
+    7404.27
    ]
   },
   {
@@ -45,14 +45,13 @@
    "unit": "",
    "dec": 0,
    "why": "Teknoloji ağırlıklı 100 büyük şirket; botun endeks kolu bunu izler (QQQ).",
-   "price": 27197.1523,
-   "prev": 27943.7402,
-   "date": "2026-11-16",
-   "d1": -2.67,
-   "w1": -2.55,
+   "price": 27210.8711,
+   "prev": 27197.1504,
+   "date": "2026-11-17",
+   "d1": 0.05,
+   "w1": -1.91,
    "chgUnit": "%",
    "spark": [
-    29651.4395,
     29813.1602,
     29402.5098,
     28384.8496,
@@ -66,7 +65,8 @@
     28374.25,
     28289.1895,
     27943.7402,
-    27197.1523
+    27197.1504,
+    27210.8711
    ]
   },
   {
@@ -76,14 +76,13 @@
    "unit": "",
    "dec": 0,
    "why": "30 büyük sanayi ve finans şirketi.",
-   "price": 51608.1719,
-   "prev": 52347.5508,
-   "date": "2026-11-16",
-   "d1": -1.41,
-   "w1": -1.49,
+   "price": 51290.4688,
+   "prev": 51608.1719,
+   "date": "2026-11-17",
+   "d1": -0.62,
+   "w1": -1.8,
    "chgUnit": "%",
    "spark": [
-    52377.5703,
     52475.1016,
     52342.5586,
     51770.3086,
@@ -97,7 +96,8 @@
     52486.4883,
     52297.0898,
     52347.5508,
-    51608.1719
+    51608.1719,
+    51290.4688
    ]
   },
   {
@@ -107,7 +107,7 @@
    "unit": "",
    "dec": 0,
    "why": "Küçük şirketler; faiz ve ekonomi beklentisine en duyarlı grup.",
-   "price": 2742.9412,
+   "price": 2742.9399,
    "prev": 2790.49,
    "date": "2026-11-16",
    "d1": -1.7,
@@ -128,7 +128,7 @@
     2846.26,
     2799.0601,
     2790.49,
-    2742.9412
+    2742.9399
    ]
   },
   {
@@ -138,14 +138,13 @@
    "unit": "",
    "dec": 2,
    "why": "Beklenen oynaklık: 15 altı sakin, 20 üstü gergin, 30 üstü panik.",
-   "price": 22.91,
-   "prev": 19.3,
-   "date": "2026-11-16",
-   "d1": 18.7,
-   "w1": 15.01,
+   "price": 22.84,
+   "prev": 22.91,
+   "date": "2026-11-17",
+   "d1": -0.31,
+   "w1": 17.37,
    "chgUnit": "%",
    "spark": [
-    17.52,
     16.91,
     17.2,
     19.42,
@@ -159,7 +158,8 @@
     17.49,
     18.7,
     19.3,
-    22.91
+    22.91,
+    22.84
    ]
   },
   {
@@ -169,14 +169,13 @@
    "unit": "%",
    "dec": 2,
    "why": "Yükselince büyüme hisseleri baskılanır, ipotek ve kredi pahalanır.",
-   "price": 5.121,
-   "prev": 5.154,
-   "date": "2026-11-16",
-   "d1": -0.033,
-   "w1": 0.257,
+   "price": 5.149,
+   "prev": 5.121,
+   "date": "2026-11-17",
+   "d1": 0.028,
+   "w1": 0.166,
    "chgUnit": "puan",
    "spark": [
-    4.993,
     5.045,
     4.989,
     4.929,
@@ -190,7 +189,8 @@
     4.998,
     5.103,
     5.154,
-    5.121
+    5.121,
+    5.149
    ]
   },
   {
@@ -200,14 +200,13 @@
    "unit": "",
    "dec": 2,
    "why": "Güçlü dolar, emtiayı ve ABD şirketlerinin yurt dışı gelirini baskılar.",
-   "price": 103.586,
-   "prev": 103.41,
-   "date": "2026-11-16",
-   "d1": 0.17,
-   "w1": 1.9,
+   "price": 103.588,
+   "prev": 103.55,
+   "date": "2026-11-17",
+   "d1": 0.04,
+   "w1": 1.33,
    "chgUnit": "%",
    "spark": [
-    102.32,
     102.19,
     102.04,
     101.88,
@@ -221,7 +220,8 @@
     102.91,
     103.17,
     103.41,
-    103.586
+    103.55,
+    103.588
    ]
   },
   {
@@ -231,14 +231,13 @@
    "unit": "$",
    "dec": 2,
    "why": "ABD ham petrolü: enflasyonu, enerji ve havayolu hisselerini etkiler.",
-   "price": 85.29,
-   "prev": 88.56,
-   "date": "2026-11-16",
-   "d1": -3.69,
-   "w1": -1.8,
+   "price": 87.23,
+   "prev": 85.72,
+   "date": "2026-11-17",
+   "d1": 1.76,
+   "w1": 1.38,
    "chgUnit": "%",
    "spark": [
-    99.9,
     102.78,
     102.0,
     104.12,
@@ -252,7 +251,8 @@
     86.53,
     88.74,
     88.56,
-    85.29
+    85.72,
+    87.23
    ]
   },
   {
@@ -262,14 +262,13 @@
    "unit": "$",
    "dec": 2,
    "why": "Dünya petrol fiyatının ölçüsü.",
-   "price": 92.01,
-   "prev": 95.84,
-   "date": "2026-11-16",
-   "d1": -4.0,
-   "w1": -0.6,
+   "price": 93.86,
+   "prev": 92.44,
+   "date": "2026-11-17",
+   "d1": 1.54,
+   "w1": 2.59,
    "chgUnit": "%",
    "spark": [
-    113.88,
     115.32,
     114.88,
     117.64,
@@ -283,7 +282,8 @@
     92.76,
     95.82,
     95.84,
-    92.01
+    92.44,
+    93.86
    ]
   },
   {
@@ -293,14 +293,13 @@
    "unit": "$",
    "dec": 3,
    "why": "Enerji maliyeti; kış aylarında sert oynar.",
-   "price": 3.123,
-   "prev": 3.23,
-   "date": "2026-11-16",
-   "d1": -3.31,
-   "w1": -2.95,
+   "price": 3.086,
+   "prev": 3.122,
+   "date": "2026-11-17",
+   "d1": -1.15,
+   "w1": -6.37,
    "chgUnit": "%",
    "spark": [
-    2.697,
     2.817,
     2.952,
     2.898,
@@ -314,7 +313,8 @@
     3.215,
     3.34,
     3.23,
-    3.123
+    3.122,
+    3.086
    ]
   },
   {
@@ -324,14 +324,13 @@
    "unit": "$",
    "dec": 0,
    "why": "Güvenli liman: korku ve faiz indirimi beklentisiyle yükselir.",
-   "price": 3860.6001,
-   "prev": 3886.3,
-   "date": "2026-11-16",
-   "d1": -0.66,
-   "w1": -6.17,
+   "price": 3865.0,
+   "prev": 3853.0,
+   "date": "2026-11-17",
+   "d1": 0.31,
+   "w1": -4.1,
    "chgUnit": "%",
    "spark": [
-    4074.6001,
     4051.6001,
     4031.3999,
     3898.8999,
@@ -345,7 +344,8 @@
     4000.5,
     3885.3,
     3886.3,
-    3860.6001
+    3853.0,
+    3865.0
    ]
   },
   {
@@ -355,14 +355,13 @@
    "unit": "$",
    "dec": 3,
    "why": "Sanayi talebinin göstergesi: yükselmesi büyüme beklentisine işaret eder.",
-   "price": 5.9875,
-   "prev": 6.0795,
-   "date": "2026-11-16",
-   "d1": -1.51,
-   "w1": -5.39,
+   "price": 5.986,
+   "prev": 5.9975,
+   "date": "2026-11-17",
+   "d1": -0.19,
+   "w1": -3.75,
    "chgUnit": "%",
    "spark": [
-    6.622,
     6.6415,
     6.581,
     6.4585,
@@ -376,7 +375,8 @@
     6.2745,
     6.1825,
     6.0795,
-    5.9875
+    5.9975,
+    5.986
    ]
   },
   {
@@ -386,14 +386,13 @@
    "unit": "$",
    "dec": 0,
    "why": "Risk iştahının göstergesi; kripto hisselerini (COIN, MSTR) sürükler.",
-   "price": 64553.4414,
-   "prev": 65305.0625,
+   "price": 65179.8008,
+   "prev": 64855.8438,
    "date": "2026-11-17",
-   "d1": -1.15,
-   "w1": -12.72,
+   "d1": 0.5,
+   "w1": -8.64,
    "chgUnit": "%",
    "spark": [
-    76677.2969,
     77345.0469,
     80405.2891,
     75942.125,
@@ -407,7 +406,8 @@
     68249.2734,
     64128.0508,
     65305.0625,
-    64553.4414
+    64855.8438,
+    65179.8008
    ]
   },
   {
@@ -417,11 +417,11 @@
    "unit": "",
    "dec": 4,
    "why": "Doların avroya karşı değeri.",
-   "price": 1.0999,
+   "price": 1.0993,
    "prev": 1.1025,
    "date": "2026-11-17",
-   "d1": -0.24,
-   "w1": -1.99,
+   "d1": -0.29,
+   "w1": -2.05,
    "chgUnit": "%",
    "spark": [
     1.113,
@@ -438,7 +438,7 @@
     1.1095,
     1.105,
     1.1025,
-    1.0999
+    1.0993
    ]
   },
   {
@@ -448,11 +448,11 @@
    "unit": "₺",
    "dec": 2,
    "why": "Doların Türk lirası karşılığı.",
-   "price": 50.414,
+   "price": 50.415,
    "prev": 50.3403,
    "date": "2026-11-17",
    "d1": 0.15,
-   "w1": 0.39,
+   "w1": 0.4,
    "chgUnit": "%",
    "spark": [
     49.7992,
@@ -469,11 +469,11 @@
     50.2539,
     50.2819,
     50.3403,
-    50.414
+    50.415
    ]
   }
  ],
- "marketsAt": "2026-11-16T19:43-05:00",
+ "marketsAt": "2026-11-17T09:41-05:00",
  "econ": [
   {
    "at": "2026-11-16T08:30-05:00",
@@ -509,7 +509,7 @@
    "tr": "Perakende satışlar",
    "imp": 3,
    "period": "Oct",
-   "actual": null,
+   "actual": 0.2,
    "expected": null,
    "last": 0.8,
    "unit": "%",
@@ -517,7 +517,7 @@
    "more": [
     {
      "name": "Retail Sales Ex-Autos MM",
-     "actual": null,
+     "actual": 0.6,
      "expected": null,
      "last": 0.9,
      "unit": "%"
@@ -531,7 +531,7 @@
    "tr": "İthalat / ihracat fiyatları",
    "imp": 1,
    "period": "Oct",
-   "actual": null,
+   "actual": 1.1,
    "expected": null,
    "last": 1.1,
    "unit": "%",
@@ -539,7 +539,7 @@
    "more": [
     {
      "name": "Export Prices MM",
-     "actual": null,
+     "actual": 1.1,
      "expected": null,
      "last": 2.2,
      "unit": "%"
@@ -553,7 +553,7 @@
    "tr": null,
    "imp": 0,
    "period": "Oct",
-   "actual": null,
+   "actual": 0.6,
    "expected": null,
    "last": 0.1,
    "unit": "",
@@ -566,7 +566,7 @@
    "tr": null,
    "imp": 0,
    "period": "Oct",
-   "actual": null,
+   "actual": 0.5,
    "expected": null,
    "last": 0.2,
    "unit": "",
@@ -579,7 +579,7 @@
    "tr": null,
    "imp": 0,
    "period": null,
-   "actual": null,
+   "actual": 9.5,
    "expected": null,
    "last": 10.1,
    "unit": "%",
@@ -592,7 +592,7 @@
    "tr": "Sanayi üretimi",
    "imp": 1,
    "period": "Oct",
-   "actual": null,
+   "actual": -0.4,
    "expected": null,
    "last": 0.7,
    "unit": "%",
@@ -600,7 +600,7 @@
    "more": [
     {
      "name": "Capacity Utilization SA",
-     "actual": null,
+     "actual": 76.4,
      "expected": null,
      "last": 76.9,
      "unit": ""
@@ -614,7 +614,7 @@
    "tr": null,
    "imp": 0,
    "period": "Oct",
-   "actual": null,
+   "actual": 0.3,
    "expected": null,
    "last": 0.3,
    "unit": "%",
@@ -1156,12 +1156,12 @@
    "more": []
   }
  ],
- "econAt": "2026-11-16T19:43-05:00",
+ "econAt": "2026-11-17T09:41-05:00",
  "earnings": [
   {
    "t": "BIDU",
    "name": "Baidu, Inc.",
-   "capB": 25.2,
+   "capB": 24.8,
    "day": "2026-11-16",
    "when": null,
    "event": NaN,
@@ -1172,7 +1172,7 @@
   {
    "t": "TSN",
    "name": "Tyson Foods, Inc.",
-   "capB": 22.5,
+   "capB": 21.5,
    "day": "2026-11-16",
    "when": null,
    "event": NaN,
@@ -1183,7 +1183,7 @@
   {
    "t": "BEKE",
    "name": "KE Holdings Inc.",
-   "capB": 20.4,
+   "capB": 20.5,
    "day": "2026-11-16",
    "when": null,
    "event": NaN,
@@ -1194,7 +1194,7 @@
   {
    "t": "HTHT",
    "name": "H World Group Limited",
-   "capB": 17.3,
+   "capB": 17.2,
    "day": "2026-11-16",
    "when": null,
    "event": NaN,
@@ -1205,7 +1205,7 @@
   {
    "t": "NVDA",
    "name": "NVIDIA Corporation",
-   "capB": 3770.3,
+   "capB": 3757.0,
    "day": "2026-11-17",
    "when": "kapanıştan sonra",
    "event": "Q3 2027 Earnings Announcement",
@@ -1216,18 +1216,18 @@
   {
    "t": "HD",
    "name": "The Home Depot, Inc.",
-   "capB": 346.7,
+   "capB": 337.5,
    "day": "2026-11-17",
-   "when": "açılıştan önce",
-   "event": "Q3 2026 Earnings Announcement",
-   "epsEst": 3.83,
-   "epsActual": null,
-   "surprisePct": null
+   "when": null,
+   "event": NaN,
+   "epsEst": 3.84,
+   "epsActual": 3.86,
+   "surprisePct": 0.57
   },
   {
    "t": "DIS",
    "name": "The Walt Disney Company",
-   "capB": 205.0,
+   "capB": 205.8,
    "day": "2026-11-17",
    "when": "açılıştan önce",
    "event": "Q4 2026 Earnings Announcement",
@@ -1238,51 +1238,51 @@
   {
    "t": "VIK",
    "name": "Viking Holdings Ltd",
-   "capB": 40.3,
+   "capB": 41.2,
    "day": "2026-11-17",
-   "when": "açılıştan önce",
-   "event": "Q3 2026 Earnings Announcement",
+   "when": null,
+   "event": NaN,
    "epsEst": 1.26,
-   "epsActual": null,
-   "surprisePct": null
+   "epsActual": 1.11,
+   "surprisePct": -12.08
   },
   {
    "t": "JD",
    "name": "JD.com, Inc.",
-   "capB": 37.2,
+   "capB": 35.4,
    "day": "2026-11-17",
-   "when": "açılıştan önce",
-   "event": "Q3 2026 Earnings Announcement",
+   "when": null,
+   "event": NaN,
    "epsEst": 5.88,
-   "epsActual": null,
+   "epsActual": 5.88,
    "surprisePct": null
   },
   {
    "t": "ESLT",
    "name": "Elbit Systems Ltd.",
-   "capB": 31.9,
+   "capB": 34.5,
    "day": "2026-11-17",
-   "when": "açılıştan önce",
-   "event": "Q3 2026 Earnings Announcement",
+   "when": null,
+   "event": NaN,
    "epsEst": 3.94,
-   "epsActual": null,
-   "surprisePct": null
+   "epsActual": 4.36,
+   "surprisePct": 10.73
   },
   {
    "t": "AS",
    "name": "Amer Sports, Inc.",
-   "capB": 16.9,
+   "capB": 18.2,
    "day": "2026-11-17",
-   "when": "açılıştan önce",
-   "event": "Q3 2026 Earnings Announcement",
+   "when": null,
+   "event": NaN,
    "epsEst": 0.35,
-   "epsActual": null,
-   "surprisePct": null
+   "epsActual": 0.42,
+   "surprisePct": 20.78
   },
   {
    "t": "ZTO",
    "name": "ZTO Express (Cayman) Inc.",
-   "capB": 15.3,
+   "capB": 15.4,
    "day": "2026-11-17",
    "when": "kapanıştan sonra",
    "event": "Q3 2026 Earnings Announcement",
@@ -1291,9 +1291,20 @@
    "surprisePct": null
   },
   {
+   "t": "TME",
+   "name": "Tencent Music Entertainment Group",
+   "capB": 15.2,
+   "day": "2026-11-17",
+   "when": null,
+   "event": NaN,
+   "epsEst": 1.5,
+   "epsActual": 1.55,
+   "surprisePct": 3.04
+  },
+  {
    "t": "PANW",
    "name": "Palo Alto Networks, Inc.",
-   "capB": 258.8,
+   "capB": 253.9,
    "day": "2026-11-18",
    "when": "kapanıştan sonra",
    "event": "Q1 2027 Earnings Announcement",
@@ -1304,18 +1315,18 @@
   {
    "t": "TJX",
    "name": "The TJX Companies, Inc.",
-   "capB": 144.8,
+   "capB": 144.7,
    "day": "2026-11-18",
    "when": "açılıştan önce",
    "event": "Q3 2027 Earnings Announcement",
-   "epsEst": 1.33,
+   "epsEst": 1.34,
    "epsActual": null,
    "surprisePct": null
   },
   {
    "t": "LOW",
    "name": "Lowe's Companies, Inc.",
-   "capB": 126.2,
+   "capB": 125.3,
    "day": "2026-11-18",
    "when": "açılıştan önce",
    "event": "Q3 2026 Earnings Announcement",
@@ -1326,7 +1337,7 @@
   {
    "t": "TGT",
    "name": "Target Corporation",
-   "capB": 72.8,
+   "capB": 72.3,
    "day": "2026-11-18",
    "when": "açılıştan önce",
    "event": "Q3 2026 Earnings Announcement",
@@ -1337,7 +1348,7 @@
   {
    "t": "P",
    "name": "Everpure, Inc.",
-   "capB": 34.5,
+   "capB": 34.7,
    "day": "2026-11-18",
    "when": "kapanıştan sonra",
    "event": "Q3 2027 Earnings Announcement",
@@ -1348,7 +1359,7 @@
   {
    "t": "WWD",
    "name": "Woodward, Inc.",
-   "capB": 18.4,
+   "capB": 18.7,
    "day": "2026-11-18",
    "when": "kapanıştan sonra",
    "event": "Q4 2026 Earnings Announcement",
@@ -1359,7 +1370,7 @@
   {
    "t": "WMT",
    "name": "Walmart Inc.",
-   "capB": 1018.8,
+   "capB": 1023.4,
    "day": "2026-11-19",
    "when": "açılıştan önce",
    "event": "Q3 2027 Earnings Announcement",
@@ -1370,7 +1381,7 @@
   {
    "t": "BABA",
    "name": "Alibaba Group Holding Limited",
-   "capB": 225.4,
+   "capB": 219.2,
    "day": "2026-11-19",
    "when": "açılıştan önce",
    "event": "Q2 2027 Earnings Announcement",
@@ -1381,7 +1392,7 @@
   {
    "t": "PDD",
    "name": "PDD Holdings Inc.",
-   "capB": 111.2,
+   "capB": 112.2,
    "day": "2026-11-19",
    "when": "açılıştan önce",
    "event": "Q3 2026 Earnings Announcement",
@@ -1392,7 +1403,7 @@
   {
    "t": "INTU",
    "name": "Intuit Inc.",
-   "capB": 92.3,
+   "capB": 89.1,
    "day": "2026-11-19",
    "when": "kapanıştan sonra",
    "event": "Q1 2027 Earnings Announcement",
@@ -1403,18 +1414,18 @@
   {
    "t": "NTES",
    "name": "NetEase, Inc.",
-   "capB": 77.8,
+   "capB": 77.2,
    "day": "2026-11-19",
    "when": "açılıştan önce",
    "event": "Q3 2026 Earnings Announcement",
-   "epsEst": 16.13,
+   "epsEst": 16.07,
    "epsActual": null,
    "surprisePct": null
   },
   {
    "t": "ROST",
    "name": "Ross Stores, Inc.",
-   "capB": 71.2,
+   "capB": 71.9,
    "day": "2026-11-19",
    "when": "kapanıştan sonra",
    "event": "Q3 2026 Earnings Announcement",
@@ -1425,7 +1436,7 @@
   {
    "t": "KEYS",
    "name": "Keysight Technologies, Inc.",
-   "capB": 48.6,
+   "capB": 49.4,
    "day": "2026-11-19",
    "when": "kapanıştan sonra",
    "event": "Q4 2026 Earnings Announcement",
@@ -1434,20 +1445,9 @@
    "surprisePct": null
   },
   {
-   "t": "CPRT",
-   "name": "Copart, Inc.",
-   "capB": 29.7,
-   "day": "2026-11-19",
-   "when": "kapanıştan sonra",
-   "event": "Q1 2027 Earnings Announcement",
-   "epsEst": 0.4,
-   "epsActual": null,
-   "surprisePct": null
-  },
-  {
    "t": "WSM",
    "name": "Williams-Sonoma, Inc.",
-   "capB": 29.7,
+   "capB": 29.8,
    "day": "2026-11-19",
    "when": "açılıştan önce",
    "event": "Q3 2026 Earnings Announcement",
@@ -1458,7 +1458,7 @@
   {
    "t": "TCOM",
    "name": "Trip.com Group Limited",
-   "capB": 27.9,
+   "capB": 27.7,
    "day": "2026-11-19",
    "when": "kapanıştan sonra",
    "event": "Q3 2026 Earnings Announcement",
@@ -1469,7 +1469,7 @@
   {
    "t": "WMG",
    "name": "Warner Music Group Corp.",
-   "capB": 17.0,
+   "capB": 16.9,
    "day": "2026-11-19",
    "when": "açılıştan önce",
    "event": "Q4 2026 Earnings Announcement",
@@ -1480,7 +1480,7 @@
   {
    "t": "BSP",
    "name": "Bending Spoons S.p.A.",
-   "capB": 26.9,
+   "capB": 27.2,
    "day": "2026-11-20",
    "when": "açılıştan önce",
    "event": "Q3 2026 Earnings Announcement",
@@ -1489,7 +1489,7 @@
    "surprisePct": null
   }
  ],
- "earningsAt": "2026-11-16T19:43-05:00",
+ "earningsAt": "2026-11-17T09:41-05:00",
  "ipos": [
   {
    "t": "BRRK",
@@ -1583,7 +1583,7 @@
    "sizeM": null
   }
  ],
- "iposAt": "2026-11-16T19:43-05:00",
+ "iposAt": "2026-11-17T09:41-05:00",
  "special": [
   {
    "day": "2026-11-18",
