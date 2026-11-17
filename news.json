@@ -1,12 +1,12 @@
 {
- "asOf": "2026-11-17T15:08:41-05:00",
+ "asOf": "2026-11-17T15:25:52-05:00",
  "sections": [
   {
    "ticker": "QQQ",
    "name": "Invesco QQQ (Nasdaq 100)",
    "role": "long",
-   "dayChangePct": -1.52,
-   "unrealizedPct": -2.17,
+   "dayChangePct": -1.27,
+   "unrealizedPct": -1.92,
    "items": [
     {
      "title": "Exchange-Traded Funds Fall as US Equities Drop After Midday",
@@ -51,8 +51,8 @@
    "ticker": "HTHT",
    "name": "H World Group Limited",
    "role": "long",
-   "dayChangePct": -1.28,
-   "unrealizedPct": -2.74,
+   "dayChangePct": -1.13,
+   "unrealizedPct": -2.6,
    "items": [
     {
      "title": "H World Group (HTHT) Stock May Be 17% Undervalued On Raised 2026 Outlook",
@@ -98,8 +98,8 @@
    "ticker": "AVEX",
    "name": "AEVEX Corp.",
    "role": "long",
-   "dayChangePct": 0.34,
-   "unrealizedPct": -1.12,
+   "dayChangePct": -0.22,
+   "unrealizedPct": -1.67,
    "items": [
     {
      "title": "AEVEX (AVEX) Stock Could Be Undervalued On Raised 2026 Guidance",
@@ -129,9 +129,19 @@
    "ticker": "NSIT",
    "name": "Insight Enterprises, Inc.",
    "role": "short",
-   "dayChangePct": 0.33,
-   "unrealizedPct": -0.88,
+   "dayChangePct": 0.36,
+   "unrealizedPct": -0.92,
    "items": [
+    {
+     "title": "A $2.7 Billion Fund Dumps These 3 Stocks",
+     "summary": "Key TakeawaysAnalog Century Management, a $2. 7 billion fund, sold all of its Applied Materials, Insight Enterprises and STMicroelectronics shares in the third quarter, its latest 13F shows.",
+     "publisher": "TIKR",
+     "url": "https://www.tikr.com/blog/a-2-7-billion-fund-dumps-these-3-stocks?ref=yahoofinance&tlnk=yf-261117-4c7w55ww",
+     "at": "2026-11-17T15:00-05:00",
+     "tags": [
+      "Earnings"
+     ]
+    },
     {
      "title": "Update: Insight Enterprises Shares Fall After $650 Million Convertible Notes Offering",
      "summary": "(Updates with the latest stock price movement in the headline and first paragraph.) Insight Enter",
@@ -162,8 +172,8 @@
    "ticker": "AS",
    "name": "Amer Sports, Inc.",
    "role": "long",
-   "dayChangePct": 4.85,
-   "unrealizedPct": -3.48,
+   "dayChangePct": 4.43,
+   "unrealizedPct": -3.86,
    "items": [
     {
      "title": "Amer Sports Lifts Full-Year Outlook Following Third-Quarter Beat; Shares Rise",
@@ -461,6 +471,16 @@
  ],
  "market": [
   {
+   "title": "BC-OILS",
+   "summary": "NEW YORK (AP) — Futures trading on the New York Mercantile Exchange Tuesday:Open High Low Settle Chg.'s open int 1,921,133 down 14,831 HEATING OIL 42,000 gal, cents per gal Dec 26 407.",
+   "publisher": "Associated Press",
+   "url": "https://finance.yahoo.com/markets/commodities/articles/bc-oils-200018818.html",
+   "at": "2026-11-17T15:00-05:00",
+   "tags": [
+    "Energy"
+   ]
+  },
+  {
    "title": "Oil edges up on tanker attacks, expected US crude drop",
    "summary": "By Nicole Jao NEW YORK, Nov 17 (Reuters) - Oil prices settled higher on Tuesday as traders worried about continuing tanker attacks in the Strait of Hormuz and expected falling US crude oil inventories",
    "publisher": "Reuters",
@@ -488,18 +508,6 @@
    "at": "2026-11-17T13:26-05:00",
    "tags": [
     "Fed & rates"
-   ]
-  },
-  {
-   "title": "Stocks fall with Nvidia in focus, oil ticks up",
-   "summary": "By Rodrigo Campos and Johann M Cherian Nov 17 (Reuters) - Stocks fell across the globe on Tuesday, weighed by tech shares, as investors geared up for AI bellwether Nvidia's first earnings report",
-   "publisher": "Reuters",
-   "url": "https://finance.yahoo.com/markets/world-indices/articles/asia-shares-stumble-tech-weakness-012906483.html",
-   "at": "2026-11-17T12:35-05:00",
-   "tags": [
-    "Earnings",
-    "Energy",
-    "AI & chips"
    ]
   },
   {
@@ -535,17 +543,6 @@
    ]
   },
   {
-   "title": "RB Global (RBA) Pulled Back in Q3 on Lower-Than-Expected Service Revenue and EBITDA Growth",
-   "summary": "Cooke & Bieler, an investment management firm, released its third-quarter investor letter for “All Cap Value Equity Strategy.” The letter can be downloaded here. US equity markets were mixed in the third quarter due to rising long-term interest rates, higher o…",
-   "publisher": "Insider Monkey",
-   "url": "https://finance.yahoo.com/markets/stocks/articles/rb-global-rba-pulled-back-163505246.html",
-   "at": "2026-11-17T11:35-05:00",
-   "tags": [
-    "Fed & rates",
-    "Earnings"
-   ]
-  },
-  {
    "title": "3 Canadian Undervalued Stocks To Own In November 2026",
    "summary": "When the US 10 year Treasury yield holds above 5%, discounted cash flow models start to matter a lot more for valuation. Higher risk free rates pull future cash flows down to earth, which can leave certain Canadian stocks trading well below what their underlyi…",
    "publisher": "Simply Wall St.",
@@ -553,6 +550,27 @@
    "at": "2026-11-17T11:15-05:00",
    "tags": [
     "Fed & rates"
+   ]
+  },
+  {
+   "title": "Stocks fall with Nvidia in focus, dollar dips",
+   "summary": "By Rodrigo Campos and Johann M Cherian Nov 17 (Reuters) - Stocks fell across the globe on Tuesday, weighed by tech shares, as investors geared up for AI bellwether Nvidia's first earnings report",
+   "publisher": "Reuters",
+   "url": "https://finance.yahoo.com/markets/world-indices/articles/asia-shares-stumble-tech-weakness-012906483.html",
+   "at": "2026-11-17T15:22-05:00",
+   "tags": [
+    "Earnings",
+    "AI & chips"
+   ]
+  },
+  {
+   "title": "Berkshire Hathaway Is Up 18% in Its First Year Without Buffett as CEO. Can BRK.B Stock Hit $700 by 2027?",
+   "summary": "A new era at Berkshire Hathaway (NYSE:BRK-B) is off to a strong start, with the conglomerate outpacing the broad market in its first full year under a new chief executive. Berkshire Hathaway stock is up 18% year to date (YTD), recently at $591.45. On November …",
+   "publisher": "24/7 Wall St.",
+   "url": "https://247wallst.com/investing/2026/11/17/berkshire-hathaway-is-up-18-in-its-first-year-without-buffett-as-ceo-can-brk-b-stock-hit-700-by-2027/",
+   "at": "2026-11-17T15:07-05:00",
+   "tags": [
+    "Corporate"
    ]
   },
   {
@@ -575,27 +593,161 @@
     "Earnings",
     "AI & chips"
    ]
-  },
-  {
-   "title": "Add a Broken 200-day Moving Average to the Stock Market’s Long List of Worries",
-   "summary": "Everything that could go wrong for the market is going wrong—and it’s starting to feel like investors will have to let gravity do its work before it gets any better.",
-   "publisher": "Barrons.com",
-   "url": "https://www.barrons.com/livecoverage/stock-market-news-today-111726/card/add-a-broken-200-day-moving-average-to-the-stock-market-s-long-list-of-worries-lJyErBCcgECfQVpjMILA?siteid=yhoof2&yptr=yahoo",
-   "at": "2026-11-17T14:35-05:00",
-   "tags": []
   }
  ],
  "seekingAlpha": {
-  "asOf": "2026-11-17T15:08:41-05:00",
+  "asOf": "2026-11-17T15:25:52-05:00",
   "ok": true,
   "stale": false,
   "via": "seekingalpha.com RSS",
   "errors": [],
   "feedCounts": {
    "Piyasa haberleri": 7,
-   "Tüm yazılar": 25
+   "Tüm yazılar": 23
   },
   "market": [
+   {
+    "title": "Nvidia a new short call at Muddy Waters",
+    "url": "https://seekingalpha.com/news/4673868-nvidia-a-new-short-call-at-muddy-waters",
+    "at": "2026-11-17T15:22-05:00",
+    "kind": "news",
+    "symbols": [],
+    "author": null
+   },
+   {
+    "title": "CoreWeave: An Unnecessary Middleman",
+    "url": "https://seekingalpha.com/article/4969237-coreweave-an-unnecessary-middleman",
+    "at": "2026-11-17T15:19-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "CRWV",
+     "SAFE",
+     "NVDA",
+     "CRWV:CA"
+    ],
+    "author": null
+   },
+   {
+    "title": "Fubo targets at least $300M adjusted EBITDA in fiscal 2028 as it stops reporting quarterly subscribers",
+    "url": "https://seekingalpha.com/news/4673871-fubo-targets-at-least-300m-adjusted-ebitda-in-fiscal-2028-as-it-stops-reporting-quarterly",
+    "at": "2026-11-17T15:14-05:00",
+    "kind": "news",
+    "symbols": [],
+    "author": null
+   },
+   {
+    "title": "Spotify: The Margin Story The Market Is Missing",
+    "url": "https://seekingalpha.com/article/4969235-spotify-the-margin-story-the-market-is-missing",
+    "at": "2026-11-17T15:14-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "SPOT"
+    ],
+    "author": null
+   },
+   {
+    "title": "Big bank stocks near 'death cross' bearish chart pattern after reports of outages",
+    "url": "https://seekingalpha.com/news/4673852-big-bank-stocks-near-death-cross-bearish-chart-pattern-after-reports-of-outages",
+    "at": "2026-11-17T15:13-05:00",
+    "kind": "news",
+    "symbols": [],
+    "author": null
+   },
+   {
+    "title": "Honeywell International Inc. (HON) Presents at RBC Global Industrials Conference 2026 Transcript",
+    "url": "https://seekingalpha.com/article/4969084-honeywell-international-inc-hon-presents-at-rbc-global-industrials-conference-2026-transcript",
+    "at": "2026-11-17T15:13-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "HON",
+     "HON:CA"
+    ],
+    "author": null
+   },
+   {
+    "title": "MSCI Inc. (MSCI) Presents at J.P. Morgan Ultimate Services Investor Conference 2026 Transcript",
+    "url": "https://seekingalpha.com/article/4969211-msci-inc-msci-presents-at-j-p-morgan-ultimate-services-investor-conference-2026-transcript",
+    "at": "2026-11-17T15:13-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "MSCI"
+    ],
+    "author": null
+   },
+   {
+    "title": "BMW: Cheap At 5.4x Earnings, But Still Not A Buy",
+    "url": "https://seekingalpha.com/article/4969234-bmw-cheap-at-5-4x-earnings-but-still-not-a-buy",
+    "at": "2026-11-17T15:11-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "BMWKY",
+     "BAMXF",
+     "BMW:CA"
+    ],
+    "author": null
+   },
+   {
+    "title": "Home Depot: This Could Very Well Be A Bull Trap",
+    "url": "https://seekingalpha.com/article/4969233-home-depot-this-could-very-well-be-bull-trap",
+    "at": "2026-11-17T15:09-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "HD",
+     "HD:CA"
+    ],
+    "author": null
+   },
+   {
+    "title": "Curtiss-Wright: I Called The 'Sell,' Now I'm Calling The 'Buy' (Rating Upgrade)",
+    "url": "https://seekingalpha.com/article/4969232-curtiss-wright-i-called-the-sell-now-im-calling-the-buy-upgrade",
+    "at": "2026-11-17T15:09-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "CW"
+    ],
+    "author": null
+   },
+   {
+    "title": "Weekly Closed-End Fund Roundup (November 8, 2026)",
+    "url": "https://seekingalpha.com/article/4969231-weekly-closed-end-fund-roundup-november-8-2026",
+    "at": "2026-11-17T15:09-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "LEO",
+     "DMB",
+     "DSM",
+     "BRW",
+     "ECC",
+     "CCIF"
+    ],
+    "author": null
+   },
+   {
+    "title": "Alpine Income Property Trust: Growth Is Slowing, But The Opportunity Is Getting Better",
+    "url": "https://seekingalpha.com/article/4969230-alpine-income-property-trust-growth-is-slowing-but-the-opportunity-is-getting-better",
+    "at": "2026-11-17T15:08-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "PINE.PR.A",
+     "PINE"
+    ],
+    "author": null
+   },
+   {
+    "title": "Woodside Energy: One Of My Top Picks For 2027",
+    "url": "https://seekingalpha.com/article/4969229-woodside-energy-one-of-my-top-picks-for-2027",
+    "at": "2026-11-17T15:07-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "WMB",
+     "BP",
+     "BPAQF",
+     "SHEL",
+     "RYDAF",
+     "WDS"
+    ],
+    "author": null
+   },
    {
     "title": "Freshworks may have attracted takeover interest - Betaville (update)",
     "url": "https://seekingalpha.com/news/4673754-freshworks-may-have-attracted-takeover-interest---betaville",
@@ -627,66 +779,11 @@
     "author": null
    },
    {
-    "title": "10 Graham Value Dividend All-Stars (GVAS) Extol November",
-    "url": "https://seekingalpha.com/article/4969226-10-graham-value-dividend-all-stars-gvas-extol-november",
-    "at": "2026-11-17T15:04-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "WB",
-     "GSL",
-     "VZ",
-     "LTC",
-     "T",
-     "BZ"
-    ],
-    "author": null
-   },
-   {
     "title": "HPE slides as FAA says outage traced back to router malfunction",
     "url": "https://seekingalpha.com/news/4673866-hpe-slides-as-faa-says-outage-traced-back-to-router-malfunction",
     "at": "2026-11-17T15:03-05:00",
     "kind": "news",
     "symbols": [],
-    "author": null
-   },
-   {
-    "title": "ALX Oncology Holdings Inc. (ALXO) Presents at UBS Global Biopharma Conference 2026 Transcript",
-    "url": "https://seekingalpha.com/article/4969213-alx-oncology-holdings-inc-alxo-presents-at-ubs-global-biopharma-conference-2026-transcript",
-    "at": "2026-11-17T15:03-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "ALXO"
-    ],
-    "author": null
-   },
-   {
-    "title": "Vertex Pharmaceuticals Incorporated (VRTX) Presents at Jefferies Global Healthcare Conference 2026 Transcript",
-    "url": "https://seekingalpha.com/article/4969214-vertex-pharmaceuticals-incorporated-vrtx-presents-at-jefferies-global-healthcare-conference",
-    "at": "2026-11-17T15:03-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "VRTX"
-    ],
-    "author": null
-   },
-   {
-    "title": "Neurocrine Biosciences, Inc. (NBIX) Presents at Jefferies Global Healthcare Conference 2026 Transcript",
-    "url": "https://seekingalpha.com/article/4969171-neurocrine-biosciences-inc-nbix-presents-at-jefferies-global-healthcare-conference-2026",
-    "at": "2026-11-17T15:02-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "NBIX"
-    ],
-    "author": null
-   },
-   {
-    "title": "DBB: Metals Show Strength Despite A Rising Dollar, Making It A Buy",
-    "url": "https://seekingalpha.com/article/4969225-dbb-metals-show-strength-despite-a-rising-dollar-making-it-a-buy",
-    "at": "2026-11-17T15:01-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "DBB"
-    ],
     "author": null
    },
    {
@@ -703,82 +800,6 @@
     "at": "2026-11-17T14:57-05:00",
     "kind": "news",
     "symbols": [],
-    "author": null
-   },
-   {
-    "title": "Kalshi halts some Trump “mention markets” at CFTC's request - reports",
-    "url": "https://seekingalpha.com/news/4673860-kalshi-halts-some-trump-mention-markets-at-cftcs-request-reports",
-    "at": "2026-11-17T14:56-05:00",
-    "kind": "news",
-    "symbols": [],
-    "author": null
-   },
-   {
-    "title": "Ideaya Biosciences: Staying Bullish On Darovasertib NDA Submission And More",
-    "url": "https://seekingalpha.com/article/4969223-ideaya-biosciences-staying-bullish-on-darovasertib-nda-submission-and-more",
-    "at": "2026-11-17T14:56-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "IDYA"
-    ],
-    "author": null
-   },
-   {
-    "title": "Trifast signals revised H2 guidance as it targets double-digit EBIT margins over the medium term",
-    "url": "https://seekingalpha.com/news/4673867-trifast-signals-revised-h2-guidance-as-it-targets-double-digit-ebit-margins-over-the-medium",
-    "at": "2026-11-17T14:55-05:00",
-    "kind": "news",
-    "symbols": [],
-    "author": null
-   },
-   {
-    "title": "Home Depot expects FY2026 sales growth of ~4.5% as leadership succession takes next step",
-    "url": "https://seekingalpha.com/news/4673865-home-depot-expects-fy2026-sales-growth-of-4_5-percent-as-leadership-succession-takes-next",
-    "at": "2026-11-17T14:54-05:00",
-    "kind": "news",
-    "symbols": [],
-    "author": null
-   },
-   {
-    "title": "RDVI: The Rare Option Income ETF That Moved Its Portfolio In Time",
-    "url": "https://seekingalpha.com/article/4969222-rdvi-the-rare-option-income-etf-that-moved-its-portfolio-in-time",
-    "at": "2026-11-17T14:54-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "RDVI"
-    ],
-    "author": null
-   },
-   {
-    "title": "The Campbell's Company (CPB) Shareholder/Analyst Call Prepared Remarks Transcript",
-    "url": "https://seekingalpha.com/article/4969242-the-campbells-company-cpb-shareholder-analyst-call-prepared-remarks-transcript",
-    "at": "2026-11-17T14:53-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "CPB"
-    ],
-    "author": null
-   },
-   {
-    "title": "Beam Therapeutics Inc. (BEAM) Presents at UBS Global Biopharma Conference 2026 Prepared Remarks Transcript",
-    "url": "https://seekingalpha.com/article/4969119-beam-therapeutics-inc-beam-presents-at-ubs-global-biopharma-conference-2026-prepared-remarks",
-    "at": "2026-11-17T14:52-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "BEAM"
-    ],
-    "author": null
-   },
-   {
-    "title": "Midstream ETFs AMLP And ENFR Increase Q4 Distributions",
-    "url": "https://seekingalpha.com/article/4969236-midstream-etfs-amlp-and-enfr-increase-q4-distributions",
-    "at": "2026-11-17T14:45-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "MLPA",
-     "AMLP",
-     "ENFR"
-    ],
     "author": null
    }
   ],
@@ -929,28 +950,28 @@
    "url": "https://seekingalpha.com/market-news"
   },
   "note": "Yalnızca başlık ve bağlantı. Yazıların tamamı Seeking Alpha'da; bir kısmı abonelik ister. Yatırım tavsiyesi değildir.",
-  "lastGood": "2026-11-17T15:08:41-05:00"
+  "lastGood": "2026-11-17T15:25:52-05:00"
  },
  "digest": {
   "date": "2026-11-17",
   "title": "Daily brief — Tuesday, November 17, 2026",
-  "generatedAt": "2026-11-17T15:08-05:00",
+  "generatedAt": "2026-11-17T15:25-05:00",
   "bullets": [
    {
     "head": "Markets (latest session)",
-    "text": "S&P 500 -1.38%, Nasdaq 100 -1.34%, Dow -1.80%, Russell 2000 -1.55%. VIX 26.4; 10-yr yield 5.10% (-2 bp); WTI $85.45 (-0.31%); gold $3,850 (-0.09%). Volatility is high (VIX above 20)."
+    "text": "S&P 500 -1.29%, Nasdaq 100 -1.20%, Dow -1.76%, Russell 2000 -1.41%. VIX 27.0; 10-yr yield 5.10% (-2 bp); WTI $85.44 (-0.33%); gold $3,851 (-0.06%). Volatility is high (VIX above 20)."
    },
    {
     "head": "Trend filter",
-    "text": "The S&P 500 (SPY $729.77) is 0.3% below its 200-day average ($732.16). Basket rule: the momentum basket waits in cash until SPY is back above the average. Index sleeve (last daily decision 2026-11-17): long, target +1.39x Nasdaq 100 exposure (25% / 36.0% 20-day volatility, capped at 3x)."
+    "text": "The S&P 500 (SPY $730.43) is 0.2% below its 200-day average ($732.16). Basket rule: the momentum basket waits in cash until SPY is back above the average. Index sleeve (last daily decision 2026-11-17): long, target +1.39x Nasdaq 100 exposure (25% / 36.0% 20-day volatility, capped at 3x)."
    },
    {
     "head": "Our portfolio",
-    "text": "Net value $2,865.05 (-3.04% vs the previous close); cash $-1,238.36; 5 positions, leverage 2.28x. Best holding today: AS +4.85%; weakest: QQQ -1.52%."
+    "text": "Net value $2,872.34 (-2.79% vs the previous close); cash $-1,238.36; 5 positions, leverage 2.27x. Best holding today: AS +4.43%; weakest: QQQ -1.27%."
    },
    {
     "head": "Themes in today's headlines",
-    "text": "AI & chips (17), Earnings (14), Fed & rates (6), Energy (6)."
+    "text": "AI & chips (17), Earnings (14), Energy (6), Corporate (5)."
    },
    {
     "head": "Upcoming earnings (next 3 weeks)",
@@ -958,6 +979,16 @@
    }
   ],
   "headlines": [
+   {
+    "title": "BC-OILS",
+    "url": "https://finance.yahoo.com/markets/commodities/articles/bc-oils-200018818.html",
+    "publisher": "Associated Press",
+    "at": "2026-11-17T15:00-05:00",
+    "summary": "NEW YORK (AP) — Futures trading on the New York Mercantile Exchange Tuesday:Open High Low Settle Chg.'s open int 1,921,133 down 14,831 HEATING OIL 42,000 gal, cents per gal Dec 26 407.",
+    "tags": [
+     "Energy"
+    ]
+   },
    {
     "title": "Oil edges up on tanker attacks, expected US crude drop",
     "url": "https://finance.yahoo.com/energy/articles/oil-slips-supply-surplus-outlook-013927034.html",
@@ -987,38 +1018,26 @@
     "tags": [
      "Fed & rates"
     ]
-   },
-   {
-    "title": "Stocks fall with Nvidia in focus, oil ticks up",
-    "url": "https://finance.yahoo.com/markets/world-indices/articles/asia-shares-stumble-tech-weakness-012906483.html",
-    "publisher": "Reuters",
-    "at": "2026-11-17T12:35-05:00",
-    "summary": "By Rodrigo Campos and Johann M Cherian Nov 17 (Reuters) - Stocks fell across the globe on Tuesday, weighed by tech shares, as investors geared up for AI bellwether Nvidia's first earnings report",
-    "tags": [
-     "Earnings",
-     "Energy",
-     "AI & chips"
-    ]
    }
   ],
   "movers": [
    {
     "ticker": "AS",
-    "changePct": 4.85,
+    "changePct": 4.43,
     "title": "Amer Sports Lifts Full-Year Outlook Following Third-Quarter Beat; Shares Rise",
     "url": "https://finance.yahoo.com/markets/stocks/articles/amer-sports-lifts-full-outlook-192924354.html",
     "publisher": "MT Newswires"
    },
    {
     "ticker": "QQQ",
-    "changePct": -1.52,
+    "changePct": -1.27,
     "title": "Exchange-Traded Funds Fall as US Equities Drop After Midday",
     "url": "https://finance.yahoo.com/markets/articles/exchange-traded-funds-fall-us-181122717.html",
     "publisher": "MT Newswires"
    },
    {
     "ticker": "HTHT",
-    "changePct": -1.28,
+    "changePct": -1.13,
     "title": "H World Group (HTHT) Stock May Be 17% Undervalued On Raised 2026 Outlook",
     "url": "https://finance.yahoo.com/markets/stocks/articles/h-world-group-htht-stock-002143520.html",
     "publisher": "Simply Wall St."
