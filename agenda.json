@@ -1,5 +1,5 @@
 {
- "asOf": "2026-11-16T18:42-05:00",
+ "asOf": "2026-11-16T19:12-05:00",
  "week": {
   "start": "2026-11-16",
   "end": "2026-11-20",
@@ -231,11 +231,11 @@
    "unit": "$",
    "dec": 2,
    "why": "ABD ham petrolü: enflasyonu, enerji ve havayolu hisselerini etkiler.",
-   "price": 85.34,
+   "price": 85.29,
    "prev": 88.56,
    "date": "2026-11-16",
-   "d1": -3.64,
-   "w1": -1.74,
+   "d1": -3.69,
+   "w1": -1.8,
    "chgUnit": "%",
    "spark": [
     99.9,
@@ -252,7 +252,7 @@
     86.53,
     88.74,
     88.56,
-    85.34
+    85.29
    ]
   },
   {
@@ -293,11 +293,11 @@
    "unit": "$",
    "dec": 3,
    "why": "Enerji maliyeti; kış aylarında sert oynar.",
-   "price": 3.129,
+   "price": 3.127,
    "prev": 3.23,
    "date": "2026-11-16",
-   "d1": -3.13,
-   "w1": -2.77,
+   "d1": -3.19,
+   "w1": -2.83,
    "chgUnit": "%",
    "spark": [
     2.697,
@@ -314,7 +314,7 @@
     3.215,
     3.34,
     3.23,
-    3.129
+    3.127
    ]
   },
   {
@@ -324,11 +324,11 @@
    "unit": "$",
    "dec": 0,
    "why": "Güvenli liman: korku ve faiz indirimi beklentisiyle yükselir.",
-   "price": 3857.6001,
+   "price": 3864.3,
    "prev": 3886.3,
    "date": "2026-11-16",
-   "d1": -0.74,
-   "w1": -6.24,
+   "d1": -0.57,
+   "w1": -6.08,
    "chgUnit": "%",
    "spark": [
     4074.6001,
@@ -345,7 +345,7 @@
     4000.5,
     3885.3,
     3886.3,
-    3857.6001
+    3864.3
    ]
   },
   {
@@ -355,11 +355,11 @@
    "unit": "$",
    "dec": 3,
    "why": "Sanayi talebinin göstergesi: yükselmesi büyüme beklentisine işaret eder.",
-   "price": 5.988,
+   "price": 5.995,
    "prev": 6.0795,
    "date": "2026-11-16",
-   "d1": -1.51,
-   "w1": -5.38,
+   "d1": -1.39,
+   "w1": -5.27,
    "chgUnit": "%",
    "spark": [
     6.622,
@@ -376,7 +376,7 @@
     6.2745,
     6.1825,
     6.0795,
-    5.988
+    5.995
    ]
   },
   {
@@ -386,11 +386,11 @@
    "unit": "$",
    "dec": 0,
    "why": "Risk iştahının göstergesi; kripto hisselerini (COIN, MSTR) sürükler.",
-   "price": 64783.5898,
+   "price": 64675.3516,
    "prev": 65305.0625,
-   "date": "2026-11-16",
-   "d1": -0.8,
-   "w1": -12.41,
+   "date": "2026-11-17",
+   "d1": -0.96,
+   "w1": -12.56,
    "chgUnit": "%",
    "spark": [
     76677.2969,
@@ -407,7 +407,7 @@
     68249.2734,
     64128.0508,
     65305.0625,
-    64783.5898
+    64675.3516
    ]
   },
   {
@@ -417,14 +417,13 @@
    "unit": "",
    "dec": 4,
    "why": "Doların avroya karşı değeri.",
-   "price": 1.1,
-   "prev": 1.105,
-   "date": "2026-11-16",
-   "d1": -0.46,
-   "w1": -1.32,
+   "price": 1.1002,
+   "prev": 1.1025,
+   "date": "2026-11-17",
+   "d1": -0.2,
+   "w1": -1.96,
    "chgUnit": "%",
    "spark": [
-    1.1174,
     1.113,
     1.1156,
     1.1183,
@@ -438,7 +437,8 @@
     1.1169,
     1.1095,
     1.105,
-    1.1
+    1.1025,
+    1.1002
    ]
   },
   {
@@ -448,14 +448,13 @@
    "unit": "₺",
    "dec": 2,
    "why": "Doların Türk lirası karşılığı.",
-   "price": 50.4002,
-   "prev": 50.2819,
-   "date": "2026-11-16",
-   "d1": 0.24,
-   "w1": 0.55,
+   "price": 50.3887,
+   "prev": 50.3403,
+   "date": "2026-11-17",
+   "d1": 0.1,
+   "w1": 0.34,
    "chgUnit": "%",
    "spark": [
-    49.7809,
     49.7992,
     49.8295,
     49.9428,
@@ -469,11 +468,12 @@
     50.2096,
     50.2539,
     50.2819,
-    50.4002
+    50.3403,
+    50.3887
    ]
   }
  ],
- "marketsAt": "2026-11-16T18:42-05:00",
+ "marketsAt": "2026-11-16T19:12-05:00",
  "econ": [
   {
    "at": "2026-11-16T08:30-05:00",
@@ -945,35 +945,6 @@
   {
    "at": "2026-11-19T08:30-05:00",
    "day": "2026-11-19",
-   "name": "Initial Jobless Clm",
-   "tr": "Haftalık işsizlik başvuruları",
-   "imp": 2,
-   "period": null,
-   "actual": null,
-   "expected": null,
-   "last": 200.0,
-   "unit": "",
-   "why": "İş piyasasının en güncel göstergesi; her perşembe 08:30.",
-   "more": [
-    {
-     "name": "Cont Jobless Clm",
-     "actual": null,
-     "expected": null,
-     "last": 1.7,
-     "unit": ""
-    },
-    {
-     "name": "Jobless Clm 4Wk Avg",
-     "actual": null,
-     "expected": null,
-     "last": 195.25,
-     "unit": ""
-    }
-   ]
-  },
-  {
-   "at": "2026-11-19T08:30-05:00",
-   "day": "2026-11-19",
    "name": "Philly Fed Business Indx",
    "tr": "Bölgesel Fed imalat endeksi",
    "imp": 1,
@@ -985,10 +956,10 @@
    "why": null,
    "more": [
     {
-     "name": "Philly Fed 6M Index",
+     "name": "Philly Fed Capex Index",
      "actual": null,
      "expected": null,
-     "last": 33.0,
+     "last": 34.9,
      "unit": ""
     },
     {
@@ -996,6 +967,13 @@
      "actual": null,
      "expected": null,
      "last": 9.1,
+     "unit": ""
+    },
+    {
+     "name": "Philly Fed New Orders",
+     "actual": null,
+     "expected": null,
+     "last": 4.3,
      "unit": ""
     },
     {
@@ -1142,7 +1120,7 @@
    "more": []
   }
  ],
- "econAt": "2026-11-16T18:42-05:00",
+ "econAt": "2026-11-16T19:12-05:00",
  "earnings": [
   {
    "t": "BIDU",
@@ -1475,7 +1453,7 @@
    "surprisePct": null
   }
  ],
- "earningsAt": "2026-11-16T18:42-05:00",
+ "earningsAt": "2026-11-16T19:12-05:00",
  "ipos": [
   {
    "t": "BRRK",
@@ -1556,7 +1534,7 @@
    "sizeM": null
   }
  ],
- "iposAt": "2026-11-16T18:42-05:00",
+ "iposAt": "2026-11-16T19:12-05:00",
  "special": [
   {
    "day": "2026-11-18",
