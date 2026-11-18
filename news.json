@@ -1,12 +1,12 @@
 {
- "asOf": "2026-11-18T15:25:53-05:00",
+ "asOf": "2026-11-18T15:41:02-05:00",
  "sections": [
   {
    "ticker": "QQQ",
    "name": "Invesco QQQ (Nasdaq 100)",
    "role": "long",
-   "dayChangePct": 0.11,
-   "unrealizedPct": -1.27,
+   "dayChangePct": 0.25,
+   "unrealizedPct": -1.13,
    "items": [
     {
      "title": "Fed's Waller Raises the Stakes for December Rate Bets",
@@ -48,8 +48,8 @@
    "ticker": "AVEX",
    "name": "AEVEX Corp.",
    "role": "long",
-   "dayChangePct": -3.38,
-   "unrealizedPct": -3.21,
+   "dayChangePct": -1.84,
+   "unrealizedPct": -1.67,
    "items": [
     {
      "title": "AEVEX (AVEX) Stock Could Be Undervalued On Raised 2026 Guidance",
@@ -79,8 +79,8 @@
    "ticker": "AS",
    "name": "Amer Sports, Inc.",
    "role": "long",
-   "dayChangePct": 1.72,
-   "unrealizedPct": -2.69,
+   "dayChangePct": 1.55,
+   "unrealizedPct": -2.85,
    "items": [
     {
      "title": "Amer Sports Stocks Rise 3.92% as Salomon and Arc'teryx Drive 24% Growth",
@@ -125,8 +125,8 @@
    "ticker": "SLS",
    "name": "SELLAS Life Sciences Group, Inc.",
    "role": "short",
-   "dayChangePct": -1.62,
-   "unrealizedPct": -2.38,
+   "dayChangePct": -4.54,
+   "unrealizedPct": 0.66,
    "items": [
     {
      "title": "FDA publishes rejection letter for Summit drug; Nuvalent buyout pays more dividends for GSK",
@@ -214,8 +214,8 @@
    "ticker": "TJX",
    "name": "TJX Companies, Inc. (The)",
    "role": "long",
-   "dayChangePct": 8.89,
-   "unrealizedPct": -1.38,
+   "dayChangePct": 8.78,
+   "unrealizedPct": -1.48,
    "items": [
     {
      "title": "TJX Companies Q3 Earnings Call Highlights",
@@ -268,6 +268,27 @@
    "unrealizedPct": null,
    "items": [
     {
+     "title": "Super Micro Computer (SMCI) Ships PCIe Gen 6 Servers, Is It 57% Below Fair Value?",
+     "summary": "Super Micro Computer (SMCI) has begun shipping new AMD EPYC based all flash storage servers that support the PCIe Gen 6 standard. These products target AI scale data, analytics and high throughput storage workloads. For investors watching Super Micro Computer,…",
+     "publisher": "Simply Wall St.",
+     "url": "https://finance.yahoo.com/markets/stocks/articles/super-micro-computer-smci-ships-201020693.html",
+     "at": "2026-11-18T15:10-05:00",
+     "tags": [
+      "AI & chips"
+     ]
+    },
+    {
+     "title": "Which Funds With Semiconductor Exposure Best Capture The China AI Chip Curbs?",
+     "summary": "How different are three funds that all pitch semiconductor exposure when the news hits AI chips this directly? The latest US move to curb China’s access to high end accelerators cuts how many advanced processors American suppliers can ship into Chinese data ce…",
+     "publisher": "Simply Wall St.",
+     "url": "https://finance.yahoo.com/markets/stocks/articles/funds-semiconductor-exposure-best-capture-200931859.html",
+     "at": "2026-11-18T15:09-05:00",
+     "tags": [
+      "Policy & politics",
+      "AI & chips"
+     ]
+    },
+    {
      "title": "NVIDIA Is Near Its 52-Week Low. Will NVDA Stock Hit $100 or $200 First?",
      "summary": "A record quarter failed to stop the bleeding, and now a CEO exit, congressional hearings, and rising rival chip stocks have NVIDIA at a crossroads. The two price targets sit nearly equal distances away, so which shock lands first?",
      "publisher": "24/7 Wall St.",
@@ -287,27 +308,6 @@
      "publisher": "GuruFocus.com",
      "url": "https://finance.yahoo.com/markets/options/articles/nvidia-micron-tsmc-face-massive-191112704.html",
      "at": "2026-11-18T14:11-05:00",
-     "tags": [
-      "AI & chips"
-     ]
-    },
-    {
-     "title": "Nvidia's $130 Billion Forecast Sparks Fresh AI Stock Rally",
-     "summary": "Nvidia's third-quarter revenue more than doubled to $115.84 billion, marking its 17th consecutive earnings estimate beat.",
-     "publisher": "GuruFocus.com",
-     "url": "https://finance.yahoo.com/technology/ai/articles/nvidias-130-billion-forecast-sparks-190535668.html",
-     "at": "2026-11-18T14:05-05:00",
-     "tags": [
-      "Earnings",
-      "AI & chips"
-     ]
-    },
-    {
-     "title": "Supermicro Has an AI Bottleneck and Is Turning to AMD",
-     "summary": "The launch could help it sell more per deployment.",
-     "publisher": "GuruFocus.com",
-     "url": "https://finance.yahoo.com/technology/ai/articles/supermicro-ai-bottleneck-turning-amd-190459248.html",
-     "at": "2026-11-18T14:04-05:00",
      "tags": [
       "AI & chips"
      ]
@@ -503,6 +503,16 @@
  ],
  "market": [
   {
+   "title": "New Zealand central bank chief says inflation still elevated, recovery uneven",
+   "summary": "By Lucy Craymer and Sneha Kumar Nov 19 (Reuters) - Inflation remains above its 2% midpoint as costly fuel and a weaker currency kept pressure on prices, while an uneven recovery limited businesses'",
+   "publisher": "Reuters",
+   "url": "https://finance.yahoo.com/economy/policy/articles/zealand-central-bank-chief-says-203230497.html",
+   "at": "2026-11-18T15:32-05:00",
+   "tags": [
+    "Fed & rates"
+   ]
+  },
+  {
    "title": "BC-OILS",
    "summary": "NEW YORK (AP) — Futures trading on the New York Mercantile Exchange Wednesday:Open High Low Settle Chg.'s open int 1,923,287 down 54,385 HEATING OIL 42,000 gal, cents per gal Dec 26 406.",
    "publisher": "Associated Press",
@@ -619,20 +629,10 @@
    "tags": [
     "Fed & rates"
    ]
-  },
-  {
-   "title": "3 Canadian Undervalued Stocks To Own In November 2026",
-   "summary": "When the US 10 year Treasury yield holds above 5%, discounted cash flow models start to matter a lot more for valuation. Higher risk free rates pull future cash flows down to earth, which can leave certain Canadian stocks trading well below what their underlyi…",
-   "publisher": "Simply Wall St.",
-   "url": "https://finance.yahoo.com/markets/stocks/articles/3-canadian-undervalued-stocks-own-161509843.html",
-   "at": "2026-11-17T11:15-05:00",
-   "tags": [
-    "Fed & rates"
-   ]
   }
  ],
  "seekingAlpha": {
-  "asOf": "2026-11-18T15:25:53-05:00",
+  "asOf": "2026-11-18T15:41:02-05:00",
   "ok": true,
   "stale": false,
   "via": "seekingalpha.com RSS",
@@ -642,6 +642,55 @@
    "Tüm yazılar": 22
   },
   "market": [
+   {
+    "title": "MP Materials moves higher as Needham resumes coverage with Buy rating",
+    "url": "https://seekingalpha.com/news/4674381-mp-materials-moves-higher-as-needham-resumes-coverage-with-buy-rating",
+    "at": "2026-11-18T15:34-05:00",
+    "kind": "news",
+    "symbols": [],
+    "author": null
+   },
+   {
+    "title": "Nvidia slides as interim CEO Kress speaks to employees, says, 'Let's move forward'",
+    "url": "https://seekingalpha.com/news/4674380-nvidia-slides-as-interim-ceo-kress-speaks-to-employees-says-lets-move-forward",
+    "at": "2026-11-18T15:26-05:00",
+    "kind": "news",
+    "symbols": [],
+    "author": null
+   },
+   {
+    "title": "KKR Real Estate Finance: Leverage Remains Too High",
+    "url": "https://seekingalpha.com/article/4969773-kkr-real-estate-finance-leverage-remains-too-high",
+    "at": "2026-11-18T15:26-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "BRSP",
+     "ACRE",
+     "RC",
+     "RC.PR.C",
+     "RC.PR.E",
+     "RCD"
+    ],
+    "author": null
+   },
+   {
+    "title": "Global-e outlines 2026 revenue $1.329B-$1.353B and adjusted EBITDA $290M-$300M, driven by Managed Markets V2 and Passport integration",
+    "url": "https://seekingalpha.com/news/4674384-global-e-outlines-2026-revenue-1_329b-1_353b-and-adjusted-ebitda-290m-300m-driven-by-managed",
+    "at": "2026-11-18T15:25-05:00",
+    "kind": "news",
+    "symbols": [],
+    "author": null
+   },
+   {
+    "title": "Patria Investments Limited (PAX) After the Elections: Macro Perspectives in Latin America Transcript",
+    "url": "https://seekingalpha.com/article/4969713-patria-investments-limited-pax-after-the-elections-macro-perspectives-in-latin-america",
+    "at": "2026-11-18T15:22-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "PAX"
+    ],
+    "author": null
+   },
    {
     "title": "U.S. aircraft carrier leaves Middle East after reinforcements arrive",
     "url": "https://seekingalpha.com/news/4674382-u-s-aircraft-carrier-leaves-middle-east-after-reinforcements-arrive",
@@ -697,14 +746,6 @@
     "author": null
    },
    {
-    "title": "Eli Lilly gains CV risk reduction indication for Mounjaro in Canada",
-    "url": "https://seekingalpha.com/news/4674378-eli-lilly-gains-cv-reduction-risk-indication-mounjaro-canada",
-    "at": "2026-11-18T15:04-05:00",
-    "kind": "news",
-    "symbols": [],
-    "author": null
-   },
-   {
     "title": "Taking A Small, Speculative Stake In The Greenbrier Companies (Rating Upgrade)",
     "url": "https://seekingalpha.com/article/4969764-taking-small-speculative-stake-in-greenbrier-companies-upgrade",
     "at": "2026-11-18T14:57-05:00",
@@ -715,14 +756,6 @@
     "author": null
    },
    {
-    "title": "SOLV Energy raised to Buy at UBS after strong backlog growth",
-    "url": "https://seekingalpha.com/news/4674375-solv-energy-raised-to-buy-at-ubs-after-strong-backlog-growth",
-    "at": "2026-11-18T14:56-05:00",
-    "kind": "news",
-    "symbols": [],
-    "author": null
-   },
-   {
     "title": "Nebius: The Selloff Went Too Far (Rating Upgrade)",
     "url": "https://seekingalpha.com/article/4969763-nebius-the-selloff-went-too-far-rating-upgrade",
     "at": "2026-11-18T14:55-05:00",
@@ -730,14 +763,6 @@
     "symbols": [
      "NBIS"
     ],
-    "author": null
-   },
-   {
-    "title": "Nike eyes cricket as a way to grow sales in India aggressively",
-    "url": "https://seekingalpha.com/news/4674374-nike-eyes-cricket-as-a-way-to-grow-sales-in-india-aggressively",
-    "at": "2026-11-18T14:53-05:00",
-    "kind": "news",
-    "symbols": [],
     "author": null
    },
    {
@@ -805,31 +830,6 @@
     "kind": "analysis",
     "symbols": [
      "DASH"
-    ],
-    "author": null
-   },
-   {
-    "title": "John Hancock 2035 Lifetime Blend Portfolio Q3 2026 Commentary",
-    "url": "https://seekingalpha.com/article/4969755-john-hancock-2035-lifetime-blend-portfolio-q3-2026-commentary",
-    "at": "2026-11-18T14:29-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "JHAYX",
-     "JRTMX",
-     "JRTNX"
-    ],
-    "author": null
-   },
-   {
-    "title": "Firy: The Advertising Pivot Is Working, But I'm Not Buying Yet",
-    "url": "https://seekingalpha.com/article/4969754-firy-the-advertising-pivot-is-working-but-im-not-buying-yet",
-    "at": "2026-11-18T14:27-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "META",
-     "META:CA",
-     "ZMET:CA",
-     "FIRY"
     ],
     "author": null
    }
@@ -1067,28 +1067,28 @@
    "url": "https://seekingalpha.com/market-news"
   },
   "note": "Yalnızca başlık ve bağlantı. Yazıların tamamı Seeking Alpha'da; bir kısmı abonelik ister. Yatırım tavsiyesi değildir.",
-  "lastGood": "2026-11-18T15:25:53-05:00"
+  "lastGood": "2026-11-18T15:41:02-05:00"
  },
  "digest": {
   "date": "2026-11-18",
   "title": "Daily brief — Wednesday, November 18, 2026",
-  "generatedAt": "2026-11-18T15:25-05:00",
+  "generatedAt": "2026-11-18T15:41-05:00",
   "bullets": [
    {
     "head": "Markets (latest session)",
-    "text": "S&P 500 -0.33%, Nasdaq 100 +0.13%, Dow -1.07%, Russell 2000 +0.39%. VIX 24.5; 10-yr yield 5.07% (-4 bp); WTI $82.13 (-4.51%); gold $3,727 (-3.55%). Tech led the market. Volatility is elevated (VIX above 20)."
+    "text": "S&P 500 -0.24%, Nasdaq 100 +0.37%, Dow -1.10%, Russell 2000 +0.42%. VIX 24.8; 10-yr yield 5.07% (-4 bp); WTI $82.10 (-4.55%); gold $3,728 (-3.52%). Tech led the market. Volatility is elevated (VIX above 20)."
    },
    {
     "head": "Trend filter",
-    "text": "The S&P 500 (SPY $730.05) is 0.3% below its 200-day average ($732.34). Basket rule: the momentum basket waits in cash until SPY is back above the average. Index sleeve (last daily decision 2026-11-18): long, target +1.39x Nasdaq 100 exposure (25% / 36.0% 20-day volatility, capped at 3x)."
+    "text": "The S&P 500 (SPY $730.65) is 0.2% below its 200-day average ($732.34). Basket rule: the momentum basket waits in cash until SPY is back above the average. Index sleeve (last daily decision 2026-11-18): long, target +1.39x Nasdaq 100 exposure (25% / 36.0% 20-day volatility, capped at 3x)."
    },
    {
     "head": "Our portfolio",
-    "text": "Net value $2,848.35 (-1.48% vs the previous close); cash $-2,622.23; 6 positions, leverage 2.13x. Best holding today: BRBR +24.34%; weakest: AVEX -3.38%."
+    "text": "Net value $2,867.10 (-0.83% vs the previous close); cash $-2,622.23; 6 positions, leverage 2.12x. Best holding today: BRBR +24.34%; weakest: SLS -4.54%."
    },
    {
     "head": "Themes in today's headlines",
-    "text": "Earnings (18), AI & chips (13), Fed & rates (9), Corporate (4)."
+    "text": "Earnings (17), AI & chips (13), Fed & rates (10), Corporate (4)."
    },
    {
     "head": "Upcoming earnings (next 3 weeks)",
@@ -1096,6 +1096,16 @@
    }
   ],
   "headlines": [
+   {
+    "title": "New Zealand central bank chief says inflation still elevated, recovery uneven",
+    "url": "https://finance.yahoo.com/economy/policy/articles/zealand-central-bank-chief-says-203230497.html",
+    "publisher": "Reuters",
+    "at": "2026-11-18T15:32-05:00",
+    "summary": "By Lucy Craymer and Sneha Kumar Nov 19 (Reuters) - Inflation remains above its 2% midpoint as costly fuel and a weaker currency kept pressure on prices, while an uneven recovery limited businesses'",
+    "tags": [
+     "Fed & rates"
+    ]
+   },
    {
     "title": "BC-OILS",
     "url": "https://finance.yahoo.com/markets/commodities/articles/bc-oils-200018865.html",
@@ -1126,18 +1136,6 @@
     "tags": [
      "Fed & rates"
     ]
-   },
-   {
-    "title": "Wall Street mixed after Nvidia earnings, Fed minutes",
-    "url": "https://finance.yahoo.com/markets/stocks/articles/nasdaq-futures-jump-nvidia-forecast-103531610.html",
-    "publisher": "Reuters",
-    "at": "2026-11-18T14:40-05:00",
-    "summary": "By Stephen Culp and Utkarsh Hathi Nov 18 (Reuters) - US stocks were mixed on Wednesday as investors digested Nvidia results ahead of Anthropic's initial public offering pricing, while weighing hawkish",
-    "tags": [
-     "Fed & rates",
-     "Earnings",
-     "AI & chips"
-    ]
    }
   ],
   "movers": [
@@ -1150,17 +1148,17 @@
    },
    {
     "ticker": "TJX",
-    "changePct": 8.89,
+    "changePct": 8.78,
     "title": "TJX Companies Q3 Earnings Call Highlights",
     "url": "https://www.marketbeat.com/instant-alerts/transcript-tjx-companies-q3-earnings-call-highlights-2026-11-18/?utm_source=yahoofinance&utm_medium=yahoofinance",
     "publisher": "MarketBeat"
    },
    {
-    "ticker": "AVEX",
-    "changePct": -3.38,
-    "title": "AEVEX (AVEX) Stock Could Be Undervalued On Raised 2026 Guidance",
-    "url": "https://finance.yahoo.com/markets/stocks/articles/aevex-avex-stock-could-undervalued-031124963.html",
-    "publisher": "Simply Wall St."
+    "ticker": "SLS",
+    "changePct": -4.54,
+    "title": "FDA publishes rejection letter for Summit drug; Nuvalent buyout pays more dividends for GSK",
+    "url": "https://www.biopharmadive.com/news/summit-crl-sellas-data-nelkarmi-lilly-astrazeneca-biogen/874825/",
+    "publisher": "BioPharma Dive"
    }
   ],
   "note": "Generated automatically from market data, the bot's ledger and the headline feeds (rule-based, no AI). Not investment advice."
