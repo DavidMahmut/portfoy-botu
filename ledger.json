@@ -130,7 +130,7 @@
   }
  },
  "portfolio": {
-  "cash": -1238.58,
+  "cash": -550.37,
   "positions": [
    {
     "stopMode": "managed",
@@ -142,16 +142,16 @@
     "shares": 6.3501,
     "avgCost": 666.1229,
     "costBasis": 4229.95,
-    "lastPrice": 661.04,
-    "lastPriceAt": "2026-11-18T09:30:01-05:00",
+    "lastPrice": 658.75,
+    "lastPriceAt": "2026-11-18T09:35:00-05:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (09:30 ET)",
+     "title": "Yahoo Finance 5 dk mum (09:35 ET)",
      "url": "https://finance.yahoo.com/quote/QQQ/"
     },
-    "marketValue": 4197.67,
-    "exposure": 4197.67,
-    "unrealized": -32.28,
-    "unrealizedPct": -0.76,
+    "marketValue": 4183.13,
+    "exposure": 4183.13,
+    "unrealized": -46.82,
+    "unrealizedPct": -1.11,
     "openedAt": "2026-11-16",
     "openedTs": "2026-11-16T10:00:00-05:00",
     "lastAddDate": "2026-11-16",
@@ -159,61 +159,7 @@
     "extremeSinceEntry": 665.7899780273438,
     "tookProfit": false,
     "thesis": "Endeks kolu, QQQ long (krediyle): 0,00 $ → 4.230,00 $ (hesabın 1,41 katı). Endeks kolu yönü YUKARI: SPY dünkü kapanış 754,37 $, 200 günlük ortalama 731,92 $ (+%3,07), 50 günlük ortalama 764,43 $. QQQ'nun 20 günlük oynaklığı yıllık %35,4; büyüklük %50 ÷ %35,4 = 1,41x. Hedef maruziyet +1,41x.",
-    "maintReq": 209.88
-   },
-   {
-    "stopMode": "event",
-    "ticker": "HTHT",
-    "name": "H World Group Limited",
-    "kind": "Hisse",
-    "side": "long",
-    "lev": 1,
-    "shares": 7.6986,
-    "avgCost": 55.7078,
-    "costBasis": 428.87,
-    "lastPrice": 53.6101,
-    "lastPriceAt": "2026-11-17T15:55:00-05:00",
-    "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (15:55 ET)",
-     "url": "https://finance.yahoo.com/quote/HTHT/"
-    },
-    "marketValue": 412.72,
-    "exposure": 412.72,
-    "unrealized": -16.15,
-    "unrealizedPct": -3.77,
-    "openedAt": "2026-11-16",
-    "openedTs": "2026-11-16T12:00:00-05:00",
-    "lastAddDate": "2026-11-16",
-    "stopPrice": 52.03,
-    "extremeSinceEntry": 55.71,
-    "tookProfit": false,
-    "thesis": "Haber takibi (deneysel kural): HTHT (H World Group Limited) bugün +%10,50. Haber türü: Beklenti yükseltildi / güçlü bilanço (sert, olumlu). “What H World Group (HTHT) Said on Its Q3 Earnings Call” (MarketBeat). Fiyat günün aralığının üst kısmında, yani piyasa haberi geri almıyor; haber yönünde long açıldı. Zarar-kes 52,03 $ (risk %7,0); çıkış 2026-11-19 kapanışında. Büyüklük: hesabın %14'i (428,88 $); zarar-kes çalışırsa kayıp hesabın yaklaşık %1,0'i. Bu kural geçmiş veride sınanamadı (geçmiş haber arşivi yok); sonucu kural karnesinde izlenir.",
-    "sleeve": "event",
-    "play": "news",
-    "playLabel": "Haber takibi",
-    "exitDate": "2026-11-19",
-    "holdDays": 3,
-    "headline": {
-     "title": "What H World Group (HTHT) Said on Its Q3 Earnings Call",
-     "url": "https://www.marketbeat.com/instant-alerts/transcript-what-h-world-group-htht-said-on-its-q3-earnings-call-2026-11-16/?utm_source=yahoofinance&utm_medium=yahoofinance",
-     "publisher": "MarketBeat",
-     "at": "2026-11-16T14:13:07+00:00"
-    },
-    "borrowRate": 0.005,
-    "slip": 0.0005,
-    "catalyst": {
-     "cat": "guideraise",
-     "label": "Beklenti yükseltildi / güçlü bilanço",
-     "kind": "hard"
-    },
-    "event": {
-     "gapPct": 3.35,
-     "firstHourPct": 5.86,
-     "movePct": 10.5,
-     "prevClose": 50.39
-    },
-    "maintReq": 20.64,
-    "lastBarTs": "2026-11-17T15:55:00-05:00"
+    "maintReq": 209.16
    },
    {
     "stopMode": "event",
@@ -225,16 +171,16 @@
     "shares": 25.1249,
     "avgCost": 13.5968,
     "costBasis": 341.62,
-    "lastPrice": 13.62,
-    "lastPriceAt": "2026-11-18T09:30:01-05:00",
+    "lastPrice": 13.24,
+    "lastPriceAt": "2026-11-18T09:35:00-05:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (09:30 ET)",
+     "title": "Yahoo Finance 5 dk mum (09:35 ET)",
      "url": "https://finance.yahoo.com/quote/AVEX/"
     },
-    "marketValue": 342.2,
-    "exposure": 342.2,
-    "unrealized": 0.58,
-    "unrealizedPct": 0.17,
+    "marketValue": 332.65,
+    "exposure": 332.65,
+    "unrealized": -8.97,
+    "unrealizedPct": -2.63,
     "openedAt": "2026-11-16",
     "openedTs": "2026-11-16T12:00:00-05:00",
     "lastAddDate": "2026-11-16",
@@ -266,8 +212,8 @@
      "movePct": 8.55,
      "prevClose": 12.51
     },
-    "maintReq": 17.11,
-    "lastBarTs": "2026-11-18T09:30:01-05:00"
+    "maintReq": 16.63,
+    "lastBarTs": "2026-11-18T09:35:00-05:00"
    },
    {
     "stopMode": "event",
@@ -279,16 +225,16 @@
     "shares": 7.7581,
     "avgCost": 154.4327,
     "costBasis": 1198.1,
-    "lastPrice": 156.33,
-    "lastPriceAt": "2026-11-17T15:55:00-05:00",
+    "lastPrice": 156.08,
+    "lastPriceAt": "2026-11-18T09:30:31-05:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (15:55 ET)",
+     "title": "Yahoo Finance 5 dk mum (09:30 ET)",
      "url": "https://finance.yahoo.com/quote/NSIT/"
     },
-    "marketValue": -1212.82,
-    "exposure": 1212.82,
-    "unrealized": -14.72,
-    "unrealizedPct": -1.23,
+    "marketValue": -1210.88,
+    "exposure": 1210.88,
+    "unrealized": -12.78,
+    "unrealizedPct": -1.07,
     "openedAt": "2026-11-16",
     "openedTs": "2026-11-16T11:55:00-05:00",
     "lastAddDate": "2026-11-16",
@@ -320,8 +266,8 @@
      "movePct": -8.44,
      "prevClose": 168.76
     },
-    "maintReq": 60.64,
-    "lastBarTs": "2026-11-17T15:55:00-05:00"
+    "maintReq": 60.54,
+    "lastBarTs": "2026-11-18T09:30:31-05:00"
    },
    {
     "stopMode": "event",
@@ -333,16 +279,16 @@
     "shares": 13.7321,
     "avgCost": 31.6108,
     "costBasis": 434.08,
-    "lastPrice": 30.115,
-    "lastPriceAt": "2026-11-18T09:30:10-05:00",
+    "lastPrice": 30.575,
+    "lastPriceAt": "2026-11-18T09:35:00-05:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (09:30 ET)",
+     "title": "Yahoo Finance 5 dk mum (09:35 ET)",
      "url": "https://finance.yahoo.com/quote/AS/"
     },
-    "marketValue": 413.54,
-    "exposure": 413.54,
-    "unrealized": -20.54,
-    "unrealizedPct": -4.73,
+    "marketValue": 419.86,
+    "exposure": 419.86,
+    "unrealized": -14.22,
+    "unrealizedPct": -3.28,
     "openedAt": "2026-11-17",
     "openedTs": "2026-11-17T10:30:00-05:00",
     "lastAddDate": "2026-11-17",
@@ -374,45 +320,94 @@
      "movePct": 8.52,
      "prevClose": 29.1
     },
-    "maintReq": 20.68,
-    "lastBarTs": "2026-11-18T09:30:10-05:00"
+    "maintReq": 20.99,
+    "lastBarTs": "2026-11-18T09:35:00-05:00"
+   },
+   {
+    "stopMode": "event",
+    "ticker": "SLS",
+    "name": "SELLAS Life Sciences Group, Inc.",
+    "kind": "Hisse",
+    "side": "short",
+    "lev": 1,
+    "shares": 15.6835,
+    "avgCost": 18.4024,
+    "costBasis": 288.61,
+    "lastPrice": 18.43,
+    "lastPriceAt": "2026-11-18T09:35:00-05:00",
+    "priceSource": {
+     "title": "Yahoo Finance 5 dk mum (09:35 ET)",
+     "url": "https://finance.yahoo.com/quote/SLS/"
+    },
+    "marketValue": -289.05,
+    "exposure": 289.05,
+    "unrealized": -0.44,
+    "unrealizedPct": -0.15,
+    "openedAt": "2026-11-18",
+    "openedTs": "2026-11-18T09:35:00-05:00",
+    "lastAddDate": "2026-11-18",
+    "stopPrice": 27.65,
+    "extremeSinceEntry": 18.43000030517578,
+    "tookProfit": false,
+    "thesis": "Sert yükseliş short'u: SLS (SELLAS Life Sciences Group, Inc.) 2026-11-17 günü +%156,36 yükseldi (7,47 $ → 19,15 $); bugün 18,43 $'dan (−%3,76) işlem görüyor. 2019–2026 testinde bu tür sıçramalar sonraki iki haftada genellikle geri verildi. Short açıldı: hesabın %10'u, zarar-kes 27,65 $ (girişin %50 üstü), çıkış 2026-12-02 kapanışında. Ödünç ücreti yıllık %30 varsayıldı. Haber: “SLS Joins MRNA And ANL In Biotech’s Top 3 This Year — Here’s How A Late-2025 Bet Could Grow 10x From Here” (Stocktwits).",
+    "sleeve": "event",
+    "spike": true,
+    "play": "spike",
+    "playLabel": "Sert yükseliş short'u",
+    "exitDate": "2026-12-02",
+    "holdDays": 10,
+    "borrowRate": 0.3,
+    "slip": 0.0015,
+    "headline": {
+     "title": "SLS Joins MRNA And ANL In Biotech’s Top 3 This Year — Here’s How A Late-2025 Bet Could Grow 10x From Here",
+     "url": "https://stocktwits.com/news-articles/markets/equity/sls-mrna-anl-biotech-top-3-this-year-how-late-2025-bet-grow-10x/cNbXVXXR9hm",
+     "publisher": "Stocktwits",
+     "at": "2026-11-18T02:41:30+00:00"
+    },
+    "event": {
+     "spikeDate": "2026-11-17",
+     "spikePct": 156.36,
+     "prevClose": 7.47,
+     "close": 19.15
+    },
+    "maintReq": 14.45
    }
   ],
-  "realizedPL": 0.0,
+  "realizedPL": -28.9,
   "netDeposits": 3000.0,
   "costs": {
-   "slippage": 3.3156,
-   "commission": 1.75,
-   "fees": 0.04,
+   "slippage": 3.9487,
+   "commission": 2.45,
+   "fees": 0.08,
    "interest": 0.31,
    "borrow": 0.06,
    "dividendsPaid": 0.0,
    "dividendsReceived": 0.0
   },
-  "longValue": 5366.14,
-  "shortValue": 1212.82,
-  "positionsValue": 4153.31,
-  "totalValue": 2914.73,
-  "grossExposure": 6578.96,
-  "netExposure": 4153.31,
-  "leverage": 2.257,
-  "maintenanceReq": 328.95,
-  "marginBuffer": 2585.78,
-  "regTInitialReq": 657.9,
-  "regTExcess": 2256.83,
-  "buyingPower": 22568.34,
+  "longValue": 4935.64,
+  "shortValue": 1499.93,
+  "positionsValue": 3435.71,
+  "totalValue": 2885.34,
+  "grossExposure": 6435.57,
+  "netExposure": 3435.71,
+  "leverage": 2.23,
+  "maintenanceReq": 321.77,
+  "marginBuffer": 2563.57,
+  "regTInitialReq": 643.56,
+  "regTExcess": 2241.78,
+  "buyingPower": 22417.83,
   "marginEligible": true,
-  "closeoutMovePct": 39.3,
+  "closeoutMovePct": 39.83,
   "bustCount": 0,
   "paidInTotal": 3000.0,
   "lostToBusts": 0,
-  "totalPL": -85.27,
-  "totalPLPct": -2.84,
-  "twrPct": -2.84,
-  "asOf": "2026-11-18T09:30:26-05:00",
-  "benchmarkPrice": 733.57,
-  "benchmarkValue": 2946.42,
-  "benchmarkTwrPct": -1.79
+  "totalPL": -114.66,
+  "totalPLPct": -3.82,
+  "twrPct": -3.82,
+  "asOf": "2026-11-18T09:35:31-05:00",
+  "benchmarkPrice": 732.79,
+  "benchmarkValue": 2943.29,
+  "benchmarkTwrPct": -1.89
  },
  "meta": {
   "engine": "x10 v7",
@@ -427,9 +422,9 @@
    "ath": 759.66,
    "athDate": "2026-10-06",
    "athChecked": "2026-11-17",
-   "price": 661.04,
-   "at": "2026-11-18T09:30:01-05:00",
-   "ddPct": -12.98,
+   "price": 658.75,
+   "at": "2026-11-18T09:35:00-05:00",
+   "ddPct": -13.28,
    "level": "correction",
    "triggerPrice": 607.73,
    "correctionPrice": 683.69
@@ -455,32 +450,53 @@
     "2026-11-18"
    ]
   },
-  "lastRunAt": "2026-11-18T09:30:26-05:00",
+  "lastRunAt": "2026-11-18T09:35:31-05:00",
   "lastError": null,
-  "spikeScanDate": "2026-11-17",
+  "spikeScanDate": "2026-11-18",
   "spikeScan": {
-   "date": "2026-11-17",
-   "at": "2026-11-17T09:35:28-05:00",
-   "spikeDate": "2026-11-16",
+   "date": "2026-11-18",
+   "at": "2026-11-18T09:35:31-05:00",
+   "spikeDate": "2026-11-17",
    "final": true,
-   "listAt": "2026-11-16T23:10-05:00",
+   "listAt": "2026-11-17T22:08-05:00",
    "candidates": [
-    "CLRO"
+    "SLS",
+    "GLSI"
    ],
-   "taken": [],
-   "skipped": [
+   "taken": [
     {
-     "ticker": "CLRO",
-     "name": "ClearOne, Inc.",
-     "d1Pct": 41.84,
-     "prevClose": 3.37,
-     "price": 4.78,
-     "dollarVolM": 47.2,
-     "capB": 0.01,
-     "why": "önceki kapanış 5 $'ın altında (çok küçük hisse)"
+     "ticker": "SLS",
+     "name": "SELLAS Life Sciences Group, Inc.",
+     "d1Pct": 156.36,
+     "prevClose": 7.47,
+     "price": 19.15,
+     "dollarVolM": 73.2,
+     "capB": 3.9,
+     "amount": 288.62,
+     "entry": 18.43,
+     "stop": 27.65,
+     "exitDate": "2026-12-02",
+     "headline": {
+      "title": "SLS Joins MRNA And ANL In Biotech’s Top 3 This Year — Here’s How A Late-2025 Bet Could Grow 10x From Here",
+      "url": "https://stocktwits.com/news-articles/markets/equity/sls-mrna-anl-biotech-top-3-this-year-how-late-2025-bet-grow-10x/cNbXVXXR9hm",
+      "publisher": "Stocktwits",
+      "at": "2026-11-18T02:41:30+00:00"
+     }
     }
    ],
-   "rule": "2026-11-16 günü en az %30 yükselen Nasdaq hissesine açılışta short; zarar-kes girişin %50 üstü; 10. işlem günü kapanışta çıkış."
+   "skipped": [
+    {
+     "ticker": "GLSI",
+     "name": "Greenwich LifeSciences, Inc.",
+     "d1Pct": 35.9,
+     "prevClose": 13.76,
+     "price": 18.7,
+     "dollarVolM": 2.1,
+     "capB": 0.27,
+     "why": "günlük işlem hacmi 50 milyon $'ın altında"
+    }
+   ],
+   "rule": "2026-11-17 günü en az %30 yükselen Nasdaq hissesine açılışta short; zarar-kes girişin %50 üstü; 10. işlem günü kapanışta çıkış."
   },
   "regime": {
    "name": "up",
@@ -4624,6 +4640,87 @@
    ],
    "runId": "2026-11-17",
    "by": "bot"
+  },
+  {
+   "id": "t-20261118-01",
+   "ts": "2026-11-18T09:35:31-05:00",
+   "date": "2026-11-18",
+   "action": "SELL",
+   "side": "long",
+   "ticker": "HTHT",
+   "name": "HTHT",
+   "kind": "Hisse",
+   "shares": 7.6986,
+   "quotePrice": 52.0275,
+   "quoteAt": "2026-11-18T09:30:00-05:00",
+   "slippagePct": 0.05,
+   "execPrice": 52.0015,
+   "value": 400.34,
+   "commission": 0.35,
+   "fees": 0.02,
+   "priceSource": {
+    "title": "Yahoo Finance 5 dk mum (09:30 ET)",
+    "url": "https://finance.yahoo.com/quote/HTHT/"
+   },
+   "reason": "Haber takibi zarar-kesi tetiklendi: 09:30 ET mumunda fiyat 51,51 $'a indi, zarar-kes seviyesi 52,03 $. Mum seviyenin ötesinde açıldığı için açılış fiyatından (52,03 $) kapatıldı.",
+   "rule": "haber takibi zarar-kesi",
+   "sources": [
+    {
+     "title": "Yahoo Finance: HTHT",
+     "url": "https://finance.yahoo.com/quote/HTHT/"
+    },
+    {
+     "title": "yfinance (Yahoo Finance verileri)",
+     "url": "https://github.com/ranaroussi/yfinance"
+    }
+   ],
+   "runId": "2026-11-18",
+   "by": "bot",
+   "realizedPL": -28.9,
+   "holdingDays": 2,
+   "taxTerm": "kısa vade",
+   "play": "news"
+  },
+  {
+   "id": "t-20261118-02",
+   "ts": "2026-11-18T09:35:31-05:00",
+   "date": "2026-11-18",
+   "action": "SHORT",
+   "side": "short",
+   "ticker": "SLS",
+   "name": "SELLAS Life Sciences Group, Inc.",
+   "kind": "Hisse",
+   "shares": 15.6835,
+   "quotePrice": 18.43,
+   "quoteAt": "2026-11-18T09:35:00-05:00",
+   "slippagePct": 0.05,
+   "execPrice": 18.4024,
+   "value": 288.61,
+   "commission": 0.35,
+   "fees": 0.02,
+   "priceSource": {
+    "title": "Yahoo Finance 5 dk mum (09:35 ET)",
+    "url": "https://finance.yahoo.com/quote/SLS/"
+   },
+   "reason": "Sert yükseliş short'u: SLS (SELLAS Life Sciences Group, Inc.) 2026-11-17 günü +%156,36 yükseldi (7,47 $ → 19,15 $); bugün 18,43 $'dan (−%3,76) işlem görüyor. 2019–2026 testinde bu tür sıçramalar sonraki iki haftada genellikle geri verildi. Short açıldı: hesabın %10'u, zarar-kes 27,65 $ (girişin %50 üstü), çıkış 2026-12-02 kapanışında. Ödünç ücreti yıllık %30 varsayıldı. Haber: “SLS Joins MRNA And ANL In Biotech’s Top 3 This Year — Here’s How A Late-2025 Bet Could Grow 10x From Here” (Stocktwits).",
+   "rule": "sert yükseliş short",
+   "sources": [
+    {
+     "title": "SLS Joins MRNA And ANL In Biotech’s Top 3 This Year — Here’s How A Late-2025 Bet Could Grow 10x From Here",
+     "url": "https://stocktwits.com/news-articles/markets/equity/sls-mrna-anl-biotech-top-3-this-year-how-late-2025-bet-grow-10x/cNbXVXXR9hm"
+    },
+    {
+     "title": "Yahoo Finance: SLS",
+     "url": "https://finance.yahoo.com/quote/SLS/"
+    },
+    {
+     "title": "yfinance (Yahoo Finance verileri)",
+     "url": "https://github.com/ranaroussi/yfinance"
+    }
+   ],
+   "runId": "2026-11-18",
+   "by": "bot",
+   "locate": "Zor ödünç (HTB) varsayımı: yıllık %30 ödünç ücreti"
   }
  ],
  "snapshots": [
@@ -4704,41 +4801,41 @@
   },
   {
    "date": "2026-11-18",
-   "at": "2026-11-18T09:30:26-05:00",
-   "totalValue": 2914.73,
-   "cash": -1238.58,
-   "positionsValue": 4153.31,
-   "plPct": -2.84,
-   "twrPct": -2.84,
+   "at": "2026-11-18T09:35:31-05:00",
+   "totalValue": 2885.34,
+   "cash": -550.37,
+   "positionsValue": 3435.71,
+   "plPct": -3.82,
+   "twrPct": -3.82,
    "netDeposits": 3000.0,
-   "leverage": 2.257,
-   "benchmarkPrice": 733.57,
-   "benchmarkValue": 2946.42,
+   "leverage": 2.23,
+   "benchmarkPrice": 732.79,
+   "benchmarkValue": 2943.29,
    "holdings": [
     {
      "ticker": "QQQ",
      "side": "long",
-     "value": 4197.67
-    },
-    {
-     "ticker": "HTHT",
-     "side": "long",
-     "value": 412.72
+     "value": 4183.13
     },
     {
      "ticker": "AVEX",
      "side": "long",
-     "value": 342.2
+     "value": 332.65
     },
     {
      "ticker": "NSIT",
      "side": "short",
-     "value": -1212.82
+     "value": -1210.88
     },
     {
      "ticker": "AS",
      "side": "long",
-     "value": 413.54
+     "value": 419.86
+    },
+    {
+     "ticker": "SLS",
+     "side": "short",
+     "value": -289.05
     }
    ]
   }
@@ -11896,6 +11993,64 @@
     ],
     "actions": [],
     "note": "HTHT: güncel veri alınamadı; NSIT: güncel veri alınamadı; 1 günlük kredi faizi 0,19 $, ödünç ücreti 0,03 $ düşüldü; HTHT: veri gecikmeli, işlem yapılmadı; NSIT: veri gecikmeli, işlem yapılmadı; NSIT zarar-kes seviyesine %3'ten yakın"
+   },
+   {
+    "at": "2026-11-18T09:35:31-05:00",
+    "kind": "spike",
+    "status": "alarm",
+    "spyPrice": 732.79,
+    "spyChangePct": 0.05,
+    "totalValue": 2885.34,
+    "benchmarkValue": 2943.29,
+    "leverage": 2.23,
+    "marginBuffer": 2563.57,
+    "positions": [
+     {
+      "ticker": "QQQ",
+      "side": "long",
+      "price": 658.75,
+      "dayChangePct": 0.27,
+      "stopPrice": null,
+      "distancePct": null
+     },
+     {
+      "ticker": "AVEX",
+      "side": "long",
+      "price": 13.24,
+      "dayChangePct": -2.79,
+      "stopPrice": 12.49,
+      "distancePct": 6.0
+     },
+     {
+      "ticker": "NSIT",
+      "side": "short",
+      "price": 156.08,
+      "dayChangePct": -0.15,
+      "stopPrice": 158.39,
+      "distancePct": 1.48
+     },
+     {
+      "ticker": "AS",
+      "side": "long",
+      "price": 30.575,
+      "dayChangePct": 1.11,
+      "stopPrice": 29.6,
+      "distancePct": 3.29
+     },
+     {
+      "ticker": "SLS",
+      "side": "short",
+      "price": 18.43,
+      "dayChangePct": -3.76,
+      "stopPrice": 27.65,
+      "distancePct": 50.03
+     }
+    ],
+    "actions": [
+     "HTHT long kapatıldı (400,34 $)",
+     "SLS short (288,61 $)"
+    ],
+    "note": "Sert yükseliş short'u: SLS 288,62 $ (2026-11-17 günü +%156,36)."
    }
   ]
  },
@@ -12437,8 +12592,9 @@
  ],
  "tax": {
   "2026": {
-   "commissions": 1.79,
-   "marginInterest": 0.31
+   "commissions": 2.53,
+   "marginInterest": 0.31,
+   "shortTermRealized": -28.9
   }
  },
  "evalHistory": [
@@ -12632,12 +12788,21 @@
   }
  ],
  "busts": [],
- "playStats": {},
+ "playStats": {
+  "news": {
+   "closed": 1,
+   "wins": 0,
+   "pl": -28.9,
+   "best": -28.9,
+   "worst": -28.9,
+   "last": "2026-11-18"
+  }
+ },
  "scorecard": {
   "start": "2026-11-16",
   "startAt": "2026-11-16T09:30:32-05:00",
   "end": "2027-02-16",
-  "asOf": "2026-11-18T09:30:26-05:00",
+  "asOf": "2026-11-18T09:35:31-05:00",
   "strategy": "v7",
   "history": [
    {
@@ -12717,35 +12882,35 @@
     "daysElapsed": 11
    }
   ],
-  "daysElapsed": 2,
+  "daysElapsed": 3,
   "daysTotal": 62,
   "finished": false,
-  "returnPct": -2.84,
-  "spyReturnPct": -1.79,
-  "excessPct": -1.06,
+  "returnPct": -3.82,
+  "spyReturnPct": -1.89,
+  "excessPct": -1.93,
   "maxDrawdownPct": -5.41,
   "maxDrawdownAt": "2026-11-17T11:51:40-05:00",
-  "drawdownNowPct": -3.54,
+  "drawdownNowPct": -4.51,
   "trades": {
-   "closed": 0,
+   "closed": 1,
    "wins": 0,
-   "winRatePct": null,
+   "winRatePct": 0.0,
    "avgWin": null,
-   "avgLoss": null,
-   "profitFactor": null,
-   "realizedPL": 0
+   "avgLoss": -28.9,
+   "profitFactor": 0.0,
+   "realizedPL": -28.9
   },
   "monthly": [
    {
     "month": "2026-11",
-    "returnPct": -2.84,
-    "spyPct": -1.79,
-    "excessPct": -1.05
+    "returnPct": -3.82,
+    "spyPct": -1.89,
+    "excessPct": -1.93
    }
   ],
   "uptime": {
-   "due": 2,
-   "ran": 2,
+   "due": 3,
+   "ran": 3,
    "pct": 100.0
   },
   "errors": 0,
@@ -12758,7 +12923,7 @@
     "key": "spy",
     "label": "SPY'ı geçmek (masraflar düşülmüş)",
     "ok": false,
-    "value": -1.06,
+    "value": -1.93,
     "unit": "pct"
    },
    {
