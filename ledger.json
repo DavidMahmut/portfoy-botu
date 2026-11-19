@@ -130,62 +130,8 @@
   }
  },
  "portfolio": {
-  "cash": 1289.61,
+  "cash": 1615.2,
   "positions": [
-   {
-    "stopMode": "event",
-    "ticker": "AVEX",
-    "name": "AEVEX Corp.",
-    "kind": "Hisse",
-    "side": "long",
-    "lev": 1,
-    "shares": 25.1249,
-    "avgCost": 13.5968,
-    "costBasis": 341.62,
-    "lastPrice": 13.075,
-    "lastPriceAt": "2026-11-19T15:45:00-05:00",
-    "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (15:45 ET)",
-     "url": "https://finance.yahoo.com/quote/AVEX/"
-    },
-    "marketValue": 328.51,
-    "exposure": 328.51,
-    "unrealized": -13.11,
-    "unrealizedPct": -3.84,
-    "openedAt": "2026-11-16",
-    "openedTs": "2026-11-16T12:00:00-05:00",
-    "lastAddDate": "2026-11-16",
-    "stopPrice": 12.49,
-    "extremeSinceEntry": 13.82,
-    "tookProfit": false,
-    "thesis": "Haber takibi (deneysel kural): AVEX (AEVEX Corp.) bugün +%8,55. Haber türü: Beklenti yükseltildi / güçlü bilanço (sert, olumlu). “AEVEX (AVEX) Stock Could Be Undervalued On Raised 2026 Guidance” (Simply Wall St.). Fiyat günün aralığının üst kısmında, yani piyasa haberi geri almıyor; haber yönünde long açıldı. Zarar-kes 12,49 $ (risk %8,8); çıkış 2026-11-19 kapanışında. Büyüklük: hesabın %11'i (341,62 $); zarar-kes çalışırsa kayıp hesabın yaklaşık %1,0'i. Bu kural geçmiş veride sınanamadı (geçmiş haber arşivi yok); sonucu kural karnesinde izlenir.",
-    "sleeve": "event",
-    "play": "news",
-    "playLabel": "Haber takibi",
-    "exitDate": "2026-11-19",
-    "holdDays": 3,
-    "headline": {
-     "title": "AEVEX (AVEX) Stock Could Be Undervalued On Raised 2026 Guidance",
-     "url": "https://finance.yahoo.com/markets/stocks/articles/aevex-avex-stock-could-undervalued-031124963.html",
-     "publisher": "Simply Wall St.",
-     "at": "2026-11-16T03:11:24+00:00"
-    },
-    "borrowRate": 0.05,
-    "slip": 0.0015,
-    "catalyst": {
-     "cat": "guideraise",
-     "label": "Beklenti yükseltildi / güçlü bilanço",
-     "kind": "hard"
-    },
-    "event": {
-     "gapPct": -1.68,
-     "firstHourPct": 10.2,
-     "movePct": 8.55,
-     "prevClose": 12.51
-    },
-    "maintReq": 16.43,
-    "lastBarTs": "2026-11-19T15:45:00-05:00"
-   },
    {
     "stopMode": "event",
     "ticker": "SLS",
@@ -196,16 +142,16 @@
     "shares": 15.6835,
     "avgCost": 18.4024,
     "costBasis": 288.61,
-    "lastPrice": 15.045,
-    "lastPriceAt": "2026-11-19T15:45:00-05:00",
+    "lastPrice": 14.86,
+    "lastPriceAt": "2026-11-19T15:50:00-05:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (15:45 ET)",
+     "title": "Yahoo Finance 5 dk mum (15:50 ET)",
      "url": "https://finance.yahoo.com/quote/SLS/"
     },
-    "marketValue": -235.96,
-    "exposure": 235.96,
-    "unrealized": 52.65,
-    "unrealizedPct": 18.24,
+    "marketValue": -233.06,
+    "exposure": 233.06,
+    "unrealized": 55.55,
+    "unrealizedPct": 19.25,
     "openedAt": "2026-11-18",
     "openedTs": "2026-11-18T09:35:00-05:00",
     "lastAddDate": "2026-11-18",
@@ -233,8 +179,8 @@
      "prevClose": 7.47,
      "close": 19.15
     },
-    "maintReq": 11.8,
-    "lastBarTs": "2026-11-19T15:45:00-05:00"
+    "maintReq": 11.65,
+    "lastBarTs": "2026-11-19T15:50:00-05:00"
    },
    {
     "stopMode": "event",
@@ -246,16 +192,16 @@
     "shares": 31.8171,
     "avgCost": 13.6568,
     "costBasis": 434.52,
-    "lastPrice": 14.895,
-    "lastPriceAt": "2026-11-19T15:45:00-05:00",
+    "lastPrice": 14.945,
+    "lastPriceAt": "2026-11-19T15:50:00-05:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (15:45 ET)",
+     "title": "Yahoo Finance 5 dk mum (15:50 ET)",
      "url": "https://finance.yahoo.com/quote/BRBR/"
     },
-    "marketValue": 473.92,
-    "exposure": 473.92,
-    "unrealized": 39.4,
-    "unrealizedPct": 9.07,
+    "marketValue": 475.51,
+    "exposure": 475.51,
+    "unrealized": 40.99,
+    "unrealizedPct": 9.43,
     "openedAt": "2026-11-18",
     "openedTs": "2026-11-18T10:30:00-05:00",
     "lastAddDate": "2026-11-18",
@@ -287,8 +233,8 @@
      "movePct": 23.98,
      "prevClose": 11.01
     },
-    "maintReq": 23.7,
-    "lastBarTs": "2026-11-19T15:45:00-05:00"
+    "maintReq": 23.78,
+    "lastBarTs": "2026-11-19T15:50:00-05:00"
    },
    {
     "stopMode": "event",
@@ -300,16 +246,16 @@
     "shares": 2.8373,
     "avgCost": 143.3717,
     "costBasis": 406.79,
-    "lastPrice": 139.905,
-    "lastPriceAt": "2026-11-19T15:45:00-05:00",
+    "lastPrice": 139.92,
+    "lastPriceAt": "2026-11-19T15:50:00-05:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (15:45 ET)",
+     "title": "Yahoo Finance 5 dk mum (15:50 ET)",
      "url": "https://finance.yahoo.com/quote/TJX/"
     },
-    "marketValue": 396.95,
-    "exposure": 396.95,
-    "unrealized": -9.84,
-    "unrealizedPct": -2.42,
+    "marketValue": 397.0,
+    "exposure": 397.0,
+    "unrealized": -9.79,
+    "unrealizedPct": -2.41,
     "openedAt": "2026-11-18",
     "openedTs": "2026-11-18T10:30:00-05:00",
     "lastAddDate": "2026-11-18",
@@ -342,7 +288,7 @@
      "prevClose": 129.85
     },
     "maintReq": 19.85,
-    "lastBarTs": "2026-11-19T15:45:00-05:00"
+    "lastBarTs": "2026-11-19T15:50:00-05:00"
    },
    {
     "stopMode": "event",
@@ -354,16 +300,16 @@
     "shares": 7.8374,
     "avgCost": 85.5728,
     "costBasis": 670.67,
-    "lastPrice": 85.955,
-    "lastPriceAt": "2026-11-19T15:45:00-05:00",
+    "lastPrice": 85.75,
+    "lastPriceAt": "2026-11-19T15:50:00-05:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (15:45 ET)",
+     "title": "Yahoo Finance 5 dk mum (15:50 ET)",
      "url": "https://finance.yahoo.com/quote/PDD/"
     },
-    "marketValue": 673.66,
-    "exposure": 673.66,
-    "unrealized": 2.99,
-    "unrealizedPct": 0.45,
+    "marketValue": 672.06,
+    "exposure": 672.06,
+    "unrealized": 1.39,
+    "unrealizedPct": 0.21,
     "openedAt": "2026-11-19",
     "openedTs": "2026-11-19T15:00:00-05:00",
     "lastAddDate": "2026-11-19",
@@ -395,45 +341,45 @@
      "movePct": 10.48,
      "prevClose": 77.45
     },
-    "maintReq": 33.68,
-    "lastBarTs": "2026-11-19T15:45:00-05:00"
+    "maintReq": 33.6,
+    "lastBarTs": "2026-11-19T15:50:00-05:00"
    }
   ],
-  "realizedPL": -140.85,
+  "realizedPL": -156.88,
   "netDeposits": 3000.0,
   "costs": {
-   "slippage": 10.6326,
-   "commission": 5.25,
-   "fees": 0.28,
+   "slippage": 10.7959,
+   "commission": 5.6,
+   "fees": 0.3,
    "interest": 0.7,
    "borrow": 0.29,
    "dividendsPaid": 0.0,
    "dividendsReceived": 0.0
   },
-  "longValue": 1873.04,
-  "shortValue": 235.96,
-  "positionsValue": 1637.08,
-  "totalValue": 2926.69,
-  "grossExposure": 2109.0,
-  "netExposure": 1637.08,
-  "leverage": 0.721,
-  "maintenanceReq": 105.46,
-  "marginBuffer": 2821.23,
-  "regTInitialReq": 210.9,
-  "regTExcess": 2715.79,
-  "buyingPower": 27157.9,
+  "longValue": 1544.56,
+  "shortValue": 233.06,
+  "positionsValue": 1311.5,
+  "totalValue": 2926.7,
+  "grossExposure": 1777.62,
+  "netExposure": 1311.5,
+  "leverage": 0.607,
+  "maintenanceReq": 88.88,
+  "marginBuffer": 2837.82,
+  "regTInitialReq": 177.76,
+  "regTExcess": 2748.94,
+  "buyingPower": 27489.38,
   "marginEligible": true,
-  "closeoutMovePct": 133.77,
+  "closeoutMovePct": 159.64,
   "bustCount": 0,
   "paidInTotal": 3000.0,
   "lostToBusts": 0,
-  "totalPL": -73.31,
+  "totalPL": -73.3,
   "totalPLPct": -2.44,
   "twrPct": -2.44,
-  "asOf": "2026-11-19T15:45:38-05:00",
-  "benchmarkPrice": 717.23,
-  "benchmarkValue": 2880.79,
-  "benchmarkTwrPct": -3.97
+  "asOf": "2026-11-19T15:50:40-05:00",
+  "benchmarkPrice": 717.4,
+  "benchmarkValue": 2881.47,
+  "benchmarkTwrPct": -3.95
  },
  "meta": {
   "engine": "x10 v7",
@@ -448,9 +394,9 @@
    "ath": 759.66,
    "athDate": "2026-10-06",
    "athChecked": "2026-11-19",
-   "price": 646.92,
-   "at": "2026-11-19T15:45:00-05:00",
-   "ddPct": -14.84,
+   "price": 646.86,
+   "at": "2026-11-19T15:50:00-05:00",
+   "ddPct": -14.85,
    "level": "correction",
    "triggerPrice": 607.73,
    "correctionPrice": 683.69
@@ -477,7 +423,7 @@
     "2026-11-19"
    ]
   },
-  "lastRunAt": "2026-11-19T15:45:38-05:00",
+  "lastRunAt": "2026-11-19T15:50:40-05:00",
   "lastError": null,
   "spikeScanDate": "2026-11-19",
   "spikeScan": {
@@ -5163,6 +5109,46 @@
    ],
    "runId": "2026-11-19",
    "by": "bot"
+  },
+  {
+   "id": "t-20261119-06",
+   "ts": "2026-11-19T15:50:40-05:00",
+   "date": "2026-11-19",
+   "action": "SELL",
+   "side": "long",
+   "ticker": "AVEX",
+   "name": "AVEX",
+   "kind": "Hisse",
+   "shares": 25.1249,
+   "quotePrice": 12.98,
+   "quoteAt": "2026-11-19T15:50:00-05:00",
+   "slippagePct": 0.05,
+   "execPrice": 12.9735,
+   "value": 325.96,
+   "commission": 0.35,
+   "fees": 0.02,
+   "priceSource": {
+    "title": "Yahoo Finance 5 dk mum (15:50 ET)",
+    "url": "https://finance.yahoo.com/quote/AVEX/"
+   },
+   "reason": "Haber takibi işleminin süresi doldu: 2026-11-16 tarihinde açıldı; plan gereği 3 işlem günü sonra kapanışta kapatıldı.",
+   "rule": "haber takibi çıkış",
+   "sources": [
+    {
+     "title": "Yahoo Finance: AVEX",
+     "url": "https://finance.yahoo.com/quote/AVEX/"
+    },
+    {
+     "title": "yfinance (Yahoo Finance verileri)",
+     "url": "https://github.com/ranaroussi/yfinance"
+    }
+   ],
+   "runId": "2026-11-19",
+   "by": "bot",
+   "realizedPL": -16.03,
+   "holdingDays": 3,
+   "taxTerm": "kısa vade",
+   "play": "news"
   }
  ],
  "snapshots": [
@@ -5288,41 +5274,36 @@
   },
   {
    "date": "2026-11-19",
-   "at": "2026-11-19T15:45:38-05:00",
-   "totalValue": 2926.69,
-   "cash": 1289.61,
-   "positionsValue": 1637.08,
+   "at": "2026-11-19T15:50:40-05:00",
+   "totalValue": 2926.7,
+   "cash": 1615.2,
+   "positionsValue": 1311.5,
    "plPct": -2.44,
    "twrPct": -2.44,
    "netDeposits": 3000.0,
-   "leverage": 0.721,
-   "benchmarkPrice": 717.23,
-   "benchmarkValue": 2880.79,
+   "leverage": 0.607,
+   "benchmarkPrice": 717.4,
+   "benchmarkValue": 2881.47,
    "holdings": [
-    {
-     "ticker": "AVEX",
-     "side": "long",
-     "value": 328.51
-    },
     {
      "ticker": "SLS",
      "side": "short",
-     "value": -235.96
+     "value": -233.06
     },
     {
      "ticker": "BRBR",
      "side": "long",
-     "value": 473.92
+     "value": 475.51
     },
     {
      "ticker": "TJX",
      "side": "long",
-     "value": 396.95
+     "value": 397.0
     },
     {
      "ticker": "PDD",
      "side": "long",
-     "value": 673.66
+     "value": 672.06
     }
    ]
   }
@@ -21753,6 +21734,54 @@
     ],
     "actions": [],
     "note": "Normal: pozisyonlar zarar-kese %4,5–%83,8 uzakta, kaldıraç 0,72x, SPY −%1,78; işlem gerekmedi."
+   },
+   {
+    "at": "2026-11-19T15:50:40-05:00",
+    "kind": "guard",
+    "status": "normal",
+    "spyPrice": 717.4,
+    "spyChangePct": -1.75,
+    "totalValue": 2926.7,
+    "benchmarkValue": 2881.47,
+    "leverage": 0.607,
+    "marginBuffer": 2837.82,
+    "positions": [
+     {
+      "ticker": "SLS",
+      "side": "short",
+      "price": 14.86,
+      "dayChangePct": -17.21,
+      "stopPrice": 27.65,
+      "distancePct": 86.07
+     },
+     {
+      "ticker": "BRBR",
+      "side": "long",
+      "price": 14.945,
+      "dayChangePct": 9.41,
+      "stopPrice": 12.81,
+      "distancePct": 16.67
+     },
+     {
+      "ticker": "TJX",
+      "side": "long",
+      "price": 139.92,
+      "dayChangePct": -0.27,
+      "stopPrice": 133.92,
+      "distancePct": 4.48
+     },
+     {
+      "ticker": "PDD",
+      "side": "long",
+      "price": 85.75,
+      "dayChangePct": 10.72,
+      "stopPrice": 81.94,
+      "distancePct": 4.65
+     }
+    ],
+    "actions": [
+     "AVEX long kapatıldı (325,96 $)"
+    ]
    }
   ]
  },
@@ -22797,9 +22826,9 @@
  ],
  "tax": {
   "2026": {
-   "commissions": 5.53,
+   "commissions": 5.9,
    "marginInterest": 0.7,
-   "shortTermRealized": -140.85
+   "shortTermRealized": -156.88
   }
  },
  "evalHistory": [
@@ -22995,10 +23024,10 @@
  "busts": [],
  "playStats": {
   "news": {
-   "closed": 3,
+   "closed": 4,
    "wins": 0,
-   "pl": -88.83,
-   "best": -28.19,
+   "pl": -104.86,
+   "best": -16.03,
    "worst": -31.74,
    "last": "2026-11-19"
   },
@@ -23023,7 +23052,7 @@
   "start": "2026-11-16",
   "startAt": "2026-11-16T09:30:32-05:00",
   "end": "2027-02-16",
-  "asOf": "2026-11-19T15:45:38-05:00",
+  "asOf": "2026-11-19T15:50:40-05:00",
   "strategy": "v7",
   "history": [
    {
@@ -23107,26 +23136,26 @@
   "daysTotal": 62,
   "finished": false,
   "returnPct": -2.44,
-  "spyReturnPct": -3.97,
-  "excessPct": 1.53,
+  "spyReturnPct": -3.95,
+  "excessPct": 1.51,
   "maxDrawdownPct": -7.66,
   "maxDrawdownAt": "2026-11-18T11:31:45-05:00",
   "drawdownNowPct": -7.34,
   "trades": {
-   "closed": 5,
+   "closed": 6,
    "wins": 1,
-   "winRatePct": 20.0,
+   "winRatePct": 16.7,
    "avgWin": 32.39,
-   "avgLoss": -43.31,
-   "profitFactor": 0.19,
-   "realizedPL": -140.85
+   "avgLoss": -37.85,
+   "profitFactor": 0.17,
+   "realizedPL": -156.88
   },
   "monthly": [
    {
     "month": "2026-11",
     "returnPct": -2.44,
-    "spyPct": -3.97,
-    "excessPct": 1.53
+    "spyPct": -3.95,
+    "excessPct": 1.51
    }
   ],
   "uptime": {
@@ -23144,7 +23173,7 @@
     "key": "spy",
     "label": "SPY'ı geçmek (masraflar düşülmüş)",
     "ok": true,
-    "value": 1.53,
+    "value": 1.51,
     "unit": "pct"
    },
    {
