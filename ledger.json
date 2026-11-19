@@ -142,16 +142,16 @@
     "shares": 15.6835,
     "avgCost": 18.4024,
     "costBasis": 288.61,
-    "lastPrice": 14.8,
+    "lastPrice": 14.87,
     "lastPriceAt": "2026-11-19T15:55:00-05:00",
     "priceSource": {
      "title": "Yahoo Finance 5 dk mum (15:55 ET)",
      "url": "https://finance.yahoo.com/quote/SLS/"
     },
-    "marketValue": -232.12,
-    "exposure": 232.12,
-    "unrealized": 56.49,
-    "unrealizedPct": 19.57,
+    "marketValue": -233.21,
+    "exposure": 233.21,
+    "unrealized": 55.4,
+    "unrealizedPct": 19.2,
     "openedAt": "2026-11-18",
     "openedTs": "2026-11-18T09:35:00-05:00",
     "lastAddDate": "2026-11-18",
@@ -179,7 +179,7 @@
      "prevClose": 7.47,
      "close": 19.15
     },
-    "maintReq": 11.61,
+    "maintReq": 11.66,
     "lastBarTs": "2026-11-19T15:55:00-05:00"
    },
    {
@@ -192,16 +192,16 @@
     "shares": 31.8171,
     "avgCost": 13.6568,
     "costBasis": 434.52,
-    "lastPrice": 14.965,
+    "lastPrice": 15.09,
     "lastPriceAt": "2026-11-19T15:55:00-05:00",
     "priceSource": {
      "title": "Yahoo Finance 5 dk mum (15:55 ET)",
      "url": "https://finance.yahoo.com/quote/BRBR/"
     },
-    "marketValue": 476.14,
-    "exposure": 476.14,
-    "unrealized": 41.62,
-    "unrealizedPct": 9.58,
+    "marketValue": 480.12,
+    "exposure": 480.12,
+    "unrealized": 45.6,
+    "unrealizedPct": 10.49,
     "openedAt": "2026-11-18",
     "openedTs": "2026-11-18T10:30:00-05:00",
     "lastAddDate": "2026-11-18",
@@ -233,7 +233,7 @@
      "movePct": 23.98,
      "prevClose": 11.01
     },
-    "maintReq": 23.81,
+    "maintReq": 24.01,
     "lastBarTs": "2026-11-19T15:55:00-05:00"
    },
    {
@@ -246,16 +246,16 @@
     "shares": 2.8373,
     "avgCost": 143.3717,
     "costBasis": 406.79,
-    "lastPrice": 139.4199,
+    "lastPrice": 139.5,
     "lastPriceAt": "2026-11-19T15:55:00-05:00",
     "priceSource": {
      "title": "Yahoo Finance 5 dk mum (15:55 ET)",
      "url": "https://finance.yahoo.com/quote/TJX/"
     },
-    "marketValue": 395.58,
-    "exposure": 395.58,
-    "unrealized": -11.21,
-    "unrealizedPct": -2.76,
+    "marketValue": 395.8,
+    "exposure": 395.8,
+    "unrealized": -10.99,
+    "unrealizedPct": -2.7,
     "openedAt": "2026-11-18",
     "openedTs": "2026-11-18T10:30:00-05:00",
     "lastAddDate": "2026-11-18",
@@ -287,7 +287,7 @@
      "movePct": 10.35,
      "prevClose": 129.85
     },
-    "maintReq": 19.78,
+    "maintReq": 19.79,
     "lastBarTs": "2026-11-19T15:55:00-05:00"
    },
    {
@@ -300,16 +300,16 @@
     "shares": 7.8374,
     "avgCost": 85.5728,
     "costBasis": 670.67,
-    "lastPrice": 85.98,
+    "lastPrice": 86.0,
     "lastPriceAt": "2026-11-19T15:55:00-05:00",
     "priceSource": {
      "title": "Yahoo Finance 5 dk mum (15:55 ET)",
      "url": "https://finance.yahoo.com/quote/PDD/"
     },
-    "marketValue": 673.86,
-    "exposure": 673.86,
-    "unrealized": 3.19,
-    "unrealizedPct": 0.48,
+    "marketValue": 674.02,
+    "exposure": 674.02,
+    "unrealized": 3.35,
+    "unrealizedPct": 0.5,
     "openedAt": "2026-11-19",
     "openedTs": "2026-11-19T15:00:00-05:00",
     "lastAddDate": "2026-11-19",
@@ -341,7 +341,7 @@
      "movePct": 10.48,
      "prevClose": 77.45
     },
-    "maintReq": 33.69,
+    "maintReq": 33.7,
     "lastBarTs": "2026-11-19T15:55:00-05:00"
    }
   ],
@@ -356,29 +356,29 @@
    "dividendsPaid": 0.0,
    "dividendsReceived": 0.0
   },
-  "longValue": 1545.58,
-  "shortValue": 232.12,
-  "positionsValue": 1313.46,
-  "totalValue": 2928.66,
-  "grossExposure": 1777.69,
-  "netExposure": 1313.46,
-  "leverage": 0.607,
-  "maintenanceReq": 88.89,
-  "marginBuffer": 2839.77,
-  "regTInitialReq": 177.77,
-  "regTExcess": 2750.89,
-  "buyingPower": 27508.91,
+  "longValue": 1549.94,
+  "shortValue": 233.21,
+  "positionsValue": 1316.73,
+  "totalValue": 2931.93,
+  "grossExposure": 1783.15,
+  "netExposure": 1316.73,
+  "leverage": 0.608,
+  "maintenanceReq": 89.16,
+  "marginBuffer": 2842.77,
+  "regTInitialReq": 178.32,
+  "regTExcess": 2753.61,
+  "buyingPower": 27536.15,
   "marginEligible": true,
-  "closeoutMovePct": 159.74,
+  "closeoutMovePct": 159.42,
   "bustCount": 0,
   "paidInTotal": 3000.0,
   "lostToBusts": 0,
-  "totalPL": -71.34,
-  "totalPLPct": -2.38,
-  "twrPct": -2.38,
-  "asOf": "2026-11-19T16:00:44-05:00",
-  "benchmarkPrice": 715.87,
-  "benchmarkValue": 2875.35,
+  "totalPL": -68.07,
+  "totalPLPct": -2.27,
+  "twrPct": -2.27,
+  "asOf": "2026-11-19T16:05:47-05:00",
+  "benchmarkPrice": 715.81,
+  "benchmarkValue": 2875.09,
   "benchmarkTwrPct": -4.16
  },
  "meta": {
@@ -394,9 +394,9 @@
    "ath": 759.66,
    "athDate": "2026-10-06",
    "athChecked": "2026-11-19",
-   "price": 645.16,
+   "price": 645.1,
    "at": "2026-11-19T15:55:00-05:00",
-   "ddPct": -15.07,
+   "ddPct": -15.08,
    "level": "correction",
    "triggerPrice": 607.73,
    "correctionPrice": 683.69
@@ -423,7 +423,7 @@
     "2026-11-19"
    ]
   },
-  "lastRunAt": "2026-11-19T16:00:44-05:00",
+  "lastRunAt": "2026-11-19T16:05:47-05:00",
   "lastError": null,
   "spikeScanDate": "2026-11-19",
   "spikeScan": {
@@ -5274,36 +5274,36 @@
   },
   {
    "date": "2026-11-19",
-   "at": "2026-11-19T16:00:44-05:00",
-   "totalValue": 2928.66,
+   "at": "2026-11-19T16:05:47-05:00",
+   "totalValue": 2931.93,
    "cash": 1615.2,
-   "positionsValue": 1313.46,
-   "plPct": -2.38,
-   "twrPct": -2.38,
+   "positionsValue": 1316.73,
+   "plPct": -2.27,
+   "twrPct": -2.27,
    "netDeposits": 3000.0,
-   "leverage": 0.607,
-   "benchmarkPrice": 715.87,
-   "benchmarkValue": 2875.35,
+   "leverage": 0.608,
+   "benchmarkPrice": 715.81,
+   "benchmarkValue": 2875.09,
    "holdings": [
     {
      "ticker": "SLS",
      "side": "short",
-     "value": -232.12
+     "value": -233.21
     },
     {
      "ticker": "BRBR",
      "side": "long",
-     "value": 476.14
+     "value": 480.12
     },
     {
      "ticker": "TJX",
      "side": "long",
-     "value": 395.58
+     "value": 395.8
     },
     {
      "ticker": "PDD",
      "side": "long",
-     "value": 673.86
+     "value": 674.02
     }
    ]
   }
@@ -21876,6 +21876,53 @@
     ],
     "actions": [],
     "note": "Normal: pozisyonlar zarar-kese %4,1–%86,8 uzakta, kaldıraç 0,61x, SPY −%1,96; işlem gerekmedi."
+   },
+   {
+    "at": "2026-11-19T16:05:47-05:00",
+    "kind": "guard",
+    "status": "normal",
+    "spyPrice": 715.81,
+    "spyChangePct": -1.97,
+    "totalValue": 2931.93,
+    "benchmarkValue": 2875.09,
+    "leverage": 0.608,
+    "marginBuffer": 2842.77,
+    "positions": [
+     {
+      "ticker": "SLS",
+      "side": "short",
+      "price": 14.87,
+      "dayChangePct": -17.16,
+      "stopPrice": 27.65,
+      "distancePct": 85.94
+     },
+     {
+      "ticker": "BRBR",
+      "side": "long",
+      "price": 15.09,
+      "dayChangePct": 10.47,
+      "stopPrice": 12.81,
+      "distancePct": 17.8
+     },
+     {
+      "ticker": "TJX",
+      "side": "long",
+      "price": 139.5,
+      "dayChangePct": -0.57,
+      "stopPrice": 133.92,
+      "distancePct": 4.17
+     },
+     {
+      "ticker": "PDD",
+      "side": "long",
+      "price": 86.0,
+      "dayChangePct": 11.04,
+      "stopPrice": 81.94,
+      "distancePct": 4.95
+     }
+    ],
+    "actions": [],
+    "note": "Normal: pozisyonlar zarar-kese %4,2–%85,9 uzakta, kaldıraç 0,61x, SPY −%1,97; işlem gerekmedi."
    }
   ]
  },
@@ -23146,7 +23193,7 @@
   "start": "2026-11-16",
   "startAt": "2026-11-16T09:30:32-05:00",
   "end": "2027-02-16",
-  "asOf": "2026-11-19T16:00:44-05:00",
+  "asOf": "2026-11-19T16:05:47-05:00",
   "strategy": "v7",
   "history": [
    {
@@ -23229,12 +23276,12 @@
   "daysElapsed": 4,
   "daysTotal": 62,
   "finished": false,
-  "returnPct": -2.38,
+  "returnPct": -2.27,
   "spyReturnPct": -4.16,
-  "excessPct": 1.78,
+  "excessPct": 1.89,
   "maxDrawdownPct": -7.66,
   "maxDrawdownAt": "2026-11-18T11:31:45-05:00",
-  "drawdownNowPct": -7.28,
+  "drawdownNowPct": -7.18,
   "trades": {
    "closed": 6,
    "wins": 1,
@@ -23247,9 +23294,9 @@
   "monthly": [
    {
     "month": "2026-11",
-    "returnPct": -2.38,
+    "returnPct": -2.27,
     "spyPct": -4.16,
-    "excessPct": 1.78
+    "excessPct": 1.89
    }
   ],
   "uptime": {
@@ -23267,7 +23314,7 @@
     "key": "spy",
     "label": "SPY'ı geçmek (masraflar düşülmüş)",
     "ok": true,
-    "value": 1.78,
+    "value": 1.89,
     "unit": "pct"
    },
    {
