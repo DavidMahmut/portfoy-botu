@@ -1,70 +1,18 @@
 {
- "asOf": "2026-11-18T19:42:38-05:00",
+ "asOf": "2026-11-19T16:11:15-05:00",
  "session": "post",
  "sessionLabel": "Piyasa sonrası (16:00–20:00 ET)",
- "equity": 2878.93,
- "totalImpact": 49.52,
- "totalImpactPct": 1.72,
+ "equity": 2931.93,
+ "totalImpact": -7.47,
+ "totalImpactPct": -0.25,
  "items": [
-  {
-   "ticker": "QQQ",
-   "name": "Invesco QQQ (Nasdaq 100)",
-   "side": "long",
-   "lev": 1,
-   "shares": 6.3501,
-   "stopPrice": null,
-   "refClose": 659.51,
-   "refAt": "2026-11-18T15:55:00-05:00",
-   "price": 667.95,
-   "at": "2026-11-18T19:40:00-05:00",
-   "changePct": 1.28,
-   "impact": 53.59,
-   "beyondStop": false
-  },
-  {
-   "ticker": "AVEX",
-   "name": "AEVEX Corp.",
-   "side": "long",
-   "lev": 1,
-   "shares": 25.1249,
-   "stopPrice": 12.49,
-   "refClose": 13.385,
-   "refAt": "2026-11-18T15:55:00-05:00",
-   "price": 13.3013,
-   "at": "2026-11-18T19:20:00-05:00",
-   "changePct": -0.63,
-   "impact": -2.1,
-   "beyondStop": false
-  },
-  {
-   "ticker": "AS",
-   "name": "Amer Sports, Inc.",
-   "side": "long",
-   "lev": 1,
-   "shares": 13.7321,
-   "stopPrice": 29.6,
-   "refClose": 30.96,
-   "refAt": "2026-11-18T15:55:00-05:00",
-   "price": 30.88,
-   "at": "2026-11-18T18:55:00-05:00",
-   "changePct": -0.26,
-   "impact": -1.1,
-   "beyondStop": false
-  },
   {
    "ticker": "SLS",
    "name": "SELLAS Life Sciences Group, Inc.",
    "side": "short",
    "lev": 1,
    "shares": 15.6835,
-   "stopPrice": 27.65,
-   "refClose": 17.945,
-   "refAt": "2026-11-18T15:55:00-05:00",
-   "price": 17.95,
-   "at": "2026-11-18T19:42:21-05:00",
-   "changePct": 0.03,
-   "impact": -0.08,
-   "beyondStop": false
+   "stopPrice": 27.65
   },
   {
    "ticker": "BRBR",
@@ -73,13 +21,8 @@
    "lev": 1,
    "shares": 31.8171,
    "stopPrice": 12.81,
-   "refClose": 13.668,
-   "refAt": "2026-11-18T15:55:00-05:00",
-   "price": 13.57,
-   "at": "2026-11-18T18:50:00-05:00",
-   "changePct": -0.72,
-   "impact": -3.12,
-   "beyondStop": false
+   "refClose": 15.09,
+   "refAt": "2026-11-19T15:55:00-05:00"
   },
   {
    "ticker": "TJX",
@@ -88,12 +31,27 @@
    "lev": 1,
    "shares": 2.8373,
    "stopPrice": 133.92,
-   "refClose": 140.28,
-   "refAt": "2026-11-18T15:55:00-05:00",
-   "price": 141.1,
-   "at": "2026-11-18T19:15:00-05:00",
-   "changePct": 0.58,
-   "impact": 2.33,
+   "refClose": 139.5,
+   "refAt": "2026-11-19T15:55:00-05:00",
+   "price": 137.89,
+   "at": "2026-11-19T16:05:00-05:00",
+   "changePct": -1.15,
+   "impact": -4.57,
+   "beyondStop": false
+  },
+  {
+   "ticker": "PDD",
+   "name": "PDD Holdings Inc.",
+   "side": "long",
+   "lev": 1,
+   "shares": 7.8374,
+   "stopPrice": 81.94,
+   "refClose": 86.0,
+   "refAt": "2026-11-19T15:55:00-05:00",
+   "price": 85.63,
+   "at": "2026-11-19T16:05:00-05:00",
+   "changePct": -0.43,
+   "impact": -2.9,
    "beyondStop": false
   }
  ],
@@ -101,18 +59,18 @@
   {
    "ticker": "SPY",
    "label": "S&P 500 (SPY)",
-   "refClose": 730.33,
-   "price": 735.28,
-   "at": "2026-11-18T19:40:00-05:00",
-   "changePct": 0.68
+   "refClose": 715.81,
+   "price": 715.8,
+   "at": "2026-11-19T16:10:00-05:00",
+   "changePct": -0.0
   },
   {
    "ticker": "QQQ",
    "label": "Nasdaq 100 (QQQ)",
-   "refClose": 659.51,
-   "price": 667.95,
-   "at": "2026-11-18T19:40:00-05:00",
-   "changePct": 1.28
+   "refClose": 645.1,
+   "price": 644.72,
+   "at": "2026-11-19T16:10:00-05:00",
+   "changePct": -0.06
   }
  ],
  "note": "Yalnızca izleme: bot bu saatlerde işlem yapmaz, zarar-kes emirleri normal seansta işler. Seans dışında işlem hacmi düşüktür, fiyatlar sert oynayabilir ve ertesi açılış farklı olabilir.",
