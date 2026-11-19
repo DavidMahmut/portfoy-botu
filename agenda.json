@@ -1,5 +1,5 @@
 {
- "asOf": "2026-11-19T17:41-05:00",
+ "asOf": "2026-11-19T18:12-05:00",
  "week": {
   "start": "2026-11-16",
   "end": "2026-11-20",
@@ -200,11 +200,11 @@
    "unit": "",
    "dec": 2,
    "why": "Güçlü dolar, emtiayı ve ABD şirketlerinin yurt dışı gelirini baskılar.",
-   "price": 103.928,
+   "price": 103.911,
    "prev": 103.86,
    "date": "2026-11-19",
-   "d1": 0.07,
-   "w1": 0.73,
+   "d1": 0.05,
+   "w1": 0.72,
    "chgUnit": "%",
    "spark": [
     101.88,
@@ -221,7 +221,7 @@
     103.55,
     103.49,
     103.86,
-    103.928
+    103.911
    ]
   },
   {
@@ -231,11 +231,11 @@
    "unit": "$",
    "dec": 2,
    "why": "ABD ham petrolü: enflasyonu, enerji ve havayolu hisselerini etkiler.",
-   "price": 83.16,
+   "price": 83.07,
    "prev": 83.26,
    "date": "2026-11-19",
-   "d1": -0.12,
-   "w1": -6.29,
+   "d1": -0.23,
+   "w1": -6.39,
    "chgUnit": "%",
    "spark": [
     104.12,
@@ -252,7 +252,7 @@
     85.72,
     86.01,
     83.26,
-    83.16
+    83.07
    ]
   },
   {
@@ -293,11 +293,11 @@
    "unit": "$",
    "dec": 3,
    "why": "Enerji maliyeti; kış aylarında sert oynar.",
-   "price": 3.244,
+   "price": 3.248,
    "prev": 3.372,
    "date": "2026-11-19",
-   "d1": -3.8,
-   "w1": -2.87,
+   "d1": -3.68,
+   "w1": -2.75,
    "chgUnit": "%",
    "spark": [
     2.898,
@@ -314,7 +314,7 @@
     3.122,
     3.208,
     3.372,
-    3.244
+    3.248
    ]
   },
   {
@@ -324,11 +324,11 @@
    "unit": "$",
    "dec": 0,
    "why": "Güvenli liman: korku ve faiz indirimi beklentisiyle yükselir.",
-   "price": 3627.8999,
+   "price": 3635.8999,
    "prev": 3741.8999,
    "date": "2026-11-19",
-   "d1": -3.05,
-   "w1": -6.62,
+   "d1": -2.83,
+   "w1": -6.42,
    "chgUnit": "%",
    "spark": [
     3898.8999,
@@ -345,7 +345,7 @@
     3853.0,
     3864.2,
     3741.8999,
-    3627.8999
+    3635.8999
    ]
   },
   {
@@ -355,11 +355,11 @@
    "unit": "$",
    "dec": 3,
    "why": "Sanayi talebinin göstergesi: yükselmesi büyüme beklentisine işaret eder.",
-   "price": 5.592,
+   "price": 5.596,
    "prev": 5.6595,
    "date": "2026-11-19",
-   "d1": -1.19,
-   "w1": -9.55,
+   "d1": -1.12,
+   "w1": -9.49,
    "chgUnit": "%",
    "spark": [
     6.4585,
@@ -376,7 +376,7 @@
     5.9975,
     5.976,
     5.6595,
-    5.592
+    5.596
    ]
   },
   {
@@ -386,11 +386,11 @@
    "unit": "$",
    "dec": 0,
    "why": "Risk iştahının göstergesi; kripto hisselerini (COIN, MSTR) sürükler.",
-   "price": 62166.2109,
+   "price": 61915.5117,
    "prev": 62987.2656,
    "date": "2026-11-19",
-   "d1": -1.3,
-   "w1": -3.06,
+   "d1": -1.7,
+   "w1": -3.45,
    "chgUnit": "%",
    "spark": [
     75942.125,
@@ -407,7 +407,7 @@
     64855.8438,
     64893.9453,
     62987.2656,
-    62166.2109
+    61915.5117
    ]
   },
   {
@@ -448,11 +448,11 @@
    "unit": "₺",
    "dec": 2,
    "why": "Doların Türk lirası karşılığı.",
-   "price": 50.5522,
+   "price": 50.5658,
    "prev": 50.4383,
    "date": "2026-11-19",
-   "d1": 0.23,
-   "w1": 0.59,
+   "d1": 0.25,
+   "w1": 0.62,
    "chgUnit": "%",
    "spark": [
     49.9428,
@@ -469,11 +469,11 @@
     50.3403,
     50.4185,
     50.4383,
-    50.5522
+    50.5658
    ]
   }
  ],
- "marketsAt": "2026-11-19T17:41-05:00",
+ "marketsAt": "2026-11-19T18:12-05:00",
  "econ": [
   {
    "at": "2026-11-16T08:30-05:00",
@@ -520,28 +520,6 @@
      "actual": 0.6,
      "expected": null,
      "last": 0.9,
-     "unit": "%"
-    }
-   ]
-  },
-  {
-   "at": "2026-11-17T08:30-05:00",
-   "day": "2026-11-17",
-   "name": "Import Prices MM",
-   "tr": "İthalat / ihracat fiyatları",
-   "imp": 1,
-   "period": "Oct",
-   "actual": 1.1,
-   "expected": null,
-   "last": 1.1,
-   "unit": "%",
-   "why": null,
-   "more": [
-    {
-     "name": "Export Prices MM",
-     "actual": 1.1,
-     "expected": null,
-     "last": 2.2,
      "unit": "%"
     }
    ]
@@ -969,7 +947,7 @@
    "more": []
   }
  ],
- "econAt": "2026-11-19T17:41-05:00",
+ "econAt": "2026-11-19T18:12-05:00",
  "earnings": [
   {
    "t": "BIDU",
@@ -1247,7 +1225,7 @@
    "surprisePct": 28.47
   }
  ],
- "earningsAt": "2026-11-19T17:41-05:00",
+ "earningsAt": "2026-11-19T18:12-05:00",
  "ipos": [
   {
    "t": "BRRK",
@@ -1367,7 +1345,7 @@
    "sizeM": null
   }
  ],
- "iposAt": "2026-11-19T17:41-05:00",
+ "iposAt": "2026-11-19T18:12-05:00",
  "special": [
   {
    "day": "2026-11-18",
