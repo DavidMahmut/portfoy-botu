@@ -1,5 +1,5 @@
 {
- "asOf": "2026-11-19T17:11-05:00",
+ "asOf": "2026-11-19T17:41-05:00",
  "week": {
   "start": "2026-11-16",
   "end": "2026-11-20",
@@ -200,11 +200,11 @@
    "unit": "",
    "dec": 2,
    "why": "Güçlü dolar, emtiayı ve ABD şirketlerinin yurt dışı gelirini baskılar.",
-   "price": 103.932,
+   "price": 103.928,
    "prev": 103.86,
    "date": "2026-11-19",
    "d1": 0.07,
-   "w1": 0.74,
+   "w1": 0.73,
    "chgUnit": "%",
    "spark": [
     101.88,
@@ -221,7 +221,7 @@
     103.55,
     103.49,
     103.86,
-    103.932
+    103.928
    ]
   },
   {
@@ -386,11 +386,11 @@
    "unit": "$",
    "dec": 0,
    "why": "Risk iştahının göstergesi; kripto hisselerini (COIN, MSTR) sürükler.",
-   "price": 61750.1914,
+   "price": 62166.2109,
    "prev": 62987.2656,
    "date": "2026-11-19",
-   "d1": -1.96,
-   "w1": -3.71,
+   "d1": -1.3,
+   "w1": -3.06,
    "chgUnit": "%",
    "spark": [
     75942.125,
@@ -407,7 +407,7 @@
     64855.8438,
     64893.9453,
     62987.2656,
-    61750.1914
+    62166.2109
    ]
   },
   {
@@ -417,11 +417,11 @@
    "unit": "",
    "dec": 4,
    "why": "Doların avroya karşı değeri.",
-   "price": 1.0972,
+   "price": 1.0971,
    "prev": 1.0993,
    "date": "2026-11-19",
-   "d1": -0.19,
-   "w1": -1.11,
+   "d1": -0.2,
+   "w1": -1.12,
    "chgUnit": "%",
    "spark": [
     1.1183,
@@ -438,7 +438,7 @@
     1.1025,
     1.0998,
     1.0993,
-    1.0972
+    1.0971
    ]
   },
   {
@@ -448,11 +448,11 @@
    "unit": "₺",
    "dec": 2,
    "why": "Doların Türk lirası karşılığı.",
-   "price": 50.5274,
+   "price": 50.5522,
    "prev": 50.4383,
    "date": "2026-11-19",
-   "d1": 0.18,
-   "w1": 0.54,
+   "d1": 0.23,
+   "w1": 0.59,
    "chgUnit": "%",
    "spark": [
     49.9428,
@@ -469,11 +469,11 @@
     50.3403,
     50.4185,
     50.4383,
-    50.5274
+    50.5522
    ]
   }
  ],
- "marketsAt": "2026-11-19T17:11-05:00",
+ "marketsAt": "2026-11-19T17:41-05:00",
  "econ": [
   {
    "at": "2026-11-16T08:30-05:00",
@@ -969,7 +969,7 @@
    "more": []
   }
  ],
- "econAt": "2026-11-19T17:11-05:00",
+ "econAt": "2026-11-19T17:41-05:00",
  "earnings": [
   {
    "t": "BIDU",
@@ -1203,26 +1203,15 @@
    "surprisePct": 11.67
   },
   {
-   "t": "INTU",
-   "name": "Intuit Inc.",
-   "capB": 82.9,
-   "day": "2026-11-19",
-   "when": "kapanıştan sonra",
-   "event": "Q1 2027 Earnings Announcement",
-   "epsEst": 2.64,
-   "epsActual": null,
-   "surprisePct": null
-  },
-  {
    "t": "ROST",
    "name": "Ross Stores, Inc.",
    "capB": 70.2,
    "day": "2026-11-19",
-   "when": "kapanıştan sonra",
-   "event": "Q3 2026 Earnings Announcement",
-   "epsEst": 1.42,
-   "epsActual": null,
-   "surprisePct": null
+   "when": null,
+   "event": NaN,
+   "epsEst": 1.87,
+   "epsActual": 1.91,
+   "surprisePct": 2.21
   },
   {
    "t": "NTES",
@@ -1234,17 +1223,6 @@
    "epsEst": 16.07,
    "epsActual": 14.21,
    "surprisePct": -11.57
-  },
-  {
-   "t": "KEYS",
-   "name": "Keysight Technologies, Inc.",
-   "capB": 47.9,
-   "day": "2026-11-19",
-   "when": "kapanıştan sonra",
-   "event": "Q4 2026 Earnings Announcement",
-   "epsEst": 3.38,
-   "epsActual": null,
-   "surprisePct": null
   },
   {
    "t": "WSM",
@@ -1267,20 +1245,9 @@
    "epsEst": 0.43,
    "epsActual": 0.55,
    "surprisePct": 28.47
-  },
-  {
-   "t": "BSP",
-   "name": "Bending Spoons S.p.A.",
-   "capB": 27.4,
-   "day": "2026-11-20",
-   "when": "açılıştan önce",
-   "event": "Q3 2026 Earnings Announcement",
-   "epsEst": 0.3,
-   "epsActual": null,
-   "surprisePct": null
   }
  ],
- "earningsAt": "2026-11-19T17:11-05:00",
+ "earningsAt": "2026-11-19T17:41-05:00",
  "ipos": [
   {
    "t": "BRRK",
@@ -1400,7 +1367,7 @@
    "sizeM": null
   }
  ],
- "iposAt": "2026-11-19T17:11-05:00",
+ "iposAt": "2026-11-19T17:41-05:00",
  "special": [
   {
    "day": "2026-11-18",
