@@ -130,7 +130,7 @@
   }
  },
  "portfolio": {
-  "cash": 1615.2,
+  "cash": 1615.01,
   "positions": [
    {
     "stopMode": "event",
@@ -142,16 +142,16 @@
     "shares": 15.6835,
     "avgCost": 18.4024,
     "costBasis": 288.61,
-    "lastPrice": 14.87,
-    "lastPriceAt": "2026-11-19T15:55:00-05:00",
+    "lastPrice": 15.1,
+    "lastPriceAt": "2026-11-20T09:30:02-05:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (15:55 ET)",
+     "title": "Yahoo Finance 5 dk mum (09:30 ET)",
      "url": "https://finance.yahoo.com/quote/SLS/"
     },
-    "marketValue": -233.21,
-    "exposure": 233.21,
-    "unrealized": 55.4,
-    "unrealizedPct": 19.2,
+    "marketValue": -236.82,
+    "exposure": 236.82,
+    "unrealized": 51.79,
+    "unrealizedPct": 17.94,
     "openedAt": "2026-11-18",
     "openedTs": "2026-11-18T09:35:00-05:00",
     "lastAddDate": "2026-11-18",
@@ -179,8 +179,8 @@
      "prevClose": 7.47,
      "close": 19.15
     },
-    "maintReq": 11.66,
-    "lastBarTs": "2026-11-19T15:55:00-05:00"
+    "maintReq": 11.84,
+    "lastBarTs": "2026-11-20T09:30:02-05:00"
    },
    {
     "stopMode": "event",
@@ -192,16 +192,16 @@
     "shares": 31.8171,
     "avgCost": 13.6568,
     "costBasis": 434.52,
-    "lastPrice": 15.09,
-    "lastPriceAt": "2026-11-19T15:55:00-05:00",
+    "lastPrice": 15.12,
+    "lastPriceAt": "2026-11-20T09:30:18-05:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (15:55 ET)",
+     "title": "Yahoo Finance 5 dk mum (09:30 ET)",
      "url": "https://finance.yahoo.com/quote/BRBR/"
     },
-    "marketValue": 480.12,
-    "exposure": 480.12,
-    "unrealized": 45.6,
-    "unrealizedPct": 10.49,
+    "marketValue": 481.07,
+    "exposure": 481.07,
+    "unrealized": 46.55,
+    "unrealizedPct": 10.71,
     "openedAt": "2026-11-18",
     "openedTs": "2026-11-18T10:30:00-05:00",
     "lastAddDate": "2026-11-18",
@@ -233,8 +233,8 @@
      "movePct": 23.98,
      "prevClose": 11.01
     },
-    "maintReq": 24.01,
-    "lastBarTs": "2026-11-19T15:55:00-05:00"
+    "maintReq": 24.05,
+    "lastBarTs": "2026-11-20T09:30:18-05:00"
    },
    {
     "stopMode": "event",
@@ -246,16 +246,16 @@
     "shares": 2.8373,
     "avgCost": 143.3717,
     "costBasis": 406.79,
-    "lastPrice": 139.5,
-    "lastPriceAt": "2026-11-19T15:55:00-05:00",
+    "lastPrice": 140.03,
+    "lastPriceAt": "2026-11-20T09:30:22-05:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (15:55 ET)",
+     "title": "Yahoo Finance 5 dk mum (09:30 ET)",
      "url": "https://finance.yahoo.com/quote/TJX/"
     },
-    "marketValue": 395.8,
-    "exposure": 395.8,
-    "unrealized": -10.99,
-    "unrealizedPct": -2.7,
+    "marketValue": 397.31,
+    "exposure": 397.31,
+    "unrealized": -9.48,
+    "unrealizedPct": -2.33,
     "openedAt": "2026-11-18",
     "openedTs": "2026-11-18T10:30:00-05:00",
     "lastAddDate": "2026-11-18",
@@ -287,8 +287,8 @@
      "movePct": 10.35,
      "prevClose": 129.85
     },
-    "maintReq": 19.79,
-    "lastBarTs": "2026-11-19T15:55:00-05:00"
+    "maintReq": 19.87,
+    "lastBarTs": "2026-11-20T09:30:22-05:00"
    },
    {
     "stopMode": "event",
@@ -300,21 +300,21 @@
     "shares": 7.8374,
     "avgCost": 85.5728,
     "costBasis": 670.67,
-    "lastPrice": 86.0,
-    "lastPriceAt": "2026-11-19T15:55:00-05:00",
+    "lastPrice": 86.38,
+    "lastPriceAt": "2026-11-20T09:30:02-05:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (15:55 ET)",
+     "title": "Yahoo Finance 5 dk mum (09:30 ET)",
      "url": "https://finance.yahoo.com/quote/PDD/"
     },
-    "marketValue": 674.02,
-    "exposure": 674.02,
-    "unrealized": 3.35,
-    "unrealizedPct": 0.5,
+    "marketValue": 676.99,
+    "exposure": 676.99,
+    "unrealized": 6.32,
+    "unrealizedPct": 0.94,
     "openedAt": "2026-11-19",
     "openedTs": "2026-11-19T15:00:00-05:00",
     "lastAddDate": "2026-11-19",
     "stopPrice": 81.94,
-    "extremeSinceEntry": 86.31,
+    "extremeSinceEntry": 86.38,
     "tookProfit": false,
     "thesis": "Haber takibi (deneysel kural): PDD (PDD Holdings Inc.) bugün +%10,48. Haber türü: Beklenti yükseltildi / güçlü bilanço (sert, olumlu) — karışık: ters yönde haber de var. “PDD Holdings shares jump 8% as earnings beat estimates despite revenue miss” (Proactive). Fiyat günün aralığının üst kısmında, yani piyasa haberi geri almıyor; haber yönünde long açıldı. Zarar-kes 81,94 $ (risk %4,4); çıkış 2026-11-24 kapanışında. Büyüklük: hesabın %23'i (670,68 $); zarar-kes çalışırsa kayıp hesabın yaklaşık %1,0'i. Bu kural geçmiş veride sınanamadı (geçmiş haber arşivi yok); sonucu kural karnesinde izlenir.",
     "sleeve": "event",
@@ -341,8 +341,8 @@
      "movePct": 10.48,
      "prevClose": 77.45
     },
-    "maintReq": 33.7,
-    "lastBarTs": "2026-11-19T15:55:00-05:00"
+    "maintReq": 33.85,
+    "lastBarTs": "2026-11-20T09:30:02-05:00"
    }
   ],
   "realizedPL": -156.88,
@@ -352,34 +352,34 @@
    "commission": 5.6,
    "fees": 0.3,
    "interest": 0.7,
-   "borrow": 0.29,
+   "borrow": 0.48,
    "dividendsPaid": 0.0,
    "dividendsReceived": 0.0
   },
-  "longValue": 1549.94,
-  "shortValue": 233.21,
-  "positionsValue": 1316.73,
-  "totalValue": 2931.93,
-  "grossExposure": 1783.15,
-  "netExposure": 1316.73,
-  "leverage": 0.608,
-  "maintenanceReq": 89.16,
-  "marginBuffer": 2842.77,
-  "regTInitialReq": 178.32,
-  "regTExcess": 2753.61,
-  "buyingPower": 27536.15,
+  "longValue": 1555.38,
+  "shortValue": 236.82,
+  "positionsValue": 1318.56,
+  "totalValue": 2933.57,
+  "grossExposure": 1792.2,
+  "netExposure": 1318.56,
+  "leverage": 0.611,
+  "maintenanceReq": 89.61,
+  "marginBuffer": 2843.96,
+  "regTInitialReq": 179.22,
+  "regTExcess": 2754.35,
+  "buyingPower": 27543.5,
   "marginEligible": true,
-  "closeoutMovePct": 159.42,
+  "closeoutMovePct": 158.69,
   "bustCount": 0,
   "paidInTotal": 3000.0,
   "lostToBusts": 0,
-  "totalPL": -68.07,
-  "totalPLPct": -2.27,
-  "twrPct": -2.27,
-  "asOf": "2026-11-19T16:05:47-05:00",
-  "benchmarkPrice": 715.81,
-  "benchmarkValue": 2875.09,
-  "benchmarkTwrPct": -4.16
+  "totalPL": -66.43,
+  "totalPLPct": -2.21,
+  "twrPct": -2.21,
+  "asOf": "2026-11-20T09:30:28-05:00",
+  "benchmarkPrice": 712.35,
+  "benchmarkValue": 2861.19,
+  "benchmarkTwrPct": -4.63
  },
  "meta": {
   "engine": "x10 v7",
@@ -388,15 +388,15 @@
    "2026-10-12-1700",
    "2026-10-12-1000"
   ],
-  "lastAccrualDate": "2026-11-19",
+  "lastAccrualDate": "2026-11-20",
   "cooldown": {},
   "nasdaq": {
    "ath": 759.66,
    "athDate": "2026-10-06",
    "athChecked": "2026-11-19",
-   "price": 645.1,
-   "at": "2026-11-19T15:55:00-05:00",
-   "ddPct": -15.08,
+   "price": 638.47,
+   "at": "2026-11-20T09:30:01-05:00",
+   "ddPct": -15.95,
    "level": "correction",
    "triggerPrice": 607.73,
    "correctionPrice": 683.69
@@ -420,10 +420,11 @@
     "2026-11-16",
     "2026-11-17",
     "2026-11-18",
-    "2026-11-19"
+    "2026-11-19",
+    "2026-11-20"
    ]
   },
-  "lastRunAt": "2026-11-19T16:05:47-05:00",
+  "lastRunAt": "2026-11-20T09:30:28-05:00",
   "lastError": null,
   "spikeScanDate": "2026-11-19",
   "spikeScan": {
@@ -5304,6 +5305,41 @@
      "ticker": "PDD",
      "side": "long",
      "value": 674.02
+    }
+   ]
+  },
+  {
+   "date": "2026-11-20",
+   "at": "2026-11-20T09:30:28-05:00",
+   "totalValue": 2933.57,
+   "cash": 1615.01,
+   "positionsValue": 1318.56,
+   "plPct": -2.21,
+   "twrPct": -2.21,
+   "netDeposits": 3000.0,
+   "leverage": 0.611,
+   "benchmarkPrice": 712.35,
+   "benchmarkValue": 2861.19,
+   "holdings": [
+    {
+     "ticker": "SLS",
+     "side": "short",
+     "value": -236.82
+    },
+    {
+     "ticker": "BRBR",
+     "side": "long",
+     "value": 481.07
+    },
+    {
+     "ticker": "TJX",
+     "side": "long",
+     "value": 397.31
+    },
+    {
+     "ticker": "PDD",
+     "side": "long",
+     "value": 676.99
     }
    ]
   }
@@ -21924,6 +21960,55 @@
     "actions": [],
     "note": "Normal: pozisyonlar zarar-kese %4,2–%85,9 uzakta, kaldıraç 0,61x, SPY −%1,97; işlem gerekmedi."
    }
+  ],
+  "2026-11-20": [
+   {
+    "at": "2026-11-20T09:30:28-05:00",
+    "kind": "guard",
+    "status": "normal",
+    "spyPrice": 712.35,
+    "spyChangePct": -0.49,
+    "totalValue": 2933.57,
+    "benchmarkValue": 2861.19,
+    "leverage": 0.611,
+    "marginBuffer": 2843.96,
+    "positions": [
+     {
+      "ticker": "SLS",
+      "side": "short",
+      "price": 15.1,
+      "dayChangePct": 1.62,
+      "stopPrice": 27.65,
+      "distancePct": 83.11
+     },
+     {
+      "ticker": "BRBR",
+      "side": "long",
+      "price": 15.12,
+      "dayChangePct": 0.07,
+      "stopPrice": 12.81,
+      "distancePct": 18.03
+     },
+     {
+      "ticker": "TJX",
+      "side": "long",
+      "price": 140.03,
+      "dayChangePct": 0.44,
+      "stopPrice": 133.92,
+      "distancePct": 4.56
+     },
+     {
+      "ticker": "PDD",
+      "side": "long",
+      "price": 86.38,
+      "dayChangePct": 0.44,
+      "stopPrice": 81.94,
+      "distancePct": 5.42
+     }
+    ],
+    "actions": [],
+    "note": "1 günlük kredi faizi 0,00 $, ödünç ücreti 0,19 $ düşüldü"
+   }
   ]
  },
  "runs": [
@@ -23193,7 +23278,7 @@
   "start": "2026-11-16",
   "startAt": "2026-11-16T09:30:32-05:00",
   "end": "2027-02-16",
-  "asOf": "2026-11-19T16:05:47-05:00",
+  "asOf": "2026-11-20T09:30:28-05:00",
   "strategy": "v7",
   "history": [
    {
@@ -23276,12 +23361,12 @@
   "daysElapsed": 4,
   "daysTotal": 62,
   "finished": false,
-  "returnPct": -2.27,
-  "spyReturnPct": -4.16,
-  "excessPct": 1.89,
+  "returnPct": -2.21,
+  "spyReturnPct": -4.63,
+  "excessPct": 2.41,
   "maxDrawdownPct": -7.66,
   "maxDrawdownAt": "2026-11-18T11:31:45-05:00",
-  "drawdownNowPct": -7.18,
+  "drawdownNowPct": -7.13,
   "trades": {
    "closed": 6,
    "wins": 1,
@@ -23294,9 +23379,9 @@
   "monthly": [
    {
     "month": "2026-11",
-    "returnPct": -2.27,
-    "spyPct": -4.16,
-    "excessPct": 1.89
+    "returnPct": -2.21,
+    "spyPct": -4.63,
+    "excessPct": 2.42
    }
   ],
   "uptime": {
@@ -23314,7 +23399,7 @@
     "key": "spy",
     "label": "SPY'ı geçmek (masraflar düşülmüş)",
     "ok": true,
-    "value": 1.89,
+    "value": 2.41,
     "unit": "pct"
    },
    {
