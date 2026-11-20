@@ -1,12 +1,12 @@
 {
- "asOf": "2026-11-20T14:08:44-05:00",
+ "asOf": "2026-11-20T14:39:05-05:00",
  "sections": [
   {
    "ticker": "SLS",
    "name": "SELLAS Life Sciences Group, Inc.",
    "role": "short",
-   "dayChangePct": -8.04,
-   "unrealizedPct": 25.74,
+   "dayChangePct": -7.47,
+   "unrealizedPct": 25.28,
    "items": [
     {
      "title": "SLS Stock Suffers Worst Rout Since January After $150M Share Sale — But Fresh Filing Has Retail Bulls Saying Sellas Has More Buyout Leverage",
@@ -52,8 +52,8 @@
    "ticker": "BRBR",
    "name": "BellRing Brands, Inc.",
    "role": "long",
-   "dayChangePct": -2.85,
-   "unrealizedPct": 7.49,
+   "dayChangePct": -3.47,
+   "unrealizedPct": 6.8,
    "items": [
     {
      "title": "BellRing Brands (BRBR) is Winning Fresh Support From Analysts",
@@ -101,8 +101,8 @@
    "ticker": "TJX",
    "name": "TJX Companies, Inc. (The)",
    "role": "long",
-   "dayChangePct": 1.13,
-   "unrealizedPct": -1.67,
+   "dayChangePct": 0.58,
+   "unrealizedPct": -2.2,
    "items": [
     {
      "title": "A $12 Billion Fund Dumps These 3 Stocks",
@@ -149,8 +149,8 @@
    "ticker": "PDD",
    "name": "PDD Holdings Inc.",
    "role": "long",
-   "dayChangePct": -0.62,
-   "unrealizedPct": -0.12,
+   "dayChangePct": -1.9,
+   "unrealizedPct": -1.41,
    "items": [
     {
      "title": "PDD Holdings Stocks Surge 11.04% as Operating Profit Jumps 25% on Flat Revenue",
@@ -196,8 +196,8 @@
    "ticker": "GAP",
    "name": "Gap, Inc. (The)",
    "role": "long",
-   "dayChangePct": 12.85,
-   "unrealizedPct": -3.42,
+   "dayChangePct": 11.12,
+   "unrealizedPct": -4.9,
    "items": [
     {
      "title": "Sector Update: Consumer Stocks Mixed Friday Afternoon",
@@ -245,6 +245,24 @@
    "unrealizedPct": null,
    "items": [
     {
+     "title": "Stock Market Today: Nasdaq Turns Negative For 2026 As Fear Gauge Spikes; Walmart Advances (Live Coverage)",
+     "summary": "The Nasdaq composite tumbles Friday after Thursday's market sell-off. Anthropic stock plunges after its IPO.",
+     "publisher": "Investor's Business Daily",
+     "url": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-anthropic-stock-ant/?src=A00220&yptr=yahoo",
+     "at": "2026-11-20T14:10-05:00",
+     "tags": []
+    },
+    {
+     "title": "Is Nvidia's $81 Billion Receivables Pile A Risk?",
+     "summary": "Today's big story: Will 2027 Be A 2022 Repeat For Stocks.",
+     "publisher": "Trefis",
+     "url": "https://www.trefis.com/stock/nvda/articles/627205/is-nvidia-s-81-billion-receivables-pile-a-risk/2026-11-20",
+     "at": "2026-11-20T14:06-05:00",
+     "tags": [
+      "AI & chips"
+     ]
+    },
+    {
      "title": "7 reasons why tech stocks are getting hammered again",
      "summary": "The tech sell-off has returned. And it's ugly.",
      "publisher": "Yahoo Finance",
@@ -263,25 +281,6 @@
       "Earnings",
       "AI & chips",
       "Corporate"
-     ]
-    },
-    {
-     "title": "Stock Market Today: Nasdaq Dives 3.5% As S&P 500 Enters Correction; Anthropic Tanks 13% (Live Coverage)",
-     "summary": "The Nasdaq composite tumbles Friday after Thursday's market sell-off. Anthropic stock plunges after its IPO.",
-     "publisher": "Investor's Business Daily",
-     "url": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-anthropic-stock-ant/?src=A00220&yptr=yahoo",
-     "at": "2026-11-20T13:02-05:00",
-     "tags": []
-    },
-    {
-     "title": "Broadcom is Overvalued at 17.73X P/E: Buy, Sell or Hold the Stock?",
-     "summary": "AVGO's 17.73X P/E signals overvaluation, but surging AI semiconductor revenues and strong hyperscaler ties support long-term growth. Is holding the stock wise?",
-     "publisher": "Zacks",
-     "url": "https://finance.yahoo.com/markets/stocks/articles/broadcom-overvalued-17-73x-p-175200037.html",
-     "at": "2026-11-20T12:52-05:00",
-     "tags": [
-      "Earnings",
-      "AI & chips"
      ]
     }
    ]
@@ -486,24 +485,25 @@
  ],
  "market": [
   {
-   "title": "Supply Chain Stocks Sink Amid Wall Street Sell-Off, Though Air Freight Shows Resilience",
-   "summary": "AI valuation fatigue and interest rate pressures dragged major indices lower, pulling down rail and trucking stocks while global forwarders weathered the storm.",
-   "publisher": "Sourcing Journal",
-   "url": "https://wwd.com/sourcing-journal/industry-news/supply-chain-stocks-sink-amid-wall-street-sell-off-though-1239452902/",
-   "at": "2026-11-20T13:34-05:00",
+   "title": "'Very interesting': Trump suggests recent gas price drops are linked to the election",
+   "summary": "President Trump on Tuesday escalated a suggestion he has been making in recent days on social media that the recent dip in energy prices is being driven by political forces now that the midterm election is in the rearview mirror.",
+   "publisher": "Yahoo Finance",
+   "url": "https://finance.yahoo.com/energy/article/very-interesting-trump-suggests-recent-gas-price-drops-are-linked-to-the-election-193449064.html",
+   "at": "2026-11-20T14:34-05:00",
    "tags": [
-    "Fed & rates",
-    "AI & chips"
+    "Policy & politics",
+    "Energy"
    ]
   },
   {
-   "title": "Update: US Equity Indexes Drop as Anthropic Leads Big-Tech Plunge Amid Sliding Treasury Yields",
-   "summary": "(Updates with index/price moves, macroeconomic data, and company/geopolitical news from the first pa",
-   "publisher": "MT Newswires",
-   "url": "https://finance.yahoo.com/markets/stocks/articles/us-equity-indexes-drop-anthropic-183415367.html",
-   "at": "2026-11-20T13:34-05:00",
+   "title": "Trump Bought At Least $5 Million Of This Dividend ETF Before AI Sell-Off",
+   "summary": "President Donald Trump bought between $5,000,001 and $25,000,000 of the Vanguard Dividend Appreciation Index Fund ETF (NYSEARCA:VIG) on Sept. 23, 2026, according to his latest periodic transaction report. Federal disclosure forms list dollar ranges, not exact …",
+   "publisher": "24/7 Wall St.",
+   "url": "https://247wallst.com/investing/etf/2026/11/20/trump-bought-at-least-5-million-of-this-dividend-etf-before-ai-sell-off/",
+   "at": "2026-11-20T14:33-05:00",
    "tags": [
-    "Fed & rates"
+    "Policy & politics",
+    "AI & chips"
    ]
   },
   {
@@ -570,17 +570,6 @@
    ]
   },
   {
-   "title": "Meta’s (META) AI Spending Spree Looks Risky, but There’s More to the Story",
-   "summary": "Cranstoun, an investment management company, released its October 2026 Investor Letter. A copy of the letter can be downloaded here. The letter highlighted how rising interest rates and financing pressures are reshaping opportunities in AI infrastructure. On S…",
-   "publisher": "Insider Monkey",
-   "url": "https://finance.yahoo.com/technology/ai/articles/meta-meta-ai-spending-spree-180436289.html",
-   "at": "2026-11-20T13:04-05:00",
-   "tags": [
-    "Fed & rates",
-    "AI & chips"
-   ]
-  },
-  {
    "title": "The Inflation Math In Five Lines",
    "summary": "Today's big story: Will 2027 Be A 2022 Repeat For Stocks.",
    "publisher": "Trefis",
@@ -611,25 +600,192 @@
    "tags": [
     "Fed & rates"
    ]
+  },
+  {
+   "title": "Tech Rout Deepens as Anthropic Stock Slides",
+   "summary": "The selloff in technology stocks is intensifying, dragging the S 500 and Dow industrials into correction territory.",
+   "publisher": "The Wall Street Journal",
+   "url": "https://www.wsj.com/finance/stocks/nasdaq-set-for-fresh-decline-as-ai-selloff-intensifies-e974bbb5",
+   "at": "2026-11-20T14:31-05:00",
+   "tags": []
   }
  ],
  "seekingAlpha": {
-  "asOf": "2026-11-20T14:08:44-05:00",
+  "asOf": "2026-11-20T14:39:05-05:00",
   "ok": true,
   "stale": false,
   "via": "seekingalpha.com RSS",
   "errors": [],
   "feedCounts": {
    "Piyasa haberleri": 7,
-   "Tüm yazılar": 23
+   "Tüm yazılar": 22
   },
   "market": [
    {
-    "title": "MARA Holdings drops 15% as crypto peers move lower",
-    "url": "https://seekingalpha.com/news/4675272-mara-holdings-drops-15-percent-as-crypto-peers-move-lower",
-    "at": "2026-11-20T14:06-05:00",
+    "title": "Novanta falls 10% amid broad market pullback",
+    "url": "https://seekingalpha.com/news/4675292-novanta-falls-10-percent-amid-broad-market-pullback",
+    "at": "2026-11-20T14:34-05:00",
     "kind": "news",
     "symbols": [],
+    "author": null
+   },
+   {
+    "title": "NIO: I'm Expecting A Strong Q3 Earnings Report (Preview)",
+    "url": "https://seekingalpha.com/article/4970673-nio-expecting-strong-q3-earnings-report-preview",
+    "at": "2026-11-20T14:34-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "NIO",
+     "NIOIF"
+    ],
+    "author": null
+   },
+   {
+    "title": "Applied Digital sinks 17% as tech shares retreat",
+    "url": "https://seekingalpha.com/news/4675290-applied-digital-sinks-17-as-tech-shares-retreat",
+    "at": "2026-11-20T14:32-05:00",
+    "kind": "news",
+    "symbols": [],
+    "author": null
+   },
+   {
+    "title": "Asante Gold Corporation (ASE:CA) Discusses Turnaround Plan for Bibiani and Chirano Operations Transcript",
+    "url": "https://seekingalpha.com/article/4970617-asante-gold-corporation-ase-ca-discusses-turnaround-plan-for-bibiani-and-chirano-operations",
+    "at": "2026-11-20T14:32-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "ASE:CA",
+     "ASGOF"
+    ],
+    "author": null
+   },
+   {
+    "title": "IREN Limited drops 16% amid broad technology selloff",
+    "url": "https://seekingalpha.com/news/4675291-iren-limited-drops-16-percent-amid-broad-technology-selloff",
+    "at": "2026-11-20T14:29-05:00",
+    "kind": "news",
+    "symbols": [],
+    "author": null
+   },
+   {
+    "title": "Nebius Group slides 14% amid tech selloff",
+    "url": "https://seekingalpha.com/news/4675288-nebius-group-slides-14-percent-amid-tech-selloff",
+    "at": "2026-11-20T14:27-05:00",
+    "kind": "news",
+    "symbols": [],
+    "author": null
+   },
+   {
+    "title": "Eastman Chemical cut to Sell equivalent, Celanese maintained Overweight at J.P. Morgan",
+    "url": "https://seekingalpha.com/news/4675278-eastman-chemical-cut-to-sell-equivalent-celanese-maintained-overweight-at-jp-morgan",
+    "at": "2026-11-20T14:27-05:00",
+    "kind": "news",
+    "symbols": [],
+    "author": null
+   },
+   {
+    "title": "Wall Street's Last Line Of Defense Is Breaking",
+    "url": "https://seekingalpha.com/article/4970670-wall-streets-last-line-of-defense-is-breaking",
+    "at": "2026-11-20T14:27-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "SPX",
+     "NDX",
+     "IWM",
+     "IVV",
+     "QQQ",
+     "INDA"
+    ],
+    "author": null
+   },
+   {
+    "title": "Universal Technical Institute sinks 13% to new 52-week low",
+    "url": "https://seekingalpha.com/news/4675285-universal-technical-institute-sinks-13-percent-to-new-52-week-low",
+    "at": "2026-11-20T14:26-05:00",
+    "kind": "news",
+    "symbols": [],
+    "author": null
+   },
+   {
+    "title": "Carrefour SA (CRRFY) Discusses Hypermarket Strategy and Transformation Initiatives - Slideshow",
+    "url": "https://seekingalpha.com/article/4970683-carrefour-sa-crrfy-discusses-hypermarket-strategy-and-transformation-initiatives-slideshow",
+    "at": "2026-11-20T14:24-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "CRRFY",
+     "CRERF"
+    ],
+    "author": null
+   },
+   {
+    "title": "AI Volatility Puts Diversification In Focus",
+    "url": "https://seekingalpha.com/article/4970669-ai-volatility-puts-diversification-focus",
+    "at": "2026-11-20T14:24-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "WTAI",
+     "THNQ",
+     "LRNZ",
+     "AIQ",
+     "UBOT",
+     "ARTY"
+    ],
+    "author": null
+   },
+   {
+    "title": "Celestica drops 15% amid broad tech selloff",
+    "url": "https://seekingalpha.com/news/4675283-celestica-drops-15-percent-amid-broad-tech-selloff",
+    "at": "2026-11-20T14:23-05:00",
+    "kind": "news",
+    "symbols": [],
+    "author": null
+   },
+   {
+    "title": "Carrefour SA (CRRFY) Discusses Hypermarket Strategy and Transformation Initiatives Transcript",
+    "url": "https://seekingalpha.com/article/4970327-carrefour-sa-crrfy-discusses-hypermarket-strategy-and-transformation-initiatives-transcript",
+    "at": "2026-11-20T14:22-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "CRRFY",
+     "CRERF"
+    ],
+    "author": null
+   },
+   {
+    "title": "Endeavour Silver Corp. (EDR:CA) Discusses Pitarrilla Feasibility Study and Long-Term Silver Production Transcript",
+    "url": "https://seekingalpha.com/article/4970657-endeavour-silver-corp-edr-ca-discusses-pitarrilla-feasibility-study-and-long-term-silver",
+    "at": "2026-11-20T14:22-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "EDR:CA",
+     "EXK"
+    ],
+    "author": null
+   },
+   {
+    "title": "What To Do After Onto Innovation Fell Over 40% From Its June 2026 Peak",
+    "url": "https://seekingalpha.com/article/4970667-what-to-do-after-onto-innovation-fell-over-40-percent-from-its-june-2026-peak",
+    "at": "2026-11-20T14:14-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "SOXX",
+     "AMAT",
+     "KLAC",
+     "NVMI",
+     "MU",
+     "SKHY"
+    ],
+    "author": null
+   },
+   {
+    "title": "dormakaba Holding AG (DRMKY) Analyst/Investor Day Transcript",
+    "url": "https://seekingalpha.com/article/4970676-dormakaba-holding-ag-drmky-analyst-investor-day-transcript",
+    "at": "2026-11-20T14:13-05:00",
+    "kind": "analysis",
+    "symbols": [
+     "DRMKY",
+     "DRRKF"
+    ],
     "author": null
    },
    {
@@ -641,14 +797,6 @@
      "NVDA",
      "NVDA:CA"
     ],
-    "author": null
-   },
-   {
-    "title": "Moog projects $5.0B FY 2027 sales with $13.30 EPS guidance, backed by $360M capex",
-    "url": "https://seekingalpha.com/news/4675276-moog-projects-5_0b-fy-2027-sales-with-13_30-eps-guidance-backed-by-360m-capex",
-    "at": "2026-11-20T14:04-05:00",
-    "kind": "news",
-    "symbols": [],
     "author": null
    },
    {
@@ -668,170 +816,6 @@
     "kind": "analysis",
     "symbols": [
      "CYDY"
-    ],
-    "author": null
-   },
-   {
-    "title": "Anthropic quickly finds itself already inside more than 80 ETFs",
-    "url": "https://seekingalpha.com/news/4675270-anthropic-quickly-finds-itself-already-inside-more-than-80-etfs",
-    "at": "2026-11-20T13:49-05:00",
-    "kind": "news",
-    "symbols": [],
-    "author": null
-   },
-   {
-    "title": "Why I'm Buying This Market Crash",
-    "url": "https://seekingalpha.com/article/4970663-why-im-buying-this-market-crash",
-    "at": "2026-11-20T13:49-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "SP500",
-     "COMP",
-     "SMH",
-     "SPY",
-     "SPX",
-     "VOO"
-    ],
-    "author": null
-   },
-   {
-    "title": "Anthropic’s IPO debut not a success; won’t do well without infrastructure to support it – Dan Niles",
-    "url": "https://seekingalpha.com/news/4675269-anthropic-s-ipo-debut-not-a-success-won-t-do-well-without-infrastructure-to-support-it-dan",
-    "at": "2026-11-20T13:47-05:00",
-    "kind": "news",
-    "symbols": [],
-    "author": null
-   },
-   {
-    "title": "Global Payments jumps on report GTCR considering $50B takeover bid",
-    "url": "https://seekingalpha.com/news/4675268-global-payments-jumps-on-report-gtcr-considering-50b-takeover-bid",
-    "at": "2026-11-20T13:45-05:00",
-    "kind": "news",
-    "symbols": [],
-    "author": null
-   },
-   {
-    "title": "Biogen: Why I'm Still Bullish Despite Market Turmoil",
-    "url": "https://seekingalpha.com/article/4970661-biogen-why-im-still-bullish-despite-market-turmoil",
-    "at": "2026-11-20T13:43-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "NVS",
-     "RHHBY",
-     "PTCT",
-     "IONS",
-     "ESALF",
-     "TGTX"
-    ],
-    "author": null
-   },
-   {
-    "title": "Performance Insights - November 2026",
-    "url": "https://seekingalpha.com/article/4970662-performance-insights-november-2026",
-    "at": "2026-11-20T13:43-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "AFMC",
-     "AFSM",
-     "ARKK",
-     "AVUV",
-     "BAPR",
-     "IVOO"
-    ],
-    "author": null
-   },
-   {
-    "title": "Intel Proved The CPU Comeback, AMD Will Cash It",
-    "url": "https://seekingalpha.com/article/4970660-intel-proved-the-cpu-comeback-amd-will-cash-it",
-    "at": "2026-11-20T13:34-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "AMD",
-     "INTC",
-     "AMD:CA",
-     "INTC:CA"
-    ],
-    "author": null
-   },
-   {
-    "title": "Mineral Resources Limited (MALRY) Shareholder/Analyst Call Transcript",
-    "url": "https://seekingalpha.com/article/4970672-mineral-resources-limited-malry-shareholder-analyst-call-transcript",
-    "at": "2026-11-20T13:32-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "MALRY",
-     "MALRF"
-    ],
-    "author": null
-   },
-   {
-    "title": "Utilities firms Net Power & Deep Fission join Russel Microcap; Spruce Power removed",
-    "url": "https://seekingalpha.com/news/4675241-utilities-firms-net-power-deep-fission-join-russel-microcap-spruce-power-removed",
-    "at": "2026-11-20T13:30-05:00",
-    "kind": "news",
-    "symbols": [],
-    "author": null
-   },
-   {
-    "title": "Hedge funds divided on Uber Technologies in Q3",
-    "url": "https://seekingalpha.com/news/4674365-hedge-funds-divided-on-uber-technologies-in-q3",
-    "at": "2026-11-20T13:30-05:00",
-    "kind": "news",
-    "symbols": [],
-    "author": null
-   },
-   {
-    "title": "Year-End Tax Loss Harvesting Ideas For 2026: Wash Rules, Sector Swaps & More",
-    "url": "https://seekingalpha.com/article/4970659-year-end-tax-loss-harvesting-ideas-for-2026-wash-rules-sector-swaps-and-more",
-    "at": "2026-11-20T13:25-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "NVDA",
-     "SMH",
-     "SOXX",
-     "AMZN",
-     "MCD",
-     "XLP"
-    ],
-    "author": null
-   },
-   {
-    "title": "GXO Logistics, Inc. (GXO) Analyst/Investor Day Transcript",
-    "url": "https://seekingalpha.com/article/4968717-gxo-logistics-inc-gxo-analyst-investor-day-transcript",
-    "at": "2026-11-20T13:22-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "GXO"
-    ],
-    "author": null
-   },
-   {
-    "title": "Anthropic And Nvidia Are Saying The AI Bubble Is Finally Popping",
-    "url": "https://seekingalpha.com/article/4970656-anthropic-and-nvidia-are-saying-the-ai-bubble-is-finally-popping",
-    "at": "2026-11-20T13:22-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "CRWV",
-     "NBIS",
-     "INTC",
-     "MU",
-     "NVDA",
-     "ANT"
-    ],
-    "author": null
-   },
-   {
-    "title": "SMH: Cover The Shorts For Now (Rating Upgrade)",
-    "url": "https://seekingalpha.com/article/4970655-smh-cover-the-shorts-for-now-upgrade",
-    "at": "2026-11-20T13:18-05:00",
-    "kind": "analysis",
-    "symbols": [
-     "NVDA",
-     "MU",
-     "MU:CA",
-     "NVDA:CA",
-     "ZMIC:CA",
-     "ZNVD:CA"
     ],
     "author": null
    }
@@ -1067,50 +1051,51 @@
    "url": "https://seekingalpha.com/market-news"
   },
   "note": "Yalnızca başlık ve bağlantı. Yazıların tamamı Seeking Alpha'da; bir kısmı abonelik ister. Yatırım tavsiyesi değildir.",
-  "lastGood": "2026-11-20T14:08:44-05:00"
+  "lastGood": "2026-11-20T14:39:05-05:00"
  },
  "digest": {
   "date": "2026-11-20",
   "title": "Daily brief — Friday, November 20, 2026",
-  "generatedAt": "2026-11-20T14:08-05:00",
+  "generatedAt": "2026-11-20T14:39-05:00",
   "bullets": [
    {
     "head": "Markets (latest session)",
-    "text": "S&P 500 -2.07%, Nasdaq 100 -3.67%, Dow -0.64%, Russell 2000 -1.63%. VIX 31.5; 10-yr yield 4.95% (-11 bp); WTI $83.06 (-0.18%); gold $3,538 (-4.01%). Tech lagged the Dow: money rotated out of technology. Volatility is high (VIX above 20). Bond yields fell sharply, which usually helps growth stocks."
+    "text": "S&P 500 -2.76%, Nasdaq 100 -4.44%, Russell 2000 -2.15%. VIX 33.5; 10-yr yield 4.93% (-12 bp); WTI $83.33 (+0.14%); gold $3,516 (-4.60%). Volatility is high (VIX above 20). Bond yields fell sharply, which usually helps growth stocks."
    },
    {
     "head": "Trend filter",
-    "text": "The S&P 500 (SPY $701.07) is 4.3% below its 200-day average ($732.69). Basket rule: the momentum basket waits in cash until SPY is back above the average. Index sleeve (last daily decision 2026-11-20): in cash (direction not confirmed)."
+    "text": "The S&P 500 (SPY $696.09) is 5.0% below its 200-day average ($732.69). Basket rule: the momentum basket waits in cash until SPY is back above the average. Index sleeve (last daily decision 2026-11-20): in cash (direction not confirmed)."
    },
    {
     "head": "Our portfolio",
-    "text": "Net value $2,925.51 (-0.22% vs the previous close); cash $1,270.51; 5 positions, leverage 0.71x. Best holding today: GAP +12.85%; weakest: SLS -8.04%."
+    "text": "Net value $2,905.24 (-0.91% vs the previous close); cash $1,270.51; 5 positions, leverage 0.71x. Best holding today: GAP +11.12%; weakest: SLS -7.47%."
    },
    {
     "head": "Themes in today's headlines",
-    "text": "Earnings (14), AI & chips (10), Corporate (8), Fed & rates (8)."
+    "text": "Earnings (13), AI & chips (9), Corporate (8), Energy (6)."
    }
   ],
   "headlines": [
    {
-    "title": "Supply Chain Stocks Sink Amid Wall Street Sell-Off, Though Air Freight Shows Resilience",
-    "url": "https://wwd.com/sourcing-journal/industry-news/supply-chain-stocks-sink-amid-wall-street-sell-off-though-1239452902/",
-    "publisher": "Sourcing Journal",
-    "at": "2026-11-20T13:34-05:00",
-    "summary": "AI valuation fatigue and interest rate pressures dragged major indices lower, pulling down rail and trucking stocks while global forwarders weathered the storm.",
+    "title": "'Very interesting': Trump suggests recent gas price drops are linked to the election",
+    "url": "https://finance.yahoo.com/energy/article/very-interesting-trump-suggests-recent-gas-price-drops-are-linked-to-the-election-193449064.html",
+    "publisher": "Yahoo Finance",
+    "at": "2026-11-20T14:34-05:00",
+    "summary": "President Trump on Tuesday escalated a suggestion he has been making in recent days on social media that the recent dip in energy prices is being driven by political forces now that the midterm electi…",
     "tags": [
-     "Fed & rates",
-     "AI & chips"
+     "Policy & politics",
+     "Energy"
     ]
    },
    {
-    "title": "Update: US Equity Indexes Drop as Anthropic Leads Big-Tech Plunge Amid Sliding Treasury Yields",
-    "url": "https://finance.yahoo.com/markets/stocks/articles/us-equity-indexes-drop-anthropic-183415367.html",
-    "publisher": "MT Newswires",
-    "at": "2026-11-20T13:34-05:00",
-    "summary": "(Updates with index/price moves, macroeconomic data, and company/geopolitical news from the first pa",
+    "title": "Trump Bought At Least $5 Million Of This Dividend ETF Before AI Sell-Off",
+    "url": "https://247wallst.com/investing/etf/2026/11/20/trump-bought-at-least-5-million-of-this-dividend-etf-before-ai-sell-off/",
+    "publisher": "24/7 Wall St.",
+    "at": "2026-11-20T14:33-05:00",
+    "summary": "President Donald Trump bought between $5,000,001 and $25,000,000 of the Vanguard Dividend Appreciation Index Fund ETF (NYSEARCA:VIG) on Sept.",
     "tags": [
-     "Fed & rates"
+     "Policy & politics",
+     "AI & chips"
     ]
    },
    {
@@ -1138,21 +1123,21 @@
   "movers": [
    {
     "ticker": "GAP",
-    "changePct": 12.85,
+    "changePct": 11.12,
     "title": "Sector Update: Consumer Stocks Mixed Friday Afternoon",
     "url": "https://finance.yahoo.com/markets/stocks/articles/sector-consumer-stocks-mixed-friday-184136062.html",
     "publisher": "MT Newswires"
    },
    {
     "ticker": "SLS",
-    "changePct": -8.04,
+    "changePct": -7.47,
     "title": "SLS Stock Suffers Worst Rout Since January After $150M Share Sale — But Fresh Filing Has Retail Bulls Saying Sellas Has More Buyout Leverage",
     "url": "https://stocktwits.com/news-articles/markets/equity/sls-stock-suffers-150m-share-sale-fresh-filing-retail-more-buyout-leverage/cNbST82R9K2",
     "publisher": "Stocktwits"
    },
    {
     "ticker": "BRBR",
-    "changePct": -2.85,
+    "changePct": -3.47,
     "title": "BellRing Brands (BRBR) is Winning Fresh Support From Analysts",
     "url": "https://finance.yahoo.com/markets/stocks/articles/bellring-brands-brbr-winning-fresh-024248566.html",
     "publisher": "Insider Monkey"
