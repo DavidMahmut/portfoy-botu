@@ -1,10 +1,10 @@
 {
- "asOf": "2026-11-20T19:12:14-05:00",
+ "asOf": "2026-11-20T19:42:25-05:00",
  "session": "post",
  "sessionLabel": "Piyasa sonrası (16:00–20:00 ET)",
  "equity": 2896.96,
- "totalImpact": -7.5,
- "totalImpactPct": -0.26,
+ "totalImpact": -4.16,
+ "totalImpactPct": -0.14,
  "items": [
   {
    "ticker": "SLS",
@@ -15,10 +15,10 @@
    "stopPrice": 27.65,
    "refClose": 13.655,
    "refAt": "2026-11-20T15:55:00-05:00",
-   "price": 14.27,
-   "at": "2026-11-20T19:05:00-05:00",
-   "changePct": 4.5,
-   "impact": -9.65,
+   "price": 14.14,
+   "at": "2026-11-20T19:40:28-05:00",
+   "changePct": 3.55,
+   "impact": -7.61,
    "beyondStop": false
   },
   {
@@ -60,10 +60,10 @@
    "stopPrice": 81.94,
    "refClose": 83.65,
    "refAt": "2026-11-20T15:55:00-05:00",
-   "price": 83.3232,
-   "at": "2026-11-20T19:05:00-05:00",
-   "changePct": -0.39,
-   "impact": -2.56,
+   "price": 83.5,
+   "at": "2026-11-20T19:33:42-05:00",
+   "changePct": -0.18,
+   "impact": -1.18,
    "beyondStop": false
   },
   {
@@ -75,10 +75,10 @@
    "stopPrice": 20.21,
    "refClose": 20.94,
    "refAt": "2026-11-20T15:55:00-05:00",
-   "price": 21.07,
-   "at": "2026-11-20T18:40:00-05:00",
-   "changePct": 0.62,
-   "impact": 2.04,
+   "price": 21.0641,
+   "at": "2026-11-20T19:05:00-05:00",
+   "changePct": 0.59,
+   "impact": 1.95,
    "beyondStop": false
   }
  ],
@@ -87,17 +87,17 @@
    "ticker": "SPY",
    "label": "S&P 500 (SPY)",
    "refClose": 690.91,
-   "price": 697.69,
-   "at": "2026-11-20T19:10:00-05:00",
-   "changePct": 0.98
+   "price": 697.4,
+   "at": "2026-11-20T19:40:00-05:00",
+   "changePct": 0.94
   },
   {
    "ticker": "QQQ",
    "label": "Nasdaq 100 (QQQ)",
    "refClose": 610.04,
-   "price": 618.0,
-   "at": "2026-11-20T19:10:00-05:00",
-   "changePct": 1.3
+   "price": 617.73,
+   "at": "2026-11-20T19:40:00-05:00",
+   "changePct": 1.26
   }
  ],
  "note": "Yalnızca izleme: bot bu saatlerde işlem yapmaz, zarar-kes emirleri normal seansta işler. Seans dışında işlem hacmi düşüktür, fiyatlar sert oynayabilir ve ertesi açılış farklı olabilir.",
