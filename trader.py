@@ -2508,6 +2508,14 @@ def main():
         eng = Engine(ledger, data, now, load_json(DEPOSITS, []), load_json(RESTORE), review)
         eng.run()
         save_review(eng.R)
+        if os.environ.get("GITHUB_ACTIONS") == "true":
+            # stage it right away: a loop that started with an older bot.yml only adds ledger.json, and an
+            # unstaged review.json would make its "git pull --rebase" (and so every push) fail
+            try:
+                import subprocess
+                subprocess.run(["git", "add", "review.json"], cwd=ROOT, timeout=30, capture_output=True)
+            except Exception as e:
+                print("git add review.json failed:", e)
         ledger["meta"]["lastError"] = None
         status, actions, traded = eng.status, eng.actions, bool(eng.new_trades)
     except Exception as e:
