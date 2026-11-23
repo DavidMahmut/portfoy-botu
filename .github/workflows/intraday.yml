@@ -1,0 +1,45 @@
+name: Gün içi hareket testi
+
+on:
+  workflow_dispatch:
+    inputs:
+      index_only:
+        description: "Yalnızca Nasdaq bölümleri (hızlı)"
+        type: boolean
+        default: false
+      limit:
+        description: "Hisse sayısını sınırla (deneme için, boş = hepsi)"
+        type: string
+        default: ""
+
+permissions:
+  contents: write
+
+jobs:
+  intraday:
+    runs-on: ubuntu-latest
+    timeout-minutes: 170
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Testi çalıştır
+        env:
+          INTRADAY_INDEX_ONLY: ${{ inputs.index_only && '1' || '0' }}
+          INTRADAY_LIMIT: ${{ inputs.limit }}
+        run: python intraday_study.py
+      - name: Sonucu kaydet
+        if: always()
+        run: |
+          git config user.name "portfoy-bot"
+          git config user.email "portfoy-bot@users.noreply.github.com"
+          [ -f intraday_results.json ] || exit 0
+          git add intraday_results.json
+          git commit -q -m "Gün içi hareket testi sonucu" || exit 0
+          for i in 1 2 3; do
+            if git pull -q --rebase && git push -q; then exit 0; fi
+            sleep 10
+          done
