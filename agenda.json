@@ -1,5 +1,5 @@
 {
- "asOf": "2026-11-23T17:12-05:00",
+ "asOf": "2026-11-23T17:42-05:00",
  "week": {
   "start": "2026-11-23",
   "end": "2026-11-27",
@@ -200,11 +200,11 @@
    "unit": "",
    "dec": 2,
    "why": "Güçlü dolar, emtiayı ve ABD şirketlerinin yurt dışı gelirini baskılar.",
-   "price": 104.352,
+   "price": 104.335,
    "prev": 103.81,
    "date": "2026-11-23",
-   "d1": 0.52,
-   "w1": 0.77,
+   "d1": 0.51,
+   "w1": 0.76,
    "chgUnit": "%",
    "spark": [
     101.87,
@@ -221,7 +221,7 @@
     103.86,
     103.9,
     103.81,
-    104.352
+    104.335
    ]
   },
   {
@@ -386,11 +386,11 @@
    "unit": "$",
    "dec": 0,
    "why": "Risk iştahının göstergesi; kripto hisselerini (COIN, MSTR) sürükler.",
-   "price": 61178.7188,
+   "price": 61105.2188,
    "prev": 61161.9102,
    "date": "2026-11-23",
-   "d1": 0.03,
-   "w1": -2.87,
+   "d1": -0.09,
+   "w1": -2.99,
    "chgUnit": "%",
    "spark": [
     75223.1484,
@@ -407,7 +407,7 @@
     58798.9805,
     60094.0898,
     61161.9102,
-    61178.7188
+    61105.2188
    ]
   },
   {
@@ -417,11 +417,11 @@
    "unit": "",
    "dec": 4,
    "why": "Doların avroya karşı değeri.",
-   "price": 1.0904,
+   "price": 1.0906,
    "prev": 1.097,
    "date": "2026-11-23",
-   "d1": -0.6,
-   "w1": -1.1,
+   "d1": -0.58,
+   "w1": -1.08,
    "chgUnit": "%",
    "spark": [
     1.1192,
@@ -438,7 +438,7 @@
     1.0993,
     1.0972,
     1.097,
-    1.0904
+    1.0906
    ]
   },
   {
@@ -448,11 +448,11 @@
    "unit": "₺",
    "dec": 2,
    "why": "Doların Türk lirası karşılığı.",
-   "price": 50.5954,
+   "price": 50.5772,
    "prev": 50.5623,
    "date": "2026-11-23",
-   "d1": 0.07,
-   "w1": 0.51,
+   "d1": 0.03,
+   "w1": 0.47,
    "chgUnit": "%",
    "spark": [
     49.9873,
@@ -469,11 +469,11 @@
     50.4383,
     50.462,
     50.5623,
-    50.5954
+    50.5772
    ]
   }
  ],
- "marketsAt": "2026-11-23T17:12-05:00",
+ "marketsAt": "2026-11-23T17:42-05:00",
  "econ": [
   {
    "at": "2026-11-23T08:30-05:00",
@@ -1124,7 +1124,7 @@
    "more": []
   }
  ],
- "econAt": "2026-11-23T17:12-05:00",
+ "econAt": "2026-11-23T17:42-05:00",
  "earnings": [
   {
    "t": "CRWD",
@@ -1138,28 +1138,6 @@
    "surprisePct": 9.17
   },
   {
-   "t": "HPE",
-   "name": "Hewlett Packard Enterprise Company",
-   "capB": 64.1,
-   "day": "2026-11-23",
-   "when": "kapanıştan sonra",
-   "event": "Q4 2026 Earnings Announcement",
-   "epsEst": 1.29,
-   "epsActual": null,
-   "surprisePct": null
-  },
-  {
-   "t": "A",
-   "name": "Agilent Technologies, Inc.",
-   "capB": 49.6,
-   "day": "2026-11-23",
-   "when": "kapanıştan sonra",
-   "event": "Q4 2026 Earnings Announcement",
-   "epsEst": 1.73,
-   "epsActual": null,
-   "surprisePct": null
-  },
-  {
    "t": "ZS",
    "name": "Zscaler, Inc.",
    "capB": 37.4,
@@ -1171,31 +1149,9 @@
    "surprisePct": 5.94
   },
   {
-   "t": "ZM",
-   "name": "Zoom Communications, Inc.",
-   "capB": 25.1,
-   "day": "2026-11-23",
-   "when": "kapanıştan sonra",
-   "event": "Q3 2027 Earnings Announcement",
-   "epsEst": 1.5,
-   "epsActual": null,
-   "surprisePct": null
-  },
-  {
-   "t": "J",
-   "name": "Jacobs Solutions Inc.",
-   "capB": 18.6,
-   "day": "2026-11-23",
-   "when": "kapanıştan sonra",
-   "event": "Q4 2026 Earnings Announcement",
-   "epsEst": 2.12,
-   "epsActual": null,
-   "surprisePct": null
-  },
-  {
    "t": "DELL",
    "name": "Dell Technologies Inc.",
-   "capB": 213.6,
+   "capB": 212.9,
    "day": "2026-11-24",
    "when": "kapanıştan sonra",
    "event": "Q3 2027 Earnings Announcement",
@@ -1303,7 +1259,7 @@
    "surprisePct": null
   }
  ],
- "earningsAt": "2026-11-23T17:12-05:00",
+ "earningsAt": "2026-11-23T17:42-05:00",
  "ipos": [
   {
    "t": "ANTU",
@@ -1358,7 +1314,7 @@
    "sizeM": null
   }
  ],
- "iposAt": "2026-11-23T17:12-05:00",
+ "iposAt": "2026-11-23T17:42-05:00",
  "special": [
   {
    "day": "2026-11-26",
