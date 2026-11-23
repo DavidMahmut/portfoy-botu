@@ -1,0 +1,40 @@
+name: Gün içi hareket testi (günlük gruplar)
+
+on:
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: "Hisse sayısını sınırla (deneme için, boş = hepsi)"
+        type: string
+        default: ""
+
+permissions:
+  contents: write
+
+jobs:
+  cohort:
+    runs-on: ubuntu-latest
+    timeout-minutes: 170
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Testi çalıştır
+        env:
+          COHORT_LIMIT: ${{ inputs.limit }}
+        run: python cohort_study.py
+      - name: Sonucu kaydet
+        if: always()
+        run: |
+          git config user.name "portfoy-bot"
+          git config user.email "portfoy-bot@users.noreply.github.com"
+          [ -f cohort_results.json ] || exit 0
+          git add cohort_results.json
+          git commit -q -m "Günlük grup testi sonucu" || exit 0
+          for i in 1 2 3; do
+            if git pull -q --rebase && git push -q; then exit 0; fi
+            sleep 10
+          done
