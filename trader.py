@@ -28,6 +28,8 @@ from datetime import date, datetime, time as dtime, timedelta
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
+from review import ReviewMixin, load_review, save_review
+
 import pandas as pd
 
 import universe as U
@@ -121,6 +123,11 @@ PLAYS = {
     # no headline archive exists, so this play cannot be back-tested: kept small until its own scorecard says more
     "news": {"label": "Haber takibi", "risk": 0.01, "cap": 0.5, "slots": 4, "hold": 3, "tested": False},
 }
+# price-move plays: a stock that is up or down a lot at a scan, traded with or against the move (intraday_study.py).
+# PLAYS entries with a "move" block are such plays: dir +1 = risers, -1 = fallers; min = % move from the previous close;
+# pos = where the price must sit in the day's range (near the high for risers / the low for fallers); slots = scan
+# indexes (0 = 10:30, 1 = 12:00, 2 = 13:30, 3 = 15:00); regime "up"/"down" = S&P 500 above / below its 200-day line.
+MOVE_STOP_PAD = 0.001
 NEWS_MIN_MOVE = 5.0                       # "haber takibi": the stock moved at least 5 % on hard news ...
 NEWS_RANGE_POS = 0.60                     # ... and still trades in the top (long) / bottom (short) 40 % of the day's range
 NEWS_MIN_SCORE = 4.0                      # catalyst.py score: at least one clear headline match
@@ -349,8 +356,9 @@ def direction(p):
 
 
 # ---------------------------------------------------------------- engine
-class Engine:
-    def __init__(self, ledger, data, now, deposits=None, restore=None):
+class Engine(ReviewMixin):
+    def __init__(self, ledger, data, now, deposits=None, restore=None, review=None):
+        self.R = review if review is not None else {}
         self.L = ledger
         self.data = data
         self.now = now
@@ -1725,6 +1733,11 @@ class Engine:
         decisions, rejected, watch = [], [], []
         decisions.append(sig["text"] if sig else "Endeks kolu: QQQ geçmişi alınamadı; bugün değişiklik yapılmadı.")
         decisions.append(trend["text"])
+        try:
+            self.shadow_fill()
+            decisions.extend(self.play_health())
+        except Exception as e:                     # evaluation must never block the daily decision
+            self.notes.append(f"Kural değerlendirmesi yapılamadı: {type(e).__name__}: {e}")
         sources = [YF_SOURCE] + [src(t) for t, _ in U.INDICATORS] + [src(INDEX_ETF)]
         basket_word = "long" if trend["up"] else ("short" if BASKET_SHORTS else "nakit")
         idx_word = (f"endeks {'+' if sig['target'] > 0 else '−' if sig['target'] < 0 else ''}{trn(abs(sig['target']), 2)}x"
@@ -1909,8 +1922,10 @@ class Engine:
                                   and (f["pos"] >= NEWS_RANGE_POS if up else f["pos"] <= 1 - NEWS_RANGE_POS))
             feats.append(f)
         scan["looked"] = len(feats)
+        for f in feats:
+            f["moveKey"] = None if (f["contSetup"] or f["gapTurn"]) else self._move_play(f, slot)
         # headlines: the setups first, then the biggest moves
-        order = sorted(feats, key=lambda f: (not f["contSetup"], not f["confirmed"], -abs(f["movePct"])))
+        order = sorted(feats, key=lambda f: (not f["contSetup"], not f["moveKey"], not f["confirmed"], -abs(f["movePct"])))
         now_utc = self.now.astimezone(ZoneInfo("UTC"))
         for f in order[:OPP_NEWS_TOP]:
             try:
@@ -1941,6 +1956,10 @@ class Engine:
             elif f["gapTurn"]:
                 why = ("açılış boşluğu ilk saatte tersine döndü: geniş testte bu durumda işlem açmak zarar ettirdi "
                        "(işlem başına −%0,17), işlem yok")
+            elif f.get("moveKey"):
+                play, side = f["moveKey"], PLAYS[f["moveKey"]]["move"]["side"]
+                stop = (round(f["low"] * (1 - MOVE_STOP_PAD), 2) if side == "long" else round(f["high"] * (1 + MOVE_STOP_PAD), 2))
+                why = None
             elif "cat" not in f:
                 why = f"hareket büyük ama bu taramada yalnızca en öndeki {OPP_NEWS_TOP} hissenin haberi okundu"
             elif cat is None or not cat.get("cat"):
@@ -1967,18 +1986,31 @@ class Engine:
             if play is None and f["gapSmall"]:
                 why = (f"açılış boşluğu sürüyor ama şirket {trn(DRIFT_MIN_CAP, 0)} milyar $'dan küçük ya da günlük hacmi "
                        f"{trn(DRIFT_MIN_DV, 0)} milyon $'ın altında (testte bu grup zarar etti); " + why)
+            setup = ("pinned" if kind == "pinned" else "drift" if f["contSetup"] else "gapTurn" if f["gapTurn"]
+                     else "gapSmall" if f["gapSmall"] else play if play
+                     else "up" if f["movePct"] > 0 else "down")
             row = {"t": t, "n": f["name"], "ex": f.get("ex"), "p": round(f["price"], 2), "mv": round(f["movePct"], 2),
                    "gap": round(f["gapPct"], 2), "h1": round(f["h1Pct"], 2) if f["h1Pct"] is not None else None,
                    "cap": f.get("capB"), "dv": f.get("dvM"),
                    "cat": cat.get("label") if cat else None, "kind": kind,
-                   "hl": cat.get("headline") if cat else None, "play": play, "side": side}
+                   "hl": cat.get("headline") if cat else None, "play": play, "side": side, "setup": setup}
             if play:
                 P_ = PLAYS[play]
                 self.quotes_for([t])
                 q = self.quotes.get(t)
                 price = q["price"] if q else f["price"]
                 risk = (price / stop - 1) if side == "long" else (stop / price - 1)
-                if t in held:
+                health = (self.M.get("health") or {}).get(play) or {}
+                reg_need = P_.get("regime") or (P_.get("move") or {}).get("regime")
+                reg_now = (self.M.get("regime") or {}).get("name")
+                if reg_need and ((reg_need == "up") != (reg_now == "up")):
+                    why = (f"{P_['label']} yalnızca piyasa yönü {'yukarıyken' if reg_need == 'up' else 'aşağıyken'} "
+                           f"çalışır (S&P 500 200 günlük ortalamanın {'üstünde' if reg_need == 'up' else 'altında'}); "
+                           f"testte öbür durumda kaybettirdi. Sinyal yalnızca kaydedildi")
+                elif self.play_paused(play):
+                    why = (f"{P_['label']} kuralı şu an durdurulmuş ({health.get('reason') or 'son sinyaller kaybettiriyor'}); "
+                           "sinyal yalnızca kaydedildi")
+                elif t in held:
                     why = "bu hisse zaten portföyde"
                 elif t in closed_today:
                     why = "bugün bu hissede bir işlem kapandı; aynı gün yeniden girilmez"
@@ -2015,6 +2047,14 @@ class Engine:
                                       f"alıcılar haberi satmıyor, üstüne alıyor. Kural gereği long açıldı. Zarar-kes {trn(stop)} $ "
                                       f"(ilk saatin en düşüğünün hemen altı, risk %{trn(risk * 100, 1)}); çıkış {exit_day} "
                                       f"kapanışında. {size_txt}{news_txt}")
+                        elif P_.get("move"):
+                            mv_ = P_["move"]
+                            reason = (f"{P_['label']} (test edildi): {t} ({f['name']}) {scan['slotTime']} taramasında önceki "
+                                      f"kapanışa göre {trpct(f['movePct'])}; fiyat günün aralığının "
+                                      f"{'üst' if mv_['dir'] > 0 else 'alt'} kısmında. {P_.get('why', '')} Kural gereği "
+                                      f"{'long' if side == 'long' else 'short'} açıldı. Zarar-kes {trn(stop)} $ (günün "
+                                      f"{'en düşüğünün altı' if side == 'long' else 'en yükseğinin üstü'}, risk %{trn(risk * 100, 1)}); "
+                                      f"çıkış {exit_day} kapanışında. {size_txt}{news_txt}")
                         else:
                             reason = (f"Haber takibi (deneysel kural): {t} ({f['name']}) bugün {trpct(f['movePct'])}.{news_txt} "
                                       f"Fiyat günün aralığının {'üst' if side == 'long' else 'alt'} kısmında, yani piyasa haberi "
@@ -2048,6 +2088,10 @@ class Engine:
             if row.get("dec") != "al":
                 row.update(dec="atla", why=why)
             scan["rows"].append(row)
+        try:
+            self.shadow_add(scan["rows"][:OPP_LOOK], scan["slotTime"], feats)
+        except Exception as e:                 # the shadow book is for evaluation only
+            self.notes.append(f"Gölge kayıt yazılamadı: {type(e).__name__}")
         scan["rows"] = scan["rows"][:40]
         n_take = len(scan["taken"])
         head = f"Fırsat taraması {scan['slotTime']}: " + (
@@ -2066,6 +2110,23 @@ class Engine:
                 run["headline"] = f"{n_take} fırsat işlemi · " + run.get("headline", "")
         else:
             self.notes.extend(lines)
+
+    @staticmethod
+    def _move_play(f, slot):
+        """The first price-move play (PLAYS entries with a "move" block) whose conditions the stock meets."""
+        for key, P_ in PLAYS.items():
+            mv = P_.get("move")
+            if not mv or not P_.get("enabled", True) or slot not in mv["slots"]:
+                continue
+            m, pos = f["movePct"], f["pos"]
+            if mv["dir"] > 0 and (m < mv["min"] or pos < mv["pos"]):
+                continue
+            if mv["dir"] < 0 and (m > -mv["min"] or pos > 1 - mv["pos"]):
+                continue
+            if (f.get("capB") or 0) < mv.get("minCap", 2.0) or (f.get("dvM") or 0) < mv.get("minDv", 50.0):
+                continue
+            return key
+        return None
 
     def _trading_day_before(self, d):
         days = trading_days((date.fromisoformat(d) - timedelta(days=12)).isoformat(), d)
@@ -2226,6 +2287,7 @@ class Engine:
             self.log_check("batış")
             self.snapshot()
             self.scorecard()
+            self._reviews()
             return
         self.nasdaq_update()
         self.event_exits()
@@ -2267,6 +2329,14 @@ class Engine:
         self.log_check(kind)
         self.snapshot()
         self.scorecard()
+        self._reviews()
+
+    def _reviews(self):
+        try:
+            self.save_marks()
+            self.build_reviews()
+        except Exception as e:                     # never let the evaluation break a run
+            print("review failed:", type(e).__name__, e)
 
     @staticmethod
     def _dist(p):
@@ -2282,6 +2352,7 @@ class Engine:
             "at": iso(self.now), "kind": kind, "status": self.status,
             "spyPrice": round(spy["price"], 2) if spy else None,
             "spyChangePct": round(spy["dayChangePct"], 2) if spy else None,
+            "qqqChangePct": round(self.quotes[INDEX_ETF]["dayChangePct"], 2) if INDEX_ETF in self.quotes else None,
             "totalValue": self.P["totalValue"], "benchmarkValue": self.P.get("benchmarkValue"),
             "leverage": self.P.get("leverage"), "marginBuffer": self.P.get("marginBuffer"),
             "positions": [{
@@ -2404,7 +2475,10 @@ class Engine:
                       "twrPct": self.P.get("twrPct"), "netDeposits": self.P.get("netDeposits"),
                       "leverage": self.P.get("leverage"), "benchmarkPrice": self.P.get("benchmarkPrice"),
                       "benchmarkValue": self.P.get("benchmarkValue"),
-                      "holdings": [{"ticker": p["ticker"], "side": p["side"], "value": p["marketValue"]}
+                      "qqqPrice": round(self.quotes[INDEX_ETF]["price"], 4) if INDEX_ETF in self.quotes else None,
+                      "holdings": [{"ticker": p["ticker"], "side": p["side"], "value": p["marketValue"],
+                                    "u": p.get("unrealized"),
+                                    "play": p.get("play") or ("index" if p["ticker"] in INDEX_SLEEVE else "other")}
                                    for p in self.P["positions"]]})
         snaps.sort(key=lambda s: s["date"])
         self.L["snapshots"] = snaps
@@ -2428,10 +2502,12 @@ def main():
         return 0
     import data
     ledger = load_json(LEDGER)
+    review = load_review()
     status, actions, traded = "hata", [], False
     try:
-        eng = Engine(ledger, data, now, load_json(DEPOSITS, []), load_json(RESTORE))
+        eng = Engine(ledger, data, now, load_json(DEPOSITS, []), load_json(RESTORE), review)
         eng.run()
+        save_review(eng.R)
         ledger["meta"]["lastError"] = None
         status, actions, traded = eng.status, eng.actions, bool(eng.new_trades)
     except Exception as e:

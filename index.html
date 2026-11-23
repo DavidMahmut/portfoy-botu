@@ -495,6 +495,17 @@ tr.mv-det td{background:var(--bg);white-space:normal;text-align:left}
 .wk-day.past{opacity:.7}
 .wk-day h3{font-size:14px;margin:0;display:flex;justify-content:space-between;gap:6px;align-items:baseline}
 .wk-day h3 span{font-family:var(--f-mono);font-size:12px;color:var(--muted);font-weight:400}
+.rv-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 16px;align-items:flex-start}
+.rv-day{border-top:1px solid var(--line);padding:10px 0}
+.rv-day:first-child{border-top:none;padding-top:0}
+.rv-day summary{cursor:pointer;display:flex;flex-wrap:wrap;gap:4px 14px;align-items:baseline;list-style-position:outside}
+.rv-date{font-weight:600;min-width:11ch}
+.rv-pl{font-family:var(--f-mono);font-weight:600}
+.rv-mk{font-size:13px;color:var(--muted);font-family:var(--f-mono)}
+.rv-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.rv-chip{font-size:12px;padding:2px 8px;border-radius:999px;border:1px solid var(--line);background:var(--bg);white-space:nowrap}
+.rv-chip.up{background:var(--gain-soft);border-color:transparent} .rv-chip.down{background:var(--loss-soft);border-color:transparent}
+.rv-chip b{font-family:var(--f-mono)}
 .wk-tag{display:inline-block;font-family:var(--f-mono);font-size:11px;font-weight:600;letter-spacing:.04em;padding:1px 6px;border-radius:4px;background:var(--warn-soft);color:var(--warn);white-space:nowrap}
 .wk-tag.fed{background:var(--accent-soft);color:var(--accent)} .wk-tag.hol{background:var(--loss-soft);color:var(--loss)}
 .wk-sp{margin:0;font-size:13px}
@@ -554,6 +565,7 @@ tr.mv-det td{background:var(--bg);white-space:normal;text-align:left}
     <a href="#ders">Günün dersi</a>
     <a href="#ozet">Özet</a>
     <a href="#sa">Seeking Alpha</a>
+    <a href="#degerlendirme">Değerlendirme</a>
     <a href="#firsat">Fırsat taraması</a>
     <a href="#kaldirac">Kaldıraç ve batış</a>
     <a href="#hareketliler">Hareketliler</a>
@@ -696,6 +708,20 @@ tr.mv-det td{background:var(--bg);white-space:normal;text-align:left}
     <ul class="sa-list" id="saList"><li class="muted">Başlıklar bekleniyor…</li></ul>
     <p class="small muted" id="saNote" style="margin:0"></p>
   </aside>
+
+  <section id="degerlendirme" aria-labelledby="h-deg">
+    <div class="sec-head"><h2 id="h-deg">Günlük ve haftalık değerlendirme</h2><span class="small muted" id="rvAsOf">—</span></div>
+    <div class="panel" style="display:flex;flex-direction:column;gap:14px">
+      <div class="rv-top"><p class="small" id="rvLead" style="margin:0;max-width:90ch"></p>
+        <div class="sa-tabs" id="rvTabs" role="group" aria-label="Görünüm"><button type="button" data-rv="days" aria-pressed="true">Günler</button><button type="button" data-rv="weeks" aria-pressed="false">Haftalar</button></div></div>
+      <div id="rvBody"></div>
+      <div>
+        <h3 style="font-size:15px;margin:6px 0 8px">Kural sağlığı: hangi kural açık, hangisi durduruldu</h3>
+        <div class="tbl-wrap"><table class="month-table x-table"><thead><tr><th scope="col">Kural</th><th scope="col">Durum</th><th scope="col" class="num">Son sinyaller</th><th scope="col" class="num">Canlı işlemler</th><th scope="col">Not</th></tr></thead><tbody id="hlRows"></tbody></table></div>
+        <p class="note" id="hlNote"></p>
+      </div>
+    </div>
+  </section>
 
   <section id="firsat" aria-labelledby="h-ev">
     <div class="sec-head"><h2 id="h-ev">Fırsat taraması: tüm ABD hisseleri</h2><span class="small muted" id="evAsOf">—</span></div>
@@ -927,7 +953,7 @@ tr.mv-det td{background:var(--bg);white-space:normal;text-align:left}
 (function(){
   "use strict";
   var TZ = "America/New_York";
-  var S = {config:null, portfolio:null, meta:{}, trades:[], snapshots:[], runs:[], checks:null, compliance:[], tax:{}, score:null, ext:null, news:null, brief:null, dip:null, err:null, busts:[], playStats:{}, agenda:null, lev:null, evWide:null};
+  var S = {config:null, portfolio:null, meta:{}, trades:[], snapshots:[], runs:[], checks:null, compliance:[], tax:{}, score:null, ext:null, news:null, brief:null, dip:null, err:null, review:null, busts:[], playStats:{}, agenda:null, lev:null, evWide:null};
   var fmtUSD = new Intl.NumberFormat("tr-TR",{style:"currency",currency:"USD",minimumFractionDigits:2,maximumFractionDigits:2});
   var fmtNum = function(n,d){return new Intl.NumberFormat("tr-TR",{minimumFractionDigits:d,maximumFractionDigits:d}).format(n);};
   var fmtDate = new Intl.DateTimeFormat("tr-TR",{day:"numeric",month:"long",year:"numeric",timeZone:TZ});
@@ -2129,6 +2155,125 @@ tr.mv-det td{background:var(--bg);white-space:normal;text-align:left}
     Array.prototype.forEach.call(document.querySelectorAll(".mv-tabs button"),function(btn){ btn.setAttribute("aria-pressed", !mvSort&&btn.getAttribute("data-k")===mvKey?"true":"false"); });
   }
   Array.prototype.forEach.call(document.querySelectorAll(".mv-tabs button"),function(btn){ btn.addEventListener("click",function(){ mvKey=btn.getAttribute("data-k"); mvSort=null; try{ localStorage.removeItem("mvSort"); }catch(e){} mvLimit=25; try{ renderMovers(); }catch(e){ console.error(e); } }); });
+  /* ---------- daily and weekly evaluation (review.json) ---------- */
+  var rvView="days";
+  try{ rvView=localStorage.getItem("rvView")||"days"; }catch(e){}
+  var fmtWd=new Intl.DateTimeFormat("tr-TR",{weekday:"short",day:"numeric",month:"short",timeZone:TZ});
+  function rvLabel(k){
+    var pl=((S.config||{}).x10||{}).plays||{};
+    return {index:"Endeks kolu",spike:"Sert yükseliş short'u",fees:"Masraf ve diğer",other:"Diğer"}[k] || (pl[k]&&pl[k].label) || k;
+  }
+  function rvChips(plays){
+    var box=el("div",{class:"rv-chips"});
+    Object.keys(plays||{}).sort(function(a,b){ return (a==="fees")-(b==="fees") || Math.abs(plays[b])-Math.abs(plays[a]); }).forEach(function(k){
+      var v=plays[k]; box.appendChild(el("span",{class:"rv-chip "+cls(v),title:rvLabel(k)+": bu dönemdeki kâr/zarar katkısı"}, rvLabel(k)+" ", el("b",{text:sgnUsd(v)})));
+    });
+    return box;
+  }
+  function rvPct(x){ return isNum(x)? pct(x) : "—"; }
+  function rvGroups(groups, week){
+    if(!groups||!groups.length) return el("p",{class:"small muted",text:"Bu gün için tarama kaydı yok."});
+    var t=el("table",{class:"month-table x-table"}), hr=el("tr");
+    (week? ["Hareket türü","Hisse","Ertesi gün","2 gün sonra"] : ["Hareket türü","Hisse","İşlem","Kapanışa kadar","Ertesi gün","2 gün sonra"]).forEach(function(h,i){ hr.appendChild(el("th",{scope:"col",class:i?"num":null,text:h})); });
+    t.appendChild(el("thead",null,hr)); var b=el("tbody");
+    groups.forEach(function(g){
+      var tds=[el("td",{text:g.label||g.k}), el("td",{class:"num",text:String(g.n)})];
+      if(!week) tds.push(el("td",{class:"num",text:String(g.taken||0)}), el("td",{class:"num "+cls(g.toClose),text:rvPct(g.toClose)}));
+      tds.push(el("td",{class:"num "+cls(g.next),text:rvPct(g.next)}), el("td",{class:"num "+cls(g.two),text:rvPct(g.two)}));
+      b.appendChild(el("tr",null,tds));
+    });
+    t.appendChild(b);
+    return el("div",{class:"tbl-wrap"},t);
+  }
+  function rvMissed(list){
+    if(!list||!list.length) return null;
+    var t=el("table",{class:"month-table x-table"}), hr=el("tr");
+    ["Hisse","Tarama","O an","Tür","Bot ne yaptı","Kapanışa","Ertesi gün","2 gün"].forEach(function(h,i){ hr.appendChild(el("th",{scope:"col",class:(i===2||i>4)?"num":null,text:h})); });
+    t.appendChild(el("thead",null,hr)); var b=el("tbody");
+    list.forEach(function(x){
+      b.appendChild(el("tr",{class:x.dec==="al"?"me":null}, el("td",null, el("b",{text:x.t}), el("span",{class:"muted nm",text:x.n?" "+x.n:""})),
+        el("td",{text:x.s||""}), el("td",{class:"num "+cls(x.mv),text:pct(x.mv)}), el("td",{text:x.label||x.k}),
+        el("td",{class:"small",text:x.dec==="al"?"İşlem açtı":"Atladı"+(x.why?": "+x.why:"")}),
+        el("td",{class:"num "+cls(x.o0),text:rvPct(x.o0)}), el("td",{class:"num "+cls(x.o1),text:rvPct(x.o1)}), el("td",{class:"num "+cls(x.o2),text:rvPct(x.o2)})));
+    });
+    t.appendChild(b);
+    return el("div",{class:"tbl-wrap"},t);
+  }
+  function rvDay(d, open){
+    var card=el("details",{class:"rv-day"}); if(open) card.open=true;
+    var dd=parseD(d.date);
+    var sum=el("summary",null,
+      el("span",{class:"rv-date",text:dd? fmtWd.format(dd) : d.date}),
+      el("span",{class:"rv-pl "+cls(d.pl),text:sgnUsd(d.pl)+" ("+rvPct(d.plPct)+")"}),
+      el("span",{class:"rv-mk",text:"S&P "+rvPct(d.spyPct)+" · Nasdaq "+rvPct(d.qqqPct)+(isNum(d.leverage)?" · kaldıraç "+fmtNum(d.leverage,2)+"x":"")}));
+    card.appendChild(sum);
+    if(d.error){ card.appendChild(el("p",{class:"small down",text:"Bu günün değerlendirmesi hesaplanamadı: "+d.error})); return card; }
+    card.appendChild(rvChips(d.plays));
+    card.appendChild(el("p",{class:"small",style:"margin:8px 0 0;max-width:100ch",text:d.text||""}));
+    if(d.exact===false) card.appendChild(el("p",{class:"small muted",style:"margin:4px 0 0",text:"Bu gün için kural bazında dağılım yaklaşık (pozisyon değerleri o gün ayrı kaydedilmemişti)."}));
+    var tr=d.trades||[];
+    if(tr.length){
+      var ul=el("ul",{class:"dip-ev",style:"margin-top:10px"});
+      tr.forEach(function(t){ ul.appendChild(el("li",null, el("b",{text:t.t}), el("span",{text:" · "+t.ts+" "+({BUY:"AL",SELL:"SAT",SHORT:"SHORT",COVER:"KAPAT"}[t.a]||t.a)+" "+usd(t.v)+(t.rule?" · "+t.rule:"")+(isNum(t.pl)?" · sonuç "+sgnUsd(t.pl):"")}))); });
+      card.appendChild(el("h4",{class:"mini",style:"margin-top:14px",text:"İşlemler"})); card.appendChild(ul);
+    }
+    var sc=d.scan||{};
+    card.appendChild(el("h4",{class:"mini",style:"margin-top:14px",text:"Taramada görülen hareketler sonra ne yaptı ("+(sc.seen||0)+" hisse; uzun yönlü getiri, tarama fiyatından)"}));
+    card.appendChild(rvGroups(sc.groups));
+    var ms=rvMissed(sc.missed);
+    if(ms){ card.appendChild(el("h4",{class:"mini",style:"margin-top:14px",text:"En büyük sonraki hareketler: yakalanan ve kaçırılan"})); card.appendChild(ms); }
+    return card;
+  }
+  function renderReview(){
+    var box=$("rvBody"); if(!box) return;
+    var R=S.review; clear(box);
+    document.querySelectorAll("#rvTabs button").forEach(function(b){ b.setAttribute("aria-pressed", b.getAttribute("data-rv")===rvView? "true":"false"); });
+    if(!R||!R.days){ $("rvAsOf").textContent=""; $("rvLead").textContent="İlk değerlendirme, bot yeni sürümle ilk çalıştığında oluşacak."; renderHealth(); return; }
+    $("rvAsOf").textContent=R.asOf? "Son güncelleme "+dShort(R.asOf)+" "+tm(R.asOf) : "";
+    var wk=(R.weeks||[]).slice(-1)[0];
+    $("rvLead").textContent= wk&&wk.text? wk.text : "";
+    if(rvView==="weeks"){
+      var ws=(R.weeks||[]).slice().reverse();
+      if(!ws.length){ box.appendChild(el("p",{class:"small muted",text:"Henüz tamamlanmış hafta yok."})); }
+      else {
+        var t=el("table",{class:"month-table x-table"}), hr=el("tr");
+        ["Hafta","Hesap","S&P 500","Nasdaq 100","Kural kâr/zarar","Kapanan işlem","Kural kararları"].forEach(function(h,i){ hr.appendChild(el("th",{scope:"col",class:(i>0&&i<4)?"num":null,text:h})); });
+        t.appendChild(el("thead",null,hr)); var b=el("tbody");
+        ws.forEach(function(w){
+          if(w.error){ b.appendChild(el("tr",null, el("td",{text:w.week}), el("td",{colspan:"6",class:"down",text:w.error}))); return; }
+          b.appendChild(el("tr",null, el("td",{text:dShort(w.from)+" – "+dShort(w.to)}),
+            el("td",{class:"num "+cls(w.pl)}, el("b",{text:sgnUsd(w.pl)}), el("span",{class:"muted nm",text:" "+rvPct(w.plPct)})),
+            el("td",{class:"num "+cls(w.spyPct),text:rvPct(w.spyPct)}), el("td",{class:"num "+cls(w.qqqPct),text:rvPct(w.qqqPct)}),
+            el("td",null, rvChips(w.plays)), el("td",{class:"num",text:(w.wins||0)+" / "+(w.closed||0)+" kazandı"}),
+            el("td",{class:"small",text:(w.decisions||[]).length? w.decisions.map(function(h){ return dShort(h.date)+" "+rvLabel(h.play)+" "+h.to; }).join("; ") : "—"})));
+        });
+        t.appendChild(b); box.appendChild(el("div",{class:"tbl-wrap"},t));
+        var lw=ws[0];
+        if(lw&&lw.scan){ box.appendChild(el("h4",{class:"mini",style:"margin-top:16px",text:"Bu haftanın taramalarında görülen hareketler sonra ne yaptı (uzun yönlü getiri)"})); box.appendChild(rvGroups(lw.scan,true)); }
+      }
+    } else {
+      var ds=(R.days||[]).slice().reverse().slice(0,10);
+      if(!ds.length) box.appendChild(el("p",{class:"small muted",text:"Henüz günlük değerlendirme yok."}));
+      ds.forEach(function(d,i){ box.appendChild(rvDay(d,i===0)); });
+    }
+    if(R.backfill) box.appendChild(el("p",{class:"note",text:R.backfill}));
+    renderHealth();
+  }
+  function renderHealth(){
+    var tb=$("hlRows"); if(!tb) return; clear(tb);
+    var H=(S.meta&&S.meta.health)||(S.review&&S.review.health)||{}, rule=(S.review&&S.review.healthRule)||{n:20,min:10};
+    var keys=Object.keys(H);
+    if(!keys.length){ tb.appendChild(el("tr",null, el("td",{colspan:"5",class:"muted",text:"Kural değerlendirmesi her işlem günü 10:00'dan sonra yapılır."}))); }
+    keys.forEach(function(k){ var h=H[k], lv=h.live||{}, on=h.status!=="durduruldu";
+      tb.appendChild(el("tr",null, el("td",{text:rvLabel(k)}),
+        el("td",null, el("span",{class:"wk-tag"+(on?" fed":" hol"),text:on?"AÇIK":"DURDURULDU"}), el("span",{class:"muted nm",text:h.since?" "+dShort(h.since)+"'den beri":""})),
+        el("td",{class:"num "+cls(h.avg),text:(h.n||0)+" sinyal"+(isNum(h.avg)?" · ort. "+pct(h.avg):"")}),
+        el("td",{class:"num "+cls(lv.pl),text:(lv.n||0)+" işlem · "+(lv.wins||0)+" kazandı · "+sgnUsd(lv.pl||0)}),
+        el("td",{class:"small",text:h.reason||(on? (h.n>=rule.min? "son sinyaller kârda" : "karar için yeterli sinyal yok ("+(h.n||0)+"/"+rule.min+")") : "")})));
+    });
+    $("hlNote").textContent="Bot her sabah her fırsat kuralının son "+rule.n+" sinyaline bakar: kuralına uyan her hisse, işlem açılmasa da, kaydedilir ve sonraki kapanışlarla ne kazandıracağı/kaybettireceği ölçülür (masraf %"+fmtNum(rule.cost||0.15,2)+" düşülür). Ortalama eksiye dönen kural durdurulur, artıya dönünce yeniden açılır; karar için en az "+rule.min+" sonuçlanmış sinyal gerekir. Endeks kolu ve sert yükseliş short'u bu kontrolün dışında, kendi testli kurallarıyla çalışır.";
+  }
+  document.querySelectorAll("#rvTabs button").forEach(function(b){ b.addEventListener("click",function(){ rvView=b.getAttribute("data-rv"); try{ localStorage.setItem("rvView",rvView); }catch(e){} renderReview(); }); });
   var oppSlot=null;
   function hlLink(h){ return /^https:\/\//i.test(h.url||"")? el("a",{href:h.url,target:"_blank",rel:"noopener noreferrer",text:h.title}) : el("span",{text:h.title}); }
   function renderEvents(){
@@ -2640,6 +2785,7 @@ tr.mv-det td{background:var(--bg);white-space:normal;text-align:left}
     lsMaybe("meta");
     try{ renderEvents(); }catch(e){ console.error(e); }
     try{ renderBusts(); renderLev(); }catch(e){ console.error(e); }
+    try{ renderReview(); }catch(e){ console.error(e); }
     try{ renderMarkets(); renderAgenda(); }catch(e){ console.error(e); }
     try{ renderSummary(); renderRisk(); renderExt(); renderScore(); renderNews(); renderAlloc(); renderPositions(); renderTrades(); renderRuns(); renderLaw(); renderRules(); renderChart(); }
     catch(e){ console.error(e); }
@@ -2685,6 +2831,11 @@ tr.mv-det td{background:var(--bg);white-space:normal;text-align:left}
     fetch("spike_results.json?t="+Date.now(),{cache:"no-store"}).then(function(r){ if(!r.ok) throw 0; return r.json(); })
       .then(function(x){ S.spTest=x; }, function(){ S.spTest=null; }).then(function(){ try{ renderSpikes(); }catch(e){ console.error(e); } });
   }
+  function loadReview(){
+    fetch("review.json?t="+Date.now(),{cache:"no-store"}).then(function(r){ if(!r.ok) throw 0; return r.json(); })
+      .then(function(x){ S.review=x; }, function(){ if(!S.review) S.review=null; })
+      .then(function(){ try{ renderReview(); }catch(e){ console.error(e); } });
+  }
   function loadAgenda(){
     fetch("agenda.json?t="+Date.now(),{cache:"no-store"}).then(function(r){ if(!r.ok) throw 0; return r.json(); })
       .then(function(x){ S.agenda=x; }, function(){ if(!S.agenda) S.agenda={failed:true}; })
@@ -2694,7 +2845,7 @@ tr.mv-det td{background:var(--bg);white-space:normal;text-align:left}
     fetch("movers.json?t="+Date.now(),{cache:"no-store"}).then(function(r){ if(!r.ok) throw 0; return r.json(); })
       .then(function(x){ S.movers=x; }, function(){ S.movers=null; }).then(function(){ try{ renderMovers(); }catch(e){ console.error(e); } try{ scList(); scCalc(); }catch(e){ console.error(e); } lsMaybe("movers"); });
   }
-  loadAgenda(); loadLessons(); load(); loadExt(); loadNews(); loadEv(); loadSp(); loadMovers(); setInterval(load, 60000); setInterval(loadAgenda, 300000); setInterval(loadMovers, 300000); setInterval(loadExt, 60000); setInterval(loadNews, 300000);
+  loadAgenda(); loadReview(); loadLessons(); load(); loadExt(); loadNews(); loadEv(); loadSp(); loadMovers(); setInterval(load, 60000); setInterval(loadAgenda, 300000); setInterval(loadReview, 300000); setInterval(loadMovers, 300000); setInterval(loadExt, 60000); setInterval(loadNews, 300000);
 })();
 </script>
 </body>

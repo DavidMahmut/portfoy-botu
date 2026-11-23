@@ -456,6 +456,64 @@ def test_v7_opportunity_stop_and_timed_exit():
           "| stats", {k: (v["closed"], v["pl"]) for k, v in L["playStats"].items()})
 
 
+def run_r(L, hhmm, data, R, day=DAY):
+    now = datetime.fromisoformat(f"{day}T{hhmm}:00").replace(tzinfo=NY)
+    eng = T.Engine(L, data, now, DEPOSITS, RESTORE, R)
+    eng.run()
+    check_books(L)
+    return eng
+
+
+def test_v71_shadow_book_health_and_reviews():
+    paths_fn, overrides, movers = opp_setup()
+    L = ledger()
+    paths = aligned_paths(L)
+    paths_fn(paths)
+    R = {}
+    n = nbars("10:35")
+    run_r(L, "10:35", FakeData(DAY, paths, bars_for(paths, overrides(paths, n), n=n), movers=movers(paths, n)), R)
+    sh = {r[2]: r for r in R["shadow"]["rows"]}
+    k = {t: r[11] for t, r in sh.items()}
+    assert k["CONT"] == "drift" and k["NKE"] == "gapTurn" and k["AVGO"] == "gapTurn" and k["MINI"] == "gapSmall", k
+    assert k["TKOV"] == "pinned" and k["FRDX"] == "news" and k["GUDE"] == "news" and sh["CONT"][13] == "al", k
+    assert sh["FRDX"][12] == -1 and sh["GUDE"][12] == 1 and sh["CONT"][12] == 1 and sh["BA"][12] is None
+    assert len(R["days"]) == 1 and R["days"][0]["date"] == DAY and R["days"][0]["exact"]
+    d0 = R["days"][0]
+    assert abs(sum(d0["plays"].values()) - d0["pl"]) < 0.02, d0
+    snap = L["snapshots"][-1]
+    assert snap.get("qqqPrice") and all("u" in h and h.get("play") for h in snap["holdings"]), snap["holdings"]
+    # next morning: yesterday's closes are filled in, the rules are judged
+    for t in list(OPP):
+        if t in paths:
+            p_ = next((p for p in L["portfolio"]["positions"] if p["ticker"] == t), None)
+            last = p_["lastPrice"] if p_ else sh[t][4] if t in sh else paths[t][-1]
+            paths[t] = paths[t][:-1] + [last * 1.02]
+    m = nbars("10:05")
+    run_r(L, "10:05", FakeData(NXT, paths, bars_for(paths, {}, n=m)), R, day=NXT)
+    rows = {r[2]: r for r in R["shadow"]["rows"]}
+    assert rows["CONT"][16].get("0") is not None and abs(rows["BA"][16]["0"] - ((paths["BA"][-1] / rows["BA"][4] - 1) * 100)) < 0.05
+    H = L["meta"]["health"]
+    assert set(H) >= {"drift", "news"} and H["drift"]["status"] == "açık" and H["drift"]["n"] == 0, H
+    # ten losing drift signals in the shadow book -> the rule is paused; ten winners -> back on
+    def inject(sign, day0):
+        for i in range(12):
+            R["shadow"]["rows"].append([day0, "10:30", f"X{i}", "x", 10.0, 9.0, 9.0, 1.0, 0.9, 5.0, 80.0, "drift", 1,
+                                        "atla", "drift", "", {"0": sign * 1.0, "1": sign * 2.0, "2": sign * 3.0}])
+    inject(-1, "2026-11-12")
+    eng = T.Engine(L, FakeData(NXT, paths, bars_for(paths, {}, n=m)), datetime.fromisoformat(f"{NXT}T10:10:00").replace(tzinfo=NY),
+                   DEPOSITS, RESTORE, R)
+    texts = eng.play_health()
+    assert eng.play_paused("drift") and any("DURDURULDU" in t for t in texts) and L["meta"]["healthLog"][-1]["play"] == "drift"
+    inject(1, "2026-11-13")
+    R["shadow"]["rows"] = [r for r in R["shadow"]["rows"] if not (r[2].startswith("X") and r[0] == "2026-11-12")]
+    texts = eng.play_health()
+    assert not eng.play_paused("drift") and any("AÇIK" in t for t in texts), texts
+    eng.build_reviews()
+    assert R["weeks"] and R["weeks"][-1]["days"] == 2 and "Hafta" in R["weeks"][-1]["text"], R["weeks"]
+    json.dumps(R)
+    print("shadow + health + reviews OK:", R["days"][-1]["text"][:140])
+
+
 def test_v7_screener_fallback_to_hourly_scan():
     paths_fn, overrides, movers = opp_setup()
     L = ledger()
