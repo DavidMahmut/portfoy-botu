@@ -514,6 +514,49 @@ def test_v71_shadow_book_health_and_reviews():
     print("shadow + health + reviews OK:", R["days"][-1]["text"][:140])
 
 
+def rebound_paths(L):
+    paths = aligned_paths(L)
+    up = [500 * (1.0012 ** i) for i in range(250)]
+    paths["SPY"] = [round(x, 2) for x in up] + [round(up[-1] * (0.985 ** k), 2) for k in range(1, 11)]   # below the 200-day, 50 > 200
+    q = [600 * (1 + 0.004 * ((i % 7) - 3) / 3) for i in range(258)]
+    paths["QQQ"] = [round(x, 2) for x in q] + [round(q[-1] * 0.96, 2), round(q[-1] * 0.96 * 0.955, 2)]       # two hard down days
+    paths["QQQM"] = [round(x / 2.4, 2) for x in paths["QQQ"]]
+    return paths
+
+
+def test_v71_rebound_rule():
+    L = ledger()
+    for t_ in list(L["portfolio"]["positions"]):
+        pass
+    paths = rebound_paths(L)
+    n = nbars("09:40")
+    eng = run(L, "09:40", FakeData(DAY, paths, bars_for(paths, {}, n=n)))
+    M, P = L["meta"], L["portfolio"]
+    pos = next((p for p in P["positions"] if p["ticker"] == "QQQM"), None)
+    assert M["rebound"]["rsi2"] < 5 and not M["rebound"]["baseOn"], M["rebound"]
+    assert pos and pos["play"] == "rebound" and pos["stopMode"] == "managed", (M["rebound"], [p["ticker"] for p in P["positions"]])
+    eq = P["totalValue"]
+    assert 2.7 * eq <= pos["marketValue"] <= 3.05 * eq, (pos["marketValue"], eq)
+    assert any(t["rule"] == "tepki kuralı" for t in eng.new_trades) and M["rebDate"] == DAY
+    # later the same day nothing happens again; at 10:05 the index rule stays in cash and does not touch QQQM
+    eng = run(L, "10:05", FakeData(DAY, paths, bars_for(paths, {}, n=nbars("10:05"))))
+    assert not [t for t in eng.new_trades if t["ticker"] == "QQQM"] and any(p["ticker"] == "QQQM" for p in L["portfolio"]["positions"])
+    # next morning: QQQ jumped, RSI(2) > 50 -> sold at the open
+    paths2 = {k: list(v) for k, v in paths.items()}
+    paths2["QQQ"] = paths["QQQ"][1:] + [round(paths["QQQ"][-1] * 1.06, 2)]
+    paths2["QQQM"] = [round(x / 2.4, 2) for x in paths2["QQQ"]]
+    paths2["SPY"] = paths["SPY"][1:] + [paths["SPY"][-1]]
+    eng = run(L, "09:40", FakeData(NXT, paths2, bars_for(paths2, {}, n=n)), day=NXT)
+    sold = [t for t in eng.new_trades if t["ticker"] == "QQQM"]
+    assert sold and sold[0]["rule"] == "tepki çıkış" and sold[0]["realizedPL"] > 0 and L["playStats"]["rebound"]["closed"] == 1, sold
+    # a signal seen only after 10:00 is not traded (the rule buys at the open)
+    L2 = ledger()
+    p3 = rebound_paths(L2)
+    run(L2, "10:20", FakeData(DAY, p3, bars_for(p3, {}, n=nbars("10:20"))))
+    assert not any(p["ticker"] == "QQQM" for p in L2["portfolio"]["positions"]) and "kaçtı" in L2["meta"]["rebound"]["text"]
+    print("rebound rule OK: RSI2", M["rebound"]["rsi2"], "| bought", round(pos["marketValue"]), "| sold", sold[0]["realizedPL"])
+
+
 def test_v7_screener_fallback_to_hourly_scan():
     paths_fn, overrides, movers = opp_setup()
     L = ledger()

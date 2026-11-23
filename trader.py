@@ -142,6 +142,22 @@ SPIKE_SLIP = 0.0015                       # wider spread than large caps: 0.15 %
 SPIKE_AFTER, SPIKE_LAST_ENTRY = dtime(9, 35), dtime(10, 30)
 SPIKE_MIN_CAP = 0.3                       # B$: smaller companies can rarely be borrowed in reality (spike_study.py: the
                                           # 300 M$+ bucket still made +4.9 % a trade in 399 trades, 1 B$+ made +3.9 %)
+# ---- rebound rule (v7.1, intraday_study.py part C, QQQ 1999-2026): while the index rule is in cash, a sharply oversold
+# Nasdaq 100 (2-day RSI below 5 at the close) is bought 3x at the next open and sold at the open after a close with the
+# RSI above 50, or after 3 days. Test (entry and exit at the open): growth 16,5 % -> 31,7 % a year (1999-2026), 28,5 ->
+# 36,7 % (2010-2026), 25,2 -> 40,5 % (2018-2026), worst fall unchanged (-77 %); 88 trades, 73 % won, +4,8 % a trade.
+# Held as QQQM (the same index, another fund) so it never mixes with the index sleeve's QQQ.
+REB_TICKER, REB_LEV = "QQQM", 3.0
+REB_ENTRY, REB_EXIT, REB_MAXD = 5.0, 50.0, 3
+REB_AFTER, REB_ENTRY_BY = dtime(9, 35), dtime(10, 0)   # trade at the open: entries only in the first half hour
+REB_RULE_TEXT = (
+    "Tepki kuralı (test edildi): endeks kolu nakitteyken (yön yukarı değilken) Nasdaq 100'ün 2 günlük RSI'ı kapanışta 5'in "
+    "altına inerse ertesi sabah açılışta (09:35) hesabın 3 katı kadar Nasdaq 100 fonu alınır (QQQM; endeks kolunun QQQ'su "
+    "ile karışmasın diye ayrı fon). RSI kapanışta 50'yi geçince ya da 3 işlem günü dolunca ertesi açılışta satılır; endeks "
+    "kolu yeniden işleme girerse hemen satılır. 1999–2026 testinde (giriş ve çıkış açılışta) yıllık büyüme %16,5'ten %31,7'ye "
+    "çıktı, en kötü düşüş değişmedi (%−77); 88 işlemin %73'ü kazandı, işlem başına ortalama +%4,8. 2000–2002 çöküşünde bu "
+    "dönemler +%28, 2007–2009'da +%31 getirdi (kural tek başına −%60 ve −%35'teydi). Fiyat zarar-kesi yok; risk, 3x "
+    "kaldıraçla birkaç günlük düşüşün devamıdır.")
 SANCTIONED_NAMES = ("SMIC", "Semiconductor Manufacturing International", "Hikvision", "SenseTime", "Sugon", "Dawning",
                     "China Mobile", "China Telecom", "China Unicom", "Inspur", "DJI", "Megvii", "iFlytek", "Dahua")
 MOVERS = ROOT / "movers.json"
@@ -238,6 +254,7 @@ CONFIG_TEXT = {
         "olduğu risk düzeyi; ötesi kârı azaltıyor.",
         "Nasdaq düşüş kuralı: Nasdaq 100 (QQQ) zirvesinden %20 veya daha fazla düşmüşse endeks kolu short açmaz, yeni zirveye "
         "kadar nakitte bekler (yön yukarıysa long kuralı aynen çalışır).",
+        REB_RULE_TEXT,
         OPP_RULE_TEXT,
         "Haber okuma (kural tabanlı, yapay zekâ yok): başlıklardaki kalıplar şu türlere ayrılır. Sert ve olumsuz: dolandırıcılık "
         "ya da muhasebe iddiası, soruşturma ve dava, açığa satış raporu, beklenti düşürme ya da kötü bilanço, başarısız klinik "
@@ -378,6 +395,7 @@ class Engine(ReviewMixin):
         self.C["maxLeverage"] = MAX_EXPO
         self.C["dipRule"] = DIP_RULE_TEXT
         self.C["oppRule"] = OPP_RULE_TEXT
+        self.C["reboundRule"] = REB_RULE_TEXT
         self.C["spikeRule"] = {"text": SPIKE_RULE_TEXT, "testKey": SPIKE_TEST_KEY, "testPortfolio": "f10_s6",
                                "move": SPIKE_MOVE, "minPrice": SPIKE_MIN_PRICE, "minDollarVolM": SPIKE_MIN_DV,
                                "stop": SPIKE_STOP, "holdDays": SPIKE_HOLD_DAYS, "size": SPIKE_SIZE, "slots": SPIKE_SLOTS,
@@ -1742,6 +1760,8 @@ class Engine(ReviewMixin):
         basket_word = "long" if trend["up"] else ("short" if BASKET_SHORTS else "nakit")
         idx_word = (f"endeks {'+' if sig['target'] > 0 else '−' if sig['target'] < 0 else ''}{trn(abs(sig['target']), 2)}x"
                     if sig else "endeks verisi yok")
+        if (self.M.get("rebound") or {}).get("text"):
+            decisions.append(self.M["rebound"]["text"])
         self.M["regime"] = {"name": "up" if sig and sig["dir"] > 0 else "down" if sig and sig["dir"] < 0 else "neutral",
                             "label": f"Yön {sig['wordLow'] if sig else '—'}: {idx_word}, "
                                      + (f"sepet {basket_word}" if BASKET_SHARE > 0 else "fırsat taraması açık"),
@@ -2112,6 +2132,92 @@ class Engine(ReviewMixin):
             self.notes.extend(lines)
 
     @staticmethod
+    def rsi2(closes):
+        """Wilder RSI over 2 days (the study's definition) of a list of closes; the last value."""
+        up = dn = None
+        for a, b in zip(closes[:-1], closes[1:]):
+            u, d = max(b - a, 0.0), max(a - b, 0.0)
+            up = u if up is None else up + (u - up) / 2
+            dn = d if dn is None else dn + (d - dn) / 2
+        if up is None:
+            return None
+        return 100.0 if dn == 0 else 100 - 100 / (1 + up / dn)
+
+    def rebound(self):
+        """Once a day after 09:35: the rebound rule on yesterday's close (REB_* above). Returns True if it traded."""
+        hist = self.data.daily([INDEX_ETF, DIR_SRC], period="2y")
+        today = self.now.date()
+        done = {t: h[h.index.date < today] for t, h in hist.items() if h is not None and len(h)}
+        q = done.get(INDEX_ETF)
+        if q is None or len(q) < 30:
+            return False
+        sig = self.index_signal(done)
+        closes = [float(x) for x in q["Close"].iloc[-60:]]
+        r = self.rsi2(closes)
+        last_day = q.index[-1].date().isoformat()
+        st = self.M.get("rebound") or {}
+        if st.get("lastClose") == last_day:      # this close was already judged
+            self.M["rebDate"] = self.today
+            return False
+        pos = self._pos(REB_TICKER, "long")
+        base_on = bool(sig and sig["target"] != 0)
+        self.M["rebDate"] = self.today
+        st.update(lastClose=last_day, rsi2=round(r, 1) if r is not None else None, baseOn=base_on)
+        traded = False
+        if pos:
+            st["n"] = st.get("n", 1) + 1
+            why = ("endeks kolu yeniden işleme giriyor" if base_on else
+                   f"RSI(2) {trn(r, 1)} ile 50'nin üstüne çıktı" if r is not None and r > REB_EXIT else
+                   f"{REB_MAXD} günlük süre doldu" if st["n"] > REB_MAXD else None)
+            if why:
+                self.quotes_for([REB_TICKER])
+                qq = self.quotes.get(REB_TICKER)
+                if qq and not qq["stale"]:
+                    self.close(pos, pos["shares"], qq["price"], qq["at"],
+                               f"Tepki işlemi kapatıldı: {why}. Plan gereği açılışta satıldı.", "tepki çıkış")
+                    st.update(n=0, text=f"Tepki işlemi kapandı ({why}).")
+                    traded = True
+                else:
+                    self.M["rebDate"] = None      # try again on the next run
+                    st["n"] -= 1
+            else:
+                st["text"] = f"Tepki işlemi sürüyor: RSI(2) {trn(r, 1)}, {st['n']}. gün."
+        elif r is not None and r < REB_ENTRY and not base_on:
+            if self.now.time() >= REB_ENTRY_BY:
+                st["text"] = (f"Tepki sinyali vardı (RSI(2) {trn(r, 1)}), ama açılış penceresi (09:35–10:00) kaçtı; "
+                              "kural gereği bugün girilmedi.")
+            else:
+                self.quotes_for([REB_TICKER])
+                qq = self.quotes.get(REB_TICKER)
+                eq = self.P["totalValue"]
+                if qq and not qq["stale"] and eq > 0:
+                    amount, limit = self._allowed_mv(REB_TICKER, "long", eq * REB_LEV)
+                    if amount >= MIN_TRADE:
+                        self.names[REB_TICKER] = "Invesco NASDAQ 100 ETF"
+                        reason = (f"Tepki kuralı: Nasdaq 100 (QQQ) dünkü kapanışta aşırı satılmış, 2 günlük RSI {trn(r, 1)} "
+                                  f"(eşik {trn(REB_ENTRY, 0)}). Endeks kolu nakitte ({sig['wordLow'] if sig else 'yön verisi yok'}). "
+                                  f"Kural gereği açılışta hesabın {trn(amount / eq, 1)} katı ({usd(amount)}) Nasdaq 100 fonu "
+                                  f"(QQQM) alındı; RSI(2) 50'yi geçince ya da {REB_MAXD} gün sonra açılışta satılacak. "
+                                  "1999–2026 testinde bu işlemlerin %73'ü kazandı (ortalama +%4,8).")
+                        tr = self.open_long(REB_TICKER, amount, qq["price"], qq["at"], reason, "tepki kuralı")
+                        if tr:
+                            p_ = self._pos(REB_TICKER, "long")
+                            p_.update(stopMode="managed", stopPrice=None, play="rebound", sleeve="overlay",
+                                      playLabel="Tepki kuralı", name="Invesco NASDAQ 100 ETF")
+                            st.update(n=1, since=self.today, text=f"Tepki işlemi açıldı: RSI(2) {trn(r, 1)}, {usd(amount)}.")
+                            traded = True
+                    else:
+                        st["text"] = "Tepki sinyali vardı ama teminat/10x sınırı dolu."
+        else:
+            st["text"] = (f"Tepki kuralı beklemede: RSI(2) {trn(r, 1) if r is not None else '—'}"
+                          + (", endeks kolu işlemde (kural yalnızca nakit dönemlerinde çalışır)." if base_on else
+                             f" (giriş için {trn(REB_ENTRY, 0)}'in altı gerekir)."))
+        self.M["rebound"] = st
+        if traded or st.get("text"):
+            self.notes.append(st["text"])
+        return traded
+
+    @staticmethod
     def _move_play(f, slot):
         """The first price-move play (PLAYS entries with a "move" block) whose conditions the stock meets."""
         for key, P_ in PLAYS.items():
@@ -2293,6 +2399,14 @@ class Engine(ReviewMixin):
         self.event_exits()
         kind = "guard"
         fresh = not self.quotes["SPY"]["stale"] and self.M.get("pausedOn") != self.today
+        if fresh and self.now.time() >= REB_AFTER and self.M.get("rebDate") != self.today:
+            try:
+                if self.rebound():
+                    kind = "tepki"
+            except Exception as e:             # one rule; never block the rest of the run
+                self.M["rebDate"] = self.today
+                self.notes.append(f"Tepki kuralı çalışmadı: {type(e).__name__}: {e}")
+            self.margin_check()
         if self.now.time() >= DAILY_AFTER and self.M.get("lastDailyDate") != self.today and fresh:
             self.daily()
             kind = "daily"

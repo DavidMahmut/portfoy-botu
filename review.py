@@ -171,7 +171,8 @@ class ReviewMixin:
 
     def _play_label(self, play):
         from trader import PLAYS
-        return {"index": "Endeks kolu", "spike": "Sert yükseliş short'u", "other": "Diğer", "fees": "Masraf ve diğer"}.get(
+        return {"index": "Endeks kolu", "rebound": "Tepki kuralı", "spike": "Sert yükseliş short'u", "other": "Diğer",
+                "fees": "Masraf ve diğer"}.get(
             play, (PLAYS.get(play) or {}).get("label", play))
 
     # ------------------------------------------------------------------ reviews

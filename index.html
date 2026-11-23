@@ -752,6 +752,9 @@ tr.mv-det td{background:var(--bg);white-space:normal;text-align:left}
     <div class="sec-head"><h2 id="h-kal">Kaldıraç ve batış</h2><span class="small muted" id="bustHead">—</span></div>
     <div class="x-grid">
       <div class="panel">
+        <h3>Tepki kuralı: sert Nasdaq düşüşlerinden sonra</h3>
+        <p class="small" id="rebRule" style="margin:8px 0 0;max-width:90ch"></p>
+        <p class="small" id="rebNow" style="margin:8px 0 18px;font-weight:600"></p>
         <h3>10x ne yapar? (1999–2026 testi)</h3>
         <div class="tbl-wrap" style="margin-top:10px"><table class="month-table x-table"><thead><tr><th scope="col">Ayar</th><th scope="col" class="num">Yıllık getiri</th><th scope="col" class="num">En kötü düşüş</th><th scope="col" class="num">Ort. kaldıraç</th><th scope="col" class="num">Batış</th></tr></thead><tbody id="levRows"><tr><td colspan="5" class="muted">Test sonucu yükleniyor…</td></tr></tbody></table></div>
         <p class="note" id="levNote"></p>
@@ -2161,7 +2164,7 @@ tr.mv-det td{background:var(--bg);white-space:normal;text-align:left}
   var fmtWd=new Intl.DateTimeFormat("tr-TR",{weekday:"short",day:"numeric",month:"short",timeZone:TZ});
   function rvLabel(k){
     var pl=((S.config||{}).x10||{}).plays||{};
-    return {index:"Endeks kolu",spike:"Sert yükseliş short'u",fees:"Masraf ve diğer",other:"Diğer"}[k] || (pl[k]&&pl[k].label) || k;
+    return {index:"Endeks kolu",rebound:"Tepki kuralı",spike:"Sert yükseliş short'u",fees:"Masraf ve diğer",other:"Diğer"}[k] || (pl[k]&&pl[k].label) || k;
   }
   function rvChips(plays){
     var box=el("div",{class:"rv-chips"});
@@ -2285,7 +2288,7 @@ tr.mv-det td{background:var(--bg);white-space:normal;text-align:left}
     $("evAsOf").textContent= last? "Son tarama "+dShort(last.at)+" "+tm(last.at) : "Taramalar işlem günlerinde "+((X.oppTimes||[]).join(", ")||"10:30, 12:00, 13:30, 15:00")+" ET";
     /* per-rule scorecard */
     var tb=$("playRows"), st=S.playStats||{}; clear(tb);
-    var rows=[["index","Endeks kolu (QQQ)",true]];
+    var rows=[["index","Endeks kolu (QQQ)",true],["rebound","Tepki kuralı (QQQM)",true]];
     Object.keys(plays).forEach(function(k){ rows.push([k, plays[k].label, !!plays[k].tested]); });
     rows.push(["spike","Sert yükseliş short'u",true]);
     rows.forEach(function(r){ var s=st[r[0]]||{}, n=s.closed||0;
@@ -2388,6 +2391,9 @@ tr.mv-det td{background:var(--bg);white-space:normal;text-align:left}
     });
   }
   function renderLev(){
+    var c_=S.config||{}, rb=(S.meta||{}).rebound||{};
+    if($("rebRule")){ $("rebRule").textContent=c_.reboundRule||"Kural bir sonraki çalışmada yüklenecek.";
+      $("rebNow").textContent= rb.text? "Şu an: "+rb.text+(rb.lastClose?" (değerlendirilen kapanış "+dShort(rb.lastClose)+")":"") : ""; }
     var tb=$("levRows"); if(!tb) return;
     var T=S.lev; if(!T||!T.results) return;
     clear(tb);
