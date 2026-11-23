@@ -529,7 +529,7 @@
   "totalPL": -314.96,
   "totalPLPct": -10.5,
   "twrPct": -10.5,
-  "asOf": "2026-11-23T16:01:02-05:00",
+  "asOf": "2026-11-23T16:06:05-05:00",
   "benchmarkPrice": 722.49,
   "benchmarkValue": 2901.94,
   "benchmarkTwrPct": -3.27
@@ -580,7 +580,7 @@
     "2026-11-23"
    ]
   },
-  "lastRunAt": "2026-11-23T16:01:02-05:00",
+  "lastRunAt": "2026-11-23T16:06:05-05:00",
   "lastError": null,
   "spikeScanDate": "2026-11-23",
   "spikeScan": {
@@ -6054,7 +6054,7 @@
   },
   {
    "date": "2026-11-23",
-   "at": "2026-11-23T16:01:02-05:00",
+   "at": "2026-11-23T16:06:05-05:00",
    "totalValue": 2685.04,
    "cash": -2332.0,
    "positionsValue": 5017.04,
@@ -31225,6 +31225,78 @@
     ],
     "actions": [],
     "note": "Normal: pozisyonlar zarar-kese %3,3–%108,0 uzakta, kaldıraç 2,02x, SPY +%4,74; işlem gerekmedi."
+   },
+   {
+    "at": "2026-11-23T16:06:05-05:00",
+    "kind": "guard",
+    "status": "normal",
+    "spyPrice": 722.49,
+    "spyChangePct": 4.74,
+    "qqqChangePct": 6.97,
+    "totalValue": 2685.04,
+    "benchmarkValue": 2901.94,
+    "leverage": 2.024,
+    "marginBuffer": 2413.34,
+    "positions": [
+     {
+      "ticker": "SLS",
+      "side": "short",
+      "price": 13.295,
+      "dayChangePct": -2.67,
+      "stopPrice": 27.65,
+      "distancePct": 107.97
+     },
+     {
+      "ticker": "PDD",
+      "side": "long",
+      "price": 87.189,
+      "dayChangePct": 4.19,
+      "stopPrice": 81.94,
+      "distancePct": 6.41
+     },
+     {
+      "ticker": "GAP",
+      "side": "long",
+      "price": 21.735,
+      "dayChangePct": 3.8,
+      "stopPrice": 20.21,
+      "distancePct": 7.55
+     },
+     {
+      "ticker": "NVDA",
+      "side": "long",
+      "price": 165.185,
+      "dayChangePct": 31.59,
+      "stopPrice": 156.77,
+      "distancePct": 5.37
+     },
+     {
+      "ticker": "AXTI",
+      "side": "long",
+      "price": 38.03,
+      "dayChangePct": 24.4,
+      "stopPrice": 36.72,
+      "distancePct": 3.57
+     },
+     {
+      "ticker": "KYMR",
+      "side": "long",
+      "price": 150.15,
+      "dayChangePct": 30.21,
+      "stopPrice": 135.81,
+      "distancePct": 10.56
+     },
+     {
+      "ticker": "MXL",
+      "side": "long",
+      "price": 50.32,
+      "dayChangePct": 21.4,
+      "stopPrice": 48.71,
+      "distancePct": 3.31
+     }
+    ],
+    "actions": [],
+    "note": "Normal: pozisyonlar zarar-kese %3,3–%108,0 uzakta, kaldıraç 2,02x, SPY +%4,74; işlem gerekmedi."
    }
   ]
  },
@@ -32985,7 +33057,7 @@
   "start": "2026-11-16",
   "startAt": "2026-11-16T09:30:32-05:00",
   "end": "2027-02-16",
-  "asOf": "2026-11-23T16:01:02-05:00",
+  "asOf": "2026-11-23T16:06:05-05:00",
   "strategy": "v7",
   "history": [
    {
