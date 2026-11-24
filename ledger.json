@@ -132,7 +132,7 @@
   "reboundRule": "Tepki kuralı (test edildi): endeks kolu nakitteyken (yön yukarı değilken) Nasdaq 100'ün 2 günlük RSI'ı kapanışta 5'in altına inerse ertesi sabah açılışta (09:35) hesabın 3 katı kadar Nasdaq 100 fonu alınır (QQQM; endeks kolunun QQQ'su ile karışmasın diye ayrı fon). RSI kapanışta 50'yi geçince ya da 3 işlem günü dolunca ertesi açılışta satılır; endeks kolu yeniden işleme girerse hemen satılır. 1999–2026 testinde (giriş ve çıkış açılışta) yıllık büyüme %16,5'ten %31,7'ye çıktı, en kötü düşüş değişmedi (%−77); 88 işlemin %73'ü kazandı, işlem başına ortalama +%4,8. 2000–2002 çöküşünde bu dönemler +%28, 2007–2009'da +%31 getirdi (kural tek başına −%60 ve −%35'teydi). Fiyat zarar-kesi yok; risk, 3x kaldıraçla birkaç günlük düşüşün devamıdır."
  },
  "portfolio": {
-  "cash": -290.14,
+  "cash": 898.24,
   "positions": [
    {
     "stopMode": "event",
@@ -144,16 +144,16 @@
     "shares": 15.6835,
     "avgCost": 18.4024,
     "costBasis": 288.61,
-    "lastPrice": 13.42,
-    "lastPriceAt": "2026-11-24T09:30:01-05:00",
+    "lastPrice": 13.5569,
+    "lastPriceAt": "2026-11-24T09:35:00-05:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (09:30 ET)",
+     "title": "Yahoo Finance 5 dk mum (09:35 ET)",
      "url": "https://finance.yahoo.com/quote/SLS/"
     },
-    "marketValue": -210.47,
-    "exposure": 210.47,
-    "unrealized": 78.14,
-    "unrealizedPct": 27.07,
+    "marketValue": -212.62,
+    "exposure": 212.62,
+    "unrealized": 75.99,
+    "unrealizedPct": 26.33,
     "openedAt": "2026-11-18",
     "openedTs": "2026-11-18T09:35:00-05:00",
     "lastAddDate": "2026-11-18",
@@ -181,8 +181,8 @@
      "prevClose": 7.47,
      "close": 19.15
     },
-    "maintReq": 10.52,
-    "lastBarTs": "2026-11-24T09:30:01-05:00"
+    "maintReq": 10.63,
+    "lastBarTs": "2026-11-24T09:35:00-05:00"
    },
    {
     "stopMode": "event",
@@ -194,16 +194,16 @@
     "shares": 7.8374,
     "avgCost": 85.5728,
     "costBasis": 670.67,
-    "lastPrice": 85.43,
-    "lastPriceAt": "2026-11-24T09:30:01-05:00",
+    "lastPrice": 86.14,
+    "lastPriceAt": "2026-11-24T09:35:00-05:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (09:30 ET)",
+     "title": "Yahoo Finance 5 dk mum (09:35 ET)",
      "url": "https://finance.yahoo.com/quote/PDD/"
     },
-    "marketValue": 669.55,
-    "exposure": 669.55,
-    "unrealized": -1.12,
-    "unrealizedPct": -0.17,
+    "marketValue": 675.11,
+    "exposure": 675.11,
+    "unrealized": 4.44,
+    "unrealizedPct": 0.66,
     "openedAt": "2026-11-19",
     "openedTs": "2026-11-19T15:00:00-05:00",
     "lastAddDate": "2026-11-19",
@@ -235,8 +235,8 @@
      "movePct": 10.48,
      "prevClose": 77.45
     },
-    "maintReq": 33.48,
-    "lastBarTs": "2026-11-24T09:30:01-05:00"
+    "maintReq": 33.76,
+    "lastBarTs": "2026-11-24T09:35:00-05:00"
    },
    {
     "stopMode": "event",
@@ -248,16 +248,16 @@
     "shares": 15.6744,
     "avgCost": 21.956,
     "costBasis": 344.15,
-    "lastPrice": 22.1,
-    "lastPriceAt": "2026-11-24T09:30:20-05:00",
+    "lastPrice": 21.98,
+    "lastPriceAt": "2026-11-24T09:35:00-05:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (09:30 ET)",
+     "title": "Yahoo Finance 5 dk mum (09:35 ET)",
      "url": "https://finance.yahoo.com/quote/GAP/"
     },
-    "marketValue": 346.4,
-    "exposure": 346.4,
-    "unrealized": 2.25,
-    "unrealizedPct": 0.65,
+    "marketValue": 344.52,
+    "exposure": 344.52,
+    "unrealized": 0.37,
+    "unrealizedPct": 0.11,
     "openedAt": "2026-11-20",
     "openedTs": "2026-11-20T10:30:00-05:00",
     "lastAddDate": "2026-11-20",
@@ -289,61 +289,8 @@
      "movePct": 16.92,
      "prevClose": 18.79
     },
-    "maintReq": 17.32,
-    "lastBarTs": "2026-11-24T09:30:20-05:00"
-   },
-   {
-    "stopMode": "event",
-    "ticker": "NVDA",
-    "name": "NVIDIA Corporation",
-    "kind": "Hisse",
-    "side": "long",
-    "lev": 1,
-    "shares": 5.9184,
-    "avgCost": 170.4402,
-    "costBasis": 1008.73,
-    "lastPrice": 159.13,
-    "lastPriceAt": "2026-11-24T09:30:02-05:00",
-    "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (09:30 ET)",
-     "url": "https://finance.yahoo.com/quote/NVDA/"
-    },
-    "marketValue": 941.79,
-    "exposure": 941.79,
-    "unrealized": -66.94,
-    "unrealizedPct": -6.64,
-    "openedAt": "2026-11-23",
-    "openedTs": "2026-11-23T10:30:00-05:00",
-    "lastAddDate": "2026-11-23",
-    "stopPrice": 156.77,
-    "extremeSinceEntry": 170.355,
-    "tookProfit": false,
-    "thesis": "Haber devamı: NVDA (NVIDIA Corporation) önceki kapanışın (125,53 $) +%29,85 üstünde açıldı ve ilk saatte +%4,29 daha yükseldi: alıcılar haberi satmıyor, üstüne alıyor. Kural gereği long açıldı. Zarar-kes 156,77 $ (ilk saatin en düşüğünün hemen altı, risk %8,7); çıkış 2026-11-25 kapanışında. Büyüklük: hesabın %35'i (1.008,73 $); zarar-kes çalışırsa kayıp hesabın yaklaşık %3,0'i. 10 güncel haber var ama bilinen bir haber türüne uymuyor.",
-    "sleeve": "event",
-    "play": "drift",
-    "playLabel": "Haber devamı",
-    "exitDate": "2026-11-25",
-    "holdDays": 2,
-    "headline": {
-     "title": "Nvidia live updates: Jensen Huang reinstated as CEO;  Trump says no reason to believe Huang a national security risk",
-     "url": "https://finance.yahoo.com/markets/stocks/live/nvidia-live-updates-jensen-huang-reinstated-as-ceo-trump-says-no-reason-to-believe-huang-a-national-security-risk-152429808.html",
-     "publisher": "Yahoo Finance"
-    },
-    "borrowRate": 0.005,
-    "slip": 0.0005,
-    "catalyst": {
-     "cat": null,
-     "label": null,
-     "kind": null
-    },
-    "event": {
-     "gapPct": 29.85,
-     "firstHourPct": 4.29,
-     "movePct": 35.78,
-     "prevClose": 125.53
-    },
-    "maintReq": 47.09,
-    "lastBarTs": "2026-11-24T09:30:02-05:00"
+    "maintReq": 17.23,
+    "lastBarTs": "2026-11-24T09:35:00-05:00"
    },
    {
     "stopMode": "event",
@@ -355,21 +302,21 @@
     "shares": 7.0504,
     "avgCost": 147.3136,
     "costBasis": 1038.62,
-    "lastPrice": 162.5,
-    "lastPriceAt": "2026-11-24T09:30:02-05:00",
+    "lastPrice": 178.035,
+    "lastPriceAt": "2026-11-24T09:35:00-05:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (09:30 ET)",
+     "title": "Yahoo Finance 5 dk mum (09:35 ET)",
      "url": "https://finance.yahoo.com/quote/KYMR/"
     },
-    "marketValue": 1145.69,
-    "exposure": 1145.69,
-    "unrealized": 107.07,
-    "unrealizedPct": 10.31,
+    "marketValue": 1255.22,
+    "exposure": 1255.22,
+    "unrealized": 216.6,
+    "unrealizedPct": 20.85,
     "openedAt": "2026-11-23",
     "openedTs": "2026-11-23T10:30:00-05:00",
     "lastAddDate": "2026-11-23",
     "stopPrice": 135.81,
-    "extremeSinceEntry": 162.5,
+    "extremeSinceEntry": 178.035,
     "tookProfit": false,
     "thesis": "Haber devamı: KYMR (Kymera Therapeutics, Inc.) önceki kapanışın (115,31 $) +%19,68 üstünde açıldı ve ilk saatte +%6,09 daha yükseldi: alıcılar haberi satmıyor, üstüne alıyor. Kural gereği long açıldı. Zarar-kes 135,81 $ (ilk saatin en düşüğünün hemen altı, risk %8,4); çıkış 2026-11-25 kapanışında. Büyüklük: hesabın %36'i (1.038,63 $); zarar-kes çalışırsa kayıp hesabın yaklaşık %3,0'i. Haber türü: FDA onayı / başarılı deneme (sert, olumlu). “Kymera Therapeutics Shares Surge 29% as Phase 2b Eczema Trial Meets All Primary and Secondary Endpoints” (InvestorsHub).",
     "sleeve": "event",
@@ -396,45 +343,94 @@
      "movePct": 27.69,
      "prevClose": 115.31
     },
-    "maintReq": 57.28,
-    "lastBarTs": "2026-11-24T09:30:02-05:00"
+    "maintReq": 62.76,
+    "lastBarTs": "2026-11-24T09:35:00-05:00"
+   },
+   {
+    "stopMode": "event",
+    "ticker": "NVDA",
+    "name": "NVIDIA Corporation",
+    "kind": "Hisse",
+    "side": "short",
+    "lev": 1,
+    "shares": 1.7333,
+    "avgCost": 155.2867,
+    "costBasis": 269.16,
+    "lastPrice": 155.52,
+    "lastPriceAt": "2026-11-24T09:35:00-05:00",
+    "priceSource": {
+     "title": "Yahoo Finance 5 dk mum (09:35 ET)",
+     "url": "https://finance.yahoo.com/quote/NVDA/"
+    },
+    "marketValue": -269.56,
+    "exposure": 269.56,
+    "unrealized": -0.4,
+    "unrealizedPct": -0.15,
+    "openedAt": "2026-11-24",
+    "openedTs": "2026-11-24T09:35:00-05:00",
+    "lastAddDate": "2026-11-24",
+    "stopPrice": 233.28,
+    "extremeSinceEntry": 155.52000427246094,
+    "tookProfit": false,
+    "thesis": "Sert yükseliş short'u: NVDA (NVIDIA Corporation) 2026-11-23 günü +%31,48 yükseldi (125,53 $ → 165,05 $); bugün 155,52 $'dan (−%5,77) işlem görüyor. 2019–2026 testinde bu tür sıçramalar sonraki iki haftada genellikle geri verildi. Short açıldı: hesabın %10'u, zarar-kes 233,28 $ (girişin %50 üstü), çıkış 2026-12-08 kapanışında. Ödünç ücreti yıllık %30 varsayıldı. Haber: “Nvidia gains nearly $1T as Trump says nobody could 'revive the stock like it's being revived'” (Yahoo Finance).",
+    "sleeve": "event",
+    "spike": true,
+    "play": "spike",
+    "playLabel": "Sert yükseliş short'u",
+    "exitDate": "2026-12-08",
+    "holdDays": 10,
+    "borrowRate": 0.3,
+    "slip": 0.0015,
+    "headline": {
+     "title": "Nvidia gains nearly $1T as Trump says nobody could 'revive the stock like it's being revived'",
+     "url": "https://finance.yahoo.com/markets/article/nvidia-gains-nearly-1t-as-trump-says-nobody-could-revive-the-stock-like-its-being-revived-194634496.html",
+     "publisher": "Yahoo Finance",
+     "at": "2026-11-23T19:46:34+00:00"
+    },
+    "event": {
+     "spikeDate": "2026-11-23",
+     "spikePct": 31.48,
+     "prevClose": 125.53,
+     "close": 165.05
+    },
+    "maintReq": 13.48
    }
   ],
-  "realizedPL": -508.09,
+  "realizedPL": -597.23,
   "netDeposits": 3000.0,
   "costs": {
-   "slippage": 16.8663,
-   "commission": 10.61,
-   "fees": 0.53,
+   "slippage": 17.7312,
+   "commission": 11.31,
+   "fees": 0.58,
    "interest": 1.05,
    "borrow": 1.19,
    "dividendsPaid": 0.0,
    "dividendsReceived": 0.0
   },
-  "longValue": 3103.44,
-  "shortValue": 210.47,
-  "positionsValue": 2892.97,
-  "totalValue": 2602.83,
-  "grossExposure": 3313.91,
-  "netExposure": 2892.97,
-  "leverage": 1.273,
-  "maintenanceReq": 165.69,
-  "marginBuffer": 2437.14,
-  "regTInitialReq": 331.39,
-  "regTExcess": 2271.44,
-  "buyingPower": 22714.39,
+  "longValue": 2274.85,
+  "shortValue": 482.18,
+  "positionsValue": 1792.67,
+  "totalValue": 2690.91,
+  "grossExposure": 2757.04,
+  "netExposure": 1792.67,
+  "leverage": 1.025,
+  "maintenanceReq": 137.86,
+  "marginBuffer": 2553.05,
+  "regTInitialReq": 275.7,
+  "regTExcess": 2415.21,
+  "buyingPower": 24152.06,
   "marginEligible": true,
-  "closeoutMovePct": 73.54,
+  "closeoutMovePct": 92.6,
   "bustCount": 0,
   "paidInTotal": 3000.0,
   "lostToBusts": 0,
-  "totalPL": -397.17,
-  "totalPLPct": -13.24,
-  "twrPct": -13.24,
-  "asOf": "2026-11-24T09:30:27-05:00",
-  "benchmarkPrice": 714.16,
-  "benchmarkValue": 2868.46,
-  "benchmarkTwrPct": -4.38
+  "totalPL": -309.09,
+  "totalPLPct": -10.3,
+  "twrPct": -10.3,
+  "asOf": "2026-11-24T09:35:31-05:00",
+  "benchmarkPrice": 713.25,
+  "benchmarkValue": 2864.8,
+  "benchmarkTwrPct": -4.51
  },
  "meta": {
   "engine": "x10 v7",
@@ -449,9 +445,9 @@
    "ath": 759.66,
    "athDate": "2026-10-06",
    "athChecked": "2026-11-23",
-   "price": 640.56,
-   "at": "2026-11-24T09:30:02-05:00",
-   "ddPct": -15.68,
+   "price": 637.49,
+   "at": "2026-11-24T09:35:00-05:00",
+   "ddPct": -16.08,
    "level": "correction",
    "triggerPrice": 607.73,
    "correctionPrice": 683.69,
@@ -483,19 +479,86 @@
     "2026-11-24"
    ]
   },
-  "lastRunAt": "2026-11-24T09:30:27-05:00",
+  "lastRunAt": "2026-11-24T09:35:31-05:00",
   "lastError": null,
-  "spikeScanDate": "2026-11-23",
+  "spikeScanDate": "2026-11-24",
   "spikeScan": {
-   "date": "2026-11-23",
-   "at": "2026-11-23T09:35:30-05:00",
-   "spikeDate": "2026-11-20",
+   "date": "2026-11-24",
+   "at": "2026-11-24T09:35:31-05:00",
+   "spikeDate": "2026-11-23",
    "final": true,
-   "listAt": "2026-11-20T21:49-05:00",
-   "candidates": [],
-   "taken": [],
-   "skipped": [],
-   "rule": "2026-11-20 günü en az %30 yükselen Nasdaq hissesine açılışta short; zarar-kes girişin %50 üstü; 10. işlem günü kapanışta çıkış."
+   "listAt": "2026-11-23T16:11-05:00",
+   "candidates": [
+    "GRRR",
+    "CUE",
+    "BUUU",
+    "NVDA",
+    "KYMR"
+   ],
+   "taken": [
+    {
+     "ticker": "NVDA",
+     "name": "NVIDIA Corporation",
+     "d1Pct": 31.48,
+     "prevClose": 125.53,
+     "price": 165.05,
+     "dollarVolM": 48161.6,
+     "capB": 3985.46,
+     "amount": 269.17,
+     "entry": 155.52,
+     "stop": 233.28,
+     "exitDate": "2026-12-08",
+     "headline": {
+      "title": "Nvidia gains nearly $1T as Trump says nobody could 'revive the stock like it's being revived'",
+      "url": "https://finance.yahoo.com/markets/article/nvidia-gains-nearly-1t-as-trump-says-nobody-could-revive-the-stock-like-its-being-revived-194634496.html",
+      "publisher": "Yahoo Finance",
+      "at": "2026-11-23T19:46:34+00:00"
+     }
+    }
+   ],
+   "skipped": [
+    {
+     "ticker": "GRRR",
+     "name": "Gorilla Technology Group Inc.",
+     "d1Pct": 44.43,
+     "prevClose": 5.26,
+     "price": 7.59,
+     "dollarVolM": 8.0,
+     "capB": 0.21,
+     "why": "günlük işlem hacmi 50 milyon $'ın altında"
+    },
+    {
+     "ticker": "CUE",
+     "name": "Cue Biopharma, Inc.",
+     "d1Pct": 38.55,
+     "prevClose": 4.15,
+     "price": 5.75,
+     "dollarVolM": 6.8,
+     "capB": 0.05,
+     "why": "önceki kapanış 5 $'ın altında (çok küçük hisse)"
+    },
+    {
+     "ticker": "BUUU",
+     "name": "BUUU Group Limited",
+     "d1Pct": 34.04,
+     "prevClose": 3.29,
+     "price": 4.41,
+     "dollarVolM": 3.4,
+     "capB": 0.66,
+     "why": "önceki kapanış 5 $'ın altında (çok küçük hisse)"
+    },
+    {
+     "ticker": "KYMR",
+     "name": "Kymera Therapeutics, Inc.",
+     "d1Pct": 30.4,
+     "prevClose": 115.31,
+     "price": 150.37,
+     "dollarVolM": 130.0,
+     "capB": 12.84,
+     "why": "bu hisse zaten portföyde"
+    }
+   ],
+   "rule": "2026-11-23 günü en az %30 yükselen Nasdaq hissesine açılışta short; zarar-kes girişin %50 üstü; 10. işlem günü kapanışta çıkış."
   },
   "regime": {
    "name": "neutral",
@@ -4687,12 +4750,12 @@
    }
   },
   "healthLog": [],
-  "rebDate": "2026-11-23",
+  "rebDate": "2026-11-24",
   "rebound": {
-   "lastClose": "2026-11-20",
-   "rsi2": 1.8,
+   "lastClose": "2026-11-23",
+   "rsi2": 65.2,
    "baseOn": false,
-   "text": "Tepki sinyali vardı (RSI(2) 1,8), ama açılış penceresi (09:35–10:00) kaçtı; kural gereği bugün girilmedi."
+   "text": "Tepki kuralı beklemede: RSI(2) 65,2 (giriş için 5'in altı gerekir)."
   }
  },
  "trades": [
@@ -5837,6 +5900,87 @@
    "holdingDays": 1,
    "taxTerm": "kısa vade",
    "play": "drift"
+  },
+  {
+   "id": "t-20261124-03",
+   "ts": "2026-11-24T09:35:31-05:00",
+   "date": "2026-11-24",
+   "action": "SELL",
+   "side": "long",
+   "ticker": "NVDA",
+   "name": "NVIDIA",
+   "kind": "Hisse",
+   "shares": 5.9184,
+   "quotePrice": 155.52,
+   "quoteAt": "2026-11-24T09:35:00-05:00",
+   "slippagePct": 0.05,
+   "execPrice": 155.4422,
+   "value": 919.97,
+   "commission": 0.35,
+   "fees": 0.03,
+   "priceSource": {
+    "title": "Yahoo Finance 5 dk mum (09:35 ET)",
+    "url": "https://finance.yahoo.com/quote/NVDA/"
+   },
+   "reason": "Haber devamı zarar-kesi tetiklendi: 09:35 ET mumunda fiyat 155,52 $'a indi, zarar-kes seviyesi 156,77 $. Mum seviyenin ötesinde açıldığı için açılış fiyatından (155,52 $) kapatıldı.",
+   "rule": "haber devamı zarar-kesi",
+   "sources": [
+    {
+     "title": "Yahoo Finance: NVDA",
+     "url": "https://finance.yahoo.com/quote/NVDA/"
+    },
+    {
+     "title": "yfinance (Yahoo Finance verileri)",
+     "url": "https://github.com/ranaroussi/yfinance"
+    }
+   ],
+   "runId": "2026-11-24",
+   "by": "bot",
+   "realizedPL": -89.14,
+   "holdingDays": 1,
+   "taxTerm": "kısa vade",
+   "play": "drift"
+  },
+  {
+   "id": "t-20261124-04",
+   "ts": "2026-11-24T09:35:31-05:00",
+   "date": "2026-11-24",
+   "action": "SHORT",
+   "side": "short",
+   "ticker": "NVDA",
+   "name": "NVIDIA Corporation",
+   "kind": "Hisse",
+   "shares": 1.7333,
+   "quotePrice": 155.52,
+   "quoteAt": "2026-11-24T09:35:00-05:00",
+   "slippagePct": 0.05,
+   "execPrice": 155.2867,
+   "value": 269.16,
+   "commission": 0.35,
+   "fees": 0.02,
+   "priceSource": {
+    "title": "Yahoo Finance 5 dk mum (09:35 ET)",
+    "url": "https://finance.yahoo.com/quote/NVDA/"
+   },
+   "reason": "Sert yükseliş short'u: NVDA (NVIDIA Corporation) 2026-11-23 günü +%31,48 yükseldi (125,53 $ → 165,05 $); bugün 155,52 $'dan (−%5,77) işlem görüyor. 2019–2026 testinde bu tür sıçramalar sonraki iki haftada genellikle geri verildi. Short açıldı: hesabın %10'u, zarar-kes 233,28 $ (girişin %50 üstü), çıkış 2026-12-08 kapanışında. Ödünç ücreti yıllık %30 varsayıldı. Haber: “Nvidia gains nearly $1T as Trump says nobody could 'revive the stock like it's being revived'” (Yahoo Finance).",
+   "rule": "sert yükseliş short",
+   "sources": [
+    {
+     "title": "Nvidia gains nearly $1T as Trump says nobody could 'revive the stock like it's being revived'",
+     "url": "https://finance.yahoo.com/markets/article/nvidia-gains-nearly-1t-as-trump-says-nobody-could-revive-the-stock-like-its-being-revived-194634496.html"
+    },
+    {
+     "title": "Yahoo Finance: NVDA",
+     "url": "https://finance.yahoo.com/quote/NVDA/"
+    },
+    {
+     "title": "yfinance (Yahoo Finance verileri)",
+     "url": "https://github.com/ranaroussi/yfinance"
+    }
+   ],
+   "runId": "2026-11-24",
+   "by": "bot",
+   "locate": "Zor ödünç (HTB) varsayımı: yıllık %30 ödünç ücreti"
   }
  ],
  "snapshots": [
@@ -6102,52 +6246,52 @@
   },
   {
    "date": "2026-11-24",
-   "at": "2026-11-24T09:30:27-05:00",
-   "totalValue": 2602.83,
-   "cash": -290.14,
-   "positionsValue": 2892.97,
-   "plPct": -13.24,
-   "twrPct": -13.24,
+   "at": "2026-11-24T09:35:31-05:00",
+   "totalValue": 2690.91,
+   "cash": 898.24,
+   "positionsValue": 1792.67,
+   "plPct": -10.3,
+   "twrPct": -10.3,
    "netDeposits": 3000.0,
-   "leverage": 1.273,
-   "benchmarkPrice": 714.16,
-   "benchmarkValue": 2868.46,
-   "qqqPrice": 640.56,
+   "leverage": 1.025,
+   "benchmarkPrice": 713.25,
+   "benchmarkValue": 2864.8,
+   "qqqPrice": 637.49,
    "holdings": [
     {
      "ticker": "SLS",
      "side": "short",
-     "value": -210.47,
-     "u": 78.14,
+     "value": -212.62,
+     "u": 75.99,
      "play": "spike"
     },
     {
      "ticker": "PDD",
      "side": "long",
-     "value": 669.55,
-     "u": -1.12,
+     "value": 675.11,
+     "u": 4.44,
      "play": "news"
     },
     {
      "ticker": "GAP",
      "side": "long",
-     "value": 346.4,
-     "u": 2.25,
+     "value": 344.52,
+     "u": 0.37,
      "play": "news"
-    },
-    {
-     "ticker": "NVDA",
-     "side": "long",
-     "value": 941.79,
-     "u": -66.94,
-     "play": "drift"
     },
     {
      "ticker": "KYMR",
      "side": "long",
-     "value": 1145.69,
-     "u": 107.07,
+     "value": 1255.22,
+     "u": 216.6,
      "play": "drift"
+    },
+    {
+     "ticker": "NVDA",
+     "side": "short",
+     "value": -269.56,
+     "u": -0.4,
+     "play": "spike"
     }
    ]
   }
@@ -27194,6 +27338,65 @@
      "MXL long kapatıldı (1.195,07 $)"
     ],
     "note": "1 günlük kredi faizi 0,35 $, ödünç ücreti 0,17 $ düşüldü"
+   },
+   {
+    "at": "2026-11-24T09:35:31-05:00",
+    "kind": "spike",
+    "status": "alarm",
+    "spyPrice": 713.25,
+    "spyChangePct": -1.25,
+    "qqqChangePct": -2.08,
+    "totalValue": 2690.91,
+    "benchmarkValue": 2864.8,
+    "leverage": 1.025,
+    "marginBuffer": 2553.05,
+    "positions": [
+     {
+      "ticker": "SLS",
+      "side": "short",
+      "price": 13.5569,
+      "dayChangePct": 2.09,
+      "stopPrice": 27.65,
+      "distancePct": 103.96
+     },
+     {
+      "ticker": "PDD",
+      "side": "long",
+      "price": 86.14,
+      "dayChangePct": -1.15,
+      "stopPrice": 81.94,
+      "distancePct": 5.13
+     },
+     {
+      "ticker": "GAP",
+      "side": "long",
+      "price": 21.98,
+      "dayChangePct": 1.06,
+      "stopPrice": 20.21,
+      "distancePct": 8.76
+     },
+     {
+      "ticker": "KYMR",
+      "side": "long",
+      "price": 178.035,
+      "dayChangePct": 18.4,
+      "stopPrice": 135.81,
+      "distancePct": 31.09
+     },
+     {
+      "ticker": "NVDA",
+      "side": "short",
+      "price": 155.52,
+      "dayChangePct": -5.77,
+      "stopPrice": 233.28,
+      "distancePct": 50.0
+     }
+    ],
+    "actions": [
+     "NVDA long kapatıldı (919,97 $)",
+     "NVDA short (269,16 $)"
+    ],
+    "note": "Tepki kuralı beklemede: RSI(2) 65,2 (giriş için 5'in altı gerekir).; Sert yükseliş short'u: NVDA 269,17 $ (2026-11-23 günü +%31,48)."
    }
   ]
  },
@@ -28728,9 +28931,9 @@
  ],
  "tax": {
   "2026": {
-   "commissions": 11.14,
+   "commissions": 11.89,
    "marginInterest": 1.05,
-   "shortTermRealized": -508.09
+   "shortTermRealized": -597.23
   }
  },
  "evalHistory": [
@@ -28942,9 +29145,9 @@
    "last": "2026-11-19"
   },
   "drift": {
-   "closed": 5,
+   "closed": 6,
    "wins": 0,
-   "pl": -464.9,
+   "pl": -554.04,
    "best": -82.44,
    "worst": -119.47,
    "last": "2026-11-24"
@@ -28954,7 +29157,7 @@
   "start": "2026-11-16",
   "startAt": "2026-11-16T09:30:32-05:00",
   "end": "2027-02-16",
-  "asOf": "2026-11-24T09:30:27-05:00",
+  "asOf": "2026-11-24T09:35:31-05:00",
   "strategy": "v7",
   "history": [
    {
@@ -29034,35 +29237,35 @@
     "daysElapsed": 11
    }
   ],
-  "daysElapsed": 6,
+  "daysElapsed": 7,
   "daysTotal": 62,
   "finished": false,
-  "returnPct": -13.24,
-  "spyReturnPct": -4.38,
-  "excessPct": -8.85,
+  "returnPct": -10.3,
+  "spyReturnPct": -4.51,
+  "excessPct": -5.8,
   "maxDrawdownPct": -17.6,
   "maxDrawdownAt": "2026-11-24T09:30:27-05:00",
-  "drawdownNowPct": -17.6,
+  "drawdownNowPct": -14.81,
   "trades": {
-   "closed": 12,
+   "closed": 13,
    "wins": 2,
-   "winRatePct": 16.7,
+   "winRatePct": 15.4,
    "avgWin": 36.12,
-   "avgLoss": -58.03,
-   "profitFactor": 0.12,
-   "realizedPL": -508.09
+   "avgLoss": -60.86,
+   "profitFactor": 0.11,
+   "realizedPL": -597.23
   },
   "monthly": [
    {
     "month": "2026-11",
-    "returnPct": -13.24,
-    "spyPct": -4.38,
-    "excessPct": -8.86
+    "returnPct": -10.3,
+    "spyPct": -4.51,
+    "excessPct": -5.79
    }
   ],
   "uptime": {
-   "due": 6,
-   "ran": 6,
+   "due": 7,
+   "ran": 7,
    "pct": 100.0
   },
   "errors": 0,
@@ -29076,7 +29279,7 @@
     "key": "spy",
     "label": "SPY'ı geçmek (masraflar düşülmüş)",
     "ok": false,
-    "value": -8.85,
+    "value": -5.8,
     "unit": "pct"
    },
    {
