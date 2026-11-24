@@ -132,7 +132,7 @@
   "reboundRule": "Tepki kuralı (test edildi): endeks kolu nakitteyken (yön yukarı değilken) Nasdaq 100'ün 2 günlük RSI'ı kapanışta 5'in altına inerse ertesi sabah açılışta (09:35) hesabın 3 katı kadar Nasdaq 100 fonu alınır (QQQM; endeks kolunun QQQ'su ile karışmasın diye ayrı fon). RSI kapanışta 50'yi geçince ya da 3 işlem günü dolunca ertesi açılışta satılır; endeks kolu yeniden işleme girerse hemen satılır. 1999–2026 testinde (giriş ve çıkış açılışta) yıllık büyüme %16,5'ten %31,7'ye çıktı, en kötü düşüş değişmedi (%−77); 88 işlemin %73'ü kazandı, işlem başına ortalama +%4,8. 2000–2002 çöküşünde bu dönemler +%28, 2007–2009'da +%31 getirdi (kural tek başına −%60 ve −%35'teydi). Fiyat zarar-kesi yok; risk, 3x kaldıraçla birkaç günlük düşüşün devamıdır."
  },
  "portfolio": {
-  "cash": -2332.0,
+  "cash": -290.14,
   "positions": [
    {
     "stopMode": "event",
@@ -144,16 +144,16 @@
     "shares": 15.6835,
     "avgCost": 18.4024,
     "costBasis": 288.61,
-    "lastPrice": 13.295,
-    "lastPriceAt": "2026-11-23T15:55:00-05:00",
+    "lastPrice": 13.42,
+    "lastPriceAt": "2026-11-24T09:30:01-05:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (15:55 ET)",
+     "title": "Yahoo Finance 5 dk mum (09:30 ET)",
      "url": "https://finance.yahoo.com/quote/SLS/"
     },
-    "marketValue": -208.51,
-    "exposure": 208.51,
-    "unrealized": 80.1,
-    "unrealizedPct": 27.75,
+    "marketValue": -210.47,
+    "exposure": 210.47,
+    "unrealized": 78.14,
+    "unrealizedPct": 27.07,
     "openedAt": "2026-11-18",
     "openedTs": "2026-11-18T09:35:00-05:00",
     "lastAddDate": "2026-11-18",
@@ -181,8 +181,8 @@
      "prevClose": 7.47,
      "close": 19.15
     },
-    "maintReq": 10.43,
-    "lastBarTs": "2026-11-23T15:55:00-05:00"
+    "maintReq": 10.52,
+    "lastBarTs": "2026-11-24T09:30:01-05:00"
    },
    {
     "stopMode": "event",
@@ -194,16 +194,16 @@
     "shares": 7.8374,
     "avgCost": 85.5728,
     "costBasis": 670.67,
-    "lastPrice": 87.189,
-    "lastPriceAt": "2026-11-23T15:55:00-05:00",
+    "lastPrice": 85.43,
+    "lastPriceAt": "2026-11-24T09:30:01-05:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (15:55 ET)",
+     "title": "Yahoo Finance 5 dk mum (09:30 ET)",
      "url": "https://finance.yahoo.com/quote/PDD/"
     },
-    "marketValue": 683.34,
-    "exposure": 683.34,
-    "unrealized": 12.67,
-    "unrealizedPct": 1.89,
+    "marketValue": 669.55,
+    "exposure": 669.55,
+    "unrealized": -1.12,
+    "unrealizedPct": -0.17,
     "openedAt": "2026-11-19",
     "openedTs": "2026-11-19T15:00:00-05:00",
     "lastAddDate": "2026-11-19",
@@ -235,8 +235,8 @@
      "movePct": 10.48,
      "prevClose": 77.45
     },
-    "maintReq": 34.17,
-    "lastBarTs": "2026-11-23T15:55:00-05:00"
+    "maintReq": 33.48,
+    "lastBarTs": "2026-11-24T09:30:01-05:00"
    },
    {
     "stopMode": "event",
@@ -248,21 +248,21 @@
     "shares": 15.6744,
     "avgCost": 21.956,
     "costBasis": 344.15,
-    "lastPrice": 21.735,
-    "lastPriceAt": "2026-11-23T15:55:00-05:00",
+    "lastPrice": 22.1,
+    "lastPriceAt": "2026-11-24T09:30:20-05:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (15:55 ET)",
+     "title": "Yahoo Finance 5 dk mum (09:30 ET)",
      "url": "https://finance.yahoo.com/quote/GAP/"
     },
-    "marketValue": 340.68,
-    "exposure": 340.68,
-    "unrealized": -3.47,
-    "unrealizedPct": -1.01,
+    "marketValue": 346.4,
+    "exposure": 346.4,
+    "unrealized": 2.25,
+    "unrealizedPct": 0.65,
     "openedAt": "2026-11-20",
     "openedTs": "2026-11-20T10:30:00-05:00",
     "lastAddDate": "2026-11-20",
     "stopPrice": 20.21,
-    "extremeSinceEntry": 21.945,
+    "extremeSinceEntry": 22.1,
     "tookProfit": false,
     "thesis": "Haber takibi (deneysel kural): GAP (Gap, Inc. (The)) bugün +%16,92. Haber türü: Beklenti yükseltildi / güçlü bilanço (sert, olumlu) — karışık: ters yönde haber de var. “Gap Shares Rise Nearly 4% as Third-Quarter Earnings Beat Expectations Despite Softer Sales Outlook” (InvestorsHub). Fiyat günün aralığının üst kısmında, yani piyasa haberi geri almıyor; haber yönünde long açıldı. Zarar-kes 20,21 $ (risk %8,6); çıkış 2026-11-25 kapanışında. Büyüklük: hesabın %12'i (344,15 $); zarar-kes çalışırsa kayıp hesabın yaklaşık %1,0'i. Bu kural geçmiş veride sınanamadı (geçmiş haber arşivi yok); sonucu kural karnesinde izlenir.",
     "sleeve": "event",
@@ -289,8 +289,8 @@
      "movePct": 16.92,
      "prevClose": 18.79
     },
-    "maintReq": 17.03,
-    "lastBarTs": "2026-11-23T15:55:00-05:00"
+    "maintReq": 17.32,
+    "lastBarTs": "2026-11-24T09:30:20-05:00"
    },
    {
     "stopMode": "event",
@@ -302,16 +302,16 @@
     "shares": 5.9184,
     "avgCost": 170.4402,
     "costBasis": 1008.73,
-    "lastPrice": 165.185,
-    "lastPriceAt": "2026-11-23T15:55:00-05:00",
+    "lastPrice": 159.13,
+    "lastPriceAt": "2026-11-24T09:30:02-05:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (15:55 ET)",
+     "title": "Yahoo Finance 5 dk mum (09:30 ET)",
      "url": "https://finance.yahoo.com/quote/NVDA/"
     },
-    "marketValue": 977.63,
-    "exposure": 977.63,
-    "unrealized": -31.1,
-    "unrealizedPct": -3.08,
+    "marketValue": 941.79,
+    "exposure": 941.79,
+    "unrealized": -66.94,
+    "unrealizedPct": -6.64,
     "openedAt": "2026-11-23",
     "openedTs": "2026-11-23T10:30:00-05:00",
     "lastAddDate": "2026-11-23",
@@ -342,57 +342,8 @@
      "movePct": 35.78,
      "prevClose": 125.53
     },
-    "maintReq": 48.88,
-    "lastBarTs": "2026-11-23T15:55:00-05:00"
-   },
-   {
-    "stopMode": "event",
-    "ticker": "AXTI",
-    "name": "AXT Inc",
-    "kind": "Hisse",
-    "side": "long",
-    "lev": 1,
-    "shares": 23.4815,
-    "avgCost": 40.1451,
-    "costBasis": 942.67,
-    "lastPrice": 38.03,
-    "lastPriceAt": "2026-11-23T15:55:00-05:00",
-    "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (15:55 ET)",
-     "url": "https://finance.yahoo.com/quote/AXTI/"
-    },
-    "marketValue": 893.0,
-    "exposure": 893.0,
-    "unrealized": -49.67,
-    "unrealizedPct": -5.27,
-    "openedAt": "2026-11-23",
-    "openedTs": "2026-11-23T10:30:00-05:00",
-    "lastAddDate": "2026-11-23",
-    "stopPrice": 36.72,
-    "extremeSinceEntry": 40.125,
-    "tookProfit": false,
-    "thesis": "Haber devamı: AXTI (AXT Inc) önceki kapanışın (30,57 $) +%24,70 üstünde açıldı ve ilk saatte +%5,22 daha yükseldi: alıcılar haberi satmıyor, üstüne alıyor. Kural gereği long açıldı. Zarar-kes 36,72 $ (ilk saatin en düşüğünün hemen altı, risk %9,3); çıkış 2026-11-25 kapanışında. Büyüklük: hesabın %32'i (942,67 $); zarar-kes çalışırsa kayıp hesabın yaklaşık %3,0'i. Şirketle ilgili güncel haber bulunamadı.",
-    "sleeve": "event",
-    "play": "drift",
-    "playLabel": "Haber devamı",
-    "exitDate": "2026-11-25",
-    "holdDays": 2,
-    "headline": null,
-    "borrowRate": 0.01,
-    "slip": 0.0005,
-    "catalyst": {
-     "cat": null,
-     "label": null,
-     "kind": null
-    },
-    "event": {
-     "gapPct": 24.7,
-     "firstHourPct": 5.22,
-     "movePct": 31.34,
-     "prevClose": 30.57
-    },
-    "maintReq": 44.65,
-    "lastBarTs": "2026-11-23T15:55:00-05:00"
+    "maintReq": 47.09,
+    "lastBarTs": "2026-11-24T09:30:02-05:00"
    },
    {
     "stopMode": "event",
@@ -404,21 +355,21 @@
     "shares": 7.0504,
     "avgCost": 147.3136,
     "costBasis": 1038.62,
-    "lastPrice": 150.15,
-    "lastPriceAt": "2026-11-23T15:55:00-05:00",
+    "lastPrice": 162.5,
+    "lastPriceAt": "2026-11-24T09:30:02-05:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (15:55 ET)",
+     "title": "Yahoo Finance 5 dk mum (09:30 ET)",
      "url": "https://finance.yahoo.com/quote/KYMR/"
     },
-    "marketValue": 1058.62,
-    "exposure": 1058.62,
-    "unrealized": 20.0,
-    "unrealizedPct": 1.93,
+    "marketValue": 1145.69,
+    "exposure": 1145.69,
+    "unrealized": 107.07,
+    "unrealizedPct": 10.31,
     "openedAt": "2026-11-23",
     "openedTs": "2026-11-23T10:30:00-05:00",
     "lastAddDate": "2026-11-23",
     "stopPrice": 135.81,
-    "extremeSinceEntry": 161.49,
+    "extremeSinceEntry": 162.5,
     "tookProfit": false,
     "thesis": "Haber devamı: KYMR (Kymera Therapeutics, Inc.) önceki kapanışın (115,31 $) +%19,68 üstünde açıldı ve ilk saatte +%6,09 daha yükseldi: alıcılar haberi satmıyor, üstüne alıyor. Kural gereği long açıldı. Zarar-kes 135,81 $ (ilk saatin en düşüğünün hemen altı, risk %8,4); çıkış 2026-11-25 kapanışında. Büyüklük: hesabın %36'i (1.038,63 $); zarar-kes çalışırsa kayıp hesabın yaklaşık %3,0'i. Haber türü: FDA onayı / başarılı deneme (sert, olumlu). “Kymera Therapeutics Shares Surge 29% as Phase 2b Eczema Trial Meets All Primary and Secondary Endpoints” (InvestorsHub).",
     "sleeve": "event",
@@ -445,94 +396,45 @@
      "movePct": 27.69,
      "prevClose": 115.31
     },
-    "maintReq": 52.93,
-    "lastBarTs": "2026-11-23T15:55:00-05:00"
-   },
-   {
-    "stopMode": "event",
-    "ticker": "MXL",
-    "name": "MaxLinear, Inc",
-    "kind": "Hisse",
-    "side": "long",
-    "lev": 1,
-    "shares": 25.2838,
-    "avgCost": 51.976,
-    "costBasis": 1314.15,
-    "lastPrice": 50.32,
-    "lastPriceAt": "2026-11-23T15:55:00-05:00",
-    "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (15:55 ET)",
-     "url": "https://finance.yahoo.com/quote/MXL/"
-    },
-    "marketValue": 1272.28,
-    "exposure": 1272.28,
-    "unrealized": -41.87,
-    "unrealizedPct": -3.19,
-    "openedAt": "2026-11-23",
-    "openedTs": "2026-11-23T10:30:00-05:00",
-    "lastAddDate": "2026-11-23",
-    "stopPrice": 48.71,
-    "extremeSinceEntry": 51.95,
-    "tookProfit": false,
-    "thesis": "Haber devamı: MXL (MaxLinear, Inc) önceki kapanışın (41,45 $) +%22,22 üstünde açıldı ve ilk saatte +%2,27 daha yükseldi: alıcılar haberi satmıyor, üstüne alıyor. Kural gereği long açıldı. Zarar-kes 48,71 $ (ilk saatin en düşüğünün hemen altı, risk %6,7); çıkış 2026-11-25 kapanışında. Büyüklük: hesabın %45'i (1.314,15 $); zarar-kes çalışırsa kayıp hesabın yaklaşık %3,0'i. Şirketle ilgili güncel haber bulunamadı.",
-    "sleeve": "event",
-    "play": "drift",
-    "playLabel": "Haber devamı",
-    "exitDate": "2026-11-25",
-    "holdDays": 2,
-    "headline": null,
-    "borrowRate": 0.01,
-    "slip": 0.0005,
-    "catalyst": {
-     "cat": null,
-     "label": null,
-     "kind": null
-    },
-    "event": {
-     "gapPct": 22.22,
-     "firstHourPct": 2.27,
-     "movePct": 25.39,
-     "prevClose": 41.45
-    },
-    "maintReq": 63.61,
-    "lastBarTs": "2026-11-23T15:55:00-05:00"
+    "maintReq": 57.28,
+    "lastBarTs": "2026-11-24T09:30:02-05:00"
    }
   ],
-  "realizedPL": -293.65,
+  "realizedPL": -508.09,
   "netDeposits": 3000.0,
   "costs": {
-   "slippage": 15.8446,
-   "commission": 9.91,
-   "fees": 0.46,
-   "interest": 0.7,
-   "borrow": 1.02,
+   "slippage": 16.8663,
+   "commission": 10.61,
+   "fees": 0.53,
+   "interest": 1.05,
+   "borrow": 1.19,
    "dividendsPaid": 0.0,
    "dividendsReceived": 0.0
   },
-  "longValue": 5225.55,
-  "shortValue": 208.51,
-  "positionsValue": 5017.04,
-  "totalValue": 2685.04,
-  "grossExposure": 5434.06,
-  "netExposure": 5017.04,
-  "leverage": 2.024,
-  "maintenanceReq": 271.7,
-  "marginBuffer": 2413.34,
-  "regTInitialReq": 543.41,
-  "regTExcess": 2141.63,
-  "buyingPower": 21416.34,
+  "longValue": 3103.44,
+  "shortValue": 210.47,
+  "positionsValue": 2892.97,
+  "totalValue": 2602.83,
+  "grossExposure": 3313.91,
+  "netExposure": 2892.97,
+  "leverage": 1.273,
+  "maintenanceReq": 165.69,
+  "marginBuffer": 2437.14,
+  "regTInitialReq": 331.39,
+  "regTExcess": 2271.44,
+  "buyingPower": 22714.39,
   "marginEligible": true,
-  "closeoutMovePct": 44.41,
+  "closeoutMovePct": 73.54,
   "bustCount": 0,
   "paidInTotal": 3000.0,
   "lostToBusts": 0,
-  "totalPL": -314.96,
-  "totalPLPct": -10.5,
-  "twrPct": -10.5,
-  "asOf": "2026-11-23T16:06:05-05:00",
-  "benchmarkPrice": 722.49,
-  "benchmarkValue": 2901.94,
-  "benchmarkTwrPct": -3.27
+  "totalPL": -397.17,
+  "totalPLPct": -13.24,
+  "twrPct": -13.24,
+  "asOf": "2026-11-24T09:30:27-05:00",
+  "benchmarkPrice": 714.16,
+  "benchmarkValue": 2868.46,
+  "benchmarkTwrPct": -4.38
  },
  "meta": {
   "engine": "x10 v7",
@@ -541,15 +443,15 @@
    "2026-10-12-1700",
    "2026-10-12-1000"
   ],
-  "lastAccrualDate": "2026-11-23",
+  "lastAccrualDate": "2026-11-24",
   "cooldown": {},
   "nasdaq": {
    "ath": 759.66,
    "athDate": "2026-10-06",
    "athChecked": "2026-11-23",
-   "price": 650.87,
-   "at": "2026-11-23T15:55:00-05:00",
-   "ddPct": -14.32,
+   "price": 640.56,
+   "at": "2026-11-24T09:30:02-05:00",
+   "ddPct": -15.68,
    "level": "correction",
    "triggerPrice": 607.73,
    "correctionPrice": 683.69,
@@ -568,8 +470,8 @@
    "navStart": 1.0,
    "spyStart": 746.9099731445312,
    "peak": 1.0528966666666666,
-   "maxDD": -15.92,
-   "maxDDAt": "2026-11-23T15:50:58-05:00",
+   "maxDD": -17.6,
+   "maxDDAt": "2026-11-24T09:30:27-05:00",
    "errors": 0,
    "runDays": [
     "2026-11-16",
@@ -577,10 +479,11 @@
     "2026-11-18",
     "2026-11-19",
     "2026-11-20",
-    "2026-11-23"
+    "2026-11-23",
+    "2026-11-24"
    ]
   },
-  "lastRunAt": "2026-11-23T16:06:05-05:00",
+  "lastRunAt": "2026-11-24T09:30:27-05:00",
   "lastError": null,
   "spikeScanDate": "2026-11-23",
   "spikeScan": {
@@ -5854,6 +5757,86 @@
    "holdingDays": 5,
    "taxTerm": "kısa vade",
    "play": "news"
+  },
+  {
+   "id": "t-20261124-01",
+   "ts": "2026-11-24T09:30:27-05:00",
+   "date": "2026-11-24",
+   "action": "SELL",
+   "side": "long",
+   "ticker": "AXTI",
+   "name": "AXTI",
+   "kind": "Hisse",
+   "shares": 23.4815,
+   "quotePrice": 36.135,
+   "quoteAt": "2026-11-24T09:30:01-05:00",
+   "slippagePct": 0.05,
+   "execPrice": 36.1169,
+   "value": 848.08,
+   "commission": 0.35,
+   "fees": 0.03,
+   "priceSource": {
+    "title": "Yahoo Finance 5 dk mum (09:30 ET)",
+    "url": "https://finance.yahoo.com/quote/AXTI/"
+   },
+   "reason": "Haber devamı zarar-kesi tetiklendi: 09:30 ET mumunda fiyat 36,13 $'a indi, zarar-kes seviyesi 36,72 $. Mum seviyenin ötesinde açıldığı için açılış fiyatından (36,13 $) kapatıldı.",
+   "rule": "haber devamı zarar-kesi",
+   "sources": [
+    {
+     "title": "Yahoo Finance: AXTI",
+     "url": "https://finance.yahoo.com/quote/AXTI/"
+    },
+    {
+     "title": "yfinance (Yahoo Finance verileri)",
+     "url": "https://github.com/ranaroussi/yfinance"
+    }
+   ],
+   "runId": "2026-11-24",
+   "by": "bot",
+   "realizedPL": -94.97,
+   "holdingDays": 1,
+   "taxTerm": "kısa vade",
+   "play": "drift"
+  },
+  {
+   "id": "t-20261124-02",
+   "ts": "2026-11-24T09:30:27-05:00",
+   "date": "2026-11-24",
+   "action": "SELL",
+   "side": "long",
+   "ticker": "MXL",
+   "name": "MXL",
+   "kind": "Hisse",
+   "shares": 25.2838,
+   "quotePrice": 47.29,
+   "quoteAt": "2026-11-24T09:30:01-05:00",
+   "slippagePct": 0.05,
+   "execPrice": 47.2664,
+   "value": 1195.07,
+   "commission": 0.35,
+   "fees": 0.04,
+   "priceSource": {
+    "title": "Yahoo Finance 5 dk mum (09:30 ET)",
+    "url": "https://finance.yahoo.com/quote/MXL/"
+   },
+   "reason": "Haber devamı zarar-kesi tetiklendi: 09:30 ET mumunda fiyat 47,29 $'a indi, zarar-kes seviyesi 48,71 $. Mum seviyenin ötesinde açıldığı için açılış fiyatından (47,29 $) kapatıldı.",
+   "rule": "haber devamı zarar-kesi",
+   "sources": [
+    {
+     "title": "Yahoo Finance: MXL",
+     "url": "https://finance.yahoo.com/quote/MXL/"
+    },
+    {
+     "title": "yfinance (Yahoo Finance verileri)",
+     "url": "https://github.com/ranaroussi/yfinance"
+    }
+   ],
+   "runId": "2026-11-24",
+   "by": "bot",
+   "realizedPL": -119.47,
+   "holdingDays": 1,
+   "taxTerm": "kısa vade",
+   "play": "drift"
   }
  ],
  "snapshots": [
@@ -6116,4207 +6099,60 @@
      "play": "drift"
     }
    ]
+  },
+  {
+   "date": "2026-11-24",
+   "at": "2026-11-24T09:30:27-05:00",
+   "totalValue": 2602.83,
+   "cash": -290.14,
+   "positionsValue": 2892.97,
+   "plPct": -13.24,
+   "twrPct": -13.24,
+   "netDeposits": 3000.0,
+   "leverage": 1.273,
+   "benchmarkPrice": 714.16,
+   "benchmarkValue": 2868.46,
+   "qqqPrice": 640.56,
+   "holdings": [
+    {
+     "ticker": "SLS",
+     "side": "short",
+     "value": -210.47,
+     "u": 78.14,
+     "play": "spike"
+    },
+    {
+     "ticker": "PDD",
+     "side": "long",
+     "value": 669.55,
+     "u": -1.12,
+     "play": "news"
+    },
+    {
+     "ticker": "GAP",
+     "side": "long",
+     "value": 346.4,
+     "u": 2.25,
+     "play": "news"
+    },
+    {
+     "ticker": "NVDA",
+     "side": "long",
+     "value": 941.79,
+     "u": -66.94,
+     "play": "drift"
+    },
+    {
+     "ticker": "KYMR",
+     "side": "long",
+     "value": 1145.69,
+     "u": 107.07,
+     "play": "drift"
+    }
+   ]
   }
  ],
  "checks": {
-  "2026-11-17": [
-   {
-    "at": "2026-11-17T09:30:25-05:00",
-    "kind": "guard",
-    "status": "uyari",
-    "spyPrice": 738.07,
-    "spyChangePct": -0.25,
-    "totalValue": 2945.96,
-    "benchmarkValue": 2964.49,
-    "leverage": 2.092,
-    "marginBuffer": 2637.83,
-    "positions": [
-     {
-      "ticker": "QQQ",
-      "side": "long",
-      "price": 661.86,
-      "dayChangePct": null,
-      "stopPrice": null,
-      "distancePct": null
-     },
-     {
-      "ticker": "HTHT",
-      "side": "long",
-      "price": 54.13,
-      "dayChangePct": -1.37,
-      "stopPrice": 52.03,
-      "distancePct": 4.04
-     },
-     {
-      "ticker": "AVEX",
-      "side": "long",
-      "price": 13.4,
-      "dayChangePct": null,
-      "stopPrice": 12.49,
-      "distancePct": 7.29
-     },
-     {
-      "ticker": "NSIT",
-      "side": "short",
-      "price": 155.5,
-      "dayChangePct": 0.14,
-      "stopPrice": 158.39,
-      "distancePct": 1.86
-     }
-    ],
-    "actions": [],
-    "note": "AVEX: güncel veri alınamadı; QQQ: güncel veri alınamadı; 1 günlük kredi faizi 0,12 $, ödünç ücreti 0,03 $ düşüldü; QQQ: veri gecikmeli, işlem yapılmadı; AVEX: veri gecikmeli, işlem yapılmadı; NSIT zarar-kes seviyesine %3'ten yakın"
-   },
-   {
-    "at": "2026-11-17T09:35:28-05:00",
-    "kind": "spike",
-    "status": "uyari",
-    "spyPrice": 737.91,
-    "spyChangePct": -0.28,
-    "totalValue": 2954.42,
-    "benchmarkValue": 2963.85,
-    "leverage": 2.084,
-    "marginBuffer": 2646.63,
-    "positions": [
-     {
-      "ticker": "QQQ",
-      "side": "long",
-      "price": 661.4023,
-      "dayChangePct": -0.05,
-      "stopPrice": null,
-      "distancePct": null
-     },
-     {
-      "ticker": "HTHT",
-      "side": "long",
-      "price": 54.255,
-      "dayChangePct": -1.14,
-      "stopPrice": 52.03,
-      "distancePct": 4.28
-     },
-     {
-      "ticker": "AVEX",
-      "side": "long",
-      "price": 13.51,
-      "dayChangePct": 0.82,
-      "stopPrice": 12.49,
-      "distancePct": 8.17
-     },
-     {
-      "ticker": "NSIT",
-      "side": "short",
-      "price": 154.515,
-      "dayChangePct": -0.5,
-      "stopPrice": 158.39,
-      "distancePct": 2.51
-     }
-    ],
-    "actions": [],
-    "note": "Sert yükseliş short'u: 1 aday vardı, kurala uyan işlem çıkmadı.; NSIT zarar-kes seviyesine %3'ten yakın"
-   },
-   {
-    "at": "2026-11-17T09:40:28-05:00",
-    "kind": "guard",
-    "status": "uyari",
-    "spyPrice": 737.86,
-    "spyChangePct": -0.28,
-    "totalValue": 2957.65,
-    "benchmarkValue": 2963.65,
-    "leverage": 2.081,
-    "marginBuffer": 2649.91,
-    "positions": [
-     {
-      "ticker": "QQQ",
-      "side": "long",
-      "price": 661.09,
-      "dayChangePct": -0.1,
-      "stopPrice": null,
-      "distancePct": null
-     },
-     {
-      "ticker": "HTHT",
-      "side": "long",
-      "price": 54.4638,
-      "dayChangePct": -0.76,
-      "stopPrice": 52.03,
-      "distancePct": 4.68
-     },
-     {
-      "ticker": "AVEX",
-      "side": "long",
-      "price": 13.57,
-      "dayChangePct": 1.27,
-      "stopPrice": 12.49,
-      "distancePct": 8.65
-     },
-     {
-      "ticker": "NSIT",
-      "side": "short",
-      "price": 154.245,
-      "dayChangePct": -0.67,
-      "stopPrice": 158.39,
-      "distancePct": 2.69
-     }
-    ],
-    "actions": [],
-    "note": "NSIT zarar-kes seviyesine %3'ten yakın"
-   },
-   {
-    "at": "2026-11-17T09:45:34-05:00",
-    "kind": "guard",
-    "status": "uyari",
-    "spyPrice": 738.77,
-    "spyChangePct": -0.16,
-    "totalValue": 2950.61,
-    "benchmarkValue": 2967.31,
-    "leverage": 2.087,
-    "marginBuffer": 2642.67,
-    "positions": [
-     {
-      "ticker": "QQQ",
-      "side": "long",
-      "price": 661.61,
-      "dayChangePct": -0.02,
-      "stopPrice": null,
-      "distancePct": null
-     },
-     {
-      "ticker": "HTHT",
-      "side": "long",
-      "price": 54.275,
-      "dayChangePct": -1.1,
-      "stopPrice": 52.03,
-      "distancePct": 4.31
-     },
-     {
-      "ticker": "AVEX",
-      "side": "long",
-      "price": 13.44,
-      "dayChangePct": 0.3,
-      "stopPrice": 12.49,
-      "distancePct": 7.61
-     },
-     {
-      "ticker": "NSIT",
-      "side": "short",
-      "price": 154.97,
-      "dayChangePct": -0.21,
-      "stopPrice": 158.39,
-      "distancePct": 2.21
-     }
-    ],
-    "actions": [],
-    "note": "NSIT zarar-kes seviyesine %3'ten yakın"
-   },
-   {
-    "at": "2026-11-17T09:50:35-05:00",
-    "kind": "guard",
-    "status": "uyari",
-    "spyPrice": 738.32,
-    "spyChangePct": -0.22,
-    "totalValue": 2938.68,
-    "benchmarkValue": 2965.5,
-    "leverage": 2.095,
-    "marginBuffer": 2630.8,
-    "positions": [
-     {
-      "ticker": "QQQ",
-      "side": "long",
-      "price": 660.35,
-      "dayChangePct": -0.21,
-      "stopPrice": null,
-      "distancePct": null
-     },
-     {
-      "ticker": "HTHT",
-      "side": "long",
-      "price": 54.355,
-      "dayChangePct": -0.96,
-      "stopPrice": 52.03,
-      "distancePct": 4.47
-     },
-     {
-      "ticker": "AVEX",
-      "side": "long",
-      "price": 13.47,
-      "dayChangePct": 0.52,
-      "stopPrice": 12.49,
-      "distancePct": 7.85
-     },
-     {
-      "ticker": "NSIT",
-      "side": "short",
-      "price": 155.6525,
-      "dayChangePct": 0.23,
-      "stopPrice": 158.39,
-      "distancePct": 1.76
-     }
-    ],
-    "actions": [],
-    "note": "NSIT zarar-kes seviyesine %3'ten yakın"
-   },
-   {
-    "at": "2026-11-17T09:55:37-05:00",
-    "kind": "guard",
-    "status": "uyari",
-    "spyPrice": 739.47,
-    "spyChangePct": -0.06,
-    "totalValue": 2942.09,
-    "benchmarkValue": 2970.12,
-    "leverage": 2.095,
-    "marginBuffer": 2633.95,
-    "positions": [
-     {
-      "ticker": "QQQ",
-      "side": "long",
-      "price": 661.3,
-      "dayChangePct": -0.07,
-      "stopPrice": null,
-      "distancePct": null
-     },
-     {
-      "ticker": "HTHT",
-      "side": "long",
-      "price": 54.21,
-      "dayChangePct": -1.22,
-      "stopPrice": 52.03,
-      "distancePct": 4.19
-     },
-     {
-      "ticker": "AVEX",
-      "side": "long",
-      "price": 13.44,
-      "dayChangePct": 0.3,
-      "stopPrice": 12.49,
-      "distancePct": 7.61
-     },
-     {
-      "ticker": "NSIT",
-      "side": "short",
-      "price": 155.75,
-      "dayChangePct": 0.3,
-      "stopPrice": 158.39,
-      "distancePct": 1.7
-     }
-    ],
-    "actions": [],
-    "note": "NSIT zarar-kes seviyesine %3'ten yakın"
-   },
-   {
-    "at": "2026-11-17T10:00:38-05:00",
-    "kind": "daily",
-    "status": "uyari",
-    "spyPrice": 739.27,
-    "spyChangePct": -0.09,
-    "totalValue": 2942.01,
-    "benchmarkValue": 2969.31,
-    "leverage": 2.102,
-    "marginBuffer": 2632.78,
-    "positions": [
-     {
-      "ticker": "QQQ",
-      "side": "long",
-      "price": 662.3599,
-      "dayChangePct": 0.09,
-      "stopPrice": null,
-      "distancePct": null
-     },
-     {
-      "ticker": "HTHT",
-      "side": "long",
-      "price": 54.255,
-      "dayChangePct": -1.14,
-      "stopPrice": 52.03,
-      "distancePct": 4.28
-     },
-     {
-      "ticker": "AVEX",
-      "side": "long",
-      "price": 13.6,
-      "dayChangePct": 1.49,
-      "stopPrice": 12.49,
-      "distancePct": 8.89
-     },
-     {
-      "ticker": "NSIT",
-      "side": "short",
-      "price": 157.19,
-      "dayChangePct": 1.22,
-      "stopPrice": 158.39,
-      "distancePct": 0.76
-     }
-    ],
-    "actions": [],
-    "note": "NSIT zarar-kes seviyesine %3'ten yakın"
-   },
-   {
-    "at": "2026-11-17T10:05:45-05:00",
-    "kind": "guard",
-    "status": "uyari",
-    "spyPrice": 737.47,
-    "spyChangePct": -0.34,
-    "totalValue": 2943.46,
-    "benchmarkValue": 2962.08,
-    "leverage": 2.092,
-    "marginBuffer": 2635.56,
-    "positions": [
-     {
-      "ticker": "QQQ",
-      "side": "long",
-      "price": 660.0,
-      "dayChangePct": -0.26,
-      "stopPrice": null,
-      "distancePct": null
-     },
-     {
-      "ticker": "HTHT",
-      "side": "long",
-      "price": 54.49,
-      "dayChangePct": -0.71,
-      "stopPrice": 52.03,
-      "distancePct": 4.73
-     },
-     {
-      "ticker": "AVEX",
-      "side": "long",
-      "price": 13.62,
-      "dayChangePct": 1.64,
-      "stopPrice": 12.49,
-      "distancePct": 9.05
-     },
-     {
-      "ticker": "NSIT",
-      "side": "short",
-      "price": 155.37,
-      "dayChangePct": 0.05,
-      "stopPrice": 158.39,
-      "distancePct": 1.94
-     }
-    ],
-    "actions": [],
-    "note": "NSIT zarar-kes seviyesine %3'ten yakın"
-   },
-   {
-    "at": "2026-11-17T10:10:46-05:00",
-    "kind": "guard",
-    "status": "uyari",
-    "spyPrice": 736.36,
-    "spyChangePct": -0.49,
-    "totalValue": 2925.97,
-    "benchmarkValue": 2957.63,
-    "leverage": 2.101,
-    "marginBuffer": 2618.58,
-    "positions": [
-     {
-      "ticker": "QQQ",
-      "side": "long",
-      "price": 658.6,
-      "dayChangePct": -0.48,
-      "stopPrice": null,
-      "distancePct": null
-     },
-     {
-      "ticker": "HTHT",
-      "side": "long",
-      "price": 54.555,
-      "dayChangePct": -0.59,
-      "stopPrice": 52.03,
-      "distancePct": 4.85
-     },
-     {
-      "ticker": "AVEX",
-      "side": "long",
-      "price": 13.4,
-      "dayChangePct": 0.0,
-      "stopPrice": 12.49,
-      "distancePct": 7.29
-     },
-     {
-      "ticker": "NSIT",
-      "side": "short",
-      "price": 155.83,
-      "dayChangePct": 0.35,
-      "stopPrice": 158.39,
-      "distancePct": 1.64
-     }
-    ],
-    "actions": [],
-    "note": "NSIT zarar-kes seviyesine %3'ten yakın"
-   },
-   {
-    "at": "2026-11-17T10:15:50-05:00",
-    "kind": "guard",
-    "status": "uyari",
-    "spyPrice": 737.13,
-    "spyChangePct": -0.38,
-    "totalValue": 2931.95,
-    "benchmarkValue": 2960.72,
-    "leverage": 2.1,
-    "marginBuffer": 2624.04,
-    "positions": [
-     {
-      "ticker": "QQQ",
-      "side": "long",
-      "price": 659.25,
-      "dayChangePct": -0.38,
-      "stopPrice": null,
-      "distancePct": null
-     },
-     {
-      "ticker": "HTHT",
-      "side": "long",
-      "price": 54.49,
-      "dayChangePct": -0.71,
-      "stopPrice": 52.03,
-      "distancePct": 4.73
-     },
-     {
-      "ticker": "AVEX",
-      "side": "long",
-      "price": 13.58,
-      "dayChangePct": 1.34,
-      "stopPrice": 12.49,
-      "distancePct": 8.73
-     },
-     {
-      "ticker": "NSIT",
-      "side": "short",
-      "price": 156.11,
-      "dayChangePct": 0.53,
-      "stopPrice": 158.39,
-      "distancePct": 1.46
-     }
-    ],
-    "actions": [],
-    "note": "NSIT zarar-kes seviyesine %3'ten yakın"
-   },
-   {
-    "at": "2026-11-17T10:20:51-05:00",
-    "kind": "guard",
-    "status": "uyari",
-    "spyPrice": 736.57,
-    "spyChangePct": -0.46,
-    "totalValue": 2928.46,
-    "benchmarkValue": 2958.47,
-    "leverage": 2.102,
-    "marginBuffer": 2620.61,
-    "positions": [
-     {
-      "ticker": "QQQ",
-      "side": "long",
-      "price": 658.91,
-      "dayChangePct": -0.43,
-      "stopPrice": null,
-      "distancePct": null
-     },
-     {
-      "ticker": "HTHT",
-      "side": "long",
-      "price": 54.68,
-      "dayChangePct": -0.36,
-      "stopPrice": 52.03,
-      "distancePct": 5.09
-     },
-     {
-      "ticker": "AVEX",
-      "side": "long",
-      "price": 13.515,
-      "dayChangePct": 0.86,
-      "stopPrice": 12.49,
-      "distancePct": 8.21
-     },
-     {
-      "ticker": "NSIT",
-      "side": "short",
-      "price": 156.26,
-      "dayChangePct": 0.62,
-      "stopPrice": 158.39,
-      "distancePct": 1.36
-     }
-    ],
-    "actions": [],
-    "note": "NSIT zarar-kes seviyesine %3'ten yakın"
-   },
-   {
-    "at": "2026-11-17T10:25:54-05:00",
-    "kind": "guard",
-    "status": "uyari",
-    "spyPrice": 736.54,
-    "spyChangePct": -0.46,
-    "totalValue": 2935.2,
-    "benchmarkValue": 2958.35,
-    "leverage": 2.096,
-    "marginBuffer": 2627.52,
-    "positions": [
-     {
-      "ticker": "QQQ",
-      "side": "long",
-      "price": 659.02,
-      "dayChangePct": -0.41,
-      "stopPrice": null,
-      "distancePct": null
-     },
-     {
-      "ticker": "HTHT",
-      "side": "long",
-      "price": 54.68,
-      "dayChangePct": -0.36,
-      "stopPrice": 52.03,
-      "distancePct": 5.09
-     },
-     {
-      "ticker": "AVEX",
-      "side": "long",
-      "price": 13.555,
-      "dayChangePct": 1.16,
-      "stopPrice": 12.49,
-      "distancePct": 8.53
-     },
-     {
-      "ticker": "NSIT",
-      "side": "short",
-      "price": 155.61,
-      "dayChangePct": 0.21,
-      "stopPrice": 158.39,
-      "distancePct": 1.79
-     }
-    ],
-    "actions": [],
-    "note": "NSIT zarar-kes seviyesine %3'ten yakın"
-   },
-   {
-    "at": "2026-11-17T10:30:55-05:00",
-    "kind": "fırsat",
-    "status": "uyari",
-    "spyPrice": 736.1,
-    "spyChangePct": -0.52,
-    "totalValue": 2925.09,
-    "benchmarkValue": 2956.58,
-    "leverage": 2.25,
-    "marginBuffer": 2595.98,
-    "positions": [
-     {
-      "ticker": "QQQ",
-      "side": "long",
-      "price": 657.87,
-      "dayChangePct": -0.59,
-      "stopPrice": null,
-      "distancePct": null
-     },
-     {
-      "ticker": "HTHT",
-      "side": "long",
-      "price": 54.53,
-      "dayChangePct": -0.64,
-      "stopPrice": 52.03,
-      "distancePct": 4.8
-     },
-     {
-      "ticker": "AVEX",
-      "side": "long",
-      "price": 13.595,
-      "dayChangePct": 1.46,
-      "stopPrice": 12.49,
-      "distancePct": 8.85
-     },
-     {
-      "ticker": "NSIT",
-      "side": "short",
-      "price": 155.88,
-      "dayChangePct": 0.38,
-      "stopPrice": 158.39,
-      "distancePct": 1.61
-     },
-     {
-      "ticker": "AS",
-      "side": "long",
-      "price": 31.595,
-      "dayChangePct": 8.57,
-      "stopPrice": 29.6,
-      "distancePct": 6.74
-     }
-    ],
-    "actions": [
-     "AS long (434,08 $)"
-    ],
-    "note": "NSIT zarar-kes seviyesine %3'ten yakın"
-   },
-   {
-    "at": "2026-11-17T10:36:04-05:00",
-    "kind": "guard",
-    "status": "uyari",
-    "spyPrice": 733.92,
-    "spyChangePct": -0.81,
-    "totalValue": 2909.8,
-    "benchmarkValue": 2947.82,
-    "leverage": 2.254,
-    "marginBuffer": 2581.93,
-    "positions": [
-     {
-      "ticker": "QQQ",
-      "side": "long",
-      "price": 655.63,
-      "dayChangePct": -0.92,
-      "stopPrice": null,
-      "distancePct": null
-     },
-     {
-      "ticker": "HTHT",
-      "side": "long",
-      "price": 54.455,
-      "dayChangePct": -0.77,
-      "stopPrice": 52.03,
-      "distancePct": 4.66
-     },
-     {
-      "ticker": "AVEX",
-      "side": "long",
-      "price": 13.48,
-      "dayChangePct": 0.6,
-      "stopPrice": 12.49,
-      "distancePct": 7.93
-     },
-     {
-      "ticker": "NSIT",
-      "side": "short",
-      "price": 155.27,
-      "dayChangePct": -0.01,
-      "stopPrice": 158.39,
-      "distancePct": 2.01
-     },
-     {
-      "ticker": "AS",
-      "side": "long",
-      "price": 31.425,
-      "dayChangePct": 7.99,
-      "stopPrice": 29.6,
-      "distancePct": 6.17
-     }
-    ],
-    "actions": [],
-    "note": "NSIT zarar-kes seviyesine %3'ten yakın"
-   },
-   {
-    "at": "2026-11-17T10:41:05-05:00",
-    "kind": "guard",
-    "status": "uyari",
-    "spyPrice": 732.68,
-    "spyChangePct": -0.98,
-    "totalValue": 2891.76,
-    "benchmarkValue": 2942.84,
-    "leverage": 2.261,
-    "marginBuffer": 2564.89,
-    "positions": [
-     {
-      "ticker": "QQQ",
-      "side": "long",
-      "price": 653.29,
-      "dayChangePct": -1.28,
-      "stopPrice": null,
-      "distancePct": null
-     },
-     {
-      "ticker": "HTHT",
-      "side": "long",
-      "price": 54.42,
-      "dayChangePct": -0.84,
-      "stopPrice": 52.03,
-      "distancePct": 4.59
-     },
-     {
-      "ticker": "AVEX",
-      "side": "long",
-      "price": 13.295,
-      "dayChangePct": -0.78,
-      "stopPrice": 12.49,
-      "distancePct": 6.45
-     },
-     {
-      "ticker": "NSIT",
-      "side": "short",
-      "price": 155.1525,
-      "dayChangePct": -0.09,
-      "stopPrice": 158.39,
-      "distancePct": 2.09
-     },
-     {
-      "ticker": "AS",
-      "side": "long",
-      "price": 31.485,
-      "dayChangePct": 8.2,
-      "stopPrice": 29.6,
-      "distancePct": 6.37
-     }
-    ],
-    "actions": [],
-    "note": "NSIT zarar-kes seviyesine %3'ten yakın"
-   },
-   {
-    "at": "2026-11-17T10:46:12-05:00",
-    "kind": "guard",
-    "status": "uyari",
-    "spyPrice": 730.21,
-    "spyChangePct": -1.32,
-    "totalValue": 2879.95,
-    "benchmarkValue": 2932.92,
-    "leverage": 2.262,
-    "marginBuffer": 2554.19,
-    "positions": [
-     {
-      "ticker": "QQQ",
-      "side": "long",
-      "price": 650.815,
-      "dayChangePct": -1.65,
-      "stopPrice": null,
-      "distancePct": null
-     },
-     {
-      "ticker": "HTHT",
-      "side": "long",
-      "price": 54.325,
-      "dayChangePct": -1.01,
-      "stopPrice": 52.03,
-      "distancePct": 4.41
-     },
-     {
-      "ticker": "AVEX",
-      "side": "long",
-      "price": 13.395,
-      "dayChangePct": -0.04,
-      "stopPrice": 12.49,
-      "distancePct": 7.25
-     },
-     {
-      "ticker": "NSIT",
-      "side": "short",
-      "price": 154.48,
-      "dayChangePct": -0.52,
-      "stopPrice": 158.39,
-      "distancePct": 2.53
-     },
-     {
-      "ticker": "AS",
-      "side": "long",
-      "price": 31.26,
-      "dayChangePct": 7.42,
-      "stopPrice": 29.6,
-      "distancePct": 5.61
-     }
-    ],
-    "actions": [],
-    "note": "NSIT zarar-kes seviyesine %3'ten yakın"
-   },
-   {
-    "at": "2026-11-17T10:51:13-05:00",
-    "kind": "guard",
-    "status": "uyari",
-    "spyPrice": 728.78,
-    "spyChangePct": -1.51,
-    "totalValue": 2859.84,
-    "benchmarkValue": 2927.2,
-    "leverage": 2.274,
-    "marginBuffer": 2534.68,
-    "positions": [
-     {
-      "ticker": "QQQ",
-      "side": "long",
-      "price": 648.685,
-      "dayChangePct": -1.97,
-      "stopPrice": null,
-      "distancePct": null
-     },
-     {
-      "ticker": "HTHT",
-      "side": "long",
-      "price": 54.12,
-      "dayChangePct": -1.38,
-      "stopPrice": 52.03,
-      "distancePct": 4.02
-     },
-     {
-      "ticker": "AVEX",
-      "side": "long",
-      "price": 13.4,
-      "dayChangePct": 0.0,
-      "stopPrice": 12.49,
-      "distancePct": 7.29
-     },
-     {
-      "ticker": "NSIT",
-      "side": "short",
-      "price": 155.0,
-      "dayChangePct": -0.19,
-      "stopPrice": 158.39,
-      "distancePct": 2.19
-     },
-     {
-      "ticker": "AS",
-      "side": "long",
-      "price": 31.18,
-      "dayChangePct": 7.15,
-      "stopPrice": 29.6,
-      "distancePct": 5.34
-     }
-    ],
-    "actions": [],
-    "note": "NSIT zarar-kes seviyesine %3'ten yakın"
-   },
-   {
-    "at": "2026-11-17T10:56:15-05:00",
-    "kind": "guard",
-    "status": "uyari",
-    "spyPrice": 729.33,
-    "spyChangePct": -1.44,
-    "totalValue": 2871.22,
-    "benchmarkValue": 2929.37,
-    "leverage": 2.267,
-    "marginBuffer": 2545.77,
-    "positions": [
-     {
-      "ticker": "QQQ",
-      "side": "long",
-      "price": 649.74,
-      "dayChangePct": -1.81,
-      "stopPrice": null,
-      "distancePct": null
-     },
-     {
-      "ticker": "HTHT",
-      "side": "long",
-      "price": 54.17,
-      "dayChangePct": -1.29,
-      "stopPrice": 52.03,
-      "distancePct": 4.11
-     },
-     {
-      "ticker": "AVEX",
-      "side": "long",
-      "price": 13.52,
-      "dayChangePct": 0.9,
-      "stopPrice": 12.49,
-      "distancePct": 8.25
-     },
-     {
-      "ticker": "NSIT",
-      "side": "short",
-      "price": 154.64,
-      "dayChangePct": -0.42,
-      "stopPrice": 158.39,
-      "distancePct": 2.42
-     },
-     {
-      "ticker": "AS",
-      "side": "long",
-      "price": 31.07,
-      "dayChangePct": 6.77,
-      "stopPrice": 29.6,
-      "distancePct": 4.97
-     }
-    ],
-    "actions": [],
-    "note": "NSIT zarar-kes seviyesine %3'ten yakın"
-   },
-   {
-    "at": "2026-11-17T11:01:16-05:00",
-    "kind": "guard",
-    "status": "uyari",
-    "spyPrice": 731.64,
-    "spyChangePct": -1.12,
-    "totalValue": 2891.39,
-    "benchmarkValue": 2938.67,
-    "leverage": 2.26,
-    "marginBuffer": 2564.64,
-    "positions": [
-     {
-      "ticker": "QQQ",
-      "side": "long",
-      "price": 653.47,
-      "dayChangePct": -1.25,
-      "stopPrice": null,
-      "distancePct": null
-     },
-     {
-      "ticker": "HTHT",
-      "side": "long",
-      "price": 53.9,
-      "dayChangePct": -1.79,
-      "stopPrice": 52.03,
-      "distancePct": 3.59
-     },
-     {
-      "ticker": "AVEX",
-      "side": "long",
-      "price": 13.56,
-      "dayChangePct": 1.19,
-      "stopPrice": 12.49,
-      "distancePct": 8.57
-     },
-     {
-      "ticker": "NSIT",
-      "side": "short",
-      "price": 155.025,
-      "dayChangePct": -0.17,
-      "stopPrice": 158.39,
-      "distancePct": 2.17
-     },
-     {
-      "ticker": "AS",
-      "side": "long",
-      "price": 31.11,
-      "dayChangePct": 6.91,
-      "stopPrice": 29.6,
-      "distancePct": 5.1
-     }
-    ],
-    "actions": [],
-    "note": "NSIT zarar-kes seviyesine %3'ten yakın"
-   },
-   {
-    "at": "2026-11-17T11:06:18-05:00",
-    "kind": "guard",
-    "status": "uyari",
-    "spyPrice": 732.25,
-    "spyChangePct": -1.04,
-    "totalValue": 2894.46,
-    "benchmarkValue": 2941.12,
-    "leverage": 2.261,
-    "marginBuffer": 2567.27,
-    "positions": [
-     {
-      "ticker": "QQQ",
-      "side": "long",
-      "price": 654.42,
-      "dayChangePct": -1.11,
-      "stopPrice": null,
-      "distancePct": null
-     },
-     {
-      "ticker": "HTHT",
-      "side": "long",
-      "price": 53.97,
-      "dayChangePct": -1.66,
-      "stopPrice": 52.03,
-      "distancePct": 3.73
-     },
-     {
-      "ticker": "AVEX",
-      "side": "long",
-      "price": 13.495,
-      "dayChangePct": 0.71,
-      "stopPrice": 12.49,
-      "distancePct": 8.05
-     },
-     {
-      "ticker": "NSIT",
-      "side": "short",
-      "price": 155.39,
-      "dayChangePct": 0.06,
-      "stopPrice": 158.39,
-      "distancePct": 1.93
-     },
-     {
-      "ticker": "AS",
-      "side": "long",
-      "price": 31.18,
-      "dayChangePct": 7.15,
-      "stopPrice": 29.6,
-      "distancePct": 5.34
-     }
-    ],
-    "actions": [],
-    "note": "NSIT zarar-kes seviyesine %3'ten yakın"
-   },
-   {
-    "at": "2026-11-17T11:11:19-05:00",
-    "kind": "guard",
-    "status": "uyari",
-    "spyPrice": 732.74,
-    "spyChangePct": -0.97,
-    "totalValue": 2895.24,
-    "benchmarkValue": 2943.09,
-    "leverage": 2.263,
-    "marginBuffer": 2567.58,
-    "positions": [
-     {
-      "ticker": "QQQ",
-      "side": "long",
-      "price": 655.2,
-      "dayChangePct": -0.99,
-      "stopPrice": null,
-      "distancePct": null
-     },
-     {
-      "ticker": "HTHT",
-      "side": "long",
-      "price": 53.97,
-      "dayChangePct": -1.66,
-      "stopPrice": 52.03,
-      "distancePct": 3.73
-     },
-     {
-      "ticker": "AVEX",
-      "side": "long",
-      "price": 13.49,
-      "dayChangePct": 0.67,
-      "stopPrice": 12.49,
-      "distancePct": 8.01
-     },
-     {
-      "ticker": "NSIT",
-      "side": "short",
-      "price": 155.93,
-      "dayChangePct": 0.41,
-      "stopPrice": 158.39,
-      "distancePct": 1.58
-     },
-     {
-      "ticker": "AS",
-      "side": "long",
-      "price": 31.19,
-      "dayChangePct": 7.18,
-      "stopPrice": 29.6,
-      "distancePct": 5.37
-     }
-    ],
-    "actions": [],
-    "note": "NSIT zarar-kes seviyesine %3'ten yakın"
-   },
-   {
-    "at": "2026-11-17T11:16:24-05:00",
-    "kind": "guard",
-    "status": "uyari",
-    "spyPrice": 731.84,
-    "spyChangePct": -1.1,
-    "totalValue": 2882.47,
-    "benchmarkValue": 2939.49,
-    "leverage": 2.272,
-    "marginBuffer": 2555.06,
-    "positions": [
-     {
-      "ticker": "QQQ",
-      "side": "long",
-      "price": 653.7,
-      "dayChangePct": -1.22,
-      "stopPrice": null,
-      "distancePct": null
-     },
-     {
-      "ticker": "HTHT",
-      "side": "long",
-      "price": 54.02,
-      "dayChangePct": -1.57,
-      "stopPrice": 52.03,
-      "distancePct": 3.82
-     },
-     {
-      "ticker": "AVEX",
-      "side": "long",
-      "price": 13.55,
-      "dayChangePct": 1.12,
-      "stopPrice": 12.49,
-      "distancePct": 8.49
-     },
-     {
-      "ticker": "NSIT",
-      "side": "short",
-      "price": 156.45,
-      "dayChangePct": 0.75,
-      "stopPrice": 158.39,
-      "distancePct": 1.24
-     },
-     {
-      "ticker": "AS",
-      "side": "long",
-      "price": 31.11,
-      "dayChangePct": 6.91,
-      "stopPrice": 29.6,
-      "distancePct": 5.1
-     }
-    ],
-    "actions": [],
-    "note": "NSIT zarar-kes seviyesine %3'ten yakın"
-   },
-   {
-    "at": "2026-11-17T11:21:24-05:00",
-    "kind": "guard",
-    "status": "uyari",
-    "spyPrice": 731.92,
-    "spyChangePct": -1.08,
-    "totalValue": 2896.71,
-    "benchmarkValue": 2939.81,
-    "leverage": 2.26,
-    "marginBuffer": 2569.44,
-    "positions": [
-     {
-      "ticker": "QQQ",
-      "side": "long",
-      "price": 653.9862,
-      "dayChangePct": -1.17,
-      "stopPrice": null,
-      "distancePct": null
-     },
-     {
-      "ticker": "HTHT",
-      "side": "long",
-      "price": 53.99,
-      "dayChangePct": -1.62,
-      "stopPrice": 52.03,
-      "distancePct": 3.77
-     },
-     {
-      "ticker": "AVEX",
-      "side": "long",
-      "price": 13.61,
-      "dayChangePct": 1.57,
-      "stopPrice": 12.49,
-      "distancePct": 8.97
-     },
-     {
-      "ticker": "NSIT",
-      "side": "short",
-      "price": 155.35,
-      "dayChangePct": 0.04,
-      "stopPrice": 158.39,
-      "distancePct": 1.96
-     },
-     {
-      "ticker": "AS",
-      "side": "long",
-      "price": 31.3,
-      "dayChangePct": 7.56,
-      "stopPrice": 29.6,
-      "distancePct": 5.74
-     }
-    ],
-    "actions": [],
-    "note": "NSIT zarar-kes seviyesine %3'ten yakın"
-   },
-   {
-    "at": "2026-11-17T11:26:29-05:00",
-    "kind": "guard",
-    "status": "uyari",
-    "spyPrice": 731.19,
-    "spyChangePct": -1.18,
-    "totalValue": 2885.48,
-    "benchmarkValue": 2936.86,
-    "leverage": 2.267,
-    "marginBuffer": 2558.35,
-    "positions": [
-     {
-      "ticker": "QQQ",
-      "side": "long",
-      "price": 652.97,
-      "dayChangePct": -1.33,
-      "stopPrice": null,
-      "distancePct": null
-     },
-     {
-      "ticker": "HTHT",
-      "side": "long",
-      "price": 54.03,
-      "dayChangePct": -1.55,
-      "stopPrice": 52.03,
-      "distancePct": 3.84
-     },
-     {
-      "ticker": "AVEX",
-      "side": "long",
-      "price": 13.58,
-      "dayChangePct": 1.34,
-      "stopPrice": 12.49,
-      "distancePct": 8.73
-     },
-     {
-      "ticker": "NSIT",
-      "side": "short",
-      "price": 155.89,
-      "dayChangePct": 0.39,
-      "stopPrice": 158.39,
-      "distancePct": 1.6
-     },
-     {
-      "ticker": "AS",
-      "side": "long",
-      "price": 31.29,
-      "dayChangePct": 7.53,
-      "stopPrice": 29.6,
-      "distancePct": 5.71
-     }
-    ],
-    "actions": [],
-    "note": "NSIT zarar-kes seviyesine %3'ten yakın"
-   },
-   {
-    "at": "2026-11-17T11:31:29-05:00",
-    "kind": "guard",
-    "status": "uyari",
-    "spyPrice": 730.72,
-    "spyChangePct": -1.25,
-    "totalValue": 2883.37,
-    "benchmarkValue": 2934.96,
-    "leverage": 2.267,
-    "marginBuffer": 2556.56,
-    "positions": [
-     {
-      "ticker": "QQQ",
-      "side": "long",
-      "price": 652.623,
-      "dayChangePct": -1.38,
-      "stopPrice": null,
-      "distancePct": null
-     },
-     {
-      "ticker": "HTHT",
-      "side": "long",
-      "price": 54.03,
-      "dayChangePct": -1.55,
-      "stopPrice": 52.03,
-      "distancePct": 3.84
-     },
-     {
-      "ticker": "AVEX",
-      "side": "long",
-      "price": 13.53,
-      "dayChangePct": 0.97,
-      "stopPrice": 12.49,
-      "distancePct": 8.33
-     },
-     {
-      "ticker": "NSIT",
-      "side": "short",
-      "price": 155.61,
-      "dayChangePct": 0.21,
-      "stopPrice": 158.39,
-      "distancePct": 1.79
-     },
-     {
-      "ticker": "AS",
-      "side": "long",
-      "price": 31.23,
-      "dayChangePct": 7.32,
-      "stopPrice": 29.6,
-      "distancePct": 5.51
-     }
-    ],
-    "actions": [],
-    "note": "NSIT zarar-kes seviyesine %3'ten yakın"
-   },
-   {
-    "at": "2026-11-17T11:36:32-05:00",
-    "kind": "guard",
-    "status": "uyari",
-    "spyPrice": 730.37,
-    "spyChangePct": -1.29,
-    "totalValue": 2877.66,
-    "benchmarkValue": 2933.57,
-    "leverage": 2.271,
-    "marginBuffer": 2550.91,
-    "positions": [
-     {
-      "ticker": "QQQ",
-      "side": "long",
-      "price": 652.26,
-      "dayChangePct": -1.43,
-      "stopPrice": null,
-      "distancePct": null
-     },
-     {
-      "ticker": "HTHT",
-      "side": "long",
-      "price": 54.12,
-      "dayChangePct": -1.38,
-      "stopPrice": 52.03,
-      "distancePct": 4.02
-     },
-     {
-      "ticker": "AVEX",
-      "side": "long",
-      "price": 13.5,
-      "dayChangePct": 0.75,
-      "stopPrice": 12.49,
-      "distancePct": 8.09
-     },
-     {
-      "ticker": "NSIT",
-      "side": "short",
-      "price": 155.9,
-      "dayChangePct": 0.39,
-      "stopPrice": 158.39,
-      "distancePct": 1.6
-     },
-     {
-      "ticker": "AS",
-      "side": "long",
-      "price": 31.15,
-      "dayChangePct": 7.04,
-      "stopPrice": 29.6,
-      "distancePct": 5.24
-     }
-    ],
-    "actions": [],
-    "note": "NSIT zarar-kes seviyesine %3'ten yakın"
-   },
-   {
-    "at": "2026-11-17T11:41:33-05:00",
-    "kind": "guard",
-    "status": "uyari",
-    "spyPrice": 729.72,
-    "spyChangePct": -1.38,
-    "totalValue": 2875.59,
-    "benchmarkValue": 2930.94,
-    "leverage": 2.272,
-    "marginBuffer": 2548.87,
-    "positions": [
-     {
-      "ticker": "QQQ",
-      "side": "long",
-      "price": 651.82,
-      "dayChangePct": -1.5,
-      "stopPrice": null,
-      "distancePct": null
-     },
-     {
-      "ticker": "HTHT",
-      "side": "long",
-      "price": 54.14,
-      "dayChangePct": -1.35,
-      "stopPrice": 52.03,
-      "distancePct": 4.06
-     },
-     {
-      "ticker": "AVEX",
-      "side": "long",
-      "price": 13.52,
-      "dayChangePct": 0.9,
-      "stopPrice": 12.49,
-      "distancePct": 8.25
-     },
-     {
-      "ticker": "NSIT",
-      "side": "short",
-      "price": 155.9975,
-      "dayChangePct": 0.46,
-      "stopPrice": 158.39,
-      "distancePct": 1.53
-     },
-     {
-      "ticker": "AS",
-      "side": "long",
-      "price": 31.21,
-      "dayChangePct": 7.25,
-      "stopPrice": 29.6,
-      "distancePct": 5.44
-     }
-    ],
-    "actions": [],
-    "note": "NSIT zarar-kes seviyesine %3'ten yakın"
-   },
-   {
-    "at": "2026-11-17T11:46:39-05:00",
-    "kind": "guard",
-    "status": "uyari",
-    "spyPrice": 729.32,
-    "spyChangePct": -1.44,
-    "totalValue": 2868.86,
-    "benchmarkValue": 2929.35,
-    "leverage": 2.275,
-    "marginBuffer": 2542.46,
-    "positions": [
-     {
-      "ticker": "QQQ",
-      "side": "long",
-      "price": 651.395,
-      "dayChangePct": -1.56,
-      "stopPrice": null,
-      "distancePct": null
-     },
-     {
-      "ticker": "HTHT",
-      "side": "long",
-      "price": 54.03,
-      "dayChangePct": -1.55,
-      "stopPrice": 52.03,
-      "distancePct": 3.84
-     },
-     {
-      "ticker": "AVEX",
-      "side": "long",
-      "price": 13.46,
-      "dayChangePct": 0.45,
-      "stopPrice": 12.49,
-      "distancePct": 7.77
-     },
-     {
-      "ticker": "NSIT",
-      "side": "short",
-      "price": 156.01,
-      "dayChangePct": 0.46,
-      "stopPrice": 158.39,
-      "distancePct": 1.53
-     },
-     {
-      "ticker": "AS",
-      "side": "long",
-      "price": 31.095,
-      "dayChangePct": 6.86,
-      "stopPrice": 29.6,
-      "distancePct": 5.05
-     }
-    ],
-    "actions": [],
-    "note": "NSIT zarar-kes seviyesine %3'ten yakın"
-   },
-   {
-    "at": "2026-11-17T11:51:40-05:00",
-    "kind": "guard",
-    "status": "uyari",
-    "spyPrice": 728.77,
-    "spyChangePct": -1.51,
-    "totalValue": 2858.19,
-    "benchmarkValue": 2927.14,
-    "leverage": 2.282,
-    "marginBuffer": 2532.0,
-    "positions": [
-     {
-      "ticker": "QQQ",
-      "side": "long",
-      "price": 650.48,
-      "dayChangePct": -1.7,
-      "stopPrice": null,
-      "distancePct": null
-     },
-     {
-      "ticker": "HTHT",
-      "side": "long",
-      "price": 54.06,
-      "dayChangePct": -1.49,
-      "stopPrice": 52.03,
-      "distancePct": 3.9
-     },
-     {
-      "ticker": "AVEX",
-      "side": "long",
-      "price": 13.51,
-      "dayChangePct": 0.82,
-      "stopPrice": 12.49,
-      "distancePct": 8.17
-     },
-     {
-      "ticker": "NSIT",
-      "side": "short",
-      "price": 156.43,
-      "dayChangePct": 0.73,
-      "stopPrice": 158.39,
-      "distancePct": 1.25
-     },
-     {
-      "ticker": "AS",
-      "side": "long",
-      "price": 30.87,
-      "dayChangePct": 6.08,
-      "stopPrice": 29.6,
-      "distancePct": 4.29
-     }
-    ],
-    "actions": [],
-    "note": "NSIT zarar-kes seviyesine %3'ten yakın"
-   },
-   {
-    "at": "2026-11-17T11:56:43-05:00",
-    "kind": "guard",
-    "status": "uyari",
-    "spyPrice": 729.37,
-    "spyChangePct": -1.43,
-    "totalValue": 2860.19,
-    "benchmarkValue": 2929.55,
-    "leverage": 2.282,
-    "marginBuffer": 2533.78,
-    "positions": [
-     {
-      "ticker": "QQQ",
-      "side": "long",
-      "price": 650.82,
-      "dayChangePct": -1.65,
-      "stopPrice": null,
-      "distancePct": null
-     },
-     {
-      "ticker": "HTHT",
-      "side": "long",
-      "price": 54.095,
-      "dayChangePct": -1.43,
-      "stopPrice": 52.03,
-      "distancePct": 3.97
-     },
-     {
-      "ticker": "AVEX",
-      "side": "long",
-      "price": 13.49,
-      "dayChangePct": 0.67,
-      "stopPrice": 12.49,
-      "distancePct": 8.01
-     },
-     {
-      "ticker": "NSIT",
-      "side": "short",
-      "price": 156.58,
-      "dayChangePct": 0.83,
-      "stopPrice": 158.39,
-      "distancePct": 1.16
-     },
-     {
-      "ticker": "AS",
-      "side": "long",
-      "price": 30.96,
-      "dayChangePct": 6.39,
-      "stopPrice": 29.6,
-      "distancePct": 4.59
-     }
-    ],
-    "actions": [],
-    "note": "NSIT zarar-kes seviyesine %3'ten yakın"
-   },
-   {
-    "at": "2026-11-17T12:01:43-05:00",
-    "kind": "fırsat",
-    "status": "uyari",
-    "spyPrice": 730.47,
-    "spyChangePct": -1.28,
-    "totalValue": 2870.4,
-    "benchmarkValue": 2933.97,
-    "leverage": 2.278,
-    "marginBuffer": 2543.49,
-    "positions": [
-     {
-      "ticker": "QQQ",
-      "side": "long",
-      "price": 652.24,
-      "dayChangePct": -1.44,
-      "stopPrice": null,
-      "distancePct": null
-     },
-     {
-      "ticker": "HTHT",
-      "side": "long",
-      "price": 54.07,
-      "dayChangePct": -1.48,
-      "stopPrice": 52.03,
-      "distancePct": 3.92
-     },
-     {
-      "ticker": "AVEX",
-      "side": "long",
-      "price": 13.54,
-      "dayChangePct": 1.04,
-      "stopPrice": 12.49,
-      "distancePct": 8.41
-     },
-     {
-      "ticker": "NSIT",
-      "side": "short",
-      "price": 156.58,
-      "dayChangePct": 0.83,
-      "stopPrice": 158.39,
-      "distancePct": 1.16
-     },
-     {
-      "ticker": "AS",
-      "side": "long",
-      "price": 30.97,
-      "dayChangePct": 6.43,
-      "stopPrice": 29.6,
-      "distancePct": 4.63
-     }
-    ],
-    "actions": [],
-    "note": "NSIT zarar-kes seviyesine %3'ten yakın"
-   },
-   {
-    "at": "2026-11-17T12:06:51-05:00",
-    "kind": "guard",
-    "status": "uyari",
-    "spyPrice": 732.12,
-    "spyChangePct": -1.06,
-    "totalValue": 2890.32,
-    "benchmarkValue": 2940.6,
-    "leverage": 2.266,
-    "marginBuffer": 2562.79,
-    "positions": [
-     {
-      "ticker": "QQQ",
-      "side": "long",
-      "price": 654.32,
-      "dayChangePct": -1.12,
-      "stopPrice": null,
-      "distancePct": null
-     },
-     {
-      "ticker": "HTHT",
-      "side": "long",
-      "price": 54.15,
-      "dayChangePct": -1.33,
-      "stopPrice": 52.03,
-      "distancePct": 4.07
-     },
-     {
-      "ticker": "AVEX",
-      "side": "long",
-      "price": 13.6,
-      "dayChangePct": 1.49,
-      "stopPrice": 12.49,
-      "distancePct": 8.89
-     },
-     {
-      "ticker": "NSIT",
-      "side": "short",
-      "price": 156.095,
-      "dayChangePct": 0.52,
-      "stopPrice": 158.39,
-      "distancePct": 1.47
-     },
-     {
-      "ticker": "AS",
-      "side": "long",
-      "price": 31.03,
-      "dayChangePct": 6.63,
-      "stopPrice": 29.6,
-      "distancePct": 4.83
-     }
-    ],
-    "actions": [],
-    "note": "NSIT zarar-kes seviyesine %3'ten yakın"
-   },
-   {
-    "at": "2026-11-17T12:11:52-05:00",
-    "kind": "guard",
-    "status": "uyari",
-    "spyPrice": 732.15,
-    "spyChangePct": -1.05,
-    "totalValue": 2888.59,
-    "benchmarkValue": 2940.72,
-    "leverage": 2.27,
-    "marginBuffer": 2560.79,
-    "positions": [
-     {
-      "ticker": "QQQ",
-      "side": "long",
-      "price": 654.125,
-      "dayChangePct": -1.15,
-      "stopPrice": null,
-      "distancePct": null
-     },
-     {
-      "ticker": "HTHT",
-      "side": "long",
-      "price": 54.22,
-      "dayChangePct": -1.2,
-      "stopPrice": 52.03,
-      "distancePct": 4.21
-     },
-     {
-      "ticker": "AVEX",
-      "side": "long",
-      "price": 13.62,
-      "dayChangePct": 1.64,
-      "stopPrice": 12.49,
-      "distancePct": 9.05
-     },
-     {
-      "ticker": "NSIT",
-      "side": "short",
-      "price": 156.55,
-      "dayChangePct": 0.81,
-      "stopPrice": 158.39,
-      "distancePct": 1.18
-     },
-     {
-      "ticker": "AS",
-      "side": "long",
-      "price": 31.175,
-      "dayChangePct": 7.13,
-      "stopPrice": 29.6,
-      "distancePct": 5.32
-     }
-    ],
-    "actions": [],
-    "note": "NSIT zarar-kes seviyesine %3'ten yakın"
-   },
-   {
-    "at": "2026-11-17T12:16:57-05:00",
-    "kind": "guard",
-    "status": "uyari",
-    "spyPrice": 732.78,
-    "spyChangePct": -0.97,
-    "totalValue": 2894.0,
-    "benchmarkValue": 2943.25,
-    "leverage": 2.269,
-    "marginBuffer": 2565.71,
-    "positions": [
-     {
-      "ticker": "QQQ",
-      "side": "long",
-      "price": 654.97,
-      "dayChangePct": -1.02,
-      "stopPrice": null,
-      "distancePct": null
-     },
-     {
-      "ticker": "HTHT",
-      "side": "long",
-      "price": 54.26,
-      "dayChangePct": -1.13,
-      "stopPrice": 52.03,
-      "distancePct": 4.29
-     },
-     {
-      "ticker": "AVEX",
-      "side": "long",
-      "price": 13.67,
-      "dayChangePct": 2.01,
-      "stopPrice": 12.49,
-      "distancePct": 9.45
-     },
-     {
-      "ticker": "NSIT",
-      "side": "short",
-      "price": 156.825,
-      "dayChangePct": 0.99,
-      "stopPrice": 158.39,
-      "distancePct": 1.0
-     },
-     {
-      "ticker": "AS",
-      "side": "long",
-      "price": 31.22,
-      "dayChangePct": 7.29,
-      "stopPrice": 29.6,
-      "distancePct": 5.47
-     }
-    ],
-    "actions": [],
-    "note": "NSIT zarar-kes seviyesine %3'ten yakın"
-   },
-   {
-    "at": "2026-11-17T12:21:58-05:00",
-    "kind": "guard",
-    "status": "uyari",
-    "spyPrice": 733.9,
-    "spyChangePct": -0.82,
-    "totalValue": 2906.44,
-    "benchmarkValue": 2947.74,
-    "leverage": 2.263,
-    "marginBuffer": 2577.63,
-    "positions": [
-     {
-      "ticker": "QQQ",
-      "side": "long",
-      "price": 656.45,
-      "dayChangePct": -0.8,
-      "stopPrice": null,
-      "distancePct": null
-     },
-     {
-      "ticker": "HTHT",
-      "side": "long",
-      "price": 54.31,
-      "dayChangePct": -1.04,
-      "stopPrice": 52.03,
-      "distancePct": 4.38
-     },
-     {
-      "ticker": "AVEX",
-      "side": "long",
-      "price": 13.745,
-      "dayChangePct": 2.57,
-      "stopPrice": 12.49,
-      "distancePct": 10.05
-     },
-     {
-      "ticker": "NSIT",
-      "side": "short",
-      "price": 156.69,
-      "dayChangePct": 0.9,
-      "stopPrice": 158.39,
-      "distancePct": 1.08
-     },
-     {
-      "ticker": "AS",
-      "side": "long",
-      "price": 31.2,
-      "dayChangePct": 7.22,
-      "stopPrice": 29.6,
-      "distancePct": 5.41
-     }
-    ],
-    "actions": [],
-    "note": "NSIT zarar-kes seviyesine %3'ten yakın"
-   },
-   {
-    "at": "2026-11-17T12:27:00-05:00",
-    "kind": "guard",
-    "status": "uyari",
-    "spyPrice": 733.8,
-    "spyChangePct": -0.83,
-    "totalValue": 2904.57,
-    "benchmarkValue": 2947.36,
-    "leverage": 2.263,
-    "marginBuffer": 2575.97,
-    "positions": [
-     {
-      "ticker": "QQQ",
-      "side": "long",
-      "price": 656.33,
-      "dayChangePct": -0.82,
-      "stopPrice": null,
-      "distancePct": null
-     },
-     {
-      "ticker": "HTHT",
-      "side": "long",
-      "price": 54.31,
-      "dayChangePct": -1.04,
-      "stopPrice": 52.03,
-      "distancePct": 4.38
-     },
-     {
-      "ticker": "AVEX",
-      "side": "long",
-      "price": 13.72,
-      "dayChangePct": 2.39,
-      "stopPrice": 12.49,
-      "distancePct": 9.85
-     },
-     {
-      "ticker": "NSIT",
-      "side": "short",
-      "price": 156.54,
-      "dayChangePct": 0.8,
-      "stopPrice": 158.39,
-      "distancePct": 1.18
-     },
-     {
-      "ticker": "AS",
-      "side": "long",
-      "price": 31.08,
-      "dayChangePct": 6.8,
-      "stopPrice": 29.6,
-      "distancePct": 5.0
-     }
-    ],
-    "actions": [],
-    "note": "NSIT zarar-kes seviyesine %3'ten yakın"
-   },
-   {
-    "at": "2026-11-17T12:32:01-05:00",
-    "kind": "guard",
-    "status": "uyari",
-    "spyPrice": 733.01,
-    "spyChangePct": -0.94,
-    "totalValue": 2900.26,
-    "benchmarkValue": 2944.17,
-    "leverage": 2.264,
-    "marginBuffer": 2572.03,
-    "positions": [
-     {
-      "ticker": "QQQ",
-      "side": "long",
-      "price": 655.75,
-      "dayChangePct": -0.91,
-      "stopPrice": null,
-      "distancePct": null
-     },
-     {
-      "ticker": "HTHT",
-      "side": "long",
-      "price": 54.27,
-      "dayChangePct": -1.11,
-      "stopPrice": 52.03,
-      "distancePct": 4.31
-     },
-     {
-      "ticker": "AVEX",
-      "side": "long",
-      "price": 13.67,
-      "dayChangePct": 2.01,
-      "stopPrice": 12.49,
-      "distancePct": 9.45
-     },
-     {
-      "ticker": "NSIT",
-      "side": "short",
-      "price": 156.365,
-      "dayChangePct": 0.69,
-      "stopPrice": 158.39,
-      "distancePct": 1.3
-     },
-     {
-      "ticker": "AS",
-      "side": "long",
-      "price": 31.05,
-      "dayChangePct": 6.7,
-      "stopPrice": 29.6,
-      "distancePct": 4.9
-     }
-    ],
-    "actions": [],
-    "note": "NSIT zarar-kes seviyesine %3'ten yakın"
-   },
-   {
-    "at": "2026-11-17T12:37:04-05:00",
-    "kind": "guard",
-    "status": "uyari",
-    "spyPrice": 732.69,
-    "spyChangePct": -0.98,
-    "totalValue": 2897.3,
-    "benchmarkValue": 2942.89,
-    "leverage": 2.265,
-    "marginBuffer": 2569.2,
-    "positions": [
-     {
-      "ticker": "QQQ",
-      "side": "long",
-      "price": 655.415,
-      "dayChangePct": -0.96,
-      "stopPrice": null,
-      "distancePct": null
-     },
-     {
-      "ticker": "HTHT",
-      "side": "long",
-      "price": 54.275,
-      "dayChangePct": -1.1,
-      "stopPrice": 52.03,
-      "distancePct": 4.31
-     },
-     {
-      "ticker": "AVEX",
-      "side": "long",
-      "price": 13.655,
-      "dayChangePct": 1.9,
-      "stopPrice": 12.49,
-      "distancePct": 9.33
-     },
-     {
-      "ticker": "NSIT",
-      "side": "short",
-      "price": 156.385,
-      "dayChangePct": 0.71,
-      "stopPrice": 158.39,
-      "distancePct": 1.28
-     },
-     {
-      "ticker": "AS",
-      "side": "long",
-      "price": 31.025,
-      "dayChangePct": 6.62,
-      "stopPrice": 29.6,
-      "distancePct": 4.81
-     }
-    ],
-    "actions": [],
-    "note": "NSIT zarar-kes seviyesine %3'ten yakın"
-   },
-   {
-    "at": "2026-11-17T12:42:06-05:00",
-    "kind": "guard",
-    "status": "uyari",
-    "spyPrice": 731.92,
-    "spyChangePct": -1.09,
-    "totalValue": 2899.12,
-    "benchmarkValue": 2939.79,
-    "leverage": 2.26,
-    "marginBuffer": 2571.55,
-    "positions": [
-     {
-      "ticker": "QQQ",
-      "side": "long",
-      "price": 654.465,
-      "dayChangePct": -1.1,
-      "stopPrice": null,
-      "distancePct": null
-     },
-     {
-      "ticker": "HTHT",
-      "side": "long",
-      "price": 54.225,
-      "dayChangePct": -1.19,
-      "stopPrice": 52.03,
-      "distancePct": 4.22
-     },
-     {
-      "ticker": "AVEX",
-      "side": "long",
-      "price": 13.69,
-      "dayChangePct": 2.16,
-      "stopPrice": 12.49,
-      "distancePct": 9.61
-     },
-     {
-      "ticker": "NSIT",
-      "side": "short",
-      "price": 155.57,
-      "dayChangePct": 0.18,
-      "stopPrice": 158.39,
-      "distancePct": 1.81
-     },
-     {
-      "ticker": "AS",
-      "side": "long",
-      "price": 31.1,
-      "dayChangePct": 6.87,
-      "stopPrice": 29.6,
-      "distancePct": 5.07
-     }
-    ],
-    "actions": [],
-    "note": "NSIT zarar-kes seviyesine %3'ten yakın"
-   },
-   {
-    "at": "2026-11-17T12:47:10-05:00",
-    "kind": "guard",
-    "status": "uyari",
-    "spyPrice": 731.67,
-    "spyChangePct": -1.12,
-    "totalValue": 2896.33,
-    "benchmarkValue": 2938.79,
-    "leverage": 2.26,
-    "marginBuffer": 2569.02,
-    "positions": [
-     {
-      "ticker": "QQQ",
-      "side": "long",
-      "price": 653.84,
-      "dayChangePct": -1.2,
-      "stopPrice": null,
-      "distancePct": null
-     },
-     {
-      "ticker": "HTHT",
-      "side": "long",
-      "price": 54.27,
-      "dayChangePct": -1.11,
-      "stopPrice": 52.03,
-      "distancePct": 4.31
-     },
-     {
-      "ticker": "AVEX",
-      "side": "long",
-      "price": 13.7,
-      "dayChangePct": 2.24,
-      "stopPrice": 12.49,
-      "distancePct": 9.69
-     },
-     {
-      "ticker": "NSIT",
-      "side": "short",
-      "price": 155.415,
-      "dayChangePct": 0.08,
-      "stopPrice": 158.39,
-      "distancePct": 1.91
-     },
-     {
-      "ticker": "AS",
-      "side": "long",
-      "price": 31.055,
-      "dayChangePct": 6.72,
-      "stopPrice": 29.6,
-      "distancePct": 4.92
-     }
-    ],
-    "actions": [],
-    "note": "NSIT zarar-kes seviyesine %3'ten yakın"
-   },
-   {
-    "at": "2026-11-17T12:52:11-05:00",
-    "kind": "guard",
-    "status": "uyari",
-    "spyPrice": 731.71,
-    "spyChangePct": -1.11,
-    "totalValue": 2897.78,
-    "benchmarkValue": 2938.95,
-    "leverage": 2.26,
-    "marginBuffer": 2570.39,
-    "positions": [
-     {
-      "ticker": "QQQ",
-      "side": "long",
-      "price": 654.11,
-      "dayChangePct": -1.15,
-      "stopPrice": null,
-      "distancePct": null
-     },
-     {
-      "ticker": "HTHT",
-      "side": "long",
-      "price": 54.44,
-      "dayChangePct": -0.8,
-      "stopPrice": 52.03,
-      "distancePct": 4.63
-     },
-     {
-      "ticker": "AVEX",
-      "side": "long",
-      "price": 13.64,
-      "dayChangePct": 1.79,
-      "stopPrice": 12.49,
-      "distancePct": 9.21
-     },
-     {
-      "ticker": "NSIT",
-      "side": "short",
-      "price": 155.415,
-      "dayChangePct": 0.08,
-      "stopPrice": 158.39,
-      "distancePct": 1.91
-     },
-     {
-      "ticker": "AS",
-      "side": "long",
-      "price": 31.05,
-      "dayChangePct": 6.7,
-      "stopPrice": 29.6,
-      "distancePct": 4.9
-     }
-    ],
-    "actions": [],
-    "note": "NSIT zarar-kes seviyesine %3'ten yakın"
-   },
-   {
-    "at": "2026-11-17T12:57:13-05:00",
-    "kind": "guard",
-    "status": "uyari",
-    "spyPrice": 731.34,
-    "spyChangePct": -1.16,
-    "totalValue": 2896.51,
-    "benchmarkValue": 2937.44,
-    "leverage": 2.259,
-    "marginBuffer": 2569.33,
-    "positions": [
-     {
-      "ticker": "QQQ",
-      "side": "long",
-      "price": 653.8477,
-      "dayChangePct": -1.19,
-      "stopPrice": null,
-      "distancePct": null
-     },
-     {
-      "ticker": "HTHT",
-      "side": "long",
-      "price": 54.43,
-      "dayChangePct": -0.82,
-      "stopPrice": 52.03,
-      "distancePct": 4.61
-     },
-     {
-      "ticker": "AVEX",
-      "side": "long",
-      "price": 13.6,
-      "dayChangePct": 1.49,
-      "stopPrice": 12.49,
-      "distancePct": 8.89
-     },
-     {
-      "ticker": "NSIT",
-      "side": "short",
-      "price": 155.25,
-      "dayChangePct": -0.03,
-      "stopPrice": 158.39,
-      "distancePct": 2.02
-     },
-     {
-      "ticker": "AS",
-      "side": "long",
-      "price": 31.065,
-      "dayChangePct": 6.75,
-      "stopPrice": 29.6,
-      "distancePct": 4.95
-     }
-    ],
-    "actions": [],
-    "note": "NSIT zarar-kes seviyesine %3'ten yakın"
-   },
-   {
-    "at": "2026-11-17T13:02:14-05:00",
-    "kind": "guard",
-    "status": "uyari",
-    "spyPrice": 731.48,
-    "spyChangePct": -1.15,
-    "totalValue": 2898.24,
-    "benchmarkValue": 2938.01,
-    "leverage": 2.259,
-    "marginBuffer": 2570.86,
-    "positions": [
-     {
-      "ticker": "QQQ",
-      "side": "long",
-      "price": 653.98,
-      "dayChangePct": -1.17,
-      "stopPrice": null,
-      "distancePct": null
-     },
-     {
-      "ticker": "HTHT",
-      "side": "long",
-      "price": 54.37,
-      "dayChangePct": -0.93,
-      "stopPrice": 52.03,
-      "distancePct": 4.5
-     },
-     {
-      "ticker": "AVEX",
-      "side": "long",
-      "price": 13.68,
-      "dayChangePct": 2.09,
-      "stopPrice": 12.49,
-      "distancePct": 9.53
-     },
-     {
-      "ticker": "NSIT",
-      "side": "short",
-      "price": 155.38,
-      "dayChangePct": 0.06,
-      "stopPrice": 158.39,
-      "distancePct": 1.94
-     },
-     {
-      "ticker": "AS",
-      "side": "long",
-      "price": 31.09,
-      "dayChangePct": 6.84,
-      "stopPrice": 29.6,
-      "distancePct": 5.03
-     }
-    ],
-    "actions": [],
-    "note": "NSIT zarar-kes seviyesine %3'ten yakın"
-   },
-   {
-    "at": "2026-11-17T13:07:17-05:00",
-    "kind": "guard",
-    "status": "uyari",
-    "spyPrice": 732.25,
-    "spyChangePct": -1.04,
-    "totalValue": 2905.89,
-    "benchmarkValue": 2941.12,
-    "leverage": 2.257,
-    "marginBuffer": 2577.99,
-    "positions": [
-     {
-      "ticker": "QQQ",
-      "side": "long",
-      "price": 655.0085,
-      "dayChangePct": -1.02,
-      "stopPrice": null,
-      "distancePct": null
-     },
-     {
-      "ticker": "HTHT",
-      "side": "long",
-      "price": 54.455,
-      "dayChangePct": -0.77,
-      "stopPrice": 52.03,
-      "distancePct": 4.66
-     },
-     {
-      "ticker": "AVEX",
-      "side": "long",
-      "price": 13.69,
-      "dayChangePct": 2.16,
-      "stopPrice": 12.49,
-      "distancePct": 9.61
-     },
-     {
-      "ticker": "NSIT",
-      "side": "short",
-      "price": 155.565,
-      "dayChangePct": 0.18,
-      "stopPrice": 158.39,
-      "distancePct": 1.82
-     },
-     {
-      "ticker": "AS",
-      "side": "long",
-      "price": 31.21,
-      "dayChangePct": 7.25,
-      "stopPrice": 29.6,
-      "distancePct": 5.44
-     }
-    ],
-    "actions": [],
-    "note": "NSIT zarar-kes seviyesine %3'ten yakın"
-   },
-   {
-    "at": "2026-11-17T13:12:19-05:00",
-    "kind": "guard",
-    "status": "uyari",
-    "spyPrice": 731.68,
-    "spyChangePct": -1.12,
-    "totalValue": 2899.21,
-    "benchmarkValue": 2938.83,
-    "leverage": 2.261,
-    "marginBuffer": 2571.41,
-    "positions": [
-     {
-      "ticker": "QQQ",
-      "side": "long",
-      "price": 654.2025,
-      "dayChangePct": -1.14,
-      "stopPrice": null,
-      "distancePct": null
-     },
-     {
-      "ticker": "HTHT",
-      "side": "long",
-      "price": 54.475,
-      "dayChangePct": -0.74,
-      "stopPrice": 52.03,
-      "distancePct": 4.7
-     },
-     {
-      "ticker": "AVEX",
-      "side": "long",
-      "price": 13.68,
-      "dayChangePct": 2.09,
-      "stopPrice": 12.49,
-      "distancePct": 9.53
-     },
-     {
-      "ticker": "NSIT",
-      "side": "short",
-      "price": 155.86,
-      "dayChangePct": 0.37,
-      "stopPrice": 158.39,
-      "distancePct": 1.62
-     },
-     {
-      "ticker": "AS",
-      "side": "long",
-      "price": 31.27,
-      "dayChangePct": 7.46,
-      "stopPrice": 29.6,
-      "distancePct": 5.64
-     }
-    ],
-    "actions": [],
-    "note": "NSIT zarar-kes seviyesine %3'ten yakın"
-   },
-   {
-    "at": "2026-11-17T13:17:22-05:00",
-    "kind": "guard",
-    "status": "uyari",
-    "spyPrice": 731.36,
-    "spyChangePct": -1.16,
-    "totalValue": 2901.56,
-    "benchmarkValue": 2937.54,
-    "leverage": 2.257,
-    "marginBuffer": 2574.08,
-    "positions": [
-     {
-      "ticker": "QQQ",
-      "side": "long",
-      "price": 654.04,
-      "dayChangePct": -1.17,
-      "stopPrice": null,
-      "distancePct": null
-     },
-     {
-      "ticker": "HTHT",
-      "side": "long",
-      "price": 54.565,
-      "dayChangePct": -0.57,
-      "stopPrice": 52.03,
-      "distancePct": 4.87
-     },
-     {
-      "ticker": "AVEX",
-      "side": "long",
-      "price": 13.68,
-      "dayChangePct": 2.09,
-      "stopPrice": 12.49,
-      "distancePct": 9.53
-     },
-     {
-      "ticker": "NSIT",
-      "side": "short",
-      "price": 155.3,
-      "dayChangePct": 0.01,
-      "stopPrice": 158.39,
-      "distancePct": 1.99
-     },
-     {
-      "ticker": "AS",
-      "side": "long",
-      "price": 31.15,
-      "dayChangePct": 7.04,
-      "stopPrice": 29.6,
-      "distancePct": 5.24
-     }
-    ],
-    "actions": [],
-    "note": "NSIT zarar-kes seviyesine %3'ten yakın"
-   },
-   {
-    "at": "2026-11-17T13:22:23-05:00",
-    "kind": "guard",
-    "status": "uyari",
-    "spyPrice": 731.76,
-    "spyChangePct": -1.11,
-    "totalValue": 2907.53,
-    "benchmarkValue": 2939.15,
-    "leverage": 2.255,
-    "marginBuffer": 2579.75,
-    "positions": [
-     {
-      "ticker": "QQQ",
-      "side": "long",
-      "price": 654.605,
-      "dayChangePct": -1.08,
-      "stopPrice": null,
-      "distancePct": null
-     },
-     {
-      "ticker": "HTHT",
-      "side": "long",
-      "price": 54.58,
-      "dayChangePct": -0.55,
-      "stopPrice": 52.03,
-      "distancePct": 4.9
-     },
-     {
-      "ticker": "AVEX",
-      "side": "long",
-      "price": 13.74,
-      "dayChangePct": 2.54,
-      "stopPrice": 12.49,
-      "distancePct": 10.01
-     },
-     {
-      "ticker": "NSIT",
-      "side": "short",
-      "price": 155.3,
-      "dayChangePct": 0.01,
-      "stopPrice": 158.39,
-      "distancePct": 1.99
-     },
-     {
-      "ticker": "AS",
-      "side": "long",
-      "price": 31.205,
-      "dayChangePct": 7.23,
-      "stopPrice": 29.6,
-      "distancePct": 5.42
-     }
-    ],
-    "actions": [],
-    "note": "NSIT zarar-kes seviyesine %3'ten yakın"
-   },
-   {
-    "at": "2026-11-17T13:27:25-05:00",
-    "kind": "guard",
-    "status": "uyari",
-    "spyPrice": 733.13,
-    "spyChangePct": -0.92,
-    "totalValue": 2917.08,
-    "benchmarkValue": 2944.65,
-    "leverage": 2.253,
-    "marginBuffer": 2588.48,
-    "positions": [
-     {
-      "ticker": "QQQ",
-      "side": "long",
-      "price": 656.395,
-      "dayChangePct": -0.81,
-      "stopPrice": null,
-      "distancePct": null
-     },
-     {
-      "ticker": "HTHT",
-      "side": "long",
-      "price": 54.53,
-      "dayChangePct": -0.64,
-      "stopPrice": 52.03,
-      "distancePct": 4.8
-     },
-     {
-      "ticker": "AVEX",
-      "side": "long",
-      "price": 13.7613,
-      "dayChangePct": 2.7,
-      "stopPrice": 12.49,
-      "distancePct": 10.18
-     },
-     {
-      "ticker": "NSIT",
-      "side": "short",
-      "price": 155.74,
-      "dayChangePct": 0.29,
-      "stopPrice": 158.39,
-      "distancePct": 1.7
-     },
-     {
-      "ticker": "AS",
-      "side": "long",
-      "price": 31.31,
-      "dayChangePct": 7.59,
-      "stopPrice": 29.6,
-      "distancePct": 5.78
-     }
-    ],
-    "actions": [],
-    "note": "NSIT zarar-kes seviyesine %3'ten yakın"
-   },
-   {
-    "at": "2026-11-17T13:32:26-05:00",
-    "kind": "fırsat",
-    "status": "uyari",
-    "spyPrice": 733.07,
-    "spyChangePct": -0.93,
-    "totalValue": 2914.61,
-    "benchmarkValue": 2944.39,
-    "leverage": 2.256,
-    "marginBuffer": 2585.87,
-    "positions": [
-     {
-      "ticker": "QQQ",
-      "side": "long",
-      "price": 656.4799,
-      "dayChangePct": -0.8,
-      "stopPrice": null,
-      "distancePct": null
-     },
-     {
-      "ticker": "HTHT",
-      "side": "long",
-      "price": 54.565,
-      "dayChangePct": -0.57,
-      "stopPrice": 52.03,
-      "distancePct": 4.87
-     },
-     {
-      "ticker": "AVEX",
-      "side": "long",
-      "price": 13.785,
-      "dayChangePct": 2.87,
-      "stopPrice": 12.49,
-      "distancePct": 10.37
-     },
-     {
-      "ticker": "NSIT",
-      "side": "short",
-      "price": 156.08,
-      "dayChangePct": 0.51,
-      "stopPrice": 158.39,
-      "distancePct": 1.48
-     },
-     {
-      "ticker": "AS",
-      "side": "long",
-      "price": 31.22,
-      "dayChangePct": 7.29,
-      "stopPrice": 29.6,
-      "distancePct": 5.47
-     }
-    ],
-    "actions": [],
-    "note": "NSIT zarar-kes seviyesine %3'ten yakın"
-   },
-   {
-    "at": "2026-11-17T13:37:34-05:00",
-    "kind": "guard",
-    "status": "uyari",
-    "spyPrice": 732.52,
-    "spyChangePct": -1.0,
-    "totalValue": 2905.89,
-    "benchmarkValue": 2942.2,
-    "leverage": 2.262,
-    "marginBuffer": 2577.27,
-    "positions": [
-     {
-      "ticker": "QQQ",
-      "side": "long",
-      "price": 655.8,
-      "dayChangePct": -0.9,
-      "stopPrice": null,
-      "distancePct": null
-     },
-     {
-      "ticker": "HTHT",
-      "side": "long",
-      "price": 54.55,
-      "dayChangePct": -0.6,
-      "stopPrice": 52.03,
-      "distancePct": 4.84
-     },
-     {
-      "ticker": "AVEX",
-      "side": "long",
-      "price": 13.76,
-      "dayChangePct": 2.69,
-      "stopPrice": 12.49,
-      "distancePct": 10.17
-     },
-     {
-      "ticker": "NSIT",
-      "side": "short",
-      "price": 156.48,
-      "dayChangePct": 0.77,
-      "stopPrice": 158.39,
-      "distancePct": 1.22
-     },
-     {
-      "ticker": "AS",
-      "side": "long",
-      "price": 31.1799,
-      "dayChangePct": 7.15,
-      "stopPrice": 29.6,
-      "distancePct": 5.34
-     }
-    ],
-    "actions": [],
-    "note": "NSIT zarar-kes seviyesine %3'ten yakın"
-   },
-   {
-    "at": "2026-11-17T13:42:36-05:00",
-    "kind": "guard",
-    "status": "uyari",
-    "spyPrice": 731.43,
-    "spyChangePct": -1.15,
-    "totalValue": 2899.81,
-    "benchmarkValue": 2937.82,
-    "leverage": 2.26,
-    "marginBuffer": 2572.2,
-    "positions": [
-     {
-      "ticker": "QQQ",
-      "side": "long",
-      "price": 654.28,
-      "dayChangePct": -1.13,
-      "stopPrice": null,
-      "distancePct": null
-     },
-     {
-      "ticker": "HTHT",
-      "side": "long",
-      "price": 54.485,
-      "dayChangePct": -0.72,
-      "stopPrice": 52.03,
-      "distancePct": 4.72
-     },
-     {
-      "ticker": "AVEX",
-      "side": "long",
-      "price": 13.7072,
-      "dayChangePct": 2.29,
-      "stopPrice": 12.49,
-      "distancePct": 9.75
-     },
-     {
-      "ticker": "NSIT",
-      "side": "short",
-      "price": 155.59,
-      "dayChangePct": 0.19,
-      "stopPrice": 158.39,
-      "distancePct": 1.8
-     },
-     {
-      "ticker": "AS",
-      "side": "long",
-      "price": 31.07,
-      "dayChangePct": 6.77,
-      "stopPrice": 29.6,
-      "distancePct": 4.97
-     }
-    ],
-    "actions": [],
-    "note": "NSIT zarar-kes seviyesine %3'ten yakın"
-   },
-   {
-    "at": "2026-11-17T13:47:40-05:00",
-    "kind": "guard",
-    "status": "uyari",
-    "spyPrice": 731.16,
-    "spyChangePct": -1.19,
-    "totalValue": 2895.63,
-    "benchmarkValue": 2936.72,
-    "leverage": 2.263,
-    "marginBuffer": 2568.05,
-    "positions": [
-     {
-      "ticker": "QQQ",
-      "side": "long",
-      "price": 653.89,
-      "dayChangePct": -1.19,
-      "stopPrice": null,
-      "distancePct": null
-     },
-     {
-      "ticker": "HTHT",
-      "side": "long",
-      "price": 54.51,
-      "dayChangePct": -0.67,
-      "stopPrice": 52.03,
-      "distancePct": 4.77
-     },
-     {
-      "ticker": "AVEX",
-      "side": "long",
-      "price": 13.73,
-      "dayChangePct": 2.46,
-      "stopPrice": 12.49,
-      "distancePct": 9.93
-     },
-     {
-      "ticker": "NSIT",
-      "side": "short",
-      "price": 155.82,
-      "dayChangePct": 0.34,
-      "stopPrice": 158.39,
-      "distancePct": 1.65
-     },
-     {
-      "ticker": "AS",
-      "side": "long",
-      "price": 31.02,
-      "dayChangePct": 6.6,
-      "stopPrice": 29.6,
-      "distancePct": 4.8
-     }
-    ],
-    "actions": [],
-    "note": "NSIT zarar-kes seviyesine %3'ten yakın"
-   },
-   {
-    "at": "2026-11-17T13:52:41-05:00",
-    "kind": "guard",
-    "status": "uyari",
-    "spyPrice": 731.48,
-    "spyChangePct": -1.14,
-    "totalValue": 2896.18,
-    "benchmarkValue": 2938.02,
-    "leverage": 2.261,
-    "marginBuffer": 2568.7,
-    "positions": [
-     {
-      "ticker": "QQQ",
-      "side": "long",
-      "price": 654.2601,
-      "dayChangePct": -1.13,
-      "stopPrice": null,
-      "distancePct": null
-     },
-     {
-      "ticker": "HTHT",
-      "side": "long",
-      "price": 54.485,
-      "dayChangePct": -0.72,
-      "stopPrice": 52.03,
-      "distancePct": 4.72
-     },
-     {
-      "ticker": "AVEX",
-      "side": "long",
-      "price": 13.63,
-      "dayChangePct": 1.72,
-      "stopPrice": 12.49,
-      "distancePct": 9.13
-     },
-     {
-      "ticker": "NSIT",
-      "side": "short",
-      "price": 155.65,
-      "dayChangePct": 0.23,
-      "stopPrice": 158.39,
-      "distancePct": 1.76
-     },
-     {
-      "ticker": "AS",
-      "side": "long",
-      "price": 30.99,
-      "dayChangePct": 6.49,
-      "stopPrice": 29.6,
-      "distancePct": 4.7
-     }
-    ],
-    "actions": [],
-    "note": "NSIT zarar-kes seviyesine %3'ten yakın"
-   },
-   {
-    "at": "2026-11-17T13:57:43-05:00",
-    "kind": "guard",
-    "status": "uyari",
-    "spyPrice": 731.15,
-    "spyChangePct": -1.19,
-    "totalValue": 2896.41,
-    "benchmarkValue": 2936.7,
-    "leverage": 2.26,
-    "marginBuffer": 2569.04,
-    "positions": [
-     {
-      "ticker": "QQQ",
-      "side": "long",
-      "price": 654.12,
-      "dayChangePct": -1.15,
-      "stopPrice": null,
-      "distancePct": null
-     },
-     {
-      "ticker": "HTHT",
-      "side": "long",
-      "price": 54.47,
-      "dayChangePct": -0.75,
-      "stopPrice": 52.03,
-      "distancePct": 4.69
-     },
-     {
-      "ticker": "AVEX",
-      "side": "long",
-      "price": 13.64,
-      "dayChangePct": 1.79,
-      "stopPrice": 12.49,
-      "distancePct": 9.21
-     },
-     {
-      "ticker": "NSIT",
-      "side": "short",
-      "price": 155.47,
-      "dayChangePct": 0.12,
-      "stopPrice": 158.39,
-      "distancePct": 1.88
-     },
-     {
-      "ticker": "AS",
-      "side": "long",
-      "price": 30.96,
-      "dayChangePct": 6.39,
-      "stopPrice": 29.6,
-      "distancePct": 4.59
-     }
-    ],
-    "actions": [],
-    "note": "NSIT zarar-kes seviyesine %3'ten yakın"
-   },
-   {
-    "at": "2026-11-17T14:02:44-05:00",
-    "kind": "guard",
-    "status": "uyari",
-    "spyPrice": 730.72,
-    "spyChangePct": -1.25,
-    "totalValue": 2895.56,
-    "benchmarkValue": 2934.97,
-    "leverage": 2.26,
-    "marginBuffer": 2568.4,
-    "positions": [
-     {
-      "ticker": "QQQ",
-      "side": "long",
-      "price": 653.95,
-      "dayChangePct": -1.18,
-      "stopPrice": null,
-      "distancePct": null
-     },
-     {
-      "ticker": "HTHT",
-      "side": "long",
-      "price": 54.4,
-      "dayChangePct": -0.87,
-      "stopPrice": 52.03,
-      "distancePct": 4.56
-     },
-     {
-      "ticker": "AVEX",
-      "side": "long",
-      "price": 13.64,
-      "dayChangePct": 1.79,
-      "stopPrice": 12.49,
-      "distancePct": 9.21
-     },
-     {
-      "ticker": "NSIT",
-      "side": "short",
-      "price": 155.265,
-      "dayChangePct": -0.02,
-      "stopPrice": 158.39,
-      "distancePct": 2.01
-     },
-     {
-      "ticker": "AS",
-      "side": "long",
-      "price": 30.9,
-      "dayChangePct": 6.19,
-      "stopPrice": 29.6,
-      "distancePct": 4.39
-     }
-    ],
-    "actions": [],
-    "note": "NSIT zarar-kes seviyesine %3'ten yakın"
-   },
-   {
-    "at": "2026-11-17T14:07:47-05:00",
-    "kind": "guard",
-    "status": "uyari",
-    "spyPrice": 731.04,
-    "spyChangePct": -1.2,
-    "totalValue": 2894.6,
-    "benchmarkValue": 2936.26,
-    "leverage": 2.261,
-    "marginBuffer": 2567.34,
-    "positions": [
-     {
-      "ticker": "QQQ",
-      "side": "long",
-      "price": 654.38,
-      "dayChangePct": -1.11,
-      "stopPrice": null,
-      "distancePct": null
-     },
-     {
-      "ticker": "HTHT",
-      "side": "long",
-      "price": 54.415,
-      "dayChangePct": -0.85,
-      "stopPrice": 52.03,
-      "distancePct": 4.58
-     },
-     {
-      "ticker": "AVEX",
-      "side": "long",
-      "price": 13.65,
-      "dayChangePct": 1.87,
-      "stopPrice": 12.49,
-      "distancePct": 9.29
-     },
-     {
-      "ticker": "NSIT",
-      "side": "short",
-      "price": 155.46,
-      "dayChangePct": 0.11,
-      "stopPrice": 158.39,
-      "distancePct": 1.88
-     },
-     {
-      "ticker": "AS",
-      "side": "long",
-      "price": 30.715,
-      "dayChangePct": 5.55,
-      "stopPrice": 29.6,
-      "distancePct": 3.77
-     }
-    ],
-    "actions": [],
-    "note": "NSIT zarar-kes seviyesine %3'ten yakın"
-   },
-   {
-    "at": "2026-11-17T14:12:49-05:00",
-    "kind": "guard",
-    "status": "uyari",
-    "spyPrice": 731.04,
-    "spyChangePct": -1.2,
-    "totalValue": 2894.54,
-    "benchmarkValue": 2936.26,
-    "leverage": 2.262,
-    "marginBuffer": 2567.14,
-    "positions": [
-     {
-      "ticker": "QQQ",
-      "side": "long",
-      "price": 654.63,
-      "dayChangePct": -1.08,
-      "stopPrice": null,
-      "distancePct": null
-     },
-     {
-      "ticker": "HTHT",
-      "side": "long",
-      "price": 54.33,
-      "dayChangePct": -1.0,
-      "stopPrice": 52.03,
-      "distancePct": 4.42
-     },
-     {
-      "ticker": "AVEX",
-      "side": "long",
-      "price": 13.71,
-      "dayChangePct": 2.31,
-      "stopPrice": 12.49,
-      "distancePct": 9.77
-     },
-     {
-      "ticker": "NSIT",
-      "side": "short",
-      "price": 155.65,
-      "dayChangePct": 0.23,
-      "stopPrice": 158.39,
-      "distancePct": 1.76
-     },
-     {
-      "ticker": "AS",
-      "side": "long",
-      "price": 30.64,
-      "dayChangePct": 5.29,
-      "stopPrice": 29.6,
-      "distancePct": 3.51
-     }
-    ],
-    "actions": [],
-    "note": "NSIT zarar-kes seviyesine %3'ten yakın"
-   },
-   {
-    "at": "2026-11-17T14:17:52-05:00",
-    "kind": "guard",
-    "status": "uyari",
-    "spyPrice": 732.01,
-    "spyChangePct": -1.07,
-    "totalValue": 2899.15,
-    "benchmarkValue": 2940.15,
-    "leverage": 2.263,
-    "marginBuffer": 2571.06,
-    "positions": [
-     {
-      "ticker": "QQQ",
-      "side": "long",
-      "price": 655.69,
-      "dayChangePct": -0.92,
-      "stopPrice": null,
-      "distancePct": null
-     },
-     {
-      "ticker": "HTHT",
-      "side": "long",
-      "price": 54.25,
-      "dayChangePct": -1.15,
-      "stopPrice": 52.03,
-      "distancePct": 4.27
-     },
-     {
-      "ticker": "AVEX",
-      "side": "long",
-      "price": 13.745,
-      "dayChangePct": 2.57,
-      "stopPrice": 12.49,
-      "distancePct": 10.05
-     },
-     {
-      "ticker": "NSIT",
-      "side": "short",
-      "price": 156.24,
-      "dayChangePct": 0.61,
-      "stopPrice": 158.39,
-      "distancePct": 1.38
-     },
-     {
-      "ticker": "AS",
-      "side": "long",
-      "price": 30.8,
-      "dayChangePct": 5.84,
-      "stopPrice": 29.6,
-      "distancePct": 4.05
-     }
-    ],
-    "actions": [],
-    "note": "NSIT zarar-kes seviyesine %3'ten yakın"
-   },
-   {
-    "at": "2026-11-17T14:22:52-05:00",
-    "kind": "guard",
-    "status": "uyari",
-    "spyPrice": 731.72,
-    "spyChangePct": -1.11,
-    "totalValue": 2892.74,
-    "benchmarkValue": 2938.99,
-    "leverage": 2.266,
-    "marginBuffer": 2564.93,
-    "positions": [
-     {
-      "ticker": "QQQ",
-      "side": "long",
-      "price": 655.12,
-      "dayChangePct": -1.0,
-      "stopPrice": null,
-      "distancePct": null
-     },
-     {
-      "ticker": "HTHT",
-      "side": "long",
-      "price": 54.29,
-      "dayChangePct": -1.08,
-      "stopPrice": 52.03,
-      "distancePct": 4.34
-     },
-     {
-      "ticker": "AVEX",
-      "side": "long",
-      "price": 13.651,
-      "dayChangePct": 1.87,
-      "stopPrice": 12.49,
-      "distancePct": 9.3
-     },
-     {
-      "ticker": "NSIT",
-      "side": "short",
-      "price": 156.3,
-      "dayChangePct": 0.65,
-      "stopPrice": 158.39,
-      "distancePct": 1.34
-     },
-     {
-      "ticker": "AS",
-      "side": "long",
-      "price": 30.78,
-      "dayChangePct": 5.77,
-      "stopPrice": 29.6,
-      "distancePct": 3.99
-     }
-    ],
-    "actions": [],
-    "note": "NSIT zarar-kes seviyesine %3'ten yakın"
-   },
-   {
-    "at": "2026-11-17T14:27:55-05:00",
-    "kind": "guard",
-    "status": "uyari",
-    "spyPrice": 731.26,
-    "spyChangePct": -1.17,
-    "totalValue": 2888.66,
-    "benchmarkValue": 2937.14,
-    "leverage": 2.267,
-    "marginBuffer": 2561.27,
-    "positions": [
-     {
-      "ticker": "QQQ",
-      "side": "long",
-      "price": 654.26,
-      "dayChangePct": -1.13,
-      "stopPrice": null,
-      "distancePct": null
-     },
-     {
-      "ticker": "HTHT",
-      "side": "long",
-      "price": 54.29,
-      "dayChangePct": -1.08,
-      "stopPrice": 52.03,
-      "distancePct": 4.34
-     },
-     {
-      "ticker": "AVEX",
-      "side": "long",
-      "price": 13.595,
-      "dayChangePct": 1.46,
-      "stopPrice": 12.49,
-      "distancePct": 8.85
-     },
-     {
-      "ticker": "NSIT",
-      "side": "short",
-      "price": 156.02,
-      "dayChangePct": 0.47,
-      "stopPrice": 158.39,
-      "distancePct": 1.52
-     },
-     {
-      "ticker": "AS",
-      "side": "long",
-      "price": 30.825,
-      "dayChangePct": 5.93,
-      "stopPrice": 29.6,
-      "distancePct": 4.14
-     }
-    ],
-    "actions": [],
-    "note": "NSIT zarar-kes seviyesine %3'ten yakın"
-   },
-   {
-    "at": "2026-11-17T14:32:56-05:00",
-    "kind": "guard",
-    "status": "uyari",
-    "spyPrice": 730.82,
-    "spyChangePct": -1.23,
-    "totalValue": 2890.38,
-    "benchmarkValue": 2935.37,
-    "leverage": 2.265,
-    "marginBuffer": 2563.07,
-    "positions": [
-     {
-      "ticker": "QQQ",
-      "side": "long",
-      "price": 654.22,
-      "dayChangePct": -1.14,
-      "stopPrice": null,
-      "distancePct": null
-     },
-     {
-      "ticker": "HTHT",
-      "side": "long",
-      "price": 54.27,
-      "dayChangePct": -1.11,
-      "stopPrice": 52.03,
-      "distancePct": 4.31
-     },
-     {
-      "ticker": "AVEX",
-      "side": "long",
-      "price": 13.59,
-      "dayChangePct": 1.42,
-      "stopPrice": 12.49,
-      "distancePct": 8.81
-     },
-     {
-      "ticker": "NSIT",
-      "side": "short",
-      "price": 155.8,
-      "dayChangePct": 0.33,
-      "stopPrice": 158.39,
-      "distancePct": 1.66
-     },
-     {
-      "ticker": "AS",
-      "side": "long",
-      "price": 30.865,
-      "dayChangePct": 6.07,
-      "stopPrice": 29.6,
-      "distancePct": 4.27
-     }
-    ],
-    "actions": [],
-    "note": "NSIT zarar-kes seviyesine %3'ten yakın"
-   },
-   {
-    "at": "2026-11-17T14:37:59-05:00",
-    "kind": "guard",
-    "status": "uyari",
-    "spyPrice": 730.88,
-    "spyChangePct": -1.23,
-    "totalValue": 2886.2,
-    "benchmarkValue": 2935.61,
-    "leverage": 2.267,
-    "marginBuffer": 2559.09,
-    "positions": [
-     {
-      "ticker": "QQQ",
-      "side": "long",
-      "price": 654.055,
-      "dayChangePct": -1.16,
-      "stopPrice": null,
-      "distancePct": null
-     },
-     {
-      "ticker": "HTHT",
-      "side": "long",
-      "price": 54.32,
-      "dayChangePct": -1.02,
-      "stopPrice": 52.03,
-      "distancePct": 4.4
-     },
-     {
-      "ticker": "AVEX",
-      "side": "long",
-      "price": 13.54,
-      "dayChangePct": 1.04,
-      "stopPrice": 12.49,
-      "distancePct": 8.41
-     },
-     {
-      "ticker": "NSIT",
-      "side": "short",
-      "price": 155.8,
-      "dayChangePct": 0.33,
-      "stopPrice": 158.39,
-      "distancePct": 1.66
-     },
-     {
-      "ticker": "AS",
-      "side": "long",
-      "price": 30.7,
-      "dayChangePct": 5.5,
-      "stopPrice": 29.6,
-      "distancePct": 3.72
-     }
-    ],
-    "actions": [],
-    "note": "NSIT zarar-kes seviyesine %3'ten yakın"
-   },
-   {
-    "at": "2026-11-17T14:43:01-05:00",
-    "kind": "guard",
-    "status": "uyari",
-    "spyPrice": 730.65,
-    "spyChangePct": -1.26,
-    "totalValue": 2882.44,
-    "benchmarkValue": 2934.69,
-    "leverage": 2.268,
-    "marginBuffer": 2555.55,
-    "positions": [
-     {
-      "ticker": "QQQ",
-      "side": "long",
-      "price": 654.02,
-      "dayChangePct": -1.17,
-      "stopPrice": null,
-      "distancePct": null
-     },
-     {
-      "ticker": "HTHT",
-      "side": "long",
-      "price": 54.255,
-      "dayChangePct": -1.14,
-      "stopPrice": 52.03,
-      "distancePct": 4.28
-     },
-     {
-      "ticker": "AVEX",
-      "side": "long",
-      "price": 13.52,
-      "dayChangePct": 0.9,
-      "stopPrice": 12.49,
-      "distancePct": 8.25
-     },
-     {
-      "ticker": "NSIT",
-      "side": "short",
-      "price": 155.79,
-      "dayChangePct": 0.32,
-      "stopPrice": 158.39,
-      "distancePct": 1.67
-     },
-     {
-      "ticker": "AS",
-      "side": "long",
-      "price": 30.51,
-      "dayChangePct": 4.85,
-      "stopPrice": 29.6,
-      "distancePct": 3.07
-     }
-    ],
-    "actions": [],
-    "note": "NSIT zarar-kes seviyesine %3'ten yakın"
-   },
-   {
-    "at": "2026-11-17T14:48:06-05:00",
-    "kind": "guard",
-    "status": "uyari",
-    "spyPrice": 730.42,
-    "spyChangePct": -1.29,
-    "totalValue": 2884.38,
-    "benchmarkValue": 2933.75,
-    "leverage": 2.266,
-    "marginBuffer": 2557.64,
-    "positions": [
-     {
-      "ticker": "QQQ",
-      "side": "long",
-      "price": 653.73,
-      "dayChangePct": -1.21,
-      "stopPrice": null,
-      "distancePct": null
-     },
-     {
-      "ticker": "HTHT",
-      "side": "long",
-      "price": 54.22,
-      "dayChangePct": -1.2,
-      "stopPrice": 52.03,
-      "distancePct": 4.21
-     },
-     {
-      "ticker": "AVEX",
-      "side": "long",
-      "price": 13.53,
-      "dayChangePct": 0.97,
-      "stopPrice": 12.49,
-      "distancePct": 8.33
-     },
-     {
-      "ticker": "NSIT",
-      "side": "short",
-      "price": 155.46,
-      "dayChangePct": 0.11,
-      "stopPrice": 158.39,
-      "distancePct": 1.88
-     },
-     {
-      "ticker": "AS",
-      "side": "long",
-      "price": 30.6,
-      "dayChangePct": 5.15,
-      "stopPrice": 29.6,
-      "distancePct": 3.38
-     }
-    ],
-    "actions": [],
-    "note": "NSIT zarar-kes seviyesine %3'ten yakın"
-   },
-   {
-    "at": "2026-11-17T14:53:06-05:00",
-    "kind": "guard",
-    "status": "uyari",
-    "spyPrice": 729.81,
-    "spyChangePct": -1.37,
-    "totalValue": 2878.41,
-    "benchmarkValue": 2931.32,
-    "leverage": 2.268,
-    "marginBuffer": 2551.94,
-    "positions": [
-     {
-      "ticker": "QQQ",
-      "side": "long",
-      "price": 653.075,
-      "dayChangePct": -1.31,
-      "stopPrice": null,
-      "distancePct": null
-     },
-     {
-      "ticker": "HTHT",
-      "side": "long",
-      "price": 54.15,
-      "dayChangePct": -1.33,
-      "stopPrice": 52.03,
-      "distancePct": 4.07
-     },
-     {
-      "ticker": "AVEX",
-      "side": "long",
-      "price": 13.5,
-      "dayChangePct": 0.75,
-      "stopPrice": 12.49,
-      "distancePct": 8.09
-     },
-     {
-      "ticker": "NSIT",
-      "side": "short",
-      "price": 155.5,
-      "dayChangePct": 0.14,
-      "stopPrice": 158.39,
-      "distancePct": 1.86
-     },
-     {
-      "ticker": "AS",
-      "side": "long",
-      "price": 30.585,
-      "dayChangePct": 5.1,
-      "stopPrice": 29.6,
-      "distancePct": 3.33
-     }
-    ],
-    "actions": [],
-    "note": "NSIT zarar-kes seviyesine %3'ten yakın"
-   },
-   {
-    "at": "2026-11-17T14:58:10-05:00",
-    "kind": "guard",
-    "status": "uyari",
-    "spyPrice": 728.92,
-    "spyChangePct": -1.49,
-    "totalValue": 2869.0,
-    "benchmarkValue": 2927.74,
-    "leverage": 2.275,
-    "marginBuffer": 2542.69,
-    "positions": [
-     {
-      "ticker": "QQQ",
-      "side": "long",
-      "price": 652.15,
-      "dayChangePct": -1.45,
-      "stopPrice": null,
-      "distancePct": null
-     },
-     {
-      "ticker": "HTHT",
-      "side": "long",
-      "price": 54.17,
-      "dayChangePct": -1.29,
-      "stopPrice": 52.03,
-      "distancePct": 4.11
-     },
-     {
-      "ticker": "AVEX",
-      "side": "long",
-      "price": 13.5,
-      "dayChangePct": 0.75,
-      "stopPrice": 12.49,
-      "distancePct": 8.09
-     },
-     {
-      "ticker": "NSIT",
-      "side": "short",
-      "price": 155.89,
-      "dayChangePct": 0.39,
-      "stopPrice": 158.39,
-      "distancePct": 1.6
-     },
-     {
-      "ticker": "AS",
-      "side": "long",
-      "price": 30.5364,
-      "dayChangePct": 4.94,
-      "stopPrice": 29.6,
-      "distancePct": 3.16
-     }
-    ],
-    "actions": [],
-    "note": "NSIT zarar-kes seviyesine %3'ten yakın"
-   },
-   {
-    "at": "2026-11-17T15:03:10-05:00",
-    "kind": "fırsat",
-    "status": "uyari",
-    "spyPrice": 728.48,
-    "spyChangePct": -1.55,
-    "totalValue": 2865.05,
-    "benchmarkValue": 2925.97,
-    "leverage": 2.276,
-    "marginBuffer": 2539.01,
-    "positions": [
-     {
-      "ticker": "QQQ",
-      "side": "long",
-      "price": 651.675,
-      "dayChangePct": -1.52,
-      "stopPrice": null,
-      "distancePct": null
-     },
-     {
-      "ticker": "HTHT",
-      "side": "long",
-      "price": 54.18,
-      "dayChangePct": -1.28,
-      "stopPrice": 52.03,
-      "distancePct": 4.13
-     },
-     {
-      "ticker": "AVEX",
-      "side": "long",
-      "price": 13.445,
-      "dayChangePct": 0.34,
-      "stopPrice": 12.49,
-      "distancePct": 7.65
-     },
-     {
-      "ticker": "NSIT",
-      "side": "short",
-      "price": 155.795,
-      "dayChangePct": 0.33,
-      "stopPrice": 158.39,
-      "distancePct": 1.67
-     },
-     {
-      "ticker": "AS",
-      "side": "long",
-      "price": 30.51,
-      "dayChangePct": 4.85,
-      "stopPrice": 29.6,
-      "distancePct": 3.07
-     }
-    ],
-    "actions": [],
-    "note": "NSIT zarar-kes seviyesine %3'ten yakın"
-   },
-   {
-    "at": "2026-11-17T15:08:18-05:00",
-    "kind": "guard",
-    "status": "uyari",
-    "spyPrice": 729.78,
-    "spyChangePct": -1.37,
-    "totalValue": 2875.97,
-    "benchmarkValue": 2931.2,
-    "leverage": 2.27,
-    "marginBuffer": 2549.57,
-    "positions": [
-     {
-      "ticker": "QQQ",
-      "side": "long",
-      "price": 652.98,
-      "dayChangePct": -1.33,
-      "stopPrice": null,
-      "distancePct": null
-     },
-     {
-      "ticker": "HTHT",
-      "side": "long",
-      "price": 54.26,
-      "dayChangePct": -1.13,
-      "stopPrice": 52.03,
-      "distancePct": 4.29
-     },
-     {
-      "ticker": "AVEX",
-      "side": "long",
-      "price": 13.49,
-      "dayChangePct": 0.67,
-      "stopPrice": 12.49,
-      "distancePct": 8.01
-     },
-     {
-      "ticker": "NSIT",
-      "side": "short",
-      "price": 155.56,
-      "dayChangePct": 0.17,
-      "stopPrice": 158.39,
-      "distancePct": 1.82
-     },
-     {
-      "ticker": "AS",
-      "side": "long",
-      "price": 30.442,
-      "dayChangePct": 4.61,
-      "stopPrice": 29.6,
-      "distancePct": 2.84
-     }
-    ],
-    "actions": [],
-    "note": "NSIT zarar-kes seviyesine %3'ten yakın"
-   },
-   {
-    "at": "2026-11-17T15:13:21-05:00",
-    "kind": "guard",
-    "status": "uyari",
-    "spyPrice": 729.22,
-    "spyChangePct": -1.45,
-    "totalValue": 2872.1,
-    "benchmarkValue": 2928.95,
-    "leverage": 2.271,
-    "marginBuffer": 2545.92,
-    "positions": [
-     {
-      "ticker": "QQQ",
-      "side": "long",
-      "price": 652.34,
-      "dayChangePct": -1.42,
-      "stopPrice": null,
-      "distancePct": null
-     },
-     {
-      "ticker": "HTHT",
-      "side": "long",
-      "price": 54.25,
-      "dayChangePct": -1.15,
-      "stopPrice": 52.03,
-      "distancePct": 4.27
-     },
-     {
-      "ticker": "AVEX",
-      "side": "long",
-      "price": 13.465,
-      "dayChangePct": 0.49,
-      "stopPrice": 12.49,
-      "distancePct": 7.81
-     },
-     {
-      "ticker": "NSIT",
-      "side": "short",
-      "price": 155.52,
-      "dayChangePct": 0.15,
-      "stopPrice": 158.39,
-      "distancePct": 1.85
-     },
-     {
-      "ticker": "AS",
-      "side": "long",
-      "price": 30.485,
-      "dayChangePct": 4.76,
-      "stopPrice": 29.6,
-      "distancePct": 2.99
-     }
-    ],
-    "actions": [],
-    "note": "NSIT zarar-kes seviyesine %3'ten yakın"
-   },
-   {
-    "at": "2026-11-17T15:25:28-05:00",
-    "kind": "guard",
-    "status": "uyari",
-    "spyPrice": 730.09,
-    "spyChangePct": -1.33,
-    "totalValue": 2872.34,
-    "benchmarkValue": 2932.42,
-    "leverage": 2.273,
-    "marginBuffer": 2545.89,
-    "positions": [
-     {
-      "ticker": "QQQ",
-      "side": "long",
-      "price": 653.35,
-      "dayChangePct": -1.27,
-      "stopPrice": null,
-      "distancePct": null
-     },
-     {
-      "ticker": "HTHT",
-      "side": "long",
-      "price": 54.26,
-      "dayChangePct": -1.13,
-      "stopPrice": 52.03,
-      "distancePct": 4.29
-     },
-     {
-      "ticker": "AVEX",
-      "side": "long",
-      "price": 13.37,
-      "dayChangePct": -0.22,
-      "stopPrice": 12.49,
-      "distancePct": 7.05
-     },
-     {
-      "ticker": "NSIT",
-      "side": "short",
-      "price": 155.85,
-      "dayChangePct": 0.36,
-      "stopPrice": 158.39,
-      "distancePct": 1.63
-     },
-     {
-      "ticker": "AS",
-      "side": "long",
-      "price": 30.39,
-      "dayChangePct": 4.43,
-      "stopPrice": 29.6,
-      "distancePct": 2.67
-     }
-    ],
-    "actions": [],
-    "note": "NSIT zarar-kes seviyesine %3'ten yakın"
-   },
-   {
-    "at": "2026-11-17T15:30:33-05:00",
-    "kind": "guard",
-    "status": "uyari",
-    "spyPrice": 730.3,
-    "spyChangePct": -1.3,
-    "totalValue": 2881.94,
-    "benchmarkValue": 2933.28,
-    "leverage": 2.264,
-    "marginBuffer": 2555.69,
-    "positions": [
-     {
-      "ticker": "QQQ",
-      "side": "long",
-      "price": 653.73,
-      "dayChangePct": -1.21,
-      "stopPrice": null,
-      "distancePct": null
-     },
-     {
-      "ticker": "HTHT",
-      "side": "long",
-      "price": 54.2,
-      "dayChangePct": -1.24,
-      "stopPrice": 52.03,
-      "distancePct": 4.17
-     },
-     {
-      "ticker": "AVEX",
-      "side": "long",
-      "price": 13.395,
-      "dayChangePct": -0.04,
-      "stopPrice": 12.49,
-      "distancePct": 7.25
-     },
-     {
-      "ticker": "NSIT",
-      "side": "short",
-      "price": 154.99,
-      "dayChangePct": -0.19,
-      "stopPrice": 158.39,
-      "distancePct": 2.19
-     },
-     {
-      "ticker": "AS",
-      "side": "long",
-      "price": 30.415,
-      "dayChangePct": 4.52,
-      "stopPrice": 29.6,
-      "distancePct": 2.75
-     }
-    ],
-    "actions": [],
-    "note": "NSIT zarar-kes seviyesine %3'ten yakın"
-   },
-   {
-    "at": "2026-11-17T15:35:35-05:00",
-    "kind": "guard",
-    "status": "uyari",
-    "spyPrice": 731.65,
-    "spyChangePct": -1.12,
-    "totalValue": 2888.72,
-    "benchmarkValue": 2938.71,
-    "leverage": 2.264,
-    "marginBuffer": 2561.73,
-    "positions": [
-     {
-      "ticker": "QQQ",
-      "side": "long",
-      "price": 655.21,
-      "dayChangePct": -0.99,
-      "stopPrice": null,
-      "distancePct": null
-     },
-     {
-      "ticker": "HTHT",
-      "side": "long",
-      "price": 54.22,
-      "dayChangePct": -1.2,
-      "stopPrice": 52.03,
-      "distancePct": 4.21
-     },
-     {
-      "ticker": "AVEX",
-      "side": "long",
-      "price": 13.475,
-      "dayChangePct": 0.56,
-      "stopPrice": 12.49,
-      "distancePct": 7.89
-     },
-     {
-      "ticker": "NSIT",
-      "side": "short",
-      "price": 155.5,
-      "dayChangePct": 0.14,
-      "stopPrice": 158.39,
-      "distancePct": 1.86
-     },
-     {
-      "ticker": "AS",
-      "side": "long",
-      "price": 30.355,
-      "dayChangePct": 4.31,
-      "stopPrice": 29.6,
-      "distancePct": 2.55
-     }
-    ],
-    "actions": [],
-    "note": "NSIT zarar-kes seviyesine %3'ten yakın"
-   },
-   {
-    "at": "2026-11-17T15:40:37-05:00",
-    "kind": "guard",
-    "status": "uyari",
-    "spyPrice": 730.87,
-    "spyChangePct": -1.23,
-    "totalValue": 2884.88,
-    "benchmarkValue": 2935.57,
-    "leverage": 2.263,
-    "marginBuffer": 2558.44,
-    "positions": [
-     {
-      "ticker": "QQQ",
-      "side": "long",
-      "price": 654.3,
-      "dayChangePct": -1.13,
-      "stopPrice": null,
-      "distancePct": null
-     },
-     {
-      "ticker": "HTHT",
-      "side": "long",
-      "price": 54.06,
-      "dayChangePct": -1.49,
-      "stopPrice": 52.03,
-      "distancePct": 3.9
-     },
-     {
-      "ticker": "AVEX",
-      "side": "long",
-      "price": 13.4073,
-      "dayChangePct": 0.05,
-      "stopPrice": 12.49,
-      "distancePct": 7.34
-     },
-     {
-      "ticker": "NSIT",
-      "side": "short",
-      "price": 155.04,
-      "dayChangePct": -0.16,
-      "stopPrice": 158.39,
-      "distancePct": 2.16
-     },
-     {
-      "ticker": "AS",
-      "side": "long",
-      "price": 30.45,
-      "dayChangePct": 4.64,
-      "stopPrice": 29.6,
-      "distancePct": 2.87
-     }
-    ],
-    "actions": [],
-    "note": "NSIT zarar-kes seviyesine %3'ten yakın"
-   },
-   {
-    "at": "2026-11-17T15:45:41-05:00",
-    "kind": "guard",
-    "status": "uyari",
-    "spyPrice": 731.03,
-    "spyChangePct": -1.21,
-    "totalValue": 2882.49,
-    "benchmarkValue": 2936.22,
-    "leverage": 2.268,
-    "marginBuffer": 2555.66,
-    "positions": [
-     {
-      "ticker": "QQQ",
-      "side": "long",
-      "price": 654.57,
-      "dayChangePct": -1.09,
-      "stopPrice": null,
-      "distancePct": null
-     },
-     {
-      "ticker": "HTHT",
-      "side": "long",
-      "price": 54.0,
-      "dayChangePct": -1.6,
-      "stopPrice": 52.03,
-      "distancePct": 3.79
-     },
-     {
-      "ticker": "AVEX",
-      "side": "long",
-      "price": 13.4027,
-      "dayChangePct": 0.02,
-      "stopPrice": 12.49,
-      "distancePct": 7.31
-     },
-     {
-      "ticker": "NSIT",
-      "side": "short",
-      "price": 155.69,
-      "dayChangePct": 0.26,
-      "stopPrice": 158.39,
-      "distancePct": 1.73
-     },
-     {
-      "ticker": "AS",
-      "side": "long",
-      "price": 30.56,
-      "dayChangePct": 5.02,
-      "stopPrice": 29.6,
-      "distancePct": 3.24
-     }
-    ],
-    "actions": [],
-    "note": "NSIT zarar-kes seviyesine %3'ten yakın"
-   },
-   {
-    "at": "2026-11-17T15:50:43-05:00",
-    "kind": "guard",
-    "status": "uyari",
-    "spyPrice": 729.85,
-    "spyChangePct": -1.36,
-    "totalValue": 2872.02,
-    "benchmarkValue": 2931.5,
-    "leverage": 2.272,
-    "marginBuffer": 2545.73,
-    "positions": [
-     {
-      "ticker": "QQQ",
-      "side": "long",
-      "price": 653.02,
-      "dayChangePct": -1.32,
-      "stopPrice": null,
-      "distancePct": null
-     },
-     {
-      "ticker": "HTHT",
-      "side": "long",
-      "price": 53.93,
-      "dayChangePct": -1.73,
-      "stopPrice": 52.03,
-      "distancePct": 3.65
-     },
-     {
-      "ticker": "AVEX",
-      "side": "long",
-      "price": 13.475,
-      "dayChangePct": 0.56,
-      "stopPrice": 12.49,
-      "distancePct": 7.89
-     },
-     {
-      "ticker": "NSIT",
-      "side": "short",
-      "price": 155.66,
-      "dayChangePct": 0.24,
-      "stopPrice": 158.39,
-      "distancePct": 1.75
-     },
-     {
-      "ticker": "AS",
-      "side": "long",
-      "price": 30.405,
-      "dayChangePct": 4.48,
-      "stopPrice": 29.6,
-      "distancePct": 2.72
-     }
-    ],
-    "actions": [],
-    "note": "NSIT zarar-kes seviyesine %3'ten yakın"
-   },
-   {
-    "at": "2026-11-17T15:55:44-05:00",
-    "kind": "guard",
-    "status": "uyari",
-    "spyPrice": 730.5,
-    "spyChangePct": -1.28,
-    "totalValue": 2875.83,
-    "benchmarkValue": 2934.09,
-    "leverage": 2.272,
-    "marginBuffer": 2549.1,
-    "positions": [
-     {
-      "ticker": "QQQ",
-      "side": "long",
-      "price": 654.425,
-      "dayChangePct": -1.11,
-      "stopPrice": null,
-      "distancePct": null
-     },
-     {
-      "ticker": "HTHT",
-      "side": "long",
-      "price": 53.71,
-      "dayChangePct": -2.13,
-      "stopPrice": 52.03,
-      "distancePct": 3.23
-     },
-     {
-      "ticker": "AVEX",
-      "side": "long",
-      "price": 13.515,
-      "dayChangePct": 0.86,
-      "stopPrice": 12.49,
-      "distancePct": 8.21
-     },
-     {
-      "ticker": "NSIT",
-      "side": "short",
-      "price": 156.0,
-      "dayChangePct": 0.46,
-      "stopPrice": 158.39,
-      "distancePct": 1.53
-     },
-     {
-      "ticker": "AS",
-      "side": "long",
-      "price": 30.275,
-      "dayChangePct": 4.04,
-      "stopPrice": 29.6,
-      "distancePct": 2.28
-     }
-    ],
-    "actions": [],
-    "note": "NSIT zarar-kes seviyesine %3'ten yakın"
-   },
-   {
-    "at": "2026-11-17T16:00:47-05:00",
-    "kind": "guard",
-    "status": "uyari",
-    "spyPrice": 732.38,
-    "spyChangePct": -1.02,
-    "totalValue": 2891.07,
-    "benchmarkValue": 2941.64,
-    "leverage": 2.267,
-    "marginBuffer": 2563.31,
-    "positions": [
-     {
-      "ticker": "QQQ",
-      "side": "long",
-      "price": 657.03,
-      "dayChangePct": -0.71,
-      "stopPrice": null,
-      "distancePct": null
-     },
-     {
-      "ticker": "HTHT",
-      "side": "long",
-      "price": 53.6101,
-      "dayChangePct": -2.31,
-      "stopPrice": 52.03,
-      "distancePct": 3.04
-     },
-     {
-      "ticker": "AVEX",
-      "side": "long",
-      "price": 13.62,
-      "dayChangePct": 1.64,
-      "stopPrice": 12.49,
-      "distancePct": 9.05
-     },
-     {
-      "ticker": "NSIT",
-      "side": "short",
-      "price": 156.33,
-      "dayChangePct": 0.67,
-      "stopPrice": 158.39,
-      "distancePct": 1.32
-     },
-     {
-      "ticker": "AS",
-      "side": "long",
-      "price": 30.23,
-      "dayChangePct": 3.88,
-      "stopPrice": 29.6,
-      "distancePct": 2.13
-     }
-    ],
-    "actions": [],
-    "note": "NSIT zarar-kes seviyesine %3'ten yakın"
-   },
-   {
-    "at": "2026-11-17T16:05:48-05:00",
-    "kind": "guard",
-    "status": "uyari",
-    "spyPrice": 732.38,
-    "spyChangePct": -1.02,
-    "totalValue": 2891.07,
-    "benchmarkValue": 2941.64,
-    "leverage": 2.267,
-    "marginBuffer": 2563.31,
-    "positions": [
-     {
-      "ticker": "QQQ",
-      "side": "long",
-      "price": 657.03,
-      "dayChangePct": -0.71,
-      "stopPrice": null,
-      "distancePct": null
-     },
-     {
-      "ticker": "HTHT",
-      "side": "long",
-      "price": 53.6101,
-      "dayChangePct": -2.31,
-      "stopPrice": 52.03,
-      "distancePct": 3.04
-     },
-     {
-      "ticker": "AVEX",
-      "side": "long",
-      "price": 13.62,
-      "dayChangePct": 1.64,
-      "stopPrice": 12.49,
-      "distancePct": 9.05
-     },
-     {
-      "ticker": "NSIT",
-      "side": "short",
-      "price": 156.33,
-      "dayChangePct": 0.67,
-      "stopPrice": 158.39,
-      "distancePct": 1.32
-     },
-     {
-      "ticker": "AS",
-      "side": "long",
-      "price": 30.23,
-      "dayChangePct": 3.88,
-      "stopPrice": 29.6,
-      "distancePct": 2.13
-     }
-    ],
-    "actions": [],
-    "note": "NSIT zarar-kes seviyesine %3'ten yakın"
-   }
-  ],
   "2026-11-18": [
    {
     "at": "2026-11-18T09:30:26-05:00",
@@ -31298,6 +27134,67 @@
     "actions": [],
     "note": "Normal: pozisyonlar zarar-kese %3,3–%108,0 uzakta, kaldıraç 2,02x, SPY +%4,74; işlem gerekmedi."
    }
+  ],
+  "2026-11-24": [
+   {
+    "at": "2026-11-24T09:30:27-05:00",
+    "kind": "guard",
+    "status": "alarm",
+    "spyPrice": 714.16,
+    "spyChangePct": -1.13,
+    "qqqChangePct": -1.61,
+    "totalValue": 2602.83,
+    "benchmarkValue": 2868.46,
+    "leverage": 1.273,
+    "marginBuffer": 2437.14,
+    "positions": [
+     {
+      "ticker": "SLS",
+      "side": "short",
+      "price": 13.42,
+      "dayChangePct": 1.05,
+      "stopPrice": 27.65,
+      "distancePct": 106.04
+     },
+     {
+      "ticker": "PDD",
+      "side": "long",
+      "price": 85.43,
+      "dayChangePct": -1.96,
+      "stopPrice": 81.94,
+      "distancePct": 4.26
+     },
+     {
+      "ticker": "GAP",
+      "side": "long",
+      "price": 22.1,
+      "dayChangePct": 1.61,
+      "stopPrice": 20.21,
+      "distancePct": 9.35
+     },
+     {
+      "ticker": "NVDA",
+      "side": "long",
+      "price": 159.13,
+      "dayChangePct": -3.59,
+      "stopPrice": 156.77,
+      "distancePct": 1.51
+     },
+     {
+      "ticker": "KYMR",
+      "side": "long",
+      "price": 162.5,
+      "dayChangePct": 8.07,
+      "stopPrice": 135.81,
+      "distancePct": 19.65
+     }
+    ],
+    "actions": [
+     "AXTI long kapatıldı (848,08 $)",
+     "MXL long kapatıldı (1.195,07 $)"
+    ],
+    "note": "1 günlük kredi faizi 0,35 $, ödünç ücreti 0,17 $ düşüldü"
+   }
   ]
  },
  "runs": [
@@ -32831,9 +28728,9 @@
  ],
  "tax": {
   "2026": {
-   "commissions": 10.37,
-   "marginInterest": 0.7,
-   "shortTermRealized": -293.65
+   "commissions": 11.14,
+   "marginInterest": 1.05,
+   "shortTermRealized": -508.09
   }
  },
  "evalHistory": [
@@ -33045,19 +28942,19 @@
    "last": "2026-11-19"
   },
   "drift": {
-   "closed": 3,
+   "closed": 5,
    "wins": 0,
-   "pl": -250.46,
+   "pl": -464.9,
    "best": -82.44,
-   "worst": -84.41,
-   "last": "2026-11-23"
+   "worst": -119.47,
+   "last": "2026-11-24"
   }
  },
  "scorecard": {
   "start": "2026-11-16",
   "startAt": "2026-11-16T09:30:32-05:00",
   "end": "2027-02-16",
-  "asOf": "2026-11-23T16:06:05-05:00",
+  "asOf": "2026-11-24T09:30:27-05:00",
   "strategy": "v7",
   "history": [
    {
@@ -33140,27 +29037,27 @@
   "daysElapsed": 6,
   "daysTotal": 62,
   "finished": false,
-  "returnPct": -10.5,
-  "spyReturnPct": -3.27,
-  "excessPct": -7.23,
-  "maxDrawdownPct": -15.92,
-  "maxDrawdownAt": "2026-11-23T15:50:58-05:00",
-  "drawdownNowPct": -15.0,
+  "returnPct": -13.24,
+  "spyReturnPct": -4.38,
+  "excessPct": -8.85,
+  "maxDrawdownPct": -17.6,
+  "maxDrawdownAt": "2026-11-24T09:30:27-05:00",
+  "drawdownNowPct": -17.6,
   "trades": {
-   "closed": 10,
+   "closed": 12,
    "wins": 2,
-   "winRatePct": 20.0,
+   "winRatePct": 16.7,
    "avgWin": 36.12,
-   "avgLoss": -45.73,
-   "profitFactor": 0.2,
-   "realizedPL": -293.65
+   "avgLoss": -58.03,
+   "profitFactor": 0.12,
+   "realizedPL": -508.09
   },
   "monthly": [
    {
     "month": "2026-11",
-    "returnPct": -10.5,
-    "spyPct": -3.27,
-    "excessPct": -7.23
+    "returnPct": -13.24,
+    "spyPct": -4.38,
+    "excessPct": -8.86
    }
   ],
   "uptime": {
@@ -33179,14 +29076,14 @@
     "key": "spy",
     "label": "SPY'ı geçmek (masraflar düşülmüş)",
     "ok": false,
-    "value": -7.23,
+    "value": -8.85,
     "unit": "pct"
    },
    {
     "key": "dd",
     "label": "En büyük düşüş %20'den az",
     "ok": true,
-    "value": -15.92,
+    "value": -17.6,
     "unit": "pct"
    },
    {
