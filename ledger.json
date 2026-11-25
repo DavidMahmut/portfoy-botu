@@ -132,7 +132,7 @@
   "reboundRule": "Tepki kuralı (test edildi): endeks kolu nakitteyken (yön yukarı değilken) Nasdaq 100'ün 2 günlük RSI'ı kapanışta 5'in altına inerse ertesi sabah açılışta (09:35) hesabın 3 katı kadar Nasdaq 100 fonu alınır (QQQM; endeks kolunun QQQ'su ile karışmasın diye ayrı fon). RSI kapanışta 50'yi geçince ya da 3 işlem günü dolunca ertesi açılışta satılır; endeks kolu yeniden işleme girerse hemen satılır. 1999–2026 testinde (giriş ve çıkış açılışta) yıllık büyüme %16,5'ten %31,7'ye çıktı, en kötü düşüş değişmedi (%−77); 88 işlemin %73'ü kazandı, işlem başına ortalama +%4,8. 2000–2002 çöküşünde bu dönemler +%28, 2007–2009'da +%31 getirdi (kural tek başına −%60 ve −%35'teydi). Fiyat zarar-kesi yok; risk, 3x kaldıraçla birkaç günlük düşüşün devamıdır."
  },
  "portfolio": {
-  "cash": -1936.58,
+  "cash": -351.61,
   "positions": [
    {
     "stopMode": "event",
@@ -144,16 +144,16 @@
     "shares": 15.6835,
     "avgCost": 18.4024,
     "costBasis": 288.61,
-    "lastPrice": 12.745,
-    "lastPriceAt": "2026-11-25T15:45:00-05:00",
+    "lastPrice": 12.805,
+    "lastPriceAt": "2026-11-25T15:50:00-05:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (15:45 ET)",
+     "title": "Yahoo Finance 5 dk mum (15:50 ET)",
      "url": "https://finance.yahoo.com/quote/SLS/"
     },
-    "marketValue": -199.89,
-    "exposure": 199.89,
-    "unrealized": 88.72,
-    "unrealizedPct": 30.74,
+    "marketValue": -200.83,
+    "exposure": 200.83,
+    "unrealized": 87.78,
+    "unrealizedPct": 30.41,
     "openedAt": "2026-11-18",
     "openedTs": "2026-11-18T09:35:00-05:00",
     "lastAddDate": "2026-11-18",
@@ -181,116 +181,8 @@
      "prevClose": 7.47,
      "close": 19.15
     },
-    "maintReq": 9.99,
-    "lastBarTs": "2026-11-25T15:45:00-05:00"
-   },
-   {
-    "stopMode": "event",
-    "ticker": "GAP",
-    "name": "Gap, Inc. (The)",
-    "kind": "Hisse",
-    "side": "long",
-    "lev": 1,
-    "shares": 15.6744,
-    "avgCost": 21.956,
-    "costBasis": 344.15,
-    "lastPrice": 23.015,
-    "lastPriceAt": "2026-11-25T15:45:00-05:00",
-    "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (15:45 ET)",
-     "url": "https://finance.yahoo.com/quote/GAP/"
-    },
-    "marketValue": 360.75,
-    "exposure": 360.75,
-    "unrealized": 16.6,
-    "unrealizedPct": 4.82,
-    "openedAt": "2026-11-20",
-    "openedTs": "2026-11-20T10:30:00-05:00",
-    "lastAddDate": "2026-11-20",
-    "stopPrice": 20.21,
-    "extremeSinceEntry": 23.31,
-    "tookProfit": false,
-    "thesis": "Haber takibi (deneysel kural): GAP (Gap, Inc. (The)) bugün +%16,92. Haber türü: Beklenti yükseltildi / güçlü bilanço (sert, olumlu) — karışık: ters yönde haber de var. “Gap Shares Rise Nearly 4% as Third-Quarter Earnings Beat Expectations Despite Softer Sales Outlook” (InvestorsHub). Fiyat günün aralığının üst kısmında, yani piyasa haberi geri almıyor; haber yönünde long açıldı. Zarar-kes 20,21 $ (risk %8,6); çıkış 2026-11-25 kapanışında. Büyüklük: hesabın %12'i (344,15 $); zarar-kes çalışırsa kayıp hesabın yaklaşık %1,0'i. Bu kural geçmiş veride sınanamadı (geçmiş haber arşivi yok); sonucu kural karnesinde izlenir.",
-    "sleeve": "event",
-    "play": "news",
-    "playLabel": "Haber takibi",
-    "exitDate": "2026-11-25",
-    "holdDays": 3,
-    "headline": {
-     "title": "Gap Shares Rise Nearly 4% as Third-Quarter Earnings Beat Expectations Despite Softer Sales Outlook",
-     "url": "https://investorshub.advfn.com/market-news/article/40444/gap-shares-rise-nearly-4-as-third-quarter-earnings-beat-expectations-despite-softer-sales-outlook",
-     "publisher": "InvestorsHub",
-     "at": "2026-11-20T10:45:12+00:00"
-    },
-    "borrowRate": 0.01,
-    "slip": 0.0005,
-    "catalyst": {
-     "cat": "guideraise",
-     "label": "Beklenti yükseltildi / güçlü bilanço",
-     "kind": "hard"
-    },
-    "event": {
-     "gapPct": 7.77,
-     "firstHourPct": 8.96,
-     "movePct": 16.92,
-     "prevClose": 18.79
-    },
-    "maintReq": 18.04,
-    "lastBarTs": "2026-11-25T15:45:00-05:00"
-   },
-   {
-    "stopMode": "event",
-    "ticker": "KYMR",
-    "name": "Kymera Therapeutics, Inc.",
-    "kind": "Hisse",
-    "side": "long",
-    "lev": 1,
-    "shares": 7.0504,
-    "avgCost": 147.3136,
-    "costBasis": 1038.62,
-    "lastPrice": 173.055,
-    "lastPriceAt": "2026-11-25T15:45:00-05:00",
-    "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (15:45 ET)",
-     "url": "https://finance.yahoo.com/quote/KYMR/"
-    },
-    "marketValue": 1220.11,
-    "exposure": 1220.11,
-    "unrealized": 181.49,
-    "unrealizedPct": 17.47,
-    "openedAt": "2026-11-23",
-    "openedTs": "2026-11-23T10:30:00-05:00",
-    "lastAddDate": "2026-11-23",
-    "stopPrice": 135.81,
-    "extremeSinceEntry": 178.9,
-    "tookProfit": false,
-    "thesis": "Haber devamı: KYMR (Kymera Therapeutics, Inc.) önceki kapanışın (115,31 $) +%19,68 üstünde açıldı ve ilk saatte +%6,09 daha yükseldi: alıcılar haberi satmıyor, üstüne alıyor. Kural gereği long açıldı. Zarar-kes 135,81 $ (ilk saatin en düşüğünün hemen altı, risk %8,4); çıkış 2026-11-25 kapanışında. Büyüklük: hesabın %36'i (1.038,63 $); zarar-kes çalışırsa kayıp hesabın yaklaşık %3,0'i. Haber türü: FDA onayı / başarılı deneme (sert, olumlu). “Kymera Therapeutics Shares Surge 29% as Phase 2b Eczema Trial Meets All Primary and Secondary Endpoints” (InvestorsHub).",
-    "sleeve": "event",
-    "play": "drift",
-    "playLabel": "Haber devamı",
-    "exitDate": "2026-11-25",
-    "holdDays": 2,
-    "headline": {
-     "title": "Kymera Therapeutics Shares Surge 29% as Phase 2b Eczema Trial Meets All Primary and Secondary Endpoints",
-     "url": "https://investorshub.advfn.com/market-news/article/40528/kymera-therapeutics-shares-surge-29-as-phase-2b-eczema-trial-meets-all-primary-and-secondary-endpoints",
-     "publisher": "InvestorsHub",
-     "at": "2026-11-23T13:49:01+00:00"
-    },
-    "borrowRate": 0.005,
-    "slip": 0.0005,
-    "catalyst": {
-     "cat": "approval",
-     "label": "FDA onayı / başarılı deneme",
-     "kind": "hard"
-    },
-    "event": {
-     "gapPct": 19.68,
-     "firstHourPct": 6.09,
-     "movePct": 27.69,
-     "prevClose": 115.31
-    },
-    "maintReq": 61.01,
-    "lastBarTs": "2026-11-25T15:45:00-05:00"
+    "maintReq": 10.04,
+    "lastBarTs": "2026-11-25T15:50:00-05:00"
    },
    {
     "stopMode": "event",
@@ -302,16 +194,16 @@
     "shares": 1.7333,
     "avgCost": 155.2867,
     "costBasis": 269.16,
-    "lastPrice": 147.725,
-    "lastPriceAt": "2026-11-25T15:45:00-05:00",
+    "lastPrice": 149.1458,
+    "lastPriceAt": "2026-11-25T15:50:00-05:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (15:45 ET)",
+     "title": "Yahoo Finance 5 dk mum (15:50 ET)",
      "url": "https://finance.yahoo.com/quote/NVDA/"
     },
-    "marketValue": -256.05,
-    "exposure": 256.05,
-    "unrealized": 13.11,
-    "unrealizedPct": 4.87,
+    "marketValue": -258.51,
+    "exposure": 258.51,
+    "unrealized": 10.65,
+    "unrealizedPct": 3.96,
     "openedAt": "2026-11-24",
     "openedTs": "2026-11-24T09:35:00-05:00",
     "lastAddDate": "2026-11-24",
@@ -339,8 +231,8 @@
      "prevClose": 125.53,
      "close": 165.05
     },
-    "maintReq": 12.8,
-    "lastBarTs": "2026-11-25T15:45:00-05:00"
+    "maintReq": 12.93,
+    "lastBarTs": "2026-11-25T15:50:00-05:00"
    },
    {
     "stopMode": "event",
@@ -352,16 +244,16 @@
     "shares": 3.4409,
     "avgCost": 176.6783,
     "costBasis": 607.93,
-    "lastPrice": 174.53,
-    "lastPriceAt": "2026-11-25T15:45:00-05:00",
+    "lastPrice": 175.82,
+    "lastPriceAt": "2026-11-25T15:50:00-05:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (15:45 ET)",
+     "title": "Yahoo Finance 5 dk mum (15:50 ET)",
      "url": "https://finance.yahoo.com/quote/ANF/"
     },
-    "marketValue": 600.54,
-    "exposure": 600.54,
-    "unrealized": -7.39,
-    "unrealizedPct": -1.22,
+    "marketValue": 604.98,
+    "exposure": 604.98,
+    "unrealized": -2.95,
+    "unrealizedPct": -0.49,
     "openedAt": "2026-11-24",
     "openedTs": "2026-11-24T10:30:00-05:00",
     "lastAddDate": "2026-11-24",
@@ -393,8 +285,8 @@
      "movePct": 25.73,
      "prevClose": 140.45
     },
-    "maintReq": 30.03,
-    "lastBarTs": "2026-11-25T15:45:00-05:00"
+    "maintReq": 30.25,
+    "lastBarTs": "2026-11-25T15:50:00-05:00"
    },
    {
     "stopMode": "event",
@@ -406,16 +298,16 @@
     "shares": 14.9748,
     "avgCost": 153.7368,
     "costBasis": 2302.18,
-    "lastPrice": 159.58,
-    "lastPriceAt": "2026-11-25T15:45:00-05:00",
+    "lastPrice": 160.365,
+    "lastPriceAt": "2026-11-25T15:50:00-05:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (15:45 ET)",
+     "title": "Yahoo Finance 5 dk mum (15:50 ET)",
      "url": "https://finance.yahoo.com/quote/DKS/"
     },
-    "marketValue": 2389.68,
-    "exposure": 2389.68,
-    "unrealized": 87.5,
-    "unrealizedPct": 3.8,
+    "marketValue": 2401.43,
+    "exposure": 2401.43,
+    "unrealized": 99.25,
+    "unrealizedPct": 4.31,
     "openedAt": "2026-11-24",
     "openedTs": "2026-11-24T10:30:00-05:00",
     "lastAddDate": "2026-11-24",
@@ -447,8 +339,8 @@
      "movePct": 14.95,
      "prevClose": 133.67
     },
-    "maintReq": 119.48,
-    "lastBarTs": "2026-11-25T15:45:00-05:00"
+    "maintReq": 120.07,
+    "lastBarTs": "2026-11-25T15:50:00-05:00"
    },
    {
     "stopMode": "event",
@@ -460,16 +352,16 @@
     "shares": 12.4814,
     "avgCost": 24.057,
     "costBasis": 300.27,
-    "lastPrice": 26.325,
-    "lastPriceAt": "2026-11-25T15:45:00-05:00",
+    "lastPrice": 26.54,
+    "lastPriceAt": "2026-11-25T15:50:00-05:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (15:45 ET)",
+     "title": "Yahoo Finance 5 dk mum (15:50 ET)",
      "url": "https://finance.yahoo.com/quote/KSS/"
     },
-    "marketValue": 328.57,
-    "exposure": 328.57,
-    "unrealized": 28.3,
-    "unrealizedPct": 9.42,
+    "marketValue": 331.26,
+    "exposure": 331.26,
+    "unrealized": 30.99,
+    "unrealizedPct": 10.32,
     "openedAt": "2026-11-24",
     "openedTs": "2026-11-24T10:30:00-05:00",
     "lastAddDate": "2026-11-24",
@@ -501,8 +393,8 @@
      "movePct": 13.3,
      "prevClose": 21.2
     },
-    "maintReq": 16.43,
-    "lastBarTs": "2026-11-25T15:45:00-05:00"
+    "maintReq": 16.56,
+    "lastBarTs": "2026-11-25T15:50:00-05:00"
    },
    {
     "stopMode": "event",
@@ -514,16 +406,16 @@
     "shares": 9.0409,
     "avgCost": 33.5768,
     "costBasis": 303.56,
-    "lastPrice": 35.86,
-    "lastPriceAt": "2026-11-25T15:45:00-05:00",
+    "lastPrice": 35.92,
+    "lastPriceAt": "2026-11-25T15:50:00-05:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (15:45 ET)",
+     "title": "Yahoo Finance 5 dk mum (15:50 ET)",
      "url": "https://finance.yahoo.com/quote/COGT/"
     },
-    "marketValue": 324.21,
-    "exposure": 324.21,
-    "unrealized": 20.65,
-    "unrealizedPct": 6.8,
+    "marketValue": 324.75,
+    "exposure": 324.75,
+    "unrealized": 21.19,
+    "unrealizedPct": 6.98,
     "openedAt": "2026-11-24",
     "openedTs": "2026-11-24T12:00:00-05:00",
     "lastAddDate": "2026-11-24",
@@ -555,45 +447,45 @@
      "movePct": 19.39,
      "prevClose": 28.11
     },
-    "maintReq": 16.21,
-    "lastBarTs": "2026-11-25T15:45:00-05:00"
+    "maintReq": 16.24,
+    "lastBarTs": "2026-11-25T15:50:00-05:00"
    }
   ],
-  "realizedPL": -586.69,
+  "realizedPL": -384.48,
   "netDeposits": 3000.0,
   "costs": {
-   "slippage": 19.8276,
-   "commission": 13.06,
-   "fees": 0.61,
+   "slippage": 20.6206,
+   "commission": 13.76,
+   "fees": 0.67,
    "interest": 1.34,
    "borrow": 1.59,
    "dividendsPaid": 0.0,
    "dividendsReceived": 0.0
   },
-  "longValue": 5223.85,
-  "shortValue": 455.94,
-  "positionsValue": 4767.91,
-  "totalValue": 2831.33,
-  "grossExposure": 5679.79,
-  "netExposure": 4767.91,
-  "leverage": 2.006,
-  "maintenanceReq": 283.99,
-  "marginBuffer": 2547.34,
-  "regTInitialReq": 567.98,
-  "regTExcess": 2263.35,
-  "buyingPower": 22633.51,
+  "longValue": 3662.42,
+  "shortValue": 459.34,
+  "positionsValue": 3203.08,
+  "totalValue": 2851.47,
+  "grossExposure": 4121.76,
+  "netExposure": 3203.08,
+  "leverage": 1.445,
+  "maintenanceReq": 206.09,
+  "marginBuffer": 2645.38,
+  "regTInitialReq": 412.18,
+  "regTExcess": 2439.29,
+  "buyingPower": 24392.94,
   "marginEligible": true,
-  "closeoutMovePct": 44.85,
+  "closeoutMovePct": 64.18,
   "bustCount": 0,
   "paidInTotal": 3000.0,
   "lostToBusts": 0,
-  "totalPL": -168.67,
-  "totalPLPct": -5.62,
-  "twrPct": -5.62,
-  "asOf": "2026-11-25T15:45:47-05:00",
-  "benchmarkPrice": 715.57,
-  "benchmarkValue": 2874.1,
-  "benchmarkTwrPct": -4.2
+  "totalPL": -148.53,
+  "totalPLPct": -4.95,
+  "twrPct": -4.95,
+  "asOf": "2026-11-25T15:50:50-05:00",
+  "benchmarkPrice": 717.39,
+  "benchmarkValue": 2881.43,
+  "benchmarkTwrPct": -3.95
  },
  "meta": {
   "engine": "x10 v7",
@@ -608,9 +500,9 @@
    "ath": 759.66,
    "athDate": "2026-10-06",
    "athChecked": "2026-11-25",
-   "price": 631.48,
-   "at": "2026-11-25T15:45:00-05:00",
-   "ddPct": -16.87,
+   "price": 633.51,
+   "at": "2026-11-25T15:50:00-05:00",
+   "ddPct": -16.61,
    "level": "correction",
    "triggerPrice": 607.73,
    "correctionPrice": 683.69,
@@ -643,7 +535,7 @@
     "2026-11-25"
    ]
   },
-  "lastRunAt": "2026-11-25T15:45:47-05:00",
+  "lastRunAt": "2026-11-25T15:50:50-05:00",
   "lastError": null,
   "spikeScanDate": "2026-11-25",
   "spikeScan": {
@@ -6352,6 +6244,86 @@
    "holdingDays": 5,
    "taxTerm": "kısa vade",
    "play": "news"
+  },
+  {
+   "id": "t-20261125-01",
+   "ts": "2026-11-25T15:50:50-05:00",
+   "date": "2026-11-25",
+   "action": "SELL",
+   "side": "long",
+   "ticker": "GAP",
+   "name": "GAP",
+   "kind": "Hisse",
+   "shares": 15.6744,
+   "quotePrice": 23.055,
+   "quoteAt": "2026-11-25T15:50:00-05:00",
+   "slippagePct": 0.05,
+   "execPrice": 23.0435,
+   "value": 361.19,
+   "commission": 0.35,
+   "fees": 0.02,
+   "priceSource": {
+    "title": "Yahoo Finance 5 dk mum (15:50 ET)",
+    "url": "https://finance.yahoo.com/quote/GAP/"
+   },
+   "reason": "Haber takibi işleminin süresi doldu: 2026-11-20 tarihinde açıldı; plan gereği 3 işlem günü sonra kapanışta kapatıldı.",
+   "rule": "haber takibi çıkış",
+   "sources": [
+    {
+     "title": "Yahoo Finance: GAP",
+     "url": "https://finance.yahoo.com/quote/GAP/"
+    },
+    {
+     "title": "yfinance (Yahoo Finance verileri)",
+     "url": "https://github.com/ranaroussi/yfinance"
+    }
+   ],
+   "runId": "2026-11-25",
+   "by": "bot",
+   "realizedPL": 16.68,
+   "holdingDays": 5,
+   "taxTerm": "kısa vade",
+   "play": "news"
+  },
+  {
+   "id": "t-20261125-02",
+   "ts": "2026-11-25T15:50:50-05:00",
+   "date": "2026-11-25",
+   "action": "SELL",
+   "side": "long",
+   "ticker": "KYMR",
+   "name": "KYMR",
+   "kind": "Hisse",
+   "shares": 7.0504,
+   "quotePrice": 173.77,
+   "quoteAt": "2026-11-25T15:50:00-05:00",
+   "slippagePct": 0.05,
+   "execPrice": 173.6831,
+   "value": 1224.54,
+   "commission": 0.35,
+   "fees": 0.04,
+   "priceSource": {
+    "title": "Yahoo Finance 5 dk mum (15:50 ET)",
+    "url": "https://finance.yahoo.com/quote/KYMR/"
+   },
+   "reason": "Haber devamı işleminin süresi doldu: 2026-11-23 tarihinde açıldı; plan gereği 2 işlem günü sonra kapanışta kapatıldı.",
+   "rule": "haber devamı çıkış",
+   "sources": [
+    {
+     "title": "Yahoo Finance: KYMR",
+     "url": "https://finance.yahoo.com/quote/KYMR/"
+    },
+    {
+     "title": "yfinance (Yahoo Finance verileri)",
+     "url": "https://github.com/ranaroussi/yfinance"
+    }
+   ],
+   "runId": "2026-11-25",
+   "by": "bot",
+   "realizedPL": 185.53,
+   "holdingDays": 2,
+   "taxTerm": "kısa vade",
+   "play": "drift"
   }
  ],
  "snapshots": [
@@ -6689,72 +6661,58 @@
   },
   {
    "date": "2026-11-25",
-   "at": "2026-11-25T15:45:47-05:00",
-   "totalValue": 2831.33,
-   "cash": -1936.58,
-   "positionsValue": 4767.91,
-   "plPct": -5.62,
-   "twrPct": -5.62,
+   "at": "2026-11-25T15:50:50-05:00",
+   "totalValue": 2851.47,
+   "cash": -351.61,
+   "positionsValue": 3203.08,
+   "plPct": -4.95,
+   "twrPct": -4.95,
    "netDeposits": 3000.0,
-   "leverage": 2.006,
-   "benchmarkPrice": 715.57,
-   "benchmarkValue": 2874.1,
-   "qqqPrice": 631.48,
+   "leverage": 1.445,
+   "benchmarkPrice": 717.39,
+   "benchmarkValue": 2881.43,
+   "qqqPrice": 633.51,
    "holdings": [
     {
      "ticker": "SLS",
      "side": "short",
-     "value": -199.89,
-     "u": 88.72,
+     "value": -200.83,
+     "u": 87.78,
      "play": "spike"
-    },
-    {
-     "ticker": "GAP",
-     "side": "long",
-     "value": 360.75,
-     "u": 16.6,
-     "play": "news"
-    },
-    {
-     "ticker": "KYMR",
-     "side": "long",
-     "value": 1220.11,
-     "u": 181.49,
-     "play": "drift"
     },
     {
      "ticker": "NVDA",
      "side": "short",
-     "value": -256.05,
-     "u": 13.11,
+     "value": -258.51,
+     "u": 10.65,
      "play": "spike"
     },
     {
      "ticker": "ANF",
      "side": "long",
-     "value": 600.54,
-     "u": -7.39,
+     "value": 604.98,
+     "u": -2.95,
      "play": "drift"
     },
     {
      "ticker": "DKS",
      "side": "long",
-     "value": 2389.68,
-     "u": 87.5,
+     "value": 2401.43,
+     "u": 99.25,
      "play": "drift"
     },
     {
      "ticker": "KSS",
      "side": "long",
-     "value": 328.57,
-     "u": 28.3,
+     "value": 331.26,
+     "u": 30.99,
      "play": "news"
     },
     {
      "ticker": "COGT",
      "side": "long",
-     "value": 324.21,
-     "u": 20.65,
+     "value": 324.75,
+     "u": 21.19,
      "play": "news"
     }
    ]
@@ -35209,6 +35167,72 @@
     ],
     "actions": [],
     "note": "Normal: pozisyonlar zarar-kese %7,4–%117,0 uzakta, kaldıraç 2,01x, SPY −%0,45; işlem gerekmedi."
+   },
+   {
+    "at": "2026-11-25T15:50:50-05:00",
+    "kind": "guard",
+    "status": "normal",
+    "spyPrice": 717.39,
+    "spyChangePct": -0.19,
+    "qqqChangePct": -0.72,
+    "totalValue": 2851.47,
+    "benchmarkValue": 2881.43,
+    "leverage": 1.445,
+    "marginBuffer": 2645.38,
+    "positions": [
+     {
+      "ticker": "SLS",
+      "side": "short",
+      "price": 12.805,
+      "dayChangePct": -3.36,
+      "stopPrice": 27.65,
+      "distancePct": 115.93
+     },
+     {
+      "ticker": "NVDA",
+      "side": "short",
+      "price": 149.1458,
+      "dayChangePct": -4.01,
+      "stopPrice": 233.28,
+      "distancePct": 56.41
+     },
+     {
+      "ticker": "ANF",
+      "side": "long",
+      "price": 175.82,
+      "dayChangePct": 4.59,
+      "stopPrice": 156.42,
+      "distancePct": 12.4
+     },
+     {
+      "ticker": "DKS",
+      "side": "long",
+      "price": 160.365,
+      "dayChangePct": 4.7,
+      "stopPrice": 148.6,
+      "distancePct": 7.92
+     },
+     {
+      "ticker": "KSS",
+      "side": "long",
+      "price": 26.54,
+      "dayChangePct": 4.78,
+      "stopPrice": 22.12,
+      "distancePct": 19.98
+     },
+     {
+      "ticker": "COGT",
+      "side": "long",
+      "price": 35.92,
+      "dayChangePct": 8.82,
+      "stopPrice": 30.88,
+      "distancePct": 16.32
+     }
+    ],
+    "actions": [
+     "GAP long kapatıldı (361,19 $)",
+     "KYMR long kapatıldı (1.224,54 $)"
+    ]
    }
   ]
  },
@@ -37225,9 +37249,9 @@
  ],
  "tax": {
   "2026": {
-   "commissions": 13.67,
+   "commissions": 14.43,
    "marginInterest": 1.34,
-   "shortTermRealized": -586.69
+   "shortTermRealized": -384.48
   }
  },
  "evalHistory": [
@@ -37423,12 +37447,12 @@
  "busts": [],
  "playStats": {
   "news": {
-   "closed": 7,
-   "wins": 2,
-   "pl": -65.04,
+   "closed": 8,
+   "wins": 3,
+   "pl": -48.36,
    "best": 39.84,
    "worst": -31.74,
-   "last": "2026-11-24"
+   "last": "2026-11-25"
   },
   "index": {
    "closed": 1,
@@ -37439,19 +37463,19 @@
    "last": "2026-11-19"
   },
   "drift": {
-   "closed": 6,
-   "wins": 0,
-   "pl": -554.04,
-   "best": -82.44,
+   "closed": 7,
+   "wins": 1,
+   "pl": -368.51,
+   "best": 185.53,
    "worst": -119.47,
-   "last": "2026-11-24"
+   "last": "2026-11-25"
   }
  },
  "scorecard": {
   "start": "2026-11-16",
   "startAt": "2026-11-16T09:30:32-05:00",
   "end": "2027-02-16",
-  "asOf": "2026-11-25T15:45:47-05:00",
+  "asOf": "2026-11-25T15:50:50-05:00",
   "strategy": "v7",
   "history": [
    {
@@ -37534,27 +37558,27 @@
   "daysElapsed": 8,
   "daysTotal": 62,
   "finished": false,
-  "returnPct": -5.62,
-  "spyReturnPct": -4.2,
-  "excessPct": -1.43,
+  "returnPct": -4.95,
+  "spyReturnPct": -3.95,
+  "excessPct": -1.0,
   "maxDrawdownPct": -17.6,
   "maxDrawdownAt": "2026-11-24T09:30:27-05:00",
-  "drawdownNowPct": -10.36,
+  "drawdownNowPct": -9.73,
   "trades": {
-   "closed": 14,
-   "wins": 3,
-   "winRatePct": 21.4,
-   "avgWin": 27.59,
+   "closed": 16,
+   "wins": 5,
+   "winRatePct": 31.2,
+   "avgWin": 57.0,
    "avgLoss": -60.86,
-   "profitFactor": 0.12,
-   "realizedPL": -586.69
+   "profitFactor": 0.43,
+   "realizedPL": -384.48
   },
   "monthly": [
    {
     "month": "2026-11",
-    "returnPct": -5.62,
-    "spyPct": -4.2,
-    "excessPct": -1.42
+    "returnPct": -4.95,
+    "spyPct": -3.95,
+    "excessPct": -1.0
    }
   ],
   "uptime": {
@@ -37573,7 +37597,7 @@
     "key": "spy",
     "label": "SPY'ı geçmek (masraflar düşülmüş)",
     "ok": false,
-    "value": -1.43,
+    "value": -1.0,
     "unit": "pct"
    },
    {
