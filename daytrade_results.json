@@ -1,0 +1,1591 @@
+{
+ "asOf": "2026-11-26T06:26:08Z",
+ "from": "2024-10-18",
+ "to": "2026-11-25",
+ "days": 520,
+ "tickers": 1320,
+ "split": "2025-11-06",
+ "tpMovePct": 5.0,
+ "costPct": 0.1,
+ "baseline": {
+  "long": {
+   "n": 520,
+   "avg": -0.16,
+   "pos": 47.1,
+   "t": -2.36
+  },
+  "short": {
+   "n": 520,
+   "avg": -0.068,
+   "pos": 48.1,
+   "t": -0.99
+  }
+ },
+ "sides": [
+  {
+   "side": "long",
+   "rule": "gapUp",
+   "label": "En büyük açılış boşluğu (yukarı)",
+   "all": {
+    "n": 520,
+    "avg": -0.354,
+    "pos": 50.0,
+    "t": -2.66
+   },
+   "h1": {
+    "n": 260,
+    "avg": -0.39,
+    "pos": 48.1,
+    "t": -2.07
+   },
+   "h2": {
+    "n": 260,
+    "avg": -0.319,
+    "pos": 51.9,
+    "t": -1.69
+   },
+   "up": {
+    "n": 462,
+    "avg": -0.33,
+    "pos": 50.0,
+    "t": -2.34
+   },
+   "down": {
+    "n": 58,
+    "avg": -0.548,
+    "pos": 50.0,
+    "t": -1.32
+   },
+   "tpRatePct": 34.0,
+   "alone": {
+    "endX": 0.036,
+    "cagrPct": -80.0,
+    "maxDrawdownPct": -97.4,
+    "worstDayPct": -16.19,
+    "bestDayPct": 7.35
+   }
+  },
+  {
+   "side": "long",
+   "rule": "gapUpTrend",
+   "label": "Yukarı boşluk + 200 günlük ortalamanın üstünde",
+   "all": {
+    "n": 520,
+    "avg": -0.176,
+    "pos": 50.6,
+    "t": -1.33
+   },
+   "h1": {
+    "n": 260,
+    "avg": -0.222,
+    "pos": 52.3,
+    "t": -1.14
+   },
+   "h2": {
+    "n": 260,
+    "avg": -0.13,
+    "pos": 48.8,
+    "t": -0.72
+   },
+   "up": {
+    "n": 462,
+    "avg": -0.196,
+    "pos": 50.4,
+    "t": -1.39
+   },
+   "down": {
+    "n": 58,
+    "avg": -0.017,
+    "pos": 51.7,
+    "t": -0.04
+   },
+   "tpRatePct": 32.6,
+   "alone": {
+    "endX": 0.148,
+    "cagrPct": -60.4,
+    "maxDrawdownPct": -90.2,
+    "worstDayPct": -15.49,
+    "bestDayPct": 7.35
+   }
+  },
+  {
+   "side": "long",
+   "rule": "gapDownTrend",
+   "label": "Aşağı boşluk + 200 günlük ortalamanın üstünde (düşüşte al)",
+   "all": {
+    "n": 520,
+    "avg": 0.194,
+    "pos": 55.6,
+    "t": 1.52
+   },
+   "h1": {
+    "n": 260,
+    "avg": 0.044,
+    "pos": 52.3,
+    "t": 0.26
+   },
+   "h2": {
+    "n": 260,
+    "avg": 0.345,
+    "pos": 58.8,
+    "t": 1.81
+   },
+   "up": {
+    "n": 462,
+    "avg": 0.162,
+    "pos": 56.7,
+    "t": 1.18
+   },
+   "down": {
+    "n": 58,
+    "avg": 0.455,
+    "pos": 46.6,
+    "t": 1.27
+   },
+   "tpRatePct": 30.4,
+   "alone": {
+    "endX": 2.736,
+    "cagrPct": 62.9,
+    "maxDrawdownPct": -54.7,
+    "worstDayPct": -16.33,
+    "bestDayPct": 7.35
+   }
+  },
+  {
+   "side": "long",
+   "rule": "mom",
+   "label": "Son 20 günün en güçlüleri",
+   "all": {
+    "n": 520,
+    "avg": 0.156,
+    "pos": 56.0,
+    "t": 1.17
+   },
+   "h1": {
+    "n": 260,
+    "avg": 0.016,
+    "pos": 55.0,
+    "t": 0.08
+   },
+   "h2": {
+    "n": 260,
+    "avg": 0.297,
+    "pos": 56.9,
+    "t": 1.61
+   },
+   "up": {
+    "n": 462,
+    "avg": 0.162,
+    "pos": 55.6,
+    "t": 1.16
+   },
+   "down": {
+    "n": 58,
+    "avg": 0.108,
+    "pos": 58.6,
+    "t": 0.25
+   },
+   "tpRatePct": 30.0,
+   "alone": {
+    "endX": 1.943,
+    "cagrPct": 38.0,
+    "maxDrawdownPct": -77.3,
+    "worstDayPct": -20.11,
+    "bestDayPct": 7.35
+   }
+  },
+  {
+   "side": "long",
+   "rule": "momGap",
+   "label": "Son 20 günün güçlüleri + yukarı boşluk",
+   "all": {
+    "n": 520,
+    "avg": -0.115,
+    "pos": 52.7,
+    "t": -0.91
+   },
+   "h1": {
+    "n": 260,
+    "avg": -0.077,
+    "pos": 52.3,
+    "t": -0.42
+   },
+   "h2": {
+    "n": 260,
+    "avg": -0.153,
+    "pos": 53.1,
+    "t": -0.86
+   },
+   "up": {
+    "n": 462,
+    "avg": -0.16,
+    "pos": 51.9,
+    "t": -1.17
+   },
+   "down": {
+    "n": 58,
+    "avg": 0.241,
+    "pos": 58.6,
+    "t": 0.7
+   },
+   "tpRatePct": 27.2,
+   "alone": {
+    "endX": 0.245,
+    "cagrPct": -49.4,
+    "maxDrawdownPct": -84.4,
+    "worstDayPct": -21.04,
+    "bestDayPct": 7.35
+   }
+  },
+  {
+   "side": "long",
+   "rule": "gapUpMid",
+   "label": "Yukarı boşluk %2–8 arası + yükselen trend",
+   "all": {
+    "n": 520,
+    "avg": -0.254,
+    "pos": 47.7,
+    "t": -2.25
+   },
+   "h1": {
+    "n": 260,
+    "avg": -0.395,
+    "pos": 46.9,
+    "t": -2.46
+   },
+   "h2": {
+    "n": 260,
+    "avg": -0.114,
+    "pos": 48.5,
+    "t": -0.72
+   },
+   "up": {
+    "n": 462,
+    "avg": -0.303,
+    "pos": 46.5,
+    "t": -2.52
+   },
+   "down": {
+    "n": 58,
+    "avg": 0.135,
+    "pos": 56.9,
+    "t": 0.41
+   },
+   "tpRatePct": 22.8,
+   "alone": {
+    "endX": 0.092,
+    "cagrPct": -68.5,
+    "maxDrawdownPct": -91.7,
+    "worstDayPct": -19.39,
+    "bestDayPct": 7.35
+   }
+  },
+  {
+   "side": "short",
+   "rule": "gapDown",
+   "label": "En büyük açılış boşluğu (aşağı)",
+   "all": {
+    "n": 520,
+    "avg": -0.438,
+    "pos": 51.0,
+    "t": -3.23
+   },
+   "h1": {
+    "n": 260,
+    "avg": -0.4,
+    "pos": 50.8,
+    "t": -2.14
+   },
+   "h2": {
+    "n": 260,
+    "avg": -0.477,
+    "pos": 51.2,
+    "t": -2.43
+   },
+   "up": {
+    "n": 462,
+    "avg": -0.337,
+    "pos": 51.7,
+    "t": -2.41
+   },
+   "down": {
+    "n": 58,
+    "avg": -1.246,
+    "pos": 44.8,
+    "t": -2.62
+   },
+   "tpRatePct": 25.5,
+   "alone": {
+    "endX": 0.018,
+    "cagrPct": -85.7,
+    "maxDrawdownPct": -98.8,
+    "worstDayPct": -21.84,
+    "bestDayPct": 7.35
+   }
+  },
+  {
+   "side": "short",
+   "rule": "gapDownTrend",
+   "label": "Aşağı boşluk + 200 günlük ortalamanın altında",
+   "all": {
+    "n": 520,
+    "avg": -0.301,
+    "pos": 49.6,
+    "t": -2.68
+   },
+   "h1": {
+    "n": 260,
+    "avg": -0.403,
+    "pos": 45.4,
+    "t": -2.65
+   },
+   "h2": {
+    "n": 260,
+    "avg": -0.199,
+    "pos": 53.8,
+    "t": -1.2
+   },
+   "up": {
+    "n": 462,
+    "avg": -0.194,
+    "pos": 51.1,
+    "t": -1.71
+   },
+   "down": {
+    "n": 58,
+    "avg": -1.156,
+    "pos": 37.9,
+    "t": -2.7
+   },
+   "tpRatePct": 18.8,
+   "alone": {
+    "endX": 0.064,
+    "cagrPct": -73.6,
+    "maxDrawdownPct": -95.0,
+    "worstDayPct": -21.84,
+    "bestDayPct": 7.35
+   }
+  },
+  {
+   "side": "short",
+   "rule": "gapUpFade",
+   "label": "En büyük yukarı boşluk (sönmesine)",
+   "all": {
+    "n": 520,
+    "avg": 0.268,
+    "pos": 56.7,
+    "t": 1.85
+   },
+   "h1": {
+    "n": 260,
+    "avg": 0.459,
+    "pos": 58.5,
+    "t": 2.37
+   },
+   "h2": {
+    "n": 260,
+    "avg": 0.077,
+    "pos": 55.0,
+    "t": 0.36
+   },
+   "up": {
+    "n": 462,
+    "avg": 0.182,
+    "pos": 55.4,
+    "t": 1.16
+   },
+   "down": {
+    "n": 58,
+    "avg": 0.948,
+    "pos": 67.2,
+    "t": 2.66
+   },
+   "tpRatePct": 37.8,
+   "alone": {
+    "endX": 4.17,
+    "cagrPct": 99.8,
+    "maxDrawdownPct": -51.2,
+    "worstDayPct": -24.29,
+    "bestDayPct": 7.35
+   }
+  },
+  {
+   "side": "short",
+   "rule": "gapUpWeak",
+   "label": "Yukarı boşluk + 200 günlük ortalamanın altında (zayıf hissenin sıçraması)",
+   "all": {
+    "n": 520,
+    "avg": 0.133,
+    "pos": 57.1,
+    "t": 1.05
+   },
+   "h1": {
+    "n": 260,
+    "avg": 0.365,
+    "pos": 59.6,
+    "t": 2.14
+   },
+   "h2": {
+    "n": 260,
+    "avg": -0.1,
+    "pos": 54.6,
+    "t": -0.54
+   },
+   "up": {
+    "n": 462,
+    "avg": 0.048,
+    "pos": 56.1,
+    "t": 0.35
+   },
+   "down": {
+    "n": 58,
+    "avg": 0.809,
+    "pos": 65.5,
+    "t": 2.33
+   },
+   "tpRatePct": 25.9,
+   "alone": {
+    "endX": 1.71,
+    "cagrPct": 29.7,
+    "maxDrawdownPct": -68.7,
+    "worstDayPct": -22.73,
+    "bestDayPct": 7.35
+   }
+  },
+  {
+   "side": "short",
+   "rule": "mom",
+   "label": "Son 20 günün en zayıfları",
+   "all": {
+    "n": 520,
+    "avg": -0.364,
+    "pos": 48.5,
+    "t": -3.07
+   },
+   "h1": {
+    "n": 260,
+    "avg": -0.355,
+    "pos": 45.8,
+    "t": -2.31
+   },
+   "h2": {
+    "n": 260,
+    "avg": -0.373,
+    "pos": 51.2,
+    "t": -2.07
+   },
+   "up": {
+    "n": 462,
+    "avg": -0.308,
+    "pos": 49.4,
+    "t": -2.47
+   },
+   "down": {
+    "n": 58,
+    "avg": -0.808,
+    "pos": 41.4,
+    "t": -2.17
+   },
+   "tpRatePct": 15.0,
+   "alone": {
+    "endX": 0.038,
+    "cagrPct": -79.6,
+    "maxDrawdownPct": -97.6,
+    "worstDayPct": -17.15,
+    "bestDayPct": 7.35
+   }
+  },
+  {
+   "side": "short",
+   "rule": "momGap",
+   "label": "Son 20 günün zayıfları + aşağı boşluk",
+   "all": {
+    "n": 520,
+    "avg": -0.305,
+    "pos": 48.1,
+    "t": -2.49
+   },
+   "h1": {
+    "n": 260,
+    "avg": -0.396,
+    "pos": 45.4,
+    "t": -2.44
+   },
+   "h2": {
+    "n": 260,
+    "avg": -0.213,
+    "pos": 50.8,
+    "t": -1.16
+   },
+   "up": {
+    "n": 462,
+    "avg": -0.216,
+    "pos": 48.7,
+    "t": -1.75
+   },
+   "down": {
+    "n": 58,
+    "avg": -1.012,
+    "pos": 43.1,
+    "t": -2.12
+   },
+   "tpRatePct": 18.0,
+   "alone": {
+    "endX": 0.057,
+    "cagrPct": -75.0,
+    "maxDrawdownPct": -95.8,
+    "worstDayPct": -26.05,
+    "bestDayPct": 7.35
+   }
+  }
+ ],
+ "combos": [
+  {
+   "long": "gapDownTrend",
+   "short": "gapUpFade",
+   "acct": {
+    "endX": 11.669,
+    "cagrPct": 228.9,
+    "maxDrawdownPct": -56.6,
+    "worstDayPct": -23.1,
+    "bestDayPct": 14.7
+   },
+   "day": {
+    "n": 520,
+    "avg": 0.693,
+    "pos": 59.0,
+    "t": 2.41
+   },
+   "h1": {
+    "n": 260,
+    "avg": 0.754,
+    "pos": 57.3,
+    "t": 1.97
+   },
+   "h2": {
+    "n": 260,
+    "avg": 0.633,
+    "pos": 60.8,
+    "t": 1.47
+   }
+  },
+  {
+   "long": "mom",
+   "short": "gapUpFade",
+   "acct": {
+    "endX": 9.571,
+    "cagrPct": 198.8,
+    "maxDrawdownPct": -69.3,
+    "worstDayPct": -27.63,
+    "bestDayPct": 14.7
+   },
+   "day": {
+    "n": 520,
+    "avg": 0.636,
+    "pos": 56.2,
+    "t": 2.31
+   },
+   "h1": {
+    "n": 260,
+    "avg": 0.711,
+    "pos": 54.6,
+    "t": 1.9
+   },
+   "h2": {
+    "n": 260,
+    "avg": 0.561,
+    "pos": 57.7,
+    "t": 1.39
+   }
+  },
+  {
+   "long": "gapDownTrend",
+   "short": "gapUpWeak",
+   "acct": {
+    "endX": 4.292,
+    "cagrPct": 102.6,
+    "maxDrawdownPct": -64.8,
+    "worstDayPct": -33.94,
+    "bestDayPct": 13.73
+   },
+   "day": {
+    "n": 520,
+    "avg": 0.491,
+    "pos": 57.5,
+    "t": 1.76
+   },
+   "h1": {
+    "n": 260,
+    "avg": 0.614,
+    "pos": 59.6,
+    "t": 1.62
+   },
+   "h2": {
+    "n": 260,
+    "avg": 0.367,
+    "pos": 55.4,
+    "t": 0.89
+   }
+  },
+  {
+   "long": "mom",
+   "short": "gapUpWeak",
+   "acct": {
+    "endX": 3.562,
+    "cagrPct": 85.1,
+    "maxDrawdownPct": -70.2,
+    "worstDayPct": -24.1,
+    "bestDayPct": 12.72
+   },
+   "day": {
+    "n": 520,
+    "avg": 0.433,
+    "pos": 56.2,
+    "t": 1.63
+   },
+   "h1": {
+    "n": 260,
+    "avg": 0.571,
+    "pos": 57.3,
+    "t": 1.6
+   },
+   "h2": {
+    "n": 260,
+    "avg": 0.296,
+    "pos": 55.0,
+    "t": 0.75
+   }
+  },
+  {
+   "long": "momGap",
+   "short": "gapUpFade",
+   "acct": {
+    "endX": 1.361,
+    "cagrPct": 16.1,
+    "maxDrawdownPct": -75.1,
+    "worstDayPct": -22.89,
+    "bestDayPct": 14.7
+   },
+   "day": {
+    "n": 520,
+    "avg": 0.229,
+    "pos": 53.1,
+    "t": 0.91
+   },
+   "h1": {
+    "n": 260,
+    "avg": 0.572,
+    "pos": 51.9,
+    "t": 1.61
+   },
+   "h2": {
+    "n": 260,
+    "avg": -0.115,
+    "pos": 54.2,
+    "t": -0.32
+   }
+  },
+  {
+   "long": "gapUpTrend",
+   "short": "gapUpFade",
+   "acct": {
+    "endX": 1.132,
+    "cagrPct": 6.2,
+    "maxDrawdownPct": -64.4,
+    "worstDayPct": -23.79,
+    "bestDayPct": 12.97
+   },
+   "day": {
+    "n": 520,
+    "avg": 0.138,
+    "pos": 50.4,
+    "t": 0.67
+   },
+   "h1": {
+    "n": 260,
+    "avg": 0.356,
+    "pos": 50.0,
+    "t": 1.23
+   },
+   "h2": {
+    "n": 260,
+    "avg": -0.079,
+    "pos": 50.8,
+    "t": -0.27
+   }
+  },
+  {
+   "long": "gapUpMid",
+   "short": "gapUpFade",
+   "acct": {
+    "endX": 0.511,
+    "cagrPct": -27.7,
+    "maxDrawdownPct": -66.5,
+    "worstDayPct": -21.84,
+    "bestDayPct": 14.7
+   },
+   "day": {
+    "n": 520,
+    "avg": 0.02,
+    "pos": 52.5,
+    "t": 0.08
+   },
+   "h1": {
+    "n": 260,
+    "avg": 0.095,
+    "pos": 51.5,
+    "t": 0.29
+   },
+   "h2": {
+    "n": 260,
+    "avg": -0.055,
+    "pos": 53.5,
+    "t": -0.16
+   }
+  },
+  {
+   "long": "momGap",
+   "short": "gapUpWeak",
+   "acct": {
+    "endX": 0.489,
+    "cagrPct": -29.3,
+    "maxDrawdownPct": -85.5,
+    "worstDayPct": -23.53,
+    "bestDayPct": 14.7
+   },
+   "day": {
+    "n": 520,
+    "avg": 0.026,
+    "pos": 51.9,
+    "t": 0.1
+   },
+   "h1": {
+    "n": 260,
+    "avg": 0.432,
+    "pos": 52.7,
+    "t": 1.26
+   },
+   "h2": {
+    "n": 260,
+    "avg": -0.38,
+    "pos": 51.2,
+    "t": -1.07
+   }
+  },
+  {
+   "long": "gapUp",
+   "short": "gapUpFade",
+   "acct": {
+    "endX": 0.34,
+    "cagrPct": -40.8,
+    "maxDrawdownPct": -78.0,
+    "worstDayPct": -21.21,
+    "bestDayPct": 14.7
+   },
+   "day": {
+    "n": 520,
+    "avg": -0.13,
+    "pos": 44.0,
+    "t": -0.76
+   },
+   "h1": {
+    "n": 260,
+    "avg": 0.104,
+    "pos": 45.4,
+    "t": 0.44
+   },
+   "h2": {
+    "n": 260,
+    "avg": -0.363,
+    "pos": 42.7,
+    "t": -1.47
+   }
+  },
+  {
+   "long": "gapUpTrend",
+   "short": "gapUpWeak",
+   "acct": {
+    "endX": 0.314,
+    "cagrPct": -43.0,
+    "maxDrawdownPct": -83.7,
+    "worstDayPct": -25.12,
+    "bestDayPct": 13.26
+   },
+   "day": {
+    "n": 520,
+    "avg": -0.065,
+    "pos": 51.7,
+    "t": -0.27
+   },
+   "h1": {
+    "n": 260,
+    "avg": 0.215,
+    "pos": 53.5,
+    "t": 0.65
+   },
+   "h2": {
+    "n": 260,
+    "avg": -0.344,
+    "pos": 50.0,
+    "t": -0.96
+   }
+  },
+  {
+   "long": "gapDownTrend",
+   "short": "momGap",
+   "acct": {
+    "endX": 0.216,
+    "cagrPct": -52.4,
+    "maxDrawdownPct": -84.0,
+    "worstDayPct": -19.2,
+    "bestDayPct": 14.7
+   },
+   "day": {
+    "n": 520,
+    "avg": -0.165,
+    "pos": 47.9,
+    "t": -0.75
+   },
+   "h1": {
+    "n": 260,
+    "avg": -0.528,
+    "pos": 43.5,
+    "t": -1.87
+   },
+   "h2": {
+    "n": 260,
+    "avg": 0.198,
+    "pos": 52.3,
+    "t": 0.58
+   }
+  },
+  {
+   "long": "gapDownTrend",
+   "short": "gapDownTrend",
+   "acct": {
+    "endX": 0.215,
+    "cagrPct": -52.5,
+    "maxDrawdownPct": -85.3,
+    "worstDayPct": -16.59,
+    "bestDayPct": 11.92
+   },
+   "day": {
+    "n": 520,
+    "avg": -0.16,
+    "pos": 51.9,
+    "t": -0.7
+   },
+   "h1": {
+    "n": 260,
+    "avg": -0.539,
+    "pos": 49.6,
+    "t": -1.8
+   },
+   "h2": {
+    "n": 260,
+    "avg": 0.219,
+    "pos": 54.2,
+    "t": 0.65
+   }
+  },
+  {
+   "long": "gapUpMid",
+   "short": "gapUpWeak",
+   "acct": {
+    "endX": 0.173,
+    "cagrPct": -57.2,
+    "maxDrawdownPct": -86.9,
+    "worstDayPct": -27.63,
+    "bestDayPct": 14.7
+   },
+   "day": {
+    "n": 520,
+    "avg": -0.183,
+    "pos": 52.1,
+    "t": -0.76
+   },
+   "h1": {
+    "n": 260,
+    "avg": -0.045,
+    "pos": 50.8,
+    "t": -0.14
+   },
+   "h2": {
+    "n": 260,
+    "avg": -0.321,
+    "pos": 53.5,
+    "t": -0.92
+   }
+  },
+  {
+   "long": "mom",
+   "short": "gapDownTrend",
+   "acct": {
+    "endX": 0.141,
+    "cagrPct": -61.3,
+    "maxDrawdownPct": -93.4,
+    "worstDayPct": -19.78,
+    "bestDayPct": 12.13
+   },
+   "day": {
+    "n": 520,
+    "avg": -0.217,
+    "pos": 53.5,
+    "t": -0.89
+   },
+   "h1": {
+    "n": 260,
+    "avg": -0.581,
+    "pos": 49.6,
+    "t": -1.69
+   },
+   "h2": {
+    "n": 260,
+    "avg": 0.148,
+    "pos": 57.3,
+    "t": 0.43
+   }
+  },
+  {
+   "long": "mom",
+   "short": "momGap",
+   "acct": {
+    "endX": 0.137,
+    "cagrPct": -61.8,
+    "maxDrawdownPct": -91.1,
+    "worstDayPct": -21.47,
+    "bestDayPct": 10.85
+   },
+   "day": {
+    "n": 520,
+    "avg": -0.223,
+    "pos": 51.2,
+    "t": -0.92
+   },
+   "h1": {
+    "n": 260,
+    "avg": -0.571,
+    "pos": 48.5,
+    "t": -1.7
+   },
+   "h2": {
+    "n": 260,
+    "avg": 0.126,
+    "pos": 53.8,
+    "t": 0.36
+   }
+  },
+  {
+   "long": "gapDownTrend",
+   "short": "mom",
+   "acct": {
+    "endX": 0.116,
+    "cagrPct": -64.8,
+    "maxDrawdownPct": -91.3,
+    "worstDayPct": -25.87,
+    "bestDayPct": 14.7
+   },
+   "day": {
+    "n": 520,
+    "avg": -0.254,
+    "pos": 51.7,
+    "t": -1.04
+   },
+   "h1": {
+    "n": 260,
+    "avg": -0.466,
+    "pos": 49.2,
+    "t": -1.44
+   },
+   "h2": {
+    "n": 260,
+    "avg": -0.041,
+    "pos": 54.2,
+    "t": -0.11
+   }
+  },
+  {
+   "long": "gapUp",
+   "short": "gapUpWeak",
+   "acct": {
+    "endX": 0.097,
+    "cagrPct": -67.8,
+    "maxDrawdownPct": -93.3,
+    "worstDayPct": -25.12,
+    "bestDayPct": 12.33
+   },
+   "day": {
+    "n": 520,
+    "avg": -0.333,
+    "pos": 49.6,
+    "t": -1.6
+   },
+   "h1": {
+    "n": 260,
+    "avg": -0.037,
+    "pos": 53.1,
+    "t": -0.13
+   },
+   "h2": {
+    "n": 260,
+    "avg": -0.629,
+    "pos": 46.2,
+    "t": -2.04
+   }
+  },
+  {
+   "long": "gapDownTrend",
+   "short": "gapDown",
+   "acct": {
+    "endX": 0.085,
+    "cagrPct": -69.8,
+    "maxDrawdownPct": -93.4,
+    "worstDayPct": -23.82,
+    "bestDayPct": 13.66
+   },
+   "day": {
+    "n": 520,
+    "avg": -0.366,
+    "pos": 49.6,
+    "t": -1.82
+   },
+   "h1": {
+    "n": 260,
+    "avg": -0.534,
+    "pos": 47.3,
+    "t": -1.97
+   },
+   "h2": {
+    "n": 260,
+    "avg": -0.198,
+    "pos": 51.9,
+    "t": -0.66
+   }
+  },
+  {
+   "long": "mom",
+   "short": "mom",
+   "acct": {
+    "endX": 0.083,
+    "cagrPct": -70.1,
+    "maxDrawdownPct": -95.6,
+    "worstDayPct": -30.2,
+    "bestDayPct": 10.91
+   },
+   "day": {
+    "n": 520,
+    "avg": -0.311,
+    "pos": 51.5,
+    "t": -1.25
+   },
+   "h1": {
+    "n": 260,
+    "avg": -0.509,
+    "pos": 49.6,
+    "t": -1.5
+   },
+   "h2": {
+    "n": 260,
+    "avg": -0.113,
+    "pos": 53.5,
+    "t": -0.31
+   }
+  },
+  {
+   "long": "mom",
+   "short": "gapDown",
+   "acct": {
+    "endX": 0.043,
+    "cagrPct": -78.3,
+    "maxDrawdownPct": -97.6,
+    "worstDayPct": -22.91,
+    "bestDayPct": 14.7
+   },
+   "day": {
+    "n": 520,
+    "avg": -0.423,
+    "pos": 53.1,
+    "t": -1.63
+   },
+   "h1": {
+    "n": 260,
+    "avg": -0.576,
+    "pos": 50.8,
+    "t": -1.59
+   },
+   "h2": {
+    "n": 260,
+    "avg": -0.269,
+    "pos": 55.4,
+    "t": -0.72
+   }
+  },
+  {
+   "long": "momGap",
+   "short": "gapDownTrend",
+   "acct": {
+    "endX": 0.017,
+    "cagrPct": -86.2,
+    "maxDrawdownPct": -98.9,
+    "worstDayPct": -20.08,
+    "bestDayPct": 14.7
+   },
+   "day": {
+    "n": 520,
+    "avg": -0.624,
+    "pos": 48.8,
+    "t": -2.57
+   },
+   "h1": {
+    "n": 260,
+    "avg": -0.72,
+    "pos": 46.9,
+    "t": -2.11
+   },
+   "h2": {
+    "n": 260,
+    "avg": -0.528,
+    "pos": 50.8,
+    "t": -1.53
+   }
+  },
+  {
+   "long": "momGap",
+   "short": "momGap",
+   "acct": {
+    "endX": 0.015,
+    "cagrPct": -86.8,
+    "maxDrawdownPct": -99.1,
+    "worstDayPct": -22.34,
+    "bestDayPct": 14.7
+   },
+   "day": {
+    "n": 520,
+    "avg": -0.63,
+    "pos": 46.5,
+    "t": -2.5
+   },
+   "h1": {
+    "n": 260,
+    "avg": -0.71,
+    "pos": 44.2,
+    "t": -2.15
+   },
+   "h2": {
+    "n": 260,
+    "avg": -0.55,
+    "pos": 48.8,
+    "t": -1.44
+   }
+  },
+  {
+   "long": "momGap",
+   "short": "mom",
+   "acct": {
+    "endX": 0.01,
+    "cagrPct": -89.4,
+    "maxDrawdownPct": -99.5,
+    "worstDayPct": -21.28,
+    "bestDayPct": 12.0
+   },
+   "day": {
+    "n": 520,
+    "avg": -0.718,
+    "pos": 46.0,
+    "t": -2.87
+   },
+   "h1": {
+    "n": 260,
+    "avg": -0.648,
+    "pos": 43.8,
+    "t": -1.91
+   },
+   "h2": {
+    "n": 260,
+    "avg": -0.789,
+    "pos": 48.1,
+    "t": -2.13
+   }
+  },
+  {
+   "long": "gapUpTrend",
+   "short": "gapDownTrend",
+   "acct": {
+    "endX": 0.009,
+    "cagrPct": -89.6,
+    "maxDrawdownPct": -99.4,
+    "worstDayPct": -23.09,
+    "bestDayPct": 14.7
+   },
+   "day": {
+    "n": 520,
+    "avg": -0.715,
+    "pos": 47.3,
+    "t": -2.75
+   },
+   "h1": {
+    "n": 260,
+    "avg": -0.937,
+    "pos": 45.8,
+    "t": -2.55
+   },
+   "h2": {
+    "n": 260,
+    "avg": -0.492,
+    "pos": 48.8,
+    "t": -1.34
+   }
+  },
+  {
+   "long": "gapUpTrend",
+   "short": "momGap",
+   "acct": {
+    "endX": 0.009,
+    "cagrPct": -89.6,
+    "maxDrawdownPct": -99.4,
+    "worstDayPct": -27.3,
+    "bestDayPct": 14.7
+   },
+   "day": {
+    "n": 520,
+    "avg": -0.721,
+    "pos": 47.7,
+    "t": -2.84
+   },
+   "h1": {
+    "n": 260,
+    "avg": -0.927,
+    "pos": 46.9,
+    "t": -2.72
+   },
+   "h2": {
+    "n": 260,
+    "avg": -0.514,
+    "pos": 48.5,
+    "t": -1.37
+   }
+  },
+  {
+   "long": "gapUpTrend",
+   "short": "mom",
+   "acct": {
+    "endX": 0.006,
+    "cagrPct": -91.4,
+    "maxDrawdownPct": -99.7,
+    "worstDayPct": -21.28,
+    "bestDayPct": 13.1
+   },
+   "day": {
+    "n": 520,
+    "avg": -0.809,
+    "pos": 47.7,
+    "t": -3.28
+   },
+   "h1": {
+    "n": 260,
+    "avg": -0.864,
+    "pos": 46.9,
+    "t": -2.46
+   },
+   "h2": {
+    "n": 260,
+    "avg": -0.753,
+    "pos": 48.5,
+    "t": -2.17
+   }
+  },
+  {
+   "long": "gapUpMid",
+   "short": "gapDownTrend",
+   "acct": {
+    "endX": 0.006,
+    "cagrPct": -91.5,
+    "maxDrawdownPct": -99.5,
+    "worstDayPct": -21.02,
+    "bestDayPct": 14.7
+   },
+   "day": {
+    "n": 520,
+    "avg": -0.833,
+    "pos": 45.8,
+    "t": -3.62
+   },
+   "h1": {
+    "n": 260,
+    "avg": -1.197,
+    "pos": 40.8,
+    "t": -3.71
+   },
+   "h2": {
+    "n": 260,
+    "avg": -0.469,
+    "pos": 50.8,
+    "t": -1.43
+   }
+  },
+  {
+   "long": "gapUpMid",
+   "short": "momGap",
+   "acct": {
+    "endX": 0.006,
+    "cagrPct": -91.6,
+    "maxDrawdownPct": -99.5,
+    "worstDayPct": -25.23,
+    "bestDayPct": 14.15
+   },
+   "day": {
+    "n": 520,
+    "avg": -0.839,
+    "pos": 43.5,
+    "t": -3.68
+   },
+   "h1": {
+    "n": 260,
+    "avg": -1.187,
+    "pos": 40.8,
+    "t": -3.94
+   },
+   "h2": {
+    "n": 260,
+    "avg": -0.491,
+    "pos": 46.2,
+    "t": -1.44
+   }
+  },
+  {
+   "long": "momGap",
+   "short": "gapDown",
+   "acct": {
+    "endX": 0.005,
+    "cagrPct": -92.4,
+    "maxDrawdownPct": -99.8,
+    "worstDayPct": -21.48,
+    "bestDayPct": 13.66
+   },
+   "day": {
+    "n": 520,
+    "avg": -0.83,
+    "pos": 48.7,
+    "t": -3.16
+   },
+   "h1": {
+    "n": 260,
+    "avg": -0.715,
+    "pos": 49.2,
+    "t": -1.92
+   },
+   "h2": {
+    "n": 260,
+    "avg": -0.945,
+    "pos": 48.1,
+    "t": -2.55
+   }
+  },
+  {
+   "long": "gapUpMid",
+   "short": "mom",
+   "acct": {
+    "endX": 0.004,
+    "cagrPct": -93.2,
+    "maxDrawdownPct": -99.8,
+    "worstDayPct": -19.8,
+    "bestDayPct": 12.08
+   },
+   "day": {
+    "n": 520,
+    "avg": -0.927,
+    "pos": 46.5,
+    "t": -4.09
+   },
+   "h1": {
+    "n": 260,
+    "avg": -1.124,
+    "pos": 43.8,
+    "t": -3.62
+   },
+   "h2": {
+    "n": 260,
+    "avg": -0.729,
+    "pos": 49.2,
+    "t": -2.21
+   }
+  },
+  {
+   "long": "gapUpTrend",
+   "short": "gapDown",
+   "acct": {
+    "endX": 0.003,
+    "cagrPct": -94.2,
+    "maxDrawdownPct": -99.8,
+    "worstDayPct": -23.09,
+    "bestDayPct": 14.7
+   },
+   "day": {
+    "n": 520,
+    "avg": -0.921,
+    "pos": 46.9,
+    "t": -3.37
+   },
+   "h1": {
+    "n": 260,
+    "avg": -0.932,
+    "pos": 46.9,
+    "t": -2.35
+   },
+   "h2": {
+    "n": 260,
+    "avg": -0.91,
+    "pos": 46.9,
+    "t": -2.42
+   }
+  },
+  {
+   "long": "gapUp",
+   "short": "gapDownTrend",
+   "acct": {
+    "endX": 0.002,
+    "cagrPct": -94.7,
+    "maxDrawdownPct": -99.8,
+    "worstDayPct": -24.08,
+    "bestDayPct": 14.7
+   },
+   "day": {
+    "n": 520,
+    "avg": -0.983,
+    "pos": 44.4,
+    "t": -3.84
+   },
+   "h1": {
+    "n": 260,
+    "avg": -1.189,
+    "pos": 42.3,
+    "t": -3.4
+   },
+   "h2": {
+    "n": 260,
+    "avg": -0.777,
+    "pos": 46.5,
+    "t": -2.08
+   }
+  },
+  {
+   "long": "gapUp",
+   "short": "momGap",
+   "acct": {
+    "endX": 0.002,
+    "cagrPct": -94.9,
+    "maxDrawdownPct": -99.8,
+    "worstDayPct": -27.17,
+    "bestDayPct": 14.15
+   },
+   "day": {
+    "n": 520,
+    "avg": -0.989,
+    "pos": 45.0,
+    "t": -3.81
+   },
+   "h1": {
+    "n": 260,
+    "avg": -1.179,
+    "pos": 42.7,
+    "t": -3.45
+   },
+   "h2": {
+    "n": 260,
+    "avg": -0.799,
+    "pos": 47.3,
+    "t": -2.04
+   }
+  },
+  {
+   "long": "gapUpMid",
+   "short": "gapDown",
+   "acct": {
+    "endX": 0.002,
+    "cagrPct": -95.2,
+    "maxDrawdownPct": -99.9,
+    "worstDayPct": -21.02,
+    "bestDayPct": 12.16
+   },
+   "day": {
+    "n": 520,
+    "avg": -1.039,
+    "pos": 44.4,
+    "t": -4.28
+   },
+   "h1": {
+    "n": 260,
+    "avg": -1.192,
+    "pos": 42.3,
+    "t": -3.49
+   },
+   "h2": {
+    "n": 260,
+    "avg": -0.886,
+    "pos": 46.5,
+    "t": -2.56
+   }
+  },
+  {
+   "long": "gapUp",
+   "short": "mom",
+   "acct": {
+    "endX": 0.001,
+    "cagrPct": -95.8,
+    "maxDrawdownPct": -99.9,
+    "worstDayPct": -26.4,
+    "bestDayPct": 12.65
+   },
+   "day": {
+    "n": 520,
+    "avg": -1.077,
+    "pos": 43.8,
+    "t": -4.25
+   },
+   "h1": {
+    "n": 260,
+    "avg": -1.116,
+    "pos": 44.2,
+    "t": -3.29
+   },
+   "h2": {
+    "n": 260,
+    "avg": -1.038,
+    "pos": 43.5,
+    "t": -2.75
+   }
+  },
+  {
+   "long": "gapUp",
+   "short": "gapDown",
+   "acct": {
+    "endX": 0.001,
+    "cagrPct": -97.1,
+    "maxDrawdownPct": -100.0,
+    "worstDayPct": -23.72,
+    "bestDayPct": 14.7
+   },
+   "day": {
+    "n": 520,
+    "avg": -1.189,
+    "pos": 43.1,
+    "t": -4.28
+   },
+   "h1": {
+    "n": 260,
+    "avg": -1.184,
+    "pos": 44.6,
+    "t": -2.97
+   },
+   "h2": {
+    "n": 260,
+    "avg": -1.194,
+    "pos": 41.5,
+    "t": -3.08
+   }
+  }
+ ],
+ "bestLong": "gapDownTrend",
+ "bestShort": "gapUpFade",
+ "notes": "Bugünkü büyük şirketler (piyasa değeri ≥ 2 milyar $, günde ≥ 50 milyon $ işlem, fiyat ≥ 10 $); borsadan çıkanlar veride yok. Giriş ilk saatlik çubuğun açılışında, kâr hedefi saatlik en yüksek/en düşük fiyatlarla kontrol edilir, olmazsa kapanış. Gidiş-dönüş maliyet %0,10. Geçmiş sonuç geleceği garanti etmez."
+}
