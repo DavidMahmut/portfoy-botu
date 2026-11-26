@@ -120,3 +120,49 @@ def screen_movers(min_pct=4.0, min_price=5.0, size=120):
                       "capB": round(cap / 1e9, 2) if cap else None, "ex": ex_code.get(x.get("exchange")),
                       "volume": x.get("regularMarketVolume")}
     return list(out.values())
+
+
+def premarket(tickers):
+    """Before the open: the last pre-market price (04:00-09:30 New York) and its volume against the previous regular
+    close; after the open: today's opening price and the latest price. One request for all tickers (5-minute bars of
+    the last two days, pre- and after-market included). Returns {ticker: {prevClose, price, at, pmVolume, open}}."""
+    import yfinance as yf
+    from datetime import time as dtime
+
+    tickers = sorted(set(tickers))
+    df = _download(tickers, period="2d", interval="5m", prepost=True)
+    out = {}
+    if df.empty:
+        return out
+    multi = isinstance(df.columns, pd.MultiIndex)
+    for t in tickers:
+        try:
+            sub = df[t] if multi else df
+        except KeyError:
+            continue
+        sub = sub.dropna(subset=["Close"])
+        if sub.empty:
+            continue
+        idx = pd.DatetimeIndex(sub.index)
+        idx = idx.tz_localize("UTC") if idx.tz is None else idx
+        sub = sub.copy()
+        sub.index = idx.tz_convert(NY)
+        days = sorted(set(sub.index.date))
+        if not days:
+            continue
+        today = days[-1]
+        tod = sub.index.time
+        regular = (tod >= dtime(9, 30)) & (tod < dtime(16, 0))
+        prev_reg = sub[(sub.index.date < today) & regular]
+        if prev_reg.empty:
+            continue
+        cur = sub[sub.index.date == today]
+        if cur.empty:
+            continue
+        reg_today = cur[(cur.index.time >= dtime(9, 30)) & (cur.index.time < dtime(16, 0))]
+        pre = cur[cur.index.time < dtime(9, 30)]
+        vol = float(pre["Volume"].fillna(0).sum()) if "Volume" in pre else 0.0
+        out[t] = {"prevClose": float(prev_reg["Close"].iloc[-1]), "price": float(cur["Close"].iloc[-1]),
+                  "at": cur.index[-1], "pmVolume": vol, "day": today.isoformat(),
+                  "open": float(reg_today["Open"].iloc[0]) if len(reg_today) else None}
+    return out
