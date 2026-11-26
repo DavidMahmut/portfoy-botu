@@ -60,6 +60,7 @@ jobs:
           git config user.email "portfoy-bot@users.noreply.github.com"
           save() {
             git add extended.json news.json agenda.json 2>/dev/null || true
+            git add picks.json 2>/dev/null || true
             if git diff --cached --quiet; then return 0; fi
             git commit -q -m "İzleme ve haberler: $(TZ=America/New_York date '+%Y-%m-%d %H:%M') ET"
             for i in 1 2 3; do
@@ -77,6 +78,10 @@ jobs:
             fi
             if [ "$BOT_FORCE" = "1" ] || { [ "$dow" -le 5 ] && (( hm >= 400 && hm <= 2005 )); }; then
               python news.py || echo "::warning::news.py hata verdi"
+            fi
+            # daily 3+3: the morning ranking on pre-market prices (the bot opens the positions at 09:35)
+            if [ "$dow" -le 5 ] && (( hm >= 830 && hm < 930 )); then
+              python research.py || echo "::warning::research.py hata verdi"
             fi
             # weekly agenda (economic releases, earnings, IPOs) and the market strip (oil, gold, yields ...)
             python agenda.py || echo "::warning::agenda.py hata verdi"
