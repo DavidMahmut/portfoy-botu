@@ -25,7 +25,9 @@ SHADOW_COLS = ["d", "s", "t", "n", "p", "mv", "gap", "h1", "pos", "cap", "dv", "
 COST = 0.15                          # % round trip used when judging shadow signals
 HEALTH_N, HEALTH_MIN = 20, 10        # judge on the last 20 signals, need at least 10 with a known outcome
 KEY_TR = {"drift": "Haber devamı adayı", "gapTurn": "Açılış boşluğu tersine döndü", "gapSmall": "Boşluk sürüyor (küçük şirket)",
-          "news": "Haber takibi adayı", "pinned": "Satın alma haberi", "up": "Diğer yükselenler", "down": "Diğer düşenler"}
+          "news": "Haber takibi adayı", "pinned": "Satın alma haberi", "up": "Diğer yükselenler", "down": "Diğer düşenler",
+          "dayLong": "Günlük long (alınan)", "dayShort": "Günlük short (açılan)",
+          "dayLongAlt": "Long listesinde kalanlar", "dayShortAlt": "Short listesinde kalanlar"}
 
 
 def mean(xs):
@@ -172,7 +174,7 @@ class ReviewMixin:
     def _play_label(self, play):
         from trader import PLAYS
         return {"index": "Endeks kolu", "rebound": "Tepki kuralı", "spike": "Sert yükseliş short'u", "other": "Diğer",
-                "fees": "Masraf ve diğer"}.get(
+                "fees": "Masraf ve diğer", "dayLong": "Günlük long", "dayShort": "Günlük short"}.get(
             play, (PLAYS.get(play) or {}).get("label", play))
 
     # ------------------------------------------------------------------ reviews

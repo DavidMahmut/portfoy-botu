@@ -29,6 +29,8 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 
 from review import ReviewMixin, load_review, save_review
+import daytrade as DT
+from daytrade import DayMixin
 
 import pandas as pd
 
@@ -39,7 +41,9 @@ ROOT = Path(__file__).resolve().parent
 LEDGER = ROOT / "ledger.json"
 DEPOSITS = ROOT / "deposits.json"
 RESTORE = ROOT / "v3_restore.json"
-ENGINE = "x10 v7"
+ENGINE_V7, ENGINE_V8 = "x10 v7", "günlük 3+3 v8"
+STRATEGY = "v8"                           # v8 from 27 Nov 2026 (the owner's daily 3 long + 3 short); tests can switch to v7
+ENGINE = ENGINE_V8
 ARCHIVE = ROOT / "archive"
 
 # ---- broker model: IBKR Pro (Tiered), US stocks/ETFs
@@ -286,6 +290,47 @@ CONFIG_TEXT = {
     ],
 }
 
+SCHEDULE_V8 = ("Sabah 08:30–09:29 (New York) seans öncesi fiyatlarla sıralama (yarım saatlik izleme işi); 09:35'te 3 long + 3 "
+               "short açılır; piyasa açıkken 5 dakikada bir kâr hedefi kontrol edilir; 15:55'te (erken kapanış günlerinde "
+               "12:55) kalanlar kapatılır.")
+DAY_TEST_TEXT = ""                         # filled from daytrade_study.py
+CONFIG_V8 = {
+    "strategyName": "Günlük 3+3: her sabah en iyi 3 long + 3 short, 3x kaldıraç, gün içinde kapanır (v8, yeni 3.000 $ hesap)",
+    "strategySummary": (
+        "Hesap sahibinin kuralı (27 Kasım 2026'dan itibaren, sanal para): bot her sabah piyasa açılmadan büyük ABD "
+        "hisselerini kendi kurallarıyla sıralar ve en iyi 3 long ile en iyi 3 short adayını seçer. Pozisyonlar açılışta "
+        "toplam 3x kaldıraçla açılır (her biri hesabın yarısı kadar). Bir pozisyon kendi parasına göre %15 kâra ulaşınca "
+        "(hisse lehte %5 gidince) kapatılır; ulaşmazsa gün sonunda kapatılır. Zarar-kes yok; geceye pozisyon kalmaz. "
+        "Sıralama yapay zekâ değil sabit kurallardır: açılış boşluğu (seans öncesi fiyat), trend (200 ve 50 günlük "
+        "ortalamalar), son 20 günün getirisi ve haber başlıkları (satın alma hedefleri elenir)."),
+    "execution": (
+        "Yahoo Finance verileri (yfinance): seans öncesi 5 dakikalık fiyatlar, işlemler 5 dakikalık güncel fiyatla. Kesirli "
+        "hisse. Her emirde IBKR Pro Tiered komisyonu (hisse başına 0,0035 $, en az 0,35 $, en fazla %1); satışlarda SEC ve "
+        "FINRA ücreti; fiyat kayması %0,05. Pozisyonlar gece taşınmadığı için kredi faizi ve ödünç ücreti işlemez."),
+    "broker": "Simülasyon: %10 teminatlı hesap; bu stratejide toplam maruziyet hesabın 3 katı",
+    "rules": [
+        "Hesap modeli (simülasyon): %10 teminatlı hesap; bu stratejide toplam maruziyet hesabın 3 katı (6 pozisyon, her biri "
+        "hesabın yarısı). Hesap 300 $'ın altına inerse batmış sayılır, arşivlenir ve yeni 3.000 $ ile yeniden başlar.",
+        "Sabah araştırması (kurallarla, yapay zekâ yok): evren, piyasa değeri en az 2 milyar $, günde en az 50 milyon $ işlem "
+        "gören ve fiyatı en az 10 $ olan ABD hisseleri (yaklaşık 1.300). 08:30–09:29 arasında seans öncesi fiyatlarla ön "
+        "sıralama yapılır ve sayfada gösterilir; açılışta gerçek açılış fiyatlarıyla son sıralama yapılır.",
+        "Long adayları: önceki kapanışa göre en çok aşağı boşlukla açılan, ama 200 günlük ortalamasının üstünde (yükselen "
+        "trendde) olan hisseler; ilk 3'ü alınır. Short adayları: en çok yukarı boşlukla açılan hisseler; ilk 3'ü açığa satılır. "
+        "Satın alma haberi olan hisseler elenir (fiyat teklife sabitlenir); ABD yaptırım listesindekilere hiç girilmez.",
+        "Neden bu sıralama (daytrade_study.py): 1.320 büyük hissede Ekim 2024–Kasım 2026 arası 520 işlem gününde 6 long ve 6 "
+        "short sıralaması denendi. Boşluğun yönünde girmek kaybettirdi (yukarı açılanı almak pozisyon başına günde −%0,35, "
+        "aşağı açılanı açığa satmak −%0,44); tersine girmek kazandırdı (aşağı açılan güçlü hisseyi almak +%0,19, yukarı "
+        "açılanı açığa satmak +%0,27). Bu ikili 3x kaldıraçla hesaba günde ortalama +%0,69 kattı, günlerin %59'u artı, "
+        "dönemin iki yarısı da artıda; ama en kötü düşüş −%57 ve en kötü gün −%23 oldu. 36 ikili denendiği için en iyisinin "
+        "bir kısmı şanstır; kâr garantisi yoktur.",
+        "Giriş: açılıştan sonraki ilk çalışmada (09:31'den itibaren, en geç 10:30). Her pozisyon hesabın yarısı kadar.",
+        "Çıkış: hisse girişten %5 lehte gidince pozisyon %15 kârla kapatılır (5 dakikada bir, 5 dakikalık mumlarla kontrol). "
+        "Hedefe ulaşmayanlar 15:55'te (erken kapanış günlerinde 12:55) kapatılır. Zarar-kes yok (hesap sahibinin kuralı).",
+        "Sınırlar: önceki kapanışa göre %10'dan fazla düşmüş hisse açığa satılmaz (SEC Rule 201); pozisyon geceye kalmaz, "
+        "kalırsa ertesi sabah ilk çalışmada kapatılır; 10:30'a kadar giriş yapılamazsa o gün işlem açılmaz.",
+    ],
+}
+
 
 # ---------------------------------------------------------------- formatting
 def trn(x, d=2):
@@ -373,7 +418,7 @@ def direction(p):
 
 
 # ---------------------------------------------------------------- engine
-class Engine(ReviewMixin):
+class Engine(ReviewMixin, DayMixin):
     def __init__(self, ledger, data, now, deposits=None, restore=None, review=None):
         self.R = review if review is not None else {}
         self.L = ledger
@@ -391,7 +436,13 @@ class Engine(ReviewMixin):
         self.names = {}                      # ticker -> company name for stocks outside universe.py (whole-market scan)
         self.migrate()
         self.C["schedule"] = SCHEDULE_TEXT
-        self.C.update(CONFIG_TEXT)
+        self.C.update(CONFIG_V8 if STRATEGY == "v8" else CONFIG_TEXT)
+        if STRATEGY == "v8":
+            self.C["schedule"] = SCHEDULE_V8
+            self.C["day"] = {"n": DT.DAY_N, "lev": DT.DAY_LEV, "tpMovePct": DT.DAY_TP * 100,
+                             "tpPositionPct": DT.DAY_TP * DT.DAY_LEV * 100, "longRule": DT.LONG_RULE, "shortRule": DT.SHORT_RULE,
+                             "longLabel": DT.LABELS["long"].get(DT.LONG_RULE), "shortLabel": DT.LABELS["short"].get(DT.SHORT_RULE),
+                             "minCap": DT.MIN_CAP, "minDv": DT.MIN_DV, "minPrice": DT.MIN_PRICE}
         self.C["maxLeverage"] = MAX_EXPO
         self.C["dipRule"] = DIP_RULE_TEXT
         self.C["oppRule"] = OPP_RULE_TEXT
@@ -427,6 +478,9 @@ class Engine(ReviewMixin):
     def migrate(self):
         eng = self.M.get("engine")
         if eng == ENGINE:
+            return
+        if STRATEGY == "v8":
+            self._to_v8(eng)
             return
         if eng == "reg-t-bot v3":
             self._to_v4()
@@ -538,6 +592,19 @@ class Engine(ReviewMixin):
                     f"değeri açık maruziyetin %{trn(CLOSEOUT * 100, 0)}'inin altına inerse pozisyonlar zorla kapatılır, "
                     f"{usd(BUST_BELOW)} altına inerse hesap batmış sayılır ve yeni {usd(RESET_CAPITAL)} ile yeniden başlar.", None)
         self.notes.append("v7: yeni x10 hesabı")
+
+    def _to_v8(self, eng):
+        """The owner's daily 3 long + 3 short (from 27 Nov 2026): fresh 3.000 $ account, the x10 account is archived."""
+        label = {ENGINE_V7: "v7: x10 simülasyonu (endeks kolu + fırsat taraması)",
+                 "trend-event v6": "v6: endeks kolu + haber şoku kolu", "trend-vol v5": "v5: iki yönlü endeks + momentum sepeti"}
+        sc = self.L.get("scorecard")
+        prev = self._fresh_account("v8", label.get(eng, eng) if sc and sc.get("start") else None)
+        self.comply("yeni hesap", "Hesap 3.000 $ ile sıfırdan başladı (günlük 3+3, v8)",
+                    f"Önceki hesap {prev['start']} – {prev['end']}: {usd(prev['invested'] or 0)} yatırıldı, son değer "
+                    f"{usd(prev['endValue'] or 0)} (zaman ağırlıklı %{trn(prev['twrPct'] or 0)}; SPY %{trn(prev['spyTwrPct'] or 0)}). "
+                    "Yeni strateji: her sabah en iyi 3 long ve en iyi 3 short adayı, toplam 3x kaldıraçla açılışta açılır; "
+                    f"%{trn(DT.DAY_TP * DT.DAY_LEV * 100, 0)} kârda (hissede %{trn(DT.DAY_TP * 100, 0)}) ya da gün sonunda kapanır.", None)
+        self.notes.append("v8: yeni günlük 3+3 hesabı")
 
     def _fresh_account(self, strategy, eval_label=None, bust=None):
         """Replace the ledger with a new RESET_CAPITAL account. The old account is summarised in `previousAccounts`
@@ -1102,6 +1169,9 @@ class Engine(ReviewMixin):
                 continue
             if p.get("stopMode") == "managed":
                 continue                          # index sleeve: sized daily by volatility, no price stop
+            if p.get("stopMode") == "day":
+                self.day_tp(p, q)                 # v8: take-profit only, no stop
+                continue
             b = q["bars"]
             if p.get("openedTs"):
                 b = b[b.index > pd.Timestamp(p["openedTs"])]
@@ -1289,7 +1359,7 @@ class Engine(ReviewMixin):
                             + ", ".join(f"{t['ticker']} ({t.get('rule')}, {usd(num(t.get('realizedPL')))})" for t in worst) + ". "
                             if worst else "")
                          + f"Hesap arşivlendi; yeni {usd(RESET_CAPITAL)} ile yeniden başladı.")}
-        self._fresh_account("v7", bust=bust)
+        self._fresh_account(STRATEGY, bust=bust)
         self.M["pausedOn"] = self.today          # no new trades on the day of the bust
         self.comply("batış", f"Hesap battı ({n}. kez) ve yeniden başladı", bust["text"], None)
         self.notes.append(bust["text"])
@@ -2376,6 +2446,8 @@ class Engine(ReviewMixin):
 
     # ---------------- run
     def run(self):
+        if STRATEGY == "v8":
+            return self.run_v8()
         held = [p["ticker"] for p in self.P["positions"]]
         self.load_quotes(held + ["SPY", INDEX_ETF])
         if "SPY" not in self.quotes:
@@ -2451,6 +2523,113 @@ class Engine(ReviewMixin):
             self.build_reviews()
         except Exception as e:                     # never let the evaluation break a run
             print("review failed:", type(e).__name__, e)
+
+    def run_v8(self):
+        """Daily 3 long + 3 short (daytrade.py): research, entry at the open, take-profit, close at the end of the day."""
+        held = [p["ticker"] for p in self.P["positions"]]
+        self.load_quotes(held + ["SPY", INDEX_ETF])
+        if "SPY" not in self.quotes:
+            self.status = "uyari"
+            self.notes.append("SPY verisi alınamadı; bu çalışmada işlem yapılmadı")
+            self.revalue()
+            self.log_check("guard")
+            return
+        self.accrue()
+        self.apply_deposits()
+        self.guard()
+        self.margin_check()
+        if self.bust_check():
+            self.revalue()
+            self.log_check("batış")
+            self.snapshot()
+            self.scorecard()
+            self._reviews()
+            return
+        self.nasdaq_update()
+        kind = "guard"
+        # a position left over from an earlier day (the closing run was missed) goes at once
+        old = [p for p in self.day_positions() if (p.get("exitDate") or self.today) < self.today]
+        if old:
+            for p in old:
+                q = self.quotes.get(p["ticker"])
+                if q and not q["stale"]:
+                    self.close(p, p["shares"], q["price"], q["at"],
+                               f"Günlük pozisyon {p.get('exitDate')} kapanışında kapatılamamıştı (bot o saatte çalışmadı); "
+                               "kural gereği ilk fırsatta kapatıldı.", "günlük 3+3 gecikmeli kapanış")
+        # other books of earlier strategies are not used any more; anything left from them is closed
+        for p in [p for p in self.P["positions"] if p.get("sleeve") != "day"]:
+            q = self.quotes.get(p["ticker"])
+            if q and not q["stale"]:
+                self.close(p, p["shares"], q["price"], q["at"], "Strateji değişti (v8): eski kuralın pozisyonu kapatıldı.",
+                           "strateji değişikliği")
+        fresh = not self.quotes["SPY"]["stale"] and self.M.get("pausedOn") != self.today
+        t_now, x_at = self.now.time(), DT.exit_time(self.today)
+        run = next((x for x in reversed(self.L["runs"]) if x.get("date") == self.today), None)
+        if fresh and self.M.get("dayEntered") != self.today and DT.DAY_ENTRY_AFTER <= t_now < DT.DAY_ENTRY_BY:
+            pre = self.day_load_picks() and dict(self.M["picks"])      # the pre-market ranking (watch job), if any
+            if pre:
+                self.M["premarketPicks"] = pre
+            try:                                   # the final ranking uses the real opening prices (as in the test)
+                fin = self.day_research()
+                if not fin.get("long") and not fin.get("short") and pre:
+                    self.M["picks"] = pre
+            except Exception as e:
+                self.notes.append(f"Açılış sıralaması yapılamadı ({type(e).__name__}: {e}); seans öncesi sıralama kullanıldı")
+                if pre:
+                    self.M["picks"] = pre
+            pk = self.M.get("picks") or {}
+            if pk.get("date") == self.today:
+                lines, opened = self.day_entry()
+                kind = "giriş"
+                run = self._day_run_record(pk, lines, opened)
+        if self.now.time() >= x_at and self.day_positions():
+            n = self.day_close_all(f"Gün sonu ({x_at:%H:%M}): kâr hedefine ulaşmayan pozisyon kural gereği kapanışta kapatıldı.")
+            kind = "kapanış"
+            if run is not None:
+                done = [t for t in self.L["trades"] if t.get("date") == self.today and t.get("action") in ("SELL", "COVER")]
+                pl = sum(num(t.get("realizedPL")) for t in done)
+                tps = sum(1 for t in done if t.get("rule") == "günlük 3+3 kâr hedefi")
+                run.setdefault("decisions", []).append(
+                    f"Gün sonu: {len(done)} pozisyon kapandı ({tps} tanesi kâr hedefinde, {n} tanesi kapanışta); "
+                    f"günlük işlemlerin sonucu {usd(pl)}.")
+                run["headline"] = f"Gün sonu {usd(pl)} · {tps}/{len(done)} hedefte · " + run.get("headline", "")
+        self.revalue()
+        self.log_check(kind)
+        self.snapshot()
+        self.scorecard()
+        self._reviews()
+
+    def _day_run_record(self, pk, lines, opened):
+        lab = pk.get("ruleLabels") or {}
+        decisions = [f"Sabah araştırması ({pk.get('source')}, {pk.get('at', '')[11:16]} ET): {pk.get('universe')} büyük hisseden "
+                     f"{pk.get('priced')} tanesinin fiyatı alındı. Long sıralaması: {lab.get('long')}. Short sıralaması: "
+                     f"{lab.get('short')}."] + lines
+        if len(opened["long"]) < DT.DAY_N or len(opened["short"]) < DT.DAY_N:
+            decisions.append(f"Uygun aday yetmedi: {len(opened['long'])} long, {len(opened['short'])} short açılabildi.")
+        rec = {"date": self.today, "at": iso(self.now), "by": "bot",
+               "headline": f"{len(opened['long'])} long + {len(opened['short'])} short açıldı (3x)",
+               "marketSummary": "", "regime": self.M.get("regime"), "decisions": decisions, "rejected": [],
+               "watchlist": [{"ticker": c["t"], "note": c.get("why") or ""} for side in ("long", "short")
+                             for c in (pk.get(side) or [])[DT.DAY_N:DT.DAY_N + 3]],
+               "sources": [{**YF_SOURCE, "publisher": "GitHub", "usedFor": "Veri kütüphanesi"}],
+               "picks": pk,
+               "nextSteps": f"Kâr hedefi 5 dakikada bir kontrol edilir; hedefe ulaşmayanlar {DT.exit_time(self.today):%H:%M}'te kapanır."}
+        self.L["runs"].append(rec)
+        try:
+            rows = []
+            for side in ("long", "short"):
+                for i, c in enumerate(pk.get(side) or []):
+                    rows.append({"t": c["t"], "n": c.get("n"), "p": c.get("ref"), "mv": round((c.get("gap") or 0) * 100, 2),
+                                 "gap": round((c.get("gap") or 0) * 100, 2), "cap": c.get("cap"), "dv": c.get("dv"),
+                                 "setup": ("dayLong" if side == "long" else "dayShort") + ("" if c.get("taken") else "Alt"),
+                                 "side": side, "dec": "al" if c.get("taken") else "atla",
+                                 "play": "dayLong" if side == "long" else "dayShort",
+                                 "why": c.get("skip") or (f"listede {i + 1}. sırada (yalnızca ilk {DT.DAY_N} alınır)"
+                                                          if not c.get("taken") else "")})
+            self.shadow_add(rows, "açılış", [])
+        except Exception as e:
+            self.notes.append(f"Gölge kayıt yazılamadı: {type(e).__name__}")
+        return rec
 
     @staticmethod
     def _dist(p):

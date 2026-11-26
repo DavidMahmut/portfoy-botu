@@ -9,6 +9,21 @@ Sanal bir **ABD kredili hesabında iki yönlü (long ya da short) işlem yapan**
 - **Zamanlama:** Piyasa açılınca başlayan bir GitHub Actions döngüsü kapanışa kadar 5 dakikada bir çalışır (`.github/workflows/bot.yml`); cron-job.org ve yedek zamanlayıcılar döngüyü başlatır.
 - **Kayıt:** Tüm durum `ledger.json` dosyasında (`compliance`: mevzuat günlüğü, `tax`: yıllık vergi görünümü). Sermaye eklemeleri `deposits.json` dosyasından okunur.
 
+## Günlük 3+3 (v8, 27 Kasım 2026'dan itibaren)
+
+Hesap sahibinin kuralı (sanal para): x10 hesabı arşivlendi (`archive/`), yeni 3.000 $ hesap açıldı.
+
+1. **Sabah araştırması (kurallarla, yapay zekâ yok):** evren, piyasa değeri ≥ 2 milyar $, günde ≥ 50 milyon $ işlem gören ve fiyatı ≥ 10 $ olan ABD hisseleri (~1.300). 08:30–09:29 arasında yarım saatlik izleme işi seans öncesi fiyatlarla ön sıralama yapar (`research.py` → `picks.json`); bot açılıştan sonraki ilk çalışmada (09:31'den itibaren) gerçek açılış fiyatlarıyla son sıralamayı yapar (`daytrade.py`).
+2. **Seçim:** long = önceki kapanışa göre en çok aşağı boşlukla açılan ama 200 günlük ortalamasının üstündeki 3 hisse; short = en çok yukarı boşlukla açılan 3 hisse. Satın alma haberi olanlar elenir, yaptırım listesindekilere girilmez.
+3. **Giriş:** açılışta toplam 3x kaldıraç (her pozisyon hesabın yarısı).
+4. **Çıkış:** pozisyon kendi parasına göre %15 kâra ulaşınca (hisse %5 lehte) kapanır; olmazsa 15:55'te (erken kapanış günlerinde 12:55). Zarar-kes yok; geceye pozisyon kalmaz.
+
+**Sıralama neden böyle (`daytrade_study.py`):** 1.320 büyük hissede Ekim 2024–Kasım 2026 arası 520 işlem gününde 6 long ve 6 short sıralaması denendi. Boşluğun yönünde girmek kaybettirdi (yukarı açılanı almak pozisyon başına günde −%0,35, aşağı açılanı açığa satmak −%0,44); tersine girmek kazandırdı (aşağı açılan güçlü hisseyi almak +%0,19, yukarı açılanı açığa satmak +%0,27). Bu ikili 3x kaldıraçla hesaba günde ortalama +%0,69 kattı (günlerin %59'u artı, iki yarı da artıda), ama en kötü düşüş −%57, en kötü gün −%23. 36 ikili denendiği için en iyisinin bir kısmı şanstır.
+
+Önceki testler (`intraday_study.py`, `cohort_study.py`): hareketli hisseleri 10:30'da alıp aynı gün kapatmanın masraflardan sonra kazancı yoktu; günler boyu tutmak daha iyiydi. Bu yüzden günlük kural açılışa ve boşluğun tersine dayanıyor.
+
+Günlük ve haftalık değerlendirme (`review.py` → `review.json`): her gün hesabın değişimi, kural bazında kâr/zarar, işlemler, sıralamada kalan adayların sonra ne yaptığı; her hafta toplamı.
+
 ## x10 simülasyonu (v7, 16 Kasım 2026'dan itibaren)
 
 v6 hesabı 2.851,39 $ ile (−%4,95; aynı dönemde SPY +%0,39) kapatılıp arşivlendi (`archive/`) ve yerine yeni bir 3.000 $ hesap açıldı. Amaç artık "gerçek bir hesabı taklit etmek" değil, **yüksek kaldıracın ve haber odaklı işlemlerin nasıl davrandığını izleyip öğrenmek**. Gerçek ABD aracı kurumları küçük bir hesaba hissede 10x kaldıraç vermez; bu yüzden Reg T ve FINRA 4210 teminat kuralları bu hesapta uygulanmaz. Piyasa kuralları (SEC Rule 201), ABD yaptırım listesi ve gerçek masraflar (komisyon, SEC/FINRA ücretleri, kredi faizi, ödünç ücreti, fiyat kayması) uygulanır.

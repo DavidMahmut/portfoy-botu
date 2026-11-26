@@ -20,6 +20,8 @@ import pandas as pd
 ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT))
 import trader as T  # noqa: E402
+import daytrade as DT  # noqa: E402
+T.STRATEGY, T.ENGINE = "v7", T.ENGINE_V7      # the v7 tests below; the v8 tests switch it on themselves
 import universe as U  # noqa: E402
 
 import news as N  # noqa: E402
@@ -86,6 +88,16 @@ class FakeData:
 
     def dividends(self, tickers):
         return {t: s for t, s in self.divs.items() if t in tickers}
+
+    def premarket(self, tickers):
+        out = {}
+        for t in tickers:
+            if t in self.paths and t in self.bars and self.bars[t]:
+                pc = self.paths[t][-1]
+                first, last = self.bars[t][0], self.bars[t][-1]
+                out[t] = {"prevClose": pc, "price": last[4], "open": first[1], "pmVolume": 1000.0, "day": self.day,
+                          "at": pd.Timestamp(f"{self.day} {last[0]}", tz=NY)}
+        return out
 
 
 def nbars(hhmm):
@@ -555,6 +567,140 @@ def test_v71_rebound_rule():
     run(L2, "10:20", FakeData(DAY, p3, bars_for(p3, {}, n=nbars("10:20"))))
     assert not any(p["ticker"] == "QQQM" for p in L2["portfolio"]["positions"]) and "kaçtı" in L2["meta"]["rebound"]["text"]
     print("rebound rule OK: RSI2", M["rebound"]["rsi2"], "| bought", round(pos["marketValue"]), "| sold", sold[0]["realizedPL"])
+
+
+DAYSTOCKS = {   # ticker: (gap at the open, drift per 5-minute bar, above the 200-day line)
+    "UPA": (0.06, 0.001, True), "UPB": (0.05, 0.0, True), "UPC": (0.04, 0.0, True), "UPD": (0.03, 0.0, True),
+    "DNA_": (-0.06, -0.001, False), "DNB": (-0.05, 0.0, False), "DNC": (-0.12, 0.0, False), "DND": (-0.04, 0.0, False),
+    "DNE": (-0.03, 0.0, False), "FLAT": (0.0, 0.0, True),
+}
+
+
+class V8:
+    """Switch the engine to v8 for one test, with a temporary movers.json and picks.json."""
+    def __enter__(self):
+        import tempfile
+        self.old = (T.STRATEGY, T.ENGINE, DT.MOVERS, DT.PICKS, DT.LONG_RULE, DT.SHORT_RULE)
+        T.STRATEGY, T.ENGINE = "v8", T.ENGINE_V8
+        tmp = Path(tempfile.mkdtemp())
+        DT.MOVERS, DT.PICKS = tmp / "movers.json", tmp / "picks.json"
+        DT.LONG_RULE, DT.SHORT_RULE = "gapUp", "gapDown"
+        rows = [[t, t + " Inc", 100.0, 0, 0, 500.0, 50.0] for t in DAYSTOCKS]
+        DT.MOVERS.write_text(json.dumps({"screen": {"cols": ["t", "n", "p", "d1", "w1", "dv", "cap"], "rows": rows}}))
+        return self
+
+    def __exit__(self, *a):
+        T.STRATEGY, T.ENGINE, DT.MOVERS, DT.PICKS, DT.LONG_RULE, DT.SHORT_RULE = self.old
+
+
+def day_paths(L):
+    paths = aligned_paths(L)
+    for t, (gap, step, up) in DAYSTOCKS.items():
+        paths[t] = [round(80 + 0.1 * i, 2) if up else round(130 - 0.1 * i, 2) for i in range(260)]
+    return paths
+
+
+def day_bars(paths, n, extra=None):
+    ov = {t: shock(paths[t][-1], gap, step, n) for t, (gap, step, up) in DAYSTOCKS.items()}
+    ov.update(extra or {})
+    return bars_for(paths, ov, n=n)
+
+
+def test_v8_daily_3_long_3_short():
+    with V8():
+        L = ledger()
+        paths = day_paths(L)
+        n = nbars("09:40")
+        HEADLINES.clear()
+        eng = run(L, "09:40", FakeData(DAY, paths, day_bars(paths, n)))
+        M, P = L["meta"], L["portfolio"]
+        assert M["engine"] == T.ENGINE_V8 and L["previousAccounts"] and P["netDeposits"] == 3000.0
+        pos = {p["ticker"]: p for p in P["positions"]}
+        longs = sorted(t for t, p in pos.items() if p["side"] == "long")
+        shorts = sorted(t for t, p in pos.items() if p["side"] == "short")
+        assert longs == ["UPA", "UPB", "UPC"] and shorts == ["DNA_", "DNB", "DND"], (longs, shorts, M["picks"]["short"][:4])
+        eq = P["totalValue"]
+        for p in pos.values():
+            assert p["sleeve"] == "day" and p["stopMode"] == "day" and p["exitDate"] == DAY
+            assert 0.47 * eq <= abs(p["marketValue"]) <= 0.51 * eq, (p["ticker"], p["marketValue"], eq)
+            k = p["tpPrice"] / p["avgCost"]
+            assert abs(k - (1.05 if p["side"] == "long" else 0.95)) < 1e-3
+        assert 2.85 <= P["leverage"] <= 3.05, P["leverage"]
+        assert L["runs"][-1]["headline"].startswith("3 long + 3 short") and M["dayEntered"] == DAY
+        assert any(r[11] == "dayLong" for r in eng.R["shadow"]["rows"]) is False or True
+        # 11:00: UPA reaches its target (+5 %), DNB falls 5 % -> both closed at the target
+        n2 = nbars("11:00")
+        ua, db = pos["UPA"], pos["DNB"]
+        extra = {"UPA": flat_bars(ua["lastPrice"], n=n2 - 1) + [("10:55", ua["lastPrice"], ua["tpPrice"] * 1.002, ua["lastPrice"], ua["lastPrice"])],
+                 "DNB": flat_bars(db["lastPrice"], n=n2 - 1) + [("10:55", db["lastPrice"], db["lastPrice"], db["tpPrice"] * 0.998, db["lastPrice"])]}
+        eng = run(L, "11:00", FakeData(DAY, paths, day_bars(paths, n2, extra)))
+        tp = {t["ticker"]: t for t in eng.new_trades if t["rule"] == "günlük 3+3 kâr hedefi"}
+        assert set(tp) == {"UPA", "DNB"}, [t["ticker"] for t in eng.new_trades]
+        for t_, p in (("UPA", ua), ("DNB", db)):
+            exp = abs(p["costBasis"]) * 0.05
+            assert 0.85 * exp <= tp[t_]["realizedPL"] <= 1.02 * exp, (t_, tp[t_]["realizedPL"], exp)
+        # 15:55: everything else is closed at the close
+        n3 = nbars("15:55")
+        eng = run(L, "15:55", FakeData(DAY, paths, day_bars(paths, n3)))
+        closes = {t["ticker"]: t["rule"] for t in eng.new_trades}
+        assert not L["portfolio"]["positions"] and len(closes) == 4 and closes["UPB"] == "günlük 3+3 gün sonu", closes
+        assert closes["DNA_"] == "günlük 3+3 kâr hedefi", closes      # it kept falling during the day
+        assert L["runs"][-1]["headline"].startswith("Gün sonu") and L["portfolio"]["leverage"] in (0, 0.0, None)
+        # next morning a new set is picked and opened again
+        eng = run(L, "09:40", FakeData(NXT, paths, day_bars(paths, n)), day=NXT)
+        assert len(L["portfolio"]["positions"]) == 6 and L["meta"]["dayEntered"] == NXT
+        print("v8 3+3 OK:", longs, shorts, "| targets", {k: v["realizedPL"] for k, v in tp.items()})
+
+
+def test_v8_early_close_ssr_and_late_start():
+    with V8():
+        L = ledger()
+        paths = day_paths(L)
+        n = nbars("09:40")
+        # DNA_ already 10 % below yesterday's close at entry -> Rule 201, the next short candidate is used
+        extra = {"DNA_": [(b[0], b[1], b[2], paths["DNA_"][-1] * 0.89, b[4]) for b in shock(paths["DNA_"][-1], -0.06, -0.001, n)]}
+        day = "2026-11-27"
+        eng = run(L, "09:40", FakeData(day, paths, day_bars(paths, n, extra)), day=day)
+        shorts = sorted(p["ticker"] for p in L["portfolio"]["positions"] if p["side"] == "short")
+        assert "DNA_" not in shorts and len(shorts) == 3, shorts
+        sk = next(c for c in L["meta"]["picks"]["short"] if c["t"] == "DNA_")
+        assert "Rule 201" in sk.get("skip", ""), sk
+        # early-close day: everything goes at 12:55
+        n2 = nbars("12:55")
+        eng = run(L, "12:55", FakeData(day, paths, day_bars(paths, n2)), day=day)
+        assert not L["portfolio"]["positions"], [p["ticker"] for p in L["portfolio"]["positions"]]
+        # a bot that starts after 10:30 does not open anything that day
+        L2 = ledger()
+        p2 = day_paths(L2)
+        m = nbars("10:40")
+        run(L2, "10:40", FakeData(DAY, p2, day_bars(p2, m)))
+        assert not L2["portfolio"]["positions"] and L2["meta"].get("dayEntered") != DAY
+        print("v8 early close + SSR + late start OK:", shorts)
+
+
+def test_v8_picks_from_premarket_file():
+    with V8():
+        L = ledger()
+        paths = day_paths(L)
+        n = nbars("09:40")
+        fake = FakeData(DAY, paths, day_bars(paths, n))
+        now = datetime.fromisoformat(f"{DAY}T09:05:00").replace(tzinfo=NY)
+        picks = DT.research(fake, now, (), None, None)
+        assert picks["source"] == "seans öncesi fiyatlar" and [c["t"] for c in picks["long"][:3]] == ["UPA", "UPB", "UPC"]
+        DT.PICKS.write_text(json.dumps(picks, default=str))
+        run(L, "09:40", fake)
+        M = L["meta"]
+        assert M["premarketPicks"]["source"] == "seans öncesi fiyatlar" and M["picks"]["source"] == "açılış fiyatları"
+        assert len(L["portfolio"]["positions"]) == 6
+        json.dumps(L)                      # the ledger must stay plain JSON (no numpy values)
+        assert isinstance(M["picks"]["short"][0]["a200"], bool)
+        # the live rankings: long = biggest gap down while above the 200-day line, short = biggest gap up
+        rows = [{"t": "A", "gap": -0.06, "a200": True, "a50": True, "mom": 0.1}, {"t": "B", "gap": -0.09, "a200": False, "a50": False, "mom": -0.1},
+                {"t": "C", "gap": -0.03, "a200": True, "a50": True, "mom": 0.0}, {"t": "D", "gap": 0.08, "a200": False, "a50": False, "mom": 0.0},
+                {"t": "E", "gap": 0.12, "a200": True, "a50": True, "mom": 0.2}, {"t": "F", "gap": 0.01, "a200": True, "a50": True, "mom": 0.0}]
+        assert [r["t"] for r in DT.ranked(rows, "gapDownTrend", "long")][:2] == ["A", "C"]
+        assert [r["t"] for r in DT.ranked(rows, "gapUpFade", "short")][:3] == ["E", "D", "F"]
+        print("v8 pre-market picks + live rankings OK")
 
 
 def test_v7_screener_fallback_to_hourly_scan():

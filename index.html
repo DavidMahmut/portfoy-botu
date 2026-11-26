@@ -565,6 +565,7 @@ tr.mv-det td{background:var(--bg);white-space:normal;text-align:left}
     <a href="#ders">Günün dersi</a>
     <a href="#ozet">Özet</a>
     <a href="#sa">Seeking Alpha</a>
+    <a href="#gunluk3" hidden>Günlük 3+3</a>
     <a href="#degerlendirme">Değerlendirme</a>
     <a href="#firsat">Fırsat taraması</a>
     <a href="#kaldirac">Kaldıraç ve batış</a>
@@ -708,6 +709,15 @@ tr.mv-det td{background:var(--bg);white-space:normal;text-align:left}
     <ul class="sa-list" id="saList"><li class="muted">Başlıklar bekleniyor…</li></ul>
     <p class="small muted" id="saNote" style="margin:0"></p>
   </aside>
+
+  <section id="gunluk3" aria-labelledby="h-day" hidden>
+    <div class="sec-head"><h2 id="h-day">Günlük 3+3: bugünün seçimleri</h2><span class="small muted" id="dayAsOf">—</span></div>
+    <div class="panel" style="display:flex;flex-direction:column;gap:10px">
+      <p class="small" id="dayRule" style="margin:0;max-width:100ch"></p>
+      <div id="dayBody"></div>
+      <div id="dayTest"></div>
+    </div>
+  </section>
 
   <section id="degerlendirme" aria-labelledby="h-deg">
     <div class="sec-head"><h2 id="h-deg">Günlük ve haftalık değerlendirme</h2><span class="small muted" id="rvAsOf">—</span></div>
@@ -948,7 +958,7 @@ tr.mv-det td{background:var(--bg);white-space:normal;text-align:left}
   </section>
 
   <footer>
-    Bu bir simülasyondur: gerçek para ya da aracı kurum yok, yatırım veya vergi tavsiyesi değildir. Kararları yapay zekâ değil, sabit kurallarla çalışan bir program verir; haberler de anahtar kelime kurallarıyla sınıflandırılır. Hesap, yüksek kaldıracın davranışını izlemek için kurulmuş bir modeldir: %10 teminat, en fazla 10x maruziyet, maruziyetin %5'inde zorunlu tasfiye, 300 $'ın altında batış ve yeni 3.000 $ ile yeniden başlama. Gerçek ABD aracı kurumları küçük bir hesaba hissede bu kadar kaldıraç vermez (Reg T ve FINRA 4210 uygulanmaz); SEC Rule 201, ABD yaptırım listesi, IBKR Pro komisyonu, SEC/FINRA satış ücretleri, kredi faizi, ödünç ücreti ve fiyat kayması uygulanır. Fiyatlar ve takvimler Yahoo Finance'ten (yfinance), başlıklar Yahoo Finance ve Seeking Alpha'dan gelir; gecikmeli ya da eksik olabilir. Geçmiş test sonuçları geleceği garanti etmez.
+    Bu bir simülasyondur: gerçek para ya da aracı kurum yok, yatırım veya vergi tavsiyesi değildir. Kararları yapay zekâ değil, sabit kurallarla çalışan bir program verir; haberler de anahtar kelime kurallarıyla sınıflandırılır. Hesap %10 teminatlı bir modeldir: zorunlu tasfiye ve 300 $'ın altında batış kuralı vardır; gerçek ABD aracı kurumlarının teminat kuralları (Reg T, FINRA 4210) uygulanmaz. SEC Rule 201, ABD yaptırım listesi, IBKR Pro komisyonu, SEC/FINRA satış ücretleri, kredi faizi, ödünç ücreti ve fiyat kayması uygulanır. Fiyatlar ve takvimler Yahoo Finance'ten (yfinance), başlıklar Yahoo Finance ve Seeking Alpha'dan gelir; gecikmeli ya da eksik olabilir. Geçmiş test sonuçları geleceği garanti etmez.
   </footer>
 </div>
 
@@ -956,7 +966,7 @@ tr.mv-det td{background:var(--bg);white-space:normal;text-align:left}
 (function(){
   "use strict";
   var TZ = "America/New_York";
-  var S = {config:null, portfolio:null, meta:{}, trades:[], snapshots:[], runs:[], checks:null, compliance:[], tax:{}, score:null, ext:null, news:null, brief:null, dip:null, err:null, review:null, busts:[], playStats:{}, agenda:null, lev:null, evWide:null};
+  var S = {config:null, portfolio:null, meta:{}, trades:[], snapshots:[], runs:[], checks:null, compliance:[], tax:{}, score:null, ext:null, news:null, brief:null, dip:null, err:null, review:null, dayTest:null, busts:[], playStats:{}, agenda:null, lev:null, evWide:null};
   var fmtUSD = new Intl.NumberFormat("tr-TR",{style:"currency",currency:"USD",minimumFractionDigits:2,maximumFractionDigits:2});
   var fmtNum = function(n,d){return new Intl.NumberFormat("tr-TR",{minimumFractionDigits:d,maximumFractionDigits:d}).format(n);};
   var fmtDate = new Intl.DateTimeFormat("tr-TR",{day:"numeric",month:"long",year:"numeric",timeZone:TZ});
@@ -1016,7 +1026,8 @@ tr.mv-det td{background:var(--bg);white-space:normal;text-align:left}
     else setKpi("k-cash","Nakit",usd(p.cash),"Short satış gelirleri dahil",null);
     var X=c.x10||null, mb=$("migBar");
     mb.hidden=!!X; if(!X) mb.textContent="Yeni x10 hesabı bir sonraki işlem gününün açılışında (09:32 ET) başlar: bot o çalışmada eski hesabı arşivler ve 3.000 $ ile yeniden açar. O zamana kadar bu bölümdeki rakamlar ve pozisyonlar kapanmakta olan eski hesaba aittir.";
-    setKpi("k-inv",X?"Kaldıraç (toplam maruziyet)":"Ekonomik kaldıraç",isNum(p.leverage)?fmtNum(p.leverage,2)+"x":"—","Üst sınır "+(X&&isNum(X.maxGross)?fmtNum(X.maxGross,0)+"x":isNum(c.maxLeverage)?fmtNum(c.maxLeverage,0)+"x":"3x")+(reg.label?" · "+reg.label:""),null);
+    if(c.day) setKpi("k-inv","Kaldıraç (toplam maruziyet)",isNum(p.leverage)?fmtNum(p.leverage,2)+"x":"—","Gün içinde "+fmtNum(c.day.lev,0)+"x · gece pozisyon yok",null);
+    else setKpi("k-inv",X?"Kaldıraç (toplam maruziyet)":"Ekonomik kaldıraç",isNum(p.leverage)?fmtNum(p.leverage,2)+"x":"—","Üst sınır "+(X&&isNum(X.maxGross)?fmtNum(X.maxGross,0)+"x":isNum(c.maxLeverage)?fmtNum(c.maxLeverage,0)+"x":"3x")+(reg.label?" · "+reg.label:""),null);
     var co=p.costs||{}, ct=(co.slippage||0)+(co.commission||0)+(co.fees||0)+(co.interest||0)+(co.borrow||0)+(co.dividendsPaid||0);
     setKpi("k-real","Toplam işlem maliyeti",usd(ct),"Komisyon "+usd(co.commission||0)+" · SEC/FINRA "+usd(co.fees||0)+" · kayma "+usd(co.slippage||0)+" · faiz "+usd(co.interest||0)+" · ödünç "+usd(co.borrow||0),null);
     if(X){
@@ -2158,6 +2169,97 @@ tr.mv-det td{background:var(--bg);white-space:normal;text-align:left}
     Array.prototype.forEach.call(document.querySelectorAll(".mv-tabs button"),function(btn){ btn.setAttribute("aria-pressed", !mvSort&&btn.getAttribute("data-k")===mvKey?"true":"false"); });
   }
   Array.prototype.forEach.call(document.querySelectorAll(".mv-tabs button"),function(btn){ btn.addEventListener("click",function(){ mvKey=btn.getAttribute("data-k"); mvSort=null; try{ localStorage.removeItem("mvSort"); }catch(e){} mvLimit=25; try{ renderMovers(); }catch(e){ console.error(e); } }); });
+  /* ---------- v8: daily 3 long + 3 short ---------- */
+  function isV8(){ return !!((S.config||{}).day); }
+  function dayV8Layout(){
+    var v8=isV8();
+    ["firsat","kaldirac"].forEach(function(id){ var s=$(id); if(s) s.hidden=v8; var a=document.querySelector('nav.tabs a[href="#'+id+'"]'); if(a) a.hidden=v8; });
+    var g=$("gunluk3"), a=document.querySelector('nav.tabs a[href="#gunluk3"]'); if(g) g.hidden=!v8; if(a) a.hidden=!v8;
+    if(v8){ var D=S.config.day;
+      $("sub").textContent="Sanal para ile günlük al-sat deneyi: bot her sabah piyasa açılmadan büyük ABD hisselerini kendi kurallarıyla sıralar, en iyi "+D.n+" long ve "+D.n+" short adayına açılışta toplam "+fmtNum(D.lev,0)+"x kaldıraçla girer. Bir pozisyon kendi parasına göre %"+fmtNum(D.tpPositionPct,0)+" kâra ulaşınca (hisse %"+fmtNum(D.tpMovePct,0)+" lehte) kapanır; ulaşmazsa gün sonunda kapanır. Zarar-kes yok, geceye pozisyon kalmaz. Her işlemin gerekçesi, maliyeti ve kaynağı aşağıda."; }
+  }
+  function dayStatus(t, side){
+    var tr=(S.trades||[]).filter(function(x){ return x.date===((S.meta||{}).picks||{}).date && x.ticker===t && (x.action==="SELL"||x.action==="COVER"); }).slice(-1)[0];
+    if(tr) return {closed:true, pl:tr.realizedPL, rule:tr.rule, at:tr.ts, px:tr.execPrice};
+    var p=((S.portfolio||{}).positions||[]).filter(function(x){ return x.ticker===t && x.sleeve==="day"; })[0];
+    return p? {open:true, p:p} : null;
+  }
+  function renderDay(){
+    var box=$("dayBody"); if(!box) return;
+    dayV8Layout();
+    if(!isV8()) return;
+    var D=S.config.day, M=S.meta||{}, pk=M.picks||null, pre=M.premarketPicks||null; clear(box);
+    $("dayRule").textContent="Long sıralaması: "+(D.longLabel||D.longRule)+". Short sıralaması: "+(D.shortLabel||D.shortRule)+". Her pozisyon hesabın "+fmtNum(D.lev/(2*D.n),2)+" katı; hedef: hisse %"+fmtNum(D.tpMovePct,0)+" lehte (pozisyona %"+fmtNum(D.tpPositionPct,0)+" kâr), yoksa gün sonu.";
+    if(!pk){ box.appendChild(el("p",{class:"small muted",text:"İlk seçim bir sonraki işlem günü sabahı yapılacak: 08:30–09:29 arası seans öncesi sıralama, 09:31'den sonra açılış fiyatlarıyla son sıralama ve giriş."})); renderDayTest(); return; }
+    $("dayAsOf").textContent="Seçim: "+dLong(pk.date)+" "+(pk.at||"").slice(11,16)+" ET · "+(pk.source||"")+" · "+(pk.priced||0)+" / "+(pk.universe||0)+" hisse fiyatlandı";
+    var t=el("table",{class:"month-table x-table"}), hr=el("tr");
+    ["Yön","Hisse","Neden seçildi","Giriş","Hedef","Son / çıkış","Pozisyona göre","Durum"].forEach(function(h,i){ hr.appendChild(el("th",{scope:"col",class:(i>=3&&i<=6)?"num":null,text:h})); });
+    t.appendChild(el("thead",null,hr)); var b=el("tbody"), tot=0, n=0;
+    ["long","short"].forEach(function(side){
+      (pk[side]||[]).filter(function(c){ return c.taken; }).forEach(function(c){
+        var st=dayStatus(c.t, side), ent=null, tp=null, last=null, plp=null, plUsd=null, status="—";
+        var tr=(S.trades||[]).filter(function(x){ return x.date===pk.date && x.ticker===c.t && (x.action==="BUY"||x.action==="SHORT"); })[0];
+        if(tr){ ent=tr.execPrice; tp= side==="long"? ent*(1+D.tpMovePct/100) : ent*(1-D.tpMovePct/100); }
+        if(st&&st.open){ last=st.p.lastPrice; plUsd=st.p.unrealized; plp= st.p.costBasis? st.p.unrealized/(st.p.costBasis/D.lev)*100 : null; tp=st.p.tpPrice||tp; status="Açık"; }
+        else if(st&&st.closed){ last=st.px; plUsd=st.pl; plp= tr? st.pl/(tr.value/D.lev)*100 : null; status=(/kâr hedefi/.test(st.rule||"")?"Hedefte kapandı ":"Gün sonunda kapandı ")+(st.at||"").slice(11,16); }
+        if(isNum(plUsd)){ tot+=plUsd; n++; }
+        b.appendChild(el("tr",{class:status.indexOf("Hedef")===0?"me":null},
+          el("td",null, el("span",{class:"side "+(side==="short"?"short":"long"),text:side==="short"?"SHORT":"LONG"})),
+          el("td",null, el("b",{text:c.t}), el("span",{class:"muted nm",text:c.n?" "+c.n:""})),
+          el("td",{class:"small"}, el("span",{text:c.why||""}), c.headline&&/^https:\/\//.test(c.headline.url||"")? el("div",null, el("a",{href:c.headline.url,target:"_blank",rel:"noopener noreferrer",text:c.headline.title})) : null),
+          el("td",{class:"num",text:isNum(ent)?fmtNum(ent,2):"—"}), el("td",{class:"num",text:isNum(tp)?fmtNum(tp,2):"—"}),
+          el("td",{class:"num",text:isNum(last)?fmtNum(last,2):"—"}),
+          el("td",{class:"num "+cls(plUsd)}, el("b",{text:isNum(plp)?pct(plp):"—"}), el("span",{class:"muted nm",text:isNum(plUsd)?" "+sgnUsd(plUsd):""})),
+          el("td",{class:"small",text:status})));
+      });
+    });
+    t.appendChild(b);
+    box.appendChild(el("h3",{style:"font-size:15px;margin:0 0 8px",text:"Bugünün pozisyonları ("+dShort(pk.date)+")"}));
+    if(!n&&!b.children.length) box.appendChild(el("p",{class:"small muted",text:"Seçim yapıldı, pozisyonlar açılışta açılacak."}));
+    else { box.appendChild(el("div",{class:"tbl-wrap"},t)); box.appendChild(el("p",{class:"small",style:"margin:8px 0 0",text:"Günün toplamı (gerçekleşen + açık): "+sgnUsd(tot)})); }
+    // candidate lists
+    var grid=el("div",{class:"x-grid",style:"margin-top:16px"});
+    ["long","short"].forEach(function(side){
+      var col=el("div",null, el("h3",{style:"font-size:15px;margin:0 0 8px",text:(side==="long"?"Long":"Short")+" sıralaması (ilk "+((pk[side]||[]).length)+")"}));
+      var tt=el("table",{class:"month-table x-table"}), h2=el("tr");
+      ["#","Hisse","Boşluk","Trend","Haber","Bot ne yaptı"].forEach(function(h,i){ h2.appendChild(el("th",{scope:"col",class:(i===0||i===2)?"num":null,text:h})); });
+      tt.appendChild(el("thead",null,h2)); var bb=el("tbody");
+      (pk[side]||[]).forEach(function(c,i){
+        bb.appendChild(el("tr",{class:c.taken?"me":null}, el("td",{class:"num",text:String(i+1)}),
+          el("td",null, el("b",{text:c.t})), el("td",{class:"num "+cls(c.gap),text:isNum(c.gap)?pct(c.gap*100):"—"}),
+          el("td",{class:"small",text:c.a200?"200 günlüğün üstü":"200 günlüğün altı"}), el("td",{class:"small",text:c.cat||"—"}),
+          el("td",{class:"small",text:c.taken?"Alındı":(c.skip?"Atlandı: "+c.skip:"Sırası gelmedi")})));
+      });
+      tt.appendChild(bb); col.appendChild(el("div",{class:"tbl-wrap"},tt)); grid.appendChild(col);
+    });
+    box.appendChild(grid);
+    if(pre&&pre.date===pk.date){
+      var pl=function(s){ return (pre[s]||[]).slice(0,D.n).map(function(c){ return c.t+" ("+pct((c.gap||0)*100)+")"; }).join(", ")||"—"; };
+      box.appendChild(el("p",{class:"small muted",style:"margin:10px 0 0",text:"Seans öncesi ön sıralama ("+(pre.at||"").slice(11,16)+" ET): long "+pl("long")+"; short "+pl("short")+". Son seçim açılış fiyatlarıyla yapıldı."}));
+    }
+    renderDayTest();
+  }
+  function renderDayTest(){
+    var T=S.dayTest, box=$("dayTest"); if(!box) return; clear(box);
+    if(!T||!T.sides) return;
+    var D=(S.config||{}).day||{};
+    box.appendChild(el("h3",{style:"font-size:15px;margin:16px 0 8px",text:"Hangi sıralama işe yarıyor? ("+dLong(T.from)+" – "+dLong(T.to)+", "+T.days+" işlem günü, "+fmtNum(T.tickers,0)+" büyük hisse)"}));
+    var t=el("table",{class:"month-table x-table"}), hr=el("tr");
+    ["Yön","Sıralama","Pozisyon başına günlük ort.","Artı gün","Hedefe ulaşma","İlk yarı / ikinci yarı"].forEach(function(h,i){ hr.appendChild(el("th",{scope:"col",class:i>=2?"num":null,text:h})); });
+    t.appendChild(el("thead",null,hr)); var b=el("tbody");
+    T.sides.slice().sort(function(a,b){ return (a.side>b.side?1:-1) || ((b.all.avg||0)-(a.all.avg||0)); }).forEach(function(x){
+      var me=(x.side==="long"&&x.rule===D.longRule)||(x.side==="short"&&x.rule===D.shortRule);
+      b.appendChild(el("tr",{class:me?"me":null}, el("td",{text:x.side==="long"?"Long":"Short"}), el("td",{text:x.label+(me?" (kullanılan)":"")}),
+        el("td",{class:"num "+cls(x.all.avg),text:pct(x.all.avg)}), el("td",{class:"num",text:"%"+fmtNum(x.all.pos||0,0)}),
+        el("td",{class:"num",text:isNum(x.tpRatePct)?"%"+fmtNum(x.tpRatePct,0):"—"}),
+        el("td",{class:"num",text:pct(x.h1.avg)+" / "+pct(x.h2.avg)})));
+    });
+    t.appendChild(b); box.appendChild(el("div",{class:"tbl-wrap"},t));
+    var c=(T.combos||[]).filter(function(x){ return x.long===D.longRule && x.short===D.shortRule; })[0];
+    box.appendChild(el("p",{class:"note",text:(c? "Kullanılan ikili 3x kaldıraçla hesaba günde ortalama "+pct(c.day.avg)+" kattı (günlerin %"+fmtNum(c.day.pos,0)+"'i artı); bu dönemde yıllık büyüme "+pct(c.acct.cagrPct)+", en kötü düşüş "+pct(c.acct.maxDrawdownPct)+", en kötü gün "+pct(c.acct.worstDayPct)+", en iyi gün "+pct(c.acct.bestDayPct)+". " : "")
+      +"Rastgele 3 hisse alınsaydı pozisyon başına günde "+pct(T.baseline.long.avg)+", rastgele 3 hisse açığa satılsaydı "+pct(T.baseline.short.avg)+" olurdu. "+(T.notes||"")+" 36 ikili denendiği için en iyisinin bir kısmı şanstır."}));
+  }
+
   /* ---------- daily and weekly evaluation (review.json) ---------- */
   var rvView="days";
   try{ rvView=localStorage.getItem("rvView")||"days"; }catch(e){}
@@ -2266,6 +2368,7 @@ tr.mv-det td{background:var(--bg);white-space:normal;text-align:left}
     var tb=$("hlRows"); if(!tb) return; clear(tb);
     var H=(S.meta&&S.meta.health)||(S.review&&S.review.health)||{}, rule=(S.review&&S.review.healthRule)||{n:20,min:10};
     var keys=Object.keys(H);
+    if(isV8()){ tb.appendChild(el("tr",null, el("td",{colspan:"5",class:"muted",text:"Günlük 3+3'te kural durdurma yok: kural her işlem günü çalışır (hesap sahibinin kararı). Hangi sıralamanın ne kazandırdığı yukarıdaki günlük tabloda ve bu bölümde izlenir."}))); $("hlNote").textContent=""; return; }
     if(!keys.length){ tb.appendChild(el("tr",null, el("td",{colspan:"5",class:"muted",text:"Kural değerlendirmesi her işlem günü 10:00'dan sonra yapılır."}))); }
     keys.forEach(function(k){ var h=H[k], lv=h.live||{}, on=h.status!=="durduruldu";
       tb.appendChild(el("tr",null, el("td",{text:rvLabel(k)}),
@@ -2654,7 +2757,8 @@ tr.mv-det td{background:var(--bg);white-space:normal;text-align:left}
   var fmtMonth = new Intl.DateTimeFormat("tr-TR",{month:"long",year:"numeric",timeZone:"UTC"});
   function renderScore(){
     var sc=S.score; if(!sc) return;
-    if((S.config||{}).x10) $("kNote").textContent="Bu hesap bir öğrenme simülasyonu: karne, yüksek kaldıraçlı kuralların üç ayda endekse göre ne yaptığını gösterir. Getiriler zaman ağırlıklıdır ve yalnızca şimdiki hesabı ölçer (batan hesaplar \"Kaldıraç ve batış\" bölümünde). 10x kaldıraçta tek bir kötü gün sonucu belirleyebilir; ilk haftalarda sonuçlar şanstan çok etkilenir.";
+    if((S.config||{}).day) $("kNote").textContent="Karne, günlük 3+3 kuralının (sabah 3 long + 3 short, 3x, gün içinde kapanır) üç ayda endekse göre ne yaptığını gösterir. Getiriler zaman ağırlıklıdır; önceki hesaplar aşağıdaki geçmişte. Günlük işlemde tek bir kötü gün sonucu belirleyebilir; ilk haftalarda sonuçlar şanstan çok etkilenir.";
+    else if((S.config||{}).x10) $("kNote").textContent="Bu hesap bir öğrenme simülasyonu: karne, yüksek kaldıraçlı kuralların üç ayda endekse göre ne yaptığını gösterir. Getiriler zaman ağırlıklıdır ve yalnızca şimdiki hesabı ölçer (batan hesaplar \"Kaldıraç ve batış\" bölümünde). 10x kaldıraçta tek bir kötü gün sonucu belirleyebilir; ilk haftalarda sonuçlar şanstan çok etkilenir.";
     $("kRange").textContent=dLong(sc.start)+" – "+dLong(sc.end);
     var el_=sc.daysElapsed||0, tot=sc.daysTotal||1;
     $("kDay").textContent= sc.finished ? "Değerlendirme tamamlandı ("+tot+" işlem günü)" : "İşlem günü "+el_+" / "+tot;
@@ -2792,6 +2896,7 @@ tr.mv-det td{background:var(--bg);white-space:normal;text-align:left}
     try{ renderEvents(); }catch(e){ console.error(e); }
     try{ renderBusts(); renderLev(); }catch(e){ console.error(e); }
     try{ renderReview(); }catch(e){ console.error(e); }
+    try{ renderDay(); }catch(e){ console.error(e); }
     try{ renderMarkets(); renderAgenda(); }catch(e){ console.error(e); }
     try{ renderSummary(); renderRisk(); renderExt(); renderScore(); renderNews(); renderAlloc(); renderPositions(); renderTrades(); renderRuns(); renderLaw(); renderRules(); renderChart(); }
     catch(e){ console.error(e); }
@@ -2837,6 +2942,10 @@ tr.mv-det td{background:var(--bg);white-space:normal;text-align:left}
     fetch("spike_results.json?t="+Date.now(),{cache:"no-store"}).then(function(r){ if(!r.ok) throw 0; return r.json(); })
       .then(function(x){ S.spTest=x; }, function(){ S.spTest=null; }).then(function(){ try{ renderSpikes(); }catch(e){ console.error(e); } });
   }
+  function loadDayTest(){
+    fetch("daytrade_results.json?t="+Date.now(),{cache:"no-store"}).then(function(r){ if(!r.ok) throw 0; return r.json(); })
+      .then(function(x){ S.dayTest=x; }, function(){ S.dayTest=null; }).then(function(){ try{ renderDayTest(); }catch(e){ console.error(e); } });
+  }
   function loadReview(){
     fetch("review.json?t="+Date.now(),{cache:"no-store"}).then(function(r){ if(!r.ok) throw 0; return r.json(); })
       .then(function(x){ S.review=x; }, function(){ if(!S.review) S.review=null; })
@@ -2851,7 +2960,7 @@ tr.mv-det td{background:var(--bg);white-space:normal;text-align:left}
     fetch("movers.json?t="+Date.now(),{cache:"no-store"}).then(function(r){ if(!r.ok) throw 0; return r.json(); })
       .then(function(x){ S.movers=x; }, function(){ S.movers=null; }).then(function(){ try{ renderMovers(); }catch(e){ console.error(e); } try{ scList(); scCalc(); }catch(e){ console.error(e); } lsMaybe("movers"); });
   }
-  loadAgenda(); loadReview(); loadLessons(); load(); loadExt(); loadNews(); loadEv(); loadSp(); loadMovers(); setInterval(load, 60000); setInterval(loadAgenda, 300000); setInterval(loadReview, 300000); setInterval(loadMovers, 300000); setInterval(loadExt, 60000); setInterval(loadNews, 300000);
+  loadAgenda(); loadReview(); loadDayTest(); loadLessons(); load(); loadExt(); loadNews(); loadEv(); loadSp(); loadMovers(); setInterval(load, 60000); setInterval(loadAgenda, 300000); setInterval(loadReview, 300000); setInterval(loadMovers, 300000); setInterval(loadExt, 60000); setInterval(loadNews, 300000);
 })();
 </script>
 </body>
