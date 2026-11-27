@@ -139,70 +139,8 @@
   }
  },
  "portfolio": {
-  "cash": 4571.55,
+  "cash": 6145.34,
   "positions": [
-   {
-    "stopMode": "day",
-    "ticker": "PANW",
-    "name": "Palo Alto Networks, Inc.",
-    "kind": "Hisse",
-    "side": "long",
-    "lev": 1,
-    "shares": 4.3633,
-    "avgCost": 343.7718,
-    "costBasis": 1499.98,
-    "lastPrice": 360.56,
-    "lastPriceAt": "2026-11-27T12:10:00-05:00",
-    "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (12:10 ET)",
-     "url": "https://finance.yahoo.com/quote/PANW/"
-    },
-    "marketValue": 1573.23,
-    "exposure": 1573.23,
-    "unrealized": 73.25,
-    "unrealizedPct": 4.88,
-    "openedAt": "2026-11-27",
-    "openedTs": "2026-11-27T09:35:00-05:00",
-    "lastAddDate": "2026-11-27",
-    "stopPrice": null,
-    "extremeSinceEntry": 343.6000061035156,
-    "tookProfit": false,
-    "thesis": "Günlük 3+3 (long #2): PANW (Palo Alto Networks, Inc.). Seçim kuralı: Aşağı boşluk + yükselen trend (düşüşte al). Açılış boşluk −%3,58, son 20 gün −%9,7, 200 günlük ortalamanın üstünde; haber: Dolandırıcılık / muhasebe iddiası. Büyüklük hesabın 0,50 katı (1.500,00 $); toplam 3x. Hisse girişten %5 yükselirse pozisyon %15 kârla kapanır; olmazsa 12:55'te kapanışta kapanır. Zarar-kes yok.",
-    "sleeve": "day",
-    "play": "dayLong",
-    "playLabel": "Günlük long",
-    "tpPrice": 360.9604,
-    "exitDate": "2026-11-27",
-    "rank": 2,
-    "pick": {
-     "t": "PANW",
-     "n": "Palo Alto Networks, Inc.",
-     "ex": "Q",
-     "cap": 292.39,
-     "dv": 2767.5,
-     "prevClose": 356.19,
-     "ref": 343.44,
-     "gap": -0.0358,
-     "mom": -0.09709,
-     "a200": true,
-     "a50": false,
-     "pmVolume": 0.0,
-     "score": 0.0358,
-     "headline": {
-      "title": "Palo Alto Networks Falls After Former Executive Claims Accounting Fraud",
-      "url": "https://www.investors.com/news/technology/palo-alto-networks-stock-falls-former-executive-claims-accounting-fraud/?src=A00220&yptr=yahoo",
-      "publisher": "Investor's Business Daily",
-      "at": "2026-11-27T12:10:36+00:00"
-     },
-     "cat": "Dolandırıcılık / muhasebe iddiası",
-     "kind": "hard",
-     "why": "Açılış boşluk −%3,58, son 20 gün −%9,7, 200 günlük ortalamanın üstünde; haber: Dolandırıcılık / muhasebe iddiası",
-     "taken": true
-    },
-    "borrowRate": 0.0,
-    "maintReq": 78.66,
-    "lastBarTs": "2026-11-27T12:10:00-05:00"
-   },
    {
     "stopMode": "day",
     "ticker": "SONY",
@@ -213,16 +151,16 @@
     "shares": 53.8717,
     "avgCost": 27.8439,
     "costBasis": 1500.0,
-    "lastPrice": 27.885,
-    "lastPriceAt": "2026-11-27T12:10:00-05:00",
+    "lastPrice": 27.91,
+    "lastPriceAt": "2026-11-27T12:15:00-05:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (12:10 ET)",
+     "title": "Yahoo Finance 5 dk mum (12:15 ET)",
      "url": "https://finance.yahoo.com/quote/SONY/"
     },
-    "marketValue": 1502.21,
-    "exposure": 1502.21,
-    "unrealized": 2.21,
-    "unrealizedPct": 0.15,
+    "marketValue": 1503.56,
+    "exposure": 1503.56,
+    "unrealized": 3.56,
+    "unrealizedPct": 0.24,
     "openedAt": "2026-11-27",
     "openedTs": "2026-11-27T09:35:00-05:00",
     "lastAddDate": "2026-11-27",
@@ -257,8 +195,8 @@
      "taken": true
     },
     "borrowRate": 0.0,
-    "maintReq": 75.11,
-    "lastBarTs": "2026-11-27T12:10:00-05:00"
+    "maintReq": 75.18,
+    "lastBarTs": "2026-11-27T12:15:00-05:00"
    },
    {
     "stopMode": "day",
@@ -270,16 +208,16 @@
     "shares": 88.7232,
     "avgCost": 16.9065,
     "costBasis": 1500.0,
-    "lastPrice": 17.135,
-    "lastPriceAt": "2026-11-27T12:10:00-05:00",
+    "lastPrice": 17.0996,
+    "lastPriceAt": "2026-11-27T12:15:00-05:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (12:10 ET)",
+     "title": "Yahoo Finance 5 dk mum (12:15 ET)",
      "url": "https://finance.yahoo.com/quote/XP/"
     },
-    "marketValue": -1520.27,
-    "exposure": 1520.27,
-    "unrealized": -20.27,
-    "unrealizedPct": -1.35,
+    "marketValue": -1517.13,
+    "exposure": 1517.13,
+    "unrealized": -17.13,
+    "unrealizedPct": -1.14,
     "openedAt": "2026-11-27",
     "openedTs": "2026-11-27T09:35:00-05:00",
     "lastAddDate": "2026-11-27",
@@ -314,8 +252,8 @@
      "taken": true
     },
     "borrowRate": 0.0,
-    "maintReq": 76.01,
-    "lastBarTs": "2026-11-27T12:10:00-05:00"
+    "maintReq": 75.86,
+    "lastBarTs": "2026-11-27T12:15:00-05:00"
    },
    {
     "stopMode": "day",
@@ -327,16 +265,16 @@
     "shares": 87.1009,
     "avgCost": 17.2214,
     "costBasis": 1500.0,
-    "lastPrice": 16.955,
-    "lastPriceAt": "2026-11-27T12:10:00-05:00",
+    "lastPrice": 16.94,
+    "lastPriceAt": "2026-11-27T12:15:00-05:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (12:10 ET)",
+     "title": "Yahoo Finance 5 dk mum (12:15 ET)",
      "url": "https://finance.yahoo.com/quote/PBR/"
     },
-    "marketValue": -1476.8,
-    "exposure": 1476.8,
-    "unrealized": 23.2,
-    "unrealizedPct": 1.55,
+    "marketValue": -1475.49,
+    "exposure": 1475.49,
+    "unrealized": 24.51,
+    "unrealizedPct": 1.63,
     "openedAt": "2026-11-27",
     "openedTs": "2026-11-27T09:35:00-05:00",
     "lastAddDate": "2026-11-27",
@@ -371,8 +309,8 @@
      "taken": true
     },
     "borrowRate": 0.0,
-    "maintReq": 73.84,
-    "lastBarTs": "2026-11-27T12:10:00-05:00"
+    "maintReq": 73.77,
+    "lastBarTs": "2026-11-27T12:15:00-05:00"
    },
    {
     "stopMode": "day",
@@ -384,16 +322,16 @@
     "shares": 22.8424,
     "avgCost": 65.6671,
     "costBasis": 1499.99,
-    "lastPrice": 67.56,
-    "lastPriceAt": "2026-11-27T12:10:00-05:00",
+    "lastPrice": 67.41,
+    "lastPriceAt": "2026-11-27T12:15:00-05:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (12:10 ET)",
+     "title": "Yahoo Finance 5 dk mum (12:15 ET)",
      "url": "https://finance.yahoo.com/quote/AUGO/"
     },
-    "marketValue": -1543.23,
-    "exposure": 1543.23,
-    "unrealized": -43.24,
-    "unrealizedPct": -2.88,
+    "marketValue": -1539.81,
+    "exposure": 1539.81,
+    "unrealized": -39.82,
+    "unrealizedPct": -2.65,
     "openedAt": "2026-11-27",
     "openedTs": "2026-11-27T09:35:00-05:00",
     "lastAddDate": "2026-11-27",
@@ -428,45 +366,45 @@
      "taken": true
     },
     "borrowRate": 0.0,
-    "maintReq": 77.16,
-    "lastBarTs": "2026-11-27T12:10:00-05:00"
+    "maintReq": 76.99,
+    "lastBarTs": "2026-11-27T12:15:00-05:00"
    }
   ],
-  "realizedPL": 73.81,
+  "realizedPL": 147.62,
   "netDeposits": 3000.0,
   "costs": {
-   "slippage": 5.2902,
-   "commission": 2.45,
-   "fees": 0.22,
+   "slippage": 6.0778,
+   "commission": 2.8,
+   "fees": 0.27,
    "interest": 0.0,
    "borrow": 0.0,
    "dividendsPaid": 0.0,
    "dividendsReceived": 0.0
   },
-  "longValue": 3075.44,
-  "shortValue": 4540.3,
-  "positionsValue": -1464.86,
-  "totalValue": 3106.69,
-  "grossExposure": 7615.74,
-  "netExposure": -1464.86,
-  "leverage": 2.451,
-  "maintenanceReq": 380.78,
-  "marginBuffer": 2725.91,
-  "regTInitialReq": 761.57,
-  "regTExcess": 2345.12,
-  "buyingPower": 23451.16,
+  "longValue": 1503.56,
+  "shortValue": 4532.43,
+  "positionsValue": -3028.87,
+  "totalValue": 3116.47,
+  "grossExposure": 6035.99,
+  "netExposure": -3028.87,
+  "leverage": 1.937,
+  "maintenanceReq": 301.8,
+  "marginBuffer": 2814.67,
+  "regTInitialReq": 603.6,
+  "regTExcess": 2512.87,
+  "buyingPower": 25128.71,
   "marginEligible": true,
-  "closeoutMovePct": 35.79,
+  "closeoutMovePct": 46.63,
   "bustCount": 0,
   "paidInTotal": 3000.0,
   "lostToBusts": 0,
-  "totalPL": 106.69,
-  "totalPLPct": 3.56,
-  "twrPct": 3.56,
-  "asOf": "2026-11-27T12:14:45-05:00",
-  "benchmarkPrice": 726.11,
-  "benchmarkValue": 3004.8,
-  "benchmarkTwrPct": 0.16
+  "totalPL": 116.47,
+  "totalPLPct": 3.88,
+  "twrPct": 3.88,
+  "asOf": "2026-11-27T12:19:49-05:00",
+  "benchmarkPrice": 726.45,
+  "benchmarkValue": 3006.21,
+  "benchmarkTwrPct": 0.21
  },
  "meta": {
   "engine": "günlük 3+3 v8",
@@ -481,9 +419,9 @@
    "ath": 759.66,
    "athDate": "2026-10-06",
    "athChecked": "2026-11-25",
-   "price": 646.52,
-   "at": "2026-11-27T12:10:00-05:00",
-   "ddPct": -14.89,
+   "price": 646.72,
+   "at": "2026-11-27T12:15:00-05:00",
+   "ddPct": -14.87,
    "level": "correction",
    "triggerPrice": 607.73,
    "correctionPrice": 683.69,
@@ -501,7 +439,7 @@
    "startAt": "2026-11-27T09:30:31-05:00",
    "navStart": 1.0,
    "spyStart": 724.95,
-   "peak": 1.0384833333333332,
+   "peak": 1.0388233333333332,
    "maxDD": -1.24,
    "maxDDAt": "2026-11-27T09:58:20-05:00",
    "errors": 0,
@@ -509,7 +447,7 @@
     "2026-11-27"
    ]
   },
-  "lastRunAt": "2026-11-27T12:14:45-05:00",
+  "lastRunAt": "2026-11-27T12:19:49-05:00",
   "lastError": null,
   "picks": {
    "date": "2026-11-27",
@@ -1202,56 +1140,89 @@
    "holdingDays": 0,
    "taxTerm": "kısa vade",
    "play": "dayLong"
+  },
+  {
+   "id": "t-20261127-08",
+   "ts": "2026-11-27T12:19:49-05:00",
+   "date": "2026-11-27",
+   "action": "SELL",
+   "side": "long",
+   "ticker": "PANW",
+   "name": "Palo Alto Networks",
+   "kind": "Hisse",
+   "shares": 4.3633,
+   "quotePrice": 360.9604,
+   "quoteAt": "2026-11-27T12:15:00-05:00",
+   "slippagePct": 0.05,
+   "execPrice": 360.7799,
+   "value": 1574.19,
+   "commission": 0.35,
+   "fees": 0.05,
+   "priceSource": {
+    "title": "Yahoo Finance 5 dk mum (12:15 ET)",
+    "url": "https://finance.yahoo.com/quote/PANW/"
+   },
+   "reason": "Kâr hedefi: PANW girişten %5 yükseldi (343,77 $ → 360,96 $); pozisyon %15 kârla kapatıldı.",
+   "rule": "günlük 3+3 kâr hedefi",
+   "sources": [
+    {
+     "title": "Yahoo Finance: PANW",
+     "url": "https://finance.yahoo.com/quote/PANW/"
+    },
+    {
+     "title": "yfinance (Yahoo Finance verileri)",
+     "url": "https://github.com/ranaroussi/yfinance"
+    }
+   ],
+   "runId": "2026-11-27",
+   "by": "bot",
+   "realizedPL": 73.81,
+   "holdingDays": 0,
+   "taxTerm": "kısa vade",
+   "play": "dayLong"
   }
  ],
  "snapshots": [
   {
    "date": "2026-11-27",
-   "at": "2026-11-27T12:14:45-05:00",
-   "totalValue": 3106.69,
-   "cash": 4571.55,
-   "positionsValue": -1464.86,
-   "plPct": 3.56,
-   "twrPct": 3.56,
+   "at": "2026-11-27T12:19:49-05:00",
+   "totalValue": 3116.47,
+   "cash": 6145.34,
+   "positionsValue": -3028.87,
+   "plPct": 3.88,
+   "twrPct": 3.88,
    "netDeposits": 3000.0,
-   "leverage": 2.451,
-   "benchmarkPrice": 726.11,
-   "benchmarkValue": 3004.8,
-   "qqqPrice": 646.52,
+   "leverage": 1.937,
+   "benchmarkPrice": 726.45,
+   "benchmarkValue": 3006.21,
+   "qqqPrice": 646.72,
    "holdings": [
-    {
-     "ticker": "PANW",
-     "side": "long",
-     "value": 1573.23,
-     "u": 73.25,
-     "play": "dayLong"
-    },
     {
      "ticker": "SONY",
      "side": "long",
-     "value": 1502.21,
-     "u": 2.21,
+     "value": 1503.56,
+     "u": 3.56,
      "play": "dayLong"
     },
     {
      "ticker": "XP",
      "side": "short",
-     "value": -1520.27,
-     "u": -20.27,
+     "value": -1517.13,
+     "u": -17.13,
      "play": "dayShort"
     },
     {
      "ticker": "PBR",
      "side": "short",
-     "value": -1476.8,
-     "u": 23.2,
+     "value": -1475.49,
+     "u": 24.51,
      "play": "dayShort"
     },
     {
      "ticker": "AUGO",
      "side": "short",
-     "value": -1543.23,
-     "u": -43.24,
+     "value": -1539.81,
+     "u": -39.82,
      "play": "dayShort"
     }
    ]
@@ -3208,6 +3179,55 @@
     ],
     "actions": [],
     "note": "Normal: kaldıraç 2,45x, SPY +%1,31; işlem gerekmedi."
+   },
+   {
+    "at": "2026-11-27T12:19:49-05:00",
+    "kind": "guard",
+    "status": "normal",
+    "spyPrice": 726.45,
+    "spyChangePct": 1.36,
+    "qqqChangePct": 2.02,
+    "totalValue": 3116.47,
+    "benchmarkValue": 3006.21,
+    "leverage": 1.937,
+    "marginBuffer": 2814.67,
+    "positions": [
+     {
+      "ticker": "SONY",
+      "side": "long",
+      "price": 27.91,
+      "dayChangePct": -2.04,
+      "stopPrice": null,
+      "distancePct": null
+     },
+     {
+      "ticker": "XP",
+      "side": "short",
+      "price": 17.0996,
+      "dayChangePct": 18.83,
+      "stopPrice": null,
+      "distancePct": null
+     },
+     {
+      "ticker": "PBR",
+      "side": "short",
+      "price": 16.94,
+      "dayChangePct": 5.55,
+      "stopPrice": null,
+      "distancePct": null
+     },
+     {
+      "ticker": "AUGO",
+      "side": "short",
+      "price": 67.41,
+      "dayChangePct": 7.1,
+      "stopPrice": null,
+      "distancePct": null
+     }
+    ],
+    "actions": [
+     "PANW long kapatıldı (1.574,19 $)"
+    ]
    }
   ]
  },
@@ -3704,8 +3724,8 @@
  ],
  "tax": {
   "2026": {
-   "commissions": 2.67,
-   "shortTermRealized": 73.81
+   "commissions": 3.07,
+   "shortTermRealized": 147.62
   }
  },
  "evalHistory": [
@@ -3973,9 +3993,9 @@
  "busts": [],
  "playStats": {
   "dayLong": {
-   "closed": 1,
-   "wins": 1,
-   "pl": 73.81,
+   "closed": 2,
+   "wins": 2,
+   "pl": 147.62,
    "best": 73.81,
    "worst": 73.81,
    "last": "2026-11-27"
@@ -3985,7 +4005,7 @@
   "start": "2026-11-27",
   "startAt": "2026-11-27T09:30:31-05:00",
   "end": "2027-02-27",
-  "asOf": "2026-11-27T12:14:45-05:00",
+  "asOf": "2026-11-27T12:19:49-05:00",
   "strategy": "v8",
   "history": [
    {
@@ -4087,27 +4107,27 @@
   "daysElapsed": 1,
   "daysTotal": 62,
   "finished": false,
-  "returnPct": 3.56,
-  "spyReturnPct": 0.16,
-  "excessPct": 3.4,
+  "returnPct": 3.88,
+  "spyReturnPct": 0.21,
+  "excessPct": 3.68,
   "maxDrawdownPct": -1.24,
   "maxDrawdownAt": "2026-11-27T09:58:20-05:00",
-  "drawdownNowPct": -0.28,
+  "drawdownNowPct": 0.0,
   "trades": {
-   "closed": 1,
-   "wins": 1,
+   "closed": 2,
+   "wins": 2,
    "winRatePct": 100.0,
    "avgWin": 73.81,
    "avgLoss": null,
    "profitFactor": null,
-   "realizedPL": 73.81
+   "realizedPL": 147.62
   },
   "monthly": [
    {
     "month": "2026-11",
-    "returnPct": 3.56,
-    "spyPct": 0.16,
-    "excessPct": 3.4
+    "returnPct": 3.88,
+    "spyPct": 0.21,
+    "excessPct": 3.67
    }
   ],
   "uptime": {
@@ -4123,7 +4143,7 @@
     "key": "spy",
     "label": "SPY'ı geçmek (masraflar düşülmüş)",
     "ok": true,
-    "value": 3.4,
+    "value": 3.68,
     "unit": "pct"
    },
    {
