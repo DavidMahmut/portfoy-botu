@@ -139,272 +139,43 @@
   }
  },
  "portfolio": {
-  "cash": 6145.34,
-  "positions": [
-   {
-    "stopMode": "day",
-    "ticker": "SONY",
-    "name": "Sony Group Corporation",
-    "kind": "Hisse",
-    "side": "long",
-    "lev": 1,
-    "shares": 53.8717,
-    "avgCost": 27.8439,
-    "costBasis": 1500.0,
-    "lastPrice": 27.955,
-    "lastPriceAt": "2026-11-27T12:50:00-05:00",
-    "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (12:50 ET)",
-     "url": "https://finance.yahoo.com/quote/SONY/"
-    },
-    "marketValue": 1505.98,
-    "exposure": 1505.98,
-    "unrealized": 5.98,
-    "unrealizedPct": 0.4,
-    "openedAt": "2026-11-27",
-    "openedTs": "2026-11-27T09:35:00-05:00",
-    "lastAddDate": "2026-11-27",
-    "stopPrice": null,
-    "extremeSinceEntry": 27.829999923706055,
-    "tookProfit": false,
-    "thesis": "Günlük 3+3 (long #3): SONY (Sony Group Corporation). Seçim kuralı: Aşağı boşluk + yükselen trend (düşüşte al). Açılış boşluk −%3,04, son 20 gün +%12,9, 200 günlük ortalamanın üstünde. Büyüklük hesabın 0,50 katı (1.500,00 $); toplam 3x. Hisse girişten %5 yükselirse pozisyon %15 kârla kapanır; olmazsa 12:55'te kapanışta kapanır. Zarar-kes yok.",
-    "sleeve": "day",
-    "play": "dayLong",
-    "playLabel": "Günlük long",
-    "tpPrice": 29.2361,
-    "exitDate": "2026-11-27",
-    "rank": 3,
-    "pick": {
-     "t": "SONY",
-     "n": "Sony Group Corporation",
-     "ex": "N",
-     "cap": 166.05,
-     "dv": 151.0,
-     "prevClose": 28.485,
-     "ref": 27.62,
-     "gap": -0.03037,
-     "mom": 0.12946,
-     "a200": true,
-     "a50": true,
-     "pmVolume": 0.0,
-     "score": 0.03037,
-     "headline": null,
-     "cat": null,
-     "kind": null,
-     "why": "Açılış boşluk −%3,04, son 20 gün +%12,9, 200 günlük ortalamanın üstünde",
-     "taken": true
-    },
-    "borrowRate": 0.0,
-    "maintReq": 75.3,
-    "lastBarTs": "2026-11-27T12:50:00-05:00"
-   },
-   {
-    "stopMode": "day",
-    "ticker": "XP",
-    "name": "XP Inc.",
-    "kind": "Hisse",
-    "side": "short",
-    "lev": 1,
-    "shares": 88.7232,
-    "avgCost": 16.9065,
-    "costBasis": 1500.0,
-    "lastPrice": 17.04,
-    "lastPriceAt": "2026-11-27T12:50:00-05:00",
-    "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (12:50 ET)",
-     "url": "https://finance.yahoo.com/quote/XP/"
-    },
-    "marketValue": -1511.84,
-    "exposure": 1511.84,
-    "unrealized": -11.84,
-    "unrealizedPct": -0.79,
-    "openedAt": "2026-11-27",
-    "openedTs": "2026-11-27T09:35:00-05:00",
-    "lastAddDate": "2026-11-27",
-    "stopPrice": null,
-    "extremeSinceEntry": 16.915000915527344,
-    "tookProfit": false,
-    "thesis": "Günlük 3+3 (short #1): XP (XP Inc.). Seçim kuralı: En büyük yukarı boşluk (sönmesine). Açılış boşluk +%20,11, son 20 gün −%10,5, 200 günlük ortalamanın altında. Büyüklük hesabın 0,50 katı (1.500,00 $); toplam 3x. Hisse girişten %5 düşerse pozisyon %15 kârla kapanır; olmazsa 12:55'te kapanışta kapanır. Zarar-kes yok.",
-    "sleeve": "day",
-    "play": "dayShort",
-    "playLabel": "Günlük short",
-    "tpPrice": 16.0612,
-    "exitDate": "2026-11-27",
-    "rank": 1,
-    "pick": {
-     "t": "XP",
-     "n": "XP Inc.",
-     "ex": "Q",
-     "cap": 5.78,
-     "dv": 177.7,
-     "prevClose": 14.395,
-     "ref": 17.29,
-     "gap": 0.20111,
-     "mom": -0.10534,
-     "a200": false,
-     "a50": false,
-     "pmVolume": 0.0,
-     "score": 0.20111,
-     "headline": null,
-     "cat": null,
-     "kind": null,
-     "why": "Açılış boşluk +%20,11, son 20 gün −%10,5, 200 günlük ortalamanın altında",
-     "taken": true
-    },
-    "borrowRate": 0.0,
-    "maintReq": 75.59,
-    "lastBarTs": "2026-11-27T12:50:00-05:00"
-   },
-   {
-    "stopMode": "day",
-    "ticker": "PBR",
-    "name": "Petroleo Brasileiro S.A. Petrobras ADS",
-    "kind": "Hisse",
-    "side": "short",
-    "lev": 1,
-    "shares": 87.1009,
-    "avgCost": 17.2214,
-    "costBasis": 1500.0,
-    "lastPrice": 16.805,
-    "lastPriceAt": "2026-11-27T12:50:00-05:00",
-    "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (12:50 ET)",
-     "url": "https://finance.yahoo.com/quote/PBR/"
-    },
-    "marketValue": -1463.73,
-    "exposure": 1463.73,
-    "unrealized": 36.27,
-    "unrealizedPct": 2.42,
-    "openedAt": "2026-11-27",
-    "openedTs": "2026-11-27T09:35:00-05:00",
-    "lastAddDate": "2026-11-27",
-    "stopPrice": null,
-    "extremeSinceEntry": 17.229999542236328,
-    "tookProfit": false,
-    "thesis": "Günlük 3+3 (short #2): PBR (Petroleo Brasileiro S.A. Petrobras ADS). Seçim kuralı: En büyük yukarı boşluk (sönmesine). Açılış boşluk +%10,25, son 20 gün −%27,2, 200 günlük ortalamanın altında. Büyüklük hesabın 0,50 katı (1.500,00 $); toplam 3x. Hisse girişten %5 düşerse pozisyon %15 kârla kapanır; olmazsa 12:55'te kapanışta kapanır. Zarar-kes yok.",
-    "sleeve": "day",
-    "play": "dayShort",
-    "playLabel": "Günlük short",
-    "tpPrice": 16.3603,
-    "exitDate": "2026-11-27",
-    "rank": 2,
-    "pick": {
-     "t": "PBR",
-     "n": "Petroleo Brasileiro S.A. Petrobras ADS",
-     "ex": "N",
-     "cap": 59.72,
-     "dv": 445.2,
-     "prevClose": 16.045,
-     "ref": 17.69,
-     "gap": 0.10252,
-     "mom": -0.27168,
-     "a200": false,
-     "a50": false,
-     "pmVolume": 0.0,
-     "score": 0.10252,
-     "headline": null,
-     "cat": null,
-     "kind": null,
-     "why": "Açılış boşluk +%10,25, son 20 gün −%27,2, 200 günlük ortalamanın altında",
-     "taken": true
-    },
-    "borrowRate": 0.0,
-    "maintReq": 73.19,
-    "lastBarTs": "2026-11-27T12:50:00-05:00"
-   },
-   {
-    "stopMode": "day",
-    "ticker": "AUGO",
-    "name": "Aura Minerals Inc.",
-    "kind": "Hisse",
-    "side": "short",
-    "lev": 1,
-    "shares": 22.8424,
-    "avgCost": 65.6671,
-    "costBasis": 1499.99,
-    "lastPrice": 67.075,
-    "lastPriceAt": "2026-11-27T12:50:00-05:00",
-    "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (12:50 ET)",
-     "url": "https://finance.yahoo.com/quote/AUGO/"
-    },
-    "marketValue": -1532.15,
-    "exposure": 1532.15,
-    "unrealized": -32.16,
-    "unrealizedPct": -2.14,
-    "openedAt": "2026-11-27",
-    "openedTs": "2026-11-27T09:35:00-05:00",
-    "lastAddDate": "2026-11-27",
-    "stopPrice": null,
-    "extremeSinceEntry": 65.69999694824219,
-    "tookProfit": false,
-    "thesis": "Günlük 3+3 (short #3): AUGO (Aura Minerals Inc.). Seçim kuralı: En büyük yukarı boşluk (sönmesine). Açılış boşluk +%8,93, son 20 gün −%23,1, 200 günlük ortalamanın altında. Büyüklük hesabın 0,50 katı (1.500,00 $); toplam 3x. Hisse girişten %5 düşerse pozisyon %15 kârla kapanır; olmazsa 12:55'te kapanışta kapanır. Zarar-kes yok.",
-    "sleeve": "day",
-    "play": "dayShort",
-    "playLabel": "Günlük short",
-    "tpPrice": 62.3837,
-    "exitDate": "2026-11-27",
-    "rank": 4,
-    "pick": {
-     "t": "AUGO",
-     "n": "Aura Minerals Inc.",
-     "ex": "Q",
-     "cap": 5.28,
-     "dv": 60.0,
-     "prevClose": 62.9,
-     "ref": 68.52,
-     "gap": 0.08935,
-     "mom": -0.23124,
-     "a200": false,
-     "a50": false,
-     "pmVolume": 0.0,
-     "score": 0.08935,
-     "headline": null,
-     "cat": null,
-     "kind": null,
-     "why": "Açılış boşluk +%8,93, son 20 gün −%23,1, 200 günlük ortalamanın altında",
-     "taken": true
-    },
-    "borrowRate": 0.0,
-    "maintReq": 76.61,
-    "lastBarTs": "2026-11-27T12:50:00-05:00"
-   }
-  ],
-  "realizedPL": 147.62,
+  "cash": 3130.04,
+  "positions": [],
+  "realizedPL": 132.32,
   "netDeposits": 3000.0,
   "costs": {
-   "slippage": 6.0778,
-   "commission": 2.8,
-   "fees": 0.27,
+   "slippage": 9.0876,
+   "commission": 4.2,
+   "fees": 0.33,
    "interest": 0.0,
    "borrow": 0.0,
    "dividendsPaid": 0.0,
    "dividendsReceived": 0.0
   },
-  "longValue": 1505.98,
-  "shortValue": 4507.73,
-  "positionsValue": -3001.74,
-  "totalValue": 3143.6,
-  "grossExposure": 6013.71,
-  "netExposure": -3001.74,
-  "leverage": 1.913,
-  "maintenanceReq": 300.69,
-  "marginBuffer": 2842.91,
-  "regTInitialReq": 601.37,
-  "regTExcess": 2542.23,
-  "buyingPower": 25422.29,
+  "longValue": 0.0,
+  "shortValue": 0.0,
+  "positionsValue": 0.0,
+  "totalValue": 3130.04,
+  "grossExposure": 0.0,
+  "netExposure": 0.0,
+  "leverage": 0.0,
+  "maintenanceReq": 0.0,
+  "marginBuffer": 3130.04,
+  "regTInitialReq": 0.0,
+  "regTExcess": 3130.04,
+  "buyingPower": 31300.4,
   "marginEligible": true,
-  "closeoutMovePct": 47.27,
+  "closeoutMovePct": null,
   "bustCount": 0,
   "paidInTotal": 3000.0,
   "lostToBusts": 0,
-  "totalPL": 143.6,
-  "totalPLPct": 4.79,
-  "twrPct": 4.79,
-  "asOf": "2026-11-27T12:50:07-05:00",
-  "benchmarkPrice": 725.89,
-  "benchmarkValue": 3003.89,
-  "benchmarkTwrPct": 0.13
+  "totalPL": 130.04,
+  "totalPLPct": 4.33,
+  "twrPct": 4.33,
+  "asOf": "2026-11-27T12:55:10-05:00",
+  "benchmarkPrice": 726.56,
+  "benchmarkValue": 3006.66,
+  "benchmarkTwrPct": 0.22
  },
  "meta": {
   "engine": "günlük 3+3 v8",
@@ -419,9 +190,9 @@
    "ath": 759.66,
    "athDate": "2026-10-06",
    "athChecked": "2026-11-25",
-   "price": 646.3,
-   "at": "2026-11-27T12:50:00-05:00",
-   "ddPct": -14.92,
+   "price": 647.28,
+   "at": "2026-11-27T12:55:00-05:00",
+   "ddPct": -14.79,
    "level": "correction",
    "triggerPrice": 607.73,
    "correctionPrice": 683.69,
@@ -447,7 +218,7 @@
     "2026-11-27"
    ]
   },
-  "lastRunAt": "2026-11-27T12:50:07-05:00",
+  "lastRunAt": "2026-11-27T12:55:10-05:00",
   "lastError": null,
   "picks": {
    "date": "2026-11-27",
@@ -1180,52 +951,183 @@
    "holdingDays": 0,
    "taxTerm": "kısa vade",
    "play": "dayLong"
+  },
+  {
+   "id": "t-20261127-09",
+   "ts": "2026-11-27T12:55:10-05:00",
+   "date": "2026-11-27",
+   "action": "SELL",
+   "side": "long",
+   "ticker": "SONY",
+   "name": "SONY",
+   "kind": "Hisse",
+   "shares": 53.8717,
+   "quotePrice": 27.945,
+   "quoteAt": "2026-11-27T12:55:00-05:00",
+   "slippagePct": 0.05,
+   "execPrice": 27.931,
+   "value": 1504.69,
+   "commission": 0.35,
+   "fees": 0.06,
+   "priceSource": {
+    "title": "Yahoo Finance 5 dk mum (12:55 ET)",
+    "url": "https://finance.yahoo.com/quote/SONY/"
+   },
+   "reason": "Gün sonu (12:55): kâr hedefine ulaşmayan pozisyon kural gereği kapanışta kapatıldı.",
+   "rule": "günlük 3+3 gün sonu",
+   "sources": [
+    {
+     "title": "Yahoo Finance: SONY",
+     "url": "https://finance.yahoo.com/quote/SONY/"
+    },
+    {
+     "title": "yfinance (Yahoo Finance verileri)",
+     "url": "https://github.com/ranaroussi/yfinance"
+    }
+   ],
+   "runId": "2026-11-27",
+   "by": "bot",
+   "realizedPL": 4.28,
+   "holdingDays": 0,
+   "taxTerm": "kısa vade",
+   "play": "dayLong"
+  },
+  {
+   "id": "t-20261127-10",
+   "ts": "2026-11-27T12:55:10-05:00",
+   "date": "2026-11-27",
+   "action": "COVER",
+   "side": "short",
+   "ticker": "XP",
+   "name": "XP",
+   "kind": "Hisse",
+   "shares": 88.7232,
+   "quotePrice": 17.015,
+   "quoteAt": "2026-11-27T12:55:00-05:00",
+   "slippagePct": 0.05,
+   "execPrice": 17.0235,
+   "value": 1510.38,
+   "commission": 0.35,
+   "fees": 0.0,
+   "priceSource": {
+    "title": "Yahoo Finance 5 dk mum (12:55 ET)",
+    "url": "https://finance.yahoo.com/quote/XP/"
+   },
+   "reason": "Gün sonu (12:55): kâr hedefine ulaşmayan pozisyon kural gereği kapanışta kapatıldı.",
+   "rule": "günlük 3+3 gün sonu",
+   "sources": [
+    {
+     "title": "Yahoo Finance: XP",
+     "url": "https://finance.yahoo.com/quote/XP/"
+    },
+    {
+     "title": "yfinance (Yahoo Finance verileri)",
+     "url": "https://github.com/ranaroussi/yfinance"
+    }
+   ],
+   "runId": "2026-11-27",
+   "by": "bot",
+   "realizedPL": -10.73,
+   "holdingDays": 0,
+   "taxTerm": "kısa vade",
+   "play": "dayShort"
+  },
+  {
+   "id": "t-20261127-11",
+   "ts": "2026-11-27T12:55:10-05:00",
+   "date": "2026-11-27",
+   "action": "COVER",
+   "side": "short",
+   "ticker": "PBR",
+   "name": "PBR",
+   "kind": "Hisse",
+   "shares": 87.1009,
+   "quotePrice": 16.825,
+   "quoteAt": "2026-11-27T12:55:00-05:00",
+   "slippagePct": 0.05,
+   "execPrice": 16.8334,
+   "value": 1466.2,
+   "commission": 0.35,
+   "fees": 0.0,
+   "priceSource": {
+    "title": "Yahoo Finance 5 dk mum (12:55 ET)",
+    "url": "https://finance.yahoo.com/quote/PBR/"
+   },
+   "reason": "Gün sonu (12:55): kâr hedefine ulaşmayan pozisyon kural gereği kapanışta kapatıldı.",
+   "rule": "günlük 3+3 gün sonu",
+   "sources": [
+    {
+     "title": "Yahoo Finance: PBR",
+     "url": "https://finance.yahoo.com/quote/PBR/"
+    },
+    {
+     "title": "yfinance (Yahoo Finance verileri)",
+     "url": "https://github.com/ranaroussi/yfinance"
+    }
+   ],
+   "runId": "2026-11-27",
+   "by": "bot",
+   "realizedPL": 33.45,
+   "holdingDays": 0,
+   "taxTerm": "kısa vade",
+   "play": "dayShort"
+  },
+  {
+   "id": "t-20261127-12",
+   "ts": "2026-11-27T12:55:10-05:00",
+   "date": "2026-11-27",
+   "action": "COVER",
+   "side": "short",
+   "ticker": "AUGO",
+   "name": "AUGO",
+   "kind": "Hisse",
+   "shares": 22.8424,
+   "quotePrice": 67.47,
+   "quoteAt": "2026-11-27T12:55:00-05:00",
+   "slippagePct": 0.05,
+   "execPrice": 67.5037,
+   "value": 1541.95,
+   "commission": 0.35,
+   "fees": 0.0,
+   "priceSource": {
+    "title": "Yahoo Finance 5 dk mum (12:55 ET)",
+    "url": "https://finance.yahoo.com/quote/AUGO/"
+   },
+   "reason": "Gün sonu (12:55): kâr hedefine ulaşmayan pozisyon kural gereği kapanışta kapatıldı.",
+   "rule": "günlük 3+3 gün sonu",
+   "sources": [
+    {
+     "title": "Yahoo Finance: AUGO",
+     "url": "https://finance.yahoo.com/quote/AUGO/"
+    },
+    {
+     "title": "yfinance (Yahoo Finance verileri)",
+     "url": "https://github.com/ranaroussi/yfinance"
+    }
+   ],
+   "runId": "2026-11-27",
+   "by": "bot",
+   "realizedPL": -42.3,
+   "holdingDays": 0,
+   "taxTerm": "kısa vade",
+   "play": "dayShort"
   }
  ],
  "snapshots": [
   {
    "date": "2026-11-27",
-   "at": "2026-11-27T12:50:07-05:00",
-   "totalValue": 3143.6,
-   "cash": 6145.34,
-   "positionsValue": -3001.74,
-   "plPct": 4.79,
-   "twrPct": 4.79,
+   "at": "2026-11-27T12:55:10-05:00",
+   "totalValue": 3130.04,
+   "cash": 3130.04,
+   "positionsValue": 0.0,
+   "plPct": 4.33,
+   "twrPct": 4.33,
    "netDeposits": 3000.0,
-   "leverage": 1.913,
-   "benchmarkPrice": 725.89,
-   "benchmarkValue": 3003.89,
-   "qqqPrice": 646.3,
-   "holdings": [
-    {
-     "ticker": "SONY",
-     "side": "long",
-     "value": 1505.98,
-     "u": 5.98,
-     "play": "dayLong"
-    },
-    {
-     "ticker": "XP",
-     "side": "short",
-     "value": -1511.84,
-     "u": -11.84,
-     "play": "dayShort"
-    },
-    {
-     "ticker": "PBR",
-     "side": "short",
-     "value": -1463.73,
-     "u": 36.27,
-     "play": "dayShort"
-    },
-    {
-     "ticker": "AUGO",
-     "side": "short",
-     "value": -1532.15,
-     "u": -32.16,
-     "play": "dayShort"
-    }
-   ]
+   "leverage": 0.0,
+   "benchmarkPrice": 726.56,
+   "benchmarkValue": 3006.66,
+   "qqqPrice": 647.28,
+   "holdings": []
   }
  ],
  "checks": {
@@ -3516,6 +3418,25 @@
     ],
     "actions": [],
     "note": "Normal: kaldıraç 1,91x, SPY +%1,28; işlem gerekmedi."
+   },
+   {
+    "at": "2026-11-27T12:55:10-05:00",
+    "kind": "kapanış",
+    "status": "normal",
+    "spyPrice": 726.56,
+    "spyChangePct": 1.38,
+    "qqqChangePct": 2.11,
+    "totalValue": 3130.04,
+    "benchmarkValue": 3006.66,
+    "leverage": 0.0,
+    "marginBuffer": 3130.04,
+    "positions": [],
+    "actions": [
+     "SONY long kapatıldı (1.504,69 $)",
+     "XP short kapatıldı (1.510,38 $)",
+     "PBR short kapatıldı (1.466,20 $)",
+     "AUGO short kapatıldı (1.541,95 $)"
+    ]
    }
   ]
  },
@@ -3524,7 +3445,7 @@
    "date": "2026-11-27",
    "at": "2026-11-27T09:35:35-05:00",
    "by": "bot",
-   "headline": "3 long + 3 short açıldı (3x)",
+   "headline": "Gün sonu 132,32 $ · 2/6 hedefte · 3 long + 3 short açıldı (3x)",
    "marketSummary": "",
    "regime": null,
    "decisions": [
@@ -3534,7 +3455,8 @@
     "LONG SONY 1.500,00 $, hedef 29,24 $ (Açılış boşluk −%3,04, son 20 gün +%12,9, 200 günlük ortalamanın üstünde).",
     "SHORT XP 1.500,00 $, hedef 16,06 $ (Açılış boşluk +%20,11, son 20 gün −%10,5, 200 günlük ortalamanın altında).",
     "SHORT PBR 1.500,00 $, hedef 16,36 $ (Açılış boşluk +%10,25, son 20 gün −%27,2, 200 günlük ortalamanın altında).",
-    "SHORT AUGO 1.500,00 $, hedef 62,38 $ (Açılış boşluk +%8,93, son 20 gün −%23,1, 200 günlük ortalamanın altında)."
+    "SHORT AUGO 1.500,00 $, hedef 62,38 $ (Açılış boşluk +%8,93, son 20 gün −%23,1, 200 günlük ortalamanın altında).",
+    "Gün sonu: 6 pozisyon kapandı (2 tanesi kâr hedefinde, 4 tanesi kapanışta); günlük işlemlerin sonucu 132,32 $."
    ],
    "rejected": [],
    "watchlist": [
@@ -4012,8 +3934,8 @@
  ],
  "tax": {
   "2026": {
-   "commissions": 3.07,
-   "shortTermRealized": 147.62
+   "commissions": 4.53,
+   "shortTermRealized": 132.32
   }
  },
  "evalHistory": [
@@ -4281,11 +4203,19 @@
  "busts": [],
  "playStats": {
   "dayLong": {
-   "closed": 2,
-   "wins": 2,
-   "pl": 147.62,
+   "closed": 3,
+   "wins": 3,
+   "pl": 151.9,
    "best": 73.81,
-   "worst": 73.81,
+   "worst": 4.28,
+   "last": "2026-11-27"
+  },
+  "dayShort": {
+   "closed": 3,
+   "wins": 1,
+   "pl": -19.58,
+   "best": 33.45,
+   "worst": -42.3,
    "last": "2026-11-27"
   }
  },
@@ -4293,7 +4223,7 @@
   "start": "2026-11-27",
   "startAt": "2026-11-27T09:30:31-05:00",
   "end": "2027-02-27",
-  "asOf": "2026-11-27T12:50:07-05:00",
+  "asOf": "2026-11-27T12:55:10-05:00",
   "strategy": "v8",
   "history": [
    {
@@ -4395,27 +4325,27 @@
   "daysElapsed": 1,
   "daysTotal": 62,
   "finished": false,
-  "returnPct": 4.79,
-  "spyReturnPct": 0.13,
-  "excessPct": 4.66,
+  "returnPct": 4.33,
+  "spyReturnPct": 0.22,
+  "excessPct": 4.11,
   "maxDrawdownPct": -1.24,
   "maxDrawdownAt": "2026-11-27T09:58:20-05:00",
-  "drawdownNowPct": 0.0,
+  "drawdownNowPct": -0.43,
   "trades": {
-   "closed": 2,
-   "wins": 2,
-   "winRatePct": 100.0,
-   "avgWin": 73.81,
-   "avgLoss": null,
-   "profitFactor": null,
-   "realizedPL": 147.62
+   "closed": 6,
+   "wins": 4,
+   "winRatePct": 66.7,
+   "avgWin": 46.34,
+   "avgLoss": -26.52,
+   "profitFactor": 3.5,
+   "realizedPL": 132.32
   },
   "monthly": [
    {
     "month": "2026-11",
-    "returnPct": 4.79,
-    "spyPct": 0.13,
-    "excessPct": 4.66
+    "returnPct": 4.33,
+    "spyPct": 0.22,
+    "excessPct": 4.11
    }
   ],
   "uptime": {
@@ -4431,7 +4361,7 @@
     "key": "spy",
     "label": "SPY'ı geçmek (masraflar düşülmüş)",
     "ok": true,
-    "value": 4.66,
+    "value": 4.11,
     "unit": "pct"
    },
    {
