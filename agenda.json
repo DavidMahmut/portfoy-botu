@@ -1,5 +1,5 @@
 {
- "asOf": "2026-11-27T10:08-05:00",
+ "asOf": "2026-11-27T10:39-05:00",
  "week": {
   "start": "2026-11-23",
   "end": "2026-11-27",
@@ -14,11 +14,11 @@
    "unit": "",
    "dec": 0,
    "why": "ABD'nin en büyük 500 şirketi; piyasanın genel yönü.",
-   "price": 7231.7998,
+   "price": 7268.8599,
    "prev": 7182.7798,
    "date": "2026-11-27",
-   "d1": 0.68,
-   "w1": 0.78,
+   "d1": 1.2,
+   "w1": 1.3,
    "chgUnit": "%",
    "spark": [
     7376.8599,
@@ -35,7 +35,7 @@
     7237.1699,
     7201.0898,
     7182.7798,
-    7231.7998
+    7268.8599
    ]
   },
   {
@@ -45,11 +45,11 @@
    "unit": "",
    "dec": 0,
    "why": "Teknoloji ağırlıklı 100 büyük şirket; botun endeks kolu bunu izler (QQQ).",
-   "price": 26277.6348,
+   "price": 26511.2988,
    "prev": 26046.9004,
    "date": "2026-11-27",
-   "d1": 0.89,
-   "w1": -0.9,
+   "d1": 1.78,
+   "w1": -0.02,
    "chgUnit": "%",
    "spark": [
     26989.9902,
@@ -66,7 +66,7 @@
     26746.0996,
     26214.1699,
     26046.9004,
-    26277.6348
+    26511.2988
    ]
   },
   {
@@ -76,11 +76,11 @@
    "unit": "",
    "dec": 0,
    "why": "30 büyük sanayi ve finans şirketi.",
-   "price": 50527.2188,
+   "price": 50653.5703,
    "prev": 50182.9492,
    "date": "2026-11-27",
-   "d1": 0.69,
-   "w1": 2.91,
+   "d1": 0.94,
+   "w1": 3.17,
    "chgUnit": "%",
    "spark": [
     51285.7305,
@@ -97,7 +97,7 @@
     49595.3086,
     50018.6992,
     50182.9492,
-    50527.2188
+    50653.5703
    ]
   },
   {
@@ -107,11 +107,11 @@
    "unit": "",
    "dec": 0,
    "why": "Küçük şirketler; faiz ve ekonomi beklentisine en duyarlı grup.",
-   "price": 2727.0195,
+   "price": 2728.3218,
    "prev": 2704.0601,
    "date": "2026-11-27",
-   "d1": 0.85,
-   "w1": 2.71,
+   "d1": 0.9,
+   "w1": 2.76,
    "chgUnit": "%",
    "spark": [
     2754.1101,
@@ -128,7 +128,7 @@
     2669.6599,
     2684.9399,
     2704.0601,
-    2727.0195
+    2728.3218
    ]
   },
   {
@@ -138,11 +138,11 @@
    "unit": "",
    "dec": 2,
    "why": "Beklenen oynaklık: 15 altı sakin, 20 üstü gergin, 30 üstü panik.",
-   "price": 27.07,
+   "price": 26.37,
    "prev": 26.8,
    "date": "2026-11-27",
-   "d1": 1.01,
-   "w1": -24.58,
+   "d1": -1.6,
+   "w1": -26.53,
    "chgUnit": "%",
    "spark": [
     19.92,
@@ -159,7 +159,7 @@
     26.36,
     28.29,
     26.8,
-    27.07
+    26.37
    ]
   },
   {
@@ -169,13 +169,14 @@
    "unit": "%",
    "dec": 2,
    "why": "Yükselince büyüme hisseleri baskılanır, ipotek ve kredi pahalanır.",
-   "price": 4.892,
-   "prev": 4.848,
-   "date": "2026-11-27",
-   "d1": 0.044,
-   "w1": -0.16,
+   "price": 4.848,
+   "prev": 4.904,
+   "date": "2026-11-25",
+   "d1": -0.056,
+   "w1": -0.218,
    "chgUnit": "puan",
    "spark": [
+    4.837,
     4.859,
     4.864,
     4.983,
@@ -189,8 +190,7 @@
     4.912,
     4.918,
     4.904,
-    4.848,
-    4.892
+    4.848
    ]
   },
   {
@@ -200,11 +200,11 @@
    "unit": "",
    "dec": 2,
    "why": "Güçlü dolar, emtiayı ve ABD şirketlerinin yurt dışı gelirini baskılar.",
-   "price": 103.918,
+   "price": 103.974,
    "prev": 103.67,
    "date": "2026-11-27",
-   "d1": 0.24,
-   "w1": 0.02,
+   "d1": 0.29,
+   "w1": 0.07,
    "chgUnit": "%",
    "spark": [
     102.3,
@@ -221,7 +221,7 @@
     104.32,
     103.81,
     103.67,
-    103.918
+    103.974
    ]
   },
   {
@@ -231,11 +231,11 @@
    "unit": "$",
    "dec": 2,
    "why": "ABD ham petrolü: enflasyonu, enerji ve havayolu hisselerini etkiler.",
-   "price": 83.99,
+   "price": 83.91,
    "prev": 83.68,
    "date": "2026-11-27",
-   "d1": 0.37,
-   "w1": 0.94,
+   "d1": 0.27,
+   "w1": 0.84,
    "chgUnit": "%",
    "spark": [
     90.83,
@@ -252,7 +252,7 @@
     80.17,
     82.05,
     83.68,
-    83.99
+    83.91
    ]
   },
   {
@@ -262,11 +262,11 @@
    "unit": "$",
    "dec": 2,
    "why": "Dünya petrol fiyatının ölçüsü.",
-   "price": 91.13,
+   "price": 91.18,
    "prev": 94.61,
    "date": "2026-11-27",
-   "d1": -3.68,
-   "w1": -0.92,
+   "d1": -3.63,
+   "w1": -0.87,
    "chgUnit": "%",
    "spark": [
     98.32,
@@ -283,7 +283,7 @@
     89.37,
     91.4,
     94.61,
-    91.13
+    91.18
    ]
   },
   {
@@ -293,11 +293,11 @@
    "unit": "$",
    "dec": 3,
    "why": "Enerji maliyeti; kış aylarında sert oynar.",
-   "price": 3.522,
+   "price": 3.525,
    "prev": 3.269,
    "date": "2026-11-27",
-   "d1": 7.74,
-   "w1": 7.77,
+   "d1": 7.83,
+   "w1": 7.86,
    "chgUnit": "%",
    "spark": [
     2.998,
@@ -314,7 +314,7 @@
     3.184,
     3.323,
     3.269,
-    3.522
+    3.525
    ]
   },
   {
@@ -324,11 +324,11 @@
    "unit": "$",
    "dec": 0,
    "why": "Güvenli liman: korku ve faiz indirimi beklentisiyle yükselir.",
-   "price": 3664.6001,
+   "price": 3656.3999,
    "prev": 3535.8,
    "date": "2026-11-27",
-   "d1": 3.64,
-   "w1": -0.57,
+   "d1": 3.41,
+   "w1": -0.79,
    "chgUnit": "%",
    "spark": [
     4074.8999,
@@ -345,7 +345,7 @@
     3651.3999,
     3561.8999,
     3535.8,
-    3664.6001
+    3656.3999
    ]
   },
   {
@@ -355,11 +355,11 @@
    "unit": "$",
    "dec": 3,
    "why": "Sanayi talebinin göstergesi: yükselmesi büyüme beklentisine işaret eder.",
-   "price": 5.584,
+   "price": 5.598,
    "prev": 5.3325,
    "date": "2026-11-27",
-   "d1": 4.72,
-   "w1": -0.73,
+   "d1": 4.98,
+   "w1": -0.48,
    "chgUnit": "%",
    "spark": [
     6.218,
@@ -376,7 +376,7 @@
     5.627,
     5.3625,
     5.3325,
-    5.584
+    5.598
    ]
   },
   {
@@ -386,11 +386,11 @@
    "unit": "$",
    "dec": 0,
    "why": "Risk iştahının göstergesi; kripto hisselerini (COIN, MSTR) sürükler.",
-   "price": 59044.9414,
+   "price": 60060.3008,
    "prev": 60494.7109,
    "date": "2026-11-27",
-   "d1": -2.4,
-   "w1": -3.46,
+   "d1": -0.72,
+   "w1": -1.8,
    "chgUnit": "%",
    "spark": [
     68249.2734,
@@ -407,7 +407,7 @@
     59747.7656,
     60378.1992,
     60494.7109,
-    59044.9414
+    60060.3008
    ]
   },
   {
@@ -417,11 +417,11 @@
    "unit": "",
    "dec": 4,
    "why": "Doların avroya karşı değeri.",
-   "price": 1.0947,
+   "price": 1.0943,
    "prev": 1.097,
    "date": "2026-11-27",
-   "d1": -0.21,
-   "w1": -0.21,
+   "d1": -0.24,
+   "w1": -0.24,
    "chgUnit": "%",
    "spark": [
     1.1147,
@@ -438,7 +438,7 @@
     1.0908,
     1.0962,
     1.097,
-    1.0947
+    1.0943
    ]
   },
   {
@@ -448,7 +448,7 @@
    "unit": "₺",
    "dec": 2,
    "why": "Doların Türk lirası karşılığı.",
-   "price": 50.7822,
+   "price": 50.7811,
    "prev": 50.6761,
    "date": "2026-11-27",
    "d1": 0.21,
@@ -469,11 +469,11 @@
     50.6007,
     50.6669,
     50.6761,
-    50.7822
+    50.7811
    ]
   }
  ],
- "marketsAt": "2026-11-27T10:08-05:00",
+ "marketsAt": "2026-11-27T10:39-05:00",
  "econ": [
   {
    "at": "2026-11-23T08:30-05:00",
@@ -894,27 +894,13 @@
    "more": []
   },
   {
-   "at": "2026-11-26T19:00-05:00",
-   "day": "2026-11-26",
-   "name": "Dallas Fed PCE",
-   "tr": "PCE enflasyonu",
-   "imp": 3,
-   "period": "Oct",
-   "actual": null,
-   "expected": null,
-   "last": 2.8,
-   "unit": "",
-   "why": null,
-   "more": []
-  },
-  {
-   "at": "2026-11-27T19:00-05:00",
+   "at": "2026-11-27T10:00-05:00",
    "day": "2026-11-27",
    "name": "Dallas Fed PCE",
    "tr": "PCE enflasyonu",
    "imp": 3,
    "period": "Oct",
-   "actual": null,
+   "actual": 2.8,
    "expected": null,
    "last": 2.8,
    "unit": "",
@@ -922,12 +908,12 @@
    "more": []
   }
  ],
- "econAt": "2026-11-27T10:08-05:00",
+ "econAt": "2026-11-27T10:39-05:00",
  "earnings": [
   {
    "t": "CRWD",
    "name": "CrowdStrike Holdings, Inc.",
-   "capB": 218.0,
+   "capB": 218.9,
    "day": "2026-11-23",
    "when": null,
    "event": null,
@@ -938,7 +924,7 @@
   {
    "t": "HPE",
    "name": "Hewlett Packard Enterprise Company",
-   "capB": 55.4,
+   "capB": 56.4,
    "day": "2026-11-23",
    "when": null,
    "event": null,
@@ -949,7 +935,7 @@
   {
    "t": "A",
    "name": "Agilent Technologies, Inc.",
-   "capB": 50.2,
+   "capB": 50.6,
    "day": "2026-11-23",
    "when": null,
    "event": null,
@@ -960,7 +946,7 @@
   {
    "t": "ZS",
    "name": "Zscaler, Inc.",
-   "capB": 38.2,
+   "capB": 38.5,
    "day": "2026-11-23",
    "when": null,
    "event": null,
@@ -971,7 +957,7 @@
   {
    "t": "ZM",
    "name": "Zoom Communications, Inc.",
-   "capB": 26.5,
+   "capB": 26.6,
    "day": "2026-11-23",
    "when": null,
    "event": null,
@@ -982,7 +968,7 @@
   {
    "t": "J",
    "name": "Jacobs Solutions Inc.",
-   "capB": 17.0,
+   "capB": 17.2,
    "day": "2026-11-23",
    "when": null,
    "event": null,
@@ -993,7 +979,7 @@
   {
    "t": "DELL",
    "name": "Dell Technologies Inc.",
-   "capB": 198.0,
+   "capB": 200.0,
    "day": "2026-11-24",
    "when": null,
    "event": null,
@@ -1004,7 +990,7 @@
   {
    "t": "ADI",
    "name": "Analog Devices, Inc.",
-   "capB": 162.0,
+   "capB": 164.2,
    "day": "2026-11-24",
    "when": null,
    "event": null,
@@ -1015,7 +1001,7 @@
   {
    "t": "MDT",
    "name": "Medtronic plc",
-   "capB": 121.8,
+   "capB": 121.9,
    "day": "2026-11-24",
    "when": null,
    "event": null,
@@ -1026,7 +1012,7 @@
   {
    "t": "ADSK",
    "name": "Autodesk, Inc.",
-   "capB": 52.3,
+   "capB": 52.6,
    "day": "2026-11-24",
    "when": null,
    "event": null,
@@ -1037,7 +1023,7 @@
   {
    "t": "WDAY",
    "name": "Workday, Inc.",
-   "capB": 43.1,
+   "capB": 43.0,
    "day": "2026-11-24",
    "when": null,
    "event": null,
@@ -1048,7 +1034,7 @@
   {
    "t": "HPQ",
    "name": "HP Inc.",
-   "capB": 28.1,
+   "capB": 29.1,
    "day": "2026-11-24",
    "when": null,
    "event": null,
@@ -1059,7 +1045,7 @@
   {
    "t": "DLTR",
    "name": "Dollar Tree, Inc.",
-   "capB": 27.7,
+   "capB": 27.4,
    "day": "2026-11-24",
    "when": null,
    "event": null,
@@ -1081,7 +1067,7 @@
   {
    "t": "BURL",
    "name": "Burlington Stores, Inc.",
-   "capB": 15.6,
+   "capB": 15.7,
    "day": "2026-11-24",
    "when": null,
    "event": null,
@@ -1092,7 +1078,7 @@
   {
    "t": "DE",
    "name": "Deere & Company",
-   "capB": 177.3,
+   "capB": 176.9,
    "day": "2026-11-25",
    "when": null,
    "event": null,
@@ -1101,7 +1087,7 @@
    "surprisePct": -4.04
   }
  ],
- "earningsAt": "2026-11-27T10:08-05:00",
+ "earningsAt": "2026-11-27T10:39-05:00",
  "ipos": [
   {
    "t": "ANTU",
@@ -1156,7 +1142,7 @@
    "sizeM": null
   }
  ],
- "iposAt": "2026-11-27T10:08-05:00",
+ "iposAt": "2026-11-27T10:39-05:00",
  "special": [
   {
    "day": "2026-11-26",
