@@ -172,10 +172,10 @@
   "totalPL": 130.04,
   "totalPLPct": 4.33,
   "twrPct": 4.33,
-  "asOf": "2026-11-27T13:15:22-05:00",
-  "benchmarkPrice": 728.73,
-  "benchmarkValue": 3015.64,
-  "benchmarkTwrPct": 0.52
+  "asOf": "2026-11-27T13:25:26-05:00",
+  "benchmarkPrice": 725.92,
+  "benchmarkValue": 3004.01,
+  "benchmarkTwrPct": 0.13
  },
  "meta": {
   "engine": "günlük 3+3 v8",
@@ -218,7 +218,7 @@
     "2026-11-27"
    ]
   },
-  "lastRunAt": "2026-11-27T13:15:22-05:00",
+  "lastRunAt": "2026-11-27T13:25:26-05:00",
   "lastError": null,
   "picks": {
    "date": "2026-11-27",
@@ -1116,7 +1116,7 @@
  "snapshots": [
   {
    "date": "2026-11-27",
-   "at": "2026-11-27T13:15:22-05:00",
+   "at": "2026-11-27T13:25:26-05:00",
    "totalValue": 3130.04,
    "cash": 3130.04,
    "positionsValue": 0.0,
@@ -1124,8 +1124,8 @@
    "twrPct": 4.33,
    "netDeposits": 3000.0,
    "leverage": 0.0,
-   "benchmarkPrice": 728.73,
-   "benchmarkValue": 3015.64,
+   "benchmarkPrice": 725.92,
+   "benchmarkValue": 3004.01,
    "qqqPrice": 650.76,
    "holdings": []
   }
@@ -3497,6 +3497,36 @@
     "positions": [],
     "actions": [],
     "note": "Normal: SPY +%1,68; işlem gerekmedi."
+   },
+   {
+    "at": "2026-11-27T13:20:25-05:00",
+    "kind": "guard",
+    "status": "normal",
+    "spyPrice": 725.92,
+    "spyChangePct": 1.29,
+    "qqqChangePct": 2.65,
+    "totalValue": 3130.04,
+    "benchmarkValue": 3004.01,
+    "leverage": 0.0,
+    "marginBuffer": 3130.04,
+    "positions": [],
+    "actions": [],
+    "note": "Normal: SPY +%1,29; işlem gerekmedi."
+   },
+   {
+    "at": "2026-11-27T13:25:26-05:00",
+    "kind": "guard",
+    "status": "normal",
+    "spyPrice": 725.92,
+    "spyChangePct": 1.29,
+    "qqqChangePct": 2.65,
+    "totalValue": 3130.04,
+    "benchmarkValue": 3004.01,
+    "leverage": 0.0,
+    "marginBuffer": 3130.04,
+    "positions": [],
+    "actions": [],
+    "note": "Normal: SPY +%1,29; işlem gerekmedi."
    }
   ]
  },
@@ -4283,7 +4313,7 @@
   "start": "2026-11-27",
   "startAt": "2026-11-27T09:30:31-05:00",
   "end": "2027-02-27",
-  "asOf": "2026-11-27T13:15:22-05:00",
+  "asOf": "2026-11-27T13:25:26-05:00",
   "strategy": "v8",
   "history": [
    {
@@ -4386,8 +4416,8 @@
   "daysTotal": 62,
   "finished": false,
   "returnPct": 4.33,
-  "spyReturnPct": 0.52,
-  "excessPct": 3.81,
+  "spyReturnPct": 0.13,
+  "excessPct": 4.2,
   "maxDrawdownPct": -1.24,
   "maxDrawdownAt": "2026-11-27T09:58:20-05:00",
   "drawdownNowPct": -0.43,
@@ -4404,8 +4434,8 @@
    {
     "month": "2026-11",
     "returnPct": 4.33,
-    "spyPct": 0.52,
-    "excessPct": 3.81
+    "spyPct": 0.13,
+    "excessPct": 4.2
    }
   ],
   "uptime": {
@@ -4421,7 +4451,7 @@
     "key": "spy",
     "label": "SPY'ı geçmek (masraflar düşülmüş)",
     "ok": true,
-    "value": 3.81,
+    "value": 4.2,
     "unit": "pct"
    },
    {
