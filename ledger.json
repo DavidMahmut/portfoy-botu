@@ -139,65 +139,8 @@
   }
  },
  "portfolio": {
-  "cash": 2997.79,
+  "cash": 4571.55,
   "positions": [
-   {
-    "stopMode": "day",
-    "ticker": "VRTX",
-    "name": "Vertex Pharmaceuticals Incorporated",
-    "kind": "Hisse",
-    "side": "long",
-    "lev": 1,
-    "shares": 2.9686,
-    "avgCost": 505.2725,
-    "costBasis": 1499.95,
-    "lastPrice": 528.48,
-    "lastPriceAt": "2026-11-27T10:55:00-05:00",
-    "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (10:55 ET)",
-     "url": "https://finance.yahoo.com/quote/VRTX/"
-    },
-    "marketValue": 1568.85,
-    "exposure": 1568.85,
-    "unrealized": 68.9,
-    "unrealizedPct": 4.59,
-    "openedAt": "2026-11-27",
-    "openedTs": "2026-11-27T09:35:00-05:00",
-    "lastAddDate": "2026-11-27",
-    "stopPrice": null,
-    "extremeSinceEntry": 505.0199890136719,
-    "tookProfit": false,
-    "thesis": "Günlük 3+3 (long #1): VRTX (Vertex Pharmaceuticals Incorporated). Seçim kuralı: Aşağı boşluk + yükselen trend (düşüşte al). Açılış boşluk −%8,26, son 20 gün +%6,5, 200 günlük ortalamanın üstünde. Büyüklük hesabın 0,50 katı (1.500,00 $); toplam 3x. Hisse girişten %5 yükselirse pozisyon %15 kârla kapanır; olmazsa 12:55'te kapanışta kapanır. Zarar-kes yok.",
-    "sleeve": "day",
-    "play": "dayLong",
-    "playLabel": "Günlük long",
-    "tpPrice": 530.5361,
-    "exitDate": "2026-11-27",
-    "rank": 1,
-    "pick": {
-     "t": "VRTX",
-     "n": "Vertex Pharmaceuticals Incorporated",
-     "ex": "Q",
-     "cap": 143.03,
-     "dv": 873.9,
-     "prevClose": 563.95,
-     "ref": 517.37,
-     "gap": -0.0826,
-     "mom": 0.06468,
-     "a200": true,
-     "a50": true,
-     "pmVolume": 0.0,
-     "score": 0.0826,
-     "headline": null,
-     "cat": null,
-     "kind": null,
-     "why": "Açılış boşluk −%8,26, son 20 gün +%6,5, 200 günlük ortalamanın üstünde",
-     "taken": true
-    },
-    "borrowRate": 0.0,
-    "maintReq": 78.44,
-    "lastBarTs": "2026-11-27T10:55:00-05:00"
-   },
    {
     "stopMode": "day",
     "ticker": "PANW",
@@ -208,16 +151,16 @@
     "shares": 4.3633,
     "avgCost": 343.7718,
     "costBasis": 1499.98,
-    "lastPrice": 357.075,
-    "lastPriceAt": "2026-11-27T10:55:00-05:00",
+    "lastPrice": 356.62,
+    "lastPriceAt": "2026-11-27T11:00:00-05:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (10:55 ET)",
+     "title": "Yahoo Finance 5 dk mum (11:00 ET)",
      "url": "https://finance.yahoo.com/quote/PANW/"
     },
-    "marketValue": 1558.03,
-    "exposure": 1558.03,
-    "unrealized": 58.05,
-    "unrealizedPct": 3.87,
+    "marketValue": 1556.04,
+    "exposure": 1556.04,
+    "unrealized": 56.06,
+    "unrealizedPct": 3.74,
     "openedAt": "2026-11-27",
     "openedTs": "2026-11-27T09:35:00-05:00",
     "lastAddDate": "2026-11-27",
@@ -257,8 +200,8 @@
      "taken": true
     },
     "borrowRate": 0.0,
-    "maintReq": 77.9,
-    "lastBarTs": "2026-11-27T10:55:00-05:00"
+    "maintReq": 77.8,
+    "lastBarTs": "2026-11-27T11:00:00-05:00"
    },
    {
     "stopMode": "day",
@@ -271,9 +214,9 @@
     "avgCost": 27.8439,
     "costBasis": 1500.0,
     "lastPrice": 27.995,
-    "lastPriceAt": "2026-11-27T10:55:00-05:00",
+    "lastPriceAt": "2026-11-27T11:00:00-05:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (10:55 ET)",
+     "title": "Yahoo Finance 5 dk mum (11:00 ET)",
      "url": "https://finance.yahoo.com/quote/SONY/"
     },
     "marketValue": 1508.14,
@@ -315,7 +258,7 @@
     },
     "borrowRate": 0.0,
     "maintReq": 75.41,
-    "lastBarTs": "2026-11-27T10:55:00-05:00"
+    "lastBarTs": "2026-11-27T11:00:00-05:00"
    },
    {
     "stopMode": "day",
@@ -327,16 +270,16 @@
     "shares": 88.7232,
     "avgCost": 16.9065,
     "costBasis": 1500.0,
-    "lastPrice": 17.285,
-    "lastPriceAt": "2026-11-27T10:55:00-05:00",
+    "lastPrice": 17.225,
+    "lastPriceAt": "2026-11-27T11:00:00-05:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (10:55 ET)",
+     "title": "Yahoo Finance 5 dk mum (11:00 ET)",
      "url": "https://finance.yahoo.com/quote/XP/"
     },
-    "marketValue": -1533.58,
-    "exposure": 1533.58,
-    "unrealized": -33.58,
-    "unrealizedPct": -2.24,
+    "marketValue": -1528.26,
+    "exposure": 1528.26,
+    "unrealized": -28.26,
+    "unrealizedPct": -1.88,
     "openedAt": "2026-11-27",
     "openedTs": "2026-11-27T09:35:00-05:00",
     "lastAddDate": "2026-11-27",
@@ -371,8 +314,8 @@
      "taken": true
     },
     "borrowRate": 0.0,
-    "maintReq": 76.68,
-    "lastBarTs": "2026-11-27T10:55:00-05:00"
+    "maintReq": 76.41,
+    "lastBarTs": "2026-11-27T11:00:00-05:00"
    },
    {
     "stopMode": "day",
@@ -384,16 +327,16 @@
     "shares": 87.1009,
     "avgCost": 17.2214,
     "costBasis": 1500.0,
-    "lastPrice": 16.895,
-    "lastPriceAt": "2026-11-27T10:55:00-05:00",
+    "lastPrice": 16.9083,
+    "lastPriceAt": "2026-11-27T11:00:00-05:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (10:55 ET)",
+     "title": "Yahoo Finance 5 dk mum (11:00 ET)",
      "url": "https://finance.yahoo.com/quote/PBR/"
     },
-    "marketValue": -1471.57,
-    "exposure": 1471.57,
-    "unrealized": 28.43,
-    "unrealizedPct": 1.9,
+    "marketValue": -1472.73,
+    "exposure": 1472.73,
+    "unrealized": 27.27,
+    "unrealizedPct": 1.82,
     "openedAt": "2026-11-27",
     "openedTs": "2026-11-27T09:35:00-05:00",
     "lastAddDate": "2026-11-27",
@@ -428,8 +371,8 @@
      "taken": true
     },
     "borrowRate": 0.0,
-    "maintReq": 73.58,
-    "lastBarTs": "2026-11-27T10:55:00-05:00"
+    "maintReq": 73.64,
+    "lastBarTs": "2026-11-27T11:00:00-05:00"
    },
    {
     "stopMode": "day",
@@ -441,16 +384,16 @@
     "shares": 22.8424,
     "avgCost": 65.6671,
     "costBasis": 1499.99,
-    "lastPrice": 67.18,
-    "lastPriceAt": "2026-11-27T10:55:00-05:00",
+    "lastPrice": 67.235,
+    "lastPriceAt": "2026-11-27T11:00:00-05:00",
     "priceSource": {
-     "title": "Yahoo Finance 5 dk mum (10:55 ET)",
+     "title": "Yahoo Finance 5 dk mum (11:00 ET)",
      "url": "https://finance.yahoo.com/quote/AUGO/"
     },
-    "marketValue": -1534.55,
-    "exposure": 1534.55,
-    "unrealized": -34.56,
-    "unrealizedPct": -2.3,
+    "marketValue": -1535.81,
+    "exposure": 1535.81,
+    "unrealized": -35.82,
+    "unrealizedPct": -2.39,
     "openedAt": "2026-11-27",
     "openedTs": "2026-11-27T09:35:00-05:00",
     "lastAddDate": "2026-11-27",
@@ -485,44 +428,44 @@
      "taken": true
     },
     "borrowRate": 0.0,
-    "maintReq": 76.73,
-    "lastBarTs": "2026-11-27T10:55:00-05:00"
+    "maintReq": 76.79,
+    "lastBarTs": "2026-11-27T11:00:00-05:00"
    }
   ],
-  "realizedPL": 0.0,
+  "realizedPL": 73.81,
   "netDeposits": 3000.0,
   "costs": {
-   "slippage": 4.5026,
-   "commission": 2.1,
-   "fees": 0.17,
+   "slippage": 5.2902,
+   "commission": 2.45,
+   "fees": 0.22,
    "interest": 0.0,
    "borrow": 0.0,
    "dividendsPaid": 0.0,
    "dividendsReceived": 0.0
   },
-  "longValue": 4635.01,
-  "shortValue": 4539.7,
-  "positionsValue": 95.31,
-  "totalValue": 3093.1,
-  "grossExposure": 9174.71,
-  "netExposure": 95.31,
-  "leverage": 2.966,
-  "maintenanceReq": 458.74,
-  "marginBuffer": 2634.36,
-  "regTInitialReq": 917.47,
-  "regTExcess": 2175.63,
-  "buyingPower": 21756.29,
+  "longValue": 3064.18,
+  "shortValue": 4536.79,
+  "positionsValue": -1472.62,
+  "totalValue": 3098.93,
+  "grossExposure": 7600.97,
+  "netExposure": -1472.62,
+  "leverage": 2.453,
+  "maintenanceReq": 380.05,
+  "marginBuffer": 2718.88,
+  "regTInitialReq": 760.1,
+  "regTExcess": 2338.83,
+  "buyingPower": 23388.33,
   "marginEligible": true,
-  "closeoutMovePct": 28.71,
+  "closeoutMovePct": 35.77,
   "bustCount": 0,
   "paidInTotal": 3000.0,
   "lostToBusts": 0,
-  "totalPL": 93.1,
-  "totalPLPct": 3.1,
-  "twrPct": 3.1,
-  "asOf": "2026-11-27T10:58:56-05:00",
-  "benchmarkPrice": 725.39,
-  "benchmarkValue": 3001.82,
+  "totalPL": 98.93,
+  "totalPLPct": 3.3,
+  "twrPct": 3.3,
+  "asOf": "2026-11-27T11:04:00-05:00",
+  "benchmarkPrice": 725.38,
+  "benchmarkValue": 3001.78,
   "benchmarkTwrPct": 0.06
  },
  "meta": {
@@ -538,8 +481,8 @@
    "ath": 759.66,
    "athDate": "2026-10-06",
    "athChecked": "2026-11-25",
-   "price": 645.06,
-   "at": "2026-11-27T10:55:00-05:00",
+   "price": 645.05,
+   "at": "2026-11-27T11:00:00-05:00",
    "ddPct": -15.09,
    "level": "correction",
    "triggerPrice": 607.73,
@@ -558,7 +501,7 @@
    "startAt": "2026-11-27T09:30:31-05:00",
    "navStart": 1.0,
    "spyStart": 724.95,
-   "peak": 1.0328733333333333,
+   "peak": 1.0329766666666667,
    "maxDD": -1.24,
    "maxDDAt": "2026-11-27T09:58:20-05:00",
    "errors": 0,
@@ -566,7 +509,7 @@
     "2026-11-27"
    ]
   },
-  "lastRunAt": "2026-11-27T10:58:56-05:00",
+  "lastRunAt": "2026-11-27T11:04:00-05:00",
   "lastError": null,
   "picks": {
    "date": "2026-11-27",
@@ -1219,35 +1162,68 @@
    "runId": "2026-11-27",
    "by": "bot",
    "locate": "Kolay ödünç (ETB) varsayımı: büyük, likit hisse"
+  },
+  {
+   "id": "t-20261127-07",
+   "ts": "2026-11-27T11:04:00-05:00",
+   "date": "2026-11-27",
+   "action": "SELL",
+   "side": "long",
+   "ticker": "VRTX",
+   "name": "Vertex Pharmaceuticals",
+   "kind": "Hisse",
+   "shares": 2.9686,
+   "quotePrice": 530.5361,
+   "quoteAt": "2026-11-27T11:00:00-05:00",
+   "slippagePct": 0.05,
+   "execPrice": 530.2708,
+   "value": 1574.16,
+   "commission": 0.35,
+   "fees": 0.05,
+   "priceSource": {
+    "title": "Yahoo Finance 5 dk mum (11:00 ET)",
+    "url": "https://finance.yahoo.com/quote/VRTX/"
+   },
+   "reason": "Kâr hedefi: VRTX girişten %5 yükseldi (505,27 $ → 530,54 $); pozisyon %15 kârla kapatıldı.",
+   "rule": "günlük 3+3 kâr hedefi",
+   "sources": [
+    {
+     "title": "Yahoo Finance: VRTX",
+     "url": "https://finance.yahoo.com/quote/VRTX/"
+    },
+    {
+     "title": "yfinance (Yahoo Finance verileri)",
+     "url": "https://github.com/ranaroussi/yfinance"
+    }
+   ],
+   "runId": "2026-11-27",
+   "by": "bot",
+   "realizedPL": 73.81,
+   "holdingDays": 0,
+   "taxTerm": "kısa vade",
+   "play": "dayLong"
   }
  ],
  "snapshots": [
   {
    "date": "2026-11-27",
-   "at": "2026-11-27T10:58:56-05:00",
-   "totalValue": 3093.1,
-   "cash": 2997.79,
-   "positionsValue": 95.31,
-   "plPct": 3.1,
-   "twrPct": 3.1,
+   "at": "2026-11-27T11:04:00-05:00",
+   "totalValue": 3098.93,
+   "cash": 4571.55,
+   "positionsValue": -1472.62,
+   "plPct": 3.3,
+   "twrPct": 3.3,
    "netDeposits": 3000.0,
-   "leverage": 2.966,
-   "benchmarkPrice": 725.39,
-   "benchmarkValue": 3001.82,
-   "qqqPrice": 645.06,
+   "leverage": 2.453,
+   "benchmarkPrice": 725.38,
+   "benchmarkValue": 3001.78,
+   "qqqPrice": 645.05,
    "holdings": [
-    {
-     "ticker": "VRTX",
-     "side": "long",
-     "value": 1568.85,
-     "u": 68.9,
-     "play": "dayLong"
-    },
     {
      "ticker": "PANW",
      "side": "long",
-     "value": 1558.03,
-     "u": 58.05,
+     "value": 1556.04,
+     "u": 56.06,
      "play": "dayLong"
     },
     {
@@ -1260,22 +1236,22 @@
     {
      "ticker": "XP",
      "side": "short",
-     "value": -1533.58,
-     "u": -33.58,
+     "value": -1528.26,
+     "u": -28.26,
      "play": "dayShort"
     },
     {
      "ticker": "PBR",
      "side": "short",
-     "value": -1471.57,
-     "u": 28.43,
+     "value": -1472.73,
+     "u": 27.27,
      "play": "dayShort"
     },
     {
      "ticker": "AUGO",
      "side": "short",
-     "value": -1534.55,
-     "u": -34.56,
+     "value": -1535.81,
+     "u": -35.82,
      "play": "dayShort"
     }
    ]
@@ -2391,6 +2367,63 @@
     ],
     "actions": [],
     "note": "Normal: kaldıraç 2,97x, SPY +%1,21; işlem gerekmedi."
+   },
+   {
+    "at": "2026-11-27T11:04:00-05:00",
+    "kind": "guard",
+    "status": "normal",
+    "spyPrice": 725.38,
+    "spyChangePct": 1.21,
+    "qqqChangePct": 1.75,
+    "totalValue": 3098.93,
+    "benchmarkValue": 3001.78,
+    "leverage": 2.453,
+    "marginBuffer": 2718.88,
+    "positions": [
+     {
+      "ticker": "PANW",
+      "side": "long",
+      "price": 356.62,
+      "dayChangePct": 0.13,
+      "stopPrice": null,
+      "distancePct": null
+     },
+     {
+      "ticker": "SONY",
+      "side": "long",
+      "price": 27.995,
+      "dayChangePct": -1.74,
+      "stopPrice": null,
+      "distancePct": null
+     },
+     {
+      "ticker": "XP",
+      "side": "short",
+      "price": 17.225,
+      "dayChangePct": 19.7,
+      "stopPrice": null,
+      "distancePct": null
+     },
+     {
+      "ticker": "PBR",
+      "side": "short",
+      "price": 16.9083,
+      "dayChangePct": 5.35,
+      "stopPrice": null,
+      "distancePct": null
+     },
+     {
+      "ticker": "AUGO",
+      "side": "short",
+      "price": 67.235,
+      "dayChangePct": 6.82,
+      "stopPrice": null,
+      "distancePct": null
+     }
+    ],
+    "actions": [
+     "VRTX long kapatıldı (1.574,16 $)"
+    ]
    }
   ]
  },
@@ -2887,7 +2920,8 @@
  ],
  "tax": {
   "2026": {
-   "commissions": 2.27
+   "commissions": 2.67,
+   "shortTermRealized": 73.81
   }
  },
  "evalHistory": [
@@ -3153,12 +3187,21 @@
   }
  ],
  "busts": [],
- "playStats": {},
+ "playStats": {
+  "dayLong": {
+   "closed": 1,
+   "wins": 1,
+   "pl": 73.81,
+   "best": 73.81,
+   "worst": 73.81,
+   "last": "2026-11-27"
+  }
+ },
  "scorecard": {
   "start": "2026-11-27",
   "startAt": "2026-11-27T09:30:31-05:00",
   "end": "2027-02-27",
-  "asOf": "2026-11-27T10:58:56-05:00",
+  "asOf": "2026-11-27T11:04:00-05:00",
   "strategy": "v8",
   "history": [
    {
@@ -3260,27 +3303,27 @@
   "daysElapsed": 1,
   "daysTotal": 62,
   "finished": false,
-  "returnPct": 3.1,
+  "returnPct": 3.3,
   "spyReturnPct": 0.06,
-  "excessPct": 3.04,
+  "excessPct": 3.24,
   "maxDrawdownPct": -1.24,
   "maxDrawdownAt": "2026-11-27T09:58:20-05:00",
-  "drawdownNowPct": -0.18,
+  "drawdownNowPct": 0.0,
   "trades": {
-   "closed": 0,
-   "wins": 0,
-   "winRatePct": null,
-   "avgWin": null,
+   "closed": 1,
+   "wins": 1,
+   "winRatePct": 100.0,
+   "avgWin": 73.81,
    "avgLoss": null,
    "profitFactor": null,
-   "realizedPL": 0
+   "realizedPL": 73.81
   },
   "monthly": [
    {
     "month": "2026-11",
-    "returnPct": 3.1,
+    "returnPct": 3.3,
     "spyPct": 0.06,
-    "excessPct": 3.04
+    "excessPct": 3.24
    }
   ],
   "uptime": {
@@ -3296,7 +3339,7 @@
     "key": "spy",
     "label": "SPY'ı geçmek (masraflar düşülmüş)",
     "ok": true,
-    "value": 3.04,
+    "value": 3.24,
     "unit": "pct"
    },
    {
